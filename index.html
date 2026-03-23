@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olympos Lodge – Çıralı, Antalya</title>
+  <meta name="description" content="Akdeniz'in en sakin kıyılarından birinde, Çıralı'nın eşsiz doğal peyzajı içinde. Doğaya saygıyla tasarlanmış, ruhunuzu dinlendiren bir sığınak.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
+
+  <link rel="stylesheet" href="styles.css?v=10">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+
+    <a href="#hero" class="header-logo">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png" alt="Olympos Lodge" />
+    </a>
+
+    <div class="header-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-current">TR</button>
+        <ul class="lang-dropdown">
+          <li><a href="#" data-lang="tr" class="active">Türkçe</a></li>
+          <li><a href="#" data-lang="en">English</a></li>
+          <li><a href="#" data-lang="de">Deutsch</a></li>
+        </ul>
+      </div>
+      <a href="#contact" class="btn-reserve">Rezervasyon</a>
+    </div>
+  </header>
+
+  <!-- Full-screen Navigation Overlay -->
+  <nav class="nav-overlay" id="navOverlay">
+    <ul class="nav-links">
+      <li><a href="#hero" data-nav>Ana Sayfa</a></li>
+      <li><a href="#about" data-nav>Hikayemiz</a></li>
+      <li><a href="#rooms" data-nav>Odalar</a></li>
+      <li><a href="#nature" data-nav>Doğa</a></li>
+      <li><a href="#experience" data-nav>Deneyim</a></li>
+      <li><a href="#gallery" data-nav>Galeri</a></li>
+      <li><a href="#contact" data-nav>İletişim</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a href="tel:+905323083486">+90 532 308 34 86</a>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-image">
+      <video autoplay muted loop playsinline preload="metadata" poster="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg">
+        <source src="hero.webm" type="video/webm">
+        <source src="hero.mp4" type="video/mp4">
+        <!-- Fallback image for browsers that don't support video -->
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg" alt="Olympos Lodge aerial view of Çıralı coastline" />
+      </video>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tagline">Çıralı, Antalya</p>
+      <h1 class="hero-title">Zaman burada<br>farklı akar.</h1>
+      <p class="hero-subtitle">Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.</p>
+      <a href="#about" class="hero-scroll" aria-label="Scroll down">
+        <span class="scroll-line"></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <div class="intro-content">
+        <p class="intro-lead">Olympos Lodge, Akdeniz'in en sakin kıyılarından birinde, Çıralı'nın eşsiz doğal peyzajı içinde yer alır.</p>
+        <p class="intro-text">Denize sıfır konumda, yirmi dönümlük bir bahçeye yayılan bu yer, yalnızca konuklarına ayrılmış sessiz bir evren sunar. Bu yaşam alanının her köşesi özenle düşünülmüş; doğaya saygıyla, gereksiz hiçbir şey eklenmeden tasarlanmıştır.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Our Story -->
+  <section class="about" id="about">
+    <div class="about-image">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg" alt="Olympos Lodge garden pathway" loading="lazy" />
+    </div>
+    <div class="about-content">
+      <span class="section-label">Hikayemiz</span>
+      <h2>Yıllar önce, bir adam Akdeniz'in en el değmemiş kıyılarından birine ulaştı.</h2>
+      <p>Zümrüt yeşili bir vadiden geçerek bu yere vardı. Yol boyunca karşılaştığı güzellik, sessizce yüklerini bırakmasına izin verdi. Vadinin bir dere aracılığıyla denizle buluştuğu noktada, zaman onunla birlikte durdu.</p>
+      <p>O andan itibaren bir hayal başladı. Bugün hâlâ devam eden, hâlâ paylaşılan bir hayal.</p>
+      <p>Olympos Lodge bu hayalden doğdu. Yirmi dönümlük bir bahçe içinde doğayla uyum halinde yerleştirilmiş on dört oda… Her biri mütevazı bir zarafetle döşenmiş; temiz, aydınlık ve dört mevsim yaşanabilir.</p>
+    </div>
+  </section>
+
+  <!-- Rooms -->
+  <section class="rooms" id="rooms">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Odalar</span>
+        <h2>Her biri doğanın ritmiyle<br>uyum içinde.</h2>
+      </div>
+    </div>
+
+    <div class="rooms-list">
+
+      <!-- Aqua Super Deluxe — image left -->
+      <a href="#" class="room-row">
+        <div class="room-row__image">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-aqua-super-deluxe-oda-2.jpg" alt="Aqua Super Deluxe" loading="lazy" />
+        </div>
+        <div class="room-row__content">
+          <span class="room-row__label">01</span>
+          <h3>Aqua Super Deluxe</h3>
+          <p>Doğanın kalbinde, suyun huzuruyla çevrelenmiş özel bir sığınak.</p>
+          <span class="room-row__link">Keşfet &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Super Deluxe — image right -->
+      <a href="#" class="room-row room-row--reverse">
+        <div class="room-row__image">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-7.jpg" alt="Super Deluxe" loading="lazy" />
+        </div>
+        <div class="room-row__content">
+          <span class="room-row__label">02</span>
+          <h3>Super Deluxe</h3>
+          <p>Geniş alan, rafine dokunuşlar ve bahçe manzarası.</p>
+          <span class="room-row__link">Keşfet &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Deluxe — image left -->
+      <a href="#" class="room-row">
+        <div class="room-row__image">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-deluxe-double-room-1-890x664.jpg" alt="Deluxe" loading="lazy" />
+        </div>
+        <div class="room-row__content">
+          <span class="room-row__label">03</span>
+          <h3>Deluxe</h3>
+          <p>Sade zarafet, doğal ışık ve huzurlu bir atmosfer.</p>
+          <span class="room-row__link">Keşfet &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Göl Evi — image right -->
+      <a href="#" class="room-row room-row--reverse">
+        <div class="room-row__image">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/11/Lake-House-Deluxe-room-9.jpg" alt="Göl Evi" loading="lazy" />
+        </div>
+        <div class="room-row__content">
+          <span class="room-row__label">04</span>
+          <h3>Göl Evi</h3>
+          <p>Suyun kenarında, zamandan uzak bir dünya.</p>
+          <span class="room-row__link">Keşfet &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Antik Oda — image left -->
+      <a href="#" class="room-row">
+        <div class="room-row__image">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-antique-room-3.jpg" alt="Antik Oda" loading="lazy" />
+        </div>
+        <div class="room-row__content">
+          <span class="room-row__label">05</span>
+          <h3>Antik Oda</h3>
+          <p>Tarihin izleri, zamanın ötesinde bir deneyim.</p>
+          <span class="room-row__link">Keşfet &rarr;</span>
+        </div>
+      </a>
+
+      <!-- Çift Kişilik — image right -->
+      <a href="#" class="room-row room-row--reverse">
+        <div class="room-row__image">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-double-room-1.jpg" alt="Çift Kişilik" loading="lazy" />
+        </div>
+        <div class="room-row__content">
+          <span class="room-row__label">06</span>
+          <h3>Çift Kişilik</h3>
+          <p>İhtiyacınız olan her şey, fazlası değil.</p>
+          <span class="room-row__link">Keşfet &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Nature / Philosophy -->
+  <section class="nature" id="nature">
+    <div class="nature-visual">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/MG_7191.jpg" alt="Olympos Lodge natural landscape" loading="lazy" />
+    </div>
+    <div class="nature-content">
+      <div class="container">
+        <span class="section-label">Bahçe, Deniz, Doğa</span>
+        <h2>Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte yarat.</h2>
+        <p>Bu yerin ilham kaynaklarından biri, Lanzarote'de mimariyi doğayla kusursuz bir şekilde birleştiren sanatçı ve çevreci César Manrique'dir. Onun yaklaşımı Olympos Lodge'un temel felsefesiyle örtüşür. Burada doğaya müdahale edilmez; onun ritmi takip edilir. Ağaçlar yön verir, taşlar yerinde kalır.</p>
+        <p>Camus'nün karakterleri gibi, burada da insan doğanın karşısında çıplak durur — yalnız, ama özgür. Sessizlik ve sükunetle geçen günlerde varoluşsal sorular yüzeye çıkabilir; ama huzur veren cevabın kendisi değil, sorunun içinde kalabilmektir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience: Spa & Restaurant -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-label">Deneyim</span>
+        <h2>Her an, bir keşif.</h2>
+      </div>
+
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-card__image">
+            <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5120.jpg" alt="Spa & Wellness" loading="lazy" />
+          </div>
+          <div class="experience-card__content">
+            <h3>Spa & Dinlenme</h3>
+            <p>Bahçenin kalbinde, taşların arasına yerleştirilmiş bir sauna… Burada sessizlik bir lüks değil, yerin doğal hali.</p>
+            <a href="#" class="text-link">Keşfet &rarr;</a>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-card__image">
+            <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/Restaurant-1-1.jpg" alt="Restaurant" loading="lazy" />
+          </div>
+          <div class="experience-card__content">
+            <h3>Restoran</h3>
+            <p>Nar ağaçlarının gölgesinde uzayan kahvaltı sofraları, akşamları yıldızların altında deniz meltemi eşliğinde yemekler.</p>
+            <a href="#" class="text-link">Keşfet &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Quote -->
+  <section class="parallax-quote">
+    <div class="parallax-bg">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg" alt="Çıralı coastline from above" loading="lazy" />
+    </div>
+    <div class="parallax-content">
+      <blockquote>
+        <p>Zaman yavaşlar.<br>Hayat hafifler.<br>Ve doğa sessizce yanınıza oturur.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Guest Voices -->
+  <section class="voices" id="voices">
+    <div class="container">
+      <div class="section-header section-header--center">
+        <span class="section-label">Misafir Defteri</span>
+        <h2>Hatıralar, kelimelerle.</h2>
+      </div>
+
+      <div class="voices-grid">
+        <div class="voice-card">
+          <p class="voice-text">"Burada geçirdiğimiz günler, hayatımızda bir durak değil, bir dönüm noktası oldu. Sessizliğin içinde kendimizi yeniden bulduk."</p>
+          <span class="voice-author">— Bir misafir, 2024</span>
+        </div>
+        <div class="voice-card">
+          <p class="voice-text">"Sabah kuş sesleriyle uyanmak, akşam yıldızların altında yürümek… Olympos Lodge sadece bir tatil değil, bir hatırlama."</p>
+          <span class="voice-author">— Bir misafir, 2024</span>
+        </div>
+        <div class="voice-card">
+          <p class="voice-text">"Bu bahçede yürürken, zamanın gerçekten durduğunu hissettim. Her köşede huzur, her detayda özen."</p>
+          <span class="voice-author">— Bir misafir, 2023</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Teaser -->
+  <section class="gallery-teaser" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Galeri</span>
+        <h2>Bir bakış.</h2>
+      </div>
+    </div>
+    <div class="gallery-scroll">
+      <div class="gallery-item">
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-6.jpg" alt="Super Deluxe Room interior" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Lodge garden" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg" alt="Nature view" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5400.jpg" alt="Lodge atmosphere" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-e1731029804798.jpg" alt="Olympos ruins" loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5434-e1731093615320-1.jpg" alt="Lodge detail" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png" alt="Olympos Lodge" class="footer-logo" />
+            <p class="footer-tagline">Çıralı'nın kutsal kıyılarında, doğayla uyum içinde.</p>
+          </div>
+
+          <div class="footer-col">
+            <h4>İletişim</h4>
+            <ul>
+              <li><a href="tel:+905323083486">+90 532 308 34 86</a></li>
+              <li><a href="mailto:info@olymposlodge.com.tr">info@olymposlodge.com.tr</a></li>
+              <li>Çıralı, Ulupınar Mahallesi<br>Kemer / Antalya, Türkiye</li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Keşfet</h4>
+            <ul>
+              <li><a href="#rooms">Odalar</a></li>
+              <li><a href="#nature">Bahçe & Doğa</a></li>
+              <li><a href="#experience">Deneyim</a></li>
+              <li><a href="#gallery">Galeri</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Bizi Takip Edin</h4>
+            <ul>
+              <li><a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://www.tripadvisor.com" target="_blank" rel="noopener">TripAdvisor</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2025 Olympos Lodge. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

@@ -9,12 +9,12 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
 
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=28">
 </head>
 <body>
 
@@ -38,20 +38,20 @@
           <li><a href="#" data-lang="de">Deutsch</a></li>
         </ul>
       </div>
-      <a href="#contact" class="btn-reserve">Rezervasyon</a>
+      <a href="#contact" class="btn-reserve" data-i18n="btn_reserve">Rezervasyon</a>
     </div>
   </header>
 
   <!-- Full-screen Navigation Overlay -->
   <nav class="nav-overlay" id="navOverlay">
     <ul class="nav-links">
-      <li><a href="#hero" data-nav>Ana Sayfa</a></li>
-      <li><a href="#about" data-nav>Hikayemiz</a></li>
-      <li><a href="#rooms" data-nav>Odalar</a></li>
-      <li><a href="#nature" data-nav>Doğa</a></li>
-      <li><a href="#experience" data-nav>Deneyim</a></li>
-      <li><a href="#gallery" data-nav>Galeri</a></li>
-      <li><a href="#contact" data-nav>İletişim</a></li>
+      <li><a href="#hero" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
+      <li><a href="#about" data-nav data-i18n="nav_story">Hikayemiz</a></li>
+      <li><a href="#rooms" data-nav data-i18n="nav_rooms">Odalar</a></li>
+      <li><a href="#nature" data-nav data-i18n="nav_nature">Doğa</a></li>
+      <li><a href="#experience" data-nav data-i18n="nav_experience">Deneyim</a></li>
+      <li><a href="#gallery" data-nav data-i18n="nav_gallery">Galeri</a></li>
+      <li><a href="#contact" data-nav data-i18n="nav_contact">İletişim</a></li>
     </ul>
     <div class="nav-footer">
       <a href="tel:+905323083486">+90 532 308 34 86</a>
@@ -73,8 +73,8 @@
     </div>
     <div class="hero-content">
       <p class="hero-tagline">Çıralı, Antalya</p>
-      <h1 class="hero-title">Zaman burada<br>farklı akar.</h1>
-      <p class="hero-subtitle">Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.</p>
+      <h1 class="hero-title" data-i18n-html="hero_title">Zaman burada<br>farklı akar.</h1>
+      <p class="hero-subtitle" data-i18n-html="hero_subtitle">Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.</p>
       <a href="#about" class="hero-scroll" aria-label="Scroll down">
         <span class="scroll-line"></span>
       </a>
@@ -85,8 +85,8 @@
   <section class="intro" id="intro">
     <div class="container">
       <div class="intro-content">
-        <p class="intro-lead">Olympos Lodge, Akdeniz'in en sakin kıyılarından birinde, Çıralı'nın eşsiz doğal peyzajı içinde yer alır.</p>
-        <p class="intro-text">Denize sıfır konumda, yirmi dönümlük bir bahçeye yayılan bu yer, yalnızca konuklarına ayrılmış sessiz bir evren sunar. Bu yaşam alanının her köşesi özenle düşünülmüş; doğaya saygıyla, gereksiz hiçbir şey eklenmeden tasarlanmıştır.</p>
+        <p class="intro-lead" data-i18n="intro_lead">Olympos Lodge, Akdeniz'in en sakin kıyılarından birinde, Çıralı'nın eşsiz doğal peyzajı içinde yer alır.</p>
+        <p class="intro-text" data-i18n="intro_text">Denize sıfır konumda, yirmi dönümlük bir bahçeye yayılan bu yer, yalnızca konuklarına ayrılmış sessiz bir evren sunar. Bu yaşam alanının her köşesi özenle düşünülmüş; doğaya saygıyla, gereksiz hiçbir şey eklenmeden tasarlanmıştır.</p>
       </div>
     </div>
   </section>
@@ -97,11 +97,11 @@
       <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg" alt="Olympos Lodge garden pathway" loading="lazy" />
     </div>
     <div class="about-content">
-      <span class="section-label">Hikayemiz</span>
-      <h2>Yıllar önce, bir adam Akdeniz'in en el değmemiş kıyılarından birine ulaştı.</h2>
-      <p>Zümrüt yeşili bir vadiden geçerek bu yere vardı. Yol boyunca karşılaştığı güzellik, sessizce yüklerini bırakmasına izin verdi. Vadinin bir dere aracılığıyla denizle buluştuğu noktada, zaman onunla birlikte durdu.</p>
-      <p>O andan itibaren bir hayal başladı. Bugün hâlâ devam eden, hâlâ paylaşılan bir hayal.</p>
-      <p>Olympos Lodge bu hayalden doğdu. Yirmi dönümlük bir bahçe içinde doğayla uyum halinde yerleştirilmiş on dört oda… Her biri mütevazı bir zarafetle döşenmiş; temiz, aydınlık ve dört mevsim yaşanabilir.</p>
+      <span class="section-label" data-i18n="about_label">Hikayemiz</span>
+      <h2 data-i18n="about_heading">Yıllar önce, bir adam Akdeniz'in en el değmemiş kıyılarından birine ulaştı.</h2>
+      <p data-i18n="about_p1">Zümrüt yeşili bir vadiden geçerek bu yere vardı. Yol boyunca karşılaştığı güzellik, sessizce yüklerini bırakmasına izin verdi. Vadinin bir dere aracılığıyla denizle buluştuğu noktada, zaman onunla birlikte durdu.</p>
+      <p data-i18n="about_p2">O andan itibaren bir hayal başladı. Bugün hâlâ devam eden, hâlâ paylaşılan bir hayal.</p>
+      <p data-i18n="about_p3">Olympos Lodge bu hayalden doğdu. Yirmi dönümlük bir bahçe içinde doğayla uyum halinde yerleştirilmiş on dört oda… Her biri mütevazı bir zarafetle döşenmiş; temiz, aydınlık ve dört mevsim yaşanabilir.</p>
     </div>
   </section>
 
@@ -109,8 +109,8 @@
   <section class="rooms" id="rooms">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Odalar</span>
-        <h2>Her biri doğanın ritmiyle<br>uyum içinde.</h2>
+        <span class="section-label" data-i18n="rooms_label">Odalar</span>
+        <h2 data-i18n-html="rooms_heading">Her biri doğanın ritmiyle<br>uyum içinde.</h2>
       </div>
     </div>
 
@@ -123,11 +123,13 @@
         </div>
         <div class="room-row__content">
           <span class="room-row__label">01</span>
-          <h3>Aqua Super Deluxe</h3>
-          <p>Doğanın kalbinde, suyun huzuruyla çevrelenmiş özel bir sığınak.</p>
-          <span class="room-row__link">Keşfet &rarr;</span>
+          <h3 data-i18n="room1_name">Aqua Super Deluxe</h3>
+          <p data-i18n="room1_desc">Doğanın kalbinde, suyun huzuruyla çevrelenmiş özel bir sığınak.</p>
+          <span class="room-row__link" data-i18n="room_discover">Keşfet →</span>
         </div>
       </a>
+
+      <div class="room-separator"></div>
 
       <!-- Super Deluxe — image right -->
       <a href="#" class="room-row room-row--reverse">
@@ -136,11 +138,13 @@
         </div>
         <div class="room-row__content">
           <span class="room-row__label">02</span>
-          <h3>Super Deluxe</h3>
-          <p>Geniş alan, rafine dokunuşlar ve bahçe manzarası.</p>
-          <span class="room-row__link">Keşfet &rarr;</span>
+          <h3 data-i18n="room2_name">Super Deluxe</h3>
+          <p data-i18n="room2_desc">Geniş alan, rafine dokunuşlar ve bahçe manzarası.</p>
+          <span class="room-row__link" data-i18n="room_discover">Keşfet →</span>
         </div>
       </a>
+
+      <div class="room-separator"></div>
 
       <!-- Deluxe — image left -->
       <a href="#" class="room-row">
@@ -149,11 +153,13 @@
         </div>
         <div class="room-row__content">
           <span class="room-row__label">03</span>
-          <h3>Deluxe</h3>
-          <p>Sade zarafet, doğal ışık ve huzurlu bir atmosfer.</p>
-          <span class="room-row__link">Keşfet &rarr;</span>
+          <h3 data-i18n="room3_name">Deluxe</h3>
+          <p data-i18n="room3_desc">Sade zarafet, doğal ışık ve huzurlu bir atmosfer.</p>
+          <span class="room-row__link" data-i18n="room_discover">Keşfet →</span>
         </div>
       </a>
+
+      <div class="room-separator"></div>
 
       <!-- Göl Evi — image right -->
       <a href="#" class="room-row room-row--reverse">
@@ -162,11 +168,13 @@
         </div>
         <div class="room-row__content">
           <span class="room-row__label">04</span>
-          <h3>Göl Evi</h3>
-          <p>Suyun kenarında, zamandan uzak bir dünya.</p>
-          <span class="room-row__link">Keşfet &rarr;</span>
+          <h3 data-i18n="room4_name">Göl Evi</h3>
+          <p data-i18n="room4_desc">Suyun kenarında, zamandan uzak bir dünya.</p>
+          <span class="room-row__link" data-i18n="room_discover">Keşfet →</span>
         </div>
       </a>
+
+      <div class="room-separator"></div>
 
       <!-- Antik Oda — image left -->
       <a href="#" class="room-row">
@@ -175,11 +183,13 @@
         </div>
         <div class="room-row__content">
           <span class="room-row__label">05</span>
-          <h3>Antik Oda</h3>
-          <p>Tarihin izleri, zamanın ötesinde bir deneyim.</p>
-          <span class="room-row__link">Keşfet &rarr;</span>
+          <h3 data-i18n="room5_name">Antik Oda</h3>
+          <p data-i18n="room5_desc">Tarihin izleri, zamanın ötesinde bir deneyim.</p>
+          <span class="room-row__link" data-i18n="room_discover">Keşfet →</span>
         </div>
       </a>
+
+      <div class="room-separator"></div>
 
       <!-- Çift Kişilik — image right -->
       <a href="#" class="room-row room-row--reverse">
@@ -188,9 +198,9 @@
         </div>
         <div class="room-row__content">
           <span class="room-row__label">06</span>
-          <h3>Çift Kişilik</h3>
-          <p>İhtiyacınız olan her şey, fazlası değil.</p>
-          <span class="room-row__link">Keşfet &rarr;</span>
+          <h3 data-i18n="room6_name">Çift Kişilik</h3>
+          <p data-i18n="room6_desc">İhtiyacınız olan her şey, fazlası değil.</p>
+          <span class="room-row__link" data-i18n="room_discover">Keşfet →</span>
         </div>
       </a>
     </div>
@@ -203,10 +213,10 @@
     </div>
     <div class="nature-content">
       <div class="container">
-        <span class="section-label">Bahçe, Deniz, Doğa</span>
-        <h2>Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte yarat.</h2>
-        <p>Bu yerin ilham kaynaklarından biri, Lanzarote'de mimariyi doğayla kusursuz bir şekilde birleştiren sanatçı ve çevreci César Manrique'dir. Onun yaklaşımı Olympos Lodge'un temel felsefesiyle örtüşür. Burada doğaya müdahale edilmez; onun ritmi takip edilir. Ağaçlar yön verir, taşlar yerinde kalır.</p>
-        <p>Camus'nün karakterleri gibi, burada da insan doğanın karşısında çıplak durur — yalnız, ama özgür. Sessizlik ve sükunetle geçen günlerde varoluşsal sorular yüzeye çıkabilir; ama huzur veren cevabın kendisi değil, sorunun içinde kalabilmektir.</p>
+        <span class="section-label" data-i18n="nature_label">Bahçe, Deniz, Doğa</span>
+        <h2 data-i18n="nature_heading">Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte yarat.</h2>
+        <p data-i18n="nature_p1">Bu yerin ilham kaynaklarından biri, Lanzarote'de mimariyi doğayla kusursuz bir şekilde birleştiren sanatçı ve çevreci César Manrique'dir. Onun yaklaşımı Olympos Lodge'un temel felsefesiyle örtüşür. Burada doğaya müdahale edilmez; onun ritmi takip edilir. Ağaçlar yön verir, taşlar yerinde kalır.</p>
+        <p data-i18n="nature_p2">Camus'nün karakterleri gibi, burada da insan doğanın karşısında çıplak durur — yalnız, ama özgür. Sessizlik ve sükunetle geçen günlerde varoluşsal sorular yüzeye çıkabilir; ama huzur veren cevabın kendisi değil, sorunun içinde kalabilmektir.</p>
       </div>
     </div>
   </section>
@@ -215,8 +225,8 @@
   <section class="experience" id="experience">
     <div class="container">
       <div class="section-header section-header--center">
-        <span class="section-label">Deneyim</span>
-        <h2>Her an, bir keşif.</h2>
+        <span class="section-label" data-i18n="exp_label">Deneyim</span>
+        <h2 data-i18n="exp_heading">Her an, bir keşif.</h2>
       </div>
 
       <div class="experience-grid">
@@ -225,9 +235,9 @@
             <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5120.jpg" alt="Spa & Wellness" loading="lazy" />
           </div>
           <div class="experience-card__content">
-            <h3>Spa & Dinlenme</h3>
-            <p>Bahçenin kalbinde, taşların arasına yerleştirilmiş bir sauna… Burada sessizlik bir lüks değil, yerin doğal hali.</p>
-            <a href="#" class="text-link">Keşfet &rarr;</a>
+            <h3 data-i18n="spa_title">Spa & Dinlenme</h3>
+            <p data-i18n="spa_desc">Bahçenin kalbinde, taşların arasına yerleştirilmiş bir sauna… Burada sessizlik bir lüks değil, yerin doğal hali.</p>
+            <a href="#" class="text-link" data-i18n="exp_discover">Keşfet →</a>
           </div>
         </div>
 
@@ -236,9 +246,9 @@
             <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/Restaurant-1-1.jpg" alt="Restaurant" loading="lazy" />
           </div>
           <div class="experience-card__content">
-            <h3>Restoran</h3>
-            <p>Nar ağaçlarının gölgesinde uzayan kahvaltı sofraları, akşamları yıldızların altında deniz meltemi eşliğinde yemekler.</p>
-            <a href="#" class="text-link">Keşfet &rarr;</a>
+            <h3 data-i18n="rest_title">Restoran</h3>
+            <p data-i18n="rest_desc">Nar ağaçlarının gölgesinde uzayan kahvaltı sofraları, akşamları yıldızların altında deniz meltemi eşliğinde yemekler.</p>
+            <a href="#" class="text-link" data-i18n="exp_discover">Keşfet →</a>
           </div>
         </div>
       </div>
@@ -252,7 +262,7 @@
     </div>
     <div class="parallax-content">
       <blockquote>
-        <p>Zaman yavaşlar.<br>Hayat hafifler.<br>Ve doğa sessizce yanınıza oturur.</p>
+        <p data-i18n-html="quote">Zaman yavaşlar.<br>Hayat hafifler.<br>Ve doğa sessizce yanınıza oturur.</p>
       </blockquote>
     </div>
   </section>
@@ -261,22 +271,22 @@
   <section class="voices" id="voices">
     <div class="container">
       <div class="section-header section-header--center">
-        <span class="section-label">Misafir Defteri</span>
-        <h2>Hatıralar, kelimelerle.</h2>
+        <span class="section-label" data-i18n="voices_label">Misafir Defteri</span>
+        <h2 data-i18n="voices_heading">Hatıralar, kelimelerle.</h2>
       </div>
 
       <div class="voices-grid">
         <div class="voice-card">
-          <p class="voice-text">"Burada geçirdiğimiz günler, hayatımızda bir durak değil, bir dönüm noktası oldu. Sessizliğin içinde kendimizi yeniden bulduk."</p>
-          <span class="voice-author">— Bir misafir, 2024</span>
+          <p class="voice-text" data-i18n="voice1_text">"Burada geçirdiğimiz günler, hayatımızda bir durak değil, bir dönüm noktası oldu. Sessizliğin içinde kendimizi yeniden bulduk."</p>
+          <span class="voice-author" data-i18n="voice1_author">— Bir misafir, 2024</span>
         </div>
         <div class="voice-card">
-          <p class="voice-text">"Sabah kuş sesleriyle uyanmak, akşam yıldızların altında yürümek… Olympos Lodge sadece bir tatil değil, bir hatırlama."</p>
-          <span class="voice-author">— Bir misafir, 2024</span>
+          <p class="voice-text" data-i18n="voice2_text">"Sabah kuş sesleriyle uyanmak, akşam yıldızların altında yürümek… Olympos Lodge sadece bir tatil değil, bir hatırlama."</p>
+          <span class="voice-author" data-i18n="voice2_author">— Bir misafir, 2024</span>
         </div>
         <div class="voice-card">
-          <p class="voice-text">"Bu bahçede yürürken, zamanın gerçekten durduğunu hissettim. Her köşede huzur, her detayda özen."</p>
-          <span class="voice-author">— Bir misafir, 2023</span>
+          <p class="voice-text" data-i18n="voice3_text">"Bu bahçede yürürken, zamanın gerçekten durduğunu hissettim. Her köşede huzur, her detayda özen."</p>
+          <span class="voice-author" data-i18n="voice3_author">— Bir misafir, 2023</span>
         </div>
       </div>
     </div>
@@ -286,8 +296,8 @@
   <section class="gallery-teaser" id="gallery">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Galeri</span>
-        <h2>Bir bakış.</h2>
+        <span class="section-label" data-i18n="gallery_label">Galeri</span>
+        <h2 data-i18n="gallery_heading">Bir bakış.</h2>
       </div>
     </div>
     <div class="gallery-scroll">
@@ -319,30 +329,30 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png" alt="Olympos Lodge" class="footer-logo" />
-            <p class="footer-tagline">Çıralı'nın kutsal kıyılarında, doğayla uyum içinde.</p>
+            <p class="footer-tagline" data-i18n="footer_tagline">Çıralı'nın kutsal kıyılarında, doğayla uyum içinde.</p>
           </div>
 
           <div class="footer-col">
-            <h4>İletişim</h4>
+            <h4 data-i18n="footer_contact_title">İletişim</h4>
             <ul>
               <li><a href="tel:+905323083486">+90 532 308 34 86</a></li>
               <li><a href="mailto:info@olymposlodge.com.tr">info@olymposlodge.com.tr</a></li>
-              <li>Çıralı, Ulupınar Mahallesi<br>Kemer / Antalya, Türkiye</li>
+              <li data-i18n-html="footer_address">Çıralı, Ulupınar Mahallesi<br>Kemer / Antalya, Türkiye</li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h4>Keşfet</h4>
+            <h4 data-i18n="footer_explore_title">Keşfet</h4>
             <ul>
-              <li><a href="#rooms">Odalar</a></li>
-              <li><a href="#nature">Bahçe & Doğa</a></li>
-              <li><a href="#experience">Deneyim</a></li>
-              <li><a href="#gallery">Galeri</a></li>
+              <li><a href="#rooms" data-i18n="nav_rooms">Odalar</a></li>
+              <li><a href="#nature" data-i18n="footer_nature_link">Bahçe & Doğa</a></li>
+              <li><a href="#experience" data-i18n="nav_experience">Deneyim</a></li>
+              <li><a href="#gallery" data-i18n="nav_gallery">Galeri</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
-            <h4>Bizi Takip Edin</h4>
+            <h4 data-i18n="footer_follow_title">Bizi Takip Edin</h4>
             <ul>
               <li><a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a></li>
               <li><a href="https://www.tripadvisor.com" target="_blank" rel="noopener">TripAdvisor</a></li>
@@ -354,11 +364,11 @@
 
     <div class="footer-bottom">
       <div class="container">
-        <p>&copy; 2025 Olympos Lodge. Tüm hakları saklıdır.</p>
+        <p data-i18n="footer_copyright">&copy; 2025 Olympos Lodge. Tüm hakları saklıdır.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

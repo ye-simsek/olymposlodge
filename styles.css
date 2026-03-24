@@ -8,7 +8,7 @@
   --color-deep-blue: #263d93;
   --color-warm-gold: #8E7441;
   --color-cream: #F7F5F0;
-  --color-warm-white: #FAFAF8;
+  --color-warm-white: #F7F5F0;
   --color-text: #1a1a1a;
   --color-text-light: #6b6b6b;
   --color-text-muted: #999;
@@ -18,6 +18,7 @@
   --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
   --font-accent: 'Josefin Sans', sans-serif;
   --font-cinzel: 'Cinzel', serif;
+  --font-sc: 'Cormorant SC', serif;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -610,19 +611,45 @@ h4 {
 .rooms-list {
   max-width: 1440px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.8rem 0;
+}
+
+.room-separator::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(142, 116, 65, 0.4) 3%,
+    rgba(142, 116, 65, 0.75) 6%,
+    var(--color-warm-gold) 12%,
+    var(--color-warm-gold) 88%,
+    rgba(142, 116, 65, 0.75) 94%,
+    rgba(142, 116, 65, 0.4) 97%,
+    transparent 100%
+  );
 }
 
 .room-row {
   display: grid;
-  grid-template-columns: 60fr 40fr;
-  min-height: 520px;
+  grid-template-columns: 68fr 32fr;
+  height: 540px;
   text-decoration: none;
   color: inherit;
-  border-top: 1px solid var(--color-border);
 }
 
 .room-row--reverse {
-  grid-template-columns: 40fr 60fr;
+  grid-template-columns: 32fr 68fr;
 }
 
 .room-row--reverse .room-row__image {
@@ -657,6 +684,7 @@ h4 {
   justify-content: center;
   padding: var(--space-2xl) var(--space-xl);
   background: var(--color-cream);
+  overflow: hidden;
 }
 
 .room-row--reverse .room-row__content {
@@ -1030,6 +1058,88 @@ h4 {
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ========================================
+   ROOMS — STICKY HEADING (desktop only)
+   ======================================== */
+@media (min-width: 1025px) {
+  /* Remove section top padding — sticky header provides the breathing room */
+  .rooms {
+    padding-top: 0;
+    overflow: visible;
+  }
+
+  /* Pin the section heading while rooms scroll over it */
+  .rooms .container {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 1;
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  /* Centred, flipped hierarchy */
+  .rooms .section-header {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* ODALAR → the hero */
+  .rooms .section-label {
+    display: block;
+    font-family: var(--font-sc);
+    font-style: normal;
+    font-weight: 300;
+    font-size: clamp(4rem, 6vw, 7rem);
+    letter-spacing: 0.07em;
+    text-transform: none;
+    color: var(--color-warm-gold);
+    margin-bottom: 0.6rem;
+  }
+
+  /* Sentence → quiet poetic note beneath */
+  .rooms .section-header h2 {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    font-weight: 400;
+    font-style: italic;
+    font-family: var(--font-heading);
+    color: var(--color-text-light);
+    letter-spacing: 0.04em;
+  }
+
+  /* Rooms list slides over the pinned heading */
+  .rooms-list {
+    position: relative;
+    z-index: 2;
+    background: var(--color-cream);
+  }
+
+  /* Gold curtain line — text disappears behind this edge as you scroll */
+  .rooms-list::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(142, 116, 65, 0.4) 3%,
+      rgba(142, 116, 65, 0.75) 6%,
+      var(--color-warm-gold) 12%,
+      var(--color-warm-gold) 88%,
+      rgba(142, 116, 65, 0.75) 94%,
+      rgba(142, 116, 65, 0.4) 97%,
+      transparent 100%
+    );
+    margin-bottom: 2.8rem;
+  }
+
+  /* Solid cream background so rows fully cover the heading underneath */
+  .room-row,
+  .room-separator {
+    background: var(--color-cream);
+  }
+}
 
 /* ========================================
    RESPONSIVE — TABLET

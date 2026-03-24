@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
       room_discover: 'Keşfet →',
       nature_label: 'Bahçe, Deniz, Doğa',
       nature_heading: 'Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte yarat.',
-      nature_p1: 'Bu yerin ilham kaynaklarından biri, Lanzarote\'de mimariyi doğayla kusursuz bir şekilde birleştiren sanatçı ve çevreci César Manrique\'dir. Onun yaklaşımı Olympos Lodge\'un temel felsefesiyle örtüşür. Burada doğaya müdahale edilmez; onun ritmi takip edilir. Ağaçlar yön verir, taşlar yerinde kalır.',
-      nature_p2: 'Camus\'nün karakterleri gibi, burada da insan doğanın karşısında çıplak durur — yalnız, ama özgür. Sessizlik ve sükunetle geçen günlerde varoluşsal sorular yüzeye çıkabilir; ama huzur veren cevabın kendisi değil, sorunun içinde kalabilmektir.',
+      nature_p1: 'Olympos Lodge, bu yerin kendisinden öğrendi. Her yapı, arazinin izin verdiği yere saygıyla yerleştirildi — ağaçların arasına değil, ağaçlarla birlikte. Kökler yerinde kaldı, taşlar bozulmadı. Burada doğa bir arka plan değil, asıl mimardır.',
+      nature_p2: 'Gece, ışık kirliliğinden uzak bu kıyıda gökyüzü nadiren görülen bir berraklıkla açılır. Sabah, deniz kokusu ormanın sesiyle iç içe geçer. Çıralı\'nın deresi sessizce denize karışır — ve bir an için, dünyanın geri kalanının ne kadar gürültülü olduğunu anlarsınız.',
       exp_label: 'Deneyim', exp_heading: 'Her an, bir keşif.',
       spa_title: 'Spa & Dinlenme', spa_desc: 'Bahçenin kalbinde, taşların arasına yerleştirilmiş bir sauna… Burada sessizlik bir lüks değil, yerin doğal hali.',
       rest_title: 'Restoran', rest_desc: 'Nar ağaçlarının gölgesinde uzayan kahvaltı sofraları, akşamları yıldızların altında deniz meltemi eşliğinde yemekler.',
@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
       room_discover: 'Discover →',
       nature_label: 'Garden, Sea, Nature',
       nature_heading: 'Nature is already perfect; respect it, listen to it, and create alongside it.',
-      nature_p1: 'One of the inspirations for this place is César Manrique — artist and environmentalist from Lanzarote, who fused architecture with nature in a flawless way. His approach resonates with the core philosophy of Olympos Lodge. Here, nature is not intervened upon; its rhythm is followed. Trees give direction, stones remain in place.',
-      nature_p2: 'Like Camus\'s characters, here too a person stands naked before nature — alone, but free. In days of silence and serenity, existential questions may surface; but the comfort lies not in the answer, but in being able to remain within the question.',
+      nature_p1: 'Olympos Lodge learned from the place itself. Every structure was placed with care for what was already here — not carved between trees, but settled where the land allowed. Roots stayed intact, stones undisturbed. Here, nature is not a backdrop. It is the architect.',
+      nature_p2: 'At night, far from any light pollution, the sky opens with rare clarity. In the morning, the scent of the sea weaves through the sounds of the forest. The stream of Çıralı quietly finds its way to the sea — and for a moment, you understand just how loud the rest of the world really is.',
       exp_label: 'Experience', exp_heading: 'Every moment, a discovery.',
       spa_title: 'Spa & Relaxation', spa_desc: 'A sauna nestled among stones at the heart of the garden… Here silence is not a luxury, but the natural state of the place.',
       rest_title: 'Restaurant', rest_desc: 'Breakfast tables stretching under pomegranate trees, evening meals beneath the stars with a sea breeze.',
@@ -168,8 +168,8 @@ document.addEventListener('DOMContentLoaded', () => {
       room_discover: 'Entdecken →',
       nature_label: 'Garten, Meer, Natur',
       nature_heading: 'Die Natur ist bereits vollkommen; respektiere sie, höre ihr zu und erschaffe mit ihr.',
-      nature_p1: 'Eine der Inspirationsquellen dieses Ortes ist César Manrique — Künstler und Umweltschützer aus Lanzarote, der Architektur und Natur auf vollkommene Weise verband. Sein Ansatz deckt sich mit der Kernphilosophie von Olympos Lodge. Hier wird in die Natur nicht eingegriffen; ihrem Rhythmus wird gefolgt. Bäume geben die Richtung vor, Steine bleiben an ihrem Platz.',
-      nature_p2: 'Wie Camus\' Charaktere steht auch hier der Mensch nackt vor der Natur — allein, aber frei. In Tagen der Stille können existenzielle Fragen auftauchen; aber der Trost liegt nicht in der Antwort, sondern darin, in der Frage verweilen zu können.',
+      nature_p1: 'Olympos Lodge hat von diesem Ort selbst gelernt. Jedes Gebäude wurde mit Respekt vor dem gesetzt, was bereits vorhanden war — nicht zwischen die Bäume geschnitten, sondern dort, wo die Erde es zuließ. Wurzeln blieben unberührt, Steine unverrückt. Hier ist die Natur keine Kulisse. Sie ist die Architektin.',
+      nature_p2: 'Nachts öffnet sich der Himmel an dieser lichtfreien Küste mit seltener Klarheit. Am Morgen mischt sich der Duft des Meeres mit den Geräuschen des Waldes. Der Bach von Çıralı findet still seinen Weg ins Meer — und für einen Moment begreift man, wie laut der Rest der Welt eigentlich ist.',
       exp_label: 'Erlebnis', exp_heading: 'Jeder Augenblick, eine Entdeckung.',
       spa_title: 'Spa & Entspannung', spa_desc: 'Eine Sauna zwischen Steinen im Herzen des Gartens… Hier ist Stille kein Luxus, sondern der natürliche Zustand des Ortes.',
       rest_title: 'Restaurant', rest_desc: 'Frühstückstafeln im Schatten von Granatapfelbäumen, abendliche Mahlzeiten unter dem Sternenhimmel mit Meeresbrise.',
@@ -339,6 +339,89 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+  // --- Weather Panel ---
+  function initWeatherPanel() {
+    const panel = document.getElementById('weather-panel');
+    const footer = document.querySelector('.site-footer');
+    if (!panel || !footer) return;
+
+    const LAT = 36.4166, LON = 30.4742;
+    const API = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weathercode,windspeed_10m,winddirection_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_max,winddirection_10m_dominant&timezone=Europe%2FIstanbul&forecast_days=5`;
+
+    const WMO = {
+      0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',
+      45:'Foggy',48:'Foggy',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',
+      61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',
+      75:'Heavy snow',80:'Showers',81:'Showers',82:'Heavy showers',
+      95:'Thunderstorm',99:'Thunderstorm'
+    };
+    const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    function wmoDesc(c) { return WMO[c] || 'Clear sky'; }
+    function degCompass(d) { return ['N','NE','E','SE','S','SW','W','NW'][Math.round(d/45)%8]; }
+
+    // Date header
+    const now = new Date();
+    document.getElementById('wp-year').textContent = now.getFullYear();
+    document.getElementById('wp-daydate').textContent = `${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]} · ${now.getDate()} ${MONTHS[now.getMonth()]}`;
+
+    let data = null;
+
+    function renderDay(i) {
+      if (!data) return;
+      const isToday = i === 0;
+      const temp = isToday ? Math.round(data.current.temperature_2m) : Math.round(data.daily.temperature_2m_max[i]);
+      const desc = wmoDesc(isToday ? data.current.weathercode : data.daily.weathercode[i]);
+      const windSpeed = isToday ? data.current.windspeed_10m : data.daily.windspeed_10m_max[i];
+      const windDir = degCompass(isToday ? data.current.winddirection_10m : data.daily.winddirection_10m_dominant[i]);
+
+      document.getElementById('wp-temp').textContent = temp + '°';
+      document.getElementById('wp-desc').textContent = desc;
+      document.getElementById('wp-wind').textContent = `${windDir} · ${windSpeed} km/h`;
+      document.querySelectorAll('.wp-tab').forEach((t, j) => t.classList.toggle('is-active', j === i));
+    }
+
+    function buildPanel(d) {
+      data = d;
+      // Tabs
+      const tabsEl = document.getElementById('wp-tabs');
+      tabsEl.innerHTML = '';
+      d.daily.time.slice(0, 5).forEach((dateStr, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'wp-tab';
+        btn.textContent = i === 0 ? 'Today' : DAYS[new Date(dateStr).getDay()];
+        btn.addEventListener('click', () => renderDay(i));
+        tabsEl.appendChild(btn);
+      });
+      // Strip
+      const strip = document.getElementById('wp-strip');
+      strip.innerHTML = '';
+      d.daily.time.slice(0, 5).forEach((dateStr, i) => {
+        const cell = document.createElement('div');
+        cell.className = 'wp-strip-cell';
+        cell.innerHTML = `<span class="wp-strip-day">${i === 0 ? 'Today' : DAYS[new Date(dateStr).getDay()]}</span><span class="wp-strip-desc">${wmoDesc(d.daily.weathercode[i])}</span><span class="wp-strip-temp">${Math.round(d.daily.temperature_2m_max[i])}°</span>`;
+        strip.appendChild(cell);
+      });
+      renderDay(0);
+    }
+
+    fetch(API).then(r => r.json()).then(buildPanel).catch(() => {
+      document.getElementById('wp-desc').textContent = 'Unavailable';
+    });
+
+    // Slide in when footer enters viewport
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        panel.classList.toggle('is-visible', entry.isIntersecting);
+      });
+    }, { threshold: 0.35 });
+
+    observer.observe(footer);
+  }
+
+  initWeatherPanel();
 
   // --- Image lazy reveal with fade ---
   const images = document.querySelectorAll('.room-card__image img, .experience-card__image img, .gallery-item img');

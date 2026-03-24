@@ -985,10 +985,21 @@ h4 {
 .site-footer {
   background: var(--color-text);
   color: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
 }
 
-.footer-top {
-  padding: var(--space-xl) 0;
+.footer-main {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  min-height: 55vh;
+  align-items: stretch;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-xl) var(--space-xl) var(--space-md);
 }
 
 .footer-grid {
@@ -1033,7 +1044,7 @@ h4 {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: var(--space-md) 0;
+  padding: var(--space-md) 0 0;
 }
 
 .footer-bottom p {
@@ -1217,9 +1228,17 @@ h4 {
     gap: 0;
   }
 
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-md);
+  }
+
+  .weather-panel {
+    display: none;
   }
 }
 
@@ -1318,4 +1337,159 @@ h4 {
   .parallax-quote {
     height: 50vh;
   }
+}
+
+/* ===== WEATHER PANEL ===== */
+.weather-panel {
+  background: var(--color-text);
+  border-left: 1px solid var(--color-warm-gold);
+  transform: translateX(100%);
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl) 2rem var(--space-md);
+  overflow: hidden;
+}
+
+.weather-panel.is-visible {
+  transform: translateX(0);
+}
+
+.weather-panel__year {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-charcoal);
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.weather-panel__daydate {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+.weather-panel__rule {
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+  margin: 1rem 0;
+  flex-shrink: 0;
+}
+
+.weather-panel__tabs {
+  display: flex;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.wp-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  padding: 0.4rem 0.15rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: background 0.2s, color 0.2s;
+}
+.wp-tab.is-active {
+  background: var(--color-warm-gold);
+  color: #fff;
+}
+
+.weather-panel__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.weather-panel__temp {
+  font-family: var(--font-primary);
+  font-size: clamp(3rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--color-charcoal);
+}
+
+.weather-panel__desc {
+  font-family: var(--font-primary);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-stone);
+  margin-top: 0.4rem;
+}
+
+.weather-panel__wind {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin-top: 0.75rem;
+}
+
+.weather-panel__strip {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.wp-strip-cell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.15rem;
+  border-right: 1px solid rgba(0,0,0,0.07);
+}
+.wp-strip-cell:last-child { border-right: none; }
+
+.wp-strip-day {
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+}
+
+.wp-strip-desc {
+  font-family: var(--font-primary);
+  font-style: italic;
+  font-size: 0.62rem;
+  color: var(--color-charcoal);
+  text-align: center;
+  line-height: 1.3;
+}
+
+.wp-strip-temp {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--color-charcoal);
+}
+
+.weather-panel__location {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .weather-panel { display: none; }
 }

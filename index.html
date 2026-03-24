@@ -14,7 +14,7 @@
   <!-- Favicon -->
   <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
 
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=43">
 </head>
 <body>
 
@@ -215,8 +215,8 @@
       <div class="container">
         <span class="section-label" data-i18n="nature_label">Bahçe, Deniz, Doğa</span>
         <h2 data-i18n="nature_heading">Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte yarat.</h2>
-        <p data-i18n="nature_p1">Bu yerin ilham kaynaklarından biri, Lanzarote'de mimariyi doğayla kusursuz bir şekilde birleştiren sanatçı ve çevreci César Manrique'dir. Onun yaklaşımı Olympos Lodge'un temel felsefesiyle örtüşür. Burada doğaya müdahale edilmez; onun ritmi takip edilir. Ağaçlar yön verir, taşlar yerinde kalır.</p>
-        <p data-i18n="nature_p2">Camus'nün karakterleri gibi, burada da insan doğanın karşısında çıplak durur — yalnız, ama özgür. Sessizlik ve sükunetle geçen günlerde varoluşsal sorular yüzeye çıkabilir; ama huzur veren cevabın kendisi değil, sorunun içinde kalabilmektir.</p>
+        <p data-i18n="nature_p1">Olympos Lodge, bu yerin kendisinden öğrendi. Her yapı, arazinin izin verdiği yere saygıyla yerleştirildi — ağaçların arasına değil, ağaçlarla birlikte. Kökler yerinde kaldı, taşlar bozulmadı. Burada doğa bir arka plan değil, asıl mimardır.</p>
+        <p data-i18n="nature_p2">Gece, ışık kirliliğinden uzak bu kıyıda gökyüzü nadiren görülen bir berraklıkla açılır. Sabah, deniz kokusu ormanın sesiyle iç içe geçer. Çıralı'nın deresi sessizce denize karışır — ve bir an için, dünyanın geri kalanının ne kadar gürültülü olduğunu anlarsınız. <span style="font-size:0.75em;letter-spacing:0.12em;opacity:0.45;">— WILL BE CHANGED</span></p>
       </div>
     </div>
   </section>
@@ -324,8 +324,10 @@
 
   <!-- Contact / Footer -->
   <footer class="site-footer" id="contact">
-    <div class="footer-top">
-      <div class="container">
+    <div class="footer-main">
+
+      <!-- Left: footer content -->
+      <div class="footer-left">
         <div class="footer-grid">
           <div class="footer-brand">
             <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png" alt="Olympos Lodge" class="footer-logo" />
@@ -359,16 +361,34 @@
             </ul>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="footer-bottom">
-      <div class="container">
-        <p data-i18n="footer_copyright">&copy; 2025 Olympos Lodge. Tüm hakları saklıdır.</p>
+        <div class="footer-bottom">
+          <p data-i18n="footer_copyright">&copy; 2025 Olympos Lodge. Tüm hakları saklıdır.</p>
+        </div>
       </div>
+
+      <!-- Right: weather panel -->
+      <div class="weather-panel" id="weather-panel" aria-label="Live weather in Çıralı">
+        <div class="weather-panel__date">
+          <div class="weather-panel__year" id="wp-year">—</div>
+          <div class="weather-panel__daydate" id="wp-daydate">—</div>
+        </div>
+        <div class="weather-panel__rule"></div>
+        <div class="weather-panel__tabs" id="wp-tabs"></div>
+        <div class="weather-panel__rule"></div>
+        <div class="weather-panel__body">
+          <div class="weather-panel__temp" id="wp-temp">—</div>
+          <div class="weather-panel__desc" id="wp-desc">Yükleniyor…</div>
+          <div class="weather-panel__wind" id="wp-wind"></div>
+        </div>
+        <div class="weather-panel__rule"></div>
+        <div class="weather-panel__strip" id="wp-strip"></div>
+        <div class="weather-panel__location">Çıralı · Antalya</div>
+      </div>
+
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

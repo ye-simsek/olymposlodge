@@ -248,14 +248,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Scroll reveal animations ---
-  const revealElements = document.querySelectorAll(
-    '.intro-content, .about-content, .section-header, .room-card, ' +
-    '.nature-content .container, .experience-card, .voice-card, ' +
-    '.gallery-teaser .section-header, .footer-brand, .footer-col'
-  );
 
-  revealElements.forEach(el => el.classList.add('reveal'));
+  // Fade-up for general sections
+  [
+    '.intro-content', '.about-content', '.section-header',
+    '.nature-content .container', '.experience-card',
+    '.voice-card', '.gallery-teaser .section-header',
+    '.footer-brand', '.footer-col'
+  ].forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
+  });
 
+  // Room rows — split directional fade (image ↔ content)
+  document.querySelectorAll('.room-row:not(.room-row--reverse) .room-row__image').forEach(el => el.classList.add('reveal-left'));
+  document.querySelectorAll('.room-row:not(.room-row--reverse) .room-row__content').forEach(el => {
+    el.classList.add('reveal-right');
+    el.style.transitionDelay = '0.12s';
+  });
+  document.querySelectorAll('.room-row--reverse .room-row__image').forEach(el => el.classList.add('reveal-right'));
+  document.querySelectorAll('.room-row--reverse .room-row__content').forEach(el => {
+    el.classList.add('reveal-left');
+    el.style.transitionDelay = '0.12s';
+  });
+
+  // Stagger voices and footer columns
+  document.querySelectorAll('.voices-grid .voice-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.12}s`;
+  });
+  document.querySelectorAll('.footer-grid > *').forEach((col, i) => {
+    col.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  // Single observer for everything
+  const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -264,24 +289,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -60px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
   });
 
-  revealElements.forEach(el => revealObserver.observe(el));
-
-  // Add staggered delays to grid items
-  document.querySelectorAll('.rooms-grid .room-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.1}s`;
-  });
-
-  document.querySelectorAll('.voices-grid .voice-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.15}s`;
-  });
-
-  document.querySelectorAll('.footer-grid > *').forEach((col, i) => {
-    col.style.transitionDelay = `${i * 0.1}s`;
-  });
+  allReveal.forEach(el => revealObserver.observe(el));
 
   // --- Gallery horizontal drag scroll ---
   const galleryScroll = document.querySelector('.gallery-scroll');

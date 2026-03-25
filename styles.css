@@ -1347,11 +1347,11 @@ h4 {
   }
 
   .room-row__content {
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-lg) var(--space-md) 0;
   }
 
   .room-row--reverse .room-row__content {
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-lg) var(--space-md) 0;
   }
 
   .experience-grid {

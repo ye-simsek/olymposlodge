@@ -1364,7 +1364,7 @@ h4 {
     position: sticky;
     top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
     z-index: 1;
-    padding-top: 0.25rem;
+    padding-top: var(--space-sm);
     padding-bottom: var(--space-xl);
   }
 

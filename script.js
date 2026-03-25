@@ -295,6 +295,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   allReveal.forEach(el => revealObserver.observe(el));
 
+  // --- Voices carousel (mobile) ---
+  const voicesGrid = document.querySelector('.voices-grid');
+  const voicesDots = document.getElementById('voicesDots');
+  if (voicesGrid && voicesDots) {
+    const cards = voicesGrid.querySelectorAll('.voice-card');
+
+    // Build dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.className = 'voices-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => {
+        voicesGrid.scrollTo({ left: cards[i].offsetLeft - voicesGrid.offsetLeft, behavior: 'smooth' });
+      });
+      voicesDots.appendChild(dot);
+    });
+
+    const dots = voicesDots.querySelectorAll('.voices-dot');
+
+    voicesGrid.addEventListener('scroll', () => {
+      const center = voicesGrid.scrollLeft + voicesGrid.offsetWidth / 2;
+      let closest = 0;
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft - voicesGrid.offsetLeft + card.offsetWidth / 2;
+        if (Math.abs(cardCenter - center) < Math.abs(cards[closest].offsetLeft - voicesGrid.offsetLeft + cards[closest].offsetWidth / 2 - center)) {
+          closest = i;
+        }
+      });
+      dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+    }, { passive: true });
+
+    // Drag scroll
+    let isDown = false, startX, scrollLeft;
+    voicesGrid.addEventListener('mousedown', e => { isDown = true; startX = e.pageX - voicesGrid.offsetLeft; scrollLeft = voicesGrid.scrollLeft; });
+    voicesGrid.addEventListener('mouseleave', () => { isDown = false; });
+    voicesGrid.addEventListener('mouseup', () => { isDown = false; });
+    voicesGrid.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      voicesGrid.scrollLeft = scrollLeft - (e.pageX - voicesGrid.offsetLeft - startX) * 1.5;
+    });
+  }
+
   // --- Gallery horizontal drag scroll ---
   const galleryScroll = document.querySelector('.gallery-scroll');
   if (galleryScroll) {

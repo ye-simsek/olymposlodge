@@ -1266,7 +1266,7 @@ h4 {
     position: absolute;
     left: 50%;
     top: calc(env(safe-area-inset-top, 0px) + var(--header-height) / 2);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, calc(-50% - 4px));
     flex: none;
     margin: 0;
     overflow: hidden;

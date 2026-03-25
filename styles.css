@@ -1354,6 +1354,80 @@ h4 {
     padding: var(--space-lg) var(--space-md) 0;
   }
 
+  /* Sticky heading — same mechanic as desktop */
+  .rooms {
+    padding-top: 0;
+    overflow: visible;
+  }
+
+  .rooms .container {
+    position: sticky;
+    top: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+    z-index: 1;
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-xl);
+  }
+
+  .rooms .section-header {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  /* ODALAR → large gold label */
+  .rooms .section-label {
+    display: block;
+    font-family: var(--font-sc);
+    font-style: normal;
+    font-weight: 300;
+    font-size: clamp(3rem, 14vw, 5rem);
+    letter-spacing: 0.07em;
+    text-transform: none;
+    color: var(--color-warm-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  /* Quiet italic subtitle */
+  .rooms .section-header h2 {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    font-weight: 400;
+    font-style: italic;
+    font-family: var(--font-heading);
+    color: var(--color-text-light);
+    letter-spacing: 0.04em;
+  }
+
+  /* Rooms list slides over the pinned heading */
+  .rooms-list {
+    position: relative;
+    z-index: 2;
+    background: var(--color-cream);
+  }
+
+  /* Gold curtain line at top of list */
+  .rooms-list::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(142, 116, 65, 0.4) 3%,
+      rgba(142, 116, 65, 0.75) 6%,
+      var(--color-warm-gold) 12%,
+      var(--color-warm-gold) 88%,
+      rgba(142, 116, 65, 0.75) 94%,
+      rgba(142, 116, 65, 0.4) 97%,
+      transparent 100%
+    );
+    margin-bottom: 2.8rem;
+  }
+
+  .room-row,
+  .room-separator {
+    background: var(--color-cream);
+  }
+
   .experience-grid {
     grid-template-columns: 1fr;
   }

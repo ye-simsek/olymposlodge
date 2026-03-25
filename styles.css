@@ -44,6 +44,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -1251,25 +1252,62 @@ h4 {
     --space-2xl: 6rem;
   }
 
+  /* Header stays below URL bar / status bar on iOS */
   .site-header {
-    padding: 0 var(--space-sm);
+    padding: env(safe-area-inset-top, 0px) var(--space-sm) 0;
+    height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
   }
 
+  /* Layout: [☰ · TR] ··· [LOGO] ··· [REZERVASYON] */
+
+  /* Logo: same clipping mechanic as desktop —
+     container clips the text portion at bottom, image is taller than container */
   .header-logo {
-    position: static;
-    transform: none;
-    flex: 0 0 auto;
-    margin: 0 auto;
-    overflow: visible;
-    height: auto;
-    transition: none;
+    position: absolute;
+    left: 50%;
+    top: calc(env(safe-area-inset-top, 0px) + var(--header-height) / 2);
+    transform: translate(-50%, -50%);
+    flex: none;
+    margin: 0;
+    overflow: hidden;
+    height: 42px;
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  /* Image taller than container (≈70:100 ratio, same as desktop) — text clipped at bottom */
   .header-logo img {
-    height: 28px;
-    transition: filter var(--transition);
+    height: 60px;
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter var(--transition);
   }
 
+  /* Scrolled: image shrinks to match container, full logo (incl. text) visible */
+  .site-header.scrolled .header-logo,
+  .site-header:has(.menu-toggle.active) .header-logo {
+    height: 54px;
+  }
+
+  .site-header.scrolled .header-logo img,
+  .site-header:has(.menu-toggle.active) .header-logo img {
+    height: 54px;
+    filter: none;
+  }
+
+  /* Lang switch: stretch full content height → always aligns with flex items */
+  .lang-switch {
+    position: absolute;
+    top: env(safe-area-inset-top, 0px);
+    bottom: 0;
+    left: calc(var(--space-sm) + 32px + 0.9rem);
+    display: flex;
+    align-items: center;
+  }
+
+  /* Keep scrolled header height consistent with safe-area padding on mobile */
+  .site-header.scrolled {
+    height: calc(86px + env(safe-area-inset-top, 0px));
+  }
+
+  /* header-right now only carries btn-reserve, stays on the right */
   .header-right {
     gap: 0.4rem;
   }

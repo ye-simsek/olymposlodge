@@ -1227,8 +1227,49 @@ h4 {
   }
 
   .voices-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: unset;
     gap: 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 var(--space-md) var(--space-lg);
+    cursor: grab;
+  }
+
+  .voices-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .voices-grid:active {
+    cursor: grabbing;
+  }
+
+  .voice-card {
+    flex: 0 0 82vw;
+    scroll-snap-align: center;
+    border-top: 1px solid var(--color-border);
+    border-left: none;
+  }
+
+  .voices-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    padding-bottom: var(--space-md);
+  }
+
+  .voices-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition: background 0.3s;
+  }
+
+  .voices-dot.active {
+    background: var(--color-warm-gold);
   }
 
   .footer-main {

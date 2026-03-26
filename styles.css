@@ -1772,8 +1772,8 @@ h4 {
 
 .room-spec__value {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  color: var(--color-text);
+  font-size: 1.28rem;
+  color: var(--color-warm-gold);
 }
 
 /* Editorial — text + inset photo left, tall image right (Badrutt's style) */

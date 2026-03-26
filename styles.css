@@ -580,6 +580,13 @@ h4 {
   margin-bottom: 0;
 }
 
+.gold-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--color-warm-gold);
+  margin: 0 auto;
+}
+
 /* ========================================
    ABOUT
    ======================================== */

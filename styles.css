@@ -1210,7 +1210,7 @@ h4 {
    ======================================== */
 @media (max-width: 1024px) {
   .intro-body {
-    gap: 0 6.4rem;
+    gap: 0 4rem;
   }
 
   .about {

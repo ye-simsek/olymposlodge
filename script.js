@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_nature: 'Nature', nav_experience: 'Experience', nav_gallery: 'Gallery', nav_contact: 'Contact',
       hero_title: 'Time flows<br>differently here.',
       hero_subtitle: 'Noise softens, senses awaken.<br>Nature makes itself heard.',
-      intro_title: 'Olympos Lodge: A Sanctuary on the Lycian Shore',
+      intro_title: 'Olympos Lodge: An Intimate Retreat on the Lycian Coast',
       intro_label: 'About',
       intro_p1: 'Where a green valley opens onto the sea, time moves differently. Olympos Lodge has stood here since 1985 — built on the conviction that a place stripped of the unnecessary becomes something finer.',
       intro_p2: 'Seventeen rooms among 20,000 square metres of garden, steps from one of the Mediterranean\'s most unspoiled beaches. A short walk from the ancient city that lends this coast its name.',

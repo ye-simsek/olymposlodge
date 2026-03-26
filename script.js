@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fade-up for general sections
   [
-    '.intro-content', '.about-content', '.section-header',
+    '.intro-body', '.about-content', '.section-header',
     '.nature-content .container', '.experience-card',
     '.voice-card', '.gallery-teaser .section-header',
     '.footer-brand', '.footer-col'

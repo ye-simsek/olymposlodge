@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_nature: 'Natur', nav_experience: 'Erlebnis', nav_gallery: 'Galerie', nav_contact: 'Kontakt',
       hero_title: 'Die Zeit fließt<br>hier anders.',
       hero_subtitle: 'Der Lärm verstummt, die Sinne erwachen.<br>Die Natur macht sich hörbar.',
-      intro_title: 'Olympos Lodge: Ein Refugium an der Lykischen Küste',
+      intro_title: 'Olympos Lodge: Ein Intimes Refugium an der Lykischen Küste',
       intro_label: 'Über uns',
       intro_p1: 'Wo ein grünes Tal auf das Meer trifft, vergeht die Zeit anders. Olympos Lodge steht hier seit 1985 — gegründet auf die Überzeugung, dass ein Ort, dem alles Überflüssige genommen wurde, zu etwas Feinerem wird.',
       intro_p2: 'Siebzehn Zimmer in 20.000 Quadratmetern Garten, unweit eines der unberührtesten Strände des Mittelmeers. Ein kurzer Spaziergang von der antiken Stadt entfernt, die dieser Küste ihren Namen gab.',

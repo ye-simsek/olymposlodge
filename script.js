@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
       intro_p3: 'The garden, the beach, the restaurant — all of it exclusively for guests.',
       intro_p4: 'Days here unfold without agenda. Claim a cabana on the beach and let the morning pass. Take out a canoe and explore the coastline at your own pace — or have the concierge arrange a boat tour for something further.',
       intro_p5: 'The front garden is the kind of place where a yoga mat or a book both make equal sense. Bicycles are there to explore Çıralı village and the roads beyond. In the evening, firepits are lit — a place to gather, pour a drink, and let the conversation find its own current.',
-      intro_p6: 'And when the day asks for nothing at all, the private spa is there — entirely yours.',
+      intro_p6: 'And when the day asks for nothing at all, the private spa is there: jacuzzi, sauna, steam room — entirely yours.',
       about_label: 'Our Story',
       about_heading: 'Years ago, a man arrived at one of the Mediterranean\'s most untouched shores.',
       about_p1: 'He found his way here through an emerald valley. The beauty he encountered along the road allowed him to quietly set down his burdens. At the point where the valley meets the sea through a stream, time stopped with him.',

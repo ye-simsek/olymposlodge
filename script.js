@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       intro_p3: 'Bahçe, plaj, restoran — hepsi yalnızca misafirlerimize ayrılmış.',
       intro_p4: 'Günler burada ajansız açılır. Plajdaki bir şezlonga uzanın, sabahı geçsin. Bir kano çıkarın ve kıyıyı kendi hızınızda keşfedin — ya da daha uzağa bir tekne turu için konsiyer ile iletişime geçin.',
       intro_p5: 'Ön bahçe, bir yoga matının da bir kitabın da eşit anlam taşıdığı türden bir yer. Bisikletler Çıralı köyünü ve çevresindeki yolları keşfetmek için hazır. Akşamları bahçede ateşler yakılır — toplanmak, içki içmek ve sohbetin kendi akışını bulmasına izin vermek için.',
-      intro_p6: 'Ve gün hiçbir şey istemediğinde, özel spa orada: jakuzi, sauna, buhar odası — tamamen sizin. Bahçe, yavaş bir yürüyüşü hak ediyor — kırk yıllık dikimler, hâlâ büyüyor.',
+      intro_p6: 'Ve gün hiçbir şey istemediğinde, özel spa orada: jakuzi, sauna, buhar odası — tamamen sizin.',
       about_label: 'Hikayemiz',
       about_heading: 'Yıllar önce, bir adam Akdeniz\'in en el değmemiş kıyılarından birine ulaştı.',
       about_p1: 'Zümrüt yeşili bir vadiden geçerek bu yere vardı. Yol boyunca karşılaştığı güzellik, sessizce yüklerini bırakmasına izin verdi. Vadinin bir dere aracılığıyla denizle buluştuğu noktada, zaman onunla birlikte durdu.',

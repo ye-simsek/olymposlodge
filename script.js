@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim',
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
-      intro_title: 'Olympos Lodge: Likya Kıyısında Bir Sığınak',
+      intro_title: 'Olympos Lodge: Likya Kıyısında Samimi Bir Sığınak',
       intro_label: 'Hakkında',
       intro_p1: 'Zümrüt bir vadinin denize açıldığı noktada, zaman farklı akar. Olympos Lodge burada 1985\'ten beri ayakta — gereksiz olanı çıkardığınızda geriye daha ince bir şeyin kaldığı inancıyla.',
       intro_p2: 'On yedi oda, 20.000 metrekare bahçenin içinde. Akdeniz\'in en el değmemiş kıyılarından birine adım mesafesinde; bu kıyıya adını veren antik kentin hemen yanı başında.',

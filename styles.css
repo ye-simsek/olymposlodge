@@ -1773,17 +1773,18 @@ h4 {
 
 .room-spec__value {
   font-family: var(--font-heading);
-  font-size: 1.28rem;
+  font-size: 1.43rem;
   color: var(--color-warm-gold);
   display: block;
 }
 
 .room-spec__label {
   font-family: var(--font-accent);
-  font-size: 0.55rem;
+  font-size: 0.77rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-warm-gold);
+  opacity: 0.5;
   display: block;
 }
 

@@ -2006,19 +2006,35 @@ h4 {
 
   .room-editorial {
     grid-template-columns: 1fr;
+    min-height: unset;
   }
 
-  .room-editorial__image {
-    height: 72vw;
+  .room-editorial__left {
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-lg);
+  }
+
+  .room-editorial__inset {
+    width: 75%;
+    aspect-ratio: 3 / 4;
+  }
+
+  .room-editorial__right {
+    height: 80vw;
     position: relative;
   }
 
-  .room-editorial__text {
-    padding: var(--space-lg) var(--space-md);
+  .room-strip {
+    flex-direction: column;
   }
 
-  .room-amenities__list {
-    grid-template-columns: 1fr;
+  .room-strip__item {
+    aspect-ratio: 4 / 3;
+    flex: none;
+  }
+
+  .room-amenities-block {
+    padding: var(--space-lg) var(--space-md);
   }
 
   .room-nav {

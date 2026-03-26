@@ -531,7 +531,7 @@ h4 {
    INTRO
    ======================================== */
 .intro {
-  padding: 4.8rem var(--space-xl);
+  padding: 3.84rem var(--space-xl);
   background: var(--color-warm-white);
 }
 

@@ -547,20 +547,11 @@ h4 {
 
 .intro-body {
   display: grid;
-  grid-template-columns: 100px 1fr 1fr;
-  gap: 0 5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 8rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: start;
-}
-
-.intro-label {
-  font-family: var(--font-accent);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  padding-top: 0.2em;
 }
 
 .intro-col {

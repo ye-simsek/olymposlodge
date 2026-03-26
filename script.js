@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Restore saved language
   const savedLang = localStorage.getItem('ol_lang');
-  if (savedLang && savedLang !== 'tr') setLanguage(savedLang);
+  if (savedLang) setLanguage(savedLang);
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

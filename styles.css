@@ -542,7 +542,7 @@ h4 {
   letter-spacing: 0.05em;
   text-align: center;
   color: var(--color-text);
-  margin-bottom: var(--space-xl);
+  margin-bottom: 4.8rem;
 }
 
 .intro-body {

@@ -1773,14 +1773,14 @@ h4 {
 
 .room-spec__value {
   font-family: var(--font-heading);
-  font-size: 1.43rem;
+  font-size: 22px;
   color: var(--color-warm-gold);
   display: block;
 }
 
 .room-spec__label {
   font-family: var(--font-accent);
-  font-size: 0.77rem;
+  font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-warm-gold);

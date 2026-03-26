@@ -1650,8 +1650,8 @@ h4 {
   .weather-panel { display: none; }
 }
 
-/* Room strip — 1 column on tablet */
-@media (max-width: 1024px) {
+/* Room strip — wrap on tablet */
+@media (max-width: 1024px) and (min-width: 641px) {
   .room-strip {
     flex-wrap: wrap;
   }

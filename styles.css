@@ -531,31 +531,43 @@ h4 {
    INTRO
    ======================================== */
 .intro {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-2xl) var(--space-xl);
   background: var(--color-warm-white);
 }
 
-.intro-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.intro-lead {
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+.intro-title {
+  font-family: var(--font-sc);
+  font-size: clamp(1.1rem, 2.2vw, 1.8rem);
   font-weight: 400;
-  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-align: center;
   color: var(--color-text);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-2xl);
 }
 
-.intro-text {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  line-height: 1.8;
-  max-width: 620px;
+.intro-body {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: var(--space-xl);
+  max-width: 1200px;
   margin: 0 auto;
+  align-items: start;
+}
+
+.intro-label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-top: 0.25em;
+}
+
+.intro-col {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.85;
+  margin: 0;
 }
 
 /* ========================================

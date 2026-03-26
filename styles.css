@@ -547,26 +547,19 @@ h4 {
 
 .intro-body {
   display: grid;
-  grid-template-columns: 120px 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   max-width: 1200px;
   margin: 0 auto;
   align-items: start;
 }
 
-.intro-label {
-  font-family: var(--font-accent);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  padding-top: 0.25em;
-}
-
 .intro-col {
-  font-size: 0.95rem;
-  color: var(--color-text-light);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: var(--color-text);
   line-height: 1.85;
+  text-align: center;
   margin: 0;
 }
 

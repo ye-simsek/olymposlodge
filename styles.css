@@ -581,10 +581,28 @@ h4 {
 }
 
 .gold-divider {
-  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.8rem 0;
+}
+
+.gold-divider::before {
+  content: '';
+  display: block;
+  width: 100%;
   height: 1px;
-  background: var(--color-warm-gold);
-  margin: 0 auto;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(142, 116, 65, 0.4) 3%,
+    rgba(142, 116, 65, 0.75) 6%,
+    var(--color-warm-gold) 12%,
+    var(--color-warm-gold) 88%,
+    rgba(142, 116, 65, 0.75) 94%,
+    rgba(142, 116, 65, 0.4) 97%,
+    transparent 100%
+  );
 }
 
 /* ========================================

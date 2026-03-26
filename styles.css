@@ -1317,6 +1317,29 @@ h4 {
     --space-2xl: 6rem;
   }
 
+  .intro {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .intro-title {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .intro-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .intro-label {
+    display: none;
+  }
+
+  .intro-col {
+    font-size: 1rem;
+    text-align: left;
+  }
+
   /* Header stays below URL bar / status bar on iOS */
   .site-header {
     padding: env(safe-area-inset-top, 0px) var(--space-sm) 0;

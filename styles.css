@@ -1650,6 +1650,19 @@ h4 {
   .weather-panel { display: none; }
 }
 
+/* Room strip — 1 column on tablet */
+@media (max-width: 1024px) {
+  .room-strip {
+    flex-wrap: wrap;
+  }
+  .room-strip__item {
+    flex: 0 0 50%;
+  }
+  .room-strip__item:last-child {
+    flex: 0 0 100%;
+  }
+}
+
 /* ========================================
    INDIVIDUAL ROOM PAGES
    ======================================== */

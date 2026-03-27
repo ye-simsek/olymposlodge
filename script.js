@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
       intro_title: 'Olympos Lodge: Likya Kıyısında Samimi Bir Sığınak',
       intro_label: 'Hakkında',
-      intro_p1: 'Zümrüt bir vadinin denize açıldığı noktada, zaman farklı akar. Olympos Lodge burada 1985\'ten beri ayakta — gereksiz olanı çıkardığınızda geriye daha ince bir şeyin kaldığı inancıyla.',
+      intro_p1: 'Zümrüt bir vadinin denize açıldığı noktada, zaman farklı akar. Olympos Lodge burada 1985\'ten beri ayakta — gereksiz olanı çıkardığınızda geriye daha ince bir şeyin kaldığı inancıyla. Geride kalan acelesi olmayan bir şey: bir bahçe, bir kıyı, sizi hiçbir şey talep etmeyen bir sessizlik.',
       intro_p2: 'On yedi oda, 20.000 metrekare bahçenin içinde. Akdeniz\'in en el değmemiş kıyılarından birine adım mesafesinde; bu kıyıya adını veren antik kentin hemen yanı başında. Bahçe, plaj, restoran — hepsi yalnızca misafirlerimize ayrılmış.',
       intro_p4: 'Günler burada ajansız açılır. Plajdaki bir şezlonga uzanın, sabahı geçsin. Bir kano çıkarın ve kıyıyı kendi hızınızda keşfedin — ya da daha uzağa bir tekne turu için konsiyer ile iletişime geçin. Ön bahçe, bir yoga matının da bir kitabın da eşit anlam taşıdığı türden bir yer. Bisikletler Çıralı köyünü ve çevresindeki yolları keşfetmek için hazır.',
       intro_p6: 'Akşamları bahçede ateşler yakılır — toplanmak, içki içmek ve sohbetin kendi akışını bulmasına izin vermek için. Ve gün hiçbir şey istemediğinde, özel spa orada: jakuzi, sauna, buhar odası — tamamen sizin.',

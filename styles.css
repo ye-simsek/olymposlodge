@@ -1243,11 +1243,41 @@ h4 {
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: var(--space-md) 0 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 1rem;
 }
 
 .footer-bottom p {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+}
+
+.footer-legal::before {
+  content: '|';
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-legal__sep {
+  color: rgba(255, 255, 255, 0.15);
 }
 
 /* ========================================

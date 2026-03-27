@@ -109,7 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_contact_title: 'İletişim', footer_explore_title: 'Keşfet', footer_follow_title: 'Bizi Takip Edin',
       footer_nature_link: 'Bahçe & Doğa',
       footer_address: 'Çıralı, Ulupınar Mahallesi<br>Kemer / Antalya, Türkiye',
-      footer_copyright: '© 2025 Olympos Lodge. Tüm hakları saklıdır.'
+      footer_copyright: '© 2025 Olympos Lodge. Tüm hakları saklıdır.',
+      footer_terms: 'Ön Bilgilendirme Formu',
+      footer_privacy: 'Gizlilik ve KVKK Bilgilendirme'
     },
     en: {
       btn_reserve: 'Reserve',

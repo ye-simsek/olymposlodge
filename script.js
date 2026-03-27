@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
       hero_subtitle: 'Noise softens, senses awaken.<br>Nature makes itself heard.',
       intro_title: 'Olympos Lodge: An Intimate Retreat on the Lycian Coast',
       intro_label: 'About',
-      intro_p1: 'Where a green valley opens onto the sea, time moves differently. Olympos Lodge has stood here since 1985 — built on the conviction that a place stripped of the unnecessary becomes something finer.',
+      intro_p1: 'Where a green valley opens onto the sea, time moves differently. Olympos Lodge has stood here since 1985 — built on the conviction that a place stripped of the unnecessary becomes something finer. What remains is unhurried — a garden, a shore, the kind of silence that asks nothing of you.',
       intro_p2: 'Seventeen rooms among 20,000 square metres of garden, steps from one of the Mediterranean\'s most unspoiled beaches. A short walk from the ancient city that lends this coast its name. The garden, the beach, the restaurant — all of it exclusively for guests.',
       intro_p4: 'Days here unfold without agenda. Claim a cabana on the beach and let the morning pass. Take out a canoe and explore the coastline at your own pace — or have the concierge arrange a boat tour for something further. The front garden is the kind of place where a yoga mat or a book both make equal sense. Bicycles are there to explore Çıralı village and the roads beyond.',
       intro_p6: 'In the evening, firepits are lit — a place to gather, pour a drink, and let the conversation find its own current. And when the day asks for nothing at all, the private spa is there: jacuzzi, sauna, steam room — entirely yours.',

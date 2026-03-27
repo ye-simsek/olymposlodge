@@ -165,7 +165,9 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_contact_title: 'Contact', footer_explore_title: 'Explore', footer_follow_title: 'Follow Us',
       footer_nature_link: 'Garden & Nature',
       footer_address: 'Çıralı, Ulupınar Mahallesi<br>Kemer / Antalya, Turkey',
-      footer_copyright: '© 2025 Olympos Lodge. All rights reserved.'
+      footer_copyright: '© 2025 Olympos Lodge. All rights reserved.',
+      footer_terms: 'Preliminary Information Form',
+      footer_privacy: 'Privacy & KVKK Notice'
     },
     de: {
       btn_reserve: 'Reservieren',

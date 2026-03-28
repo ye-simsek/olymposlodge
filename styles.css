@@ -2872,34 +2872,23 @@ h4 {
     padding: 2.5rem 1.5rem 1.5rem;
   }
 
-  .dest-chapter__meta {
-    padding: 1.5rem 1.5rem 0;
-    gap: 1rem;
+  .dest-chapter {
+    grid-template-columns: 1fr;
   }
 
-  .dest-chapter__num {
-    font-size: 4.5rem;
-  }
+  .dest-chapter--reverse .dest-chapter__visual { order: 0; }
+  .dest-chapter--reverse .dest-chapter__body   { order: 0; }
 
   .dest-chapter__visual {
     aspect-ratio: 4 / 3;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
   }
 
   .dest-chapter__body {
-    padding: 1.5rem 1.5rem 2.5rem;
+    padding: 2rem 1.5rem;
   }
 
-  .dest-chapter__title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .dest-chapter__cols {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .dest-chapter__num {
+    font-size: 3.5rem;
   }
 
   .dest-pullquote {

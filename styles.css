@@ -2578,7 +2578,7 @@ h4 {
 
 /* Content below the image */
 .dest-chapter__body {
-  padding: 3.5rem var(--space-xl) 5.5rem;
+  padding: 2rem var(--space-xl) 3.5rem;
   max-width: 1440px;
   margin: 0 auto;
 }

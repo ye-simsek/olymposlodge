@@ -2548,6 +2548,7 @@ h4 {
 .intro--dest .intro-title {
   font-size: clamp(1.3rem, 2vw, 2rem);
   margin-bottom: 3rem;
+  font-weight: 500;
 }
 
 .intro--dest .intro-col {

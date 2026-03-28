@@ -2898,6 +2898,8 @@ h4 {
   .dest-chapter__visual {
     aspect-ratio: 4 / 3;
     margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 
   .dest-chapter__body {

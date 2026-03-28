@@ -21,3 +21,30 @@ Factual details about the hotel (room sizes, amenities, descriptions, policies, 
 - Bump `styles.css?v=` on every styles.css change
 - Bump `script.js?v=` on every script.js change
 - Read only the file(s) directly relevant to the change; pull in others only if the edit requires cross-file coordination
+
+## Skills
+
+### frontend-design (auto-invoked on frontend work)
+
+Location: `.claude/skills/frontend-design/SKILL.md`
+Enforces bold, distinctive aesthetics. Bans generic fonts (Inter, Roboto, Arial, system fonts). Commits to a clear aesthetic direction — luxury/refined matches this project. No AI slop.
+
+### GSD — Get Shit Done
+
+Location: `.claude/commands/gsd/` (installed v1.30.0)
+Spec-driven development system. Key commands:
+
+- `/gsd:help` — list all commands
+- `/gsd:new-project` — kick off a new spec
+- `/gsd:build` — build from spec
+- `/gsd:task` — run a focused task
+
+### firecrawl-web (scraping + research)
+
+Location: `.claude/skills/firecrawl-web/SKILL.md` | script: `~/.claude/skills/firecrawl-web/fc.py`
+Scrapes URLs to clean markdown, takes screenshots, extracts structured data, searches the web.
+Auto-triggers when asked to scrape/fetch a URL.
+Requirements:
+
+- Python 3 (install: `winget install Python.Python.3.13`) — **not yet installed on this machine**
+- `FIRECRAWL_API_KEY` env var (free tier at firecrawl.dev) — **not yet set**

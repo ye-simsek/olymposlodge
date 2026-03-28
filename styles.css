@@ -2883,11 +2883,11 @@ h4 {
 /* ---- Responsive: mobile ---- */
 @media (max-width: 640px) {
   .dest-intro {
-    padding: 3.5rem 1.5rem 2.5rem;
+    padding: 2.5rem 1.5rem 1.5rem;
   }
 
   .dest-chapter__meta {
-    padding: 2rem 1.5rem 0;
+    padding: 1.5rem 1.5rem 0;
     gap: 1rem;
   }
 

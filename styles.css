@@ -2329,3 +2329,213 @@ h4 {
     border-top: 1px solid rgba(255,255,255,0.12);
   }
 }
+
+
+/* ============================================
+   WhatsApp Floating Button
+   ============================================ */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  z-index: 900;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-fab:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+.whatsapp-fab svg {
+  width: 28px;
+  height: 28px;
+}
+@media (max-width: 640px) {
+  .whatsapp-fab {
+    bottom: 20px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+/* ============================================
+   Cookie Consent Banner
+   ============================================ */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(26,26,26,0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1.2rem 0;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+.cookie-banner.hidden {
+  transform: translateY(100%);
+  pointer-events: none;
+}
+.cookie-banner__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.cookie-banner__inner p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 0;
+}
+.cookie-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-shrink: 0;
+}
+.cookie-banner__accept {
+  padding: 0.6rem 1.8rem;
+  font-size: 0.68rem;
+}
+.cookie-banner__link {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.78rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+.cookie-banner__link:hover {
+  color: rgba(255,255,255,0.85);
+}
+@media (max-width: 640px) {
+  .cookie-banner__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+
+/* ============================================
+   Gallery Lightbox
+   ============================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox__image {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+  z-index: 2001;
+}
+.lightbox__close:hover { color: #fff; }
+.lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+.lightbox__nav:hover { color: #fff; }
+.lightbox__nav--prev { left: 1.5rem; }
+.lightbox__nav--next { right: 1.5rem; }
+.lightbox__counter {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5);
+}
+@media (max-width: 640px) {
+  .lightbox__nav--prev { left: 0.5rem; }
+  .lightbox__nav--next { right: 0.5rem; }
+}
+
+
+/* ============================================
+   Enhanced Scroll Animations
+   ============================================ */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 500ms; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 600ms; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 700ms; }
+.reveal-stagger.visible > *:nth-child(9) { transition-delay: 800ms; }
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}

@@ -2329,3 +2329,160 @@ h4 {
     border-top: 1px solid rgba(255,255,255,0.12);
   }
 }
+
+
+/* ============================================
+   Child Pages (Çıralı, Chimaera, Olympos)
+   ============================================ */
+.child-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 450px;
+  overflow: hidden;
+}
+.child-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.child-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+}
+.child-hero__content {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.child-hero__label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.8rem;
+}
+.child-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.child-article {
+  padding: 5rem 0 6rem;
+}
+.child-article__intro {
+  max-width: 740px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+.child-article__intro p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+.child-article__section {
+  max-width: 740px;
+  margin: 0 auto 3.5rem;
+}
+.child-article__section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  color: var(--color-text);
+}
+.child-article__section p {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+.child-article__feature-list {
+  padding-left: 0;
+  list-style: none;
+}
+.child-article__feature-list li {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--color-text-light);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.child-article__feature-list li:last-child {
+  border-bottom: none;
+}
+.child-article__feature-list strong {
+  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+.child-article__info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: var(--color-cream);
+  border: 1px solid var(--color-border);
+}
+.child-article__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.child-article__info-label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+.child-article__info-value {
+  font-size: 0.88rem;
+  color: var(--color-text);
+}
+.child-article__closing {
+  max-width: 740px;
+  margin: 3rem auto 2rem;
+  text-align: center;
+}
+.child-article__closing p {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+.child-article__cta {
+  max-width: 740px;
+  margin: 2rem auto 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .child-hero__content {
+    bottom: 2.5rem;
+  }
+  .child-article {
+    padding: 3.5rem 0 4rem;
+  }
+  .child-article__info-grid {
+    grid-template-columns: 1fr;
+  }
+}

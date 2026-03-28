@@ -2501,3 +2501,332 @@ h4 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================
+   ÇIRALI PAGE — Editorial Layout
+   ============================================ */
+
+/* Centered italic intro */
+.cirali-intro {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 5rem 2rem 3.5rem;
+  text-align: center;
+}
+
+.cirali-intro p {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--color-text-light);
+}
+
+/* Alternating editorial block: image + content side by side */
+.cirali-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Reverse: content left, image right */
+.cirali-block--reverse {
+  direction: rtl;
+}
+.cirali-block--reverse > * {
+  direction: ltr;
+}
+
+.cirali-block__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.cirali-block__image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cirali-block:hover .cirali-block__image img {
+  transform: scale(1.04);
+}
+
+.cirali-block__content {
+  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+.cirali-block__label {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.cirali-block__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.cirali-block__body {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  max-width: 52ch;
+}
+
+/* 2×2 fact grid within content */
+.cirali-block__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.1rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.cirali-block__fact {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--color-border);
+  padding-right: 1.5rem;
+}
+
+.cirali-block__fact:nth-child(odd) {
+  border-right: 1px solid var(--color-border);
+  padding-right: 1.5rem;
+}
+
+.cirali-block__fact-label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.cirali-block__fact-value {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+/* 3-column image strip */
+.cirali-strip {
+  display: flex;
+  border-top: 1px solid var(--color-border);
+}
+
+.cirali-strip__item {
+  flex: 1;
+  height: 340px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cirali-strip__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cirali-strip__item:hover img {
+  transform: scale(1.05);
+}
+
+.cirali-strip__item + .cirali-strip__item {
+  border-left: 1px solid var(--color-border);
+}
+
+/* "Beyond Çıralı" nearby cards */
+.cirali-nearby {
+  padding: 5rem 2rem;
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-border);
+}
+
+.cirali-nearby .section-label {
+  display: block;
+  margin-bottom: 2.5rem;
+  color: var(--color-warm-gold);
+}
+
+.cirali-nearby__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--color-border);
+}
+
+.cirali-nearby__item {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--color-border);
+}
+
+.cirali-nearby__item:last-child {
+  border-right: none;
+}
+
+.cirali-nearby__dist {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.5rem;
+}
+
+.cirali-nearby__name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.8rem;
+}
+
+.cirali-nearby__item p {
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+/* Closing CTA */
+.cirali-cta {
+  padding: 6rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.cirali-cta__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.cirali-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Çıralı page — tablet */
+@media (max-width: 1024px) {
+  .cirali-nearby__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cirali-nearby__item:nth-child(3) {
+    border-right: none;
+  }
+  .cirali-nearby__item:nth-child(4) {
+    border-top: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+  }
+  .cirali-nearby__item:nth-child(5) {
+    border-top: 1px solid var(--color-border);
+  }
+  .cirali-block__content {
+    padding: 4rem 3rem;
+  }
+}
+
+/* Çıralı page — mobile */
+@media (max-width: 640px) {
+  .cirali-intro {
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+
+  .cirali-block {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .cirali-block--reverse {
+    direction: ltr;
+  }
+
+  .cirali-block__image {
+    height: 65vw;
+    position: relative;
+  }
+
+  .cirali-block__content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cirali-block__body {
+    max-width: unset;
+  }
+
+  .cirali-block__facts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cirali-strip {
+    flex-direction: column;
+  }
+
+  .cirali-strip__item {
+    height: 60vw;
+    flex: none;
+  }
+
+  .cirali-strip__item + .cirali-strip__item {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cirali-nearby {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .cirali-nearby__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cirali-nearby__item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .cirali-nearby__item:last-child {
+    border-bottom: none;
+  }
+
+  .cirali-nearby__item:nth-child(n) {
+    border-right: none;
+    border-top: none;
+  }
+
+  .cirali-cta {
+    padding: 4rem 1.5rem;
+  }
+}

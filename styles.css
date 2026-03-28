@@ -2541,17 +2541,18 @@ h4 {
 /* ---- Chapter blocks ---- */
 /* ---- Destination page intro override ---- */
 .intro--dest {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
 
 .intro--dest .intro-title {
   font-size: clamp(1.3rem, 2vw, 2rem);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .intro--dest .intro-col {
   font-size: clamp(1rem, 1.4vw, 1.4rem);
+  line-height: 1.9;
 }
 
 /* ---- Feature opener (Casa Cook-style) ---- */

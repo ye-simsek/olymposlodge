@@ -2490,6 +2490,21 @@ h4 {
   }
 }
 
+.child-hero--full {
+  height: 100vh;
+}
+
+.child-hero--full .child-hero__content {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.child-hero--full .child-hero__title {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+}
+
 @media (max-width: 640px) {
   .child-hero__content {
     bottom: 2.5rem;

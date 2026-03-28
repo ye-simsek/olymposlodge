@@ -2503,7 +2503,461 @@ h4 {
 }
 
 /* ============================================
-   ÇIRALI PAGE — Editorial Layout
+   DESTINATION GUIDE — Editorial Layout (Çıralı)
+   ============================================ */
+
+/* Centered italic opening statement */
+.dest-intro {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem 4rem;
+  text-align: center;
+}
+
+.dest-intro__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
+/* ---- Chapter blocks ---- */
+.dest-chapter {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Number + category label row */
+.dest-chapter__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 1.8rem;
+  padding: 3rem var(--space-xl) 0;
+}
+
+.dest-chapter__num {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 8vw, 9rem);
+  font-weight: 300;
+  line-height: 0.85;
+  color: var(--color-border);
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.dest-chapter__cat {
+  font-family: var(--font-accent);
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+
+/* Full-width cinematic image */
+.dest-chapter__visual {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  position: relative;
+  margin-top: 1.5rem;
+}
+
+.dest-chapter__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dest-chapter:hover .dest-chapter__visual img {
+  transform: scale(1.03);
+}
+
+/* Content below the image */
+.dest-chapter__body {
+  padding: 3.5rem var(--space-xl) 5.5rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.dest-chapter__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+}
+
+/* Two-column text layout */
+.dest-chapter__cols {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left: large italic lead paragraph */
+.dest-chapter__lead {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--color-text-light);
+}
+
+/* Right: body text + fact list */
+.dest-chapter__detail p {
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.dest-chapter__facts {
+  list-style: none;
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-chapter__facts li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dest-chapter__facts li span {
+  font-family: var(--font-accent);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.dest-chapter__facts li strong {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  text-align: right;
+}
+
+/* ---- Pull quote ---- */
+.dest-pullquote {
+  padding: 5.5rem 2rem;
+  text-align: center;
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dest-pullquote q {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text);
+  quotes: none;
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ---- Activities grid ---- */
+.dest-activities {
+  padding: 5.5rem var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-activities__header {
+  margin-bottom: 3rem;
+}
+
+.dest-activities__header .section-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--color-warm-gold);
+}
+
+.dest-activities__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+.dest-activities__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+}
+
+.dest-activity {
+  padding: 2.2rem 2rem;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dest-activity__tag {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.57rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.9rem;
+}
+
+.dest-activity h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.dest-activity p {
+  font-size: 0.82rem;
+  line-height: 1.75;
+  color: var(--color-text-light);
+}
+
+/* ---- 3-image strip ---- */
+.dest-strip {
+  display: flex;
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-strip__item {
+  flex: 1;
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dest-strip__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dest-strip__item:hover img {
+  transform: scale(1.05);
+}
+
+.dest-strip__item + .dest-strip__item {
+  border-left: 1px solid var(--color-border);
+}
+
+/* ---- Nearby / Beyond Çıralı ---- */
+.dest-nearby {
+  border-top: 1px solid var(--color-border);
+  padding: 5rem var(--space-xl);
+  background: var(--color-cream);
+}
+
+.dest-nearby__header {
+  margin-bottom: 2.5rem;
+}
+
+.dest-nearby__header .section-label {
+  color: var(--color-warm-gold);
+}
+
+.dest-nearby__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-left: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-nearby__item {
+  padding: 2rem 1.8rem;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dest-nearby__dist {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.6rem;
+}
+
+.dest-nearby__item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.7rem;
+}
+
+.dest-nearby__item p {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+/* ---- Closing CTA ---- */
+.dest-cta {
+  padding: 6.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.dest-cta__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.65rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.dest-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ---- Responsive: tablet ---- */
+@media (max-width: 1100px) {
+  .dest-activities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dest-nearby__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dest-nearby__item:nth-child(3) {
+    border-right: none;
+  }
+  .dest-nearby__item:nth-child(4),
+  .dest-nearby__item:nth-child(5) {
+    border-top: none;
+  }
+  .dest-nearby__item:nth-child(5) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dest-chapter__meta,
+  .dest-chapter__body,
+  .dest-activities {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .dest-chapter__cols {
+    gap: 3rem;
+  }
+
+  .dest-nearby {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ---- Responsive: mobile ---- */
+@media (max-width: 640px) {
+  .dest-intro {
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+
+  .dest-chapter__meta {
+    padding: 2rem 1.5rem 0;
+    gap: 1rem;
+  }
+
+  .dest-chapter__num {
+    font-size: 4.5rem;
+  }
+
+  .dest-chapter__visual {
+    aspect-ratio: 4 / 3;
+    margin-top: 1rem;
+  }
+
+  .dest-chapter__body {
+    padding: 2rem 1.5rem 3.5rem;
+  }
+
+  .dest-chapter__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dest-chapter__cols {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dest-pullquote {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .dest-activities {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .dest-activities__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-strip {
+    flex-direction: column;
+  }
+
+  .dest-strip__item {
+    height: 60vw;
+    flex: none;
+  }
+
+  .dest-strip__item + .dest-strip__item {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .dest-nearby {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .dest-nearby__list {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-nearby__item {
+    border-right: none;
+  }
+
+  .dest-cta {
+    padding: 4rem 1.5rem;
+  }
+}
+
+/* ============================================
+   ÇIRALI PAGE — Editorial Layout (legacy, unused)
    ============================================ */
 
 /* Centered italic intro */

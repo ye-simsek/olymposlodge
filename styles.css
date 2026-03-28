@@ -2848,13 +2848,16 @@ h4 {
 }
 
 @media (max-width: 1024px) {
-  .dest-chapter__body {
-    padding: 2.5rem 2.5rem;
-  }
-
+  .dest-chapter__meta,
+  .dest-chapter__body,
   .dest-activities {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .dest-chapter__visual {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   .dest-nearby {

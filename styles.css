@@ -2524,21 +2524,52 @@ h4 {
 }
 
 /* ---- Chapter blocks ---- */
+/* Side-by-side chapter: image fills left half, content on right (or reversed) */
 .dest-chapter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
   border-top: 1px solid var(--color-border);
 }
 
-/* Number + category label row */
+.dest-chapter--reverse .dest-chapter__visual { order: 2; }
+.dest-chapter--reverse .dest-chapter__body   { order: 1; }
+
+.dest-chapter__visual {
+  overflow: hidden;
+  position: relative;
+}
+
+.dest-chapter__visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dest-chapter:hover .dest-chapter__visual img {
+  transform: scale(1.03);
+}
+
+.dest-chapter__body {
+  padding: 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .dest-chapter__meta {
   display: flex;
   align-items: baseline;
-  gap: 1.8rem;
-  padding: 2rem var(--space-xl) 0;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 .dest-chapter__num {
   font-family: var(--font-heading);
-  font-size: clamp(4rem, 8vw, 9rem);
+  font-size: clamp(3rem, 5vw, 5.5rem);
   font-weight: 300;
   line-height: 0.85;
   color: var(--color-border);
@@ -2554,73 +2585,28 @@ h4 {
   color: var(--color-warm-gold);
 }
 
-/* Full-width cinematic image */
-.dest-chapter__visual {
-  aspect-ratio: 21 / 9;
-  overflow: hidden;
-  position: relative;
-  margin-top: 1.5rem;
-  margin-left: var(--space-xl);
-  margin-right: var(--space-xl);
-}
-
-.dest-chapter__visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 1.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.dest-chapter:hover .dest-chapter__visual img {
-  transform: scale(1.03);
-}
-
-/* Content below the image */
-.dest-chapter__body {
-  padding: 2rem var(--space-xl) 3.5rem;
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .dest-chapter__title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.5vw, 3.8rem);
+  font-size: clamp(1.6rem, 2.2vw, 2.6rem);
   font-weight: 300;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--color-text);
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-/* Two-column text layout */
-.dest-chapter__cols {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 5rem;
-  align-items: start;
-}
-
-/* Left: large italic lead paragraph */
 .dest-chapter__lead {
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
   font-weight: 300;
   font-style: italic;
-  line-height: 1.85;
+  line-height: 1.8;
   color: var(--color-text-light);
-}
-
-/* Right: body text + fact list */
-.dest-chapter__detail p {
-  font-size: 0.88rem;
-  line-height: 1.9;
-  color: var(--color-text-light);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
 }
 
 .dest-chapter__facts {
   list-style: none;
-  margin-top: 2rem;
+  margin-top: 1.2rem;
   border-top: 1px solid var(--color-border);
 }
 
@@ -2629,7 +2615,7 @@ h4 {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  padding: 0.85rem 0;
+  padding: 0.65rem 0;
   border-bottom: 1px solid var(--color-border);
 }
 

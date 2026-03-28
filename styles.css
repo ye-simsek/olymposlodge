@@ -2564,11 +2564,7 @@ h4 {
 }
 
 .dest-feature__text {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 5rem;
-  align-items: start;
-  padding: 1.8rem var(--space-xl) 2.5rem;
+  padding: 1.5rem var(--space-xl) 2rem;
 }
 
 .dest-feature__title {
@@ -2580,15 +2576,36 @@ h4 {
   margin: 0;
 }
 
-.dest-feature__body p {
+/* ---- Region intro (Casa Cook "THE REGION" style) ---- */
+.dest-region {
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-border);
+  padding: 4rem var(--space-xl);
+  text-align: center;
+}
+
+.dest-region__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+}
+
+.dest-region__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.dest-region__cols p {
   font-size: 0.88rem;
   line-height: 1.9;
   color: var(--color-text-light);
-  margin-bottom: 0.8rem;
-}
-
-.dest-feature__body p:last-child {
-  margin-bottom: 0;
 }
 
 @media (max-width: 1024px) {

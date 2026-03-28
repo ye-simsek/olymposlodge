@@ -501,6 +501,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initWeatherPanel();
 
+  // --- IP-based language detection (first visit only) ---
+  if (!localStorage.getItem('ol_lang')) {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => {
+        const country = data.country_code;
+        let lang = 'en';
+        if (country === 'TR') lang = 'tr';
+        else if (country === 'DE' || country === 'AT' || country === 'CH') lang = 'de';
+        setLanguage(lang);
+      })
+      .catch(() => {});
+  }
+
   // --- Image lazy reveal with fade ---
   const images = document.querySelectorAll('.room-card__image img, .experience-card__image img, .gallery-item img');
   images.forEach(img => {

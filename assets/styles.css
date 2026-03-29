@@ -2885,7 +2885,7 @@ h4 {
   display: grid;
   grid-template-columns: 58fr 42fr;
   min-height: 70vh;
-  margin: 0 3rem 0;
+  margin: 3rem 3rem 0;
   border: 1px solid var(--color-border);
   overflow: hidden;
 }

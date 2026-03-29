@@ -524,9 +524,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const visual = parallaxImg.closest('.dest-feature__visual');
     const onScroll = () => {
       const rect = visual.getBoundingClientRect();
-      const progress = -rect.top / (window.innerHeight + rect.height);
-      const shift = progress * 60;
-      parallaxImg.style.transform = `scale(1.06) translateY(${shift}px)`;
+      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+      const shift = (progress - 0.5) * 100;
+      parallaxImg.style.transform = `translateY(${shift}px)`;
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

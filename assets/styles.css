@@ -840,6 +840,7 @@ h4 {
   margin-bottom: var(--space-md);
   font-family: var(--font-accent);
   font-size: 1.1rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-warm-gold);

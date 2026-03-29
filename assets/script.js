@@ -518,21 +518,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(() => {});
   }
 
-  // --- Parallax: dest-feature image ---
-  const parallaxImg = document.querySelector('.dest-feature__visual img');
-  if (parallaxImg) {
-    const visual = parallaxImg.closest('.dest-feature__visual');
-    const onScroll = () => {
-      const rect = visual.getBoundingClientRect();
-      if (rect.bottom < 0 || rect.top > window.innerHeight) return;
-      const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-      const shift = (progress - 0.5) * 100;
-      parallaxImg.style.transform = `translateY(${shift}px)`;
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
   // --- Image lazy reveal with fade ---
   const images = document.querySelectorAll('.room-card__image img, .experience-card__image img, .gallery-item img');
   images.forEach(img => {

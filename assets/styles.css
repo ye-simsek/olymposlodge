@@ -3043,23 +3043,21 @@ h4 {
     padding: 2.5rem 1.5rem 1.5rem;
   }
 
-  .dest-chapter__meta {
-    padding: 1.5rem 1.5rem 0;
+  .dest-chapter,
+  .dest-chapter--reverse {
+    grid-template-columns: 1fr;
+    min-height: unset;
   }
 
   .dest-chapter__visual {
     aspect-ratio: 4 / 3;
-    margin: 1rem 1.5rem 0;
+    order: 0 !important;
   }
 
   .dest-chapter__body {
-    grid-template-columns: 1fr;
+    order: 1 !important;
+    padding: 2rem 1.5rem;
     gap: 1rem;
-    padding: 1.5rem 1.5rem 2rem;
-  }
-
-  .dest-chapter__num {
-    font-size: 3.5rem;
   }
 
   .dest-pullquote {

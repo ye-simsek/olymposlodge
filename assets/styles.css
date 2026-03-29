@@ -2716,7 +2716,7 @@ h4 {
   grid-template-rows: auto auto;
   column-gap: 4rem;
   row-gap: 0;
-  padding: 2.2rem 3rem 2.5rem;
+  padding: 1rem 3rem 2.5rem;
   align-items: start;
 }
 

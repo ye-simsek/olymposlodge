@@ -2578,6 +2578,15 @@ h4 {
   font-weight: 400;
   line-height: 1.05;
   color: var(--color-text);
+  margin: 0 0 1.5rem;
+}
+
+.dest-feature__desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.85;
+  color: var(--color-text-light);
+  max-width: 620px;
   margin: 0;
 }
 

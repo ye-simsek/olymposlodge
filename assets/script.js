@@ -199,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
       room6_name: 'Standardzimmer', room6_desc: 'Alles was Sie brauchen, nichts mehr.',
       room_discover: 'Entdecken →',
       view_garden: 'GARTENBLICK', view_lake: 'SEEBLICK',
+      feature_title: 'Sommer am Mittelmeer',
       rooms_page_intro: 'Siebzehn Zimmer — jedes mit eigenem Charakter, eigener Aussicht und eigenem Bezug zum Land. Manche am Ufer des Wassers, manche in der Tiefe des Gartens. Alle verbindet dieselbe Sorgfalt.',
       rooms_includes_label: 'In Jedem Zimmer',
       rooms_include_breakfast: 'Frühstück Inklusive',

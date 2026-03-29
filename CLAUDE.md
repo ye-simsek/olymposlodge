@@ -1,15 +1,18 @@
 # Olympos Lodge
 
 ## Pending Tasks
-1. Fix weather panel text colors (currently dark on dark background — needs white/rgba(255,255,255,0.85))
-2. Wire REZERVASYON button → SabeeApp booking engine
-3. Scroll fade-ins for about/nature/experience/gallery sections
-4. Manifesto/editorial intro section between hero and rooms
-5. Footer: season dates, check-in/out times, WhatsApp link, Spotify playlists
-6. Mobile pass — full spacing/typography review
-7. Child pages: individual rooms, Chimaera flames, Olympos ruins
-9. rooms.html — room descriptions (room-row__desc) are placeholders; supplement each with richer copy pulled from RAG file once we revisit
-8. Hero video poster: extract exact first frame of hero.mp4 as the poster image + add opacity fade-in on canplay, so the still→video cut is imperceptible
+1. ~~Wire REZERVASYON button → SabeeApp booking engine~~ ✓ Done
+2. Scroll fade-ins for about/nature/experience/gallery sections
+3. Manifesto/editorial intro section between hero and rooms
+4. Footer: WhatsApp link, Spotify playlists (season/checkin confirmed and in staging)
+5. Mobile pass — full spacing/typography review
+6. Child pages: individual rooms, Chimaera flames, Olympos ruins
+7. rooms.html — room descriptions are placeholders; supplement with richer copy from RAG file
+8. Hero video poster — user will handle extraction; currently a placeholder
+9. Dining section needs revisiting (copy, photos, full menu details)
+10. Instagram feed — static placeholder for now; revisit for live feed later
+11. Newsletter — email service provider not yet decided; discuss when ready
+12. KVKK + Terms pages confirmed accurate by user but recommend professional legal review before go-live
 
 ## Design References
 Casa Angelina, Amanruya

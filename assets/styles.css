@@ -2553,26 +2553,11 @@ h4 {
 .dest-feature__visual {
   height: 45vh;
   min-height: 320px;
-  overflow: hidden;
   position: relative;
-}
-
-.dest-feature__visual::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-}
-
-.dest-feature__visual img {
-  position: absolute;
-  top: -15%;
-  left: 0;
-  width: 100%;
-  height: 130%;
-  object-fit: cover;
-  filter: blur(6px);
-  will-change: transform;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(6px) brightness(0.65);
 }
 
 .dest-feature__text {

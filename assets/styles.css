@@ -2773,11 +2773,12 @@ h4 {
 }
 
 .dest-chapter__num {
-  font-family: var(--font-accent);
-  font-size: 0.6rem;
-  font-weight: 400;
-  letter-spacing: 0.2em;
-  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-border);
   user-select: none;
 }
 

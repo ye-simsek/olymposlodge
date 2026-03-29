@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
       room_discover: 'Discover →',
       view_garden: 'GARDEN VIEW', view_lake: 'LAKE VIEW',
       feature_title: 'Summer by the Mediterranean',
+      feature_p1: 'In June, the days lengthen, the sea warms, and time begins to move differently. Mornings in Çıralı are early, quiet, and bright. While the mist retreats from the hills, the beach is empty — that first swim is entirely yours. When the midday heat settles over the garden, you read in the shade, drift off in a hammock, with no plan for the next hour.',
+      feature_p2: 'Evening comes slowly. As the sun drops behind Tahtalı, the sea changes colour. The fire is lit, conversation opens. Here, you do not need to be in the water to feel the Mediterranean — sitting still and listening is enough. This may well be the finest place imaginable to spend a summer.',
       rooms_page_intro: 'Seventeen rooms — each shaped by its own character, its own view, its own relationship with the land. Some sit at the water\'s edge, some within the depth of the garden. All share the same care.',
       rooms_includes_label: 'In Every Room',
       rooms_include_breakfast: 'Breakfast Included',

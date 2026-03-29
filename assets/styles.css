@@ -2546,13 +2546,22 @@ h4 {
 
 /* ---- Feature opener ---- */
 .dest-feature {
+  position: relative;
   border-top: 1px solid var(--color-border);
 }
 
 .dest-feature__visual {
-  aspect-ratio: 16 / 7;
+  height: 78vh;
+  min-height: 520px;
   overflow: hidden;
   position: relative;
+}
+
+.dest-feature__visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.18) 45%, transparent 100%);
 }
 
 .dest-feature__visual img {
@@ -2560,7 +2569,7 @@ h4 {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 1.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .dest-feature:hover .dest-feature__visual img {
@@ -2568,39 +2577,41 @@ h4 {
 }
 
 .dest-feature__text {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 4rem;
-  align-items: end;
-  padding: 2.8rem 5.4rem 3.2rem;
-  border-top: 1px solid var(--color-border);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 5.4rem 3.8rem;
+  z-index: 1;
 }
 
 .dest-feature__label {
-  grid-column: 1 / -1;
+  display: block;
   font-family: var(--font-accent);
-  font-size: 0.65rem;
+  font-size: 0.63rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 1.2rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 1rem;
 }
 
 .dest-feature__title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.5vw, 4rem);
-  font-weight: 400;
-  line-height: 1.05;
-  color: var(--color-text);
-  margin: 0;
+  font-size: clamp(2.6rem, 5.5vw, 6.5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: #fff;
+  margin: 0 0 1.4rem;
+  max-width: 760px;
 }
 
 .dest-feature__desc {
   font-family: var(--font-body);
-  font-size: clamp(0.9rem, 1.05vw, 1rem);
-  line-height: 1.9;
-  color: var(--color-text-light);
+  font-size: clamp(0.88rem, 1vw, 0.96rem);
+  line-height: 1.85;
+  color: rgba(255,255,255,0.72);
+  max-width: 540px;
   margin: 0;
 }
 

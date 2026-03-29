@@ -302,7 +302,8 @@ document.addEventListener('DOMContentLoaded', () => {
     '.intro-body', '.about-content', '.section-header',
     '.nature-content .container', '.experience-card',
     '.voice-card', '.gallery-teaser .section-header',
-    '.footer-brand', '.footer-col'
+    '.footer-brand', '.footer-col',
+    '.dest-chapter__body', '.dest-activity', '.dest-nearby__item'
   ].forEach(sel => {
     document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
   });

@@ -2772,10 +2772,10 @@ h4 {
 
 .dest-chapter__facts li span {
   font-family: var(--font-accent);
-  font-size: 0.58rem;
-  letter-spacing: 0.18em;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text-light);
   white-space: nowrap;
 }
 

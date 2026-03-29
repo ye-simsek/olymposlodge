@@ -2646,7 +2646,11 @@ h4 {
 
 @media (max-width: 1024px) {
   .dest-feature__text {
-    padding: 0 2rem 3rem;
+    padding: 3.5rem 2rem;
+  }
+  .dest-feature__title {
+    white-space: normal;
+    text-align: center;
   }
   .dest-region {
     padding-left: 2rem;
@@ -2656,11 +2660,15 @@ h4 {
 
 @media (max-width: 640px) {
   .dest-feature__visual {
-    height: 90vw;
+    height: 100vw;
     min-height: unset;
   }
   .dest-feature__text {
-    padding: 0 1.5rem 2.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .dest-feature__cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   .dest-region {
     padding: 3rem 1.5rem;

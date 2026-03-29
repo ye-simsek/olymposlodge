@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
       room_discover: 'Keşfet →',
       view_garden: 'BAHÇE MANZARASI', view_lake: 'GÖL MANZARASI',
       feature_title: 'Akdeniz\'de Bir Yaz',
+      feature_p1: 'Haziran\'da günler uzar, deniz ısınır ve zaman farklı akmaya başlar. Çıralı\'da sabahlar erken, sessiz ve parlaktır. Sis vadiden çekilirken sahil boştur; ilk yüzüş yalnızca sizindir. Öğle sıcağı bahçeye çöktüğünde çardak altında kitap okunur, hamakta uyunur — bir sonraki saate dair hiçbir plan yoktur.',
+      feature_p2: 'Akşam yavaş gelir. Güneş Tahtalı\'nın ardına düşerken deniz renk değiştirir. Ateş yakılır, sohbet açılır. Burada Akdeniz\'i hissetmek için denize girmek şart değil; sadece oturmak, dinlemek yeterlidir. Bir yaz geçirmek için düşünülebilecek en güzel yer burası olabilir.',
       rooms_page_intro: 'On yedi oda — her biri kendi karakteriyle, kendi manzarasıyla ve arazinin ritmiyle şekillenmiş. Bazıları suyun kenarında, bazıları bahçenin derinliğinde. Hepsi aynı özeni taşır.',
       rooms_includes_label: 'Her Odada',
       rooms_include_breakfast: 'Kahvaltı Dahil',

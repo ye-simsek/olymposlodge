@@ -196,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       room5_name: 'Antikes Zimmer', room5_desc: 'Die Spuren der Geschichte — ein Erlebnis jenseits der Zeit.',
       room6_name: 'Standardzimmer', room6_desc: 'Alles was Sie brauchen, nichts mehr.',
       room_discover: 'Entdecken →',
+      view_garden: 'GARTENBLICK', view_lake: 'SEEBLICK',
       rooms_page_intro: 'Siebzehn Zimmer — jedes mit eigenem Charakter, eigener Aussicht und eigenem Bezug zum Land. Manche am Ufer des Wassers, manche in der Tiefe des Gartens. Alle verbindet dieselbe Sorgfalt.',
       rooms_includes_label: 'In Jedem Zimmer',
       rooms_include_breakfast: 'Frühstück Inklusive',

@@ -2873,17 +2873,22 @@ h4 {
   margin: 0 auto;
 }
 
-/* ---- Activities section intro ---- */
-.dest-activities-section {
+/* ---- Activities sticky heading ---- */
+.dest-activities-wrap {
+  overflow: visible;
+  background: var(--color-warm-white);
+}
+
+.dest-activities-wrap__heading {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 1;
   padding: var(--space-2xl) 0 var(--space-xl);
-}
-
-.dest-activities-section .section-header {
   text-align: center;
-  margin-bottom: 0;
+  background: var(--color-warm-white);
 }
 
-.dest-activities-section .section-label {
+.dest-activities-wrap__heading .section-label {
   display: block;
   font-family: var(--font-sc);
   font-style: normal;
@@ -2893,6 +2898,12 @@ h4 {
   text-transform: none;
   color: var(--color-warm-gold);
   margin-bottom: 0;
+}
+
+.dest-activities-wrap__content {
+  position: relative;
+  z-index: 2;
+  background: var(--color-warm-white);
 }
 
 /* ---- Activities grid ---- */

@@ -3722,7 +3722,7 @@ h4 {
 
 .cookie-panel__title {
   font-family: var(--font-sc);
-  font-size: 0.7rem;
+  font-size:  0.82rem;
   letter-spacing: 0.14em;
   color: var(--color-text);
 }
@@ -3746,7 +3746,7 @@ h4 {
 
 .cookie-panel__text {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size:  0.92rem;
   line-height: 1.65;
   color: var(--color-text-light);
   margin-bottom: 1.2rem;
@@ -3773,14 +3773,14 @@ h4 {
 
 .cookie-option__name {
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size:  0.92rem;
   font-weight: 500;
   color: var(--color-text);
 }
 
 .cookie-option__desc {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size:  0.82rem;
   color: var(--color-text-light);
 }
 
@@ -3845,7 +3845,7 @@ h4 {
 
 .cookie-panel__link {
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size:  0.82rem;
   color: var(--color-text-light);
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -3861,7 +3861,7 @@ h4 {
 
 .cookie-btn {
   font-family: var(--font-sc);
-  font-size: 0.62rem;
+  font-size:  0.72rem;
   letter-spacing: 0.1em;
   padding: 0.45rem 0.85rem;
   border-radius: 0;

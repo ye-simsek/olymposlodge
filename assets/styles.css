@@ -2783,11 +2783,13 @@ h4 {
 }
 
 .dest-chapter__cat {
-  font-family: var(--font-accent);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-warm-gold);
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: #6E5A30;
 }
 
 .dest-chapter__title {

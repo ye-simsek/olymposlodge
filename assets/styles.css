@@ -2731,8 +2731,15 @@ h4 {
 }
 
 .dest-chapter--center .dest-chapter__lead,
-.dest-chapter--center .dest-chapter__facts {
+.dest-chapter--center .dest-chapter__facts,
+.dest-chapter--center .dest-chapter__tekne-right {
   grid-column: 2;
+}
+
+.dest-chapter--center .dest-chapter__tekne-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .dest-chapter__visual {

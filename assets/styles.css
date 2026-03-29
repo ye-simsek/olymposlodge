@@ -2711,16 +2711,28 @@ h4 {
 }
 
 .dest-chapter--center .dest-chapter__body {
-  flex-direction: row;
-  align-items: start;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: 38fr 62fr;
+  grid-template-rows: auto auto;
+  column-gap: 4rem;
+  row-gap: 0;
   padding: 2.2rem 3rem 2.5rem;
-  border-top: none;
+  align-items: start;
+}
+
+.dest-chapter--center .dest-chapter__meta {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
 }
 
 .dest-chapter--center .dest-chapter__title {
-  flex: 0 0 38%;
   font-size: clamp(1.5rem, 2vw, 2.4rem);
+  align-self: start;
+}
+
+.dest-chapter--center .dest-chapter__lead,
+.dest-chapter--center .dest-chapter__facts {
+  grid-column: 2;
 }
 
 .dest-chapter__visual {

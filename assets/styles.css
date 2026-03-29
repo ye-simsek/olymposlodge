@@ -2767,7 +2767,7 @@ h4 {
 
 .dest-chapter__meta {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 1.2rem;
   margin-bottom: 0.4rem;
   line-height: 1;

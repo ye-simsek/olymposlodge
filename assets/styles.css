@@ -2683,6 +2683,7 @@ h4 {
   grid-template-columns: 58fr 42fr;
   min-height: 520px;
   border-top: 1px solid var(--color-border);
+  padding: 2.5rem 0;
 }
 
 .dest-chapter--reverse {

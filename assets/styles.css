@@ -2726,7 +2726,7 @@ h4 {
 }
 
 .dest-chapter--center .dest-chapter__title {
-  font-size: clamp(1.5rem, 2vw, 2.4rem);
+  font-size: clamp(2rem, 3vw, 3.6rem);
   align-self: start;
 }
 

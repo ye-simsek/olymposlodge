@@ -13,6 +13,7 @@
 10. Instagram feed — static placeholder for now; revisit for live feed later
 11. Newsletter — email service provider not yet decided; discuss when ready
 12. KVKK + Terms pages confirmed accurate by user but recommend professional legal review before go-live
+13. Cookie consent — UI built (bottom-left FAB → panel with toggles); actual consent logic (localStorage, conditional script loading) not yet implemented
 
 ## Design References
 Casa Angelina, Amanruya

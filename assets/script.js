@@ -328,8 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
     col.style.transitionDelay = `${i * 0.1}s`;
   });
 
-  // Single observer for everything
-  const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  // Single observer for everything — deferred to let layout settle
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -338,11 +337,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0,
+    rootMargin: '0px 0px -60px 0px'
   });
 
-  allReveal.forEach(el => revealObserver.observe(el));
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+        revealObserver.observe(el);
+      });
+    });
+  });
 
   // --- Voices carousel (mobile) ---
   const voicesGrid = document.querySelector('.voices-grid');

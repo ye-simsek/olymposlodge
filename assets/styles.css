@@ -2699,12 +2699,13 @@ h4 {
 }
 
 .dest-chapter__visual {
-  padding: 2.5rem 0 2.5rem 2.5rem;
+  padding-left: 2.5rem;
   overflow: hidden;
 }
 
 .dest-chapter--reverse .dest-chapter__visual {
-  padding: 2.5rem 2.5rem 2.5rem 0;
+  padding-left: 0;
+  padding-right: 2.5rem;
 }
 
 .dest-chapter__visual img {

@@ -2679,42 +2679,27 @@ h4 {
 
 /* ---- Chapter blocks ---- */
 .dest-chapter {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  min-height: 520px;
   border-top: 1px solid var(--color-border);
 }
 
-.dest-chapter__meta {
-  display: flex;
-  align-items: baseline;
-  gap: 1.8rem;
-  padding: 2rem var(--space-xl) 0;
+.dest-chapter--reverse {
+  grid-template-columns: 42fr 58fr;
 }
 
-.dest-chapter__num {
-  font-family: var(--font-heading);
-  font-size: clamp(4rem, 8vw, 9rem);
-  font-weight: 300;
-  line-height: 0.85;
-  color: var(--color-border);
-  letter-spacing: -0.02em;
-  user-select: none;
+.dest-chapter--reverse .dest-chapter__visual {
+  order: 2;
 }
 
-.dest-chapter__cat {
-  font-family: var(--font-accent);
-  font-size: 0.62rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--color-warm-gold);
+.dest-chapter--reverse .dest-chapter__body {
+  order: 1;
 }
 
-/* Full-width cinematic image */
 .dest-chapter__visual {
-  aspect-ratio: 21 / 9;
   overflow: hidden;
   position: relative;
-  margin-top: 1.5rem;
-  margin-left: var(--space-xl);
-  margin-right: var(--space-xl);
 }
 
 .dest-chapter__visual img {
@@ -2722,20 +2707,43 @@ h4 {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 1.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .dest-chapter:hover .dest-chapter__visual img {
   transform: scale(1.03);
 }
 
-/* Content below the image — 2-col grid */
 .dest-chapter__body {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem 4rem;
-  align-items: start;
-  padding: 1.8rem var(--space-xl) 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3.5rem 4rem;
+  gap: 1.2rem;
+}
+
+.dest-chapter__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.dest-chapter__num {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  user-select: none;
+}
+
+.dest-chapter__cat {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
 }
 
 .dest-chapter__title {

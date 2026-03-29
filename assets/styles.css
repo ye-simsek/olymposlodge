@@ -2682,7 +2682,7 @@ h4 {
   display: grid;
   grid-template-columns: 58fr 42fr;
   min-height: 520px;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-warm-gold);
   padding: 2.5rem 0;
 }
 

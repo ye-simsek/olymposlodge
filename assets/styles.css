@@ -2927,7 +2927,7 @@ h4 {
 
 .tekne-card__title {
   font-family: var(--font-heading);
-  font-size: clamp(3.5rem, 5.5vw, 6.5rem);
+  font-size: clamp(2.2rem, 3.5vw, 4rem);
   font-weight: 300;
   line-height: 1.0;
   letter-spacing: -0.02em;

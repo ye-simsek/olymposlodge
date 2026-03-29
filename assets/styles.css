@@ -538,7 +538,7 @@ h4 {
 .intro-title {
   font-family: var(--font-heading);
   font-size: clamp(1rem, 1.4vw, 1.4rem);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-align: center;
@@ -558,7 +558,7 @@ h4 {
 .intro-col {
   font-family: var(--font-heading);
   font-size: clamp(1rem, 1.2vw, 1.2rem);
-  font-weight: 400;
+  font-weight: 500;
   color: var(--color-text);
   line-height: 1.85;
   text-align: left;

@@ -2698,6 +2698,31 @@ h4 {
   order: 1;
 }
 
+.dest-chapter--center {
+  display: block;
+  padding-bottom: 0;
+}
+
+.dest-chapter--center .dest-chapter__visual {
+  padding: 0 3rem;
+  height: 62vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.dest-chapter--center .dest-chapter__body {
+  flex-direction: row;
+  align-items: start;
+  gap: 4rem;
+  padding: 2.2rem 3rem 2.5rem;
+  border-top: none;
+}
+
+.dest-chapter--center .dest-chapter__title {
+  flex: 0 0 38%;
+  font-size: clamp(1.5rem, 2vw, 2.4rem);
+}
+
 .dest-chapter__visual {
   padding-left: 2.5rem;
   overflow: hidden;

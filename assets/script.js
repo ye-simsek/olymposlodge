@@ -204,6 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
       room_discover: 'Entdecken →',
       view_garden: 'GARTENBLICK', view_lake: 'SEEBLICK',
       feature_title: 'Sommer am Mittelmeer',
+      feature_p1: 'Im Juni werden die Tage länger, das Meer wärmt sich auf und die Zeit beginnt sich anders anzufühlen. Die Morgen in Çıralı sind früh, still und hell. Während der Nebel von den Hügeln zurückweicht, ist der Strand leer — das erste Bad gehört ganz Ihnen. Wenn die Mittagshitze über den Garten zieht, liest man im Schatten, döst in der Hängematte — ohne jeden Plan für die nächste Stunde.',
+      feature_p2: 'Der Abend kommt langsam. Wenn die Sonne hinter dem Tahtalı versinkt, wechselt das Meer die Farbe. Das Feuer wird entzündet, Gespräche entfalten sich. Hier muss man nicht im Wasser sein, um das Mittelmeer zu spüren — es genügt, still zu sitzen und zu lauschen. Dies ist vielleicht der schönste denkbare Ort, um einen Sommer zu verbringen.',
       rooms_page_intro: 'Siebzehn Zimmer — jedes mit eigenem Charakter, eigener Aussicht und eigenem Bezug zum Land. Manche am Ufer des Wassers, manche in der Tiefe des Gartens. Alle verbindet dieselbe Sorgfalt.',
       rooms_includes_label: 'In Jedem Zimmer',
       rooms_include_breakfast: 'Frühstück Inklusive',

@@ -2919,6 +2919,7 @@ h4 {
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--color-border);
   border-left: 1px solid var(--color-border);
+  margin: 0 var(--space-xl);
 }
 
 .dest-activity {

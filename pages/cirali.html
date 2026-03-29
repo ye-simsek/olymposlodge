@@ -176,68 +176,73 @@
     <q>Bazı yerler sizi değiştirmez. Sadece kendinizi hatırlatır.</q>
   </div>
 
-  <!-- Activities Header -->
-  <section class="dest-activities-section">
-    <div class="container">
-      <div class="section-header reveal">
+  <!-- Activities — sticky heading + content scrolls over it -->
+  <section class="dest-activities-wrap">
+
+    <div class="dest-activities-wrap__heading">
+      <div class="container">
         <span class="section-label">Aktiviteler</span>
       </div>
     </div>
-  </section>
 
-  <!-- Tekne Turu — center layout -->
-  <section class="dest-chapter dest-chapter--center" id="tekne">
-    <div class="dest-chapter__visual">
-      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Tekne Turu" loading="lazy" />
-    </div>
-    <div class="dest-chapter__body">
-      <div class="dest-chapter__meta">
-        <span class="dest-chapter__cat">Deniz · Konsiyer</span>
+    <div class="dest-activities-wrap__content">
+
+      <!-- Tekne Turu — center layout -->
+      <section class="dest-chapter dest-chapter--center" id="tekne">
+        <div class="dest-chapter__visual">
+          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Tekne Turu" loading="lazy" />
+        </div>
+        <div class="dest-chapter__body">
+          <div class="dest-chapter__meta">
+            <span class="dest-chapter__cat">Deniz · Konsiyer</span>
+          </div>
+          <h2 class="dest-chapter__title">Tekne Turu</h2>
+          <p class="dest-chapter__lead">Olympos koyları, Adrasan ve çevre adacıklar arasında günübirlik mavi tur. Berrak sularda yüzme molaları, ıssız koy sığınakları, açık denizin sessizliği. Konsiyer aracılığıyla ayarlanabilir.</p>
+          <ul class="dest-chapter__facts">
+            <li><span>Süre</span><strong>Tam gün</strong></li>
+            <li><span>Güzergah</span><strong>Olympos – Adrasan koyları</strong></li>
+            <li><span>Organizasyon</span><strong>Konsiyer</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Activities grid -->
+      <div class="dest-activities__grid">
+
+        <div class="dest-activity">
+          <span class="dest-activity__tag">Deniz · Ücretsiz</span>
+          <h3>Yüzme & Şnorkel</h3>
+          <p>Caretta caretta plajında Akdeniz'in berrak sularında yüzme. Şnorkel ekipmanı otel tarafından sağlanır.</p>
+        </div>
+
+        <div class="dest-activity">
+          <span class="dest-activity__tag">Deniz · Ücretsiz</span>
+          <h3>Kano & SUP</h3>
+          <p>Konaklayan misafirlere kano ve SUP (stand-up paddleboard) kullanımı ücretsiz olarak sunulur.</p>
+        </div>
+
+        <div class="dest-activity">
+          <span class="dest-activity__tag">Deniz · Ücretli</span>
+          <h3>Dalış</h3>
+          <p>Mevsimsel olarak üçüncü taraf operatör aracılığıyla düzenlenir. Detaylar resepsiyondan alınabilir.</p>
+        </div>
+
+        <div class="dest-activity">
+          <span class="dest-activity__tag">Keşif · Ücretsiz</span>
+          <h3>Bisiklet Turu</h3>
+          <p>Konaklayan misafirlere bisiklet ücretsiz sunulur. Çıralı vadisi boyunca ideal güzergahlar mevcuttur.</p>
+        </div>
+
+        <div class="dest-activity">
+          <span class="dest-activity__tag">Panorama · 15 km</span>
+          <h3>Tahtalı Teleferik</h3>
+          <p>2.365 metre zirveye çıkış. Akdeniz'in ve Çıralı vadisinin kuş bakışı panoramik görünümü.</p>
+        </div>
+
       </div>
-      <h2 class="dest-chapter__title">Tekne Turu</h2>
-      <p class="dest-chapter__lead">Olympos koyları, Adrasan ve çevre adacıklar arasında günübirlik mavi tur. Berrak sularda yüzme molaları, ıssız koy sığınakları, açık denizin sessizliği. Konsiyer aracılığıyla ayarlanabilir.</p>
-      <ul class="dest-chapter__facts">
-        <li><span>Süre</span><strong>Tam gün</strong></li>
-        <li><span>Güzergah</span><strong>Olympos – Adrasan koyları</strong></li>
-        <li><span>Organizasyon</span><strong>Konsiyer</strong></li>
-      </ul>
-    </div>
-  </section>
 
-  <!-- Remaining activities grid -->
-  <div class="dest-activities__grid">
-
-    <div class="dest-activity">
-      <span class="dest-activity__tag">Deniz · Ücretsiz</span>
-      <h3>Yüzme & Şnorkel</h3>
-      <p>Caretta caretta plajında Akdeniz'in berrak sularında yüzme. Şnorkel ekipmanı otel tarafından sağlanır.</p>
-    </div>
-
-    <div class="dest-activity">
-      <span class="dest-activity__tag">Deniz · Ücretsiz</span>
-      <h3>Kano & SUP</h3>
-      <p>Konaklayan misafirlere kano ve SUP (stand-up paddleboard) kullanımı ücretsiz olarak sunulur.</p>
-    </div>
-
-    <div class="dest-activity">
-      <span class="dest-activity__tag">Deniz · Ücretli</span>
-      <h3>Dalış</h3>
-      <p>Mevsimsel olarak üçüncü taraf operatör aracılığıyla düzenlenir. Detaylar resepsiyondan alınabilir.</p>
-    </div>
-
-    <div class="dest-activity">
-      <span class="dest-activity__tag">Keşif · Ücretsiz</span>
-      <h3>Bisiklet Turu</h3>
-      <p>Konaklayan misafirlere bisiklet ücretsiz sunulur. Çıralı vadisi boyunca ideal güzergahlar mevcuttur.</p>
-    </div>
-
-    <div class="dest-activity">
-      <span class="dest-activity__tag">Panorama · 15 km</span>
-      <h3>Tahtalı Teleferik</h3>
-      <p>2.365 metre zirveye çıkış. Akdeniz'in ve Çıralı vadisinin kuş bakışı panoramik görünümü.</p>
-    </div>
-
-  </div>
+    </div><!-- /.dest-activities-wrap__content -->
+  </section><!-- /.dest-activities-wrap -->
 
   <!-- Image strip -->
   <div class="dest-strip">

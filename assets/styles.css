@@ -2988,8 +2988,8 @@ h4 {
 
 .tekne-card__facts li span {
   font-family: var(--font-sc);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
   color: var(--color-warm-gold);
   min-width: 7rem;
 }

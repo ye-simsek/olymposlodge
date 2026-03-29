@@ -2775,11 +2775,11 @@ h4 {
 
 .dest-chapter__num {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  font-size: clamp(2rem, 3.2vw, 3.6rem);
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--color-border);
+  color: #a89878;
   user-select: none;
 }
 

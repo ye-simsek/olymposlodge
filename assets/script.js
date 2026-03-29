@@ -677,4 +677,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Cookie panel ---
+  const cookieFab   = document.getElementById('cookieFab');
+  const cookiePanel = document.getElementById('cookiePanel');
+  const cookieClose = document.getElementById('cookiePanelClose');
+
+  if (cookieFab && cookiePanel) {
+    cookieFab.addEventListener('click', () => {
+      cookiePanel.classList.toggle('is-open');
+    });
+    cookieClose && cookieClose.addEventListener('click', () => {
+      cookiePanel.classList.remove('is-open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!cookiePanel.contains(e.target) && !cookieFab.contains(e.target)) {
+        cookiePanel.classList.remove('is-open');
+      }
+    });
+  }
+
 });

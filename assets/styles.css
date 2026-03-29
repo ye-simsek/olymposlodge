@@ -2555,9 +2555,6 @@ h4 {
   min-height: 320px;
   position: relative;
   overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 .dest-feature__visual::before {

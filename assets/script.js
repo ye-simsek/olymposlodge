@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
       room1_name: 'Aqua Super Deluxe', room1_desc: 'A private sanctuary at the heart of nature, surrounded by the calm of water.',
       room2_name: 'Super Deluxe', room2_desc: 'Generous space, refined touches and garden views.',
       room3_name: 'Deluxe', room3_desc: 'Understated elegance, natural light and a tranquil atmosphere.',
-      room4_name: 'Lake House', room4_desc: 'At the water\'s edge — a world beyond time.',
+      room4_name: 'Lake House', room4_desc: 'At the water\'s edge, a world beyond time.',
       room5_name: 'Antique Room', room5_desc: 'The traces of history, an experience beyond time.',
       room6_name: 'Standard Room', room6_desc: 'Everything you need, nothing more.',
       room_discover: 'Discover →',

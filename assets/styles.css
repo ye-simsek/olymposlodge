@@ -2580,19 +2580,19 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 4.5rem 5.4rem 3.5rem;
+  padding: 6rem 5.4rem 4rem;
   z-index: 1;
 }
 
 .dest-feature__title {
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 4.8rem);
+  font-size: clamp(2.8rem, 5.5vw, 7rem);
   font-weight: 300;
   line-height: 1.0;
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  margin: 0 0 3rem;
+  margin: 0 0 4rem;
   letter-spacing: 0.01em;
 }
 
@@ -2600,13 +2600,13 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0 5rem;
-  max-width: 860px;
+  max-width: 1000px;
   width: 100%;
 }
 
 .dest-feature__desc {
   font-family: var(--font-body);
-  font-size: clamp(0.88rem, 1vw, 0.96rem);
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
   line-height: 1.9;
   color: rgba(255,255,255,0.75);
   margin: 0;

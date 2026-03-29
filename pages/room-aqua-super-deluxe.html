@@ -202,6 +202,38 @@
     </div>
   </footer>
 
-  <script src="../assets/script.js?v=23"></script>
+    <!-- Cookie Consent -->
+  <div class="cookie-fab" id="cookieFab" aria-label="Çerez Tercihleri">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="8.5" cy="9" r="1.2" fill="currentColor"/>
+      <circle cx="14" cy="7.5" r="0.9" fill="currentColor"/>
+      <circle cx="15.5" cy="13" r="1.2" fill="currentColor"/>
+      <circle cx="9.5" cy="14.5" r="1" fill="currentColor"/>
+      <circle cx="12.5" cy="11" r="0.7" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="cookie-panel" id="cookiePanel" role="dialog" aria-modal="true">
+    <div class="cookie-panel__header">
+      <span class="cookie-panel__title">Çerez Tercihleri</span>
+      <button class="cookie-panel__close" id="cookiePanelClose" aria-label="Kapat">×</button>
+    </div>
+    <div class="cookie-panel__body">
+      <p class="cookie-panel__text">Bu site, deneyiminizi kişiselleştirmek ve analitik veriler toplamak için çerezler kullanmaktadır.</p>
+      <div class="cookie-panel__options">
+        <div class="cookie-option"><div class="cookie-option__info"><span class="cookie-option__name">Zorunlu</span><span class="cookie-option__desc">Sitenin çalışması için gereklidir</span></div><div class="cookie-toggle cookie-toggle--locked"><span class="cookie-toggle__track"></span></div></div>
+        <div class="cookie-option"><div class="cookie-option__info"><span class="cookie-option__name">Analitik</span><span class="cookie-option__desc">Ziyaret istatistikleri</span></div><label class="cookie-toggle"><input type="checkbox" id="cookieAnalytics" checked><span class="cookie-toggle__track"></span></label></div>
+        <div class="cookie-option"><div class="cookie-option__info"><span class="cookie-option__name">Pazarlama</span><span class="cookie-option__desc">Kişiselleştirilmiş içerik</span></div><label class="cookie-toggle"><input type="checkbox" id="cookieMarketing"><span class="cookie-toggle__track"></span></label></div>
+      </div>
+    </div>
+    <div class="cookie-panel__footer">
+      <a href="privacy.html" class="cookie-panel__link">Gizlilik Politikası</a>
+      <div class="cookie-panel__actions">
+        <button class="cookie-btn cookie-btn--outline" id="cookieSavePrefs">Kaydet</button>
+        <button class="cookie-btn cookie-btn--fill" id="cookieAcceptAll">Tümünü Kabul Et</button>
+      </div>
+    </div>
+  </div>
+<script src="../assets/script.js?v=23"></script>
 </body>
 </html>

@@ -2605,7 +2605,7 @@ h4 {
   font-family: var(--font-body);
   font-size: clamp(1rem, 1.15vw, 1.1rem);
   line-height: 1.9;
-  color: rgba(255,255,255,0.75);
+  color: #fff;
   margin: 0;
 }
 

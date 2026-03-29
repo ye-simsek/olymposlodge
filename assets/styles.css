@@ -841,8 +841,7 @@ h4 {
   font-family: var(--font-accent);
   font-size: 0.92rem;
   font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--color-warm-gold);
 }
 

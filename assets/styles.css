@@ -2551,8 +2551,8 @@ h4 {
 }
 
 .dest-feature__visual {
-  height: 90vh;
-  min-height: 640px;
+  height: 45vh;
+  min-height: 320px;
   overflow: hidden;
   position: relative;
 }

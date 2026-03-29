@@ -3056,6 +3056,11 @@ h4 {
   .dest-chapter__visual {
     aspect-ratio: 4 / 3;
     order: 0 !important;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .dest-chapter--reverse .dest-chapter__visual {
+    padding: 1.5rem 1.5rem 0;
   }
 
   .dest-chapter__body {

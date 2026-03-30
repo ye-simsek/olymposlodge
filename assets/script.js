@@ -680,6 +680,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- Dest page: snap icons behind header at 55% coverage ---
+  const destIconsRow = document.querySelector('.dest-icons-row');
+  if (destIconsRow) {
+    let snapped = false;
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const headerBottom = header.offsetHeight;
+      const rect = destIconsRow.getBoundingClientRect();
+      const totalH = destIconsRow.offsetHeight;
+      const covered = Math.max(0, headerBottom - rect.top);
+      const pct = totalH > 0 ? covered / totalH : 0;
+      if (!snapped && pct >= 0.55) {
+        snapped = true;
+        destIconsRow.classList.add('dest-icons--snap');
+      } else if (snapped && pct < 0.1) {
+        snapped = false;
+        destIconsRow.classList.remove('dest-icons--snap');
+      }
+    }, { passive: true });
+  }
+
   // --- Activities sub-nav ---
   const actSubnav = document.getElementById('actSubnav');
   if (actSubnav) {

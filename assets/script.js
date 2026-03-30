@@ -680,14 +680,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Page-switcher sub-nav (Çıralı ↔ Aktiviteler) ---
-  const destSubnav = document.getElementById('destSubnav');
-  if (destSubnav) {
-    window.addEventListener('scroll', () => {
-      destSubnav.classList.toggle('is-collapsed', window.scrollY > 60);
-    }, { passive: true });
-  }
-
   // --- Activities sub-nav ---
   const actSubnav = document.getElementById('actSubnav');
   if (actSubnav) {

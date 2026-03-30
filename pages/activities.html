@@ -53,26 +53,20 @@
     </div>
   </nav>
 
-  <!-- Page switcher sub-nav -->
-  <nav class="act-subnav dest-switcher" id="destSubnav">
-    <ul class="act-subnav__list">
-      <li class="act-subnav__item">
-        <a href="cirali.html" class="act-subnav__link">
-          <span class="act-subnav__icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
-          </span>
-          <span class="act-subnav__label" data-i18n="nav_cirali_tab">Çıralı</span>
-        </a>
-      </li>
-      <li class="act-subnav__item act-subnav__item--active">
-        <a href="activities.html" class="act-subnav__link">
-          <span class="act-subnav__icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
-          </span>
-          <span class="act-subnav__label" data-i18n="nav_activities_tab">Aktiviteler</span>
-        </a>
-      </li>
-    </ul>
+  <!-- Page switcher: icons scroll behind header naturally -->
+  <div class="dest-icons-row" aria-hidden="true">
+    <div class="dest-icons-row__item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+    </div>
+    <div class="dest-icons-row__item dest-icons-row__item--active">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+    </div>
+  </div>
+
+  <!-- Page switcher: labels stick below header -->
+  <nav class="dest-labels-row" id="destSubnav">
+    <a href="cirali.html" class="dest-labels-row__link" data-i18n="nav_cirali_tab">Çıralı</a>
+    <a href="activities.html" class="dest-labels-row__link dest-labels-row__link--active" data-i18n="nav_activities_tab">Aktiviteler</a>
   </nav>
 
   <!-- Hero -->

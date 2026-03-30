@@ -2557,6 +2557,11 @@ h4 {
 /* ---- Destination page intro override ---- */
 .intro--dest .intro-title {
   max-width: none;
+  font-family: var(--font-sc);
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0.07em;
+  font-size: clamp(1.8rem, 3vw, 3rem);
 }
 
 /* ---- Feature opener ---- */

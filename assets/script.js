@@ -170,6 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Activities',
       hero_title: 'Time flows<br>differently here.',
       hero_subtitle: 'Noise softens, senses awaken.<br>Nature makes itself heard.',
+      manifesto_line: 'A room is the least of it.',
+      manifesto_sub: 'Ancient ruins at your doorstep. A beach that belongs to no one else. A garden older than most guests\' grandparents. The room is where you sleep — the rest is where you live.',
       intro_title: 'Olympos Lodge: An Intimate Retreat on the Lycian Coast',
       intro_label: 'About',
       intro_p1: 'Where a green valley opens onto the sea, time moves differently. Olympos Lodge has stood here since 1985, built on the conviction that a place stripped of the unnecessary becomes something finer. What remains is unhurried: a garden, a shore, the kind of silence that asks nothing of you.',

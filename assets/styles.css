@@ -3987,12 +3987,34 @@ h4 {
 }
 
 /* Page switcher — Çıralı ↔ Aktiviteler */
+.dest-switcher {
+  /* Sits flush under the header, no extra gap */
+  top: var(--header-height);
+  margin-top: 0;
+}
+.dest-switcher .act-subnav__list {
+  justify-content: center;
+  gap: 6rem;
+}
 .dest-switcher .act-subnav__item {
-  max-width: 220px;
+  flex: 0 0 auto;
+  max-width: none;
+}
+.dest-switcher .act-subnav__link {
+  padding: 1.2rem 1rem 1rem;
+  gap: 0.55rem;
 }
 .dest-switcher .act-subnav__label {
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+}
+.dest-switcher .act-subnav__item--active .act-subnav__label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+.dest-switcher .act-subnav__icon svg {
+  opacity: 0.65;
 }
 
 /* Activity sections */

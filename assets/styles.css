@@ -3986,10 +3986,31 @@ h4 {
   gap: 0;
 }
 
+/* Dest pages — solid header from load, subnav flush underneath */
+.page--dest {
+  padding-top: var(--header-height);
+}
+.page--dest .site-header {
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-warm-gold);
+}
+.page--dest .site-header .menu-bar {
+  background: var(--color-text);
+}
+.page--dest .site-header .lang-current {
+  color: var(--color-text);
+}
+.page--dest .site-header .btn-reserve {
+  border-color: var(--color-warm-gold);
+  color: var(--color-text);
+}
+.page--dest .site-header .header-logo img {
+  filter: none;
+}
+
 /* Page switcher — Çıralı ↔ Aktiviteler */
 .dest-switcher {
-  /* Sits flush under the header, no extra gap */
-  top: var(--header-height);
+  top: 0;
   margin-top: 0;
 }
 .dest-switcher .act-subnav__list {

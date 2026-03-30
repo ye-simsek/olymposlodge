@@ -4051,6 +4051,7 @@ h4 {
   letter-spacing: 0.16em;
   color: var(--color-text-light);
   text-decoration: none;
+  text-align: center;
   transition: color 0.2s;
 }
 .dest-labels-row__link--active,

@@ -4047,13 +4047,13 @@ h4 {
   font-family: var(--font-sc);
   font-size: 0.78rem;
   letter-spacing: 0.16em;
+  font-weight: 300;
   color: var(--color-warm-gold);
   text-decoration: none;
   text-align: center;
-  transition: color 0.2s;
 }
 .dest-labels-row__link--active {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 /* Activity sections */

@@ -4010,7 +4010,7 @@ h4 {
 
 /* Page switcher — Çıralı ↔ Aktiviteler */
 .dest-switcher {
-  top: 0;
+  top: var(--header-height);
   margin-top: 0;
 }
 .dest-switcher .act-subnav__list {
@@ -4026,7 +4026,7 @@ h4 {
   gap: 0.55rem;
 }
 .dest-switcher .act-subnav__label {
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   letter-spacing: 0.16em;
   font-weight: 400;
 }

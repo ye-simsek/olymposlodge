@@ -4007,7 +4007,7 @@ h4 {
 }
 .page--dest .site-header .menu-bar { background: var(--color-text); }
 .page--dest .site-header .lang-current { color: var(--color-text); }
-.page--dest .site-header .btn-reserve { border-color: var(--color-warm-gold); color: var(--color-text); }
+.page--dest .site-header .btn-reserve { color: #fff; background: var(--color-warm-gold); border-color: var(--color-warm-gold); }
 .page--dest .site-header .header-logo img { filter: none; }
 
 /* Icons row — in normal flow, scrolls behind the fixed header as user scrolls */

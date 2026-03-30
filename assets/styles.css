@@ -4025,10 +4025,9 @@ h4 {
   display: flex;
   justify-content: center;
   color: var(--color-warm-gold);
-  opacity: 0.5;
 }
 .dest-icons-row__item--active {
-  opacity: 1;
+  color: var(--color-warm-gold);
 }
 
 /* Labels row — sticky, always visible below header */

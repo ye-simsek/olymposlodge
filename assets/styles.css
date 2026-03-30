@@ -4014,7 +4014,7 @@ h4 {
 .dest-icons-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 1rem 0 0.3rem;
+  padding: 0.55rem 0 0.15rem;
   background: var(--color-cream);
 }
 .dest-icons-row__item {
@@ -4035,7 +4035,7 @@ h4 {
   z-index: 50;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0.05rem 0 0.85rem;
+  padding: 0.7rem 0;
   background: var(--color-cream);
   border-bottom: 1px solid var(--color-border);
 }

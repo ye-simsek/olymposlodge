@@ -3986,6 +3986,15 @@ h4 {
   gap: 0;
 }
 
+/* Page switcher — Çıralı ↔ Aktiviteler */
+.dest-switcher .act-subnav__item {
+  max-width: 220px;
+}
+.dest-switcher .act-subnav__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+}
+
 /* Activity sections */
 .act-section {
   display: grid;

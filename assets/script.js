@@ -684,18 +684,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const destIconsRow = document.querySelector('.dest-icons-row');
   if (destIconsRow) {
     let snapped = false;
+    let snapScrollY = null;
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       const headerBottom = header.offsetHeight;
-      const rect = destIconsRow.getBoundingClientRect();
+      // Use offsetTop for layout position (unaffected by transform)
+      const naturalTop = destIconsRow.offsetTop - window.scrollY;
       const totalH = destIconsRow.offsetHeight;
-      const covered = Math.max(0, headerBottom - rect.top);
+      const covered = Math.max(0, headerBottom - naturalTop);
       const pct = totalH > 0 ? covered / totalH : 0;
       if (!snapped && pct >= 0.55) {
         snapped = true;
+        snapScrollY = window.scrollY;
         destIconsRow.classList.add('dest-icons--snap');
-      } else if (snapped && pct < 0.1) {
+      } else if (snapped && window.scrollY < snapScrollY - 5) {
         snapped = false;
+        snapScrollY = null;
         destIconsRow.classList.remove('dest-icons--snap');
       }
     }, { passive: true });

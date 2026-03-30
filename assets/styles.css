@@ -3995,78 +3995,63 @@ h4 {
   gap: 0;
 }
 
-/* Dest pages — solid header from load, subnav flush underneath */
+/* Dest pages — solid header always, no height changes */
 .page--dest {
   padding-top: var(--header-height);
 }
-.page--dest .site-header {
+.page--dest .site-header,
+.page--dest .site-header.scrolled {
   background: var(--color-cream);
   border-bottom: 1px solid var(--color-warm-gold);
-}
-/* Prevent header from shrinking on scroll — keeps gap closed */
-.page--dest .site-header.scrolled {
   height: var(--header-height);
 }
-.page--dest .site-header .menu-bar {
-  background: var(--color-text);
+.page--dest .site-header .menu-bar { background: var(--color-text); }
+.page--dest .site-header .lang-current { color: var(--color-text); }
+.page--dest .site-header .btn-reserve { border-color: var(--color-warm-gold); color: var(--color-text); }
+.page--dest .site-header .header-logo img { filter: none; }
+
+/* Icons row — in normal flow, scrolls behind the fixed header as user scrolls */
+.dest-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+  padding: 1.1rem 0 0.8rem;
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-border);
 }
-.page--dest .site-header .lang-current {
-  color: var(--color-text);
+.dest-icons-row__item {
+  color: var(--color-text-light);
+  opacity: 0.5;
 }
-.page--dest .site-header .btn-reserve {
-  border-color: var(--color-warm-gold);
-  color: var(--color-text);
-}
-.page--dest .site-header .header-logo img {
-  filter: none;
+.dest-icons-row__item--active {
+  color: var(--color-warm-gold);
+  opacity: 1;
 }
 
-/* Page switcher — Çıralı ↔ Aktiviteler */
-.dest-switcher {
+/* Labels row — sticky, always visible below header */
+.dest-labels-row {
+  position: sticky;
   top: var(--header-height);
-  margin-top: 0;
-  overflow: hidden;
-}
-.dest-switcher .act-subnav__list {
+  z-index: 50;
+  display: flex;
   justify-content: center;
-  gap: 6rem;
+  gap: 8rem;
+  padding: 0.85rem 0;
+  background: var(--color-cream);
+  border-bottom: 1px solid var(--color-border);
 }
-.dest-switcher .act-subnav__item {
-  flex: 0 0 auto;
-  max-width: none;
-}
-/* Icons slide up behind the subnav top edge (covered by header) */
-.dest-switcher .act-subnav__link {
-  padding: 1.2rem 1rem 1rem;
-  gap: 0.55rem;
-  transform: translateY(0);
-  transition: color 0.22s, transform 0.42s cubic-bezier(0.4,0,0.2,1), padding 0.42s cubic-bezier(0.4,0,0.2,1);
-}
-.dest-switcher.is-collapsed .act-subnav__link {
-  transform: translateY(-42px);
-  padding-bottom: 0.55rem;
-}
-/* Neutralise the generic icon collapse for dest-switcher */
-.dest-switcher .act-subnav__icon {
-  max-height: none;
-  opacity: 1;
-  transition: none;
-}
-.dest-switcher.is-collapsed .act-subnav__icon {
-  max-height: none;
-  opacity: 1;
-}
-.dest-switcher .act-subnav__label {
-  font-size: 0.8rem;
+.dest-labels-row__link {
+  font-family: var(--font-sc);
+  font-size: 0.78rem;
   letter-spacing: 0.16em;
-  font-weight: 400;
+  color: var(--color-text-light);
+  text-decoration: none;
+  transition: color 0.2s;
 }
-.dest-switcher .act-subnav__item--active .act-subnav__label {
-  font-weight: 600;
+.dest-labels-row__link--active,
+.dest-labels-row__link:hover {
   color: var(--color-text);
-}
-.dest-switcher .act-subnav__icon svg {
-  opacity: 0.65;
+  font-weight: 600;
 }
 
 /* Activity sections */

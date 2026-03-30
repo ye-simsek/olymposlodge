@@ -704,15 +704,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Activities sub-nav ---
   const actSubnav = document.getElementById('actSubnav');
   if (actSubnav) {
-    const collapseThreshold = 80;
     const sections = document.querySelectorAll('.act-section');
     const navItems = actSubnav.querySelectorAll('.act-subnav__item');
+    let stickScrollY = null;
 
     window.addEventListener('scroll', () => {
-      // Collapse icons once the subnav is actually stuck to the top
+      // Collapse icons only after scrolling 80px past the point where subnav first stuck
       const headerH = document.getElementById('header').offsetHeight;
       const rect = actSubnav.getBoundingClientRect();
-      actSubnav.classList.toggle('is-collapsed', rect.top <= headerH + 2);
+      const isStuck = rect.top <= headerH + 2;
+      if (isStuck && stickScrollY === null) stickScrollY = window.scrollY;
+      if (!isStuck) stickScrollY = null;
+      const collapsed = stickScrollY !== null && (window.scrollY - stickScrollY) > 80;
+      actSubnav.classList.toggle('is-collapsed', collapsed);
 
       // Active section highlight
       let current = null;

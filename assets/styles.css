@@ -4033,6 +4033,11 @@ h4 {
 .dest-switcher .act-subnav__link {
   padding: 1.2rem 1rem 1rem;
   gap: 0.55rem;
+  transition: color 0.22s, padding 0.38s cubic-bezier(0.4,0,0.2,1), gap 0.38s cubic-bezier(0.4,0,0.2,1);
+}
+.dest-switcher.is-collapsed .act-subnav__link {
+  padding: 0.6rem 1rem;
+  gap: 0;
 }
 .dest-switcher .act-subnav__label {
   font-size: 0.8rem;

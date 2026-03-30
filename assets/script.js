@@ -709,8 +709,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItems = actSubnav.querySelectorAll('.act-subnav__item');
 
     window.addEventListener('scroll', () => {
-      // Collapse icons
-      actSubnav.classList.toggle('is-collapsed', window.scrollY > collapseThreshold);
+      // Collapse icons once the subnav is actually stuck to the top
+      const headerH = document.getElementById('header').offsetHeight;
+      const rect = actSubnav.getBoundingClientRect();
+      actSubnav.classList.toggle('is-collapsed', rect.top <= headerH + 2);
 
       // Active section highlight
       let current = null;

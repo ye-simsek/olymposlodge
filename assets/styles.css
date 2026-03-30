@@ -2524,6 +2524,17 @@ h4 {
   font-weight: 300;
   letter-spacing: 0.1em;
 }
+.page--dest .child-hero {
+  overflow: visible;
+  clip-path: inset(0);
+}
+.page--dest .child-hero__content {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+  bottom: auto;
+  transform: none;
+  z-index: 2;
+}
 
 @media (max-width: 640px) {
   .child-hero__content {

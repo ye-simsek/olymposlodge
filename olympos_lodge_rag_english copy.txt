@@ -1,0 +1,140 @@
+{
+"General Info":  
+"Hotel Name: Olympos Lodge Address: Ulupınar Mah. Çıralı Sok. No:9 Kemer / Antalya Phone: +90 242 825 71 71 Email: info@olymposlodge.com.tr",
+
+"Location": "
+- Most of our guests use Antalya Airport. If they wish, a vehicle belonging to Olympos Lodge can be waiting for them there.
+- Heading south along 80 km of a road with stunning scenery, passing through the region's famous resort towns, touristic spots, and some important centers from the ancient period, you descend into Çıralı Village through a 7 km emerald-green valley.
+- Olympos Lodge welcomes you between Çıralı Beach and the ruins of the ancient city of Olympos, right where the beach begins.
+- Our hotel is approximately 85 km from Antalya city center and 35 km from Kemer. Transportation from Antalya Airport to our hotel is possible via private transfer, car rental, or taxi options. Guests arriving with their own vehicle can reach the hotel by following the D400 highway from the Kumluca or Kemer direction and following the Çıralı signs. Directional signs are available along the road. Our beachfront hotel is located amidst greenery along the coastline, and the entire road to the entrance is paved.",
+
+"parking": "For the comfort of our guests, a private parking area is available within our hotel premises. Our parking service is free of charge and monitored by 24-hour security cameras. A charging station is also available at our hotel for guests with electric vehicles. Valet parking service is offered upon request.",
+
+"concept": "
+- It is a boutique hotel with a nature-friendly design, located in a themed garden of 20,000 square meters, featuring single-story, spacious, airy, peaceful, and environmentally conscious architecture.
+- The hotel is directly on the Caretta Caretta-protected Çıralı beach and offers its guests relaxation with private sun loungers.
+- It is within walking distance of the ancient city of Olympos and the Chimera (Yanartaş) flames.
+- It provides an atmosphere of calm and tranquility suitable for different profiles, from families with babies to adults, solo travelers to couples.
+- The hotel gladly accepts pets; however, leashes are kindly requested in common areas to avoid disturbing other guests.",
+
+"events_and_organizations": "Olympos Lodge, with its location immersed in nature, offers a suitable setting for both personal and professional events. In addition to special celebrations such as weddings, engagements, and marriage proposals, gatherings such as meetings, workshops, product launches, or yoga events can also be held at our hotel. The spacious garden area close to the sea, with its calm atmosphere and natural light, lends a simple elegance to every event. During the planning process, our hotel team supports guests with venue layout, catering planning, and technical requirements. Additionally, our hotel has a meeting room, fax, and photocopy machine (upon request).",
+
+"restorant": {
+"description": "Olympos Lodge has an à la carte restaurant that serves exclusively to staying guests. The menu features fresh fish procured daily, grilled dishes prepared from beef and lamb, as well as pizzas and pastas from Mediterranean cuisine. Additionally, daily prepared desserts and a rich selection of alcoholic beverages are offered for our guests. The restaurant's open-air concept and garden atmosphere provide a peaceful dining experience immersed in nature at any time of day.",
+"breakfast": "Open buffet breakfast (including brunch) is served between 08:00–11:00 and is included in the room rate.",
+"meals": "Served à la carte; menu information is shared upon request.",
+"notes": "Seafood and local ingredients are prominent in dishes highlighting fresh Mediterranean and regional cuisine.",
+"room_service": "Room service is available between 12:00–22:00 by accessing the menu via QR code.",
+"bar": "Alcoholic and non-alcoholic drinks, cocktails, and coffee varieties are available; the beverage menu can be shared digitally upon request. Alcoholic beverage service is provided only to guests aged 18 and over.",
+"self_service": "Water dispensers are available throughout the hotel. Tea and coffee are offered free of charge as self-service between 07:00–24:00."
+},
+
+"specific_request": "
+- Vegan, vegetarian, gluten-free, and halal meal options can be prepared if notified in advance.
+- Organic and unprocessed (whole food) options can be offered upon request.
+- All eggs used at breakfast are 100% organic, free-range chicken eggs.
+- Dietary preferences (e.g., vegan, vegetarian, gluten-free, halal) should only be mentioned when the user explicitly asks.
+- Ambiguous or general questions (e.g., 'Is there food during the day?') should not be answered with lunch or dietary information. The user must ask a direct question such as 'Is lunch available?' or 'Do you have vegan options?' — only then should brief information be provided.",
+
+"outside_customer_service": "The restaurant at Olympos Lodge is open exclusively to guests staying at our hotel. Outside reservations or visits are not accepted. This policy is implemented to provide our staying guests with a more exclusive, quiet, and personal dining atmosphere. The same principle applies to breakfast service; breakfast is prepared exclusively for hotel guests.",
+
+"room_knowledge": {
+	"description": "Each room type at Olympos Lodge is designed to provide a peaceful accommodation experience in harmony with nature. All rooms have a private veranda and sun loungers. Additionally, rooms feature a safe, minibar, and Rebul brand bathroom products. Verandas opening onto the garden offer guests the opportunity to be alone with nature and experience the tranquility of the surroundings at any time of day. Olympos Lodge has a single-story layout so that all guests can move around comfortably. All rooms are located on the ground floor, and there are no areas requiring stair access. The restaurant is located in the gravel-floored garden area. Direct access to the beach is provided by walking through the garden. Our hotel does not have specially equipped rooms for disabled guests. However, since all rooms are on the ground floor and common areas are spacious and open-plan, guests with wheelchairs or limited mobility can move around comfortably within the hotel. All rooms have queen-size (wide double) beds, a private terrace, and sun loungers. The hotel structure is single-story; there are no balconies. Each room: Air conditioning, minibar, Wi-Fi, hair dryer, Rebul brand bathroom products, daily housekeeping service, linen change every three days (daily change upon request). All rooms include basic cutlery sets, small plates, cups, a pair of water glasses, and wine glasses. All rooms are non-smoking. Smoking is permitted only on the terrace.",
+
+"room_types": "
+- Double Room (35 m²): Double bed, seating area, private terrace, garden view, quiet location.
+- Antique / Honeymoon Room: Romantic atmosphere, private terrace, peaceful location.
+- Lake House (60 m², detached location): Spacious area, seating corner, private terrace, fireplace, peaceful atmosphere. Its detached location naturally offers a quiet and secluded setting.
+- Deluxe Double Room (70 m²): Jacuzzi, fireplace, seating area, large terrace, peaceful atmosphere opening onto the front garden.
+- Double Super Deluxe Room (105 m²): Jacuzzi, fireplace, large seating area, private terrace, peaceful atmosphere opening onto the front garden.
+- Aqua Super Deluxe Room (105 m², detached location): Jacuzzi, fireplace, large terrace, spacious area, opens onto the front garden. Its detached location is situated at the far end of the garden, offering a quiet setting.",
+
+"room_inventory": "Total 17 rooms: 1 Aqua Super Deluxe, 2 Super Deluxe, 2 Deluxe, 1 Lake House, 1 Antique / Honeymoon Room, 10 Standard Double Rooms.",
+
+"espresso_machine": "Espresso machines are available only in Deluxe rooms (Aqua Super Deluxe, Super Deluxe, Deluxe Double, and Lake House). Standard rooms have a coffee maker.",
+
+"fireplace_details": "A fireplace is available only in the following room types: Aqua Super Deluxe Room, Super Deluxe Room, Deluxe Double Room, and Lake House. The Standard Double Room and Antique / Honeymoon Room do not have a fireplace.",
+
+"bathroom_details": "
+- Common to all rooms: Bathrobe, towel options, full personal care set (toothbrush, toothpaste, shampoo, soap, conditioner, shower gel), hair dryer, toilet.
+- Aqua Super Deluxe Room: Indoor rain shower and outdoor rain shower (separate), jacuzzi bathtub.
+- Super Deluxe Room: Jacuzzi bathtub with rain shower.
+- Deluxe Double Room: Jacuzzi bathtub with rain shower.
+- Lake House: Jacuzzi bathtub with rain shower.
+- Standard Double Room: Rain shower. No jacuzzi or bathtub.",
+
+"inroom_details": "All rooms include: Outdoor furniture, individual air conditioning, heating, free Wi-Fi, mini refrigerator, minibar (replenished daily, chargeable), room safe, slippers, smoke detector, fire extinguisher, mineral water, concierge service, daily room cleaning, mosquito net, drying rack, electric kettle, writing desk, clothes hanger, wardrobe/closet, reading lamp.",
+
+"fiyata_dahil": "Services and products included in the accommodation rate: Personal care set (toothbrush, toothpaste, shampoo, soap, conditioner, shower gel), breakfast, Wi-Fi, sun lounger-umbrella-towel-cabana on the beach, bicycle, canoe, SUP (stand-up paddleboard) usage, parking, spa access (jacuzzi, sauna, steam room). Massage service is subject to an additional fee and requires a reservation at least 2 hours in advance."
+},
+
+"check_in_check_out": "Check-in begins at 16:00. Check-out time is 11:00. Early check-in or late check-out requests are evaluated based on availability; when possible, these requests are gladly accommodated. Guests arriving early can spend time in the garden area or restaurant section while their rooms are being prepared. Guests may also use the beach area during this time. After check-out, luggage is stored at reception, and guests may continue to spend time in the garden or beach area for the rest of the day if they wish. Bellboy (luggage carrying) service is available. Wake-up call service is also offered upon request. – Check-in time: 16:00, check-out time: 11:00.",
+
+"children_policy": "Olympos Lodge welcomes guests of all age groups. Families can enjoy a peaceful holiday experience immersed in nature with their children. With its spacious garden areas, proximity to the sea, and quiet atmosphere, our hotel offers a safe and enjoyable accommodation environment for families with children. Informing us of children's ages at the reservation stage allows for appropriate room type and extra bed arrangements to be made in advance for a comfortable stay. - Free crib for children aged 0–3. - Extra bed provided for children aged 4–12 (fee: 40 EUR per child). - Children over 12 are subject to adult pricing (extra bed fee: 50 EUR per person).",
+
+"activities": "Olympos Lodge offers its guests an enjoyable holiday experience with activities integrated into nature. Bicycle, canoe, and SUP (stand-up paddleboard) usage is provided free of charge for staying guests. Snorkeling equipment is also available at the hotel. Diving activities can be arranged seasonally through a third-party operator outside the premises for a fee. Fishing activities are also offered through a third-party operator. Yoga classes are not provided by the hotel; however, our hotel's spacious front garden is perfectly suitable for personal yoga practice. Additionally, guests who wish to learn about boat tours, nature hikes, and regional explorations organized in the area can receive detailed guidance from our front desk team. - Spa: Jacuzzi (6-person), sauna, steam room — included in the accommodation rate. Massage service is subject to an additional fee (reservation required at least 2 hours in advance). - Beach: Beachfront and in the Caretta Caretta protection zone. - Umbrella, sun lounger, towel, and cabana are provided free of charge on the beach. - Bicycle: Free for hotel guests. An indoor bicycle storage facility is available on the premises. - Canoe: Available for free use by guests throughout the day. - SUP (Stand-Up Paddleboard): Available for free use with hotel equipment. - Snorkeling: Available at the hotel. - Diving: Seasonal, off-premises, paid, third-party operator. - Fishing: Arranged through a third-party operator. - Boat tours: For daily tours or special requests, information is forwarded to reception when requested by guests. - Nature hikes, cycling routes, and professional climbing activities are available in the surrounding area; detailed information can be obtained from reception. - Picnic area: Outdoors, exclusively for hotel guests. Picnics are prepared upon request for a fee.",
+
+"entertainment": "Our hotel offers a library and a fire pit (firepit) for guest use. A complimentary daily newspaper service is provided.",
+
+"extra_services": "
+- Historical sites within walking distance such as the Chimera (Yanartaş) and ancient Lycian ruins (Olympos).
+- The nearest market is 150 meters away; various restaurants and cafes are located in Çıralı and along the beach.
+- Electric vehicle charging station and spacious parking.
+- Transfer services and airport transfers are available for an additional fee.
+- The health and safety of our guests is a priority for Olympos Lodge. For non-emergency minor discomforts or needs, our hotel's vehicle is used to safely transport guests to the nearest healthcare facility. In more serious or emergency situations, the doctor from our affiliated healthcare institution can be directed to the premises, and ambulance support is provided when necessary.
+- Security measures are rigorously implemented throughout Olympos Lodge. All rooms are equipped with fire detectors, and fire extinguishers are placed at various points throughout the facility. All common areas are monitored 24 hours by security cameras. Additionally, our hotel has security personnel on duty 24 hours. Radio communication is maintained between the security team and reception, ensuring rapid coordination in potential emergency situations. Our staff is regularly informed about emergency procedures and trained to act quickly when needed. Emergency exit directions and assembly areas are also designated.
+- Laundry service is offered free of charge upon request.
+- Dry cleaning service is offered free of charge upon request.
+- Ironing service is offered free of charge upon request.
+- Fireplaces are available in common areas.
+- The hotel entrance and all room entrances are illuminated and designed without threshold differences (level ground access).",
+
+"distances": {
+"airport": "Antalya Airport (AYT): 91 km, approximately 90 minutes by car.",
+"city_centre": "Kemer city center: 35 km, approximately 38 minutes by car.",
+"hospital": "Kemer State Hospital: 37 km, approximately 37 minutes by car.",
+"marina": "Kemer Marina: 34 km, approximately 40 minutes by car.",
+"olympos_ancient_city": "Olympos Ancient City: 800 m, approximately 10 minutes on foot.",
+"phaselis_ancient_city": "Phaselis Ancient City: 26 km, approximately 30 minutes by car.",
+"pharmacy": "Nearest pharmacy: 35 km, approximately 38 minutes by car.",
+"shopping": "Nearest shopping: 150 m, approximately 5 minutes on foot.",
+"mount_chimaera": "Chimera (Yanartaş, Olympos National Park): 3.5 km, approximately 45 minutes on foot, approximately 10 minutes by car.",
+"sea": "Çıralı Beach: 30 m, approximately 1 minute on foot."
+},
+
+"reservation": "Reservations are confirmed upon collection of the total accommodation fee. Payments are accepted via bank transfer or mail order. Reservations are non-refundable; however, date changes may be made subject to availability. In cases where a date change is not made, the reservation can be kept on hold. Reservations placed on hold remain valid for one year with a value equal to their balance. Price changes may occur during this period; the existing balance can be used at current prices. Guests are advised to obtain information about dates and conditions before reservation confirmation. - For the reservation to be valid, the total fee must be paid via bank transfer within 24 hours. - If the bank transfer is not received within the specified time, the reservation is automatically canceled. - Reservations cannot be canceled. However, in cases of loss of a first-degree relative or serious health issues, a date change can be made for use within 1 year. In this case, your payment will be recalculated based on the pricing of the new dates. - Prices include room, breakfast, tax, and service charge. - The hotel does not offer any discounts on stated prices. Prices shared on the official website and through direct inquiries are the best and most current prices.",
+
+"rules": "Noise and light regulations in Çıralı are observed in accordance with conservation and quiet zone rules.",
+
+"FAQ": [
+{"q": "Does Olympos Lodge accept pets?",
+"a": "Yes, cats and dogs are accepted free of charge. Some restrictions apply; please contact the accommodation for more detailed information."},
+
+{"q": "Does Olympos Lodge offer airport shuttle service?",
+"a": "Yes, round-trip airport transfer service is available. The fee is 100 EUR one-way per vehicle."},
+
+{"q": "What are the check-in and check-out times for Olympos Lodge?",
+"a": "Check-in can be done between 16:00 and midnight. Check-out time: 11:00. Contactless check-in and check-out is offered."},
+
+{"q": "What are the facilities at and near Olympos Lodge?",
+"a": "Enjoy hotel activities such as canoeing, SUP (stand-up paddleboard), snorkeling, and complimentary bicycle use. Diving and fishing can be arranged through third-party operators. Additional nearby leisure activities include cave exploration. Enjoy spa treatments and relax your muscles in the jacuzzi (6-person). Sauna and steam room are also available. Olympos Lodge also offers a private beach, garden, library, and fire pit (firepit)."},
+
+{"q": "Is there a restaurant inside or near Olympos Lodge?",
+"a": "Yes, there is a restaurant at the hotel exclusively for staying guests."},
+
+{"q": "Does Olympos Lodge have a private outdoor area?",
+"a": "Yes, every room has a private veranda. In addition, all common areas of our hotel, such as the garden, beach, and restaurant, are exclusive to staying guests."},
+
+{"q": "What is the area around Olympos Lodge like?",
+"a": "Olympos Lodge is located directly on Çıralı Beach and is 800 meters (approximately a 10-minute walk) from the ancient city of Olympos."},
+
+{"q": "Can I get a refund on my reservation?",
+"a": "Unfortunately, cancellations cannot be processed after the reservation is confirmed."},
+
+{"q": "Can I get information about payments?",
+"a": "Olympos Lodge reservations are confirmed upon payment of the total accommodation fee via bank transfer within 24 hours. Reservations cannot be canceled, but date changes may be made subject to availability. Prices include room, breakfast, tax, and service charge. Within 24 hours after your pre-reservation is completed, our team will call you with payment details."},
+
+{"q": "How many rooms does the hotel have in total?",
+"a": "Olympos Lodge has a total of 17 rooms: 1 Aqua Super Deluxe, 2 Super Deluxe, 2 Deluxe, 1 Lake House, 1 Antique / Honeymoon Room, and 10 Standard Double Rooms."}
+]
+}

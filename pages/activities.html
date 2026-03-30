@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Aktiviteler – Olympos Lodge</title>
+  <meta name="description" content="Çıralı'da deniz, doğa, tarih ve keşif. Olympos Lodge aktiviteleri.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
+  <link rel="stylesheet" href="../assets/styles.css?v=106">
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
+    <a href="../index.html" class="header-logo">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png" alt="Olympos Lodge" />
+    </a>
+    <div class="header-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-current">TR</button>
+        <ul class="lang-dropdown">
+          <li><a href="#" data-lang="tr" class="active">Türkçe</a></li>
+          <li><a href="#" data-lang="en">English</a></li>
+          <li><a href="#" data-lang="de">Deutsch</a></li>
+        </ul>
+      </div>
+      <a href="https://ibe.sabeeapp.com/properties/Olympos-Lodge-rezervasyon/" class="btn-reserve" target="_blank" rel="noopener" data-i18n="btn_reserve">Rezervasyon</a>
+    </div>
+  </header>
+
+  <nav class="nav-overlay" id="navOverlay">
+    <ul class="nav-links">
+      <li><a href="../index.html" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
+      <li><a href="../index.html#about" data-nav data-i18n="nav_story">Hikayemiz</a></li>
+      <li><a href="rooms.html" data-nav data-i18n="nav_rooms">Odalar</a></li>
+      <li><a href="../index.html#nature" data-nav data-i18n="nav_nature">Doğa</a></li>
+      <li><a href="activities.html" data-nav>Aktiviteler</a></li>
+      <li><a href="../index.html#gallery" data-nav data-i18n="nav_gallery">Galeri</a></li>
+      <li><a href="cirali.html" data-nav>Çıralı</a></li>
+      <li><a href="../index.html#contact" data-nav data-i18n="nav_contact">İletişim</a></li>
+    </ul>
+    <div class="nav-footer">
+      <a href="tel:+905323083486">+90 532 308 34 86</a>
+      <div class="nav-social">
+        <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="child-hero child-hero--full">
+    <img class="child-hero__image" src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Aktiviteler" />
+    <div class="child-hero__overlay"></div>
+    <div class="child-hero__content">
+      <h1 class="child-hero__title">Aktiviteler</h1>
+    </div>
+  </section>
+
+  <!-- Page switcher sub-nav -->
+  <nav class="act-subnav dest-switcher" id="destSubnav">
+    <ul class="act-subnav__list">
+      <li class="act-subnav__item">
+        <a href="cirali.html" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+          </span>
+          <span class="act-subnav__label" data-i18n="nav_cirali_tab">Çıralı</span>
+        </a>
+      </li>
+      <li class="act-subnav__item act-subnav__item--active">
+        <a href="activities.html" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg>
+          </span>
+          <span class="act-subnav__label" data-i18n="nav_activities_tab">Aktiviteler</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sub-nav -->
+  <nav class="act-subnav" id="actSubnav">
+    <ul class="act-subnav__list">
+      <li class="act-subnav__item act-subnav__item--active">
+        <a href="#plaj" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+              <path d="M2 14c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/>
+              <path d="M12 2v8"/>
+              <circle cx="12" cy="2" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="act-subnav__label">Plaj</span>
+        </a>
+      </li>
+      <li class="act-subnav__item">
+        <a href="#deniz" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 17l3-8 4 4 3-6 4 10"/>
+              <path d="M2 20h20"/>
+            </svg>
+          </span>
+          <span class="act-subnav__label">Deniz</span>
+        </a>
+      </li>
+      <li class="act-subnav__item">
+        <a href="#yanarts" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2c0 6-6 7-6 12a6 6 0 0012 0c0-5-6-6-6-12z"/>
+              <path d="M12 12c0 3-2 4-2 6a2 2 0 004 0c0-2-2-3-2-6z"/>
+            </svg>
+          </span>
+          <span class="act-subnav__label">Yanartaş</span>
+        </a>
+      </li>
+      <li class="act-subnav__item">
+        <a href="#olympos" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="4" width="2" height="14"/>
+              <rect x="11" y="4" width="2" height="14"/>
+              <rect x="16" y="4" width="2" height="14"/>
+              <line x1="4" y1="4" x2="20" y2="4"/>
+              <line x1="4" y1="18" x2="20" y2="18"/>
+              <line x1="3" y1="21" x2="21" y2="21"/>
+            </svg>
+          </span>
+          <span class="act-subnav__label">Olympos</span>
+        </a>
+      </li>
+      <li class="act-subnav__item">
+        <a href="#likya" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 20l5-10 4 6 3-4 6 8"/>
+              <circle cx="18" cy="5" r="2"/>
+            </svg>
+          </span>
+          <span class="act-subnav__label">Likya Yolu</span>
+        </a>
+      </li>
+      <li class="act-subnav__item">
+        <a href="#tahtali" class="act-subnav__link">
+          <span class="act-subnav__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 20l6-12 4 6 3-4 7 10"/>
+              <line x1="5" y1="14" x2="19" y2="8"/>
+              <circle cx="5" cy="14" r="1.5" fill="currentColor" stroke="none"/>
+              <circle cx="19" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span class="act-subnav__label">Tahtalı</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Section: Plaj -->
+  <section class="act-section" id="plaj">
+    <div class="act-section__visual">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Çıralı Plajı" loading="lazy" />
+    </div>
+    <div class="act-section__body">
+      <span class="act-section__label">01</span>
+      <h2 class="act-section__title">Plaj</h2>
+      <p class="act-section__lead">Yaklaşık 3,5 kilometre uzunluğunda, ince çakıl ve kumdan oluşan el değmemiş bir Akdeniz kıyısı. Doğal sit alanı statüsüyle korunan bu plaj, her yıl Caretta caretta deniz kaplumbağalarına ev sahipliği yapar. Otelden 30 metrede.</p>
+      <ul class="act-section__facts">
+        <li><span>Mesafe</span><strong>30 m</strong></li>
+        <li><span>Uzunluk</span><strong>~3,5 km</strong></li>
+        <li><span>Kaplumbağa Sezonu</span><strong>Mayıs – Ekim</strong></li>
+      </ul>
+      <div class="act-section__tags">
+        <span>Ücretsiz</span>
+        <span>Şnorkel ekipmanı dahil</span>
+        <span>Kano & SUP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Deniz -->
+  <section class="act-section act-section--reverse" id="deniz">
+    <div class="act-section__visual">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Tekne Turu" loading="lazy" />
+    </div>
+    <div class="act-section__body">
+      <span class="act-section__label">02</span>
+      <h2 class="act-section__title">Deniz</h2>
+      <p class="act-section__lead">Olympos koyları, Adrasan ve çevre adacıklar arasında günübirlik mavi tur. Berrak sularda yüzme molaları, ıssız koy sığınakları, açık denizin sessizliği. Dalış ve tekne turları konsiyer aracılığıyla ayarlanabilir.</p>
+      <ul class="act-section__facts">
+        <li><span>Tekne Turu</span><strong>Tam gün · Konsiyer</strong></li>
+        <li><span>Dalış</span><strong>Mevsimsel · Ücretli</strong></li>
+        <li><span>Kano & SUP</span><strong>Ücretsiz</strong></li>
+      </ul>
+      <div class="act-section__tags">
+        <span>Tekne Turu</span>
+        <span>Dalış</span>
+        <span>Kano & SUP</span>
+        <span>Şnorkel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Yanartaş -->
+  <section class="act-section" id="yanarts">
+    <div class="act-section__visual">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg" alt="Yanartaş" loading="lazy" />
+    </div>
+    <div class="act-section__body">
+      <span class="act-section__label">03</span>
+      <h2 class="act-section__title">Yanartaş</h2>
+      <p class="act-section__lead">Yeraltından sızan doğal gazın 2.500 yıldır kesintisiz yaktığı alevler. Mitolojide Chimaera'nın nefesi. Gece yürüyüşü önerilir; karanlıkta kayalar arasından çıkan alevler zaman kavramını askıya alır.</p>
+      <ul class="act-section__facts">
+        <li><span>Mesafe</span><strong>3,5 km · 10 dk arabayla</strong></li>
+        <li><span>En İyi Zaman</span><strong>Gün batımından sonra</strong></li>
+        <li><span>Süre</span><strong>~2–3 saat</strong></li>
+      </ul>
+      <div class="act-section__tags">
+        <span>Gece Yürüyüşü</span>
+        <span>El feneri gerekli</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Olympos -->
+  <section class="act-section act-section--reverse" id="olympos">
+    <div class="act-section__visual">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg" alt="Olympos Antik Kenti" loading="lazy" />
+    </div>
+    <div class="act-section__body">
+      <span class="act-section__label">04</span>
+      <h2 class="act-section__title">Olympos</h2>
+      <p class="act-section__lead">Lodge'un ismini aldığı antik Likya kenti, bahçeden on dakika yürüme mesafesinde. Roma mezarları, tiyatro kalıntıları ve denize uzanan surlar. Sabah erken ya da akşamüstü ideal.</p>
+      <ul class="act-section__facts">
+        <li><span>Mesafe</span><strong>800 m · 10 dk</strong></li>
+        <li><span>Dönem</span><strong>Likya, Roma, Bizans</strong></li>
+        <li><span>Giriş</span><strong>Ücretli</strong></li>
+      </ul>
+      <div class="act-section__tags">
+        <span>Sabah erken</span>
+        <span>Akşamüstü</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Likya Yolu -->
+  <section class="act-section" id="likya">
+    <div class="act-section__visual">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5434-e1731093615320-1.jpg" alt="Likya Yolu" loading="lazy" />
+    </div>
+    <div class="act-section__body">
+      <span class="act-section__label">05</span>
+      <h2 class="act-section__title">Likya Yolu</h2>
+      <p class="act-section__lead">The Sunday Times'ın dünyanın en iyi on yürüyüş rotasından biri seçtiği 540 kilometrelik patika Çıralı'dan geçer. Olympos–Adrasan hattı orta-zor seviyede, antik kent ve ıssız koylarla dolu.</p>
+      <ul class="act-section__facts">
+        <li><span>Çıralı Bölümü</span><strong>Olympos – Adrasan</strong></li>
+        <li><span>Zorluk</span><strong>Orta – Zor</strong></li>
+        <li><span>Sezon</span><strong>Nis – Haz, Eyl – Kas</strong></li>
+      </ul>
+      <div class="act-section__tags">
+        <span>Harita resepsiyondan</span>
+        <span>Sağlam ayakkabı şart</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Tahtalı -->
+  <section class="act-section act-section--reverse" id="tahtali">
+    <div class="act-section__visual">
+      <img src="../assets/Olympos_beach.jpg" alt="Tahtalı Teleferik" loading="lazy" />
+    </div>
+    <div class="act-section__body">
+      <span class="act-section__label">06</span>
+      <h2 class="act-section__title">Tahtalı Teleferik</h2>
+      <p class="act-section__lead">2.365 metreye tek geçişte çıkış. Akdeniz'in ve Çıralı vadisinin kuş bakışı panoramik görünümü. Dünyanın en uzun tek geçişli teleferiklerinden biri.</p>
+      <ul class="act-section__facts">
+        <li><span>Mesafe</span><strong>15 km</strong></li>
+        <li><span>Zirve</span><strong>2.365 m</strong></li>
+        <li><span>Sezon</span><strong>Nisan – Kasım</strong></li>
+      </ul>
+      <div class="act-section__tags">
+        <span>15 km uzakta</span>
+        <span>Rezervasyon önerilir</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cookie Consent -->
+  <div class="cookie-fab" id="cookieFab" aria-label="Çerez Tercihleri">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="8.5" cy="9" r="1.2" fill="currentColor"/>
+      <circle cx="14" cy="7.5" r="0.9" fill="currentColor"/>
+      <circle cx="15.5" cy="13" r="1.2" fill="currentColor"/>
+      <circle cx="9.5" cy="14.5" r="1" fill="currentColor"/>
+      <circle cx="12.5" cy="11" r="0.7" fill="currentColor"/>
+    </svg>
+  </div>
+  <div class="cookie-panel" id="cookiePanel" role="dialog" aria-modal="true">
+    <div class="cookie-panel__header">
+      <span class="cookie-panel__title">Çerez Tercihleri</span>
+      <button class="cookie-panel__close" id="cookiePanelClose" aria-label="Kapat">×</button>
+    </div>
+    <div class="cookie-panel__body">
+      <p class="cookie-panel__text">Bu site, deneyiminizi kişiselleştirmek ve analitik veriler toplamak için çerezler kullanmaktadır.</p>
+      <div class="cookie-panel__options">
+        <div class="cookie-option"><div class="cookie-option__info"><span class="cookie-option__name">Zorunlu</span><span class="cookie-option__desc">Sitenin çalışması için gereklidir</span></div><div class="cookie-toggle cookie-toggle--locked"><span class="cookie-toggle__track"></span></div></div>
+        <div class="cookie-option"><div class="cookie-option__info"><span class="cookie-option__name">Analitik</span><span class="cookie-option__desc">Ziyaret istatistikleri</span></div><label class="cookie-toggle"><input type="checkbox" id="cookieAnalytics" checked><span class="cookie-toggle__track"></span></label></div>
+        <div class="cookie-option"><div class="cookie-option__info"><span class="cookie-option__name">Pazarlama</span><span class="cookie-option__desc">Kişiselleştirilmiş içerik</span></div><label class="cookie-toggle"><input type="checkbox" id="cookieMarketing"><span class="cookie-toggle__track"></span></label></div>
+      </div>
+    </div>
+    <div class="cookie-panel__footer">
+      <a href="../privacy.html" class="cookie-panel__link">Gizlilik Politikası</a>
+      <div class="cookie-panel__actions">
+        <button class="cookie-btn cookie-btn--outline" id="cookieSavePrefs">Kaydet</button>
+        <button class="cookie-btn cookie-btn--fill" id="cookieAcceptAll">Tümünü Kabul Et</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/script.js?v=26"></script>
+</body>
+</html>

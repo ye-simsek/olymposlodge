@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_reserve: 'Reserve',
       nav_home: 'Home', nav_story: 'Our Story', nav_rooms: 'Rooms',
       nav_nature: 'Nature', nav_experience: 'Experience', nav_gallery: 'Gallery', nav_contact: 'Contact',
+      nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Activities',
       hero_title: 'Time flows<br>differently here.',
       hero_subtitle: 'Noise softens, senses awaken.<br>Nature makes itself heard.',
       intro_title: 'Olympos Lodge: An Intimate Retreat on the Lycian Coast',

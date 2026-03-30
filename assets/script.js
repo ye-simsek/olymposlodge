@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_reserve: 'Rezervasyon',
       nav_home: 'Ana Sayfa', nav_story: 'Hikayemiz', nav_rooms: 'Odalar',
       nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim',
+      nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktiviteler',
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
       intro_title: 'Olympos Lodge: Likya Kıyısında Samimi Bir Sığınak',

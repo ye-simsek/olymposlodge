@@ -269,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn_reserve: 'Reservieren',
       nav_home: 'Startseite', nav_story: 'Unsere Geschichte', nav_rooms: 'Zimmer',
       nav_nature: 'Natur', nav_experience: 'Erlebnis', nav_gallery: 'Galerie', nav_contact: 'Kontakt',
+      nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktivitäten',
       hero_title: 'Die Zeit fließt<br>hier anders.',
       hero_subtitle: 'Der Lärm verstummt, die Sinne erwachen.<br>Die Natur macht sich hörbar.',
       intro_title: 'Olympos Lodge: Ein Intimes Refugium an der Lykischen Küste',

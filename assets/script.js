@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktiviteler',
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
+      conviction_sentence: 'Gereksiz olanı çıkardığınızda, asıl önemli olan kalır.',
       intro_title: 'Olympos Lodge: Likya Kıyısında Samimi Bir Sığınak',
       intro_label: 'Hakkında',
       intro_p1: 'Zümrüt bir vadinin denize açıldığı noktada, zaman farklı akar. Olympos Lodge burada 1985\'ten beri ayakta, gereksiz olanı çıkardığınızda geriye daha ince bir şeyin kaldığı inancıyla. Geride kalan acelesi olmayan bir şey: bir bahçe, bir kıyı, sizi hiçbir şey talep etmeyen bir sessizlik.',

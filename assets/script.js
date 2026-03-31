@@ -274,6 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktivitäten',
       hero_title: 'Die Zeit fließt<br>hier anders.',
       hero_subtitle: 'Der Lärm verstummt, die Sinne erwachen.<br>Die Natur macht sich hörbar.',
+      conviction_sentence: 'Ein Ort, dem das Unnötige genommen wurde, wird zu etwas Feinerem.',
       intro_title: 'Olympos Lodge: Ein Intimes Refugium an der Lykischen Küste',
       intro_label: 'Über uns',
       intro_p1: 'Wo ein grünes Tal auf das Meer trifft, vergeht die Zeit anders. Olympos Lodge steht hier seit 1985, gegründet auf die Überzeugung, dass ein Ort, dem alles Überflüssige genommen wurde, zu etwas Feinerem wird. Was bleibt, ist ungehetzt: ein Garten, eine Küste, die Art von Stille, die nichts von Ihnen verlangt.',

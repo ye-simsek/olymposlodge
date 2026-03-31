@@ -623,7 +623,6 @@ h4 {
   letter-spacing: 0.01em;
   max-width: 480px;
   text-align: right;
-  text-wrap: balance;
 }
 .conviction__sig {
   display: flex;

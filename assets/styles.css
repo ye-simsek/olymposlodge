@@ -623,6 +623,20 @@ h4 {
   max-width: 380px;
   text-align: right;
 }
+.conviction__rule {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-warm-gold);
+  margin: 1.8rem 0 1.2rem auto;
+}
+.conviction__byline {
+  display: block;
+  font-family: var(--font-sc);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-warm-gold);
+  text-align: right;
+}
 .conviction__image {
   flex: 0 0 auto;
   padding: 1.5rem;

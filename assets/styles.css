@@ -609,8 +609,9 @@ h4 {
 .conviction__text {
   flex: 3 1 0;
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
 }
 .conviction__sentence {
   font-family: var(--font-heading);

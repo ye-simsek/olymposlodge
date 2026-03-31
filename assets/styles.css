@@ -633,7 +633,7 @@ h4 {
 }
 .conviction__image img {
   display: block;
-  width: 260px;
+  width: 380px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }

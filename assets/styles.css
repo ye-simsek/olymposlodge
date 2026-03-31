@@ -2617,7 +2617,7 @@ h4 {
 }
 
 .dest-feature__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-sc);
   font-size: clamp(2.8rem, 5.5vw, 7rem);
   font-weight: 300;
   line-height: 1.0;
@@ -2625,7 +2625,7 @@ h4 {
   text-align: center;
   white-space: nowrap;
   margin: 0 0 4rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.08em;
 }
 
 .dest-feature__cols {

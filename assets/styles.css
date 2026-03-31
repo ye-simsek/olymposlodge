@@ -620,22 +620,28 @@ h4 {
   color: var(--color-text);
   line-height: 1.4;
   letter-spacing: 0.01em;
-  max-width: 380px;
+  max-width: 480px;
   text-align: right;
+  text-wrap: balance;
+}
+.conviction__sig {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 1.8rem;
 }
 .conviction__rule {
   width: 3rem;
   height: 1px;
   background: var(--color-warm-gold);
-  margin: 1.8rem 0 1.2rem auto;
+  margin-bottom: 0.9rem;
 }
 .conviction__byline {
-  display: block;
   font-family: var(--font-sc);
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
   color: var(--color-warm-gold);
-  text-align: right;
+  opacity: 1;
 }
 .conviction__image {
   flex: 0 0 auto;

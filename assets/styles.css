@@ -811,10 +811,6 @@ h4 {
   padding: var(--space-lg) var(--space-xl) var(--space-lg) 2rem;
 }
 
-.room-row__content p {
-  margin-top: auto;
-}
-
 .room-row__label {
   font-family: var(--font-accent);
   font-size: 0.65rem;
@@ -846,6 +842,7 @@ h4 {
   color: var(--color-text);
   line-height: 1.7;
   max-width: 46ch;
+  margin-top: auto;
   margin-bottom: var(--space-md);
   cursor: text;
   user-select: text;

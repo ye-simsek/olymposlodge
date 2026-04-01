@@ -852,18 +852,13 @@ h4 {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #fff;
-  background: var(--color-warm-gold);
-  border: 1px solid var(--color-warm-gold);
-  padding: 0.6rem 1.4rem;
+  color: var(--color-warm-gold);
   text-decoration: none;
-  transition: all var(--transition);
-  align-self: flex-start;
+  transition: letter-spacing var(--transition);
 }
 
 .room-row__link:hover {
-  background: transparent;
-  color: var(--color-warm-gold);
+  letter-spacing: 0.22em;
 }
 
 /* --- Rooms Page Hero --- */

@@ -837,6 +837,8 @@ h4 {
   line-height: 1.7;
   max-width: 46ch;
   margin-bottom: var(--space-md);
+  cursor: text;
+  user-select: text;
 }
 
 .room-row__link {

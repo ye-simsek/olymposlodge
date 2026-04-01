@@ -16,7 +16,7 @@
 13. Cookie consent — UI built (bottom-left FAB → panel with toggles); actual consent logic (localStorage, conditional script loading) not yet implemented
 
 ## Design References
-Casa Angelina, Amanruya
+Casa Angelina, Amanruya, Badrutt's Palace, Casa Cook
 
 ## Hotel Information
 Factual details about the hotel (room sizes, amenities, descriptions, policies, etc.) can be found in `olympos_lodge_rag_english copy.txt` in the project root. Always check this file before using approximations or asking the user for facts about the property.

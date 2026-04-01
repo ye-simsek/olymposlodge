@@ -782,6 +782,7 @@ h4 {
 .room-row__image {
   position: relative;
   overflow: hidden;
+  display: block;
 }
 
 .room-row__image img {

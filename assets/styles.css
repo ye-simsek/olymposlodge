@@ -761,14 +761,14 @@ h4 {
 
 .room-row {
   display: grid;
-  grid-template-columns: 68fr 32fr;
+  grid-template-columns: 62fr 38fr;
   height: 540px;
   text-decoration: none;
   color: inherit;
 }
 
 .room-row--reverse {
-  grid-template-columns: 32fr 68fr;
+  grid-template-columns: 38fr 62fr;
 }
 
 .room-row--reverse .room-row__image {

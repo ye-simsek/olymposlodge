@@ -849,7 +849,8 @@ h4 {
 
 .room-row__link {
   font-family: var(--font-cinzel);
-  font-size: 0.8rem;
+  font-size: 0.863rem;
+  font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-warm-gold);

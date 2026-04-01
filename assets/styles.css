@@ -801,14 +801,18 @@ h4 {
 .room-row__content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: var(--space-2xl) 2rem var(--space-2xl) var(--space-xl);
+  justify-content: flex-start;
+  padding: var(--space-lg) 2rem var(--space-lg) var(--space-xl);
   background: var(--color-cream);
   overflow: hidden;
 }
 
 .room-row--reverse .room-row__content {
-  padding: var(--space-2xl) var(--space-xl) var(--space-2xl) 2rem;
+  padding: var(--space-lg) var(--space-xl) var(--space-lg) 2rem;
+}
+
+.room-row__content p {
+  margin-top: auto;
 }
 
 .room-row__label {

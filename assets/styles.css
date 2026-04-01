@@ -820,7 +820,7 @@ h4 {
   display: block;
 }
 
-.room-row__content a {
+.room-row__content a:not(.room-row__link) {
   text-decoration: none;
   color: inherit;
 }

@@ -770,13 +770,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Prevent room row navigation when clicking description text
-  document.querySelectorAll('.room-row').forEach(row => {
-    row.addEventListener('click', e => {
-      if (e.target.closest('.room-row__content p')) {
-        e.preventDefault();
-      }
-    });
-  });
 
 });

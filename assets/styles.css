@@ -833,7 +833,7 @@ h4 {
 
 .room-row__content p {
   font-size: 0.95rem;
-  color: var(--color-text-light);
+  color: var(--color-text);
   line-height: 1.7;
   max-width: 32ch;
   margin-bottom: var(--space-md);

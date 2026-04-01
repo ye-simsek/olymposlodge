@@ -10,6 +10,7 @@
 7. rooms.html — room descriptions are placeholders; supplement with richer copy from RAG file
 8. Hero video poster — user will handle extraction; currently a placeholder
 9. Dining section needs revisiting (copy, photos, full menu details)
+14. Experiences page: add Spa section (the Deneyim/Experience section was removed from homepage; spa content should live on the Experiences/Çıralı page)
 10. Instagram feed — static placeholder for now; revisit for live feed later
 11. Newsletter — email service provider not yet decided; discuss when ready
 12. KVKK + Terms pages confirmed accurate by user but recommend professional legal review before go-live

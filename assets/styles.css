@@ -853,9 +853,10 @@ h4 {
   text-transform: uppercase;
   color: var(--color-warm-gold);
   transition: letter-spacing var(--transition);
+  text-decoration: none;
 }
 
-.room-row:hover .room-row__link {
+.room-row__link:hover {
   letter-spacing: 0.22em;
 }
 

@@ -848,17 +848,22 @@ h4 {
 }
 
 .room-row__link {
-  font-family: var(--font-accent);
-  font-size: 0.7rem;
+  font-family: var(--font-cinzel);
+  font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-warm-gold);
-  transition: letter-spacing var(--transition);
+  color: #fff;
+  background: var(--color-warm-gold);
+  border: 1px solid var(--color-warm-gold);
+  padding: 0.6rem 1.4rem;
   text-decoration: none;
+  transition: all var(--transition);
+  align-self: flex-start;
 }
 
 .room-row__link:hover {
-  letter-spacing: 0.22em;
+  background: transparent;
+  color: var(--color-warm-gold);
 }
 
 /* --- Rooms Page Hero --- */

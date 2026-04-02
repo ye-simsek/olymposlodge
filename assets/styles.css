@@ -841,7 +841,7 @@ h4 {
   font-family: var(--font-heading);
   font-size: 1.22rem;
   font-weight: 500;
-  color: #1c1814;
+  color: var(--color-text);
   line-height: 1.7;
   max-width: 46ch;
   margin-top: auto;

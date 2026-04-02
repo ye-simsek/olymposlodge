@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_copyright: '© 2025 Olympos Lodge. Tüm hakları saklıdır.',
       footer_terms: 'Ön Bilgilendirme Formu',
       footer_privacy: 'Gizlilik ve KVKK Bilgilendirme',
-      c_intro_title: 'Vadinin Sonu: Çıralı',
+      c_intro_title: 'Başka Bir Kıyı: Çıralı',
       c_intro_p1: 'Türkiye\'nin güney kıyısında, Toros dağlarının denize kavuştuğu noktada küçük bir vadi uzanır. Çıralı, 1990\'lardan bu yana kıyı koruma statüsüyle güvence altına alınmış, yapılaşmanın sınırlandırıldığı nadir yerleşimlerden biridir; bu yüzden burada yüksek oteller, beton rıhtımlar ya da kalabalık sahil şeritleri göremezsiniz. 3,5 kilometre uzunluğundaki plaj, Caretta caretta deniz kaplumbağaları için her yıl yuvalamanın sürdüğü alan olarak uluslararası koruma statüsü taşımaktadır.',
       c_intro_p2: 'Çıralı\'nın arka planı, yerleşim kadar eskidir. MÖ 2. yüzyılda kurulmuş Antik Olympos kenti, otelin hemen bitişiğinde, Likya Birliği\'nin önemli liman şehirlerinden biriydi; bugün Roma dönemi mezarları ve tiyatro kalıntıları vadinin içine karışmış durumdadır. Birkaç kilometre ötede, Yanartaş\'ta yeraltından sızan doğal gazın 2.500 yıldır yakıp tuttuğu alevler Homeros\'un Chimaera efsanesine ilham kaynağı olmuştur. Çıralı, mitoloji, tarih ve doğanın bu kadar iç içe geçtiği ender yerlerden biridir.',
       c_ch1_cat: 'Plaj', c_ch1_title: '3,5 km\'lik Dokunulmamış Kıyı',

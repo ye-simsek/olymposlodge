@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tr: {
       btn_reserve: 'Rezervasyon',
       nav_home: 'Ana Sayfa', nav_story: 'Hikayemiz', nav_rooms: 'Odalar',
-      nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim', nav_experiences: 'Deneyimler', nav_location: 'Konum',
+      nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim', nav_experiences: 'Deneyimler', nav_location: 'Konum', loc_hero_title: 'Nasıl Gelinir',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktiviteler',
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',

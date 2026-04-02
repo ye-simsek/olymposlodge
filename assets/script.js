@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_contact: 'Get in Touch',
       loc_teaser_title: 'Hard to Find.\nHarder to Leave.',
       loc_teaser_body: 'At the end of a valley where the Taurus Mountains meet the sea. Ancient ruins, mythological flames, and the calm of the Mediterranean.',
-      loc_teaser_cta: 'See Location →'
+      loc_teaser_cta: 'Explore →'
     },
     de: {
       btn_reserve: 'Reservieren',

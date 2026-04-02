@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_copyright: '© 2025 Olympos Lodge. All rights reserved.',
       footer_terms: 'Preliminary Information Form',
       footer_privacy: 'Privacy & KVKK Notice',
-      c_intro_title: 'Land\'s End: Çıralı',
+      c_intro_title: 'A Coast Apart: Çıralı',
       c_intro_p1: 'On Turkey\'s southern coast, where the Taurus mountains meet the sea, a small valley unfolds. Çıralı has been under coastal protection since the 1990s, one of the rare settlements where development is restricted — no high-rise hotels, no concrete piers, no crowded shorelines. The 3.5-kilometre beach holds international protection status as an active nesting ground for Caretta caretta sea turtles.',
       c_intro_p2: 'The valley\'s past runs as deep as its present. Founded in the 2nd century BC, the ancient city of Olympos — which lends the lodge its name — was once a key port of the Lycian League; today, Roman-era tombs and theatre ruins are woven into the landscape beside us. A few kilometres inland, at Yanartaş, natural gas seeping from the earth has burned continuously for 2,500 years and is said to have inspired Homer\'s legend of the Chimaera. Çıralı is one of the few places where mythology, history, and nature remain this inseparably entwined.',
       c_ch1_cat: 'Beach', c_ch1_title: '3.5 km of Untouched Shore',

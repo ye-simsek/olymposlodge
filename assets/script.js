@@ -300,7 +300,10 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_dist_walking: 'walking distance',
       loc_cta_title: 'Arriving is where the holiday begins.',
       loc_cta_sub: 'Write to us for a transfer or directions. We will handle the rest.',
-      loc_cta_contact: 'Get in Touch'
+      loc_cta_contact: 'Get in Touch',
+      loc_teaser_title: 'Explore.\nUnwind.\nArrive.',
+      loc_teaser_body: 'At the end of a valley where the Taurus Mountains meet the sea. Ancient ruins, mythological flames, and the calm of the Mediterranean.',
+      loc_teaser_cta: 'See Location →'
     },
     de: {
       btn_reserve: 'Reservieren',

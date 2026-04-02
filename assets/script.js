@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tr: {
       btn_reserve: 'Rezervasyon',
       nav_home: 'Ana Sayfa', nav_story: 'Hikayemiz', nav_rooms: 'Odalar',
-      nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim', nav_experiences: 'Deneyimler',
+      nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim', nav_experiences: 'Deneyimler', nav_location: 'Nasıl Gelinir',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktiviteler',
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     de: {
       btn_reserve: 'Reservieren',
       nav_home: 'Startseite', nav_story: 'Unsere Geschichte', nav_rooms: 'Zimmer',
-      nav_nature: 'Natur', nav_experience: 'Erlebnis', nav_gallery: 'Galerie', nav_contact: 'Kontakt', nav_experiences: 'Erlebnisse',
+      nav_nature: 'Natur', nav_experience: 'Erlebnis', nav_gallery: 'Galerie', nav_contact: 'Kontakt', nav_experiences: 'Erlebnisse', nav_location: 'Anreise',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktivitäten',
       hero_title: 'Die Zeit fließt<br>hier anders.',
       hero_subtitle: 'Der Lärm verstummt, die Sinne erwachen.<br>Die Natur macht sich hörbar.',

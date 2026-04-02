@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_title: 'Arriving is where the holiday begins.',
       loc_cta_sub: 'Write to us for a transfer or directions. We will handle the rest.',
       loc_cta_contact: 'Get in Touch',
-      loc_teaser_title: 'Explore.\nUnwind.\nArrive.',
+      loc_teaser_title: 'Hard to Find.\nHarder to Leave.',
       loc_teaser_body: 'At the end of a valley where the Taurus Mountains meet the sea. Ancient ruins, mythological flames, and the calm of the Mediterranean.',
       loc_teaser_cta: 'See Location →'
     },
@@ -425,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_title: 'Die Ankunft ist der Beginn des Urlaubs.',
       loc_cta_sub: 'Schreiben Sie uns für einen Transfer oder eine Wegbeschreibung. Wir kümmern uns um alles.',
       loc_cta_contact: 'Kontakt aufnehmen',
-      loc_teaser_title: 'Entdecken.\nEntspannen.\nAnkommen.',
+      loc_teaser_title: 'Schwer zu Finden.\nNoch Schwerer zu Verlassen.',
       loc_teaser_body: 'Am Ende eines Tals, wo die Taurusberge auf das Meer treffen. Antike Ruinen, mythologische Flammen und die Stille des Mittelmeers.',
       loc_teaser_cta: 'Zur Lage →'
     }

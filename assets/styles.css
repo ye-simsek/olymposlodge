@@ -682,9 +682,12 @@ h4 {
 .loc-teaser {
   display: grid;
   grid-template-columns: 55fr 45fr;
-  min-height: 580px;
+  min-height: 680px;
+  align-items: stretch;
+  background: var(--color-warm-white);
 }
 .loc-teaser__image {
+  padding: 3rem 0 3rem 3rem;
   overflow: hidden;
 }
 .loc-teaser__image img {
@@ -693,6 +696,7 @@ h4 {
   object-fit: cover;
   object-position: center 55%;
   display: block;
+  border-radius: 2px;
 }
 .loc-teaser__content {
   display: flex;

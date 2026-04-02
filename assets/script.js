@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_method_fly_body: 'En yakın havalimanı Antalya (AYT), yaklaşık 90 km mesafede. İstanbul, Ankara ve pek çok Avrupa şehrinden doğrudan sefer mevcuttur.',
       loc_method_fly_note: 'Transfer için bize ulaşın.',
       loc_method_transfer_title: 'Otel Transferi',
-      loc_method_transfer_body: 'Antalya Havalimanı\'ndan özel araç ile kapıdan kapıya transfer. Varış saatinizi paylaşın, gerisini biz halledelim.',
+      loc_method_transfer_body: 'Antalya Havalimanı\'ndan özel araç ile kapıdan kapıya transfer. Varış saatinizi iletmeniz yeterlidir; gerisini biz hallederiz.',
       loc_dist_walking: 'yürüyüş mesafesi',
       loc_cta_title: 'Buraya varmak, tatile başlamaktır.',
       loc_cta_sub: 'Transfer rezervasyonu veya yol tarifi için bize yazın. Gerisini biz halledelim.',

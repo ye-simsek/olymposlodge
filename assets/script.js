@@ -402,7 +402,23 @@ document.addEventListener('DOMContentLoaded', () => {
       c_nearby4_title: 'Kemer', c_nearby4_desc: 'Der nächste Ort für Märkte, Apotheken, Banken und einen Yachthafen.',
       c_nearby5_title: 'Antalya', c_nearby5_desc: 'Historisches Kaleiçi, Museen und der Flughafen Antalya (AYT) für internationale Flüge.',
       c_cta_quote: 'Çıralı mit seinem Strand, seinen Ruinen, seinen Flammen und seiner geschützten Stille ist etwas, das anderswo in der Türkei immer schwerer zu finden ist.',
-      c_cta_rooms: 'Zimmer'
+      c_cta_rooms: 'Zimmer',
+      loc_page_title: 'Lage',
+      loc_intro_title: 'Wo das Tal auf das Meer trifft',
+      loc_intro_body: 'Am Ende eines geschützten Tals, wo die Taurusberge auf das Meer treffen, liegt Olympos Lodge inmitten einer der stillsten und außergewöhnlichsten Küstenregionen der Türkei. Çıralı ist ein besonderer Ort. Keine Hochhäuser, keine Strandclubs, kein Lärm. Nur eine lange, unberührte Bucht, antike Ruinen zum Hinlaufen und die mythologischen Flammen der Chimäre, die seit Jahrtausenden vom Hang aufsteigen. Ob zum Schwimmen, Wandern oder einfach Nichtstun — das Tal nimmt Sie auf.',
+      loc_lead: 'In Çıralı anzukommen bedeutet, den Urlaub zu beginnen. Sobald Sie das Tal befahren, spüren Sie, wie die Stadt hinter Ihnen zurückbleibt.',
+      loc_method_car_title: 'Mit dem Auto',
+      loc_method_car_body: 'Etwa 1,5 Stunden vom Flughafen Antalya. Folgen Sie der D400 und nehmen Sie die Ausfahrt Ulupınar. Die letzten 7 km durch das Tal sind eine malerische Fahrt durch den Wald.',
+      loc_method_car_note: 'Kostenloser Parkplatz auf dem Gelände.',
+      loc_method_fly_title: 'Mit dem Flugzeug',
+      loc_method_fly_body: 'Der nächste Flughafen ist Antalya (AYT), etwa 90 km entfernt. Direktflüge sind ab Istanbul, Ankara und vielen europäischen Städten verfügbar.',
+      loc_method_fly_note: 'Kontaktieren Sie uns für einen Transfer.',
+      loc_method_transfer_title: 'Hoteltransfer',
+      loc_method_transfer_body: 'Privater Tür-zu-Tür-Transfer vom Flughafen Antalya. Teilen Sie Ihre Ankunftszeit mit und wir kümmern uns um den Rest.',
+      loc_dist_walking: 'zu Fuß erreichbar',
+      loc_cta_title: 'Die Ankunft ist der Beginn des Urlaubs.',
+      loc_cta_sub: 'Schreiben Sie uns für einen Transfer oder eine Wegbeschreibung. Wir kümmern uns um alles.',
+      loc_cta_contact: 'Kontakt aufnehmen'
     }
   };
 

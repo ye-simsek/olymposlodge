@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_contact: 'Kontakt aufnehmen',
       loc_teaser_title: 'Schwer zu Finden.\nNoch Schwerer zu Verlassen.',
       loc_teaser_body: 'Am Ende eines Tals, wo die Taurusberge auf das Meer treffen. Antike Ruinen, mythologische Flammen und die Stille des Mittelmeers.',
-      loc_teaser_cta: 'Zur Lage →'
+      loc_teaser_cta: 'Entdecken →'
     }
   };
 

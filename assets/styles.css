@@ -687,7 +687,7 @@ h4 {
   background: var(--color-warm-white);
 }
 .loc-teaser__image {
-  padding: 2rem 0 2rem 2rem;
+  padding: 3rem 0 3rem 3rem;
   overflow: hidden;
 }
 .loc-teaser__image img {

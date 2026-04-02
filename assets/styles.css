@@ -681,7 +681,7 @@ h4 {
    ======================================== */
 .loc-teaser {
   display: grid;
-  grid-template-columns: 42fr 58fr;
+  grid-template-columns: 50fr 50fr;
   min-height: 760px;
   align-items: stretch;
   background: var(--color-warm-white);

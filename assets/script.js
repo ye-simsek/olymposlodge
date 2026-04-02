@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_copyright: '© 2025 Olympos Lodge. Alle Rechte vorbehalten.',
       footer_terms: 'Vorabinformationsformular',
       footer_privacy: 'Datenschutz & KVKK',
-      c_intro_title: 'Am Ende des Tales: Çıralı',
+      c_intro_title: 'Eine Küste für sich: Çıralı',
       c_intro_p1: 'An der Südküste der Türkei, wo die Taurusberge auf das Meer treffen, erstreckt sich ein kleines Tal. Çıralı steht seit den 1990er Jahren unter Küstenschutz und gehört zu den seltenen Siedlungen, in denen Bebauung eingeschränkt ist; keine Hochhaushotels, keine Betonpiers, keine überfüllten Strandabschnitte. Der 3,5 Kilometer lange Strand genießt internationalen Schutzstatus als aktives Nistgebiet der Meeresschildkröte Caretta caretta.',
       c_intro_p2: 'Die Vergangenheit des Tals reicht so weit zurück wie seine Gegenwart. Die im 2. Jahrhundert v. Chr. gegründete antike Stadt Olympos, die dem Lodge ihren Namen verleiht, war einst ein bedeutender Hafen der Lykischen Liga; heute sind Grabmäler aus der Römerzeit und Theaterreste in die Landschaft eingewoben. Wenige Kilometer entfernt, am Yanartaş, brennt aus der Erde aufsteigendes Erdgas seit 2.500 Jahren ununterbrochen und soll Homers Chimaera-Legende inspiriert haben. Çıralı ist einer der wenigen Orte, an denen Mythologie, Geschichte und Natur so untrennbar miteinander verwoben sind.',
       c_ch1_cat: 'Strand', c_ch1_title: '3,5 km unberührte Küste',

@@ -424,7 +424,10 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_dist_walking: 'zu Fuß erreichbar',
       loc_cta_title: 'Die Ankunft ist der Beginn des Urlaubs.',
       loc_cta_sub: 'Schreiben Sie uns für einen Transfer oder eine Wegbeschreibung. Wir kümmern uns um alles.',
-      loc_cta_contact: 'Kontakt aufnehmen'
+      loc_cta_contact: 'Kontakt aufnehmen',
+      loc_teaser_title: 'Entdecken.\nEntspannen.\nAnkommen.',
+      loc_teaser_body: 'Am Ende eines Tals, wo die Taurusberge auf das Meer treffen. Antike Ruinen, mythologische Flammen und die Stille des Mittelmeers.',
+      loc_teaser_cta: 'Zur Lage →'
     }
   };
 

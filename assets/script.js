@@ -306,7 +306,10 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_contact: 'Get in Touch',
       loc_teaser_title: 'Hard to Find.\nHarder to Leave.',
       loc_teaser_body: 'At the end of a valley where the Taurus Mountains meet the sea. Ancient ruins, mythological flames, and the calm of the Mediterranean.',
-      loc_teaser_cta: 'Explore →'
+      loc_teaser_cta: 'Explore →',
+      loc_exp_title: 'Experiences',
+      loc_exp_body: 'The mythological flames of the Chimaera, ancient Olympos ruins, coastal hikes, kayaking and swimming in the Mediterranean. Every day in Çıralı unfolds at its own pace.',
+      loc_exp_cta: 'Explore →'
     },
     de: {
       btn_reserve: 'Reservieren',

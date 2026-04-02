@@ -2777,6 +2777,7 @@ h4 {
 .dest-feature__text {
   position: absolute;
   inset: 0;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   align-items: center;

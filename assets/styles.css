@@ -2805,7 +2805,8 @@ h4 {
 }
 
 .dest-feature__desc {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
+  font-weight: 500;
   font-size: clamp(1rem, 1.15vw, 1.1rem);
   line-height: 1.9;
   color: #fff;

@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_contact: 'İletişime Geç',
       loc_teaser_title: 'Bulunması Zor,\nBırakılması Daha Zor.',
       loc_teaser_body: 'Torosların eteklerinden inen bir vadinin ucunda, sessiz bir kıyıda. Antik kalıntılar, yanmaya devam eden efsanevi alevler ve masmavi bir deniz.',
-      loc_teaser_cta: 'Konuma Bak →'
+      loc_teaser_cta: 'Keşfet →'
     },
     en: {
       btn_reserve: 'Reserve',

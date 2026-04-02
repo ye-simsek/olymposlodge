@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_method_transfer_body: 'Antalya Havalimanı\'ndan özel araç ile kapıdan kapıya transfer. Varış saatinizi iletmeniz yeterlidir; gerisini biz hallederiz.',
       loc_dist_walking: 'yürüyüş mesafesi',
       loc_cta_title: 'Buraya varmak, tatile başlamaktır.',
-      loc_cta_sub: 'Transfer rezervasyonu veya yol tarifi için bize yazın. Gerisini biz halledelim.',
+      loc_cta_sub: 'Transfer rezervasyonu veya yol tarifi için bize yazabilirsiniz. Gerisini biz hallederiz.',
       loc_cta_contact: 'İletişime Geç'
     },
     en: {

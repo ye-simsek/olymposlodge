@@ -2777,26 +2777,23 @@ h4 {
 .dest-feature__text {
   position: absolute;
   inset: 0;
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   z-index: 1;
   padding: 4rem 5.4rem 4rem;
-  z-index: 1;
 }
 
 .dest-feature__title {
-  font-family: var(--font-sc);
-  font-size: clamp(2.8rem, 5.5vw, 7rem);
-  font-weight: 300;
-  line-height: 1.0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
   color: #fff;
-  text-align: center;
-  white-space: nowrap;
-  margin: 0 0 4rem;
-  letter-spacing: 0.08em;
+  text-align: left;
+  margin: 0 0 2.5rem;
+  letter-spacing: 0.04em;
 }
 
 .dest-feature__cols {

@@ -293,10 +293,10 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_method_fly_body: 'The nearest airport is Antalya (AYT), approximately 90 km away. Direct flights are available from Istanbul, Ankara and many European cities.',
       loc_method_fly_note: 'Contact us for a transfer.',
       loc_method_transfer_title: 'Hotel Transfer',
-      loc_method_transfer_body: 'Private door-to-door transfer from Antalya Airport. Share your arrival time and we\'ll take care of the rest.',
+      loc_method_transfer_body: 'Private door-to-door transfer from Antalya Airport. Share your arrival time and we will take care of the rest.',
       loc_dist_walking: 'walking distance',
       loc_cta_title: 'Arriving is where the holiday begins.',
-      loc_cta_sub: 'Write to us for a transfer or directions. We\'ll handle the rest.',
+      loc_cta_sub: 'Write to us for a transfer or directions. We will handle the rest.',
       loc_cta_contact: 'Get in Touch'
     },
     de: {

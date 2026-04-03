@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
       intro_p2: 'Siebzehn Zimmer in 20.000 Quadratmetern Garten, unweit eines der unberührtesten Strände des Mittelmeers. Ein kurzer Spaziergang von der antiken Stadt entfernt, die dieser Küste ihren Namen gab. Der Garten, der Strand, das Restaurant: alles ausschließlich für unsere Gäste.',
       intro_p4: 'Die Tage hier entfalten sich ohne Tagesordnung. Beziehen Sie eine Cabana am Strand und lassen Sie den Morgen vergehen. Nehmen Sie ein Kanu und erkunden Sie die Küste in Ihrem eigenen Tempo, oder bitten Sie den Concierge, eine Bootstour zu arrangieren. Der Vorgarten ist genau der Ort, an dem eine Yogamatte und ein Buch gleichermaßen Sinn ergeben. Fahrräder stehen bereit, um das Dorf Çıralı und die umliegenden Straßen zu erkunden.',
       intro_p6: 'Abends werden im Garten Feuer entzündet: zum Zusammenkommen, um einen Drink zu genießen und das Gespräch seinen eigenen Lauf nehmen zu lassen. Und wenn der Tag nichts mehr verlangt, ist das private Spa da: Whirlpool, Sauna, Dampfbad, ganz für Sie allein.',
-      about_label: 'Konzept & Philosophie',
+      about_label: 'Unsere Geschichte',
       about_heading: 'Vor Jahren kam ein Mann an eine der unberührtesten Küsten des Mittelmeers.',
       about_p1: 'Er fand seinen Weg hierher durch ein smaragdgrünes Tal. Die Schönheit, der er begegnete, erlaubte ihm, seine Last still abzulegen. An dem Punkt, wo das Tal durch einen Bach das Meer trifft, blieb die Zeit mit ihm stehen.',
       about_p2: 'Von diesem Moment an begann ein Traum. Ein Traum, der bis heute andauert und geteilt wird.',

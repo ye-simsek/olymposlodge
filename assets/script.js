@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lodge_spa_f2: '<span>Kapasite</span><strong>Jakuzi: 6 kişi</strong>',
       lodge_spa_f3: '<span>Masaj</span><strong>Ek ücret, rezervasyon gerekli</strong>',
       lodge_beach_label: 'Plaj',
-      lodge_beach_title: 'Özel Plaj & Şezlong',
+      lodge_beach_title: 'Loca & Şezlong',
       lodge_beach_desc: '30 metre mesafedeki plajda özel şezlong, şemsiye, havlu ve kabana misafirlere ücretsiz olarak ayrılmaktadır. Caretta caretta deniz kaplumbağalarının yuvalaması nedeniyle korunan kıyı şeridine yürüyerek ulaşabilirsiniz.',
       lodge_beach_f1: '<span>Mesafe</span><strong>30 m</strong>',
       lodge_beach_f2: '<span>Dahil</span><strong>Şezlong, şemsiye, havlu, kabana</strong>',

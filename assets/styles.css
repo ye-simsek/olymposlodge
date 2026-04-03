@@ -2804,7 +2804,7 @@ h4 {
   gap: 0 5rem;
   max-width: 1000px;
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .dest-feature__desc {

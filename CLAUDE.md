@@ -15,6 +15,7 @@
 11. Newsletter — email service provider not yet decided; discuss when ready
 12. KVKK + Terms pages confirmed accurate by user but recommend professional legal review before go-live
 13. Cookie consent — UI built (bottom-left FAB → panel with toggles); actual consent logic (localStorage, conditional script loading) not yet implemented
+15. lodge.html intro — second column (`lodge_intro_p2`) is a placeholder summary; replace with final copy once decided
 
 ## Design References
 Casa Angelina, Amanruya, Badrutt's Palace, Casa Cook

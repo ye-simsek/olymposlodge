@@ -764,7 +764,7 @@ h4 {
 }
 
 .about-image {
-  position: relative;
+  padding: 3rem 3rem 3rem 0;
   overflow: hidden;
 }
 
@@ -773,6 +773,8 @@ h4 {
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  display: block;
+  border-radius: 2px;
 }
 
 .about-content {

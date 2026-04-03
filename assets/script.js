@@ -588,7 +588,32 @@ document.addEventListener('DOMContentLoaded', () => {
       lodge_firepit_title: 'Feuerstelle & Bibliothek',
       lodge_firepit_desc: 'Abende an der Feuerstelle im Garten gehören zu den stillen, bleibenden Freuden des Lodge. Die Bibliothek ist ein verlässlicher Zufluchtsort für einen ruhigen Nachmittag oder das Ende eines langen Tages.',
       lodge_firepit_f1: '<span>Feuerstelle</span><strong>Abends aktiv</strong>',
-      lodge_firepit_f2: '<span>Bibliothek</span><strong>Immer geöffnet</strong>'
+      lodge_firepit_f2: '<span>Bibliothek</span><strong>Immer geöffnet</strong>',
+      spa_hero_title: 'Spa',
+      spa_intro_title: 'Ein Ort der Stille',
+      spa_intro_p1: 'Das Spa im Olympos Lodge wurde nicht für Aufsehen entworfen. Es wurde für eines konzipiert: das Verlangsamen. In der Wärme des Wassers, im Dampf, in der Stille. Whirlpool, Sauna und Dampfbad stehen allen Gästen im Rahmen ihres Aufenthalts offen.',
+      spa_intro_p2: 'Massagebehandlungen sind gegen Aufpreis erhältlich. Bitte wenden Sie sich mindestens 2 Stunden vor Ihrer Wunschzeit an die Rezeption oder schreiben Sie uns.',
+      spa_jac_label: 'Whirlpool',
+      spa_jac_title: '6-Personen-Whirlpool',
+      spa_jac_desc: 'Heißwasserdüsen zur tiefen Muskelentspannung. Fasst bis zu sechs Gäste — geeignet für Einzel- und Gruppennutzung. Im Übernachtungspreis enthalten.',
+      spa_jac_f1: '<span>Kapazität</span><strong>6 Personen</strong>',
+      spa_jac_f2: '<span>Enthalten</span><strong>Im Übernachtungspreis</strong>',
+      spa_sauna_label: 'Sauna',
+      spa_sauna_title: 'Trockensauna',
+      spa_sauna_desc: 'Eine traditionelle Trockensauna. Regt den Kreislauf an, entspannt die Muskeln und beruhigt den Geist.',
+      spa_sauna_f1: '<span>Typ</span><strong>Trockensauna</strong>',
+      spa_sauna_f2: '<span>Enthalten</span><strong>Im Übernachtungspreis</strong>',
+      spa_steam_label: 'Dampfbad',
+      spa_steam_title: 'Dampfbad',
+      spa_steam_desc: 'Ein tief atemdes Ritual in warmem, hüllendem Dampf. Dichte Feuchtigkeit, gleichmäßige Wärme.',
+      spa_steam_f1: '<span>Typ</span><strong>Nassdampf</strong>',
+      spa_steam_f2: '<span>Enthalten</span><strong>Im Übernachtungspreis</strong>',
+      spa_massage_label: 'Massage',
+      spa_massage_title: 'Massageservice',
+      spa_massage_desc: 'Massagebehandlungen sind auf Anfrage gegen Aufpreis erhältlich. Bitte wenden Sie sich mindestens 2 Stunden vor Ihrer Wunschzeit an die Rezeption oder schreiben Sie uns.',
+      spa_massage_f1: '<span>Gebühr</span><strong>Kostenpflichtig</strong>',
+      spa_massage_f2: '<span>Reservierung</span><strong>Mindestens 2 Stunden im Voraus</strong>',
+      spa_cta: 'Reservieren'
     }
   };
 

@@ -1608,8 +1608,10 @@ h4 {
   }
 
   .about-content {
-    padding: var(--space-lg) var(--space-md);
-    max-width: 100%;
+    padding: 3.5rem 2.5rem;
+  }
+  .about-content__body {
+    grid-template-columns: 1fr;
   }
 
   .room-row {

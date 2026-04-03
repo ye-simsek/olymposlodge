@@ -789,6 +789,12 @@ h4 {
   max-width: 460px;
 }
 
+.about-content .section-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
 .about-content h2 {
   font-family: var(--font-sc);
   font-size: clamp(1.8rem, 2.6vw, 2.8rem);

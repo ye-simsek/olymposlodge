@@ -4258,7 +4258,7 @@ h4 {
 /* Icons row — in normal flow, scrolls behind the fixed header as user scrolls */
 .dest-icons-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0.55rem 0 0;
   background: var(--color-cream);
   transition: transform 0.26s cubic-bezier(0.4, 0, 0.2, 1);

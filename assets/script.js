@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lodge_spa_f2: '<span>Whirlpool</span><strong>6 Personen</strong>',
       lodge_spa_f3: '<span>Massage</span><strong>Kostenpflichtig, Reservierung erforderlich</strong>',
       lodge_beach_label: 'Strand',
-      lodge_beach_title: 'Privatstrand & Liegestühle',
+      lodge_beach_title: 'Cabanas & Liegestühle',
       lodge_beach_desc: 'Liegestühle, Sonnenschirme, Handtücher und eine Cabana am Strand stehen Gästen kostenlos zur Verfügung. Der Strand — 30 Meter vom Lodge entfernt — ist ein geschütztes Caretta-caretta-Nistgebiet.',
       lodge_beach_f1: '<span>Entfernung</span><strong>30 m</strong>',
       lodge_beach_f2: '<span>Enthalten</span><strong>Liegestuhl, Schirm, Handtuch, Cabana</strong>',

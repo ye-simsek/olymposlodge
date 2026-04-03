@@ -754,103 +754,103 @@ h4 {
 }
 
 /* ========================================
-   ABOUT
+   STORY & PHILOSOPHY
    ======================================== */
-.about {
-  display: grid;
-  grid-template-columns: 55fr 45fr;
-  min-height: 70vh;
+.story-philosophy {
   background: var(--color-warm-white);
 }
 
-.about-image {
-  padding: 3rem 3rem 3rem 0;
-  overflow: hidden;
-  max-height: 690px;
+.story-philosophy__header {
+  text-align: center;
+  padding: 5rem 2rem 4rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.about-image img {
+.story-philosophy__title {
+  font-family: var(--font-sc);
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.story-block {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  min-height: 580px;
+}
+
+.story-block--reverse {
+  grid-template-columns: 55fr 45fr;
+}
+
+.story-block__image {
+  overflow: hidden;
+}
+
+.story-block__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
   display: block;
-  border-radius: 2px;
 }
 
-.about-content {
+.story-block__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 5rem 6rem 6rem;
+  padding: 5rem 6rem;
 }
 
-.about-content__inner {
-  max-width: 460px;
+.story-block--reverse .story-block__content {
+  padding: 5rem 6rem;
 }
 
-.about-content .section-label {
-  font-size: 0.88rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
+.story-block__content .section-label {
+  margin-bottom: 1.2rem;
+  display: block;
 }
 
-.about-content h2 {
+.story-block__heading {
   font-family: var(--font-sc);
-  font-size: clamp(1.5rem, 2.2vw, 2.4rem);
+  font-size: clamp(1.3rem, 1.8vw, 2rem);
   font-weight: 300;
+  letter-spacing: 0.05em;
   line-height: 1.4;
-  letter-spacing: 0.04em;
   color: var(--color-text);
   margin-bottom: 2rem;
 }
 
-.about-content__body p {
+.story-block__content p {
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
   font-weight: 500;
   color: var(--color-text);
   line-height: 1.9;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
-.about-content__body p:last-child {
+.story-block__content p:last-child {
   margin-bottom: 0;
 }
 
-.about-content__nature {
-  margin-top: 3.5rem;
-  padding-top: 3rem;
-  border-top: 1px solid var(--color-border);
-  max-width: 460px;
-}
-
-.about-content__nature .section-label {
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.about-content__nature h2 {
-  font-family: var(--font-sc);
-  font-size: clamp(1.3rem, 1.8vw, 2rem);
-  font-weight: 300;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-  color: var(--color-text);
-  margin-bottom: 1.5rem;
-}
-
-.about-content__nature p {
-  font-family: var(--font-heading);
-  font-size: clamp(0.95rem, 1.1vw, 1.1rem);
-  font-weight: 500;
-  color: var(--color-text);
-  line-height: 1.9;
-  margin-bottom: 1rem;
-}
-
-.about-content__nature p:last-child {
-  margin-bottom: 0;
+@media (max-width: 1024px) {
+  .story-block,
+  .story-block--reverse {
+    grid-template-columns: 1fr;
+  }
+  .story-block__image {
+    height: 55vw;
+    min-height: 300px;
+  }
+  .story-block--reverse .story-block__image {
+    order: -1;
+  }
+  .story-block__content,
+  .story-block--reverse .story-block__content {
+    padding: 3.5rem 2rem;
+  }
 }
 
 /* ========================================

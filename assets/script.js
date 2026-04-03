@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       about_heading: 'Years ago, a man arrived at one of the Mediterranean\'s most untouched shores.',
       about_p1: 'He found his way here through an emerald valley. The beauty he encountered along the road allowed him to quietly set down his burdens. At the point where the valley meets the sea through a stream, time stopped with him.',
       about_p2: 'From that moment, a dream began. A dream that continues today, still being shared.',
-      about_p3: 'Olympos Lodge was born from that dream. Seventeen rooms set in harmony with nature across 20,000 m² of garden… Each simply furnished, light-filled, and liveable in every season.',
+      about_p3: 'Olympos Lodge was born from that dream. Seventeen rooms set in harmony with nature across 20,000 m² of garden. Each simply furnished, light-filled, and liveable in every season.',
       rooms_label: 'Rooms', rooms_heading: 'Same garden,<br>different world.',
       room1_name: 'Aqua Super Deluxe', room1_desc: 'The most singular room on the grounds, set apart in its own detached structure at the garden\'s edge. An indoor waterfall wall and a line of glass floor panels revealing water beneath your feet set the tone. The boundary between architecture and nature all but disappears.',
       room2_name: 'Super Deluxe', room2_desc: 'Generous in every dimension, the Super Deluxe opens directly onto the front garden through a broad private terrace where the sea threads between the trees. The jacuzzi bathtub invites long evenings. This is a room designed for staying in as much as stepping out.',

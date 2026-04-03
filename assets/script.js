@@ -356,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lodge_spa_f2: '<span>Jacuzzi</span><strong>6 persons</strong>',
       lodge_spa_f3: '<span>Massage</span><strong>Paid, reservation required</strong>',
       lodge_beach_label: 'Beach',
-      lodge_beach_title: 'Private Beach & Sun Loungers',
+      lodge_beach_title: 'Cabanas & Sun Loungers',
       lodge_beach_desc: 'Sun loungers, umbrellas, towels and a cabana on the beach are reserved for guests at no charge. The shore — 30 metres from the lodge — is a protected Caretta caretta nesting ground.',
       lodge_beach_f1: '<span>Distance</span><strong>30 m</strong>',
       lodge_beach_f2: '<span>Included</span><strong>Lounger, umbrella, towel, cabana</strong>',

@@ -329,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
       about_heading: 'Vor Jahren kam ein Mann an eine der unberührtesten Küsten des Mittelmeers.',
       about_p1: 'Er fand seinen Weg hierher durch ein smaragdgrünes Tal. Die Schönheit, der er begegnete, erlaubte ihm, seine Last still abzulegen. An dem Punkt, wo das Tal durch einen Bach das Meer trifft, blieb die Zeit mit ihm stehen.',
       about_p2: 'Von diesem Moment an begann ein Traum. Ein Traum, der bis heute andauert und geteilt wird.',
-      about_p3: 'Olympos Lodge wurde aus diesem Traum geboren. Vierzehn Zimmer, in Harmonie mit der Natur über zwanzig Morgen Garten verteilt… Jedes mit zurückhaltendem Charme eingerichtet: klar, lichtdurchflutet und in jeder Jahreszeit bewohnbar.',
+      about_p3: 'Olympos Lodge wurde aus diesem Traum geboren. Siebzehn Zimmer, in Harmonie mit der Natur über 20.000 m² Garten verteilt… Jedes schlicht und elegant eingerichtet: klar, lichtdurchflutet und in jeder Jahreszeit bewohnbar.',
       rooms_label: 'Zimmer', rooms_heading: 'Derselbe Garten,<br>eine andere Welt.',
       room1_name: 'Aqua Super Deluxe', room1_desc: 'Das einzigartigste Zimmer der Anlage, in einem eigenen freistehenden Gebäude am Rand des Gartens. Eine Indoor-Wasserwand und Glasfußbodenpaneele, die das Wasser unter Ihren Füßen enthüllen, setzen den Ton. Die Grenze zwischen Architektur und Natur verschwindet nahezu.',
       room2_name: 'Super Deluxe', room2_desc: 'In jeder Dimension großzügig, öffnet sich die Super Deluxe über eine breite private Terrasse direkt zum Vorgarten, wo das Meer sich zwischen den Bäumen hindurchfädelt. Die Whirlpool-Badewanne lädt zu langen Abenden ein. Ein Zimmer, das ebenso zum Bleiben wie zum Aufbrechen gestaltet ist.',

@@ -1599,9 +1599,6 @@ h4 {
   .about-content {
     padding: 3.5rem 2.5rem;
   }
-  .about-content__body {
-    grid-template-columns: 1fr;
-  }
 
   .room-row {
     grid-template-columns: 1fr 1fr;

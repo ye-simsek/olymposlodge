@@ -2779,7 +2779,7 @@ h4 {
   inset: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   z-index: 1;
   padding: 4rem 5.4rem 4rem;

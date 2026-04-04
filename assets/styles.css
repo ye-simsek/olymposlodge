@@ -714,6 +714,12 @@ h4 {
   line-height: 1.15;
   margin-bottom: 2rem;
 }
+.loc-teaser__title--dark {
+  color: var(--color-text);
+}
+.loc-teaser__title--gold {
+  color: var(--color-warm-gold);
+}
 .loc-teaser__body {
   font-family: var(--font-heading);
   font-size: clamp(1rem, 1.2vw, 1.18rem);

@@ -374,6 +374,8 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_sub: 'Write to us for a transfer or directions. We will handle the rest.',
       loc_cta_contact: 'Get in Touch',
       loc_teaser_title: 'Hard to Find.\nHarder to Leave.',
+      loc_teaser_title_l1: 'Hard to Find.',
+      loc_teaser_title_l2: 'Harder to Leave.',
       loc_teaser_body: 'At the end of a valley where the Taurus Mountains meet the sea. Ancient ruins, mythological flames, and the calm of the Mediterranean.',
       loc_teaser_cta: 'Explore →',
       loc_exp_title: 'Experiences',

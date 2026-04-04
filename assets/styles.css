@@ -790,10 +790,6 @@ h4 {
   overflow: hidden;
 }
 
-.story-block:not(.story-block--reverse) .story-block__image {
-  height: 360px;
-  align-self: center;
-}
 
 .story-block__image img {
   width: 100%;

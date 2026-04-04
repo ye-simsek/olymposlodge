@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
       footer_tagline: 'An den heiligen Ufern von Çıralı, im Einklang mit der Natur.',
       footer_contact_title: 'Kontakt', footer_explore_title: 'Entdecken', footer_follow_title: 'Folgen Sie uns',
       footer_nature_link: 'Garten & Natur',
-      footer_address: 'Çıralı, Ulupınar Mahallesi<br>Kemer / Antalya, Türkei',
+      footer_address: 'Çıralı Sokak, Ulupınar Mahallesi<br>Kemer / Antalya, Türkei',
       footer_copyright: '© 2025 Olympos Lodge. Alle Rechte vorbehalten.',
       footer_terms: 'Vorabinformationsformular',
       footer_privacy: 'Datenschutz & KVKK',

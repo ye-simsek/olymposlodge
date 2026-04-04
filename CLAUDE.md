@@ -2,7 +2,7 @@
 
 ## Pending Tasks
 1. ~~Wire REZERVASYON button → SabeeApp booking engine~~ ✓ Done
-2. Scroll fade-ins for about/nature/experience/gallery sections
+2. ~~Scroll fade-ins for about/nature/experience/gallery sections~~ ✓ Done
 3. Manifesto/editorial intro section between hero and rooms
 4. Footer: WhatsApp link, Spotify playlists (season/checkin confirmed and in staging)
 5. Mobile pass — full spacing/typography review

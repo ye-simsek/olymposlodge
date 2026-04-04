@@ -569,6 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_sub: 'Schreiben Sie uns für einen Transfer oder eine Wegbeschreibung. Wir kümmern uns um alles.',
       loc_cta_contact: 'Kontakt aufnehmen',
       loc_teaser_title: 'Schwer zu Finden.\nNoch Schwerer zu Verlassen.',
+      loc_teaser_title_l1: 'Schwer zu Finden.',
+      loc_teaser_title_l2: 'Noch Schwerer zu Verlassen.',
       loc_teaser_body: 'Am Ende eines Tals, wo die Taurusberge auf das Meer treffen. Antike Ruinen, mythologische Flammen und die Stille des Mittelmeers.',
       loc_teaser_cta: 'Entdecken →',
       loc_exp_title: 'Erlebnisse',

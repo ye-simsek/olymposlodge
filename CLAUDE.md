@@ -7,7 +7,7 @@
 4. Footer: WhatsApp link, Spotify playlists (season/checkin confirmed and in staging)
 5. Mobile pass — full spacing/typography review
 6. Child pages: individual rooms, Chimaera flames, Olympos ruins
-7. rooms.html — room descriptions are placeholders; supplement with richer copy from RAG file
+7. ~~rooms.html — room descriptions are placeholders; supplement with richer copy from RAG file~~ ✓ Done
 8. Hero video poster — user will handle extraction; currently a placeholder
 9. Dining section needs revisiting (copy, photos, full menu details)
 14. Experiences page: add Spa section (the Deneyim/Experience section was removed from homepage; spa content should live on the Experiences/Çıralı page)

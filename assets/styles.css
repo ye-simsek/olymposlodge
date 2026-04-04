@@ -783,12 +783,12 @@ h4 {
 
 .story-block {
   display: grid;
-  grid-template-columns: 49fr 51fr;
+  grid-template-columns: 50.5fr 49.5fr;
   min-height: 580px;
 }
 
 .story-block--reverse {
-  grid-template-columns: 49fr 51fr;
+  grid-template-columns: 50.5fr 49.5fr;
 }
 
 .story-block__image {

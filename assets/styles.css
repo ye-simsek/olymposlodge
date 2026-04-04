@@ -793,6 +793,8 @@ h4 {
 
 .story-block__image {
   overflow: hidden;
+  height: 290px;
+  align-self: center;
 }
 
 

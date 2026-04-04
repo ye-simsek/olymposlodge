@@ -784,7 +784,8 @@ h4 {
 .story-block {
   display: grid;
   grid-template-columns: 55fr 45fr;
-  min-height: 320px;
+  height: 400px;
+  overflow: hidden;
 }
 
 .story-block--reverse {

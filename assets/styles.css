@@ -768,7 +768,7 @@ h4 {
 
 .story-philosophy__header {
   text-align: center;
-  padding: 5rem 2rem 4rem;
+  padding: 3rem 2rem 2.5rem;
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -784,7 +784,7 @@ h4 {
 .story-block {
   display: grid;
   grid-template-columns: 55fr 45fr;
-  min-height: 580px;
+  min-height: 320px;
 }
 
 .story-block--reverse {

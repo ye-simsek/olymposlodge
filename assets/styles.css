@@ -4315,6 +4315,8 @@ h4 {
   display: flex;
   justify-content: center;
   color: var(--color-warm-gold);
+  text-decoration: none;
+  cursor: pointer;
 }
 .dest-icons-row__item--active {
   color: var(--color-warm-gold);

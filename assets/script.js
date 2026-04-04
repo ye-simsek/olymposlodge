@@ -179,6 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
       loc_cta_sub: 'Transfer rezervasyonu veya yol tarifi için bize yazabilirsiniz. Gerisini biz hallederiz.',
       loc_cta_contact: 'İletişime Geç',
       loc_teaser_title: 'Bulunması Zor,\nBırakılması Daha Zor.',
+      loc_teaser_title_l1: 'Bulunması Zor,',
+      loc_teaser_title_l2: 'Bırakılması Daha Zor.',
       loc_teaser_body: 'Torosların eteklerinden inen bir vadinin ucunda, sessiz bir kıyıda. Antik kalıntılar, yanmaya devam eden efsanevi alevler ve masmavi bir deniz.',
       loc_teaser_cta: 'Keşfet →',
       loc_exp_title: 'Deneyimler',

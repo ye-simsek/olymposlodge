@@ -42,41 +42,6 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 
 **i18n key prefixes:** asd_ / sd_ / dx_ / ge_ / an_ / st_
 
-## styles.css Section Map
-4727 lines total. Read only the relevant range — do not read the full file.
-
-| Lines | Section |
-|---|---|
-| 1–34 | Custom properties (CSS variables) |
-| 35–132 | Reset, container, typography |
-| 133–335 | Header |
-| 336–420 | Navigation overlay |
-| 421–528 | Hero (homepage) |
-| 529–598 | Intro section |
-| 599–678 | Conviction / parallax quote |
-| 679–761 | Location teaser |
-| 762–863 | Story & philosophy |
-| 864–1168 | Rooms (homepage grid, room rows, specs, includes strip) |
-| 1169–1216 | Nature section |
-| 1217–1277 | Experience section |
-| 1278–1326 | Parallax quote |
-| 1327–1362 | Voices / guest book |
-| 1363–1414 | Gallery teaser |
-| 1415–1517 | Footer |
-| 1518–1547 | Scroll animations |
-| 1548–1631 | Rooms sticky heading (desktop) |
-| 1632–1753 | Responsive — tablet |
-| 1754–1985 | Responsive — mobile |
-| 1986–2153 | Weather panel |
-| 2154–2624 | Individual room pages (hero, editorial, amenities, strip, CTA) |
-| 2625–2826 | Child pages (Çıralı, Chimaera, Olympos) |
-| 2827–3682 | Çıralı destination guide editorial layout |
-| 3683–4011 | Activities page |
-| 4012–4237 | Cookie consent |
-| 4238–4514 | Activities page (continued) |
-| 4515–4615 | Legal pages (privacy, terms) |
-| 4616–4727 | Photo gallery page |
-
 ## CSS Files (styles.css has been split)
 `styles.css` no longer exists. Use these files instead:
 

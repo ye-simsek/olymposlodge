@@ -788,6 +788,8 @@ h4 {
 
 .story-block__image {
   overflow: hidden;
+  height: 520px;
+  align-self: center;
 }
 
 

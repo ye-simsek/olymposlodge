@@ -902,7 +902,7 @@ document.addEventListener('DOMContentLoaded', () => {
       d.daily.time.slice(0, 5).forEach((dateStr, i) => {
         const cell = document.createElement('div');
         cell.className = 'wp-strip-cell';
-        cell.innerHTML = `<span class="wp-strip-day">${i === 0 ? 'Today' : DAYS[new Date(dateStr).getDay()]}</span><span class="wp-strip-temp">${Math.round(d.daily.temperature_2m_max[i])}°</span>`;
+        cell.innerHTML = `<span class="wp-strip-day">${i === 0 ? 'Today' : DAYS[new Date(dateStr).getDay()]}</span><span class="wp-strip-desc">${wmoDesc(d.daily.weathercode[i])}</span><span class="wp-strip-temp">${Math.round(d.daily.temperature_2m_max[i])}°</span>`;
         strip.appendChild(cell);
       });
       renderDay(0);

@@ -2564,9 +2564,15 @@ h4 {
     border-bottom: none;
   }
 
-  .room-editorial {
+  .room-editorial,
+  .room-editorial--reverse {
     grid-template-columns: 1fr;
     min-height: unset;
+  }
+
+  .room-editorial--reverse .room-editorial__left,
+  .room-editorial--reverse .room-editorial__right {
+    order: unset;
   }
 
   .room-editorial__left {
@@ -2582,6 +2588,10 @@ h4 {
   .room-editorial__right {
     height: 80vw;
     position: relative;
+  }
+
+  .room-text-section {
+    padding: var(--space-lg) var(--space-md);
   }
 
   .room-strip {

@@ -1,17 +1,17 @@
 # Olympos Lodge
 
 ## Pending Tasks
-1. ~~Wire REZERVASYON button → SabeeApp booking engine~~ ✓ Done
+1. ~~Wire REZERVASYON button → SabeeApp booking engine~~
 2. ~~Scroll fade-ins for about/nature/experience/gallery sections~~ ✓ Done
-3. Manifesto/editorial intro section between hero and rooms
+3. Manifesto/editorial intro section between hero and rooms     Done
 4. Footer: WhatsApp link, Spotify playlists (season/checkin confirmed and in staging)
 5. Mobile pass — full spacing/typography review
-6. Child pages: individual rooms, Chimaera flames, Olympos ruins
+6. Child pages: individual rooms, Chimaera flames, Olympos ruins Done, needs review
 7. ~~rooms.html — room descriptions are placeholders; supplement with richer copy from RAG file~~ ✓ Done
 8. Hero video poster — user will handle extraction; currently a placeholder
 9. Dining section needs revisiting (copy, photos, full menu details)
-14. Experiences page: add Spa section (the Deneyim/Experience section was removed from homepage; spa content should live on the Experiences/Çıralı page)
-10. Instagram feed — static placeholder for now; revisit for live feed later
+14. Experiences page: improve Spa section (the Deneyim/Experience section was removed from homepage; spa content should live on the Experiences/Çıralı page)
+10. Instagram feed — link to footer
 11. Newsletter — email service provider not yet decided; discuss when ready
 12. KVKK + Terms pages confirmed accurate by user but recommend professional legal review before go-live
 13. Cookie consent — UI built (bottom-left FAB → panel with toggles); actual consent logic (localStorage, conditional script loading) not yet implemented
@@ -33,7 +33,7 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 
 | Room | Count | Size | Key features |
 |---|---|---|---|
-| Aqua Super Deluxe | 1 | 105 m², detached | Fireplace, jacuzzi tub, indoor + outdoor rain shower (separate), espresso machine, waterfall wall, glass floor panels, pond + sea view, far end of garden |
+| Aqua Super Deluxe | 1 | 105 m², detached | Fireplace, king bed, jacuzzi tub, indoor + outdoor rain shower (separate), espresso machine, waterfall wall, glass floor panels, front garden + sea view, far end of garden |
 | Super Deluxe | 2 | 105 m² | Fireplace, jacuzzi tub + rain shower, espresso machine, large terrace, front garden view, sea view through trees |
 | Deluxe | 2 | 70 m² | Fireplace, jacuzzi tub + rain shower, espresso machine, large terrace, front garden view |
 | Göl Evi (Lake House) | 1 | 60 m², detached | Fireplace, jacuzzi tub + rain shower, espresso machine, pond view, secluded |

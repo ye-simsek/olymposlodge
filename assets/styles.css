@@ -2359,6 +2359,38 @@ h4 {
   transform: scale(1.03);
 }
 
+/* Reversed editorial — tall image LEFT, text + inset RIGHT */
+.room-editorial--reverse {
+  grid-template-columns: 58fr 42fr;
+}
+
+.room-editorial--reverse .room-editorial__left {
+  order: 2;
+}
+
+.room-editorial--reverse .room-editorial__right {
+  order: 1;
+}
+
+/* Text-only interlude between full-photo sections */
+.room-text-section {
+  padding: var(--space-2xl) var(--space-md);
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.room-text-section__body {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.85;
+  color: var(--color-text);
+  max-width: 42ch;
+  margin: 0 auto;
+}
+
 /* Full-width equal image strip */
 .room-strip {
   display: flex;

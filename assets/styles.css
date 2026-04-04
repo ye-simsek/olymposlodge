@@ -778,11 +778,12 @@ h4 {
 .story-block {
   display: grid;
   grid-template-columns: 55fr 45fr;
-  min-height: 580px;
+  min-height: 464px;
 }
 
 .story-block--reverse {
   grid-template-columns: 55fr 45fr;
+  min-height: 580px;
 }
 
 .story-block__image {

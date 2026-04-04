@@ -1040,5 +1040,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Photo Gallery Lightbox ---
+  const photoGrid = document.querySelector('.photo-grid');
+  if (photoGrid) {
+    // Fade in images on load
+    photoGrid.querySelectorAll('img').forEach(img => {
+      if (img.complete) { img.classList.add('is-loaded'); }
+      else { img.addEventListener('load', () => img.classList.add('is-loaded')); }
+    });
+
+    // Build lightbox
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.innerHTML = `
+      <button class="lightbox__close" aria-label="Close">&#215;</button>
+      <button class="lightbox__arrow lightbox__arrow--prev" aria-label="Previous">&#8592;</button>
+      <img class="lightbox__img" src="" alt="" />
+      <button class="lightbox__arrow lightbox__arrow--next" aria-label="Next">&#8594;</button>
+    `;
+    document.body.appendChild(lb);
+
+    const lbImg = lb.querySelector('.lightbox__img');
+    const items = Array.from(photoGrid.querySelectorAll('.photo-grid__item'));
+    let current = 0;
+
+    function openLightbox(i) {
+      current = i;
+      lbImg.src = items[i].querySelector('img').src;
+      lbImg.alt = items[i].querySelector('img').alt;
+      lb.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    function navigate(dir) {
+      current = (current + dir + items.length) % items.length;
+      lbImg.src = items[current].querySelector('img').src;
+      lbImg.alt = items[current].querySelector('img').alt;
+    }
+
+    items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+    lb.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+    lb.querySelector('.lightbox__arrow--prev').addEventListener('click', () => navigate(-1));
+    lb.querySelector('.lightbox__arrow--next').addEventListener('click', () => navigate(1));
+    lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigate(-1);
+      if (e.key === 'ArrowRight') navigate(1);
+    });
+  }
 
 });

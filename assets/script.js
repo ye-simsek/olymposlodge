@@ -454,7 +454,16 @@ document.addEventListener('DOMContentLoaded', () => {
       spa_massage_desc: 'Massage treatments are available on request at an additional fee. Please contact reception or write to us at least 2 hours before your preferred time.',
       spa_massage_f1: '<span>Fee</span><strong>Additional charge</strong>',
       spa_massage_f2: '<span>Reservation</span><strong>At least 2 hours in advance</strong>',
-      spa_cta: 'Reserve'
+      spa_cta: 'Reserve',
+      asd_p1: 'A detached structure at the far end of the garden, set apart from every other room on the property. The Aqua Super Deluxe is less a hotel room than a private residence. 105 square metres with its own terrace, its own entrance, its own quiet.',
+      asd_p2: 'A full-height waterfall wall runs along the interior, filling the room with the constant, low sound of moving water. A line of glass floor panels reveals the current flowing beneath your feet. The effect is immediate: the space feels closer to a garden pavilion than a conventional room.',
+      asd_p3: 'The fireplace anchors the living area and sets the tone for cooler evenings. The jacuzzi bathtub sits where the garden view is widest, with both the pond and the sea visible through the trees. Two separate rain showers, one indoors, one outdoors, make the morning routine a choice between warmth and open air. An espresso machine, a minibar, and handmade furniture throughout complete a room that is ready to be lived in, not just slept in.',
+      asd_p4: 'Step onto the terrace and the full depth of the twenty-thousand-square-metre garden opens in front of you. From here, the beach is a short walk. So is the restaurant, the spa, the firepits. But the room is designed so that none of that feels necessary. You can light the fire, run the jacuzzi, leave the doors open, and let an entire evening pass without needing to be anywhere else.',
+      amenities_label: 'Amenities',
+      amenity_ac: 'Air Conditioning', amenity_terrace: 'Private Terrace', amenity_sea: 'Sea View', amenity_pond: 'Pond View',
+      amenity_fireplace: 'Fireplace', amenity_jacuzzi: 'Jacuzzi', amenity_rain_shower: 'Indoor & Outdoor Rain Shower',
+      amenity_waterfall: 'Waterfall Wall', amenity_glass_floor: 'Glass Floor Panels', amenity_espresso: 'Espresso Machine',
+      amenity_furniture: 'Handmade Furniture', amenity_minibar: 'Mini Bar', amenity_wifi: 'Free Wi-Fi'
     },
     de: {
       btn_reserve: 'Reservieren',

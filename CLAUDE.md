@@ -77,8 +77,22 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 | 4515–4615 | Legal pages (privacy, terms) |
 | 4616–4727 | Photo gallery page |
 
+## CSS Files (styles.css has been split)
+`styles.css` no longer exists. Use these files instead:
+
+| File | Contents | Loaded on |
+|---|---|---|
+| `base.css` | Variables, reset, typography, header, nav, footer, scroll animations, weather panel, cookie consent | Every page |
+| `home.css` | All homepage sections + rooms listing grid | `index.html`, `rooms.html` |
+| `rooms.css` | Individual room page styles (hero, editorial, amenities, strip, CTA) | `rooms.html` + all `room-*.html` |
+| `cirali.css` | Child-page hero, Çıralı guide editorial, spa/lodge/location shared styles | `cirali.html`, `lodge.html`, `spa.html`, `location.html` |
+| `activities.css` | Activities page sub-nav and grid | `activities.html`, `lodge.html` |
+| `pages.css` | Legal pages, photo gallery page | `gallery.html`, `privacy.html`, `terms.html` |
+
+**When editing CSS:** identify which file owns the component from the table above. Do NOT read other CSS files unless the change spans multiple files.
+
 ## Conventions
-- Bump `styles.css?v=` on every styles.css change
+- Bump `base.css?v=`, `home.css?v=`, etc. on every CSS change to that file
 - Bump `script.js?v=` on every script.js change
 - Bump `translations.js?v=` on every translations.js change (i18n only lives there now)
 - For i18n work, read `assets/translations.js` only — do NOT read script.js

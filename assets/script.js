@@ -874,10 +874,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!data) return;
       const isToday = i === 0;
       const temp = isToday ? Math.round(data.current.temperature_2m) : Math.round(data.daily.temperature_2m_max[i]);
+      const desc = wmoDesc(isToday ? data.current.weathercode : data.daily.weathercode[i]);
       const windSpeed = isToday ? data.current.windspeed_10m : data.daily.windspeed_10m_max[i];
       const windDir = degCompass(isToday ? data.current.winddirection_10m : data.daily.winddirection_10m_dominant[i]);
 
       document.getElementById('wp-temp').textContent = temp + '°';
+      document.getElementById('wp-desc').textContent = desc;
       document.getElementById('wp-wind').textContent = `${windDir} · ${windSpeed} km/h`;
       document.querySelectorAll('.wp-tab').forEach((t, j) => t.classList.toggle('is-active', j === i));
     }

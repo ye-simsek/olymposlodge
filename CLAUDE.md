@@ -29,17 +29,6 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 
 **All rooms have:** Queen bed, private terrace + sun loungers, A/C, minibar, Wi-Fi, hair dryer, Rebul toiletries, safe, daily housekeeping. Ground floor, no stairs. Non-smoking indoors.
 
-**Room facts:**
-
-| Room | Count | Size | Key features |
-|---|---|---|---|
-| Aqua Super Deluxe | 1 | 105 m², detached | Fireplace, king bed, jacuzzi tub, indoor + outdoor rain shower (separate), espresso machine, waterfall wall, glass floor panels, front garden + sea view, far end of garden |
-| Super Deluxe | 2 | 105 m² | Fireplace, jacuzzi tub + rain shower, espresso machine, large terrace, front garden view, sea view through trees |
-| Deluxe | 2 | 70 m² | Fireplace, jacuzzi tub + rain shower, espresso machine, large terrace, front garden view |
-| Göl Evi (Lake House) | 1 | 60 m², detached | Fireplace, jacuzzi tub + rain shower, espresso machine, pond view, secluded |
-| Antik (Honeymoon) | 1 | — | Brass bed, antique furniture, no fireplace, no jacuzzi, rain shower, private terrace |
-| Standart | 10 | 35 m² | Rain shower (no jacuzzi/bathtub), no fireplace, coffee maker (not espresso), garden view |
-
 **i18n key prefixes:** asd_ / sd_ / dx_ / ge_ / an_ / st_
 
 ## CSS Files (styles.css has been split)
@@ -62,6 +51,7 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 - Bump `translations.js?v=` on every translations.js change (i18n only lives there now)
 - For i18n work, read `assets/translations.js` only — do NOT read script.js
 - Read only the file(s) directly relevant to the change; pull in others only if the edit requires cross-file coordination
+- Do not make any changes until you have 90% confidence in what you need to build. Ask me follow-up questions until you reach that level of confidence.
 
 ## Skills
 

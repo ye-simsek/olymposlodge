@@ -250,7 +250,16 @@ document.addEventListener('DOMContentLoaded', () => {
       spa_massage_desc: 'Talep üzerine sunulan masaj servisi ek ücrete tabidir. Rezervasyon için lütfen check-in\'den en az 2 saat önce resepsiyona başvurunuz ya da bize yazınız.',
       spa_massage_f1: '<span>Ücret</span><strong>Ek ücretli</strong>',
       spa_massage_f2: '<span>Rezervasyon</span><strong>En az 2 saat önceden</strong>',
-      spa_cta: 'Rezervasyon'
+      spa_cta: 'Rezervasyon',
+      asd_p1: 'Bahçenin en ucunda, tesisteki diğer tüm odalardan ayrı duran müstakil bir yapı. Aqua Super Deluxe bir otel odasından çok özel bir konut. 105 metrekare, kendi terası, kendi girişi, kendi sessizliği.',
+      asd_p2: 'İç mekanın bir duvarı boyunca uzanan tam yükseklikte bir şelale, odayı akan suyun sabit, alçak sesiyle dolduruyor. Bir sıra cam zemin paneli, ayaklarınızın altında akan suyu gözler önüne seriyor. Etki anlık: mekan sıradan bir odadan çok bir bahçe köşküne yakın hissettiriyor.',
+      asd_p3: 'Şömine oturma alanını tanımlıyor ve serin akşamların tonunu belirliyor. Jakuzi küvet, bahçe manzarasının en geniş olduğu yere yerleştirilmiş; gölet de deniz de ağaçların arasından görünüyor. Biri iç mekanda, biri açık havada olmak üzere iki ayrı yağmur duşu, sabah rutinini sıcaklık ile açık hava arasında bir tercihe dönüştürüyor. Espresso makinesi, minibar ve baştan sona el yapımı mobilyalar; sadece uyumak için değil, yaşamak için hazır bir oda.',
+      asd_p4: 'Terasa çıktığınızda yirmi bin metrekarelik bahçenin tüm derinliği önünüzde açılıyor. Buradan sahile kısa bir yürüyüş. Restorana, spa\'ya, ateş çukurlarına da öyle. Ama oda, bunların hiçbirinin gerekli hissettirmeyeceği şekilde tasarlanmış. Şömineyi yakabilir, jakuziyi çalıştırabilir, kapıları açık bırakabilir ve bütün bir akşamı başka bir yerde olmanıza gerek kalmadan geçirebilirsiniz.',
+      amenities_label: 'Olanaklar',
+      amenity_ac: 'Klima', amenity_terrace: 'Özel Teras', amenity_sea: 'Deniz Manzarası', amenity_pond: 'Gölet Manzarası',
+      amenity_fireplace: 'Şömine', amenity_jacuzzi: 'Jakuzi', amenity_rain_shower: 'İç & Dış Yağmur Duşu',
+      amenity_waterfall: 'Şelale Duvarı', amenity_glass_floor: 'Cam Zemin Panelleri', amenity_espresso: 'Espresso Makinesi',
+      amenity_furniture: 'El Yapımı Mobilya', amenity_minibar: 'Mini Bar', amenity_wifi: 'Ücretsiz Wi-Fi'
     },
     en: {
       btn_reserve: 'Reserve',

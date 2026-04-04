@@ -26,6 +26,8 @@ Factual details about the hotel (room sizes, amenities, descriptions, policies, 
 ## Conventions
 - Bump `styles.css?v=` on every styles.css change
 - Bump `script.js?v=` on every script.js change
+- Bump `translations.js?v=` on every translations.js change (i18n only lives there now)
+- For i18n work, read `assets/translations.js` only — do NOT read script.js
 - Read only the file(s) directly relevant to the change; pull in others only if the edit requires cross-file coordination
 
 ## Skills

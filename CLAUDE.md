@@ -21,7 +21,61 @@
 Casa Angelina, Amanruya, Badrutt's Palace, Casa Cook
 
 ## Hotel Information
-Factual details about the hotel (room sizes, amenities, descriptions, policies, etc.) can be found in `olympos_lodge_rag_english copy.txt` in the project root. Always check this file before using approximations or asking the user for facts about the property.
+Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the most commonly needed data — use them directly without opening the RAG file.
+
+**Property:** 17 rooms, 20,000 m² garden, single-storey. Direct beach access. Restaurant, private spa (jacuzzi 6-person, sauna, steam room), fire pits, library, picnic area.
+
+**Included in all stays:** Breakfast, beach lounger + umbrella + towel + cabana, Wi-Fi, bicycle, canoe, SUP, parking, spa access. Massage extra (reserve 2h ahead).
+
+**All rooms have:** Queen bed, private terrace + sun loungers, A/C, minibar, Wi-Fi, hair dryer, Rebul toiletries, safe, daily housekeeping. Ground floor, no stairs. Non-smoking indoors.
+
+**Room facts:**
+
+| Room | Count | Size | Key features |
+|---|---|---|---|
+| Aqua Super Deluxe | 1 | 105 m², detached | Fireplace, jacuzzi tub, indoor + outdoor rain shower (separate), espresso machine, waterfall wall, glass floor panels, pond + sea view, far end of garden |
+| Super Deluxe | 2 | 105 m² | Fireplace, jacuzzi tub + rain shower, espresso machine, large terrace, front garden view, sea view through trees |
+| Deluxe | 2 | 70 m² | Fireplace, jacuzzi tub + rain shower, espresso machine, large terrace, front garden view |
+| Göl Evi (Lake House) | 1 | 60 m², detached | Fireplace, jacuzzi tub + rain shower, espresso machine, pond view, secluded |
+| Antik (Honeymoon) | 1 | — | Brass bed, antique furniture, no fireplace, no jacuzzi, rain shower, private terrace |
+| Standart | 10 | 35 m² | Rain shower (no jacuzzi/bathtub), no fireplace, coffee maker (not espresso), garden view |
+
+**i18n key prefixes:** asd_ / sd_ / dx_ / ge_ / an_ / st_
+
+## styles.css Section Map
+4727 lines total. Read only the relevant range — do not read the full file.
+
+| Lines | Section |
+|---|---|
+| 1–34 | Custom properties (CSS variables) |
+| 35–132 | Reset, container, typography |
+| 133–335 | Header |
+| 336–420 | Navigation overlay |
+| 421–528 | Hero (homepage) |
+| 529–598 | Intro section |
+| 599–678 | Conviction / parallax quote |
+| 679–761 | Location teaser |
+| 762–863 | Story & philosophy |
+| 864–1168 | Rooms (homepage grid, room rows, specs, includes strip) |
+| 1169–1216 | Nature section |
+| 1217–1277 | Experience section |
+| 1278–1326 | Parallax quote |
+| 1327–1362 | Voices / guest book |
+| 1363–1414 | Gallery teaser |
+| 1415–1517 | Footer |
+| 1518–1547 | Scroll animations |
+| 1548–1631 | Rooms sticky heading (desktop) |
+| 1632–1753 | Responsive — tablet |
+| 1754–1985 | Responsive — mobile |
+| 1986–2153 | Weather panel |
+| 2154–2624 | Individual room pages (hero, editorial, amenities, strip, CTA) |
+| 2625–2826 | Child pages (Çıralı, Chimaera, Olympos) |
+| 2827–3682 | Çıralı destination guide editorial layout |
+| 3683–4011 | Activities page |
+| 4012–4237 | Cookie consent |
+| 4238–4514 | Activities page (continued) |
+| 4515–4615 | Legal pages (privacy, terms) |
+| 4616–4727 | Photo gallery page |
 
 ## Conventions
 - Bump `styles.css?v=` on every styles.css change

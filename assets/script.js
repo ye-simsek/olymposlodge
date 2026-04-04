@@ -658,7 +658,16 @@ document.addEventListener('DOMContentLoaded', () => {
       spa_massage_desc: 'Massagebehandlungen sind auf Anfrage gegen Aufpreis erhältlich. Bitte wenden Sie sich mindestens 2 Stunden vor Ihrer Wunschzeit an die Rezeption oder schreiben Sie uns.',
       spa_massage_f1: '<span>Gebühr</span><strong>Kostenpflichtig</strong>',
       spa_massage_f2: '<span>Reservierung</span><strong>Mindestens 2 Stunden im Voraus</strong>',
-      spa_cta: 'Reservieren'
+      spa_cta: 'Reservieren',
+      asd_p1: 'Ein freistehendes Gebäude am äußersten Ende des Gartens, abseits aller anderen Zimmer der Anlage. Das Aqua Super Deluxe ist weniger ein Hotelzimmer als eine private Residenz. 105 Quadratmeter mit eigener Terrasse, eigenem Eingang, eigener Stille.',
+      asd_p2: 'Eine raumhohe Wasserfallwand erstreckt sich entlang des Interieurs und erfüllt das Zimmer mit dem gleichmäßigen, leisen Klang fließenden Wassers. Eine Reihe von Glasfußbodenpaneelen gibt den Blick auf die Strömung unter Ihren Füßen frei. Die Wirkung ist unmittelbar: Der Raum fühlt sich eher wie ein Gartenpavillon an als wie ein konventionelles Zimmer.',
+      asd_p3: 'Der Kamin verankert den Wohnbereich und setzt den Ton für kühlere Abende. Die Whirlpool-Badewanne steht dort, wo der Gartenblick am weitesten ist; sowohl der Teich als auch das Meer sind durch die Bäume sichtbar. Zwei separate Regenduschen, eine im Innenraum, eine im Freien, machen die Morgenroutine zu einer Wahl zwischen Wärme und frischer Luft. Eine Espressomaschine, eine Minibar und durchgehend handgefertigte Möbel vervollständigen ein Zimmer, das zum Leben einlädt, nicht nur zum Schlafen.',
+      asd_p4: 'Treten Sie auf die Terrasse, und die gesamte Tiefe des zwanzigtausend Quadratmeter großen Gartens öffnet sich vor Ihnen. Von hier ist der Strand nur einen kurzen Spaziergang entfernt. Ebenso das Restaurant, das Spa, die Feuerstellen. Doch das Zimmer ist so gestaltet, dass nichts davon nötig erscheint. Sie können das Feuer anzünden, den Whirlpool einlassen, die Türen offen lassen und einen ganzen Abend verbringen, ohne woanders sein zu müssen.',
+      amenities_label: 'Ausstattung',
+      amenity_ac: 'Klimaanlage', amenity_terrace: 'Private Terrasse', amenity_sea: 'Meerblick', amenity_pond: 'Teichblick',
+      amenity_fireplace: 'Kamin', amenity_jacuzzi: 'Whirlpool', amenity_rain_shower: 'Innen- & Außenregendusche',
+      amenity_waterfall: 'Wasserfallwand', amenity_glass_floor: 'Glasfußbodenpaneele', amenity_espresso: 'Espressomaschine',
+      amenity_furniture: 'Handgefertigte Möbel', amenity_minibar: 'Minibar', amenity_wifi: 'Kostenloses WLAN'
     }
   };
 

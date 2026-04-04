@@ -711,7 +711,29 @@ document.addEventListener('DOMContentLoaded', () => {
       amenity_ac: 'Klimaanlage', amenity_terrace: 'Private Terrasse', amenity_sea: 'Meerblick', amenity_pond: 'Teichblick',
       amenity_fireplace: 'Kamin', amenity_jacuzzi: 'Whirlpool', amenity_rain_shower: 'Innen- & Außenregendusche',
       amenity_waterfall: 'Wasserfallwand', amenity_glass_floor: 'Glasfußbodenpaneele', amenity_espresso: 'Espressomaschine',
-      amenity_furniture: 'Handgefertigte Möbel', amenity_minibar: 'Minibar', amenity_wifi: 'Kostenloses WLAN'
+      amenity_furniture: 'Handgefertigte Möbel', amenity_minibar: 'Minibar', amenity_wifi: 'Kostenloses WLAN',
+      amenity_garden: 'Gartenblick', amenity_antique: 'Antike Möbel', amenity_craft: 'Handwerkliche Details',
+      amenity_natural: 'Natürliche Materialien', amenity_shower: 'Dusche',
+      sd_p1: 'In jeder Hinsicht großzügig, liegt das Super Deluxe direkt zum Vorgarten hin. 105 Quadratmeter mit einer breiten Privatterrasse, die unmittelbar ins Freie führt; das Meer filtert durch die Bäume.',
+      sd_p2: 'Das Morgenlicht fällt durch das Glas und bringt jeden Ton mediterranen Grüns mit. Öffnen Sie die Terrassentür und der Garten gehört Ihnen. Verfeinert ohne Aufwand — jedes Detail sagt etwas, aber keines davon schreit.',
+      sd_p3: 'Der Kamin definiert den Sitzbereich; das Zimmer gewinnt an kühlen Abenden eine andere Wärme. Eine Whirlpool-Badewanne kommt mit einer Regendusche. Eine Espressomaschine, eine Minibar und handgefertigte Möbel — nichts, was Sie draußen brauchen und hier nicht finden.',
+      sd_p4: 'Ein Zimmer, das ebenso sehr zum Bleiben wie zum Ausgehen gestaltet wurde. Der Garten liegt an der Tür; der Strand wenige Schritte weiter. Aber im Terrassenstuhl zu sitzen und den Morgen anhalten zu lassen, ist genauso vollständig.',
+      dx_p1: 'Mit 70 Quadratmetern ist das Deluxe so großzügig wie eine Residenz und so intim wie ein Rückzugsort. Ein Zimmer, das alles direkt sagt: geräumig, hell, ruhig.',
+      dx_p2: 'Die breite Terrasse öffnet sich zum Garten. Das Morgenlicht strömt durch das Glas und bringt alle Schattierungen mediterranen Grüns. Nichts Überflüssiges hier — das Mittelmeerlicht übernimmt den Großteil der Dekoration.',
+      dx_p3: 'Der Kamin definiert den Sitzbereich und macht kühle Abende besonders. Eine Whirlpool-Badewanne kommt mit einer Regendusche. Eine Espressomaschine, eine Minibar und handgefertigte Möbel — die Dinge, die in der Schlichtheit verborgen sind.',
+      dx_p4: 'Öffnen Sie die Terrassentür. Der Garten gehört Ihnen. Strand, Restaurant und Spa sind wenige Schritte entfernt — aber es wird Morgen geben, an denen Sie den Terrassenstuhl nicht verlassen müssen.',
+      ge_p1: 'Ein freistehendes Pavillon abseits des übrigen Anwesens, 60 Quadratmeter, die eine Welt für sich sind. Hinter der Terrasse erstreckt sich ein Teich; seine Oberfläche verdoppelt das Licht des Gartens.',
+      ge_p2: 'In klaren Nächten verdoppelt der Teich auch den Mond. Die Bewegung des Wassers wird vom Fenster aus beobachtet; das Licht fällt je nach Stunde unterschiedlich. Dieses Zimmer wurde für jene geschaffen, die Privatsphäre in die Architektur ihres Lebens eingebaut haben.',
+      ge_p3: 'Der Kamin definiert das Innere; eine Whirlpool-Badewanne kommt mit einer Regendusche. Eine Espressomaschine, eine Minibar und handgefertigte Möbel — kein Grund, nach einem Grund zu suchen, nach draußen zu gehen. Der Teich ist noch da.',
+      ge_p4: 'Am Rand des Teiches, an einem Ort, wo die Zeit anders läuft. Strand und Restaurant sind zu Fuß erreichbar — aber dieses Gebäude fühlt sich an, als wäre es dazu gedacht, Sie festzuhalten. Setzen Sie sich in den Verandasessel, gießen Sie sich ein, und beobachten Sie, was der Teich tut.',
+      an_p1: 'Im Mittelpunkt ein Messinkbett. Darum herum über Jahrzehnte gesammelte Antiquitäten und Objekte, die das Gewicht der Zeit tragen. Das Antik Zimmer ist ein Raum, in dem Ansammlung natürlich entstanden ist.',
+      an_p2: 'Die antiken Ruinen von Olympos sind wenige Gehminuten entfernt — aber das Gewicht dieser Geschichte ist auch in dieses Zimmer eingedrungen. Hier sieht nichts aus, als wäre es gestern angekommen; jedes Stück weiß etwas.',
+      an_p3: 'In einer ruhigen Ecke des Gartens gelegen, fühlt sich das Grundstück ganz wie Ihres an. Die Terrasse öffnet sich auf eine tiefe Stille. Minibar, Klimaanlage und kostenloses WLAN sind vorhanden — aber die Zeit vergeht in diesem Zimmer anders.',
+      an_p4: 'Das Zimmer zu erkunden ist wie ein kleines Erbe zu empfangen. Jedes Objekt kam von irgendwo und trägt etwas. Treten Sie auf die Terrasse; die Stille des Gartens empfängt Sie. Nachts warten die Ruinen von Olympos wenige Minuten entfernt.',
+      st_p1: 'Klare Linien, ein Doppelbett und eine Privatterrasse mit Gartenblick. 35 Quadratmeter — alles, was Sie brauchen, nichts dazwischen.',
+      st_p2: 'Derselbe Garten, derselbe Meeresduft, dieselbe Stille — das gesamte Olympos Lodge ist in diesem Zimmer gegenwärtig. Frühstück, Strandliege, Spa-Zugang, Fahrrad und Kanu sind inklusive; das Zimmer bestimmt nur, wo Sie schlafen.',
+      st_p3: 'Handgefertigte Möbel, natürliche Materialien, Klimaanlage und Minibar. Eine Dusche. Eine Privatterrasse. Ein Zimmer, das beweist, dass Schlichtheit und Großzügigkeit keine Gegensätze sind — alles ist hier, nur mit weniger Lärm.',
+      st_p4: 'Eine Erinnerung daran, dass die besten Urlaube sehr wenig brauchen. Öffnen Sie die Terrassentür; der Garten und alles dahinter warten.'
     }
   };
 

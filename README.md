@@ -51,4 +51,4 @@ olymposlodge/
 
 ## Design references
 
-Casa Angelina · Amanruya
+Casa Angelina · Badrutt's Palace - Casa Cook

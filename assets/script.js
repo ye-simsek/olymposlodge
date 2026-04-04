@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Language switch ---
-  const translations = {
+  const translations = olTranslations;
+  {
     tr: {
       btn_reserve: 'Rezervasyon',
       nav_home: 'Ana Sayfa', nav_story: 'Hikayemiz', nav_rooms: 'Odalar',

@@ -54,14 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay.classList.add('open');
     menuToggle.classList.add('active');
     header.classList.add('menu-open');
-    document.body.style.overflow = 'hidden';
+    if (smoother) smoother.paused(true);
+    else document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     navOverlay.classList.remove('open');
     menuToggle.classList.remove('active');
     header.classList.remove('menu-open');
-    document.body.style.overflow = '';
+    if (smoother) smoother.paused(false);
+    else document.body.style.overflow = '';
   }
 
   navLinks.forEach(link => {

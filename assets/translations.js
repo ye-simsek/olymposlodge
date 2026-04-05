@@ -211,7 +211,7 @@ const olTranslations = {
       amenity_natural: 'Doğal Malzemeler', amenity_shower: 'Duş',
       sd_p1: 'Her yönüyle ferah, Super Deluxe ön bahçenin tam karşısında konumlanan bir oda. 105 metrekare ve geniş özel terası aracılığıyla doğrudan bahçeye açılıyor; deniz ağaçların arasından süzülüyor.',
       sd_p2: 'Sabah ışığı perdelerden süzülür, yeşilin tüm tonlarını odaya taşır. Teras kapısını açtığınızda bahçe size ait olur. Rafinedir ama gösterişsiz; her detay bir şeyi söylüyor, ama bağırmıyor.',
-      sd_p3: 'Şömine oturma alanını tanımlıyor; serin gecelerde oda farklı bir sıcaklık kazanır. Jakuzi küvet yağmur duşuyla birlikte geliyor. Espresso makinesi, minibar ve baştan sona el yapımı mobilyalar — içeride kalmak için hiçbir şeye dışarı ihtiyacınız yok.',
+      sd_p3: 'Şömine oturma alanını tanımlıyor; serin gecelerde oda farklı bir sıcaklık kazanır. Jakuzi küvet yağmur duşuyla birlikte geliyor. Espresso makinesi, minibar ve baştan sona el yapımı mobilyalar. İçeride kalmak için hiçbir şeye dışarı ihtiyacınız yok.',
       sd_p4: 'Dışarı çıkmak kadar içeride kalmak için de tasarlanmış bir oda. Bahçe kapıda; sahil birkaç adım ötede. Ama teras sandalyesine oturup sabahın durmasına izin vermek de tam anlamıyla yeterli.',
       dx_p1: '70 metrekare ile hem konut kadar ferah hem sığınak kadar samimi. Deluxe, her şeyini doğrudan söyleyen bir oda: geniş, aydınlık, huzurlu.',
       dx_p2: 'Geniş teras bahçeye açılıyor. Sabahın ışığı camdan içeri doluyor ve Akdeniz yeşilinin tüm tonlarını getiriyor. Gereksiz hiçbir şey yok burada — dekorasyonun büyük kısmını Akdeniz ışığı üstleniyor.',

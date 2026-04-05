@@ -767,7 +767,7 @@ h4 {
   width: 2.08rem;
   height: 2.08rem;
   border-radius: 50%;
-  background-color: var(--color-warm-white); background-image: var(--paper-texture);
+  background: var(--color-warm-white);
   border: 1px solid var(--color-border);
   display: flex;
   align-items: center;

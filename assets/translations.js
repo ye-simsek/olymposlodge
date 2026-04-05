@@ -4,7 +4,7 @@
 
 const olTranslations = {
     tr: {
-      btn_reserve: 'Rezervasyon',
+      btn_reserve: 'Rezervasyon', btn_availability: 'Müsaitliği Kontrol Et',
       nav_home: 'Ana Sayfa', nav_story: 'Hikayemiz', nav_rooms: 'Odalar',
       nav_nature: 'Doğa', nav_experience: 'Deneyim', nav_gallery: 'Galeri', nav_contact: 'İletişim', nav_experiences: 'Deneyimler', nav_location: 'Konum', loc_hero_title: 'Nasıl Gelinir',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktiviteler',
@@ -253,7 +253,7 @@ const olTranslations = {
       offer2_cta: 'Daha Fazla'
     },
     en: {
-      btn_reserve: 'Reserve',
+      btn_reserve: 'Reserve', btn_availability: 'Check Availability',
       nav_home: 'Home', nav_story: 'Our Story', nav_rooms: 'Rooms',
       nav_nature: 'Nature', nav_experience: 'Experience', nav_gallery: 'Gallery', nav_contact: 'Contact', nav_experiences: 'Experiences', nav_location: 'Location', loc_hero_title: 'Getting Here',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Activities',

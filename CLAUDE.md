@@ -25,6 +25,7 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 | `cirali.css` | Child-page hero, Çıralı guide editorial, spa/lodge/location shared styles | `cirali.html`, `lodge.html`, `spa.html`, `location.html` |
 | `activities.css` | Activities page sub-nav and grid | `activities.html`, `lodge.html` |
 | `pages.css` | Legal pages, photo gallery page | `gallery.html`, `privacy.html`, `terms.html` |
+| `offers.css` | Offers/packages page | `pages/offers.html` |
 
 **When editing CSS:** identify which file owns the component from the table above. Do NOT read other CSS files unless the change spans multiple files.
 

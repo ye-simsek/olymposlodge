@@ -449,8 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = document.querySelector(a.getAttribute('href'));
         if (target) {
           const offset = actSubnav.offsetHeight + document.getElementById('header').offsetHeight;
-          if (smoother) {
-            smoother.scrollTo(target, true, `top ${offset}px`);
+          if (lenis) {
+            lenis.scrollTo(target, { offset: -offset });
           } else {
             window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
           }

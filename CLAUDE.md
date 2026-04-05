@@ -1,22 +1,5 @@
 # Olympos Lodge
 
-## Pending Tasks
-1. ~~Wire REZERVASYON button → SabeeApp booking engine~~
-2. ~~Scroll fade-ins for about/nature/experience/gallery sections~~ ✓ Done
-3. Manifesto/editorial intro section between hero and rooms     Done
-4. Footer: WhatsApp link, Spotify playlists (season/checkin confirmed and in staging)
-5. Mobile pass — full spacing/typography review
-6. Child pages: individual rooms, Chimaera flames, Olympos ruins Done, needs review
-7. ~~rooms.html — room descriptions are placeholders; supplement with richer copy from RAG file~~ ✓ Done
-8. Hero video poster — user will handle extraction; currently a placeholder
-9. Dining section needs revisiting (copy, photos, full menu details)
-14. Experiences page: improve Spa section (the Deneyim/Experience section was removed from homepage; spa content should live on the Experiences/Çıralı page)
-10. Instagram feed — link to footer
-11. Newsletter — email service provider not yet decided; discuss when ready
-12. KVKK + Terms pages confirmed accurate by user but recommend professional legal review before go-live
-13. Cookie consent — UI built (bottom-left FAB → panel with toggles); actual consent logic (localStorage, conditional script loading) not yet implemented
-15. lodge.html intro — second column (`lodge_intro_p2`) is a placeholder summary; replace with final copy once decided
-
 ## Design References
 Casa Angelina, Amanruya, Badrutt's Palace, Casa Cook
 

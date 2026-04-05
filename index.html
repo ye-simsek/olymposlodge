@@ -15,6 +15,9 @@
   <!-- Favicon -->
   <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
 
+  <!-- Preload hero video poster (LCP element) -->
+  <link rel="preload" as="image" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg" fetchpriority="high">
+
   <link rel="stylesheet" href="assets/base.css?v=5">
   <link rel="stylesheet" href="assets/home.css?v=3">
 </head>
@@ -70,7 +73,7 @@
         <source src="assets/hero.webm" type="video/webm">
         <source src="assets/hero.mp4" type="video/mp4">
         <!-- Fallback image for browsers that don't support video -->
-        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg" alt="Olympos Lodge aerial view of Çıralı coastline" />
+        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg" alt="Olympos Lodge aerial view of Çıralı coastline" fetchpriority="high" decoding="async" />
       </video>
     </div>
   </section>

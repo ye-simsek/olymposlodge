@@ -47,6 +47,11 @@
   box-sizing: border-box;
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-warm-gold);
+  outline-offset: 3px;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;

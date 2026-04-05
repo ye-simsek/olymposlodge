@@ -335,6 +335,14 @@
 .room-cta .btn-reserve {
   font-size: 0.75rem;
   padding: 0.9rem 2.8rem;
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+.room-cta .btn-reserve:hover {
+  background: var(--color-text);
+  color: var(--color-cream);
+  border-color: var(--color-text);
 }
 
 /* Prev / Next room navigation */

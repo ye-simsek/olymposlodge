@@ -19,13 +19,16 @@ fswatch -o -r \
   sleep $DEBOUNCE
   cd "$REPO_DIR" || exit 1
 
-  # Only commit tracked files with actual changes
-  if git diff --quiet; then
+  # Stage tracked changes + any new .html/.css/.js files
+  git add -u
+  git ls-files --others --exclude-standard | grep -E '\.(html|css|js)$' | xargs -r git add
+
+  # Skip if nothing to commit
+  if git diff --cached --quiet; then
     continue
   fi
 
   TIMESTAMP=$(date "+%Y-%m-%d %H:%M:%S")
-  git add -u
   git commit -m "Auto-save: $TIMESTAMP" --quiet
   git push origin main --quiet
   echo "[$TIMESTAMP] Pushed."

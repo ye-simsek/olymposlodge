@@ -507,12 +507,14 @@ document.addEventListener('DOMContentLoaded', () => {
       lbImg.src = items[i].querySelector('img').src;
       lbImg.alt = items[i].querySelector('img').alt;
       lb.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
+      if (smoother) smoother.paused(true);
+      else document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
       lb.classList.remove('is-open');
-      document.body.style.overflow = '';
+      if (smoother) smoother.paused(false);
+      else document.body.style.overflow = '';
     }
 
     function navigate(dir) {

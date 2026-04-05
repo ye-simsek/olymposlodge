@@ -1,0 +1,219 @@
+/* ========================================
+   OLYMPOS LODGE — Legal & Gallery Pages
+   Loaded on gallery.html, privacy.html,
+   terms.html.
+   ======================================== */
+
+/* ========================================
+   Legal Pages (privacy.html, terms.html)
+   ======================================== */
+
+.legal-page {
+  padding-top: calc(var(--header-height) + 4rem);
+  padding-bottom: 6rem;
+  background: var(--color-cream);
+  min-height: 70vh;
+}
+
+.legal-page .container {
+  max-width: 800px;
+}
+
+.legal-page h1 {
+  font-family: var(--font-sc);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  text-transform: uppercase;
+}
+
+.legal-page h2 {
+  font-family: var(--font-sc);
+  font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-page p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.legal-page ul,
+.legal-page ol {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-page li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-page strong {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.legal-page a {
+  color: var(--color-warm-gold);
+  text-decoration: none;
+}
+
+.legal-page a:hover {
+  text-decoration: underline;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.legal-table td {
+  padding: 0.6rem 1rem 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.legal-table td:first-child {
+  font-family: var(--font-sc);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  white-space: nowrap;
+  padding-right: 2rem;
+  min-width: 180px;
+}
+
+/* ===== PHOTO GALLERY PAGE ===== */
+.photo-grid {
+  column-count: 3;
+  column-gap: 6px;
+  padding: 6px;
+  background: var(--color-cream);
+}
+
+.photo-grid__item {
+  break-inside: avoid;
+  margin-bottom: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+.photo-grid__item img {
+  width: 100%;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.3s;
+  opacity: 0;
+}
+
+.photo-grid__item img.is-loaded {
+  opacity: 1;
+}
+
+.photo-grid__item:hover img {
+  transform: scale(1.04);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.94);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  background: none;
+  border: none;
+  color: var(--color-warm-white);
+  font-family: var(--font-body);
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.lightbox__close:hover {
+  opacity: 1;
+}
+
+.lightbox__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--color-warm-white);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  padding: 1rem;
+}
+
+.lightbox__arrow:hover {
+  opacity: 1;
+}
+
+.lightbox__arrow--prev { left: 1rem; }
+.lightbox__arrow--next { right: 1rem; }
+
+@media (max-width: 768px) {
+  .photo-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    column-count: 1;
+  }
+}

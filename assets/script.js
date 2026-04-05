@@ -2,7 +2,22 @@
    OLYMPOS LODGE — Interactions
    ======================================== */
 
+if (typeof gsap !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // --- ScrollSmoother init ---
+  let smoother = null;
+  if (document.getElementById('smooth-wrapper') && typeof ScrollSmoother !== 'undefined') {
+    smoother = ScrollSmoother.create({
+      wrapper: '#smooth-wrapper',
+      content: '#smooth-content',
+      smooth: 1.2,
+      effects: true,
+    });
+  }
 
   // --- Header scroll behavior ---
   const header = document.getElementById('header');

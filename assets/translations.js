@@ -197,7 +197,7 @@ const olTranslations = {
       spa_massage_f1: '<span>Ücret</span><strong>Ek ücretli</strong>',
       spa_massage_f2: '<span>Rezervasyon</span><strong>En az 2 saat önceden</strong>',
       spa_cta: 'Rezervasyon',
-      asd_p1: 'Bahçenin en ucunda, tesisteki diğer tüm odalardan ayrı duran müstakil bir yapı. Aqua Super Deluxe bir otel odasından çok özel bir konut. 105 metrekare, kendi terası, kendi girişi, kendi sessizliği.',
+      asd_p1: 'Bahçenin en ucunda, tesisteki diğer tüm odalardan ayrı duran müstakil bir yapı. Aqua Super Deluxe bir otel odasından çok özel bir konut. 105 metrekare, kendi verandası, kendi girişi, kendi sessizliği.',
       asd_p2: 'İç mekanın bir duvarı boyunca uzanan tam yükseklikte bir şelale, odayı akan suyun sabit, alçak sesiyle dolduruyor. Bir sıra cam zemin paneli, ayaklarınızın altında akan suyu gözler önüne seriyor. Etki anlık: burası sıradan bir odadan çok bir bahçe köşküne yakın hissettiriyor.',
       asd_p3: 'Şömine oturma alanını tanımlıyor ve serin akşamların tonunu belirliyor. Jakuzi küvet, odanın merkezine konumlandırılmış. Biri iç mekanda, biri açık havada olmak üzere iki ayrı yağmur duşu, sabah rutinini sıcaklık ile açık hava arasında bir tercihe dönüştürüyor. Espresso makinesi, minibar ve baştan sona el yapımı mobilyalar; sadece uyumak için değil, yaşamak için hazır bir oda.',
       asd_p4: 'Terasa çıktığınızda bahçenin tüm derinliği önünüzde açılıyor. Buradan sahile kısa bir yürüyüş. Restorana ve spa\'ya da öyle. Ancak bu yapı, bunların hiçbirinin gerekli hissettirmeyeceği şekilde tasarlanmış. Şömineyi yakabilir, jakuziyi çalıştırabilir, kapıları açık bırakabilir ve bütün bir akşamı başka bir yerde olmanıza gerek kalmadan geçirebilirsiniz.',

@@ -125,11 +125,11 @@
   --color-text-muted: #999;
   --color-border: #e8e4de;
 
-  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
-  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
-  --font-accent: 'Josefin Sans', sans-serif;
-  --font-cinzel: 'Cinzel', serif;
-  --font-sc: 'Cormorant SC', serif;
+  --font-heading: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  --font-body: 'DM Sans', 'DM Sans Fallback', Arial, sans-serif;
+  --font-accent: 'Josefin Sans', 'Josefin Sans Fallback', Arial, sans-serif;
+  --font-cinzel: 'Cinzel', 'Cinzel Fallback', Georgia, serif;
+  --font-sc: 'Cormorant SC', 'Cormorant SC Fallback', Georgia, serif;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;

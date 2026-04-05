@@ -206,7 +206,7 @@ const olTranslations = {
       amenity_fireplace: 'Şömine', amenity_jacuzzi: 'Jakuzi', amenity_rain_shower: 'İç & Dış Yağmur Duşu',
       amenity_waterfall: 'Şelale Duvarı', amenity_glass_floor: 'Cam Zemin Panelleri', amenity_espresso: 'Espresso Makinesi',
       amenity_furniture: 'El Yapımı Mobilya', amenity_minibar: 'Mini Bar', amenity_wifi: 'Ücretsiz Wi-Fi',
-      amenity_kettle: 'Su Isıtıcı', amenity_safe: 'Kasa',
+      amenity_kettle: 'Kettle', amenity_safe: 'Kasa',
       amenity_garden: 'Bahçe Manzarası', amenity_antique: 'Antika Mobilya', amenity_craft: 'El İşçiliği Detaylar',
       amenity_natural: 'Doğal Malzemeler', amenity_shower: 'Duş',
       sd_p1: 'Her yönüyle ferah, Super Deluxe ön bahçenin tam karşısında konumlanan bir oda. 105 metrekare ve geniş özel terası aracılığıyla doğrudan bahçeye açılıyor; deniz ağaçların arasından süzülüyor.',

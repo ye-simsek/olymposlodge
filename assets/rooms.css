@@ -304,10 +304,11 @@
 
 .room-amenities__list li {
   font-family: var(--font-accent);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-text);
+  font-weight: 500;
 }
 
 /* CTA section */

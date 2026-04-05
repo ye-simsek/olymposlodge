@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay.classList.add('open');
     menuToggle.classList.add('active');
     header.classList.add('menu-open');
-    if (smoother) smoother.paused(true);
+    if (lenis) lenis.stop();
     else document.body.style.overflow = 'hidden';
   }
 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navOverlay.classList.remove('open');
     menuToggle.classList.remove('active');
     header.classList.remove('menu-open');
-    if (smoother) smoother.paused(false);
+    if (lenis) lenis.start();
     else document.body.style.overflow = '';
   }
 

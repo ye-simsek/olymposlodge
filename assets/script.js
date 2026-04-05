@@ -2,21 +2,21 @@
    OLYMPOS LODGE — Interactions
    ======================================== */
 
-if (typeof gsap !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- ScrollSmoother init ---
-  let smoother = null;
-  if (document.getElementById('smooth-wrapper') && typeof ScrollSmoother !== 'undefined') {
-    smoother = ScrollSmoother.create({
-      wrapper: '#smooth-wrapper',
-      content: '#smooth-content',
-      smooth: 1.2,
-      effects: true,
+  // --- Lenis smooth scroll ---
+  let lenis = null;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
     });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
   }
 
   // --- Header scroll behavior ---

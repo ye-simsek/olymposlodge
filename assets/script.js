@@ -507,13 +507,13 @@ document.addEventListener('DOMContentLoaded', () => {
       lbImg.src = items[i].querySelector('img').src;
       lbImg.alt = items[i].querySelector('img').alt;
       lb.classList.add('is-open');
-      if (smoother) smoother.paused(true);
+      if (lenis) lenis.stop();
       else document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
       lb.classList.remove('is-open');
-      if (smoother) smoother.paused(false);
+      if (lenis) lenis.start();
       else document.body.style.overflow = '';
     }
 

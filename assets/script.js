@@ -124,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        if (smoother) {
-          smoother.scrollTo(target, true);
+        if (lenis) {
+          lenis.scrollTo(target);
         } else {
           const y = target.getBoundingClientRect().top + window.scrollY;
           window.scrollTo({ top: y, behavior: 'smooth' });

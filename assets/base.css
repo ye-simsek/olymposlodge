@@ -9,7 +9,7 @@
 /* ========================================
    SELF-HOSTED FONTS
    Latin + Latin-Ext subsets (covers Turkish).
-   font-display: optional — no reflow/CLS.
+   font-display: swap — tuned size-adjust fallbacks minimise reflow.
    Fallback @font-face rules tuned with
    size-adjust + metric overrides to match
    web font cap heights exactly.

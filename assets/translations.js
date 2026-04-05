@@ -502,7 +502,7 @@ const olTranslations = {
       offer2_cta: 'Learn More'
     },
     de: {
-      btn_reserve: 'Reservieren',
+      btn_reserve: 'Reservieren', btn_availability: 'Verfügbarkeit Prüfen',
       nav_home: 'Startseite', nav_story: 'Unsere Geschichte', nav_rooms: 'Zimmer',
       nav_nature: 'Natur', nav_experience: 'Erlebnis', nav_gallery: 'Galerie', nav_contact: 'Kontakt', nav_experiences: 'Erlebnisse', nav_location: 'Lage', loc_hero_title: 'Anreise',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktivitäten',

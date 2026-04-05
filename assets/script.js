@@ -124,9 +124,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        const offset = 0;
-        const y = target.getBoundingClientRect().top + window.scrollY + offset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        if (smoother) {
+          smoother.scrollTo(target, true);
+        } else {
+          const y = target.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
       }
     });
   });

@@ -121,7 +121,7 @@
    ======================================== */
 .intro {
   padding: 3.84rem 5.4rem;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
 }
 
 .intro-title {
@@ -238,7 +238,7 @@
 .conviction__image {
   flex: 0 0 auto;
   padding: 1.5rem;
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   box-shadow: 0 4px 32px rgba(0,0,0,0.08);
 }
 .conviction__image img {
@@ -272,7 +272,7 @@
    ======================================== */
 .rooms {
   padding: var(--space-2xl) 0 var(--space-xl);
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
 }
 
 /* Editorial rows */
@@ -352,7 +352,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding: var(--space-md) 2rem var(--space-lg) var(--space-xl);
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   overflow: hidden;
 }
 
@@ -596,7 +596,7 @@
 .nature-content {
   display: flex;
   align-items: center;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
   padding: var(--space-xl);
 }
 
@@ -625,7 +625,7 @@
    ======================================== */
 .experience {
   padding: var(--space-2xl) 0;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
 }
 
 .experience-grid {
@@ -735,7 +735,7 @@
    ======================================== */
 .voices {
   padding: var(--space-2xl) 0;
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
 }
 
 .voices-grid {
@@ -771,7 +771,7 @@
    ======================================== */
 .gallery-teaser {
   padding: var(--space-xl) 0 0;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
 }
 
 .gallery-teaser .section-header {
@@ -873,7 +873,7 @@
   .rooms-list {
     position: relative;
     z-index: 2;
-    background: var(--color-cream);
+    background-color: var(--color-cream); background-image: var(--paper-texture);
   }
 
   /* Gold curtain line — text disappears behind this edge as you scroll */
@@ -899,7 +899,7 @@
   /* Solid cream background so rows fully cover the heading underneath */
   .room-row,
   .room-separator {
-    background: var(--color-cream);
+    background-color: var(--color-cream); background-image: var(--paper-texture);
   }
 }
 
@@ -1121,7 +1121,7 @@
   .rooms-list {
     position: relative;
     z-index: 2;
-    background: var(--color-cream);
+    background-color: var(--color-cream); background-image: var(--paper-texture);
   }
 
   /* Gold curtain line at top of list */
@@ -1146,7 +1146,7 @@
 
   .room-row,
   .room-separator {
-    background: var(--color-cream);
+    background-color: var(--color-cream); background-image: var(--paper-texture);
   }
 
   .experience-grid {

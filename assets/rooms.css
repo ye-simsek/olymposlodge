@@ -88,7 +88,7 @@
 .room-specs {
   display: flex;
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
 }
 
 .room-spec {
@@ -150,7 +150,7 @@
   display: grid;
   grid-template-columns: 42fr 58fr;
   min-height: 85vh;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
 }
 
 .room-editorial__left {
@@ -315,7 +315,7 @@
 /* CTA section */
 .room-cta {
   padding: var(--space-2xl) var(--space-md);
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   text-align: center;
   border-top: 1px solid var(--color-border);
 }

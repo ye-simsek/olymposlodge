@@ -123,7 +123,7 @@
 
 /* ── Base inclusions strip ───────────────── */
 .offers-includes {
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   padding: var(--space-xl) var(--space-md);
   text-align: center;
 }

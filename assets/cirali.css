@@ -110,7 +110,7 @@
   gap: 1.2rem;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   border: 1px solid var(--color-border);
 }
 .child-article__info {
@@ -310,7 +310,7 @@
 
 /* ---- Region intro (Casa Cook "THE REGION" style) ---- */
 .dest-region {
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   border-top: 1px solid var(--color-border);
   padding: 4rem var(--space-xl);
   text-align: center;
@@ -561,7 +561,7 @@
 .dest-pullquote {
   padding: 3.5rem 2rem;
   text-align: center;
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -583,7 +583,7 @@
 .lodge-included {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
   padding: 2.4rem var(--space-xl);
 }
 .lodge-included__inner {
@@ -673,7 +673,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 4rem 4.5rem;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
   border-left: 1px solid var(--color-border);
 }
 
@@ -748,7 +748,7 @@
 /* ---- Activities sticky heading ---- */
 .dest-activities-wrap {
   overflow: visible;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
   border-top: 1px solid var(--color-warm-gold);
 }
 
@@ -758,7 +758,7 @@
   z-index: 1;
   padding: var(--space-xl) 0;
   text-align: center;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
 }
 
 .dest-activities-wrap__heading .section-label {
@@ -776,7 +776,7 @@
 .dest-activities-wrap__content {
   position: relative;
   z-index: 2;
-  background: var(--color-warm-white);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
   border-top: 1px solid var(--color-warm-gold);
 }
 
@@ -876,7 +876,7 @@
 .dest-nearby {
   border-top: 1px solid var(--color-border);
   padding: 3.5rem var(--space-xl);
-  background: var(--color-cream);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
 }
 
 .dest-nearby__header {

@@ -1088,6 +1088,8 @@
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
+  .dest-ringmap { max-width: 560px; }
 }
 
 /* ---- Responsive: mobile ---- */

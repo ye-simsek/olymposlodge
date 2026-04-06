@@ -580,8 +580,18 @@ h4 {
   transform: translate(0, 0);
 }
 
+/* Breathe — opacity-only fade, no translate */
+.breathe {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.breathe.visible {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal, .reveal-left, .reveal-right {
+  .reveal, .reveal-left, .reveal-right, .breathe {
     opacity: 1;
     transform: none;
     transition: none;

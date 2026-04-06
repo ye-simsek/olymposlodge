@@ -260,6 +260,7 @@ const olTranslations = {
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Activities',
       hero_title: 'Time flows<br>differently here.',
       hero_subtitle: 'Noise softens, senses awaken.<br>Nature makes itself heard.',
+      glance_rooms_num: '17', glance_rooms_label: 'Rooms', glance_garden_num: '20,000 m²', glance_garden_label: 'Garden', glance_since_num: '1985', glance_since_label: 'Since',
       conviction_sentence: 'A place stripped of the unnecessary becomes something finer.',
       intro_title: 'Olympos Lodge: An Intimate Retreat on the Lycian Coast',
       intro_label: 'About',

@@ -583,7 +583,7 @@ h4 {
 /* Breathe — opacity-only fade, no translate */
 .breathe {
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 1.8s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .breathe.visible {

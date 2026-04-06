@@ -10,6 +10,7 @@ const olTranslations = {
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Aktiviteler',
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
+      glance_rooms_num: '17', glance_rooms_label: 'Oda', glance_garden_num: '20.000 m²', glance_garden_label: 'Bahçe', glance_since_num: '1985', glance_since_label: 'Yılından Beri',
       conviction_sentence: 'Gereksiz olanı çıkardığınızda, asıl önemli olan kalır.',
       intro_title: 'Olympos Lodge: Likya Kıyısında Samimi Bir Sığınak',
       intro_label: 'Hakkında',

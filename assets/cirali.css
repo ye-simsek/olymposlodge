@@ -948,10 +948,10 @@
 }
 .dest-ringmap.visible .dest-ringmap__ring-label { opacity: 1; transition-delay: 0.7s; }
 
-/* Position ring labels at top of each ring */
-.dest-ringmap__ring-label--1 { top: calc(50% - 15% - 0.3rem); left: 50%; transform: translateX(-50%); }
-.dest-ringmap__ring-label--2 { top: calc(50% - 30% - 0.3rem); left: 50%; transform: translateX(-50%); }
-.dest-ringmap__ring-label--3 { top: calc(50% - 45% - 0.3rem); left: 50%; transform: translateX(-50%); }
+/* Position ring labels just above the top of each ring */
+.dest-ringmap__ring-label--1 { top: 35%; left: 50%; transform: translate(-50%, -100%) translateY(-4px); }
+.dest-ringmap__ring-label--2 { top: 20%; left: 50%; transform: translate(-50%, -100%) translateY(-4px); }
+.dest-ringmap__ring-label--3 { top: 5%;  left: 50%; transform: translate(-50%, -100%) translateY(-4px); }
 
 /* Center label */
 .dest-ringmap__center-label {

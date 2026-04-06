@@ -1065,20 +1065,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .dest-nearby__list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .dest-nearby__item:nth-child(3) {
-    border-right: none;
-  }
-  .dest-nearby__item:nth-child(4),
-  .dest-nearby__item:nth-child(5) {
-    border-top: none;
-  }
-  .dest-nearby__item:nth-child(5) {
-    border-right: none;
-  }
+  .dest-ringmap__label p { display: none; }
+  .dest-ringmap__label { max-width: 130px; }
 }
 
 @media (max-width: 1024px) {

@@ -357,10 +357,7 @@
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background-color: var(--color-warm-white);
-  background-image:
-    linear-gradient(to bottom, #ece6db 0%, var(--color-warm-white) 100%),
-    var(--paper-texture);
+  background: linear-gradient(to bottom, #ece6db 0%, var(--color-cream) 100%);
   position: relative;
 }
 

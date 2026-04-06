@@ -999,12 +999,6 @@
   margin-bottom: 0.4rem;
 }
 
-.dest-ringmap__label p {
-  font-size: 0.75rem;
-  line-height: 1.6;
-  color: var(--color-text-light);
-  margin: 0;
-}
 
 /* Label positions — percentages relative to ringmap container */
 /* Olympos: dot at 236,364 → 39.3%, 60.7% — label left of dot */
@@ -1065,7 +1059,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .dest-ringmap__label p { display: none; }
   .dest-ringmap__label { max-width: 130px; }
 }
 

@@ -1150,13 +1150,25 @@
     padding: 2.5rem 1.5rem;
   }
 
-  .dest-nearby__list {
-    grid-template-columns: 1fr;
+  .dest-ringmap { aspect-ratio: auto; max-width: none; }
+  .dest-ringmap__svg { display: none; }
+  .dest-ringmap__ring-label,
+  .dest-ringmap__center-label { display: none; }
+
+  .dest-ringmap__label {
+    position: static;
+    max-width: none;
+    opacity: 1;
+    padding: 1.2rem 0 1.2rem 1.5rem;
+    border-left: 1px solid var(--color-warm-gold);
   }
 
-  .dest-nearby__item {
-    border-right: none;
+  .dest-ringmap__label + .dest-ringmap__label {
+    margin-top: 0;
   }
+
+  .dest-ringmap__label h3 { font-size: 1.05rem; }
+  .dest-ringmap__label p { display: block; }
 
   .dest-cta {
     padding: 3rem 1.5rem;

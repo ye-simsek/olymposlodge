@@ -176,6 +176,88 @@
 }
 
 /* ========================================
+   GLANCE — ink-bleed reveal stats
+   ======================================== */
+.glance {
+  padding: 4.5rem 2rem;
+  background-color: var(--color-warm-white);
+  background-image: var(--paper-texture);
+}
+
+.glance__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.glance__stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.glance__number {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.glance__label {
+  font-family: var(--font-sc);
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+
+.glance__rule {
+  width: 1px;
+  height: 3.5rem;
+  background: var(--color-warm-gold);
+  opacity: 0.5;
+}
+
+/* Ink-bleed clip-path reveal */
+.ink-bleed {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Stagger: second stat delays, third delays more */
+.glance__stat:nth-child(3) .ink-bleed { transition-delay: 0.25s; }
+.glance__stat:nth-child(5) .ink-bleed { transition-delay: 0.5s; }
+
+/* When the parent .reveal gains .visible, reveal the ink */
+.glance__stat.visible .ink-bleed {
+  clip-path: inset(0 0% 0 0);
+}
+
+@media (max-width: 768px) {
+  .glance { padding: 3rem 1.5rem; }
+  .glance__inner { gap: 2rem; }
+  .glance__number { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .glance__rule { height: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+  .glance__inner {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .glance__rule {
+    width: 3rem;
+    height: 1px;
+  }
+}
+
+/* ========================================
    CONVICTION
    ======================================== */
 .conviction {

@@ -267,10 +267,16 @@
   gap: 6rem;
   padding: 6rem 8rem 6rem 4rem;
   background-color: #ece6db;
-  background-image:
-    linear-gradient(to bottom, var(--color-warm-white) 0%, transparent 18%),
-    linear-gradient(to top, transparent 0%, transparent 100%),
-    var(--paper-texture);
+  background-image: var(--paper-texture);
+}
+
+/* Gradient starts at the gold-divider above conviction */
+.conviction-wrap {
+  background: linear-gradient(
+    to bottom,
+    var(--color-cream) 0%,
+    #ece6db 50%
+  );
 }
 .conviction__text {
   flex: 3 1 0;

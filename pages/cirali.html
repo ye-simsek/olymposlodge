@@ -226,46 +226,70 @@
     </div>
   </div>
 
-  <!-- Beyond Çıralı -->
+  <!-- Beyond Çıralı — concentric ring map -->
   <div class="dest-nearby">
     <div class="dest-nearby__header">
       <span class="section-label" data-i18n="c_nearby_label">Çıralı'nın Ötesi</span>
     </div>
-    <div class="dest-nearby__list">
-      <div class="dest-nearby__item">
-        <span class="dest-nearby__dist">3 km</span>
-        <div class="dest-nearby__info">
-          <h3 data-i18n="c_nearby1_title">Ulupınar</h3>
-          <p data-i18n="c_nearby1_desc">Dağ kaynağından beslenen çay restoranları. Alabalık ve doğal serinlik.</p>
-        </div>
+    <div class="dest-ringmap reveal">
+      <svg class="dest-ringmap__svg" viewBox="0 0 600 600" aria-hidden="true">
+        <!-- Rings -->
+        <circle class="dest-ringmap__ring dest-ringmap__ring--1" cx="300" cy="300" r="90" fill="none" stroke="#e8e4de" stroke-width="1"/>
+        <circle class="dest-ringmap__ring dest-ringmap__ring--2" cx="300" cy="300" r="180" fill="none" stroke="#e8e4de" stroke-width="1"/>
+        <circle class="dest-ringmap__ring dest-ringmap__ring--3" cx="300" cy="300" r="270" fill="none" stroke="#e8e4de" stroke-width="1"/>
+        <!-- Connector lines (dashed) -->
+        <line class="dest-ringmap__line" x1="300" y1="300" x2="225" y2="375" stroke="#e8e4de" stroke-width="0.7" stroke-dasharray="4 4"/>
+        <line class="dest-ringmap__line" x1="300" y1="300" x2="225" y2="225" stroke="#e8e4de" stroke-width="0.7" stroke-dasharray="4 4"/>
+        <line class="dest-ringmap__line" x1="300" y1="300" x2="300" y2="480" stroke="#e8e4de" stroke-width="0.7" stroke-dasharray="4 4"/>
+        <line class="dest-ringmap__line" x1="300" y1="300" x2="440" y2="415" stroke="#e8e4de" stroke-width="0.7" stroke-dasharray="4 4"/>
+        <line class="dest-ringmap__line" x1="300" y1="300" x2="445" y2="185" stroke="#e8e4de" stroke-width="0.7" stroke-dasharray="4 4"/>
+        <line class="dest-ringmap__line" x1="300" y1="300" x2="555" y2="300" stroke="#e8e4de" stroke-width="0.7" stroke-dasharray="4 4"/>
+        <!-- Center lodge dot -->
+        <circle class="dest-ringmap__center" cx="300" cy="300" r="5" fill="#8E7441"/>
+        <!-- Destination dots -->
+        <circle class="dest-ringmap__dot" cx="225" cy="375" r="4" fill="#8E7441"/><!-- Olympos -->
+        <circle class="dest-ringmap__dot" cx="225" cy="225" r="4" fill="#8E7441"/><!-- Yanartaş -->
+        <circle class="dest-ringmap__dot" cx="300" cy="480" r="4" fill="#8E7441"/><!-- Phaselis -->
+        <circle class="dest-ringmap__dot" cx="440" cy="415" r="4" fill="#8E7441"/><!-- Kemer -->
+        <circle class="dest-ringmap__dot" cx="445" cy="185" r="4" fill="#8E7441"/><!-- Tahtalı -->
+        <circle class="dest-ringmap__dot" cx="555" cy="300" r="4" fill="#8E7441"/><!-- Antalya -->
+      </svg>
+      <!-- Ring time labels -->
+      <span class="dest-ringmap__ring-label dest-ringmap__ring-label--1" data-i18n="c_ring_10min">~10 dk</span>
+      <span class="dest-ringmap__ring-label dest-ringmap__ring-label--2" data-i18n="c_ring_30min">~30 dk</span>
+      <span class="dest-ringmap__ring-label dest-ringmap__ring-label--3" data-i18n="c_ring_1hr">~1 saat</span>
+      <!-- Center label -->
+      <span class="dest-ringmap__center-label">Olympos Lodge</span>
+      <!-- Destination labels -->
+      <div class="dest-ringmap__label dest-ringmap__label--olympos">
+        <h3 data-i18n="c_nearby1_title">Olympos Antik Kenti</h3>
+        <span class="dest-ringmap__time" data-i18n="c_nearby1_time">10 dk yürüyüş</span>
+        <p data-i18n="c_nearby1_desc">Otelin hemen bitişiğindeki Likya liman kenti. Roma mezarları, tiyatro kalıntıları ve denize uzanan surlar.</p>
       </div>
-      <div class="dest-nearby__item">
-        <span class="dest-nearby__dist">15 km</span>
-        <div class="dest-nearby__info">
-          <h3 data-i18n="c_nearby2_title">Tahtalı Teleferik</h3>
-          <p data-i18n="c_nearby2_desc">2.365 metre zirveye çıkış. Akdeniz, Çıralı ve Kemer'in panoramik görünümü.</p>
-        </div>
+      <div class="dest-ringmap__label dest-ringmap__label--yanartas">
+        <h3 data-i18n="c_nearby2_title">Yanartaş</h3>
+        <span class="dest-ringmap__time" data-i18n="c_nearby2_time">10 dk arabayla</span>
+        <p data-i18n="c_nearby2_desc">2.500 yıldır sönmeyen doğal alevler. Gece yürüyüşü önerilir.</p>
       </div>
-      <div class="dest-nearby__item">
-        <span class="dest-nearby__dist">25 km</span>
-        <div class="dest-nearby__info">
-          <h3 data-i18n="c_nearby3_title">Phaselis</h3>
-          <p data-i18n="c_nearby3_desc">Üç limanıyla eşsiz konumda Likya-Roma kenti. Denize uzanan kalıntılar arasında yüzmek mümkün.</p>
-        </div>
+      <div class="dest-ringmap__label dest-ringmap__label--phaselis">
+        <h3 data-i18n="c_nearby3_title">Phaselis</h3>
+        <span class="dest-ringmap__time" data-i18n="c_nearby3_time">30 dk arabayla</span>
+        <p data-i18n="c_nearby3_desc">Üç limanıyla eşsiz konumda Likya-Roma kenti. Denize uzanan kalıntılar arasında yüzmek mümkün.</p>
       </div>
-      <div class="dest-nearby__item">
-        <span class="dest-nearby__dist">35 km</span>
-        <div class="dest-nearby__info">
-          <h3 data-i18n="c_nearby4_title">Kemer</h3>
-          <p data-i18n="c_nearby4_desc">Pazarlar, eczaneler, bankalar ve marina için en yakın ilçe merkezi.</p>
-        </div>
+      <div class="dest-ringmap__label dest-ringmap__label--kemer">
+        <h3 data-i18n="c_nearby4_title">Kemer</h3>
+        <span class="dest-ringmap__time" data-i18n="c_nearby4_time">35 dk arabayla</span>
+        <p data-i18n="c_nearby4_desc">Pazarlar, eczaneler, bankalar ve marina için en yakın ilçe merkezi.</p>
       </div>
-      <div class="dest-nearby__item">
-        <span class="dest-nearby__dist">85 km</span>
-        <div class="dest-nearby__info">
-          <h3 data-i18n="c_nearby5_title">Antalya</h3>
-          <p data-i18n="c_nearby5_desc">Tarihi Kaleiçi, müzeler ve uluslararası uçuşlar için Antalya Havalimanı (AYT).</p>
-        </div>
+      <div class="dest-ringmap__label dest-ringmap__label--tahtali">
+        <h3 data-i18n="c_nearby5_title">Tahtalı Teleferik</h3>
+        <span class="dest-ringmap__time" data-i18n="c_nearby5_time">40 dk arabayla</span>
+        <p data-i18n="c_nearby5_desc">2.365 metre zirveye çıkış. Akdeniz, Çıralı ve Kemer'in panoramik görünümü.</p>
+      </div>
+      <div class="dest-ringmap__label dest-ringmap__label--antalya">
+        <h3 data-i18n="c_nearby6_title">Antalya</h3>
+        <span class="dest-ringmap__time" data-i18n="c_nearby6_time">60 dk arabayla</span>
+        <p data-i18n="c_nearby6_desc">Tarihi Kaleiçi, müzeler ve uluslararası uçuşlar için Antalya Havalimanı (AYT).</p>
       </div>
     </div>
   </div>

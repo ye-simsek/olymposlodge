@@ -886,7 +886,7 @@
   border-left: 1px solid var(--color-border);
 }
 
-/* ---- Nearby / Beyond Çıralı ---- */
+/* ---- Nearby / Beyond Çıralı — Ring Map ---- */
 .dest-nearby {
   border-top: 1px solid var(--color-border);
   padding: 3.5rem var(--space-xl);
@@ -895,47 +895,142 @@
 
 .dest-nearby__header {
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .dest-nearby__header .section-label {
   color: var(--color-warm-gold);
 }
 
-.dest-nearby__list {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  border-left: 1px solid var(--color-border);
-  border-top: 1px solid var(--color-border);
+/* Ring map container */
+.dest-ringmap {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  aspect-ratio: 1;
 }
 
-.dest-nearby__item {
-  padding: 2rem 1.8rem;
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.dest-nearby__dist {
+.dest-ringmap__svg {
+  width: 100%;
+  height: 100%;
   display: block;
+}
+
+/* Ring animation */
+.dest-ringmap__ring,
+.dest-ringmap__line {
+  opacity: 0;
+  transform-origin: 300px 300px;
+  transition: opacity 0.8s var(--transition-slow, 0.8s cubic-bezier(0.25,0.1,0.25,1));
+}
+.dest-ringmap__ring { transform: scale(0.5); transition: opacity 0.8s cubic-bezier(0.25,0.1,0.25,1), transform 0.9s cubic-bezier(0.25,0.1,0.25,1); }
+.dest-ringmap__center { opacity: 0; transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1); }
+.dest-ringmap__dot { opacity: 0; transition: opacity 0.5s cubic-bezier(0.25,0.1,0.25,1); }
+
+.dest-ringmap.visible .dest-ringmap__center { opacity: 1; }
+.dest-ringmap.visible .dest-ringmap__ring--1 { opacity: 1; transform: scale(1); transition-delay: 0.15s; }
+.dest-ringmap.visible .dest-ringmap__ring--2 { opacity: 1; transform: scale(1); transition-delay: 0.35s; }
+.dest-ringmap.visible .dest-ringmap__ring--3 { opacity: 1; transform: scale(1); transition-delay: 0.55s; }
+.dest-ringmap.visible .dest-ringmap__line { opacity: 1; transition-delay: 0.5s; }
+.dest-ringmap.visible .dest-ringmap__dot { opacity: 1; transition-delay: 0.65s; }
+
+/* Ring time labels */
+.dest-ringmap__ring-label {
+  position: absolute;
   font-family: var(--font-accent);
   font-size: 0.6rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1);
+  pointer-events: none;
+}
+.dest-ringmap.visible .dest-ringmap__ring-label { opacity: 1; transition-delay: 0.7s; }
+
+/* Position ring labels at top of each ring */
+.dest-ringmap__ring-label--1 { top: calc(50% - 15% - 0.3rem); left: 50%; transform: translateX(-50%); }
+.dest-ringmap__ring-label--2 { top: calc(50% - 30% - 0.3rem); left: 50%; transform: translateX(-50%); }
+.dest-ringmap__ring-label--3 { top: calc(50% - 45% - 0.3rem); left: 50%; transform: translateX(-50%); }
+
+/* Center label */
+.dest-ringmap__center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  font-family: var(--font-sc);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-warm-gold);
-  margin-bottom: 0.6rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1);
 }
+.dest-ringmap.visible .dest-ringmap__center-label { opacity: 1; transition-delay: 0.2s; }
 
-.dest-nearby__item h3 {
+/* Destination labels */
+.dest-ringmap__label {
+  position: absolute;
+  max-width: 160px;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1);
+}
+.dest-ringmap.visible .dest-ringmap__label { opacity: 1; transition-delay: 0.75s; }
+
+.dest-ringmap__label h3 {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--color-text);
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
 }
 
-.dest-nearby__item p {
-  font-size: 0.8rem;
-  line-height: 1.7;
+.dest-ringmap__time {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.4rem;
+}
+
+.dest-ringmap__label p {
+  font-size: 0.75rem;
+  line-height: 1.6;
   color: var(--color-text-light);
+  margin: 0;
+}
+
+/* Label positions — percentages relative to ringmap container */
+/* Olympos: inner ring, SSW — dot at 225,375 → 37.5%, 62.5% */
+.dest-ringmap__label--olympos { top: 63%; left: 5%; text-align: left; }
+/* Yanartaş: inner ring, NNW — dot at 225,225 → 37.5%, 37.5% */
+.dest-ringmap__label--yanartas { top: 25%; left: 4%; text-align: left; }
+/* Phaselis: middle ring, S — dot at 300,480 → 50%, 80% */
+.dest-ringmap__label--phaselis { top: 82%; left: 50%; transform: translateX(-50%); text-align: center; }
+/* Kemer: middle ring, SE — dot at 440,415 → 73.3%, 69.2% */
+.dest-ringmap__label--kemer { top: 65%; left: 76%; text-align: left; }
+/* Tahtalı: middle ring, NE — dot at 445,185 → 74.2%, 30.8% */
+.dest-ringmap__label--tahtali { top: 18%; left: 76%; text-align: left; }
+/* Antalya: outer ring, E — dot at 555,300 → 92.5%, 50% */
+.dest-ringmap__label--antalya { top: 44%; left: 82%; text-align: left; max-width: 120px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-ringmap__ring,
+  .dest-ringmap__line,
+  .dest-ringmap__center,
+  .dest-ringmap__dot,
+  .dest-ringmap__ring-label,
+  .dest-ringmap__center-label,
+  .dest-ringmap__label {
+    opacity: 1; transform: none; transition: none;
+  }
+  .dest-ringmap__ring { transform: scale(1); }
 }
 
 /* ---- Closing CTA ---- */

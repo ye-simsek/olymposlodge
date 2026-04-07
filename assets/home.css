@@ -165,12 +165,12 @@
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(142, 116, 65, 0.4) 3%,
-    rgba(142, 116, 65, 0.75) 6%,
+    var(--gold-fade-edge) 3%,
+    var(--gold-fade-mid) 6%,
     var(--color-warm-gold) 12%,
     var(--color-warm-gold) 88%,
-    rgba(142, 116, 65, 0.75) 94%,
-    rgba(142, 116, 65, 0.4) 97%,
+    var(--gold-fade-mid) 94%,
+    var(--gold-fade-edge) 97%,
     transparent 100%
   );
 }
@@ -369,12 +369,12 @@
   background: linear-gradient(
     to right,
     transparent 0%,
-    rgba(142, 116, 65, 0.4) 3%,
-    rgba(142, 116, 65, 0.75) 6%,
+    var(--gold-fade-edge) 3%,
+    var(--gold-fade-mid) 6%,
     var(--color-warm-gold) 12%,
     var(--color-warm-gold) 88%,
-    rgba(142, 116, 65, 0.75) 94%,
-    rgba(142, 116, 65, 0.4) 97%,
+    var(--gold-fade-mid) 94%,
+    var(--gold-fade-edge) 97%,
     transparent 100%
   );
 }

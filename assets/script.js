@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .breathe, .clip-reveal, .dest-chapter__num, .dest-chapter__cat').forEach(el => {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .breathe, .dest-chapter__num, .dest-chapter__cat').forEach(el => {
         revealObserver.observe(el);
       });
     });

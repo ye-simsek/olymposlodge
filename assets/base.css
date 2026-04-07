@@ -1398,3 +1398,26 @@ h4 {
     padding: 3.5rem 2rem;
   }
 }
+
+/* ========================================
+   View Transitions API
+   Smooth crossfade between page navigations.
+   Chrome 111+, Safari 18+, Firefox 132+.
+   ======================================== */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root) {
+  animation: vt-fade-out 0.25s ease-in;
+}
+::view-transition-new(root) {
+  animation: vt-fade-in 0.25s ease-out;
+}
+@keyframes vt-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes vt-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

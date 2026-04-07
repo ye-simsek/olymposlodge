@@ -527,15 +527,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     items.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
-    lb.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
-    lb.querySelector('.lightbox__arrow--prev').addEventListener('click', () => navigate(-1));
-    lb.querySelector('.lightbox__arrow--next').addEventListener('click', () => navigate(1));
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => navigate(-1));
+    lbNext.addEventListener('click', () => navigate(1));
     lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
     document.addEventListener('keydown', e => {
       if (!lb.classList.contains('is-open')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') navigate(-1);
       if (e.key === 'ArrowRight') navigate(1);
+      if (e.key === 'Tab') {
+        const idx = focusable.indexOf(document.activeElement);
+        if (e.shiftKey) {
+          e.preventDefault();
+          focusable[(idx <= 0 ? focusable.length : idx) - 1].focus();
+        } else {
+          e.preventDefault();
+          focusable[(idx + 1) % focusable.length].focus();
+        }
+      }
     });
   }
 

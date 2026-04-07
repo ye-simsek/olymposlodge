@@ -781,6 +781,18 @@ const olTranslations = {
       offer1_cta: 'Mehr erfahren',
       offer2_title: 'LÄNGERER AUFENTHALT',
       offer2_desc: 'Ab sieben Nächten finden die Tage ihren eigenen Rhythmus. Der Garten wird vertraut, die Küste wird Ihnen eigen, und die Zeit beginnt sich zu verlangsamen. Ein besonderer Preis für alle, die länger bleiben.',
-      offer2_cta: 'Mehr erfahren'
+      offer2_cta: 'Mehr erfahren',
+      bk_step_calendar: 'Kalender', bk_step_rooms: 'Zimmer & Preis', bk_step_details: 'Details', bk_step_confirm: 'Bestätigung',
+      bk_select_dates: 'WÄHLEN SIE IHRE DATEN',
+      bk_arrival: 'ANREISE', bk_departure: 'ABREISE',
+      bk_legend_selected: 'Ausgewählte Daten', bk_legend_unavailable: 'Nicht verfügbar', bk_legend_min_stay: 'Mindestaufenthalt erforderlich',
+      bk_1_room: '1 Zimmer', bk_2_rooms: '2 Zimmer', bk_3_rooms: '3 Zimmer',
+      bk_1_adult: '1 Erwachsener', bk_2_adults: '2 Erwachsene', bk_3_adults: '3 Erwachsene', bk_4_adults: '4 Erwachsene',
+      bk_0_children: '0 Kinder', bk_1_child: '1 Kind', bk_2_children: '2 Kinder', bk_3_children: '3 Kinder',
+      bk_all_room_types: 'Alle Zimmertypen', bk_room_lake_house: 'Seehaus', bk_room_antique: 'Antikes Zimmer', bk_room_standard: 'Standardzimmer',
+      bk_promo_placeholder: 'Promo-Code', bk_check_availability: 'VERFÜGBARKEIT PRÜFEN',
+      bk_edit: 'Bearbeiten', bk_select_room_for: 'Zimmer auswählen:',
+      bk_details_placeholder: 'Dieser Bereich wird nach der PMS-Integration verfügbar sein.',
+      bk_confirm_placeholder: 'Dieser Bereich wird nach der PMS-Integration verfügbar sein.'
     }
 };

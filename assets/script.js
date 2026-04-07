@@ -144,24 +144,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Line-mask text reveals (homepage only) ---
   function wrapLineMasks() {
-    // Unobserve existing line-masks before re-wrapping
-    document.querySelectorAll('.line-mask').forEach(el => {
-      if (typeof revealObserver !== 'undefined') revealObserver.unobserve(el);
-    });
     const selectors = [
-      '.intro-title',
       '.section-header h2',
       '.story-block__heading',
       '.conviction__sentence'
     ];
     selectors.forEach(sel => {
       document.querySelectorAll(sel).forEach(el => {
-        // Skip if already wrapped
-        if (el.querySelector('.line-mask')) return;
-        const lines = el.innerHTML.split(/<br\s*\/?>/i);
-        el.innerHTML = lines.map((line, i) =>
-          `<span class="line-mask"><span class="line-mask__inner" style="transition-delay:${i * 0.09}s">${line.trim()}</span></span>`
-        ).join('');
+        if (el.querySelector('.line-mask__inner')) return;
+        el.classList.add('line-mask');
+        const inner = document.createElement('span');
+        inner.className = 'line-mask__inner';
+        while (el.firstChild) inner.appendChild(el.firstChild);
+        el.appendChild(inner);
       });
     });
   }

@@ -93,13 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
-    // Re-wrap line-mask headings after i18n replaces innerHTML
-    if (typeof wrapLineMasks === 'function') {
-      wrapLineMasks();
-      document.querySelectorAll('.line-mask').forEach(el => {
-        if (typeof revealObserver !== 'undefined') revealObserver.observe(el);
-      });
-    }
   }
 
   const langSwitch = document.getElementById('langSwitch');
@@ -141,26 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // --- Line-mask text reveals (homepage only) ---
-  function wrapLineMasks() {
-    const selectors = [
-      '.section-header h2',
-      '.story-block__heading',
-      '.conviction__sentence'
-    ];
-    selectors.forEach(sel => {
-      document.querySelectorAll(sel).forEach(el => {
-        if (el.querySelector('.line-mask__inner')) return;
-        el.classList.add('line-mask');
-        const inner = document.createElement('span');
-        inner.className = 'line-mask__inner';
-        while (el.firstChild) inner.appendChild(el.firstChild);
-        el.appendChild(inner);
-      });
-    });
-  }
-  wrapLineMasks();
 
   // --- Scroll reveal animations ---
 
@@ -210,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .breathe, .line-mask, .dest-chapter__num, .dest-chapter__cat').forEach(el => {
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .breathe, .dest-chapter__num, .dest-chapter__cat').forEach(el => {
         revealObserver.observe(el);
       });
     });

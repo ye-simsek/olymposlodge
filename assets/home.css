@@ -1169,15 +1169,6 @@
     margin-bottom: 0.5rem;
   }
 
-  /* Quiet italic subtitle */
-  .rooms .section-header h2 {
-    font-size: clamp(1.1rem, 3.5vw, 1.3rem);
-    font-weight: 400;
-    font-style: italic;
-    font-family: var(--font-heading);
-    color: var(--color-text-light);
-    letter-spacing: 0.04em;
-  }
 
   /* Rooms list slides over the pinned heading */
   .rooms-list {

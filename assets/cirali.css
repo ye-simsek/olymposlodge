@@ -1013,7 +1013,7 @@
 /* Tahtalı: dot at 465,170 → 77.5%, 28.3% — label right of dot */
 .dest-ringmap__label--tahtali { top: 24%; left: 80%; text-align: left; }
 /* Antalya: dot at 570,300 → 95%, 50% — label right of dot */
-.dest-ringmap__label--antalya { top: 47%; left: 97%; text-align: left; }
+.dest-ringmap__label--antalya { top: 47%; left: 97%; text-align: left; white-space: nowrap; }
 
 @media (prefers-reduced-motion: reduce) {
   .dest-ringmap__ring,

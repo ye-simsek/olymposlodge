@@ -115,9 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
     langSwitch.classList.remove('open');
   });
 
-  // Restore saved language
+  // Restore saved language, or detect from browser on first visit
   const savedLang = localStorage.getItem('ol_lang');
-  if (savedLang) setLanguage(savedLang);
+  if (savedLang) {
+    setLanguage(savedLang);
+  } else {
+    const browserLang = (navigator.language || '').slice(0, 2).toLowerCase();
+    const supported = { tr: 'tr', en: 'en', de: 'de' };
+    setLanguage(supported[browserLang] || 'en');
+  }
 
   // --- Smooth scroll for anchor links ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

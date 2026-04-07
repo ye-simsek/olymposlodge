@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
+    // Re-wrap line-mask headings after i18n replaces innerHTML
+    if (typeof wrapLineMasks === 'function') {
+      wrapLineMasks();
+      document.querySelectorAll('.line-mask').forEach(el => {
+        if (revealObserver) revealObserver.observe(el);
+      });
+    }
   }
 
   const langSwitch = document.getElementById('langSwitch');

@@ -160,13 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ].forEach(sel => {
     document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
   });
-  // Don't fade section-headers that use line-mask — let the mask be the sole reveal
-  document.querySelectorAll('.section-header:has(.line-mask)').forEach(el => {
-    el.classList.remove('reveal');
-    // Keep the label visible with its own reveal
-    const label = el.querySelector('.section-label');
-    if (label) label.classList.add('reveal');
-  });
 
   // Room rows — split directional fade (image ↔ content)
   document.querySelectorAll('.room-row:not(.room-row--reverse) .room-row__image').forEach(el => el.classList.add('reveal-left'));

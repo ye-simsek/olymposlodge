@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof wrapLineMasks === 'function') {
       wrapLineMasks();
       document.querySelectorAll('.line-mask').forEach(el => {
-        if (revealObserver) revealObserver.observe(el);
+        if (typeof revealObserver !== 'undefined') revealObserver.observe(el);
       });
     }
   }

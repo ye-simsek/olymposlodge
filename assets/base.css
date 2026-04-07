@@ -18,7 +18,7 @@
   --gold-fade-mid: rgba(142, 116, 65, 0.75);
   --gold-fade-edge: rgba(142, 116, 65, 0.4);
   --color-cream: #F7F5F0;
-  --color-warm-white: #F7F5F0;
+  --color-warm-white: var(--color-cream);
   --color-text: #1c1814;
   --color-text-light: #6b6b6b;
   --color-text-muted: #999;

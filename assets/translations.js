@@ -237,6 +237,8 @@ const olTranslations = {
       linker_lodge_heading: 'Kahvaltıdan spa\'ya, ateş çukurundan kütüphaneye.',
       linker_lodge_body: 'Olympos Lodge\'da bir gün sade bir ritimle başlar. Açık büfe kahvaltı, bahçede huzur, plajda kabana ve akşam ateşi. Hepsi konaklamanıza dahil.',
       linker_lodge_cta: 'Keşfet →',
+      linker_activities_body: 'Kano, SUP, bisiklet, yürüyüş ve daha fazlası. Çıralı\'nın doğasını keşfetmenin sayısız yolu.',
+      linker_activities_cta: 'Keşfet →',
       linker_cirali_label: 'Çıralı',
       linker_cirali_heading: '3,5 km plaj, antik kent, sönmeyen alevler.',
       linker_cirali_body: 'Çıralı; korunan kıyısı, Olympos harabeleri ve Yanartaş\'ın sönmeyen alevleriyle Akdeniz\'in en özel köşelerinden biri.',

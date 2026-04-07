@@ -1004,7 +1004,7 @@
 /* Olympos: dot at 236,364 → 39.3%, 60.7% — label left of dot */
 .dest-ringmap__label--olympos { top: 59%; left: 14%; text-align: right; }
 /* Yanartaş: dot at 236,236 → 39.3%, 39.3% — label left of dot */
-.dest-ringmap__label--yanartas { top: 34%; left: 14%; text-align: right; }
+.dest-ringmap__label--yanartas { top: 37%; left: 16%; text-align: right; }
 /* Phaselis: dot at 300,480 → 50%, 80% — label below dot */
 .dest-ringmap__label--phaselis { top: 82%; left: 50%; transform: translateX(-50%); text-align: center; }
 /* Kemer: dot at 449,427 → 74.8%, 71.2% — label right of dot */
@@ -1012,7 +1012,7 @@
 /* Tahtalı: dot at 465,170 → 77.5%, 28.3% — label right of dot */
 .dest-ringmap__label--tahtali { top: 24%; left: 80%; text-align: left; }
 /* Antalya: dot at 570,300 → 95%, 50% — label right of dot */
-.dest-ringmap__label--antalya { top: 47%; left: 88%; text-align: left; }
+.dest-ringmap__label--antalya { top: 47%; left: 97%; text-align: left; }
 
 @media (prefers-reduced-motion: reduce) {
   .dest-ringmap__ring,

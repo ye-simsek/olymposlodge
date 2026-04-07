@@ -26,6 +26,7 @@ Full details in `olympos_lodge_rag_english copy.txt`. The facts below cover the 
 | `activities.css` | Activities page sub-nav and grid | `activities.html`, `lodge.html` |
 | `pages.css` | Legal pages, photo gallery page | `gallery.html`, `privacy.html`, `terms.html` |
 | `offers.css` | Offers/packages page | `pages/offers.html` |
+| `booking.css` | Booking engine (calendar, room selection, step flow) | `pages/booking.html` |
 
 **When editing CSS:** identify which file owns the component from the table above. Do NOT read other CSS files unless the change spans multiple files.
 

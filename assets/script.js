@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Header scroll behavior ---
   const header = document.getElementById('header');
-  let lastScroll = 0;
 
   function onScroll() {
     const scrollY = window.scrollY;
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       header.classList.remove('scrolled');
     }
-    lastScroll = scrollY;
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });

@@ -590,9 +590,27 @@ h4 {
   opacity: 1;
 }
 
+/* Line-mask text reveals — text rises from beneath a floor */
+.line-mask {
+  overflow: hidden;
+  display: block;
+}
+.line-mask__inner {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.line-mask.visible .line-mask__inner {
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-left, .reveal-right, .breathe {
     opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .line-mask__inner {
     transform: none;
     transition: none;
   }

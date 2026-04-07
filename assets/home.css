@@ -323,7 +323,7 @@
   .conviction {
     flex-direction: column;
     gap: 3rem;
-    padding: 4rem 2rem;
+    padding: 4rem 2rem 5rem;
   }
   .conviction__text {
     justify-content: center;

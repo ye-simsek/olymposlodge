@@ -118,6 +118,8 @@ const olTranslations = {
       loc_method_car_title: 'Araçla',
       loc_method_car_body: 'Antalya Havalimanı\'ndan yaklaşık 1,5 saat. D400\'den Ulupınar tabelasını takip edin. Vadiye girişten sonraki 7 km, ormanın içinden geçen güzel bir sürüş.',
       loc_method_car_note: 'Ücretsiz otopark tesis içindedir.',
+      loc_landmark_body: 'D400\'de Ulupınar tabelasına dönün — Kumluca kavşağını geçtikten hemen sonra. Tek yol, çam ormanının içinden kıyı ovasına doğru iner. Orman açıldığında sol tarafa, sahil yoluna dönün. Olympos Lodge, kumdan önceki son kapıdır.',
+      loc_directions_btn: 'Yol Tarifi Al →',
       loc_method_fly_title: 'Uçakla',
       loc_method_fly_body: 'En yakın havalimanı Antalya (AYT), yaklaşık 90 km mesafede. İstanbul, Ankara ve pek çok Avrupa şehrinden doğrudan sefer mevcuttur.',
       loc_method_fly_note: 'Transfer için bize ulaşın.',

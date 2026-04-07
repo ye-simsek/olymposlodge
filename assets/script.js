@@ -482,6 +482,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Build lightbox
     const lb = document.createElement('div');
     lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Photo viewer');
     lb.innerHTML = `
       <button class="lightbox__close" aria-label="Close">&#215;</button>
       <button class="lightbox__arrow lightbox__arrow--prev" aria-label="Previous">&#8592;</button>
@@ -491,20 +494,28 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(lb);
 
     const lbImg = lb.querySelector('.lightbox__img');
+    const lbClose = lb.querySelector('.lightbox__close');
+    const lbPrev = lb.querySelector('.lightbox__arrow--prev');
+    const lbNext = lb.querySelector('.lightbox__arrow--next');
+    const focusable = [lbClose, lbPrev, lbNext];
     const items = Array.from(photoGrid.querySelectorAll('.photo-grid__item'));
     let current = 0;
+    let triggerEl = null;
 
     function openLightbox(i) {
+      triggerEl = document.activeElement;
       current = i;
       lbImg.src = items[i].querySelector('img').src;
       lbImg.alt = items[i].querySelector('img').alt;
       lb.classList.add('is-open');
+      lbClose.focus();
       if (lenis) lenis.stop();
       else document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
       lb.classList.remove('is-open');
+      if (triggerEl) triggerEl.focus();
       if (lenis) lenis.start();
       else document.body.style.overflow = '';
     }

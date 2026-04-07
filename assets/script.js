@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
-    if (typeof applyLineMasks === 'function') applyLineMasks();
   }
 
   const langSwitch = document.getElementById('langSwitch');
@@ -135,18 +134,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // --- Line-mask text reveals ---
-  function applyLineMasks() {
-    document.querySelectorAll('.line-mask').forEach(el => {
-      if (el.querySelector('.line-mask__text')) return;
-      const lines = el.innerHTML.split(/<br\s*\/?>/i);
-      el.innerHTML = lines.map((line, i) =>
-        `<span class="line-mask__line"><span class="line-mask__text" style="transition-delay:${i * 0.1}s">${line.trim()}</span></span>`
-      ).join('');
-    });
-  }
-  applyLineMasks();
 
   // --- Scroll reveal animations ---
 

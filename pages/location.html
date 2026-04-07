@@ -586,6 +586,15 @@
       el.style.transitionDelay = (i * 0.08) + 's';
       revealObserver.observe(el);
     });
+
+    // geo: URI — works natively on mobile (routes to maps app)
+    // Desktop fallback: open Google Maps in new tab
+    const directionsBtn = document.getElementById('directionsBtn');
+    if (directionsBtn && !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      directionsBtn.href = 'https://www.google.com/maps/dir/?api=1&destination=36.4018,30.4733';
+      directionsBtn.target = '_blank';
+      directionsBtn.rel = 'noopener';
+    }
   </script>
 </body>
 </html>

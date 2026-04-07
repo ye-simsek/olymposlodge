@@ -1005,7 +1005,7 @@
 /* Olympos: dot at 236,364 → 39.3%, 60.7% — label left of dot */
 .dest-ringmap__label--olympos { top: 59%; left: 14%; text-align: right; }
 /* Yanartaş: dot at 236,236 → 39.3%, 39.3% — label left of dot */
-.dest-ringmap__label--yanartas { top: 37%; right: calc(100% - 39.3% + 50px); text-align: right; }
+.dest-ringmap__label--yanartas { top: 37%; right: calc(100% - 39.3% - 10px); text-align: right; }
 /* Phaselis: dot at 300,480 → 50%, 80% — label below dot */
 .dest-ringmap__label--phaselis { top: 82%; left: 50%; transform: translateX(-50%); text-align: center; }
 /* Kemer: dot at 449,427 → 74.8%, 71.2% — label right of dot */

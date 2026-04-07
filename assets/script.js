@@ -135,6 +135,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Line-mask text reveals (homepage only) ---
+  function wrapLineMasks() {
+    document.querySelectorAll('.line-mask').forEach(el => {
+      revealObserver && revealObserver.unobserve(el);
+    });
+    const selectors = [
+      '.intro-title',
+      '.section-header h2',
+      '.story-block__heading',
+      '.conviction__sentence'
+    ];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        // Split on <br> into lines; fall back to single line
+        const lines = el.innerHTML.split(/<br\s*\/?>/i);
+        el.innerHTML = lines.map((line, i) =>
+          `<span class="line-mask"><span class="line-mask__inner" style="transition-delay:${i * 0.09}s">${line.trim()}</span></span>`
+        ).join('');
+      });
+    });
+  }
+  wrapLineMasks();
+
   // --- Scroll reveal animations ---
 
   // Fade-up for general sections

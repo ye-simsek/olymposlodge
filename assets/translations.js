@@ -517,7 +517,19 @@ const olTranslations = {
       offer1_cta: 'Learn More',
       offer2_title: 'EXTENDED STAY',
       offer2_desc: 'Seven nights or more and the days find their own rhythm. The garden becomes familiar, the shore becomes yours, and time begins to slow in a way a shorter stay never quite allows. A special rate for those who linger.',
-      offer2_cta: 'Learn More'
+      offer2_cta: 'Learn More',
+      bk_step_calendar: 'Calendar', bk_step_rooms: 'Room & Rate', bk_step_details: 'Details', bk_step_confirm: 'Confirmation',
+      bk_select_dates: 'SELECT YOUR DATES',
+      bk_arrival: 'ARRIVAL', bk_departure: 'DEPARTURE',
+      bk_legend_selected: 'Selected dates', bk_legend_unavailable: 'No availability', bk_legend_min_stay: 'Minimum stay required',
+      bk_1_room: '1 Room', bk_2_rooms: '2 Rooms', bk_3_rooms: '3 Rooms',
+      bk_1_adult: '1 Adult', bk_2_adults: '2 Adults', bk_3_adults: '3 Adults', bk_4_adults: '4 Adults',
+      bk_0_children: '0 Children', bk_1_child: '1 Child', bk_2_children: '2 Children', bk_3_children: '3 Children',
+      bk_all_room_types: 'All room types', bk_room_lake_house: 'Lake House', bk_room_antique: 'Antique Room', bk_room_standard: 'Standard Room',
+      bk_promo_placeholder: 'Promo Code', bk_check_availability: 'CHECK AVAILABILITY',
+      bk_edit: 'Edit', bk_select_room_for: 'Select room for:',
+      bk_details_placeholder: 'This section will be available after PMS integration.',
+      bk_confirm_placeholder: 'This section will be available after PMS integration.'
     },
     de: {
       btn_reserve: 'Reservieren', btn_availability: 'Verfügbarkeit Prüfen',

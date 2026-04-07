@@ -1345,7 +1345,7 @@ h4 {
   font-weight: 300;
   letter-spacing: 0.05em;
   line-height: 1.4;
-  color: #263d93;
+  color: var(--color-text);
   margin-bottom: 2rem;
 }
 

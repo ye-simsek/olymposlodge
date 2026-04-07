@@ -148,17 +148,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(sel).forEach(el => el.classList.add('reveal'));
   });
 
-  // Room rows — split directional fade (image ↔ content)
-  document.querySelectorAll('.room-row:not(.room-row--reverse) .room-row__image').forEach(el => el.classList.add('reveal-left'));
+  // Room rows — clip-path wipe on images, directional fade on content
+  document.querySelectorAll('.room-row:not(.room-row--reverse) .room-row__image').forEach(el => el.classList.add('clip-reveal'));
   document.querySelectorAll('.room-row:not(.room-row--reverse) .room-row__content').forEach(el => {
     el.classList.add('reveal-right');
     el.style.transitionDelay = '0.12s';
   });
-  document.querySelectorAll('.room-row--reverse .room-row__image').forEach(el => el.classList.add('reveal-right'));
+  document.querySelectorAll('.room-row--reverse .room-row__image').forEach(el => el.classList.add('clip-reveal', 'clip-reveal--right'));
   document.querySelectorAll('.room-row--reverse .room-row__content').forEach(el => {
     el.classList.add('reveal-left');
     el.style.transitionDelay = '0.12s';
   });
+
+  // Story-block & conviction images — clip-path wipe
+  document.querySelectorAll('.story-block:not(.story-block--reverse) .story-block__image').forEach(el => el.classList.add('clip-reveal', 'clip-reveal--right'));
+  document.querySelectorAll('.story-block--reverse .story-block__image').forEach(el => el.classList.add('clip-reveal'));
+  document.querySelectorAll('.conviction__image').forEach(el => el.classList.add('clip-reveal', 'clip-reveal--right'));
 
   // Stagger voices and footer columns
   document.querySelectorAll('.voices-grid .voice-card').forEach((card, i) => {

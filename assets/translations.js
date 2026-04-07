@@ -253,7 +253,19 @@ const olTranslations = {
       offer1_cta: 'Daha Fazla',
       offer2_title: 'UZUN KONAKLAMA',
       offer2_desc: 'Yedi gece ve üzeri konaklamalarda günler farklı bir derinlik kazanır. Ritim oturur, bahçe tanıdık gelir, her köşenin kendi anlamı oluşur. Uzun kalanlar için özel fiyat.',
-      offer2_cta: 'Daha Fazla'
+      offer2_cta: 'Daha Fazla',
+      bk_step_calendar: 'Takvim', bk_step_rooms: 'Oda & Fiyat', bk_step_details: 'Detaylar', bk_step_confirm: 'Onay',
+      bk_select_dates: 'TARİHLERİNİZİ SEÇİN',
+      bk_arrival: 'GİRİŞ', bk_departure: 'ÇIKIŞ',
+      bk_legend_selected: 'Seçili tarihler', bk_legend_unavailable: 'Müsait değil', bk_legend_min_stay: 'Min. konaklama',
+      bk_1_room: '1 Oda', bk_2_rooms: '2 Oda', bk_3_rooms: '3 Oda',
+      bk_1_adult: '1 Yetişkin', bk_2_adults: '2 Yetişkin', bk_3_adults: '3 Yetişkin', bk_4_adults: '4 Yetişkin',
+      bk_0_children: '0 Çocuk', bk_1_child: '1 Çocuk', bk_2_children: '2 Çocuk', bk_3_children: '3 Çocuk',
+      bk_all_room_types: 'Tüm oda tipleri', bk_room_lake_house: 'Göl Evi', bk_room_antique: 'Antik Oda', bk_room_standard: 'Standart Oda',
+      bk_promo_placeholder: 'Promosyon Kodu', bk_check_availability: 'MÜSAİTLİK KONTROL ET',
+      bk_edit: 'Düzenle', bk_select_room_for: 'Oda seçin:',
+      bk_details_placeholder: 'Bu bölüm PMS entegrasyonu sonrasında aktif olacaktır.',
+      bk_confirm_placeholder: 'Bu bölüm PMS entegrasyonu sonrasında aktif olacaktır.'
     },
     en: {
       btn_reserve: 'Reserve', btn_availability: 'Check Availability',

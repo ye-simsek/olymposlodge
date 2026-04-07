@@ -144,8 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Line-mask text reveals (homepage only) ---
   function wrapLineMasks() {
+    // Unobserve existing line-masks before re-wrapping
     document.querySelectorAll('.line-mask').forEach(el => {
-      revealObserver && revealObserver.unobserve(el);
+      if (typeof revealObserver !== 'undefined') revealObserver.unobserve(el);
     });
     const selectors = [
       '.intro-title',
@@ -155,7 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     selectors.forEach(sel => {
       document.querySelectorAll(sel).forEach(el => {
-        // Split on <br> into lines; fall back to single line
+        // Skip if already wrapped
+        if (el.querySelector('.line-mask')) return;
         const lines = el.innerHTML.split(/<br\s*\/?>/i);
         el.innerHTML = lines.map((line, i) =>
           `<span class="line-mask"><span class="line-mask__inner" style="transition-delay:${i * 0.09}s">${line.trim()}</span></span>`

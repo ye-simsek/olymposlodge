@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
+    if (typeof applyLineMasks === 'function') applyLineMasks();
   }
 
   const langSwitch = document.getElementById('langSwitch');

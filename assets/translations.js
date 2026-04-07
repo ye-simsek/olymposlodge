@@ -654,6 +654,8 @@ const olTranslations = {
       loc_method_car_title: 'Mit dem Auto',
       loc_method_car_body: 'Etwa 1,5 Stunden vom Flughafen Antalya. Folgen Sie der D400 und nehmen Sie die Ausfahrt Ulupınar. Die letzten 7 km durch das Tal sind eine malerische Fahrt durch den Wald.',
       loc_method_car_note: 'Kostenloser Parkplatz auf dem Gelände.',
+      loc_landmark_body: 'Verlassen Sie die D400 an der Ulupınar-Beschilderung, kurz nach dem Kumluca-Kreuz. Eine einzige Straße führt durch Kiefernwald 7 km hinunter zur Küstenebene. Wenn der Wald sich zur Ebene öffnet, links auf die Strandstraße abbiegen. Olympos Lodge ist das letzte Tor auf der rechten Seite vor dem Sand.',
+      loc_directions_btn: 'Route berechnen →',
       loc_method_fly_title: 'Mit dem Flugzeug',
       loc_method_fly_body: 'Der nächste Flughafen ist Antalya (AYT), etwa 90 km entfernt. Direktflüge sind ab Istanbul, Ankara und vielen europäischen Städten verfügbar.',
       loc_method_fly_note: 'Kontaktieren Sie uns für einen Transfer.',

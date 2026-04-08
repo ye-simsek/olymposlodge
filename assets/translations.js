@@ -661,6 +661,7 @@ const olTranslations = {
       c_intro_p2: 'Die Vergangenheit des Tals reicht so weit zurück wie seine Gegenwart. Die im 2. Jahrhundert v. Chr. gegründete antike Stadt Olympos, die dem Lodge ihren Namen verleiht, war einst ein bedeutender Hafen der Lykischen Liga; heute sind Grabmäler aus der Römerzeit und Theaterreste in die Landschaft eingewoben. Wenige Kilometer entfernt, am Yanartaş, brennt aus der Erde aufsteigendes Erdgas seit 2.500 Jahren ununterbrochen und soll Homers Chimaera-Legende inspiriert haben. Çıralı ist einer der wenigen Orte, an denen Mythologie, Geschichte und Natur so untrennbar miteinander verwoben sind.',
       c_ch1_cat: 'Strand', c_ch1_title: '3,5 km unberührte Küste',
       c_ch1_lead: 'Eine unberührte Mittelmeerküste aus feinem Kies und Sand, etwa 3,5 Kilometer lang. Der gesamte Küstenstreifen ist Naturschutzgebiet; Hotels und Restaurants dürfen nicht am Strand gebaut werden. Jedes Jahr von Mai bis Oktober legen Caretta-caretta-Meeresschildkröten hier ihre Eier ab.',
+      c_ch1_aside: 'Jeden Sommer kehren die Caretta caretta zum Nisten zurück. Der Strand gehört ihnen. Gelegentlich lassen sie Sie mitmachen.',
       c_ch1_f1: '<span>Entfernung</span><strong>30 m · 1 Min.</strong>', c_ch1_f2: '<span>Länge</span><strong>~3,5 km</strong>',
       c_ch1_f3: '<span>Status</span><strong>Schutzgebiet, Caretta-Nistzone</strong>', c_ch1_f4: '<span>Schildkrötensaison</span><strong>Mai – Oktober</strong>',
       c_ch2_cat: 'Archäologie', c_ch2_title: 'Antike Stadt Olympos',

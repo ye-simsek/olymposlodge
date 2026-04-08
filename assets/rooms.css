@@ -42,20 +42,13 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.room-hero__info {
-  animation: roomFadeUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.15s both;
-}
-
 .room-hero__scroll {
   animation: roomFadeUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.25s both;
 }
 
-.room-specs {
-  animation: roomFadeUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s both;
-}
-
 /* Room name — bottom left, Badrutt's style */
 .room-hero__info {
+  animation: roomFadeUp 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.15s both;
   position: absolute;
   bottom: var(--space-xl);
   left: var(--space-xl);

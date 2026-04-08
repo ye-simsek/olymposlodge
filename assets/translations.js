@@ -162,7 +162,7 @@ const olTranslations = {
       nav_lodge_tab: 'Konaklamada',
       lodge_hero_title: 'Olympos Lodge\'da',
       lodge_intro_title: 'Köyde Bir Günün Ritmi',
-      lodge_intro_p1: 'Olympos Lodge\'da bir gün çok az şeyden oluşur: sabah güneşi, taze bir kahvaltı, plaja yürüyüş. Bahçede havalanmak, akşam ateşinin etrafında oturmak. Sunduğumuz her şey bu ritmi tamamlamak için tasarlandı.',
+      lodge_intro_p1: 'Olympos Lodge\'da bir gün çok az şeyden oluşur: sabah güneşi, taze bir kahvaltı, plaja yürüyüş. Bahçede vakit geçirmek, akşam ateşinin başında oturmak. Sunduğumuz her şey bu ritmi tamamlamak için var.',
       lodge_spa_label: 'Spa & Dinlenme',
       lodge_spa_title: 'Spa: Jakuzi, Sauna & Buhar Odası',
       lodge_spa_desc: 'Jakuzi (6 kişilik), sauna ve buhar odası misafirlere konaklama kapsamında ücretsiz sunulmaktadır. Masaj servisi ek ücretle mevcuttur; en az 2 saat önceden rezervasyon yapılması gerekmektedir.',

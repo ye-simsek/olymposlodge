@@ -178,6 +178,7 @@ const olTranslations = {
       lodge_garden_label: 'Bahçe & Doğa',
       lodge_garden_title: '20.000 m² Tematik Bahçe',
       lodge_garden_desc: 'Otelin geniş bahçesi meyve ağaçları, doğal bitkiler ve tematik alanlarla kaplıdır. Hamaklar, bahçe mobilyaları ve sessiz köşeler günün her saatinde keşfedilmeyi bekler.',
+      lodge_garden_quote: 'Odalarda televizyon yok. 1985\'ten beri bu görevi bahçe üstleniyor.',
       lodge_act_label: 'Aktiviteler',
       lodge_act1_tag: 'Deniz · Ücretsiz', lodge_act1_title: 'Kano & SUP',
       lodge_act1_desc: 'Kano ve SUP (stand-up paddleboard) konaklayan misafirlere ücretsiz sunulur.',

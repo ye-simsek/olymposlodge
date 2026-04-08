@@ -635,7 +635,7 @@ h4 {
 
 .weather-panel__daydate {
   font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-stone);

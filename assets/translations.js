@@ -911,7 +911,26 @@ const olTranslations = {
       bk_all_room_types: 'Alle Zimmertypen', bk_room_lake_house: 'Seehaus', bk_room_antique: 'Antikes Zimmer', bk_room_standard: 'Standardzimmer',
       bk_promo_placeholder: 'Promo-Code', bk_check_availability: 'VERFÜGBARKEIT PRÜFEN',
       bk_edit: 'Bearbeiten', bk_select_room_for: 'Zimmer auswählen:',
-      bk_details_placeholder: 'Dieser Bereich wird nach der PMS-Integration verfügbar sein.',
-      bk_confirm_placeholder: 'Dieser Bereich wird nach der PMS-Integration verfügbar sein.'
+      bk_back: 'Zurück',
+      bk_guest_details: 'GASTDATEN',
+      bk_first_name: 'Vorname',
+      bk_last_name: 'Nachname',
+      bk_email: 'E-Mail',
+      bk_phone: 'Telefon',
+      bk_country: 'Land',
+      bk_arrival_time: 'Geschätzte Ankunftszeit',
+      bk_special_requests: 'Besondere Wünsche',
+      bk_other: 'Andere',
+      bk_your_stay: 'IHR AUFENTHALT',
+      bk_total: 'GESAMT',
+      bk_confirm_pay: 'RESERVIERUNG BESTÄTIGEN',
+      bk_payment_note: 'Die Zahlung wird im nächsten Schritt eingezogen.',
+      bk_confirmed: 'IHRE RESERVIERUNG IST BESTÄTIGT',
+      bk_confirmed_sub: 'Die Details werden an Ihre E-Mail-Adresse gesendet.',
+      bk_ref: 'Referenz',
+      bk_guest: 'Gast',
+      bk_room: 'Zimmer',
+      bk_dates: 'Daten',
+      bk_back_home: 'Zurück zur Startseite'
     }
 };

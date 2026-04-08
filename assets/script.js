@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
+    document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
   }
 
   const langSwitch = document.getElementById('langSwitch');

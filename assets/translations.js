@@ -918,7 +918,7 @@ const olTranslations = {
       bk_back: 'Zurück',
       bk_guest_details: 'GASTDATEN',
       bk_title: 'Anrede',
-      bk_mr: 'Herr', bk_mrs: 'Frau', bk_ms: 'Frau', bk_dr: 'Dr.', bk_prof: 'Prof.',
+      bk_mr: 'Herr', bk_mrs: 'Frau', bk_ms: 'Fräulein', bk_dr: 'Dr.', bk_prof: 'Prof.',
       bk_first_name: 'Vorname',
       bk_last_name: 'Nachname',
       bk_email: 'E-Mail',

@@ -294,7 +294,7 @@ const olTranslations = {
       bk_back: 'Geri',
       bk_guest_details: 'MİSAFİR BİLGİLERİ',
       bk_title: 'Hitap',
-      bk_mr: 'Bay', bk_mrs: 'Bayan', bk_ms: 'Hanım', bk_dr: 'Dr.', bk_prof: 'Prof.',
+      bk_mr: 'Bey', bk_mrs: 'Hanım', bk_ms: 'Hanım', bk_dr: 'Dr.', bk_prof: 'Prof.',
       bk_first_name: 'Ad',
       bk_last_name: 'Soyad',
       bk_email: 'E-posta',

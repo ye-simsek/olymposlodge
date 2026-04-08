@@ -473,22 +473,32 @@ h4 {
 
 .footer-main {
   display: grid;
-  grid-template-columns: 55fr 45fr;
+  grid-template-columns: 1fr 1fr 1fr;
   min-height: 55vh;
   align-items: stretch;
+  transform: translateY(3rem);
+  opacity: 0;
+  transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
 }
 
-.footer-left {
+.footer-main.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.footer-col-brand {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--space-xl) var(--space-xl) var(--space-md);
+  padding: var(--space-xl) var(--space-lg) var(--space-xl);
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+.footer-col-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-lg) var(--space-xl);
 }
 
 .footer-logo {
@@ -527,7 +537,7 @@ h4 {
 
 .footer-bottom {
   border-top: 1px solid rgba(28, 24, 20, 0.1);
-  padding: var(--space-md) 0 0;
+  padding: var(--space-md) var(--space-lg) 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;

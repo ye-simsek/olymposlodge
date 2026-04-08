@@ -628,6 +628,7 @@ const olTranslations = {
       footer_nature_link: 'Garten & Natur',
       footer_address: 'Çıralı Sokak, Ulupınar Mahallesi<br>Kemer / Antalya, Türkei',
       footer_copyright: '© 2025 Olympos Lodge. Alle Rechte vorbehalten.',
+      footer_rights: 'Alle Rechte vorbehalten.',
       footer_terms: 'Vorabinformationsformular',
       footer_privacy: 'Datenschutz & KVKK',
       c_intro_title: 'Eine Küste für sich: Çıralı',

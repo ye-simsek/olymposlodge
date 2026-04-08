@@ -304,7 +304,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Date header
     const now = new Date();
-    document.getElementById('wp-year').textContent = now.getFullYear();
+    const currentYear = now.getFullYear();
+    document.getElementById('wp-year').textContent = currentYear;
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = currentYear;
     document.getElementById('wp-daydate').textContent = `${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]} · ${now.getDate()} ${MONTHS[now.getMonth()]}`;
 
     let data = null;

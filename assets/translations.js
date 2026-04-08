@@ -370,6 +370,7 @@ const olTranslations = {
       c_intro_p2: 'The valley\'s past runs as deep as its present. Founded in the 2nd century BC, the ancient city of Olympos — which lends the lodge its name — was once a key port of the Lycian League; today, Roman-era tombs and theatre ruins are woven into the landscape beside us. A few kilometres inland, at Yanartaş, natural gas seeping from the earth has burned continuously for 2,500 years and is said to have inspired Homer\'s legend of the Chimaera. Çıralı is one of the few places where mythology, history, and nature remain this inseparably entwined.',
       c_ch1_cat: 'Beach', c_ch1_title: '3.5 km of Untouched Shore',
       c_ch1_lead: 'A pristine Mediterranean shoreline of fine pebble and sand, stretching approximately 3.5 kilometres. The entire coastal strip is a protected natural area — hotels and restaurants cannot be built on the beachfront. Each year from May to October, Caretta caretta sea turtles nest along this shore.',
+      c_ch1_aside: 'Every summer the caretta caretta return to nest. The beach is theirs. Occasionally they\'ll let you join them.',
       c_ch1_f1: '<span>Distance</span><strong>30 m · 1 min</strong>', c_ch1_f2: '<span>Length</span><strong>~3.5 km</strong>',
       c_ch1_f3: '<span>Status</span><strong>Protected area, Caretta nesting zone</strong>', c_ch1_f4: '<span>Turtle Season</span><strong>May – October</strong>',
       c_ch2_cat: 'Archaeology', c_ch2_title: 'Ancient City of Olympos',

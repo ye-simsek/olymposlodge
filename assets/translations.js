@@ -24,7 +24,7 @@ const olTranslations = {
       about_p1: 'Zümrüt yeşili bir vadiden geçerek bu yere vardı. Yol boyunca karşılaştığı güzellik, sessizce yüklerini bırakmasına izin verdi. Vadinin bir dere aracılığıyla denizle buluştuğu noktada, zaman onunla birlikte durdu.',
       about_p2: 'O andan itibaren bir hayal başladı. Bugün hâlâ devam eden, hâlâ paylaşılan bir hayal.',
       about_p3: 'Olympos Lodge bu hayalden doğdu. 20.000 m² bahçe içinde doğayla uyum halinde yerleştirilmiş on yedi oda. Her biri sade bir zarafetle döşenmiş; aydınlık ve dört mevsim yaşanabilir.',
-      rooms_label: 'Odalar', rooms_heading: 'Aynı bahçe,<br>farklı bir dünya.',
+      rooms_label: 'Odalar', rooms_heading: 'Aynı bahçe,<br>farklı bir dünya.', rooms_hero_subtitle: '20.000 metrekare bahçe. İçinde on yedi oda.',
       room1_name: 'Aqua Super Deluxe', room1_desc: 'Bahçenin en eşsiz odası, ucunda müstakil bir yapı olarak konumlanmış. İç mekandaki şelale duvarı ve ayaklarınızın altında suyu gösteren bir sıra cam zemin paneli tonu belirliyor. Mimari ile doğa arasındaki sınır neredeyse ortadan kalkıyor.',
       room2_name: 'Super Deluxe', room2_desc: 'Her yönüyle ferah, Super Deluxe geniş özel terası aracılığıyla doğrudan ön bahçeye açılıyor; deniz ağaçların arasından süzülüyor. Jakuzi küvet uzun akşamlara davet ediyor. Dışarı çıkmak kadar içeride kalmak için de tasarlanmış bir oda.',
       room3_name: 'Deluxe', room3_desc: 'Bir konut kadar ferah, bir sığınak kadar samimi. Deluxe, jakuzi<br>ve şömineyi bahçeye bakan geniş bir terasla buluşturuyor. Dekorasyonun büyük kısmını üstlenen Akdeniz ışığı ile sakin bir<br>konfor kompozisyonu.',

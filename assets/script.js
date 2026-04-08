@@ -560,4 +560,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Room card exit transition ---
+  document.querySelectorAll('.room-row').forEach(row => {
+    const links = row.querySelectorAll('a[href*="room-"]');
+    const img = row.querySelector('.room-row__image img');
+    if (!links.length || !img) return;
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        if (e.metaKey || e.ctrlKey) return;
+        e.preventDefault();
+        const href = link.href;
+        const rect = img.getBoundingClientRect();
+        const clone = img.cloneNode();
+        Object.assign(clone.style, {
+          position: 'fixed',
+          top: rect.top + 'px',
+          left: rect.left + 'px',
+          width: rect.width + 'px',
+          height: rect.height + 'px',
+          objectFit: 'cover',
+          zIndex: '9999',
+          transition: 'all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1)',
+          pointerEvents: 'none',
+        });
+        document.body.appendChild(clone);
+        requestAnimationFrame(() => {
+          Object.assign(clone.style, {
+            top: '0', left: '0', width: '100vw', height: '100vh',
+          });
+        });
+        setTimeout(() => { window.location.href = href; }, 480);
+      });
+    });
+  });
+
 });

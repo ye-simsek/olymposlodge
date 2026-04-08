@@ -991,12 +991,6 @@
     padding: var(--space-xl) var(--space-md);
   }
 
-  /* keep old selectors harmless */
-  .room-card--large {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
   .nature {
     grid-template-columns: 1fr;
     min-height: auto;

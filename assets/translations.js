@@ -462,7 +462,7 @@ const olTranslations = {
       lodge_spa_f3: '<span>Massage</span><strong>Paid, reservation required</strong>',
       lodge_beach_label: 'Beach',
       lodge_beach_title: 'Cabanas & Sun Loungers',
-      lodge_beach_desc: 'Sun loungers, umbrellas, towels and a cabana on the beach are reserved for guests at no charge. The shore — 30 metres from the lodge — is a protected Caretta caretta nesting ground.',
+      lodge_beach_desc: 'Sun loungers, umbrellas, towels and a cabana on the beach are reserved for guests at no charge. The caretta caretta have been returning to this beach longer than the Olympos Lodge has existed. We keep it worth returning to.',
       lodge_beach_f1: '<span>Distance</span><strong>30 m</strong>',
       lodge_beach_f2: '<span>Included</span><strong>Lounger, umbrella, towel, cabana</strong>',
       lodge_beach_f3: '<span>Status</span><strong>Protected shore, Caretta zone</strong>',

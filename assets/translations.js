@@ -79,6 +79,7 @@ const olTranslations = {
       c_intro_p2: 'Çıralı\'nın arka planı, yerleşim kadar eskidir. MÖ 2. yüzyılda kurulmuş Antik Olympos kenti, otelin hemen bitişiğinde, Likya Birliği\'nin önemli liman şehirlerinden biriydi; bugün Roma dönemi mezarları ve tiyatro kalıntıları vadinin içine karışmış durumdadır. Birkaç kilometre ötede, Yanartaş\'ta yeraltından sızan doğal gazın 2.500 yıldır yakıp tuttuğu alevler Homeros\'un Chimaera efsanesine ilham kaynağı olmuştur. Çıralı, mitoloji, tarih ve doğanın bu kadar iç içe geçtiği ender yerlerden biridir.',
       c_ch1_cat: 'Plaj', c_ch1_title: '3,5 km\'lik Dokunulmamış Kıyı',
       c_ch1_lead: 'Yaklaşık 3,5 kilometre uzunluğunda, ince çakıl ve kumdan oluşan el değmemiş bir Akdeniz kıyısı. Kıyı şeridinin tamamı doğal sit alanı; oteller ve restoranlar beachfront\'a inşa edilemez. Her yıl Mayıs\'tan Ekim\'e kadar Caretta caretta deniz kaplumbağaları bu plajda yumurtalar.',
+      c_ch1_aside: 'Her yaz caretta carettalar yuvalamak için döner. Plaj onlarındır. Ara sıra size de katılmanıza izin verirler.',
       c_ch1_f1: '<span>Mesafe</span><strong>30 m · 1 dk</strong>', c_ch1_f2: '<span>Uzunluk</span><strong>~3,5 km</strong>',
       c_ch1_f3: '<span>Statü</span><strong>Doğal sit, Caretta koruma bölgesi</strong>', c_ch1_f4: '<span>Kaplumbağa Sezonu</span><strong>Mayıs – Ekim</strong>',
       c_ch2_cat: 'Arkeoloji', c_ch2_title: 'Olympos Antik Kenti',

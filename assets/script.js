@@ -561,6 +561,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Room card exit transition ---
+  // Clean up clones when returning via back button (bfcache)
+  window.addEventListener('pageshow', e => {
+    if (e.persisted) {
+      document.querySelectorAll('.room-exit-clone').forEach(el => el.remove());
+    }
+  });
+
   document.querySelectorAll('.room-row').forEach(row => {
     const links = row.querySelectorAll('a[href*="room-"]');
     const img = row.querySelector('.room-row__image img');
@@ -573,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const href = link.href;
         const rect = img.getBoundingClientRect();
         const clone = img.cloneNode();
+        clone.classList.add('room-exit-clone');
         Object.assign(clone.style, {
           position: 'fixed',
           top: rect.top + 'px',

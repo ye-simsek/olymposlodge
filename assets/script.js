@@ -289,17 +289,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const LAT = 36.4166, LON = 30.4742;
     const API = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weathercode,windspeed_10m,winddirection_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_max,winddirection_10m_dominant&timezone=Europe%2FIstanbul&forecast_days=5`;
 
-    const WMO = {
-      0:'Clear sky',1:'Mainly clear',2:'Partly cloudy',3:'Overcast',
-      45:'Foggy',48:'Foggy',51:'Light drizzle',53:'Drizzle',55:'Heavy drizzle',
-      61:'Light rain',63:'Rain',65:'Heavy rain',71:'Light snow',73:'Snow',
-      75:'Heavy snow',80:'Showers',81:'Showers',82:'Heavy showers',
-      95:'Thunderstorm',99:'Thunderstorm'
-    };
-    const DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-
-    function wmoDesc(c) { return WMO[c] || 'Clear sky'; }
+    function getT() { return translations[document.documentElement.lang] || translations['en']; }
+    function wmoDesc(c) { const w = getT().wp_wmo; return (w && w[c]) || w[0] || 'Clear sky'; }
     function degCompass(d) { return ['N','NE','E','SE','S','SW','W','NW'][Math.round(d/45)%8]; }
 
     // Date header
@@ -308,12 +299,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('wp-year').textContent = currentYear;
     const footerYear = document.getElementById('footer-year');
     if (footerYear) footerYear.textContent = currentYear;
-    document.getElementById('wp-daydate').textContent = `${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]} · ${now.getDate()} ${MONTHS[now.getMonth()]}`;
+
+    function renderDaydate() {
+      const t = getT();
+      document.getElementById('wp-daydate').textContent = `${t.wp_full_days[now.getDay()]} · ${now.getDate()} ${t.wp_months[now.getMonth()]}`;
+    }
+    renderDaydate();
+
+    document.getElementById('wp-desc').textContent = getT().wp_loading;
 
     let data = null;
+    let activeDay = 0;
 
     function renderDay(i) {
       if (!data) return;
+      activeDay = i;
       const isToday = i === 0;
       const temp = isToday ? Math.round(data.current.temperature_2m) : Math.round(data.daily.temperature_2m_max[i]);
       const desc = wmoDesc(isToday ? data.current.weathercode : data.daily.weathercode[i]);
@@ -328,13 +328,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function buildPanel(d) {
       data = d;
+      const t = getT();
       // Tabs
       const tabsEl = document.getElementById('wp-tabs');
       tabsEl.innerHTML = '';
       d.daily.time.slice(0, 5).forEach((dateStr, i) => {
         const btn = document.createElement('button');
         btn.className = 'wp-tab';
-        btn.textContent = i === 0 ? 'Today' : DAYS[new Date(dateStr).getDay()];
+        btn.textContent = i === 0 ? t.wp_today : t.wp_days[new Date(dateStr).getDay()];
         btn.addEventListener('click', () => renderDay(i));
         tabsEl.appendChild(btn);
       });
@@ -344,14 +345,19 @@ document.addEventListener('DOMContentLoaded', () => {
       d.daily.time.slice(0, 5).forEach((dateStr, i) => {
         const cell = document.createElement('div');
         cell.className = 'wp-strip-cell';
-        cell.innerHTML = `<span class="wp-strip-day">${i === 0 ? 'Today' : DAYS[new Date(dateStr).getDay()]}</span><span class="wp-strip-desc">${wmoDesc(d.daily.weathercode[i])}</span><span class="wp-strip-temp">${Math.round(d.daily.temperature_2m_max[i])}°</span>`;
+        cell.innerHTML = `<span class="wp-strip-day">${i === 0 ? t.wp_today : t.wp_days[new Date(dateStr).getDay()]}</span><span class="wp-strip-desc">${wmoDesc(d.daily.weathercode[i])}</span><span class="wp-strip-temp">${Math.round(d.daily.temperature_2m_max[i])}°</span>`;
         strip.appendChild(cell);
       });
-      renderDay(0);
+      renderDay(activeDay);
     }
 
     fetch(API).then(r => r.json()).then(buildPanel).catch(() => {
-      document.getElementById('wp-desc').textContent = 'Unavailable';
+      document.getElementById('wp-desc').textContent = getT().wp_unavailable;
+    });
+
+    document.addEventListener('langchange', () => {
+      renderDaydate();
+      if (data) buildPanel(data);
     });
 
     // Slide up when footer enters viewport

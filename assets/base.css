@@ -565,8 +565,7 @@ h4 {
 }
 
 .footer-legal::before {
-  content: '|';
-  color: rgba(28, 24, 20, 0.2);
+  content: none;
 }
 
 .footer-legal a {

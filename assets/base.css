@@ -465,7 +465,7 @@ h4 {
    FOOTER
    ======================================== */
 .site-footer {
-  background-color: #EDE5D8;
+  background-color: #E0D4C0;
   background-image: none;
   color: rgba(28, 24, 20, 0.7);
   overflow: hidden;
@@ -608,7 +608,7 @@ h4 {
 
 /* ===== WEATHER PANEL ===== */
 .weather-panel {
-  background-color: #EDE5D8;
+  background-color: #E0D4C0;
   background-image: none;
   border-left: 1px solid var(--color-warm-gold);
   transform: translateX(100%);

@@ -461,8 +461,9 @@ h4 {
    FOOTER
    ======================================== */
 .site-footer {
-  background: var(--color-text);
-  color: rgba(255, 255, 255, 0.7);
+  background-color: #EDE5D8;
+  background-image: none;
+  color: rgba(28, 24, 20, 0.7);
   overflow: hidden;
 }
 
@@ -489,7 +490,7 @@ h4 {
 .footer-logo {
   height: 36px;
   width: auto;
-  filter: brightness(0) invert(1);
+  filter: brightness(0);
   margin-bottom: var(--space-sm);
 }
 

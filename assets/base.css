@@ -518,7 +518,7 @@ h4 {
 }
 
 .footer-col a:hover {
-  color: #fff;
+  color: var(--color-text);
 }
 
 .footer-bottom {

@@ -689,7 +689,7 @@ h4 {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 300;
   line-height: 1;
-  color: var(--color-charcoal);
+  color: #4B4947;
 }
 
 .weather-panel__desc {

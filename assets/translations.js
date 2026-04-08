@@ -664,7 +664,7 @@ const olTranslations = {
       c_ch1_f1: '<span>Entfernung</span><strong>30 m · 1 Min.</strong>', c_ch1_f2: '<span>Länge</span><strong>~3,5 km</strong>',
       c_ch1_f3: '<span>Status</span><strong>Schutzgebiet, Caretta-Nistzone</strong>', c_ch1_f4: '<span>Schildkrötensaison</span><strong>Mai – Oktober</strong>',
       c_ch2_cat: 'Archäologie', c_ch2_title: 'Antike Stadt Olympos',
-      c_ch2_lead: 'Die antike Stadt, die dem Lodge ihren Namen gibt, liegt direkt nebenan; treten Sie durch den Garten und gehen Sie zehn Minuten, um sich in einer der besterhaltenen Städte Lykiens wiederzufinden. Grabmäler aus der Römerzeit, Theaterreste und Mauern, die sich zum Meer hin erstrecken.',
+      c_ch2_lead: 'Die antike Stadt Olympos bittet nicht darum, besucht zu werden. Sie bleibt einfach. Treten Sie durch den Garten und gehen Sie zehn Minuten, um sich in einer der besterhaltenen Städte Lykiens wiederzufinden. Grabmäler aus der Römerzeit, Theaterreste und Mauern, die sich zum Meer hin erstrecken.',
       c_ch2_f1: '<span>Entfernung</span><strong>800 m · 10 Min.</strong>', c_ch2_f2: '<span>Epoche</span><strong>Lykisch, Römisch, Byzantinisch</strong>',
       c_ch2_f3: '<span>Beste Zeit</span><strong>Früh morgens, später Nachmittag</strong>', c_ch2_f4: '<span>Eintritt</span><strong>Kostenpflichtig</strong>',
       c_ch3_cat: 'Natur', c_ch3_title: 'Yanartaş: Die ewigen Flammen',

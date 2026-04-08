@@ -82,7 +82,7 @@ const olTranslations = {
       c_ch1_f1: '<span>Mesafe</span><strong>30 m · 1 dk</strong>', c_ch1_f2: '<span>Uzunluk</span><strong>~3,5 km</strong>',
       c_ch1_f3: '<span>Statü</span><strong>Doğal sit, Caretta koruma bölgesi</strong>', c_ch1_f4: '<span>Kaplumbağa Sezonu</span><strong>Mayıs – Ekim</strong>',
       c_ch2_cat: 'Arkeoloji', c_ch2_title: 'Olympos Antik Kenti',
-      c_ch2_lead: 'Lodge\'un ismini aldığı antik kent, otelin hemen bitişiğindedir; bahçeden çıkıp on dakika yürüdüğünüzde Likya\'nın en iyi korunmuş kentlerinden birinin içindesinizdir. Roma döneminden kalma mezarlar, tiyatro kalıntıları ve denize uzanan surlar.',
+      c_ch2_lead: 'Olympos Antik Kenti ziyaret edilmek istemez. Sadece durur. Lodge\'un ismini aldığı antik kent, otelin hemen bitişiğindedir; bahçeden çıkıp on dakika yürüdüğünüzde Likya\'nın en iyi korunmuş kentlerinden birinin içindesinizdir. Roma döneminden kalma mezarlar, tiyatro kalıntıları ve denize uzanan surlar.',
       c_ch2_f1: '<span>Mesafe</span><strong>800 m · 10 dk</strong>', c_ch2_f2: '<span>Dönem</span><strong>Likya, Roma, Bizans</strong>',
       c_ch2_f3: '<span>En İyi Zaman</span><strong>Sabah erken, akşam geç</strong>', c_ch2_f4: '<span>Giriş</span><strong>Ücretli</strong>',
       c_ch3_cat: 'Doğa', c_ch3_title: 'Yanartaş: Sönmeyen Alevler',

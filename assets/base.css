@@ -628,7 +628,7 @@ h4 {
   font-size: clamp(2.5rem, 4vw, 4.5rem);
   font-weight: 300;
   line-height: 1;
-  color: var(--color-charcoal);
+  color: #4B4947;
   letter-spacing: -0.02em;
   text-align: center;
 }

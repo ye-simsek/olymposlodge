@@ -469,6 +469,7 @@ const olTranslations = {
       lodge_garden_label: 'Garden & Nature',
       lodge_garden_title: '20,000 m² Themed Garden',
       lodge_garden_desc: 'The lodge grounds span 20,000 square metres of terraced gardens, fruit trees, and native plantings. Hammocks, garden furniture, and quiet corners are there to be found at any hour.',
+      lodge_garden_quote: 'The rooms don\'t have televisions. The garden has been filling that role since 1985.',
       lodge_act_label: 'Activities',
       lodge_act1_tag: 'Sea · Complimentary', lodge_act1_title: 'Canoe & SUP',
       lodge_act1_desc: 'Canoes and stand-up paddleboards are available to guests at no charge.',

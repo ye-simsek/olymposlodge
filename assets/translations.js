@@ -373,7 +373,7 @@ const olTranslations = {
       c_ch1_f1: '<span>Distance</span><strong>30 m · 1 min</strong>', c_ch1_f2: '<span>Length</span><strong>~3.5 km</strong>',
       c_ch1_f3: '<span>Status</span><strong>Protected area, Caretta nesting zone</strong>', c_ch1_f4: '<span>Turtle Season</span><strong>May – October</strong>',
       c_ch2_cat: 'Archaeology', c_ch2_title: 'Ancient City of Olympos',
-      c_ch2_lead: 'The ancient city that lends the lodge its name lies directly beside us — step through the garden and walk ten minutes to find yourself inside one of Lycia\'s best-preserved cities. Roman-era tombs, theatre ruins, and walls that reach toward the sea.',
+      c_ch2_lead: 'The ancient city of Olympos doesn\'t ask to be visited. It simply remains. Step through the garden and walk ten minutes to find yourself inside one of Lycia\'s best-preserved cities. Roman-era tombs, theatre ruins, and walls that reach toward the sea.',
       c_ch2_f1: '<span>Distance</span><strong>800 m · 10 min</strong>', c_ch2_f2: '<span>Period</span><strong>Lycian, Roman, Byzantine</strong>',
       c_ch2_f3: '<span>Best Time</span><strong>Early morning, late afternoon</strong>', c_ch2_f4: '<span>Admission</span><strong>Paid</strong>',
       c_ch3_cat: 'Nature', c_ch3_title: 'Yanartaş: The Eternal Flames',

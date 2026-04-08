@@ -64,6 +64,7 @@ const olTranslations = {
       footer_nature_link: 'Bahçe & Doğa',
       footer_address: 'Çıralı Sokak, Ulupınar Mahallesi<br>Kemer / Antalya, Türkiye',
       footer_copyright: '© 2025 Olympos Lodge. Tüm hakları saklıdır.',
+      footer_rights: 'Tüm hakları saklıdır.',
       footer_terms: 'Ön Bilgilendirme Formu',
       footer_privacy: 'Gizlilik ve KVKK Bilgilendirme',
       c_intro_title: 'Başka Bir Kıyı: Çıralı',

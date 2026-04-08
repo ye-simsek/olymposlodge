@@ -351,12 +351,13 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('wp-desc').textContent = 'Unavailable';
     });
 
-    // Slide in when footer enters viewport
+    // Slide up when footer enters viewport
+    const footerMain = document.getElementById('footer-main');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        panel.classList.toggle('is-visible', entry.isIntersecting);
+        if (footerMain) footerMain.classList.toggle('is-visible', entry.isIntersecting);
       });
-    }, { threshold: 0.35 });
+    }, { threshold: 0.15 });
 
     observer.observe(footer);
   }

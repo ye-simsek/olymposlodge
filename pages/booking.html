@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rezervasyon – Olympos Lodge</title>
+  <meta name="description" content="Olympos Lodge'da tarih seçin ve rezervasyonunuzu tamamlayın.">
+  <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant+SC:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/base.css?v=24">
+  <link rel="stylesheet" href="../assets/booking.css?v=13">
+</head>
+<body class="booking-page">
+
+  <!-- Booking Header -->
+  <header class="booking-header">
+    <a href="javascript:history.back()" class="booking-close" aria-label="Close">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </a>
+    <a href="../index.html" class="booking-logo">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png" alt="Olympos Lodge" width="180" height="90" />
+    </a>
+    <div class="booking-header-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-current">TR</button>
+        <ul class="lang-dropdown">
+          <li><a href="#" data-lang="tr" class="active">Türkçe</a></li>
+          <li><a href="#" data-lang="en">English</a></li>
+          <li><a href="#" data-lang="de">Deutsch</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Step Progress -->
+  <div class="booking-progress">
+    <div class="progress-step active" data-step="1">
+      <span class="step-number">1</span>
+      <span class="step-label" data-i18n="bk_step_calendar">Takvim</span>
+    </div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="2">
+      <span class="step-number">2</span>
+      <span class="step-label" data-i18n="bk_step_rooms">Oda & Fiyat</span>
+    </div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="3">
+      <span class="step-number">3</span>
+      <span class="step-label" data-i18n="bk_step_details">Detaylar</span>
+    </div>
+    <div class="progress-line"></div>
+    <div class="progress-step" data-step="4">
+      <span class="step-number">4</span>
+      <span class="step-label" data-i18n="bk_step_confirm">Onay</span>
+    </div>
+  </div>
+
+  <!-- STEP 1: Calendar -->
+  <section class="booking-step booking-step--active" id="step1">
+    <h1 class="booking-title" data-i18n="bk_select_dates">TARİHLERİNİZİ SEÇİN</h1>
+
+    <div class="booking-layout">
+      <!-- Calendar Panel -->
+      <div class="calendar-panel">
+        <div class="calendar-nav">
+          <button class="calendar-arrow calendar-arrow--prev" id="calPrev" aria-label="Previous month">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="calendar-arrow calendar-arrow--next" id="calNext" aria-label="Next month">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+        <div class="calendar-months" id="calendarMonths">
+          <!-- Two months rendered by JS -->
+        </div>
+        <div class="calendar-legend">
+          <span class="legend-item"><span class="legend-swatch legend-swatch--selected"></span> <span data-i18n="bk_legend_selected">Seçili tarihler</span></span>
+          <span class="legend-item"><span class="legend-swatch legend-swatch--unavailable"></span> <span data-i18n="bk_legend_unavailable">Müsait değil</span></span>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="booking-sidebar">
+        <div class="sidebar-dates">
+          <div class="sidebar-date">
+            <span class="sidebar-date__label" data-i18n="bk_arrival">GİRİŞ</span>
+            <span class="sidebar-date__day" id="arrivalDay">—</span>
+            <span class="sidebar-date__month" id="arrivalMonth"></span>
+          </div>
+          <div class="sidebar-date">
+            <span class="sidebar-date__label" data-i18n="bk_departure">ÇIKIŞ</span>
+            <span class="sidebar-date__day" id="departureDay">—</span>
+            <span class="sidebar-date__month" id="departureMonth"></span>
+          </div>
+        </div>
+
+        <div class="sidebar-fields">
+          <div class="sidebar-select">
+            <select id="roomCount">
+              <option value="1" data-i18n="bk_1_room">1 Oda</option>
+              <option value="2" data-i18n="bk_2_rooms">2 Oda</option>
+              <option value="3" data-i18n="bk_3_rooms">3 Oda</option>
+            </select>
+          </div>
+          <div class="sidebar-select">
+            <select id="adultCount">
+              <option value="1" data-i18n="bk_1_adult">1 Yetişkin</option>
+              <option value="2" selected data-i18n="bk_2_adults">2 Yetişkin</option>
+              <option value="3" data-i18n="bk_3_adults">3 Yetişkin</option>
+              <option value="4" data-i18n="bk_4_adults">4 Yetişkin</option>
+            </select>
+          </div>
+          <div class="sidebar-select">
+            <select id="childCount">
+              <option value="0" data-i18n="bk_0_children">0 Çocuk</option>
+              <option value="1" data-i18n="bk_1_child">1 Çocuk</option>
+              <option value="2" data-i18n="bk_2_children">2 Çocuk</option>
+              <option value="3" data-i18n="bk_3_children">3 Çocuk</option>
+            </select>
+          </div>
+          <div class="sidebar-select">
+            <select id="roomType">
+              <option value="" data-i18n="bk_all_room_types">Tüm oda tipleri</option>
+              <option value="aqua-super-deluxe">Aqua Super Deluxe</option>
+              <option value="super-deluxe">Super Deluxe</option>
+              <option value="deluxe">Deluxe</option>
+              <option value="gol-evi" data-i18n="bk_room_lake_house">Göl Evi</option>
+              <option value="antik" data-i18n="bk_room_antique">Antik Oda</option>
+              <option value="standart" data-i18n="bk_room_standard">Standart Oda</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sidebar-summary" id="sidebarSummary" style="display:none">
+          <span id="summaryText"></span>
+        </div>
+
+        <button class="btn-check-availability" id="btnCheckAvailability" disabled data-i18n="bk_check_availability">
+          MÜSAİTLİK KONTROL ET
+        </button>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STEP 2: Room & Rate Selection -->
+  <section class="booking-step" id="step2">
+    <div class="step2-header">
+      <button class="step2-back" id="backToStep1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        <span data-i18n="bk_edit">Düzenle</span>
+      </button>
+      <div class="step2-dates" id="step2Dates"></div>
+    </div>
+
+
+    <div class="room-cards" id="roomCards">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- STEP 3: Guest Details -->
+  <section class="booking-step" id="step3">
+    <div class="step3-header">
+      <button class="step2-back" id="backToStep2">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+        <span data-i18n="bk_back">Geri</span>
+      </button>
+    </div>
+
+    <div class="step3-layout">
+      <!-- Guest Form -->
+      <div class="guest-form">
+        <h2 class="guest-form__title" data-i18n="bk_guest_details">MİSAFİR BİLGİLERİ</h2>
+
+        <div class="guest-form__row guest-form__row--title">
+          <div class="guest-form__field guest-form__field--title">
+            <label for="guestTitle" data-i18n="bk_title">Hitap</label>
+            <select id="guestTitle">
+              <option value="Mr" data-i18n="bk_mr">Bay</option>
+              <option value="Mrs" data-i18n="bk_mrs">Bayan</option>
+              <option value="Ms" data-i18n="bk_ms">Hanım</option>
+              <option value="Dr" data-i18n="bk_dr">Dr.</option>
+              <option value="Prof" data-i18n="bk_prof">Prof.</option>
+            </select>
+          </div>
+          <div class="guest-form__field">
+            <label for="guestFirstName" data-i18n="bk_first_name">Ad</label>
+            <input type="text" id="guestFirstName" required>
+          </div>
+          <div class="guest-form__field">
+            <label for="guestLastName" data-i18n="bk_last_name">Soyad</label>
+            <input type="text" id="guestLastName" required>
+          </div>
+        </div>
+
+        <div class="guest-form__field">
+          <label for="guestEmail" data-i18n="bk_email">E-posta</label>
+          <input type="email" id="guestEmail" required>
+        </div>
+
+        <div class="guest-form__field">
+          <label for="guestPhone" data-i18n="bk_phone">Telefon</label>
+          <input type="tel" id="guestPhone" required>
+        </div>
+
+        <div class="guest-form__row">
+          <div class="guest-form__field">
+            <label for="guestCountry" data-i18n="bk_country">Ülke</label>
+            <select id="guestCountry">
+              <option value="TR">Türkiye</option>
+              <option value="DE">Deutschland</option>
+              <option value="GB">United Kingdom</option>
+              <option value="NL">Nederland</option>
+              <option value="FR">France</option>
+              <option value="US">United States</option>
+              <option value="RU">Россия</option>
+              <option value="OTHER" data-i18n="bk_other">Diğer</option>
+            </select>
+          </div>
+          <div class="guest-form__field">
+            <label for="guestArrivalTime" data-i18n="bk_arrival_time">Tahmini Varış Saati</label>
+            <select id="guestArrivalTime">
+              <option value="">—</option>
+              <option value="12:00-14:00">12:00 – 14:00</option>
+              <option value="14:00-16:00" selected>14:00 – 16:00</option>
+              <option value="16:00-18:00">16:00 – 18:00</option>
+              <option value="18:00-20:00">18:00 – 20:00</option>
+              <option value="20:00-22:00">20:00 – 22:00</option>
+              <option value="22:00+">22:00+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="guest-form__field">
+          <label for="guestNotes" data-i18n="bk_special_requests">Özel İstekler</label>
+          <textarea id="guestNotes" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Booking Summary Sidebar -->
+      <aside class="step3-summary">
+        <h3 class="step3-summary__title" data-i18n="bk_your_stay">KONAKLAMANIZ</h3>
+        <div class="step3-summary__room" id="summaryRoomName"></div>
+        <div class="step3-summary__dates">
+          <div class="step3-summary__date">
+            <span class="step3-summary__label" data-i18n="bk_arrival">GİRİŞ</span>
+            <span id="summaryArrival"></span>
+          </div>
+          <div class="step3-summary__date">
+            <span class="step3-summary__label" data-i18n="bk_departure">ÇIKIŞ</span>
+            <span id="summaryDeparture"></span>
+          </div>
+        </div>
+        <div class="step3-summary__line">
+          <span id="summaryNights"></span>
+          <span id="summaryNightPrice"></span>
+        </div>
+        <div class="step3-summary__total">
+          <span data-i18n="bk_total">TOPLAM</span>
+          <span id="summaryTotal"></span>
+        </div>
+        <button class="btn-confirm-booking" id="btnConfirmBooking" data-i18n="bk_confirm_pay">REZERVASYONU ONAYLA</button>
+        <p class="step3-summary__note" data-i18n="bk_payment_note">Ödeme bir sonraki adımda alınacaktır.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STEP 4: Confirmation -->
+  <section class="booking-step" id="step4">
+    <div class="step4-content">
+      <div class="step4-icon">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="var(--color-warm-gold)" stroke-width="2">
+          <circle cx="24" cy="24" r="22"/>
+          <polyline points="14 24 22 32 34 18"/>
+        </svg>
+      </div>
+      <h2 class="step4-title" data-i18n="bk_confirmed">REZERVASYONUNUZ ALINDI</h2>
+      <p class="step4-subtitle" data-i18n="bk_confirmed_sub">Detaylar e-posta adresinize gönderilecektir.</p>
+
+      <div class="step4-details">
+        <div class="step4-row">
+          <span class="step4-label" data-i18n="bk_ref">Referans</span>
+          <span class="step4-value" id="confirmRef"></span>
+        </div>
+        <div class="step4-row">
+          <span class="step4-label" data-i18n="bk_guest">Misafir</span>
+          <span class="step4-value" id="confirmGuest"></span>
+        </div>
+        <div class="step4-row">
+          <span class="step4-label" data-i18n="bk_room">Oda</span>
+          <span class="step4-value" id="confirmRoom"></span>
+        </div>
+        <div class="step4-row">
+          <span class="step4-label" data-i18n="bk_dates">Tarihler</span>
+          <span class="step4-value" id="confirmDates"></span>
+        </div>
+        <div class="step4-row step4-row--total">
+          <span class="step4-label" data-i18n="bk_total">TOPLAM</span>
+          <span class="step4-value" id="confirmTotal"></span>
+        </div>
+      </div>
+
+      <a href="../index.html" class="step4-home" data-i18n="bk_back_home">Ana Sayfaya Dön</a>
+    </div>
+  </section>
+
+  <script src="../assets/translations.js?v=4"></script>
+  <script src="../assets/booking.js?v=4"></script>
+</body>
+</html>

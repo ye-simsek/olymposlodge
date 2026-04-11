@@ -580,7 +580,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rooms-page-hero__subtitle {
+  .rooms-page-hero__subtitle,
+  .rooms-page-hero__title {
     opacity: 1;
     transform: none;
     animation: none;

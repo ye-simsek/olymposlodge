@@ -542,7 +542,7 @@
 }
 
 .rooms-page-hero__subtitle {
-  font-family: var(--font-accent);
+  font-family: var(--font-sc);
   font-size: clamp(1.15rem, 1.6vw, 1.5rem);
   font-weight: 300;
   color: rgba(255, 255, 255, 0.93);

@@ -488,8 +488,8 @@
 /* --- Rooms Page Hero --- */
 .rooms-page-hero {
   position: relative;
-  height: 80vh;
-  min-height: 540px;
+  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 

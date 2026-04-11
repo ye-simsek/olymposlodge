@@ -130,6 +130,25 @@
 
 "season": "Olympos Lodge is open all year. Peak season runs from 1 May to 1 November; all room rates are 100 EUR higher per night during this period compared to off-season rates.",
 
+"pricing": {
+	"peak_season_dates": "1 May – 1 November",
+	"off_season_dates": "1 November – 1 May",
+	"currency": "EUR",
+	"note": "All rates are per room per night. Includes breakfast, beach access (lounger, umbrella, towel, cabana), spa, bicycle, canoe, SUP, parking, and Wi-Fi.",
+	"rooms": {
+		"Standard Double (1 person)":  { "peak": 345, "off_season": 245 },
+		"Standard Double (2 persons)": { "peak": 375, "off_season": 275 },
+		"Deluxe Double":               { "peak": 490, "off_season": 390 },
+		"Lake House":                  { "peak": 490, "off_season": 390 },
+		"Super Deluxe":                { "peak": 590, "off_season": 490 },
+		"Aqua Super Deluxe":           { "peak": 690, "off_season": 590 }
+	},
+	"antique_honeymoon": "The Antique / Honeymoon Room is not listed in the standard price table. Callers asking about this room should be directed to contact the hotel directly for pricing and availability.",
+	"extra_child_4_12": "40 EUR per night (extra bed)",
+	"extra_adult_12_plus": "50 EUR per night (extra bed)",
+	"payment": "100% upfront payment is required at the time of reservation. Payment on arrival is not available. Accepted methods: credit card or bank transfer."
+},
+
 "rules": "Noise and light regulations in Çıralı are observed in accordance with conservation and quiet zone rules.",
 
 "FAQ": [

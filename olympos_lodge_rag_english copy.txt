@@ -81,7 +81,7 @@
 "fiyata_dahil": "Services and products included in the accommodation rate: Personal care set (toothbrush, toothpaste, shampoo, soap, conditioner, shower gel), breakfast, Wi-Fi, sun lounger-umbrella-towel-cabana on the beach, bicycle, canoe, SUP (stand-up paddleboard) usage, parking, spa access (jacuzzi, sauna, steam room). Massage service is subject to an additional fee and requires a reservation at least 2 hours in advance."
 },
 
-"check_in_check_out": "Check-in begins at 16:00. Check-out time is 11:00. Early check-in or late check-out requests are evaluated based on availability; when possible, these requests are gladly accommodated. Guests arriving early can spend time in the garden area or restaurant section while their rooms are being prepared. Guests may also use the beach area during this time. After check-out, luggage is stored at reception, and guests may continue to spend time in the garden or beach area for the rest of the day if they wish. Bellboy (luggage carrying) service is available. Wake-up call service is also offered upon request. – Check-in time: 16:00, check-out time: 11:00.",
+"check_in_check_out": "Check-in begins at 14:00. Check-out time is 12:00. Early check-in or late check-out requests are evaluated based on availability; when possible, these requests are gladly accommodated. Guests arriving early can spend time in the garden area or restaurant section while their rooms are being prepared. Guests may also use the beach area during this time. After check-out, luggage is stored at reception, and guests may continue to spend time in the garden or beach area for the rest of the day if they wish. Bellboy (luggage carrying) service is available. Wake-up call service is also offered upon request. – Check-in time: 14:00, check-out time: 12:00.",
 
 "children_policy": "Olympos Lodge welcomes guests of all age groups. Families can enjoy a peaceful holiday experience immersed in nature with their children. With its spacious garden areas, proximity to the sea, and quiet atmosphere, our hotel offers a safe and enjoyable accommodation environment for families with children. Informing us of children's ages at the reservation stage allows for appropriate room type and extra bed arrangements to be made in advance for a comfortable stay. - Free crib for children aged 0–3. - Extra bed provided for children aged 4–12 (fee: 40 EUR per child). - Children over 12 are subject to adult pricing (extra bed fee: 50 EUR per person).",
 
@@ -161,7 +161,7 @@
 "a": "Yes, round-trip airport transfer service is available. The fee is 100 EUR one-way per vehicle."},
 
 {"q": "What are the check-in and check-out times for Olympos Lodge?",
-"a": "Check-in can be done between 16:00 and midnight. Check-out time: 11:00. Contactless check-in and check-out is offered."},
+"a": "Check-in can be done from 14:00. Check-out time: 12:00. Contactless check-in and check-out is offered."},
 
 {"q": "What are the facilities at and near Olympos Lodge?",
 "a": "Enjoy hotel activities such as canoeing, SUP (stand-up paddleboard), snorkeling, and complimentary bicycle use. Diving and fishing can be arranged through third-party operators. Additional nearby leisure activities include cave exploration. Enjoy spa treatments and relax your muscles in the jacuzzi (6-person). Sauna and steam room are also available. Olympos Lodge also offers a private beach, garden, library, and fire pit (firepit)."},

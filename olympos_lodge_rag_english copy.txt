@@ -90,7 +90,7 @@
 - The hotel entrance and all room entrances are illuminated and designed without threshold differences (level ground access).",
 
 "distances": {
-"airport": "Antalya Airport (AYT): 91 km, approximately 90 minutes by car.",
+"airport": "Antalya Airport (AYT): 90 km, approximately 90 minutes by car.",
 "city_centre": "Kemer city center: 35 km, approximately 38 minutes by car.",
 "hospital": "Kemer State Hospital: 37 km, approximately 37 minutes by car.",
 "marina": "Kemer Marina: 34 km, approximately 40 minutes by car.",

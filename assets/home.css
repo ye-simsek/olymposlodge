@@ -638,8 +638,8 @@
 
 @media (max-width: 768px) {
   .rooms-page-hero {
-    height: 58vh;
-    min-height: 360px;
+    height: 100vh;
+    min-height: 100vh;
   }
   .rooms-page-hero__overlay {
     padding-bottom: 3rem;

@@ -51,6 +51,19 @@
 
 "room_inventory": "Total 17 rooms: 1 Aqua Super Deluxe, 2 Super Deluxe, 2 Deluxe, 1 Lake House, 1 Antique / Honeymoon Room, 10 Standard Double Rooms.",
 
+"room_comparison": {
+	"headers": ["Room Type", "Count", "Size (m²)", "Jacuzzi", "Fireplace", "Espresso Machine", "Rain Shower", "Outdoor Shower", "Detached", "View"],
+	"rows": [
+		["Aqua Super Deluxe", 1, 105, "Yes", "Yes", "Yes", "Yes (indoor)", "Yes (outdoor)", "Yes", "Garden & Sea"],
+		["Super Deluxe", 2, 105, "Yes", "Yes", "Yes", "Yes", "No", "No", "Garden"],
+		["Deluxe Double", 2, 70, "Yes", "Yes", "Yes", "Yes", "No", "No", "Garden"],
+		["Lake House (Göl Evi)", 1, 60, "Yes", "Yes", "Yes", "Yes", "No", "Yes", "Lake"],
+		["Antique / Honeymoon", 1, null, "No", "No", "No", "Yes", "No", "No", "Garden"],
+		["Standard Double", 10, 35, "No", "No", "No (coffee maker)", "Yes", "No", "No", "Garden"]
+	],
+	"note": "Use this table to quickly compare room features when a caller asks about differences between room types."
+},
+
 "espresso_machine": "Espresso machines are available only in Deluxe rooms (Aqua Super Deluxe, Super Deluxe, Deluxe Double, and Lake House). Standard rooms have a coffee maker.",
 
 "fireplace_details": "A fireplace is available only in the following room types: Aqua Super Deluxe Room, Super Deluxe Room, Deluxe Double Room, and Lake House. The Standard Double Room and Antique / Honeymoon Room do not have a fireplace.",

@@ -21,7 +21,7 @@
 
 "restaurant": {
 "description": "Olympos Lodge has an à la carte restaurant that serves exclusively to staying guests. The menu features fresh fish procured daily, grilled dishes prepared from beef and lamb, as well as pizzas and pastas from Mediterranean cuisine. Additionally, daily prepared desserts and a rich selection of alcoholic beverages are offered for our guests. The restaurant's open-air concept and garden atmosphere provide a peaceful dining experience immersed in nature at any time of day.",
-"breakfast": "Open buffet breakfast (including brunch) is served between 08:00–11:00 and is included in the room rate.",
+"breakfast": "Open buffet breakfast (including brunch) is served between 08:00–12:00 and is included in the room rate.",
 "meals": "Served à la carte; menu information is shared upon request.",
 "notes": "Seafood and local ingredients are prominent in dishes highlighting fresh Mediterranean and regional cuisine.",
 "room_service": "Room service is available between 12:00–22:00 by accessing the menu via QR code.",

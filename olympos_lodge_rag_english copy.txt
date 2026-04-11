@@ -186,6 +186,30 @@
 "a": "Specific room requests can be forwarded to reception. The hotel will do its best to accommodate preferences based on availability."},
 
 {"q": "Can I pay when I arrive at the hotel?",
-"a": "No, Olympos Lodge requires 100% upfront payment at the time of reservation. Payment on arrival is not available. Accepted methods are credit card or bank transfer."}
+"a": "No, Olympos Lodge requires 100% upfront payment at the time of reservation. Payment on arrival is not available. Accepted methods are credit card or bank transfer."},
+
+{"q": "Is the sea warm enough to swim in autumn/winter?",
+"a": "The average sea temperature in November is around 22.5°C. Many of our guests continue swimming well into December."},
+
+{"q": "What is on the dinner menu?",
+"a": "Our menu changes regularly based on seasonal and fresh ingredients. For the current menu, please contact reception or scan the QR code available at the restaurant."},
+
+{"q": "Do you have a highchair for toddlers?",
+"a": "Yes, highchairs are available for toddlers. A free crib is also provided for children aged 0–3."},
+
+{"q": "Is the beach sandy or pebbly?",
+"a": "Çıralı Beach is a pebble beach. There are sandy bays nearby as well."},
+
+{"q": "Can we have a late checkout?",
+"a": "Late checkout requests are evaluated based on availability. Please contact reception to arrange this."},
+
+{"q": "Are there mosquitoes?",
+"a": "Olympos Lodge provides mosquito repellent sprays, plug-in repellent devices, and all rooms are equipped with mosquito nets."},
+
+{"q": "Can I arrange a birthday cake or a surprise for my partner?",
+"a": "Of course! Special arrangements such as birthday cakes or surprises can be organised. Please contact reception in advance to plan the details."},
+
+{"q": "Can I book a massage?",
+"a": "Massage service is available for an additional fee and requires a reservation at least 2 hours in advance. Please contact reception or visit our website to arrange a booking."}
 ]
 }

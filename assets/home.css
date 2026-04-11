@@ -538,14 +538,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .rooms-page-hero__title {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-}
-
 .rooms-page-hero__subtitle {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.2vw, 1.15rem);

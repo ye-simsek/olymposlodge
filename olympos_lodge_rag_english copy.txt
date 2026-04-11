@@ -180,6 +180,12 @@
 "a": "Olympos Lodge reservations are confirmed upon payment of the total accommodation fee via bank transfer within 24 hours. Reservations cannot be canceled, but date changes may be made subject to availability. Prices include room, breakfast, tax, and service charge. Within 24 hours after your pre-reservation is completed, our team will call you with payment details."},
 
 {"q": "How many rooms does the hotel have in total?",
-"a": "Olympos Lodge has a total of 17 rooms: 1 Aqua Super Deluxe, 2 Super Deluxe, 2 Deluxe, 1 Lake House, 1 Antique / Honeymoon Room, and 10 Standard Double Rooms."}
+"a": "Olympos Lodge has a total of 17 rooms: 1 Aqua Super Deluxe, 2 Super Deluxe, 2 Deluxe, 1 Lake House, 1 Antique / Honeymoon Room, and 10 Standard Double Rooms."},
+
+{"q": "Can I request a specific room or room number?",
+"a": "Specific room requests can be forwarded to reception. The hotel will do its best to accommodate preferences based on availability."},
+
+{"q": "Can I pay when I arrive at the hotel?",
+"a": "No, Olympos Lodge requires 100% upfront payment at the time of reservation. Payment on arrival is not available. Accepted methods are credit card or bank transfer."}
 ]
 }

@@ -95,11 +95,12 @@
 "hospital": "Kemer State Hospital: 37 km, approximately 37 minutes by car.",
 "marina": "Kemer Marina: 34 km, approximately 40 minutes by car.",
 "olympos_ancient_city": "Olympos Ancient City: 800 m, approximately 10 minutes on foot.",
-"phaselis_ancient_city": "Phaselis Ancient City: 26 km, approximately 30 minutes by car.",
+"phaselis_ancient_city": "Phaselis Ancient City: 25 km, approximately 30 minutes by car.",
 "pharmacy": "Nearest pharmacy: 35 km, approximately 38 minutes by car.",
 "shopping": "Nearest shopping: 150 m, approximately 5 minutes on foot.",
 "mount_chimaera": "Chimera (Yanartaş, Olympos National Park): 3.5 km, approximately 45 minutes on foot, approximately 10 minutes by car.",
-"sea": "Çıralı Beach: 30 m, approximately 1 minute on foot."
+"sea": "Çıralı Beach: 30 m, approximately 1 minute on foot.",
+"tahtali_cable_car": "Tahtalı Cable Car (Olympos Teleferik): approximately 40 minutes by car. Ascent to 2,365 metres with panoramic views over the Mediterranean, Çıralı, and Kemer. Open April–November."
 },
 
 "reservation": "Reservations are confirmed upon collection of the total accommodation fee. Payments are accepted via bank transfer or mail order. Reservations are non-refundable; however, date changes may be made subject to availability. In cases where a date change is not made, the reservation can be kept on hold. Reservations placed on hold remain valid for one year with a value equal to their balance. Price changes may occur during this period; the existing balance can be used at current prices. Guests are advised to obtain information about dates and conditions before reservation confirmation. - For the reservation to be valid, the total fee must be paid via bank transfer within 24 hours. - If the bank transfer is not received within the specified time, the reservation is automatically canceled. - Reservations cannot be canceled. However, in cases of loss of a first-degree relative or serious health issues, a date change can be made for use within 1 year. In this case, your payment will be recalculated based on the pricing of the new dates. - Prices include room, breakfast, tax, and service charge. - The hotel does not offer any discounts on stated prices. Prices shared on the official website and through direct inquiries are the best and most current prices.",

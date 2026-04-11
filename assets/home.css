@@ -515,6 +515,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 12vh;
   text-align: center;
 }
 

@@ -579,10 +579,13 @@
   font-size: 0.7rem;
 }
 
-/* --- Rooms Page modifier --- */
+/* --- Rooms Page modifier — slides over the sticky hero --- */
 .rooms--page {
+  position: relative;
+  z-index: 1;
   padding-top: 0;
-  overflow: visible;
+  background-color: var(--color-cream);
+  background-image: var(--paper-texture);
 }
 
 /* --- All Rooms Includes Strip --- */

@@ -587,6 +587,7 @@
 /* --- Rooms Page modifier --- */
 .rooms--page {
   padding-top: 0;
+  overflow: visible;
 }
 
 /* --- All Rooms Includes Strip --- */

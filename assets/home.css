@@ -545,10 +545,10 @@
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.2vw, 1.15rem);
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.93);
   letter-spacing: 0.04em;
   margin-top: 1rem;
-  font-weight: 400;
+  font-weight: 450;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
   opacity: 0;
   transform: translateY(12px);

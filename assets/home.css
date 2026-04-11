@@ -543,7 +543,7 @@
 
 .rooms-page-hero__subtitle {
   font-family: var(--font-sc);
-  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  font-size: clamp(1.25rem, 1.8vw, 1.65rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.93);
   letter-spacing: 0.04em;

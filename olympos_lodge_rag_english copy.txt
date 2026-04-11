@@ -26,7 +26,7 @@
 "notes": "Seafood and local ingredients are prominent in dishes highlighting fresh Mediterranean and regional cuisine.",
 "room_service": "Room service is available between 12:00–22:00 by accessing the menu via QR code.",
 "bar": "Alcoholic and non-alcoholic drinks, cocktails, and coffee varieties are available; the beverage menu can be shared digitally upon request. Alcoholic beverage service is provided only to guests aged 18 and over.",
-"self_service": "Water dispensers are available throughout the hotel. Tea and coffee are offered free of charge as self-service between 07:00–24:00."
+"self_service": "Water dispensers are available throughout the hotel. Tea and coffee are offered free of charge as self-service between 08:00–22:00."
 },
 
 "specific_request": "
@@ -47,7 +47,7 @@
 - Lake House (60 m², detached location): Spacious area, seating corner, private terrace, fireplace, peaceful atmosphere. Its detached location naturally offers a quiet and secluded setting.
 - Deluxe Double Room (70 m²): Jacuzzi, fireplace, seating area, large terrace, peaceful atmosphere opening onto the front garden.
 - Double Super Deluxe Room (105 m²): Jacuzzi, fireplace, large seating area, private terrace, peaceful atmosphere opening onto the front garden.
-- Aqua Super Deluxe Room (105 m², detached location): Jacuzzi, fireplace, large terrace, spacious area, opens onto the front garden. Its detached location is situated at the far end of the garden, offering a quiet setting.",
+- Aqua Super Deluxe Room (105 m², detached location): Jacuzzi, fireplace, large terrace, spacious area, opens onto the front garden. Its detached location is situated at the far end of the garden, offering a quiet setting. Unique features: indoor waterfall wall, glass floor panels revealing water beneath your feet, both indoor and outdoor rain showers.",
 
 "room_inventory": "Total 17 rooms: 1 Aqua Super Deluxe, 2 Super Deluxe, 2 Deluxe, 1 Lake House, 1 Antique / Honeymoon Room, 10 Standard Double Rooms.",
 

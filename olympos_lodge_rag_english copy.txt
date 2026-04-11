@@ -107,6 +107,14 @@
 
 "reservation": "Reservations are confirmed upon collection of the total accommodation fee. Payments are accepted via credit card or bank transfer. Reservations are non-refundable; however, date changes may be made subject to availability. In cases where a date change is not made, the reservation can be kept on hold. Reservations placed on hold remain valid for one year with a value equal to their balance. Price changes may occur during this period; the existing balance can be used at current prices. Guests are advised to obtain information about dates and conditions before reservation confirmation. - For the reservation to be valid, the total fee must be paid via bank transfer within 24 hours. - If the bank transfer is not received within the specified time, the reservation is automatically canceled. - Reservations cannot be canceled. However, in cases of loss of a first-degree relative or serious health issues, a date change can be made for use within 1 year. In this case, your payment will be recalculated based on the pricing of the new dates. - Prices include room, breakfast, tax, and service charge. - The hotel does not offer any discounts on stated prices. Prices shared on the official website and through direct inquiries are the best and most current prices.",
 
+"what_is_not_here": "The following are intentionally not part of Olympos Lodge. If a caller asks, answer honestly and frame it as a deliberate choice, not a shortcoming:
+- No televisions in rooms. The garden has been filling that role since 1987.
+- No swimming pool. The Mediterranean is 30 metres away.
+- No all-inclusive package. The restaurant serves à la carte with fresh, seasonal ingredients.
+- No kids' club or children's animation programme. The garden, beach, and nature are the playground.
+- No gym or fitness centre. Activities are outdoors — cycling, canoeing, SUP, hiking.
+- No nightlife or loud entertainment. Çıralı is a protected quiet zone; evenings centre around the fire pit, the library, and stargazing.",
+
 "rules": "Noise and light regulations in Çıralı are observed in accordance with conservation and quiet zone rules.",
 
 "FAQ": [

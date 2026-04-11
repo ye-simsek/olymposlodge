@@ -126,7 +126,9 @@
 - No all-inclusive package. The restaurant serves à la carte with fresh, seasonal ingredients.
 - No kids' club or children's animation programme. The garden, beach, and nature are the playground.
 - No gym or fitness centre. Activities are outdoors — cycling, canoeing, SUP, hiking.
-- No nightlife or loud entertainment. Çıralı is a protected quiet zone; evenings centre around the fire pit, the library, and stargazing.",
+- No nightlife or loud entertainment. Çıralı is a protected quiet zone; evenings centre around the fire pit, the library, and stargazing.
+- No elevator or lift. The hotel is single-storey with all rooms on the ground floor — one is not needed.
+- No dedicated disabled-access rooms. However, all rooms are ground floor with no stairs, and common areas have wide, level paths.",
 
 "season": "Olympos Lodge is open all year. Peak season runs from 1 May to 1 November; all room rates are 100 EUR higher per night during this period compared to off-season rates.",
 

@@ -488,8 +488,8 @@
 /* --- Rooms Page Hero --- */
 .rooms-page-hero {
   position: relative;
-  height: 62vh;
-  min-height: 420px;
+  height: 80vh;
+  min-height: 540px;
   overflow: hidden;
 }
 
@@ -638,8 +638,8 @@
 
 @media (max-width: 768px) {
   .rooms-page-hero {
-    height: 45vh;
-    min-height: 280px;
+    height: 58vh;
+    min-height: 360px;
   }
   .rooms-page-hero__overlay {
     padding-bottom: 3rem;

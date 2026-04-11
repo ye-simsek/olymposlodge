@@ -517,10 +517,32 @@
   text-align: center;
 }
 
+.rooms-page-hero__title {
+  font-family: var(--font-sc);
+  font-size: clamp(3.5rem, 8vw, 140px);
+  font-weight: 300;
+  font-style: normal;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: 0.07em;
+  text-transform: none;
+  opacity: 0;
+  transform: translateY(18px);
+  animation: roomsHeroIn 1.1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.2s forwards;
+}
+
 @keyframes roomsHeroIn {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rooms-page-hero__title {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }
 

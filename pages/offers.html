@@ -28,6 +28,40 @@
   <link rel="alternate" hreflang="en" href="https://www.olymposlodge.com.tr/offers/">
   <link rel="alternate" hreflang="de" href="https://www.olymposlodge.com.tr/offers/">
   <link rel="alternate" hreflang="x-default" href="https://www.olymposlodge.com.tr/offers/">
+
+<!-- JSON-LD: Offers + BreadcrumbList -->
+  <!-- TODO:SEO-REVISE — Update offer details (name, description, validFrom/Through, price) once offers page content is finalised -->
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Olympos Lodge Offers",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Early Summer Getaway",
+        "description": "Early season package at Olympos Lodge, Çıralı. Book early and enjoy special rates.",
+        "seller": { "@type": "Hotel", "name": "Olympos Lodge" },
+        "url": "https://www.olymposlodge.com.tr/offers/"
+      },
+      {
+        "@type": "Offer",
+        "name": "Long Stay Package",
+        "description": "Extended stay package at Olympos Lodge. Longer stays, better value.",
+        "seller": { "@type": "Hotel", "name": "Olympos Lodge" },
+        "url": "https://www.olymposlodge.com.tr/offers/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Olympos Lodge", "item": "https://www.olymposlodge.com.tr/" },
+      { "@type": "ListItem", "position": 2, "name": "Offers" }
+    ]
+  }]
+  </script>
 <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
   <link rel="stylesheet" href="../assets/base.css?v=24">
   <link rel="stylesheet" href="../assets/offers.css?v=8">

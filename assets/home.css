@@ -547,7 +547,7 @@
   color: rgba(255, 255, 255, 0.85);
   letter-spacing: 0.04em;
   margin-top: 1rem;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
   opacity: 0;
   transform: translateY(12px);
   animation: roomsHeroIn 1.1s cubic-bezier(0.25, 0.1, 0.25, 1) 0.5s forwards;

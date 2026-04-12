@@ -677,7 +677,7 @@ const olTranslations = {
       quote: 'Die Zeit verlangsamt sich.<br>Das Leben wird leichter.<br>Und die Natur nimmt still neben Ihnen Platz.',
       voices_label: 'In der Presse', voices_heading: 'In Worten.',
       voice1_text: '"Eine verborgene Welt, erdacht damit Kenner kommen, Unwissende erzählen und nur Neugierige willkommen geheißen werden."',
-      voice1_author: 'Saffet Emre Tonguç<br><em>Boutique Hotels: Meine Auswahl aus der Türkei</em>',
+      voice1_author: '— Saffet Emre Tonguç<br><em>Boutique Hotels: Meine Auswahl aus der Türkei</em>',
       voice2_text: '"Morgens mit Vogelgesang aufwachen, abends unter den Sternen spazieren… Olympos Lodge ist nicht nur Urlaub, sondern Erinnerung."',
       voice2_author: 'Ein Gast, 2024',
       voice3_text: '"Beim Spaziergang durch diesen Garten spürte ich, wie die Zeit wirklich stehen blieb. Frieden in jeder Ecke, Sorgfalt in jedem Detail."',

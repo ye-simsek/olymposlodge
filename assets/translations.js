@@ -76,7 +76,7 @@ const olTranslations = {
       contact_form_label: 'Mesaj',
       contact_form_title: 'Bize yazın',
       contact_form_intro: 'Bize e-posta ile ulaşın veya aşağıdaki formu doldurarak mesajınızı iletin. En kısa sürede size döneceğiz.',
-      contact_salutation: 'Hitap',
+      contact_salutation: 'Ünvan',
       contact_salutation_placeholder: 'Seçiniz',
       contact_salutation_mr: 'Bay',
       contact_salutation_mrs: 'Bayan',

@@ -860,7 +860,7 @@
   font-family: var(--font-accent);
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: var(--color-text-muted);
+  color: #888;
 }
 
 /* ========================================

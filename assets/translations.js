@@ -346,7 +346,7 @@ const olTranslations = {
     en: {
       btn_reserve: 'Reserve', btn_availability: 'Check Availability',
       nav_home: 'Home', nav_story: 'Our Story', nav_rooms: 'Rooms',
-      nav_nature: 'Nature', nav_experience: 'Experience', nav_gallery: 'Gallery', nav_contact: 'Contact', nav_experiences: 'Experiences', nav_location: 'Location', loc_hero_title: 'Getting Here',
+      nav_nature: 'Nature', nav_experience: 'Experience', nav_gallery: 'Gallery', nav_contact: 'Contact Us', nav_experiences: 'Experiences', nav_location: 'Location', loc_hero_title: 'Getting Here',
       nav_cirali_tab: 'Çıralı', nav_activities_tab: 'Activities',
       hero_title: 'Time flows<br>differently here.',
       hero_subtitle: 'Noise softens, senses awaken.<br>Nature makes itself heard.',

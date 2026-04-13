@@ -107,6 +107,7 @@ const olTranslations = {
       wp_today: 'Bugün',
       wp_unavailable: 'Kullanılamıyor',
       wp_loading: 'Yükleniyor…',
+      wp_sea: 'Deniz',
       wp_days: ['Paz','Pzt','Sal','Çar','Per','Cum','Cmt'],
       wp_full_days: ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'],
       wp_months: ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'],

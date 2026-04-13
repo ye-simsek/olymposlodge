@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const LAT = 36.4166, LON = 30.4742;
     const API = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weathercode,windspeed_10m,winddirection_10m&daily=weathercode,temperature_2m_max,temperature_2m_min,windspeed_10m_max,winddirection_10m_dominant&timezone=Europe%2FIstanbul&forecast_days=5`;
+    const SEA_API = `https://marine-api.open-meteo.com/v1/marine?latitude=${LAT}&longitude=${LON}&daily=sea_surface_temperature_max&timezone=Europe%2FIstanbul&forecast_days=5`;
 
     function getT() { return translations[document.documentElement.lang] || translations['en']; }
     function wmoDesc(c) { const w = getT().wp_wmo; return (w && w[c]) || w[0] || 'Clear sky'; }

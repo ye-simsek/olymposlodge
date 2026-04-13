@@ -808,6 +808,7 @@ const olTranslations = {
       footer_terms: 'Vorabinformationsformular',
       wp_today: 'Heute',
       wp_unavailable: 'Nicht verfügbar',
+      wp_sea: 'Meer',
       wp_loading: 'Wird geladen…',
       wp_days: ['So','Mo','Di','Mi','Do','Fr','Sa'],
       wp_full_days: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],

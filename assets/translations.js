@@ -458,6 +458,7 @@ const olTranslations = {
       wp_today: 'Today',
       wp_unavailable: 'Unavailable',
       wp_loading: 'Loading…',
+      wp_sea: 'Sea',
       wp_days: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
       wp_full_days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
       wp_months: ['January','February','March','April','May','June','July','August','September','October','November','December'],

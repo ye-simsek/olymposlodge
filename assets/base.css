@@ -719,6 +719,14 @@ h4 {
   color: var(--color-stone);
   margin-top: 0.75rem;
 }
+.weather-panel__sea {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-stone);
+  margin-top: 0.35rem;
+}
 
 .weather-panel__strip {
   display: flex;

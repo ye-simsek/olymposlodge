@@ -311,6 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('wp-desc').textContent = getT().wp_loading;
 
     let data = null;
+    let seaData = null;
     let activeDay = 0;
 
     function renderDay(i) {
@@ -325,6 +326,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('wp-temp').textContent = temp + '°';
       document.getElementById('wp-desc').textContent = desc;
       document.getElementById('wp-wind').textContent = `${windDir} · ${windSpeed} km/h`;
+      const seaEl = document.getElementById('wp-sea');
+      if (seaEl && seaData && seaData.daily && seaData.daily.sea_surface_temperature_max[i] != null) {
+        const seaTemp = Math.round(seaData.daily.sea_surface_temperature_max[i]);
+        const t = getT();
+        seaEl.textContent = `${t.wp_sea || 'Sea'} · ${seaTemp}°`;
+      }
       document.querySelectorAll('.wp-tab').forEach((t, j) => t.classList.toggle('is-active', j === i));
     }
 

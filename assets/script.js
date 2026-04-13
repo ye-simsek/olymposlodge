@@ -360,6 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderDay(activeDay);
     }
 
+    fetch(SEA_API).then(r => r.json()).then(d => { seaData = d; }).catch(() => {});
     fetch(API).then(r => r.json()).then(buildPanel).catch(() => {
       document.getElementById('wp-desc').textContent = getT().wp_unavailable;
     });

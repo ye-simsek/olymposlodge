@@ -191,23 +191,70 @@
     </div>
   </header>
 
-  <!-- Full-screen Navigation Overlay -->
+  <!-- Full-screen Navigation Overlay — TEST: split-screen layout -->
+  <style>
+    .nav-overlay {
+      flex-direction: row !important;
+      align-items: stretch !important;
+      padding: 0 !important;
+      background: none !important;
+    }
+    .nav-overlay__left {
+      width: 38%;
+      min-width: 280px;
+      background: #7c7d66;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--header-height) 3.5rem 3rem 3.5rem;
+    }
+    .nav-overlay__photo {
+      flex: 1;
+      background: url('assets/images/pavillion.jpg') center / cover no-repeat;
+    }
+    .nav-overlay .nav-links {
+      text-align: left !important;
+      align-items: flex-start;
+    }
+    .nav-overlay .nav-links a {
+      font-size: clamp(1.2rem, 2.2vw, 1.9rem) !important;
+      color: rgba(255,255,255,0.9) !important;
+    }
+    .nav-overlay .nav-links a:hover {
+      color: #fff !important;
+      opacity: 0.7;
+    }
+    .nav-overlay .nav-footer {
+      text-align: left;
+      color: rgba(255,255,255,0.55);
+      margin-top: 3rem;
+    }
+    .nav-overlay .nav-footer a {
+      color: rgba(255,255,255,0.55);
+    }
+    .nav-overlay .nav-footer a:hover {
+      color: rgba(255,255,255,0.9);
+    }
+  </style>
   <nav class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-      <li><a href="#hero" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
-      <li><a href="pages/rooms.html" data-nav data-i18n="nav_rooms">Odalar</a></li>
-      <li><a href="pages/cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a></li>
-      <li><a href="pages/location.html" data-nav data-i18n="nav_location">Konum</a></li>
-      <li><a href="pages/gallery.html" data-nav data-i18n="nav_gallery">Galeri</a></li>
-      <li><a href="pages/offers.html" data-nav data-i18n="nav_offers">Teklifler</a></li>
-      <li><a href="pages/contact.html" data-nav data-i18n="nav_contact">İletişim</a></li>
-    </ul>
-    <div class="nav-footer">
-      <a href="tel:+905323083486">+90 532 308 34 86</a>
-      <div class="nav-social">
-        <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+    <div class="nav-overlay__left">
+      <ul class="nav-links">
+        <li><a href="#hero" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
+        <li><a href="pages/rooms.html" data-nav data-i18n="nav_rooms">Odalar</a></li>
+        <li><a href="pages/cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a></li>
+        <li><a href="pages/location.html" data-nav data-i18n="nav_location">Konum</a></li>
+        <li><a href="pages/gallery.html" data-nav data-i18n="nav_gallery">Galeri</a></li>
+        <li><a href="pages/offers.html" data-nav data-i18n="nav_offers">Teklifler</a></li>
+        <li><a href="pages/contact.html" data-nav data-i18n="nav_contact">İletişim</a></li>
+      </ul>
+      <div class="nav-footer">
+        <a href="tel:+905323083486">+90 532 308 34 86</a>
+        <div class="nav-social">
+          <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
     </div>
+    <div class="nav-overlay__photo"></div>
   </nav>
 
 

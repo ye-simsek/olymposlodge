@@ -1016,6 +1016,7 @@ const olTranslations = {
       linker_rooms_body: 'Vom Aqua Super Deluxe bis zum Antikzimmer — jedes Zimmer mit eigener Privatterrasse in 20.000 m² Gartenanlage.',
       linker_rooms_cta: 'Entdecken →',
       nav_offers: 'Angebote',
+      offer_section_label: 'ANGEBOTE',
       offer_page_title: 'Angebote',
       offer_includes_label: 'In Jedem Aufenthalt Enthalten',
       offer1_title: 'FRÜHSOMMER AUSZEIT',

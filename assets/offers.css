@@ -27,7 +27,10 @@
 .offers-dark__header .section-label {
   color: #fff;
   font-size: 0.85rem;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 /* ── Hero ────────────────────────────────── */

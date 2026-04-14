@@ -465,6 +465,8 @@ h4 {
    FOOTER
    ======================================== */
 .site-footer {
+  position: relative;
+  z-index: 1;
   background-color: #EEE8DF;
   background-image: none;
   color: rgba(28, 24, 20, 0.7);

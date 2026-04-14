@@ -10,10 +10,24 @@
 }
 .offers-dark__header {
   text-align: center;
-  padding: 4rem 0 1rem;
+  padding: 4rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.offers-dark__header::before,
+.offers-dark__header::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
 }
 .offers-dark__header .section-label {
-  color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+  font-size: 0.85rem;
+  margin-bottom: 0;
 }
 
 /* ── Hero ────────────────────────────────── */

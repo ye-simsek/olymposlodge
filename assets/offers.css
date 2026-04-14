@@ -8,6 +8,13 @@
   z-index: 1;
   background: var(--color-warm-gold);
 }
+.offers-dark__header {
+  text-align: center;
+  padding: 4rem 0 1rem;
+}
+.offers-dark__header .section-label {
+  color: rgba(255, 255, 255, 0.7);
+}
 
 /* ── Hero ────────────────────────────────── */
 .offers-hero {

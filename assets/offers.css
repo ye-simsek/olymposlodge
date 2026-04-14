@@ -44,8 +44,8 @@
 }
 
 .offers-hero__title {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
+  font-family: 'Cormorant SC', serif;
+  font-style: normal;
   font-weight: 300;
   font-size: clamp(4.5rem, 10vw, 10rem);
   line-height: 0.95;

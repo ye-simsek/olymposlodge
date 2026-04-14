@@ -487,8 +487,7 @@
 
 /* --- Rooms Page Hero — sticky, rooms scroll over it --- */
 .rooms-page-hero {
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 0;
   height: 100vh;
   min-height: 100vh;

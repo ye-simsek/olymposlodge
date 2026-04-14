@@ -4,6 +4,8 @@
 
 /* ── Wrapper ─────────────────────────────── */
 .offers-dark {
+  position: relative;
+  z-index: 1;
   background: var(--color-warm-gold);
 }
 

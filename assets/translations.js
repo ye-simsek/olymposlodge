@@ -312,7 +312,7 @@ const olTranslations = {
       linker_rooms_body: 'Aqua Super Deluxe\'den Antik Oda\'ya, her oda 20.000 m² bahçe içinde kendi özel terasıyla.',
       linker_rooms_cta: 'Keşfet →',
       nav_offers: 'Teklifler',
-      offer_page_title: 'Teklifler',
+      offer_page_title: 'TEKLİFLER',
       offer_includes_label: 'Her Konaklamada Dahil',
       offer1_title: 'ERKEN YAZ KAÇAMAĞI',
       offer1_desc: 'Haziran sabahları Çıralı\'da sezon dolmadan önce sakindir. Plaj sizindir; ilk yüzüş, ilk kahve, ilk sessizlik. Kalabalık gelmeden önce bu yeri keşfedin.',

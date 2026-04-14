@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-tr-idot]').forEach(el => {
       const raw = el.textContent;
       if (lang === 'tr') {
-        el.innerHTML = raw.replace(/I/g, '<span class="tr-idot">I</span>');
+        el.innerHTML = raw.replace(/[iİI]/g, '<span class="tr-idot">$&</span>');
       } else {
         el.textContent = raw;
       }

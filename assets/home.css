@@ -589,7 +589,7 @@
 .rooms--page {
   position: relative;
   z-index: 1;
-  padding-top: 0;
+  padding-top: var(--header-height, 90px);
   background-color: var(--color-cream);
   background-image: var(--paper-texture);
 }

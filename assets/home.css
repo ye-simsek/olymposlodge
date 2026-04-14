@@ -600,7 +600,6 @@
   padding: 5rem 0;
   background-color: var(--color-cream);
   background-image: var(--paper-texture);
-  border-top: 1px solid var(--color-border);
 }
 
 .rooms-all-includes .section-label {

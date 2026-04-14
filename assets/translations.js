@@ -11,7 +11,7 @@ const olTranslations = {
       hero_title: 'Zaman burada<br>farklı akar.',
       hero_subtitle: 'Gürültü yumuşar, duyular uyanır.<br>Doğa kendi sesini duyurur.',
       glance_rooms_num: '17', glance_rooms_label: 'Oda', glance_garden_num: '20.000 m²', glance_garden_label: 'Bahçe', glance_since_num: '1987', glance_since_label: 'Yılından Beri',
-      conviction_sentence: 'Gereksizden arınan bir yer, daha ince bir şeye dönüşür.',
+      conviction_sentence: 'Gereksizden arınan bir yer, daha öz bir şeye dönüşür.',
       intro_title: 'Olympos Lodge: Likya Kıyısında Samimi Bir Sığınak',
       intro_label: 'Hakkında',
       intro_p1: 'Zümrüt bir vadinin denize açıldığı noktada, zaman farklı akar. Olympos Lodge burada 1987\'ten beri ayakta. Adınızı bilecek kadar küçük. İçinde kaybolacak kadar büyük.',

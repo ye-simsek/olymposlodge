@@ -664,6 +664,7 @@ const olTranslations = {
       linker_rooms_body: 'From Aqua Super Deluxe to the Antique Room, each with its own private terrace within 20,000 m² of garden.',
       linker_rooms_cta: 'Explore →',
       nav_offers: 'Offers',
+      offer_section_label: 'OFFERS',
       offer_page_title: 'Packages',
       offer_includes_label: 'Included in Every Stay',
       offer1_title: 'EARLY SUMMER ESCAPE',

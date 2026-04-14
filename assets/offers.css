@@ -33,6 +33,19 @@
   padding: 0;
   line-height: 1;
   flex-shrink: 0;
+  position: relative;
+}
+/* Turkish İ dot — positioned over the I in "TEKLİFLER" */
+[lang="tr"] .offers-dark__header .section-label::after {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  top: -0.15em;
+  left: calc(50% - 0.05em);
+  transform: translateX(-50%);
 }
 
 /* ── Hero ────────────────────────────────── */

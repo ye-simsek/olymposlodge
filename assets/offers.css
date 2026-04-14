@@ -34,22 +34,6 @@
   line-height: 1;
   flex-shrink: 0;
 }
-/* Turkish İ dot */
-.tr-idot {
-  position: relative;
-  display: inline-block;
-}
-.tr-idot::after {
-  content: '';
-  position: absolute;
-  width: 0.22em;
-  height: 0.22em;
-  border-radius: 50%;
-  background: currentColor;
-  top: -0.1em;
-  left: 50%;
-  transform: translateX(-50%);
-}
 
 /* ── Hero ────────────────────────────────── */
 .offers-hero {

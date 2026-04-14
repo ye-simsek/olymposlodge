@@ -312,6 +312,7 @@ const olTranslations = {
       linker_rooms_body: 'Aqua Super Deluxe\'den Antik Oda\'ya, her oda 20.000 m² bahçe içinde kendi özel terasıyla.',
       linker_rooms_cta: 'Keşfet →',
       nav_offers: 'Teklifler',
+      offer_section_label: 'TEKLİFLER',
       offer_page_title: 'TEKLİFLER',
       offer_includes_label: 'Her Konaklamada Dahil',
       offer1_title: 'ERKEN YAZ KAÇAMAĞI',

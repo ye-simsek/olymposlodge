@@ -26,7 +26,9 @@
 }
 .offers-dark__header .section-label {
   color: #fff;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
+  font-weight: 400;
   margin: 0;
   padding: 0;
   line-height: 1;

@@ -92,6 +92,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
     document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
+    // Turkish İ fix: add dot above uppercase I
+    document.querySelectorAll('[data-tr-idot]').forEach(el => {
+      const raw = el.textContent;
+      if (lang === 'tr') {
+        el.innerHTML = raw.replace(/I/g, '<span class="tr-idot">I</span>');
+      } else {
+        el.textContent = raw;
+      }
+    });
   }
 
   const langSwitch = document.getElementById('langSwitch');

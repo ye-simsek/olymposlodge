@@ -33,18 +33,21 @@
   padding: 0;
   line-height: 1;
   flex-shrink: 0;
-  position: relative;
 }
-/* Turkish İ dot — positioned over the I in "TEKLİFLER" */
-[lang="tr"] .offers-dark__header .section-label::after {
+/* Turkish İ dot */
+.tr-idot {
+  position: relative;
+  display: inline-block;
+}
+.tr-idot::after {
   content: '';
   position: absolute;
-  width: 3px;
-  height: 3px;
+  width: 0.22em;
+  height: 0.22em;
   border-radius: 50%;
-  background: #fff;
-  top: -0.15em;
-  left: calc(50% - 0.05em);
+  background: currentColor;
+  top: -0.1em;
+  left: 50%;
   transform: translateX(-50%);
 }
 

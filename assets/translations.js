@@ -818,7 +818,7 @@ const olTranslations = {
       c_ch2_lead: 'Die antike Stadt Olympos bittet nicht darum, besucht zu werden. Sie bleibt einfach. Treten Sie durch den Garten und gehen Sie zehn Minuten, um sich in einer der besterhaltenen Städte Lykiens wiederzufinden. Grabmäler aus der Römerzeit, Theaterreste und Mauern, die sich zum Meer hin erstrecken.',
       c_ch2_caption: 'Am besten früh morgens oder später Nachmittag · Eintritt kostenpflichtig',
       c_ch3_cat: 'Natur', c_ch3_title: 'Yanartaş: Die ewigen Flammen',
-      c_ch3_lead: 'Aus der Erde aufsteigendes Erdgas entzündet sich an der Oberfläche und brennt seit 2.500 Jahren ohne Unterbrechung. In der Mythologie war dies der Atem der Chimaera. Eine Nachtwanderung wird empfohlen; Flammen, die im Dunkeln zwischen den Felsen aufsteigen, heben jedes Zeitgefühl auf.',
+      c_ch3_lead: 'Aus der Erde aufsteigendes Erdgas entzündet sich an der Oberfläche und brennt seit 2.500 Jahren ohne Unterbrechung. In der Mythologie sind diese Flammen der Atem der Chimaera — des Untiers, das der Held Bellerophon hier vom Rücken des Pegasus aus erlegte. Eine Nachtwanderung wird empfohlen; Flammen, die im Dunkeln zwischen den Felsen aufsteigen, heben jedes Zeitgefühl auf.',
       c_ch3_caption: '3,5 km mit dem Auto · Taschenlampe und festes Schuhwerk',
       c_ch4_cat: 'Wandern', c_ch4_title: 'Lykischer Weg',
       c_ch4_lead: 'Der 540 Kilometer lange Wanderweg, von The Sunday Times als einer der zehn schönsten der Welt ausgezeichnet, führt durch Çıralı. Antike Städte, lykische Gräber, abgelegene Buchten und Bergdörfer wechseln einander ab. Der Çıralı-Abschnitt umfasst die Strecke Olympos–Adrasan.',

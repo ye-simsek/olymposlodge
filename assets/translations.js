@@ -466,7 +466,6 @@ const olTranslations = {
       c_ch2_lead: 'The ancient city of Olympos doesn\'t ask to be visited. It simply remains. Step through the garden and walk ten minutes to find yourself inside one of Lycia\'s best-preserved cities. Roman-era tombs, theatre ruins, and walls that reach toward the sea.',
       c_ch3_cat: 'Nature', c_ch3_title: 'Yanartaş: The Eternal Flames',
       c_ch3_lead: 'Natural gas seeping from the earth ignites at the surface, burning without interruption for 2,500 years. In mythology, these flames are the breath of the Chimaera — the monster slain here by the hero Bellerophon from the back of Pegasus. A night hike is recommended — flames rising between rocks in the dark suspend all sense of time.',
-      c_ch3_caption: '3.5 km by car · Torch and sturdy shoes',
       c_ch4_cat: 'Hiking', c_ch4_title: 'Lycian Way',
       c_ch4_lead: 'Named one of the world\'s ten finest walking routes by The Sunday Times, this 540-kilometre trail passes through Çıralı. Ancient cities, Lycian tombs, remote coves, and mountain villages follow one another in turn. The Çıralı section covers the Olympos–Adrasan stretch.',
       c_ch4_caption: 'Difficulty moderate – hard · Water and sturdy shoes',

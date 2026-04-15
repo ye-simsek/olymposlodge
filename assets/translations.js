@@ -119,7 +119,7 @@ const olTranslations = {
       c_ch1_cat: 'Plaj', c_ch1_title: 'Çıralı Sahili',
       c_ch1_lead: 'Yaklaşık 3,5 kilometre uzunluğunda, ince çakıl ve kumdan oluşan el değmemiş bir Akdeniz kıyısı. Kıyı şeridinin tamamı doğal sit alanı; oteller ve restoranlar beachfront\'a inşa edilemez. Her yıl Mayıs\'tan Eylül\'e kadar Caretta caretta deniz kaplumbağaları bu plajda yumurtalar.',
       c_ch1_aside: 'Her yaz caretta carettalar yuvalamak için döner. Plaj onlarındır.<br>Arada bir size de eşlik etmeye razı olurlar.',
-      c_ch1_caption: '30 m bahçeden · Caretta sezonu Mayıs – Eylül',
+      c_ch1_caption: '30 m bahçeden · Şezlong, şemsiye, kabana dahil',
       c_ch2_cat: 'Arkeoloji', c_ch2_title: 'Olympos Antik Kenti',
       c_ch2_lead: 'Olympos Antik Kenti ziyaret edilmek istemez. Sadece durur. Lodge\'un ismini aldığı antik kent, otelin hemen bitişiğindedir; bahçeden çıkıp on dakika yürüdüğünüzde Likya\'nın en iyi korunmuş kentlerinden birinin içindesinizdir. Roma döneminden kalma mezarlar, tiyatro kalıntıları ve denize uzanan surlar.',
       c_ch2_caption: '800 m · 10 dk yürüyüş · Sabah erken ya da akşam geç',

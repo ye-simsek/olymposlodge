@@ -819,7 +819,7 @@ const olTranslations = {
       c_ch2_caption: 'Am besten früh morgens oder später Nachmittag · Eintritt kostenpflichtig',
       c_ch3_cat: 'Natur', c_ch3_title: 'Yanartaş: Die ewigen Flammen',
       c_ch3_lead: 'Aus der Erde aufsteigendes Erdgas entzündet sich an der Oberfläche und brennt seit 2.500 Jahren ohne Unterbrechung. In der Mythologie war dies der Atem der Chimaera. Eine Nachtwanderung wird empfohlen; Flammen, die im Dunkeln zwischen den Felsen aufsteigen, heben jedes Zeitgefühl auf.',
-      c_ch3_caption: '3,5 km · 10 Min. mit dem Auto · Am besten nach Sonnenuntergang',
+      c_ch3_caption: '3,5 km mit dem Auto · Taschenlampe und festes Schuhwerk',
       c_ch4_cat: 'Wandern', c_ch4_title: 'Lykischer Weg',
       c_ch4_lead: 'Der 540 Kilometer lange Wanderweg, von The Sunday Times als einer der zehn schönsten der Welt ausgezeichnet, führt durch Çıralı. Antike Städte, lykische Gräber, abgelegene Buchten und Bergdörfer wechseln einander ab. Der Çıralı-Abschnitt umfasst die Strecke Olympos–Adrasan.',
       c_ch4_caption: '540-km-Weg · Çıralı-Abschnitt Olympos – Adrasan',

@@ -116,7 +116,7 @@ const olTranslations = {
       c_intro_title: 'Başka Bir Kıyı: Çıralı',
       c_intro_p1: 'Türkiye\'nin güney kıyısında, Toros dağlarının denize kavuştuğu noktada küçük bir vadi uzanır. Çıralı, 1990\'lardan bu yana kıyı koruma statüsüyle güvence altına alınmış, yapılaşmanın sınırlandırıldığı nadir yerleşimlerden biridir; bu yüzden burada yüksek oteller, beton rıhtımlar ya da kalabalık sahil şeritleri göremezsiniz. 3,5 kilometre uzunluğundaki plaj, Caretta caretta deniz kaplumbağaları için her yıl yuvalamanın sürdüğü alan olarak uluslararası koruma statüsü taşımaktadır.',
       c_intro_p2: 'Çıralı\'nın arka planı, yerleşim kadar eskidir. MÖ 2. yüzyılda kurulmuş Antik Olympos kenti, otelin hemen bitişiğinde, Likya Birliği\'nin önemli liman şehirlerinden biriydi; bugün Roma dönemi mezarları ve tiyatro kalıntıları vadinin içine karışmış durumdadır. Birkaç kilometre ötede, Yanartaş\'ta yeraltından sızan doğal gazın 2.500 yıldır yakıp tuttuğu alevler Homeros\'un Chimaera efsanesine ilham kaynağı olmuştur. Çıralı, mitoloji, tarih ve doğanın bu kadar iç içe geçtiği ender yerlerden biridir.',
-      c_ch1_cat: 'Plaj', c_ch1_title: 'Çıralı Plajı',
+      c_ch1_cat: 'Plaj', c_ch1_title: 'Çıralı Sahili',
       c_ch1_lead: 'Yaklaşık 3,5 kilometre uzunluğunda, ince çakıl ve kumdan oluşan el değmemiş bir Akdeniz kıyısı. Kıyı şeridinin tamamı doğal sit alanı; oteller ve restoranlar beachfront\'a inşa edilemez. Her yıl Mayıs\'tan Ekim\'e kadar Caretta caretta deniz kaplumbağaları bu plajda yumurtalar.',
       c_ch1_aside: 'Her yaz caretta carettalar yuvalamak için döner. Plaj onlarındır. Arada bir size de eşlik etmeye razı olurlar.',
       c_ch1_f1: '<span>Mesafe</span><strong>30 m · 1 dk</strong>', c_ch1_f2: '<span>Uzunluk</span><strong>~3,5 km</strong>',

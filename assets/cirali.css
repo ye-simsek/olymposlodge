@@ -543,44 +543,17 @@
   border-left: 2px solid var(--color-warm-gold);
 }
 
-.dest-chapter__facts {
-  display: flex;
-  list-style: none;
+.dest-chapter__caption {
   margin-top: 2rem;
-  padding-top: 1.5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--color-border);
-  gap: 0;
-}
-
-.dest-chapter__facts li {
-  flex: 1;
-  padding-right: 1.5rem;
-  margin-right: 1.5rem;
-  border-right: 1px solid var(--color-border);
-}
-
-.dest-chapter__facts li:last-child {
-  border-right: none;
-  padding-right: 0;
-  margin-right: 0;
-}
-
-.dest-chapter__facts li span {
-  display: block;
-  font-family: var(--font-accent);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   color: var(--color-warm-gold);
-  margin-bottom: 0.5rem;
-}
-
-.dest-chapter__facts li strong {
-  display: block;
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.88rem;
-  color: var(--color-text);
 }
 
 /* ---- Pull quote ---- */

@@ -430,7 +430,7 @@
 }
 
 .dest-chapter--center .dest-chapter__lead,
-.dest-chapter--center .dest-chapter__facts,
+.dest-chapter--center .dest-chapter__caption,
 .dest-chapter--center .dest-chapter__tekne-right {
   grid-column: 2;
 }

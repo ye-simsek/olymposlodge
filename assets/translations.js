@@ -123,7 +123,6 @@ const olTranslations = {
       c_ch2_lead: 'Olympos Antik Kenti ziyaret edilmek istemez. Sadece durur. Lodge\'un ismini aldığı antik kent, otelin hemen bitişiğindedir; bahçeden çıkıp on dakika yürüdüğünüzde Likya\'nın en iyi korunmuş kentlerinden birinin içindesinizdir. Roma döneminden kalma mezarlar, tiyatro kalıntıları ve denize uzanan surlar.',
       c_ch3_cat: 'Doğa', c_ch3_title: 'Yanartaş: Sönmeyen Alevler',
       c_ch3_lead: 'Yeraltından sızan doğal gazın yüzeyde tutuşmasıyla oluşan, 2.500 yıldır kesintisiz yanan alevler. Mitolojide bu alevler, kahraman Bellerophon\'un Pegasus\'un sırtından öldürdüğü Chimaera canavarının nefesidir. Gece yürüyüşü önerilir; karanlıkta kayalar arasından çıkan alevler zaman kavramını askıya alır.',
-      c_ch3_caption: '3,5 km arabayla · El feneri ve sağlam ayakkabı',
       c_ch4_cat: 'Yürüyüş', c_ch4_title: 'Likya Yolu',
       c_ch4_lead: 'The Sunday Times\'ın dünyanın en iyi on yürüyüş rotasından biri seçtiği 540 kilometrelik patika, Çıralı\'dan geçer. Antik kentler, Likya mezarları, ıssız koylar ve dağ köyleri birbirini izler. Çıralı bölümü Olympos–Adrasan hattını kapsar.',
       c_ch4_caption: 'Zorluk orta – zor · Su ve sağlam ayakkabı',

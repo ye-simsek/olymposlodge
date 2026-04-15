@@ -128,7 +128,7 @@ const olTranslations = {
       c_ch3_caption: '3,5 km arabayla · El feneri ve sağlam ayakkabı',
       c_ch4_cat: 'Yürüyüş', c_ch4_title: 'Likya Yolu',
       c_ch4_lead: 'The Sunday Times\'ın dünyanın en iyi on yürüyüş rotasından biri seçtiği 540 kilometrelik patika, Çıralı\'dan geçer. Antik kentler, Likya mezarları, ıssız koylar ve dağ köyleri birbirini izler. Çıralı bölümü Olympos–Adrasan hattını kapsar.',
-      c_ch4_caption: '540 km patika · Çıralı bölümü Olympos – Adrasan',
+      c_ch4_caption: 'Zorluk orta – zor · Sezon Nisan – Haziran, Eylül – Kasım',
       c_pullquote: 'Bazı yerler sizi değiştirmez. Sadece kendinizi hatırlatır.',
       c_act_label: 'Aktiviteler',
       c_tekne_label: 'Deniz', c_tekne_title: 'Tekne Turu',

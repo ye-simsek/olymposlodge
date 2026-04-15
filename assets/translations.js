@@ -466,7 +466,7 @@ const olTranslations = {
       c_ch1_cat: 'Beach', c_ch1_title: 'Çıralı Beach',
       c_ch1_lead: 'A pristine Mediterranean shoreline of fine pebble and sand, stretching approximately 3.5 kilometres. The entire coastal strip is a protected natural area — hotels and restaurants cannot be built on the beachfront. Each year from May to September, Caretta caretta sea turtles nest along this shore.',
       c_ch1_aside: 'Every summer the caretta caretta return to nest. The beach is theirs.<br>Occasionally they\'ll let you join them.',
-      c_ch1_caption: '30 m from the garden · Caretta season May – September',
+      c_ch1_caption: '30 m from the garden · Lounger, umbrella, cabana included',
       c_ch2_cat: 'Archaeology', c_ch2_title: 'Ancient City of Olympos',
       c_ch2_lead: 'The ancient city of Olympos doesn\'t ask to be visited. It simply remains. Step through the garden and walk ten minutes to find yourself inside one of Lycia\'s best-preserved cities. Roman-era tombs, theatre ruins, and walls that reach toward the sea.',
       c_ch2_caption: '800 m · 10 min walk · Early morning or late afternoon',

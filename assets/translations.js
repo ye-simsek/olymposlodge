@@ -807,7 +807,6 @@ const olTranslations = {
       c_ch1_aside: 'Jeden Sommer kehren die Caretta caretta zum Nisten zurück. Der Strand gehört ihnen.<br>Gelegentlich lassen sie Sie mitmachen.',
       c_ch2_cat: 'Archäologie', c_ch2_title: 'Antike Stadt Olympos',
       c_ch2_lead: 'Die antike Stadt Olympos bittet nicht darum, besucht zu werden. Sie bleibt einfach. Treten Sie durch den Garten und gehen Sie zehn Minuten, um sich in einer der besterhaltenen Städte Lykiens wiederzufinden. Grabmäler aus der Römerzeit, Theaterreste und Mauern, die sich zum Meer hin erstrecken.',
-      c_ch2_caption: 'Am besten früh morgens oder später Nachmittag · Eintritt kostenpflichtig',
       c_ch3_cat: 'Natur', c_ch3_title: 'Yanartaş: Die ewigen Flammen',
       c_ch3_lead: 'Aus der Erde aufsteigendes Erdgas entzündet sich an der Oberfläche und brennt seit 2.500 Jahren ohne Unterbrechung. In der Mythologie sind diese Flammen der Atem der Chimaera — des Untiers, das der Held Bellerophon hier vom Rücken des Pegasus aus erlegte. Eine Nachtwanderung wird empfohlen; Flammen, die im Dunkeln zwischen den Felsen aufsteigen, heben jedes Zeitgefühl auf.',
       c_ch3_caption: '3,5 km mit dem Auto · Taschenlampe und festes Schuhwerk',

@@ -822,7 +822,7 @@ const olTranslations = {
       c_ch3_caption: '3,5 km mit dem Auto · Taschenlampe und festes Schuhwerk',
       c_ch4_cat: 'Wandern', c_ch4_title: 'Lykischer Weg',
       c_ch4_lead: 'Der 540 Kilometer lange Wanderweg, von The Sunday Times als einer der zehn schönsten der Welt ausgezeichnet, führt durch Çıralı. Antike Städte, lykische Gräber, abgelegene Buchten und Bergdörfer wechseln einander ab. Der Çıralı-Abschnitt umfasst die Strecke Olympos–Adrasan.',
-      c_ch4_caption: '540-km-Weg · Çıralı-Abschnitt Olympos – Adrasan',
+      c_ch4_caption: 'Schwierigkeit mittel – anspruchsvoll · Saison April – Juni, September – November',
       c_pullquote: 'Manche Orte verändern einen nicht. Sie erinnern einen nur an sich selbst.',
       c_act_label: 'Aktivitäten',
       c_tekne_label: 'Meer', c_tekne_title: 'Bootsausflug',

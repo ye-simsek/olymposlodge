@@ -125,7 +125,6 @@ const olTranslations = {
       c_ch3_lead: 'Yeraltından sızan doğal gazın yüzeyde tutuşmasıyla oluşan, 2.500 yıldır kesintisiz yanan alevler. Mitolojide bu alevler, kahraman Bellerophon\'un Pegasus\'un sırtından öldürdüğü Chimaera canavarının nefesidir. Gece yürüyüşü önerilir; karanlıkta kayalar arasından çıkan alevler zaman kavramını askıya alır.',
       c_ch4_cat: 'Yürüyüş', c_ch4_title: 'Likya Yolu',
       c_ch4_lead: 'The Sunday Times\'ın dünyanın en iyi on yürüyüş rotasından biri seçtiği 540 kilometrelik patika, Çıralı\'dan geçer. Antik kentler, Likya mezarları, ıssız koylar ve dağ köyleri birbirini izler. Çıralı bölümü Olympos–Adrasan hattını kapsar.',
-      c_ch4_caption: 'Zorluk orta – zor · Su ve sağlam ayakkabı',
       c_pullquote: 'Bazı yerler sizi değiştirmez. Sadece kendinizi hatırlatır.',
       c_act_label: 'Aktiviteler',
       c_tekne_label: 'Deniz', c_tekne_title: 'Tekne Turu',

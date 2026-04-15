@@ -532,12 +532,16 @@
 }
 
 .dest-chapter__aside {
-  font-family: var(--font-body);
-  font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
   font-style: italic;
-  line-height: 1.8;
-  color: var(--color-text-muted);
-  margin-top: 0.75rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #6E5A30;
+  margin-top: 1.75rem;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 2px solid var(--color-warm-gold);
+  max-width: 42ch;
 }
 
 .dest-chapter__facts {

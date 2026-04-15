@@ -193,6 +193,7 @@
 
   <!-- Full-screen Navigation Overlay — TEST: split-screen layout -->
   <style>
+    /* ── layout ────────────────────────────────────────────── */
     .nav-overlay {
       flex-direction: row !important;
       align-items: stretch !important;
@@ -200,37 +201,124 @@
       background: none !important;
       z-index: 115 !important;
     }
+
+    /* ── left panel ─────────────────────────────────────────── */
     .nav-overlay__left {
+      position: relative;
       width: 50%;
-      min-width: 280px;
+      min-width: 300px;
       background-color: #ede8df;
       background-image: var(--paper-texture);
+      border-right: 1px solid var(--color-warm-gold);
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 4rem 3.5rem 3rem 8rem;
+      padding: 4rem 3.5rem 3.5rem 8rem;
     }
-    .nav-overlay__photo {
-      width: 50%;
-      flex: none;
-      background: url('assets/images/pavillion.jpg') center / cover no-repeat;
+
+    /* logo */
+    .nav-overlay__logo {
+      position: absolute;
+      top: 2.8rem;
+      left: 8rem;
+      width: 110px;
+      opacity: 0.7;
+      filter: brightness(0);
     }
+
+    /* close button */
+    .nav-overlay__close {
+      position: absolute;
+      top: 2.6rem;
+      right: 2.8rem;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+    }
+    .nav-overlay__close span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--color-text);
+      transition: opacity 0.2s;
+    }
+    .nav-overlay__close span:first-child {
+      transform: rotate(45deg) translate(0.5px, 0.5px);
+    }
+    .nav-overlay__close span:last-child {
+      transform: rotate(-45deg) translate(0.5px, -0.5px);
+    }
+    .nav-overlay__close:hover span { opacity: 0.45; }
+
+    /* ── nav links ──────────────────────────────────────────── */
     .nav-overlay .nav-links {
       text-align: left !important;
       align-items: flex-start;
     }
+    .nav-overlay .nav-links li {
+      overflow: visible !important;
+    }
+    .nav-item-wrap {
+      display: flex;
+      flex-direction: column;
+      padding: 0.3em 0;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-overlay .nav-links li:hover .nav-item-wrap {
+      transform: translateX(7px);
+    }
     .nav-overlay .nav-links a {
       font-size: clamp(1.6rem, 2.8vw, 2.6rem) !important;
-      padding: 0.25em 0 !important;
+      padding: 0 !important;
       color: var(--color-text) !important;
+      position: relative;
+      display: inline-block !important;
     }
-    .nav-overlay .nav-links a:hover {
-      color: var(--color-warm-gold) !important;
+    /* gold underline draws from left on hover */
+    .nav-overlay .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 0;
+      background: var(--color-warm-gold);
+      transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
     }
+    .nav-overlay .nav-links li:hover a::after {
+      width: 100%;
+    }
+    /* italic descriptor — fades up on hover */
+    .nav-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      color: var(--color-text-light);
+      margin-top: 2px;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .nav-overlay .nav-links li:hover .nav-sub {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── footer ─────────────────────────────────────────────── */
     .nav-overlay .nav-footer {
       text-align: left;
       color: var(--color-text-light);
-      margin-top: 3rem;
+      margin-top: 2.5rem;
     }
     .nav-overlay .nav-footer a {
       color: var(--color-text-light);
@@ -238,17 +326,103 @@
     .nav-overlay .nav-footer a:hover {
       color: var(--color-warm-gold);
     }
+
+    /* ── right photo panel ──────────────────────────────────── */
+    .nav-overlay__photo {
+      width: 50%;
+      flex: none;
+      position: relative;
+      overflow: hidden;
+      clip-path: inset(0 100% 0 0);
+      transition: clip-path 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+    .nav-overlay__photo-img {
+      position: absolute;
+      inset: 0;
+      background: url('assets/images/pavillion.jpg') center / cover no-repeat;
+      transform: scale(1.04);
+      transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+    }
+    .nav-overlay.open .nav-overlay__photo {
+      clip-path: inset(0 0% 0 0);
+    }
+    .nav-overlay.open .nav-overlay__photo-img {
+      transform: scale(1);
+    }
+    /* bottom fade + caption */
+    .nav-overlay__photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(28,24,20,0.5) 0%, transparent 45%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .nav-overlay__caption {
+      position: absolute;
+      bottom: 2.8rem;
+      left: 3rem;
+      z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: rgba(247,245,240,0.7);
+      pointer-events: none;
+    }
   </style>
   <nav class="nav-overlay" id="navOverlay">
     <div class="nav-overlay__left">
+      <img class="nav-overlay__logo"
+           src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png"
+           alt="Olympos Lodge" width="220" height="110">
+      <button class="nav-overlay__close" aria-label="Kapat"
+              onclick="document.getElementById('menuToggle').click()">
+        <span></span><span></span>
+      </button>
       <ul class="nav-links">
-        <li><a href="#hero" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
-        <li><a href="pages/rooms.html" data-nav data-i18n="nav_rooms">Odalar</a></li>
-        <li><a href="pages/cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a></li>
-        <li><a href="pages/location.html" data-nav data-i18n="nav_location">Konum</a></li>
-        <li><a href="pages/gallery.html" data-nav data-i18n="nav_gallery">Galeri</a></li>
-        <li><a href="pages/offers.html" data-nav data-i18n="nav_offers">Teklifler</a></li>
-        <li><a href="pages/contact.html" data-nav data-i18n="nav_contact">İletişim</a></li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="#hero" data-nav data-i18n="nav_home">Ana Sayfa</a>
+            <span class="nav-sub">kıyıya açılan kapı</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="pages/rooms.html" data-nav data-i18n="nav_rooms">Odalar</a>
+            <span class="nav-sub">on yedi oda, bir kıyı</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="pages/cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a>
+            <span class="nav-sub">ateş, orman, deniz</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="pages/location.html" data-nav data-i18n="nav_location">Konum</a>
+            <span class="nav-sub">Çıralı, Antalya</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="pages/gallery.html" data-nav data-i18n="nav_gallery">Galeri</a>
+            <span class="nav-sub">ışık ve gölge</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="pages/offers.html" data-nav data-i18n="nav_offers">Teklifler</a>
+            <span class="nav-sub">erken gelen kazanır</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="pages/contact.html" data-nav data-i18n="nav_contact">İletişim</a>
+            <span class="nav-sub">sizi bekliyoruz</span>
+          </div>
+        </li>
       </ul>
       <div class="nav-footer">
         <a href="tel:+905323083486">+90 532 308 34 86</a>
@@ -257,7 +431,10 @@
         </div>
       </div>
     </div>
-    <div class="nav-overlay__photo"></div>
+    <div class="nav-overlay__photo">
+      <div class="nav-overlay__photo-img"></div>
+      <span class="nav-overlay__caption">Çıralı · Antalya</span>
+    </div>
   </nav>
 
 

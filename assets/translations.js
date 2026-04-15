@@ -475,7 +475,7 @@ const olTranslations = {
       c_ch3_caption: '3.5 km by car · Torch and sturdy shoes',
       c_ch4_cat: 'Hiking', c_ch4_title: 'Lycian Way',
       c_ch4_lead: 'Named one of the world\'s ten finest walking routes by The Sunday Times, this 540-kilometre trail passes through Çıralı. Ancient cities, Lycian tombs, remote coves, and mountain villages follow one another in turn. The Çıralı section covers the Olympos–Adrasan stretch.',
-      c_ch4_caption: 'Difficulty moderate – hard · Season April – June, September – November',
+      c_ch4_caption: 'Difficulty moderate – hard · Water and sturdy shoes',
       c_pullquote: 'Some places do not change you. They simply remind you of yourself.',
       c_act_label: 'Activities',
       c_tekne_label: 'Sea', c_tekne_title: 'Boat Trip',

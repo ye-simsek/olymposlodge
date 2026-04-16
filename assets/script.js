@@ -409,8 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const PAD_START = 23;      // expanded row padding
     const PAD_END = 14;        // collapsed row padding
-    const TRAVEL = 80;         // px of scroll over which row padding collapses
-    const ICON_TRIGGER = 60;   // px of scroll before icons pull up
+    const TRAVEL = 30;         // px of scroll over which row padding collapses
+    const ICON_TRIGGER = 10;   // px of scroll before icons pull up
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;

@@ -405,11 +405,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageName = subnav.querySelector('.page-name');
     let wasSticky = false;
     const isMobile = () => window.innerWidth < 1024;
+    const naturalTop = subnav.offsetTop;
 
     window.addEventListener('scroll', () => {
-      const rect = subnav.getBoundingClientRect();
       const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
-      const isSticky = rect.top <= headerH + 1;
+      const isSticky = window.scrollY > naturalTop - headerH;
 
       if (isSticky !== wasSticky) {
         wasSticky = isSticky;

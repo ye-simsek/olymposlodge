@@ -10,7 +10,7 @@
    Subnav — icon bar with sticky collapse
    ============================================ */
 :root {
-  --icon-offset: 40px;
+  --icon-offset: 32px;
 }
 
 #subnav {

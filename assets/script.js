@@ -399,27 +399,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Dest page: snap icons behind header at 55% coverage ---
-  const destIconsRow = document.querySelector('.dest-icons-row');
-  if (destIconsRow) {
-    let snapped = false;
-    let snapScrollY = null;
-    const header = document.getElementById('header');
+  // --- Subnav: toggle sticky class when bar sticks to header ---
+  const subnav = document.getElementById('subnav');
+  if (subnav) {
+    const pageName = subnav.querySelector('.page-name');
+    let wasSticky = false;
+    const isMobile = () => window.innerWidth < 1024;
+
     window.addEventListener('scroll', () => {
-      const headerBottom = header.offsetHeight;
-      // Use offsetTop for layout position (unaffected by transform)
-      const naturalTop = destIconsRow.offsetTop - window.scrollY;
-      const totalH = destIconsRow.offsetHeight;
-      const covered = Math.max(0, headerBottom - naturalTop);
-      const pct = totalH > 0 ? covered / totalH : 0;
-      if (!snapped && pct >= 0.55) {
-        snapped = true;
-        snapScrollY = window.scrollY;
-        destIconsRow.classList.add('dest-icons--snap');
-      } else if (snapped && window.scrollY < snapScrollY - 5) {
-        snapped = false;
-        snapScrollY = null;
-        destIconsRow.classList.remove('dest-icons--snap');
+      const rect = subnav.getBoundingClientRect();
+      const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
+      const isSticky = rect.top <= headerH + 1;
+
+      if (isSticky !== wasSticky) {
+        wasSticky = isSticky;
+        subnav.classList.toggle('sticky', isSticky);
+
+        if (isMobile() && pageName) {
+          document.body.classList.toggle('show-page-name', isSticky);
+          pageName.classList.toggle('is-visible', isSticky);
+        }
       }
     }, { passive: true });
   }

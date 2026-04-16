@@ -52,6 +52,7 @@
 
 #subnav ul a[style] {
   padding-top: var(--icon-offset);
+  transition: padding-top 0.45s;
 }
 
 #subnav ul a[style]::before {
@@ -81,7 +82,6 @@
 
 #subnav.sticky .row:has(a[style]) ul a[style] {
   padding-top: 0;
-  transition: padding-top 0.45s;
 }
 
 #subnav.sticky .row:has(a[style]) ul a[style]::before {

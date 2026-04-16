@@ -52,6 +52,7 @@
 
 #subnav ul a[style] {
   padding-top: var(--icon-offset);
+  transition: padding-top 0.45s;
 }
 
 #subnav ul a[style]::before {

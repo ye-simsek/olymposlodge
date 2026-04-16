@@ -76,6 +76,10 @@
 }
 
 /* Sticky collapse — icons pull up and fade */
+#subnav.sticky .row:has(a[style]) ul a[style] {
+  padding-top: 0;
+}
+
 #subnav.sticky .row:has(a[style]) ul a[style]::before {
   transform: translateX(-50%) translateY(-100%);
   opacity: 0;

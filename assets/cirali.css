@@ -7,6 +7,140 @@
    ======================================== */
 
 /* ============================================
+   Subnav — icon bar with sticky collapse
+   ============================================ */
+:root {
+  --icon-offset: 40px;
+}
+
+#subnav {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 30;
+  background-color: var(--color-cream);
+  background-image: var(--paper-texture);
+  border-bottom: 1px solid var(--color-border);
+}
+
+#subnav .row {
+  padding-block: 23px;
+}
+
+#subnav ul {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  align-items: baseline;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#subnav ul a {
+  position: relative;
+  display: block;
+  font-family: var(--font-sc);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  color: var(--color-warm-gold);
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.3s;
+}
+
+#subnav ul a[style] {
+  padding-top: var(--icon-offset);
+}
+
+#subnav ul a[style]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 35px;
+  width: 35px;
+  background-image: var(--icon);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translateX(-50%);
+  transition: transform 0.45s, opacity 0.45s;
+}
+
+#subnav ul a.active {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+/* Sticky collapse — icons pull up and fade */
+#subnav.sticky .row {
+  padding-block: 14px;
+}
+
+#subnav.sticky .row:has(a[style]) ul a[style] {
+  padding-top: 0;
+  transition: padding-top 0.45s;
+}
+
+#subnav.sticky .row:has(a[style]) ul a[style]::before {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+}
+
+/* Page name label — visible in sticky state */
+#subnav .page-name {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 0.5 * var(--icon-offset));
+  transform: translate(-50%, -50%);
+  font-family: var(--font-sc);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--color-warm-gold);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#subnav.sticky .page-name {
+  top: 50%;
+}
+
+/* Mobile */
+@media (max-width: 1023.98px) {
+  #subnav .row {
+    padding-block: 14px;
+  }
+
+  #subnav ul {
+    gap: 6.25vw;
+    padding-inline: 6.25vw;
+    justify-content: left;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #subnav ul::-webkit-scrollbar { display: none; }
+
+  #subnav ul a[style]::before {
+    height: 28px;
+    width: 28px;
+  }
+
+  /* On mobile sticky: show page-name, hide links */
+  body.show-page-name #subnav .page-name.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  body.show-page-name #subnav ul {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* ============================================
    Child Pages (Çıralı, Chimaera, Olympos)
    ============================================ */
 .child-hero {

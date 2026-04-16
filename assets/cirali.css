@@ -189,9 +189,9 @@
   clip-path: inset(0);
 }
 .page--dest .child-hero__content {
-  position: sticky;
-  top: calc(var(--header-height) + 2rem);
-  bottom: auto;
+  position: absolute;
+  bottom: 4rem;
+  top: auto;
   transform: none;
   z-index: 2;
 }

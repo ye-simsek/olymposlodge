@@ -170,10 +170,10 @@
 }
 
 .child-hero--full .child-hero__content {
-  bottom: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
+  bottom: 4rem;
+  top: auto;
+  transform: none;
+  text-align: left;
 }
 
 .child-hero--full .child-hero__title {

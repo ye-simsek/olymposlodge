@@ -399,34 +399,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Subnav: scroll-linked padding collapse, then icon pull-up ---
+  // --- Subnav: scroll-linked row padding, then icon pull-up via class ---
   const subnav = document.getElementById('subnav');
   if (subnav) {
     const pageName = subnav.querySelector('.page-name');
     const row = subnav.querySelector('.row');
-    const links = subnav.querySelectorAll('ul a[style]');
     let wasSticky = false;
     const isMobile = () => window.innerWidth < 1024;
 
     const PAD_START = 23;      // expanded row padding
     const PAD_END = 14;        // collapsed row padding
-    const ICON_PAD = 40;       // --icon-offset
-    const TRAVEL = 80;         // px of scroll to fully collapse padding
+    const TRAVEL = 80;         // px of scroll over which row padding collapses
     const ICON_TRIGGER = 60;   // px of scroll before icons pull up
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-      const t = Math.min(1, y / TRAVEL);
 
-      // Interpolate row padding
+      // Interpolate row padding only — icons stay in place
+      const t = Math.min(1, y / TRAVEL);
       const rowPad = PAD_START - t * (PAD_START - PAD_END);
       row.style.paddingBlock = rowPad + 'px';
 
-      // Interpolate link icon padding
-      const linkPad = ICON_PAD * (1 - t);
-      links.forEach(a => { a.style.paddingTop = linkPad + 'px'; });
-
-      // Toggle icon hide at threshold
+      // Toggle .sticky for icon pull-up (CSS transition handles animation)
       const isSticky = y > ICON_TRIGGER;
       if (isSticky !== wasSticky) {
         wasSticky = isSticky;

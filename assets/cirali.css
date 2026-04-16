@@ -322,7 +322,7 @@
 .page--dest .child-hero__content {
   position: absolute;
   bottom: auto;
-  top: calc(100svh - var(--header-height) - 100px - 6rem);
+  top: calc(100svh - var(--header-height) - 100px - 14rem);
   left: 0;
   transform: none;
   text-align: left;

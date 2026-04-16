@@ -410,7 +410,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const PAD_START = 23;      // expanded row padding
     const PAD_END = 14;        // collapsed row padding
     const TRAVEL = 30;         // px of scroll over which row padding collapses
-    const ICON_TRIGGER = 10;   // px of scroll before icons pull up
+    const STICK_AT = 10;       // px of scroll to enter sticky
+    const UNSTICK_AT = 3;      // px of scroll to leave sticky (hysteresis)
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
@@ -420,8 +421,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const rowPad = PAD_START - t * (PAD_START - PAD_END);
       row.style.paddingBlock = rowPad + 'px';
 
-      // Toggle .sticky for icon pull-up (CSS transition handles animation)
-      const isSticky = y > ICON_TRIGGER;
+      // Toggle .sticky with hysteresis to prevent jitter
+      const isSticky = wasSticky ? y > UNSTICK_AT : y > STICK_AT;
       if (isSticky !== wasSticky) {
         wasSticky = isSticky;
         subnav.classList.toggle('sticky', isSticky);

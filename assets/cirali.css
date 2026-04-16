@@ -123,8 +123,8 @@
   #subnav ul::-webkit-scrollbar { display: none; }
 
   #subnav ul a[style]::before {
-    height: 28px;
-    width: 28px;
+    height: 22px;
+    width: 22px;
   }
 
   /* On mobile sticky: show page-name, hide links */

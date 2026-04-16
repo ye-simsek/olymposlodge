@@ -166,7 +166,7 @@
 }
 
 .child-hero--full {
-  height: 100vh;
+  height: calc(100svh - var(--header-height));
 }
 
 .child-hero--full .child-hero__content {

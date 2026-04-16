@@ -399,18 +399,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Subnav: toggle sticky class when bar sticks to header ---
+  // --- Subnav: scroll-linked padding collapse, then icon pull-up ---
   const subnav = document.getElementById('subnav');
   if (subnav) {
     const pageName = subnav.querySelector('.page-name');
+    const row = subnav.querySelector('.row');
+    const links = subnav.querySelectorAll('ul a[style]');
     let wasSticky = false;
     const isMobile = () => window.innerWidth < 1024;
-    const naturalTop = subnav.offsetTop;
+
+    const PAD_START = 23;      // expanded row padding
+    const PAD_END = 14;        // collapsed row padding
+    const ICON_PAD = 40;       // --icon-offset
+    const TRAVEL = 80;         // px of scroll to fully collapse padding
+    const ICON_TRIGGER = 60;   // px of scroll before icons pull up
 
     window.addEventListener('scroll', () => {
-      const headerH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height'));
-      const isSticky = window.scrollY > naturalTop - headerH;
+      const y = window.scrollY;
+      const t = Math.min(1, y / TRAVEL);
 
+      // Interpolate row padding
+      const rowPad = PAD_START - t * (PAD_START - PAD_END);
+      row.style.paddingBlock = rowPad + 'px';
+
+      // Interpolate link icon padding
+      const linkPad = ICON_PAD * (1 - t);
+      links.forEach(a => { a.style.paddingTop = linkPad + 'px'; });
+
+      // Toggle icon hide at threshold
+      const isSticky = y > ICON_TRIGGER;
       if (isSticky !== wasSticky) {
         wasSticky = isSticky;
         subnav.classList.toggle('sticky', isSticky);

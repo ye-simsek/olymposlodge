@@ -61,8 +61,8 @@
   position: absolute;
   top: 0;
   left: 50%;
-  height: 35px;
-  width: 35px;
+  height: 26px;
+  width: 26px;
   background-image: var(--icon);
   background-size: contain;
   background-position: center;

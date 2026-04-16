@@ -24,6 +24,7 @@
 
 #subnav .row {
   padding-block: 23px;
+  transition: padding-block 0.45s;
 }
 
 #subnav ul {

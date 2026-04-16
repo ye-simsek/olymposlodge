@@ -28,9 +28,8 @@
 }
 
 #subnav ul {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   list-style: none;
   margin: 0;
   padding: 0;

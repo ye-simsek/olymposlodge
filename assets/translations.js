@@ -480,7 +480,7 @@ const olTranslations = {
       c_act4_desc: 'Bicycles are available to guests at no charge. Ideal routes run the length of the Çıralı valley.',
       c_tahtali_label: 'Panorama', c_tahtali_title: 'Tahtalı Cable Car',
       c_tahtali_desc: 'A ride to the 2,365-metre summit. Panoramic views over the Mediterranean, the Çıralı valley, and the coast. One of the world\'s longest single-span cable cars.',
-      c_tahtali_f1: '<span>Distance</span><strong>15 km</strong>', c_tahtali_f2: '<span>Summit</span><strong>2,365 m</strong>', c_tahtali_f3: '<span>Season</span><strong>April – November</strong>',
+      c_tahtali_f1: '<span>Summit</span><strong>2,365 m</strong>', c_tahtali_f2: '<span>Distance</span><strong>15 km</strong>',
       c_nearby_label: 'Beyond Çıralı',
       c_ring_10min: '~10 min', c_ring_30min: '~30 min', c_ring_1hr: '~1 hour',
       c_nearby1_title: 'Ancient City of Olympos', c_nearby1_time: '10 min walk', c_nearby1_desc: 'The Lycian port city right next to the lodge. Roman tombs, theatre ruins, and walls reaching toward the sea.',

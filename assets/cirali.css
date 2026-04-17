@@ -906,10 +906,10 @@
 
 .tekne-card__desc {
   font-family: var(--font-heading);
-  font-size: clamp(0.9rem, 1.1vw, 1rem);
-  font-weight: 400;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 500;
   line-height: 1.85;
-  color: var(--color-text-light);
+  color: var(--color-text);
   margin-bottom: 2.5rem;
   max-width: 36ch;
 }
@@ -1050,10 +1050,10 @@
 
 .dest-activity p {
   font-family: var(--font-heading);
-  font-weight: 400;
-  font-size: 0.82rem;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 500;
   line-height: 1.85;
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 /* ---- 3-image strip ---- */

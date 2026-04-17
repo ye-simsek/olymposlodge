@@ -51,7 +51,6 @@
 
 #subnav .row:has(a[style]) ul a[style] {
   padding-top: var(--icon-offset);
-  transition: padding-top 450ms;
 }
 
 #subnav .row:has(a[style]) ul a[style]::before {
@@ -74,15 +73,7 @@
   letter-spacing: 0.14em;
 }
 
-/* Sticky collapse — icons pull up and fade */
-#subnav.sticky .row {
-  padding-block: 14px;
-}
-
-#subnav.sticky .row:has(a[style]) ul a[style] {
-  padding-top: 0;
-}
-
+/* Sticky collapse — only icons pull up and fade, bar stays same height */
 #subnav.sticky .row:has(a[style]) ul a[style]::before {
   transform: translateX(-50%) translateY(-100%);
   opacity: 0;

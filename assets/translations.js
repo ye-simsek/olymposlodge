@@ -202,7 +202,7 @@ const olTranslations = {
       lodge_spa_f3: '<span>Masaj</span><strong>Ek ücret, rezervasyon gerekli</strong>',
       lodge_beach_label: 'Plaj',
       lodge_beach_title: 'Loca & Şezlong',
-      lodge_beach_desc: 'Kapının ardındaki plajda özel şezlong, şemsiye, havlu ve loca misafirlere ücretsiz olarak ayrılmaktadır. Caretta carettalar bu plaja Olympos Lodge\'dan uzun zaman önce gelmeye başladı. Biz de gelmeye değer tutuyoruz.',
+      lodge_beach_desc: 'Kapının ardında şezlong, şemsiye, havlu ve localar bekler. Caretta carettalar bu plaja Olympos Lodge\'dan uzun zaman önce gelmeye başladı. Biz de gelmeye değer tutuyoruz.',
       lodge_beach_f1: '<span>Mesafe</span><strong>30 m</strong>',
       lodge_beach_f2: '<span>Dahil</span><strong>Şezlong, şemsiye, havlu, loca</strong>',
       lodge_beach_f3: '<span>Statü</span><strong>Korunan kıyı, Caretta bölgesi</strong>',

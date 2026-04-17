@@ -1074,13 +1074,11 @@ h4 {
   }
 
   /* Scrolled: image shrinks to match container, full logo (incl. text) visible */
-  .site-header.scrolled .header-logo,
-  .site-header:has(.menu-toggle.active) .header-logo {
+  .site-header.scrolled .header-logo {
     height: 54px;
   }
 
-  .site-header.scrolled .header-logo img,
-  .site-header:has(.menu-toggle.active) .header-logo img {
+  .site-header.scrolled .header-logo img {
     height: 54px;
     filter: none;
   }

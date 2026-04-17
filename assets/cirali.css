@@ -905,9 +905,10 @@
 }
 
 .tekne-card__desc {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: clamp(0.9rem, 1.1vw, 1rem);
-  line-height: 1.75;
+  font-weight: 400;
+  line-height: 1.85;
   color: var(--color-text-light);
   margin-bottom: 2.5rem;
   max-width: 36ch;

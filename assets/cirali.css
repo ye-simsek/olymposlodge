@@ -648,6 +648,11 @@
   grid-column: 2;
 }
 
+#olympos .dest-chapter__title,
+#olympos .dest-chapter__lead {
+  transform: translateY(-70px);
+}
+
 .dest-chapter--center .dest-chapter__tekne-right {
   display: flex;
   flex-direction: column;

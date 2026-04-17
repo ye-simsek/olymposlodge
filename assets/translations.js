@@ -820,7 +820,7 @@ const olTranslations = {
       c_act4_desc: 'Fahrräder stehen Gästen kostenlos zur Verfügung. Ideale Routen verlaufen durch das Çıralı-Tal.',
       c_tahtali_label: 'Panorama', c_tahtali_title: 'Tahtalı Seilbahn',
       c_tahtali_desc: 'Auffahrt zum 2.365 Meter hohen Gipfel. Panoramablick über das Mittelmeer, das Çıralı-Tal und die Küste. Eine der längsten Einseilumlaufbahnen der Welt.',
-      c_tahtali_f1: '<span>Entfernung</span><strong>15 km</strong>', c_tahtali_f2: '<span>Gipfel</span><strong>2.365 m</strong>', c_tahtali_f3: '<span>Saison</span><strong>April – November</strong>',
+      c_tahtali_f1: '<span>Gipfel</span><strong>2.365 m</strong>', c_tahtali_f2: '<span>Entfernung</span><strong>15 km</strong>',
       c_nearby_label: 'Rund um Çıralı',
       c_ring_10min: '~10 Min.', c_ring_30min: '~30 Min.', c_ring_1hr: '~1 Std.',
       c_nearby1_title: 'Antike Stadt Olympos', c_nearby1_time: '10 Min. zu Fuß', c_nearby1_desc: 'Die lykische Hafenstadt direkt neben dem Lodge. Römische Grabmäler, Theaterreste und Mauern zum Meer hin.',

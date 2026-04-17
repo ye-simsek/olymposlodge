@@ -399,13 +399,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Subnav: fixed bar with spacer — CSS transitions on .sticky class ---
+  // --- Subnav: toggle .sticky class — icons animate via CSS transition ---
   const subnav = document.getElementById('subnav');
-  const subnavSpacer = document.getElementById('subnav-spacer');
-  if (subnav && subnavSpacer) {
-    // Set spacer height to match expanded subnav
-    subnavSpacer.style.height = subnav.offsetHeight + 'px';
-
+  if (subnav) {
     const pageName = subnav.querySelector('.page-name');
     let wasSticky = false;
     const isMobile = () => window.innerWidth < 1024;

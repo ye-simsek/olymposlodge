@@ -129,7 +129,7 @@ const olTranslations = {
       c_act_label: 'Aktiviteler',
       c_tekne_label: 'Deniz', c_tekne_title: 'Tekne Turu',
       c_tekne_desc: 'Olympos koyları, Adrasan ve çevre adacıklar arasında günübirlik mavi tur. Berrak sularda yüzme molaları, ıssız koy sığınakları, açık denizin sessizliği.',
-      c_tekne_f1: '<span>Süre</span><strong>Tam gün</strong>', c_tekne_f2: '<span>Güzergah</span><strong>Olympos – Adrasan koyları</strong>', c_tekne_f3: '<span>Organizasyon</span><strong>Konsiyer</strong>',
+      c_tekne_f1: '<span>Sezon</span><strong>Nisan – Ekim</strong>', c_tekne_f2: '<span>Güzergah</span><strong>Olympos – Adrasan koyları</strong>', c_tekne_f3: '<span>Rezervasyon</span><strong>1 gün önceden</strong>',
       c_act1_tag: 'Deniz · Ücretsiz', c_act1_title: 'Yüzme & Şnorkel',
       c_act1_desc: 'Caretta caretta plajında Akdeniz\'in berrak sularında yüzme. Şnorkel ekipmanı otel tarafından sağlanır.',
       c_act2_tag: 'Deniz · Ücretsiz', c_act2_title: 'Kano & SUP',

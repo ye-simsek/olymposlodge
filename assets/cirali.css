@@ -684,11 +684,6 @@
   gap: 1.2rem;
 }
 
-#olympos .dest-chapter__title,
-#olympos .dest-chapter__lead {
-  margin-top: -15px;
-}
-
 .dest-chapter__meta {
   display: flex;
   flex-direction: row;

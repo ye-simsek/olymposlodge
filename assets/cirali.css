@@ -915,7 +915,7 @@
 }
 
 .tekne-card__quote {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: clamp(0.88rem, 1.05vw, 0.98rem);
   font-style: italic;
   line-height: 1.7;
@@ -951,7 +951,7 @@
 }
 
 .tekne-card__facts li strong {
-  font-family: var(--font-body);
+  font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--color-text);
@@ -1049,8 +1049,10 @@
 }
 
 .dest-activity p {
+  font-family: var(--font-heading);
+  font-weight: 400;
   font-size: 0.82rem;
-  line-height: 1.75;
+  line-height: 1.85;
   color: var(--color-text-light);
 }
 

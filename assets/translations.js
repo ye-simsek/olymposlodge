@@ -224,7 +224,7 @@ const olTranslations = {
       lodge_intro_p2: 'Konaklamaya dahil: açık büfe kahvaltı, plaj şezlongu, spa erişimi, bisiklet, kano ve SUP. Fazlası için sormak yeterli.',
       lodge_breakfast_label: 'Kahvaltı',
       lodge_breakfast_title: 'Açık Büfe Kahvaltı',
-      lodge_breakfast_desc: 'Her sabah saat 08:00–12:00 arasında servis edilen açık büfe kahvaltı konaklama ücretine dahildir. Taze ürünler, organik serbest dolaşımlı tavuk yumurtaları ve mevsim meyveleri. Yalnızca konaklayan misafirlere özel.',
+      lodge_breakfast_desc: 'Sabah 08:00\'den öğle 12:00\'ye kadar açık büfe kahvaltı konaklamanıza dahil. Taze ürünler, organik serbest dolaşımlı tavuk yumurtaları ve mevsim meyveleri. Yalnızca konaklayan misafirlere özel.',
       lodge_breakfast_f1: '<span>Saatler</span><strong>08:00 – 12:00</strong>',
       lodge_breakfast_f2: '<span>Dahil</span><strong>Konaklamaya dahil</strong>',
       lodge_breakfast_f3: '<span>Yumurtalar</span><strong>100% organik, serbest gezinen</strong>',

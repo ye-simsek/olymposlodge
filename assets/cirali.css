@@ -162,6 +162,9 @@
     transform 520ms var(--subnav-ease);
 }
 
+#subnav.sticky .page-name {
+  top: 50%;
+}
 #subnav.sticky .page-name.is-visible {
   transform: translate(-50%, -50%);
 }
@@ -193,15 +196,15 @@
     gap: 6.25vw;
     padding-inline: 6.25vw;
     justify-content: left;
-    overflow-x: auto;
-    overflow-y: visible;
+    overflow: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   #subnav ul::-webkit-scrollbar { display: none; }
 
   #subnav ul a[style]::before {
-    display: none;
+    height: 22px;
+    width: 22px;
   }
 
   /* On mobile sticky: show page-name, hide links */

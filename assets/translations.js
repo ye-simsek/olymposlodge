@@ -298,7 +298,7 @@ const olTranslations = {
       linker_cirali_cta: 'Keşfet →',
       linker_rooms_label: 'Odalar',
       linker_rooms_heading: 'On yedi oda, her biri doğanın ritmiyle uyum içinde.',
-      linker_rooms_body: 'Aqua Super Deluxe\'den Antik Oda\'ya, her oda 20.000 m² bahçe içinde kendi özel terasıyla.',
+      linker_rooms_body: 'Aqua Super Deluxe\'den Antik Oda\'ya, her oda 20.000 m² bahçe içinde kendi terasıyla.',
       linker_rooms_cta: 'Keşfet →',
       nav_offers: 'Teklifler',
       offer_page_title: 'Teklifler',

@@ -911,7 +911,6 @@
   line-height: 1.85;
   color: var(--color-text);
   margin-bottom: 2.5rem;
-  max-width: 36ch;
 }
 
 .tekne-card__quote {
@@ -922,7 +921,6 @@
   color: var(--color-text-muted);
   margin-top: -1.5rem;
   margin-bottom: 2.5rem;
-  max-width: 36ch;
 }
 
 .tekne-card__facts {

@@ -21,15 +21,15 @@
 #subnav {
   position: sticky;
   top: var(--header-height);
-  z-index: 30;
+  z-index: 120;
   background-color: var(--color-cream);
   background-image: var(--paper-texture);
   border-bottom: 1px solid var(--color-border);
-  overflow: hidden;
+  overflow: visible;
 }
 
 #subnav .row {
-  padding-block: 23px;
+  padding-block: 12px;
 }
 
 #subnav ul {

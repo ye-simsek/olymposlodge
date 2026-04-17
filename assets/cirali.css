@@ -52,7 +52,6 @@
 
 #subnav ul a[style] {
   padding-top: var(--icon-offset);
-  transition: padding-top 0.45s;
 }
 
 #subnav ul a[style]::before {
@@ -67,22 +66,11 @@
   background-position: center;
   background-repeat: no-repeat;
   transform: translateX(-50%);
-  transition: transform 0.45s, opacity 0.45s;
 }
 
 #subnav ul a.active {
   font-weight: 700;
   letter-spacing: 0.14em;
-}
-
-/* Sticky collapse — icons pull up and fade */
-#subnav.sticky .row:has(a[style]) ul a[style] {
-  padding-top: 0;
-}
-
-#subnav.sticky .row:has(a[style]) ul a[style]::before {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 0;
 }
 
 /* Page name label — visible in sticky state */

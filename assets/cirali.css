@@ -61,19 +61,25 @@
   text-align: center;
   transition:
     color 300ms var(--subnav-ease),
-    letter-spacing 400ms var(--subnav-ease);
+    letter-spacing 400ms var(--subnav-ease),
+    padding-top var(--subnav-duration) var(--subnav-ease);
 }
 
 #subnav .row:has(a[style]) ul a[style] {
+  padding-top: var(--icon-offset);
+}
+
+/* Sticky: collapse the icon's reserved space — label sits with symmetric padding
+   (bottom padding already 6px; match it on top so the bar is compact) */
+#subnav.sticky .row:has(a[style]) ul a[style] {
   padding-top: 6px;
 }
 
 #subnav .row:has(a[style]) ul a[style]::before {
   content: '';
   position: absolute;
-  top: calc(-1 * var(--icon-offset) - 6px);
+  top: 0;
   left: 50%;
-  pointer-events: none;
   height: 26px;
   width: 26px;
   background-image: var(--icon);

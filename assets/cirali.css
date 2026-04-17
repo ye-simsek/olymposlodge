@@ -148,7 +148,7 @@
 #subnav .page-name {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: calc(50% + 0.5 * var(--icon-offset));
   transform: translate(-50%, calc(-50% + 4px));
   font-family: var(--font-sc);
   font-size: 0.95rem;

@@ -8,9 +8,14 @@
 
 /* ============================================
    Subnav — icon bar with sticky collapse
+   Badrutt's-inspired; bold reinterpretation
+   (staggered entrance, underline indicator,
+    bespoke easing, icon-lift hover)
    ============================================ */
 :root {
   --icon-offset: 32px;
+  --subnav-ease: cubic-bezier(0.22, 1, 0.36, 1);   /* expo-out */
+  --subnav-duration: 520ms;
 }
 
 #subnav {
@@ -40,6 +45,7 @@
 #subnav ul a {
   position: relative;
   display: block;
+  padding-bottom: 6px;                  /* room for underline indicator */
   font-family: var(--font-sc);
   font-size: 0.95rem;
   letter-spacing: 0.16em;
@@ -47,6 +53,9 @@
   color: var(--color-warm-gold);
   text-decoration: none;
   text-align: center;
+  transition:
+    color 300ms var(--subnav-ease),
+    letter-spacing 400ms var(--subnav-ease);
 }
 
 #subnav .row:has(a[style]) ul a[style] {
@@ -64,27 +73,70 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  /* Hidden pre-entrance; revealed by #subnav.is-revealed */
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  transition:
+    transform var(--subnav-duration) var(--subnav-ease),
+    opacity calc(var(--subnav-duration) * 0.7) var(--subnav-ease);
+}
+
+/* Entrance: staggered cascade when subnav first scrolls into view */
+#subnav.is-revealed .row:has(a[style]) ul a[style]::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+#subnav.is-revealed ul li:nth-child(1) a[style]::before { transition-delay: 60ms; }
+#subnav.is-revealed ul li:nth-child(2) a[style]::before { transition-delay: 160ms; }
+#subnav.is-revealed ul li:nth-child(3) a[style]::before { transition-delay: 260ms; }
+
+/* Hairline underline indicator — grows from centre */
+#subnav ul a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: var(--color-warm-gold);
   transform: translateX(-50%);
-  transition: 450ms;
+  transition: width 420ms var(--subnav-ease);
 }
 
 #subnav ul a.active {
   font-weight: 700;
   letter-spacing: 0.14em;
 }
-
-/* Sticky collapse — only icons pull up and fade, bar stays same height */
-#subnav.sticky .row:has(a[style]) ul a[style]::before {
-  transform: translateX(-50%) translateY(-100%);
-  opacity: 0;
+#subnav ul a.active::after { width: 28px; }
+#subnav ul a.active[style]::before {
+  filter: drop-shadow(0 1px 0 rgba(110, 90, 48, 0.18));
 }
 
-/* Page name label — visible in sticky state */
+/* Sticky collapse — icons slide up and fade, labels stay put.
+   Override the entrance delay so the exit is immediate. */
+#subnav.sticky .row:has(a[style]) ul a[style]::before,
+#subnav.sticky.is-revealed .row:has(a[style]) ul a[style]::before {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+/* Icon-lift hover — desktop only, non-sticky state */
+@media (hover: hover) {
+  #subnav:not(.sticky).is-revealed .row:has(a[style]) ul a[style]:hover::before {
+    transform: translateX(-50%) translateY(-3px);
+  }
+  #subnav ul a:hover {
+    color: var(--color-warm-gold-deep, #5a4826);
+  }
+}
+
+/* Page-name label — visible in sticky state; rises 4px as it fades in */
 #subnav .page-name {
   position: absolute;
   left: 50%;
   top: calc(50% + 0.5 * var(--icon-offset));
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% + 4px));
   font-family: var(--font-sc);
   font-size: 0.95rem;
   letter-spacing: 0.16em;
@@ -92,11 +144,33 @@
   color: var(--color-warm-gold);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s;
+  transition:
+    opacity 380ms var(--subnav-ease),
+    transform 520ms var(--subnav-ease);
 }
 
 #subnav.sticky .page-name {
   top: 50%;
+}
+#subnav.sticky .page-name.is-visible {
+  transform: translate(-50%, -50%);
+}
+
+/* Reduced-motion — honour OS preference */
+@media (prefers-reduced-motion: reduce) {
+  #subnav ul a,
+  #subnav ul a::after,
+  #subnav .row:has(a[style]) ul a[style]::before,
+  #subnav .page-name {
+    transition: none;
+  }
+  #subnav .row:has(a[style]) ul a[style]::before {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  #subnav.sticky .row:has(a[style]) ul a[style]::before {
+    opacity: 0;
+  }
 }
 
 /* Mobile */

@@ -208,7 +208,7 @@ const olTranslations = {
       lodge_beach_f3: '<span>Statü</span><strong>Korunan kıyı, Caretta bölgesi</strong>',
       lodge_sports_label: 'Spor Ekipmanları',
       lodge_sports_title: 'Kano, SUP & Bisiklet',
-      lodge_sports_desc: 'Tüm spor ekipmanları konaklayan misafirlere ücretsiz sunulur. Kano ve stand-up paddleboard\'lar lodgea 30 metre mesafedeki plajdan başlatılır; Çıralı koylarının sakin suları her düzeyden kürekçiye uygundur. Otel bisikletleri vadi boyunca uzanan düz, gölgeli güzergahlar için idealdir.',
+      lodge_sports_desc: 'Kano, SUP ve bisiklet konaklamaya dahildir. Kano ve SUP plajdan başlatılır; Çıralı koylarının sakin suları rahat kürek çekmeye elverişlidir. Bisikletler vadi boyunca düz, gölgeli güzergahlar için.',
       lodge_sports_f1: '<span>Kano</span><strong>Ücretsiz</strong>',
       lodge_sports_f2: '<span>SUP</span><strong>Ücretsiz</strong>',
       lodge_sports_f3: '<span>Bisiklet</span><strong>Ücretsiz</strong>',

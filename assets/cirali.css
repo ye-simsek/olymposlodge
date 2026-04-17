@@ -135,7 +135,7 @@
 #subnav .page-name {
   position: absolute;
   left: 50%;
-  top: calc(50% + 0.5 * var(--icon-offset));
+  top: 50%;
   transform: translate(-50%, calc(-50% + 4px));
   font-family: var(--font-sc);
   font-size: 0.95rem;
@@ -149,9 +149,6 @@
     transform 520ms var(--subnav-ease);
 }
 
-#subnav.sticky .page-name {
-  top: 50%;
-}
 #subnav.sticky .page-name.is-visible {
   transform: translate(-50%, -50%);
 }

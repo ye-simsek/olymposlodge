@@ -406,6 +406,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let wasSticky = false;
     const isMobile = () => window.innerWidth < 1024;
 
+    // Entrance reveal — cascade icons in when subnav first enters viewport
+    if ('IntersectionObserver' in window) {
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            subnav.classList.add('is-revealed');
+            revealObs.disconnect();
+          }
+        });
+      }, { threshold: 0.4 });
+      revealObs.observe(subnav);
+    } else {
+      subnav.classList.add('is-revealed');
+    }
+
     window.addEventListener('scroll', () => {
       const isSticky = wasSticky ? window.scrollY > 3 : window.scrollY > 10;
 

@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('scroll', () => {
-      const isSticky = wasSticky ? window.scrollY > 3 : window.scrollY > 10;
+      const isSticky = wasSticky ? window.scrollY > 30 : window.scrollY > 36;
 
       if (isSticky !== wasSticky) {
         wasSticky = isSticky;

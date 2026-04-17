@@ -30,6 +30,12 @@
 
 #subnav .row {
   padding-block: 23px;
+  transition: padding-block var(--subnav-duration) var(--subnav-ease);
+}
+
+/* Sticky: tighten row padding too — compact, label-only bar */
+#subnav.sticky .row {
+  padding-block: 12px;
 }
 
 #subnav ul {

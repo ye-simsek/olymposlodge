@@ -196,13 +196,11 @@ h4 {
 }
 
 
-.site-header.scrolled .header-logo,
-.site-header:has(.menu-toggle.active) .header-logo {
+.site-header.scrolled .header-logo {
   height: 72px;
 }
 
-.site-header.scrolled .header-logo img,
-.site-header:has(.menu-toggle.active) .header-logo img {
+.site-header.scrolled .header-logo img {
   height: 72px;
   filter: none;
 }

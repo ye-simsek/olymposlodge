@@ -386,14 +386,12 @@ h4 {
   align-items: center;
   padding-top: var(--header-height);
   padding-bottom: var(--space-lg);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-overlay.open {
-  opacity: 1;
-  visibility: visible;
+  clip-path: inset(0 0 0 0);
 }
 
 .nav-links {

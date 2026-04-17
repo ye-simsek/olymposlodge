@@ -684,8 +684,9 @@
   gap: 1.2rem;
 }
 
-#olympos .dest-chapter__lead {
-  padding-bottom: 2rem;
+#olympos .dest-chapter__body {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .dest-chapter__meta {

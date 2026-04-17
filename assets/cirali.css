@@ -65,7 +65,8 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(var(--icon-y, 0%));
+  opacity: var(--icon-op, 1);
 }
 
 #subnav ul a.active {

@@ -59,14 +59,15 @@
 }
 
 #subnav .row:has(a[style]) ul a[style] {
-  padding-top: var(--icon-offset);
+  padding-top: 6px;
 }
 
 #subnav .row:has(a[style]) ul a[style]::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: calc(-1 * var(--icon-offset) - 6px);
   left: 50%;
+  pointer-events: none;
   height: 26px;
   width: 26px;
   background-image: var(--icon);

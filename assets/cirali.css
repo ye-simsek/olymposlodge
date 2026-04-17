@@ -25,16 +25,10 @@
   background-color: var(--color-cream);
   background-image: var(--paper-texture);
   border-bottom: 1px solid var(--color-border);
-  overflow: hidden;
+  overflow: visible;
 }
 
 #subnav .row {
-  padding-block: 23px;
-  transition: padding-block var(--subnav-duration) var(--subnav-ease);
-}
-
-/* Sticky: tighten row padding too — compact, label-only bar */
-#subnav.sticky .row {
   padding-block: 12px;
 }
 

@@ -399,38 +399,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Subnav: scroll-linked row padding, then icon pull-up via class ---
+  // --- Subnav: fully scroll-linked collapse ---
   const subnav = document.getElementById('subnav');
   if (subnav) {
     const pageName = subnav.querySelector('.page-name');
     const row = subnav.querySelector('.row');
-    let wasSticky = false;
+    const icons = subnav.querySelectorAll('ul a[style]');
     const isMobile = () => window.innerWidth < 1024;
 
-    const PAD_START = 23;      // expanded row padding
-    const PAD_END = 14;        // collapsed row padding
-    const TRAVEL = 30;         // px of scroll over which row padding collapses
-    const STICK_AT = 10;       // px of scroll to enter sticky
-    const UNSTICK_AT = 3;      // px of scroll to leave sticky (hysteresis)
+    const PAD_ROW_START = 23;
+    const PAD_ROW_END = 14;
+    const ICON_PAD = 32;       // --icon-offset
+    const TRAVEL = 30;         // px of scroll for full collapse
 
     window.addEventListener('scroll', () => {
       const y = window.scrollY;
-
-      // Interpolate row padding only — icons stay in place
       const t = Math.min(1, y / TRAVEL);
-      const rowPad = PAD_START - t * (PAD_START - PAD_END);
-      row.style.paddingBlock = rowPad + 'px';
 
-      // Toggle .sticky with hysteresis to prevent jitter
-      const isSticky = wasSticky ? y > UNSTICK_AT : y > STICK_AT;
-      if (isSticky !== wasSticky) {
-        wasSticky = isSticky;
-        subnav.classList.toggle('sticky', isSticky);
+      // Row padding
+      row.style.paddingBlock = (PAD_ROW_START - t * (PAD_ROW_START - PAD_ROW_END)) + 'px';
 
-        if (isMobile() && pageName) {
-          document.body.classList.toggle('show-page-name', isSticky);
-          pageName.classList.toggle('is-visible', isSticky);
-        }
+      // Link icon padding
+      const linkPad = ICON_PAD * (1 - t);
+      // Icon transform + opacity
+      const iconY = -t * 100;
+      const iconOp = 1 - t;
+
+      icons.forEach(a => {
+        a.style.paddingTop = linkPad + 'px';
+        const before = a.querySelector('.subnav-icon') || a;
+        a.style.setProperty('--icon-y', iconY + '%');
+        a.style.setProperty('--icon-op', iconOp);
+      });
+
+      // Mobile page-name
+      if (isMobile() && pageName) {
+        const collapsed = t >= 1;
+        document.body.classList.toggle('show-page-name', collapsed);
+        pageName.classList.toggle('is-visible', collapsed);
       }
     }, { passive: true });
   }

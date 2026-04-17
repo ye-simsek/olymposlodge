@@ -399,44 +399,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // --- Subnav: fully scroll-linked collapse ---
+  // --- Subnav: toggle sticky class → CSS transitions handle animation ---
   const subnav = document.getElementById('subnav');
   if (subnav) {
     const pageName = subnav.querySelector('.page-name');
-    const row = subnav.querySelector('.row');
-    const icons = subnav.querySelectorAll('ul a[style]');
+    let wasSticky = false;
     const isMobile = () => window.innerWidth < 1024;
 
-    const PAD_ROW_START = 23;
-    const PAD_ROW_END = 14;
-    const ICON_PAD = 32;       // --icon-offset
-    const TRAVEL = 30;         // px of scroll for full collapse
-
     window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      const t = Math.min(1, y / TRAVEL);
+      const isSticky = wasSticky ? window.scrollY > 3 : window.scrollY > 10;
 
-      // Row padding
-      row.style.paddingBlock = (PAD_ROW_START - t * (PAD_ROW_START - PAD_ROW_END)) + 'px';
+      if (isSticky !== wasSticky) {
+        wasSticky = isSticky;
+        subnav.classList.toggle('sticky', isSticky);
 
-      // Link icon padding
-      const linkPad = ICON_PAD * (1 - t);
-      // Icon transform + opacity
-      const iconY = -t * 100;
-      const iconOp = 1 - t;
-
-      icons.forEach(a => {
-        a.style.paddingTop = linkPad + 'px';
-        const before = a.querySelector('.subnav-icon') || a;
-        a.style.setProperty('--icon-y', iconY + '%');
-        a.style.setProperty('--icon-op', iconOp);
-      });
-
-      // Mobile page-name
-      if (isMobile() && pageName) {
-        const collapsed = t >= 1;
-        document.body.classList.toggle('show-page-name', collapsed);
-        pageName.classList.toggle('is-visible', collapsed);
+        if (isMobile() && pageName) {
+          document.body.classList.toggle('show-page-name', isSticky);
+          pageName.classList.toggle('is-visible', isSticky);
+        }
       }
     }, { passive: true });
   }

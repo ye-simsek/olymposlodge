@@ -180,7 +180,8 @@
     gap: 6.25vw;
     padding-inline: 6.25vw;
     justify-content: left;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }

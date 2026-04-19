@@ -1,0 +1,29 @@
+# Olympos Lodge
+
+> Olympos Lodge is a 17-room boutique hotel in Çıralı, on Turkey's Lycian Coast. Founded in 1987, it occupies 20,000 m² of garden with direct access to a 3.5 km protected Mediterranean beach where caretta caretta turtles nest from May to October. All stays include breakfast, beach lounger and umbrella, private spa access (jacuzzi, sauna, steam room), bicycles, canoes, and SUP boards. The property is single-storey with no stairs, and every room has a private terrace. The nearest landmarks are the Olympos ancient city (10-minute walk) and the Chimaera eternal flames (3.5 km).
+
+## Pages
+
+- [Homepage](https://www.olymposlodge.com.tr/): Overview, room categories, and booking
+- [Rooms](https://www.olymposlodge.com.tr/rooms/): Six room categories from 35 m² Standard to 105 m² Aqua Super Deluxe
+- [Aqua Super Deluxe](https://www.olymposlodge.com.tr/rooms/aqua-super-deluxe/): 105 m², private jacuzzi, fireplace, glass floor panels, indoor waterfall
+- [Super Deluxe](https://www.olymposlodge.com.tr/rooms/super-deluxe/): 105 m², garden view, refined interiors
+- [Deluxe](https://www.olymposlodge.com.tr/rooms/deluxe/): 70 m², natural light, garden setting
+- [Göl Evi](https://www.olymposlodge.com.tr/rooms/gol-evi/): 60 m², lake house with glass floor over water
+- [Antik Oda](https://www.olymposlodge.com.tr/rooms/antik/): Historic character, garden-facing terrace
+- [Standart Oda](https://www.olymposlodge.com.tr/rooms/standart/): 35 m², essentials done well
+- [Offers](https://www.olymposlodge.com.tr/offers/): Seasonal packages and special rates
+- [Çıralı Guide](https://www.olymposlodge.com.tr/cirali/): Beach, Olympos ruins, Chimaera flames, Lycian Way
+- [Location](https://www.olymposlodge.com.tr/location/): Directions from Antalya Airport (90 km, ~90 min), transfer options
+- [Lodge Experience](https://www.olymposlodge.com.tr/lodge/): Breakfast, spa, garden, fire pits, library
+- [Spa](https://www.olymposlodge.com.tr/spa/): Jacuzzi (6-person), sauna, steam room — included for all guests
+- [Gallery](https://www.olymposlodge.com.tr/gallery/): Property and surroundings photography
+- [Booking](https://www.olymposlodge.com.tr/booking/): Online reservation system
+- [Contact](https://www.olymposlodge.com.tr/contact/): Phone, email, address, contact form
+
+## Contact
+
+- Phone: +90 532 308 34 86
+- Email: info@olymposlodge.com.tr
+- Address: Çıralı Yolu 9, Ulupınar, Kemer, Antalya 07980, Turkey
+- Instagram: @olymposlodge

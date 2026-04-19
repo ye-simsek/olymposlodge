@@ -572,7 +572,7 @@
   gap: 0.5rem;
   margin-bottom: var(--space-md);
   font-family: var(--font-accent);
-  font-size: 0.92rem;
+  font-size: 0.961rem;
   font-weight: 400;
   letter-spacing: 0.1em;
   color: var(--color-warm-gold);
@@ -582,6 +582,21 @@
   color: var(--color-warm-gold);
   opacity: 0.45;
   font-size: 0.7rem;
+}
+
+.room-row__spec-icon {
+  width: 1.634rem;
+  height: 1.634rem;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transform: translateY(-2px);
+}
+
+.room-row__spec-icon--size {
+  width: 2.299rem;
+  height: 2.299rem;
+  transform: translate(2px, -2px);
 }
 
 /* --- Rooms Page modifier — slides over the sticky hero --- */

@@ -234,3 +234,157 @@
   padding: 0.3rem 0.7rem;
 }
 
+
+/* ======================================
+   LODGE LINKER — editorial teaser to lodge page
+   ====================================== */
+.lodge-linker {
+  display: grid;
+  grid-template-columns: 52fr 48fr;
+  min-height: 520px;
+  margin: 4.5rem 3rem 0;
+  background-color: var(--color-cream);
+  background-image: var(--paper-texture);
+  border-top: 1px solid var(--color-warm-gold);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.4s ease;
+}
+.lodge-linker::before {
+  content: '';
+  position: absolute;
+  top: -4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 3rem;
+  background: var(--color-warm-gold);
+  opacity: 0.5;
+}
+.lodge-linker__image {
+  overflow: hidden;
+}
+.lodge-linker__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.9s ease;
+}
+.lodge-linker:hover .lodge-linker__image img {
+  transform: scale(1.04);
+}
+.lodge-linker:hover .lodge-linker__cta {
+  letter-spacing: 0.24em;
+}
+.lodge-linker__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem clamp(2rem, 5vw, 5rem);
+  max-width: 560px;
+}
+.lodge-linker__eyebrow {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+}
+.lodge-linker__eyebrow::after {
+  content: '';
+  width: 2.2rem;
+  height: 1px;
+  background: var(--color-warm-gold);
+  display: inline-block;
+  transition: width 0.4s ease;
+}
+.lodge-linker:hover .lodge-linker__eyebrow::after {
+  width: 3.2rem;
+}
+.lodge-linker__title {
+  font-family: var(--font-sc);
+  font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin: 0 0 1.2rem;
+}
+.lodge-linker__lead {
+  font-family: var(--font-heading);
+  font-size: clamp(0.95rem, 1.05vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--color-text-light);
+  margin: 0 0 2rem;
+  max-width: 40ch;
+}
+.lodge-linker__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--color-text);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+}
+.lodge-linker__list li {
+  padding: 0.25rem 1.1rem;
+  position: relative;
+}
+.lodge-linker__list li:first-child { padding-left: 0; }
+.lodge-linker__list li + li::before {
+  content: '·';
+  position: absolute;
+  left: -0.15em;
+  top: 50%;
+  transform: translateY(-55%);
+  color: var(--color-warm-gold);
+  font-weight: 400;
+}
+.lodge-linker__cta {
+  font-family: var(--font-cinzel);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold-fade-edge, var(--color-warm-gold));
+  padding-bottom: 0.3rem;
+  display: inline-block;
+  align-self: flex-start;
+  transition: letter-spacing 0.35s ease, border-color 0.35s ease;
+}
+.lodge-linker__cta:hover {
+  letter-spacing: 0.24em;
+  border-color: var(--color-warm-gold);
+}
+
+@media (max-width: 900px) {
+  .lodge-linker {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .lodge-linker__image {
+    height: 52vw;
+    min-height: 240px;
+  }
+  .lodge-linker__content {
+    padding: 3rem 1.8rem;
+    max-width: none;
+  }
+}

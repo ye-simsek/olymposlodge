@@ -160,8 +160,9 @@
   <!-- Preload hero video poster (LCP element) -->
   <link rel="preload" as="image" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg" fetchpriority="high">
 
-  <link rel="stylesheet" href="assets/base.css?v=26">
-  <link rel="stylesheet" href="assets/home.css?v=26">
+  <link rel="preload" as="image" href="assets/images/pavillion.webp" fetchpriority="low">
+    <link rel="stylesheet" href="assets/base.css?v=34">
+  <link rel="stylesheet" href="assets/home.css?v=35">
 
   <!-- Preload primary fonts (same-origin, no DNS round-trip) -->
 </head>
@@ -191,176 +192,7 @@
     </div>
   </header>
 
-  <!-- Full-screen Navigation Overlay — TEST: split-screen layout -->
-  <style>
-    /* ── layout ────────────────────────────────────────────── */
-    .nav-overlay {
-      flex-direction: row !important;
-      align-items: stretch !important;
-      padding: 0 !important;
-      background: none !important;
-      z-index: 115 !important;
-    }
-
-    /* ── left panel ─────────────────────────────────────────── */
-    .nav-overlay__left {
-      position: relative;
-      width: 50%;
-      min-width: 300px;
-      background-color: #ede8df;
-      background-image: var(--paper-texture);
-      border-right: 1px solid var(--color-warm-gold);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 4rem 3.5rem 3.5rem 8rem;
-    }
-
-    /* logo */
-    .nav-overlay__logo {
-      position: absolute;
-      top: 2.8rem;
-      left: 8rem;
-      width: 150px;
-      opacity: 0.7;
-      filter: brightness(0);
-    }
-
-    /* close button */
-    .nav-overlay__close {
-      position: absolute;
-      top: 2.6rem;
-      right: 2.8rem;
-      width: 36px;
-      height: 36px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 6px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0;
-    }
-    .nav-overlay__close span {
-      display: block;
-      width: 22px;
-      height: 1px;
-      background: var(--color-text);
-      transition: opacity 0.2s;
-    }
-    .nav-overlay__close span:first-child {
-      transform: rotate(45deg) translate(0.5px, 0.5px);
-    }
-    .nav-overlay__close span:last-child {
-      transform: rotate(-45deg) translate(0.5px, -0.5px);
-    }
-    .nav-overlay__close:hover span { opacity: 0.45; }
-
-    /* ── nav links ──────────────────────────────────────────── */
-    .nav-overlay .nav-links {
-      text-align: left !important;
-      align-items: flex-start;
-    }
-    .nav-overlay .nav-links li {
-      overflow: visible !important;
-    }
-    .nav-item-wrap {
-      display: flex;
-      flex-direction: column;
-      padding: 0.3em 0;
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .nav-overlay .nav-links li:hover .nav-item-wrap {
-      transform: translateX(7px);
-    }
-    .nav-overlay .nav-links a {
-      font-size: clamp(1.6rem, 2.8vw, 2.6rem) !important;
-      padding: 0 !important;
-      color: var(--color-text) !important;
-      position: relative;
-      display: inline-block !important;
-    }
-    /* gold underline draws from left on hover */
-    .nav-overlay .nav-links a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -1px;
-      height: 1px;
-      width: 0;
-      background: var(--color-warm-gold);
-      transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .nav-overlay .nav-links li:hover a::after {
-      width: 100%;
-    }
-    /* italic descriptor — fades up on hover */
-    .nav-sub {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.82rem;
-      letter-spacing: 0.02em;
-      color: var(--color-text-light);
-      margin-top: 2px;
-      opacity: 0;
-      transform: translateY(5px);
-      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
-      pointer-events: none;
-      line-height: 1;
-    }
-    .nav-overlay .nav-links li:hover .nav-sub {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── footer ─────────────────────────────────────────────── */
-    .nav-overlay .nav-footer {
-      text-align: left;
-      color: var(--color-text-light);
-      margin-top: 2.5rem;
-    }
-    .nav-overlay .nav-footer a {
-      color: var(--color-text-light);
-    }
-    .nav-overlay .nav-footer a:hover {
-      color: var(--color-warm-gold);
-    }
-
-    /* ── right photo panel ──────────────────────────────────── */
-    .nav-overlay__photo {
-      width: 50%;
-      flex: none;
-      position: relative;
-      overflow: hidden;
-    }
-    .nav-overlay__photo-img {
-      position: absolute;
-      inset: 0;
-      background: url('assets/images/pavillion.jpg') center / cover no-repeat;
-    }
-    /* bottom fade + caption */
-    .nav-overlay__photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(28,24,20,0.5) 0%, transparent 45%);
-      z-index: 1;
-      pointer-events: none;
-    }
-    .nav-overlay__caption {
-      position: absolute;
-      bottom: 2.8rem;
-      left: 3rem;
-      z-index: 2;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.85rem;
-      letter-spacing: 0.08em;
-      color: rgba(247,245,240,0.7);
-      pointer-events: none;
-    }
-  </style>
+  <!-- Full-screen Navigation Overlay -->
   <nav class="nav-overlay" id="navOverlay">
     <div class="nav-overlay__left">
       <img class="nav-overlay__logo"
@@ -510,7 +342,7 @@
         </a>
         <div class="room-row__content">
           <a href="pages/room-aqua-super-deluxe.html"><h3 data-i18n="room1_name">Aqua Super Deluxe</h3></a>
-          <div class="room-row__specs">★ 105 M²<span class="room-row__spec-sep">·</span><span data-i18n="view_garden">GARDEN VIEW</span></div>
+          <div class="room-row__specs"><img class="room-row__spec-icon room-row__spec-icon--size" src="assets/images/icons/room-size.svg" alt="" width="20" height="20"> 105 M²<span class="room-row__spec-sep">·</span><img class="room-row__spec-icon" src="assets/images/icons/garden-view.svg" alt="" width="20" height="20"><span data-i18n="view_garden">GARDEN VIEW</span></div>
           <p data-i18n="room1_desc">Bahçenin en eşsiz odası, ucunda müstakil bir yapı olarak konumlanmış. İç mekandaki şelale duvarı ve ayaklarınızın altında suyu gösteren bir sıra cam zemin paneli tonu belirliyor. Mimari ile doğa arasındaki sınır neredeyse ortadan kalkıyor.</p>
           <a href="pages/room-aqua-super-deluxe.html" class="room-row__link" data-i18n="room_discover">Keşfet →</a>
         </div>
@@ -525,7 +357,7 @@
         </a>
         <div class="room-row__content">
           <a href="pages/room-super-deluxe.html"><h3 data-i18n="room2_name">Super Deluxe</h3></a>
-          <div class="room-row__specs">★ 105 M²<span class="room-row__spec-sep">·</span><span data-i18n="view_garden">GARDEN VIEW</span></div>
+          <div class="room-row__specs"><img class="room-row__spec-icon room-row__spec-icon--size" src="assets/images/icons/room-size.svg" alt="" width="20" height="20"> 105 M²<span class="room-row__spec-sep">·</span><img class="room-row__spec-icon" src="assets/images/icons/garden-view.svg" alt="" width="20" height="20"><span data-i18n="view_garden">GARDEN VIEW</span></div>
           <p data-i18n="room2_desc">Her yönüyle ferah, Super Deluxe geniş özel terası aracılığıyla doğrudan ön bahçeye açılıyor; deniz ağaçların arasından süzülüyor. Jakuzi küvet uzun akşamlara davet ediyor. Dışarı çıkmak kadar içeride kalmak için de tasarlanmış bir oda.</p>
           <a href="pages/room-super-deluxe.html" class="room-row__link" data-i18n="room_discover">Keşfet →</a>
         </div>
@@ -540,7 +372,7 @@
         </a>
         <div class="room-row__content">
           <a href="pages/room-deluxe.html"><h3 data-i18n="room3_name">Deluxe</h3></a>
-          <div class="room-row__specs">★ 70 M²<span class="room-row__spec-sep">·</span><span data-i18n="view_garden">GARDEN VIEW</span></div>
+          <div class="room-row__specs"><img class="room-row__spec-icon room-row__spec-icon--size" src="assets/images/icons/room-size.svg" alt="" width="20" height="20"> 70 M²<span class="room-row__spec-sep">·</span><img class="room-row__spec-icon" src="assets/images/icons/garden-view.svg" alt="" width="20" height="20"><span data-i18n="view_garden">GARDEN VIEW</span></div>
           <p data-i18n-html="room3_desc">Bir konut kadar ferah, bir sığınak kadar samimi. Deluxe, jakuzi<br>ve şömineyi bahçeye bakan geniş bir terasla buluşturuyor. Dekorasyonun büyük kısmını üstlenen Akdeniz ışığı ile sakin bir<br>konfor kompozisyonu.</p>
           <a href="pages/room-deluxe.html" class="room-row__link" data-i18n="room_discover">Keşfet →</a>
         </div>
@@ -555,7 +387,7 @@
         </a>
         <div class="room-row__content">
           <a href="pages/room-gol-evi.html"><h3 data-i18n="room4_name">Göl Evi</h3></a>
-          <div class="room-row__specs">★ 60 M²<span class="room-row__spec-sep">·</span><span data-i18n="view_lake">LAKE VIEW</span></div>
+          <div class="room-row__specs"><img class="room-row__spec-icon room-row__spec-icon--size" src="assets/images/icons/room-size.svg" alt="" width="20" height="20"> 60 M²<span class="room-row__spec-sep">·</span><img class="room-row__spec-icon" src="assets/images/icons/lake-view.svg" alt="" width="20" height="20"><span data-i18n="view_lake">LAKE VIEW</span></div>
           <p data-i18n="room4_desc">Tesisin geri kalanından ayrı konumlanan müstakil bir oda; terasın ötesinde bir gölet uzanıyor. Yüzeyi bahçenin ışığını, aydınlık gecelerde ise ayı ikiye katlıyor. Şömineli iç mekan, mahremiyetini mimarinin içine işlemiş olanlar için kendi başına yeten bir dünya tamamlıyor.</p>
           <a href="pages/room-gol-evi.html" class="room-row__link" data-i18n="room_discover">Keşfet →</a>
         </div>
@@ -570,7 +402,7 @@
         </a>
         <div class="room-row__content">
           <a href="pages/room-antik.html"><h3 data-i18n="room5_name">Antik Oda</h3></a>
-          <div class="room-row__specs"><span data-i18n="view_garden">GARDEN VIEW</span></div>
+          <div class="room-row__specs"><img class="room-row__spec-icon" src="assets/images/icons/garden-view.svg" alt="" width="20" height="20"><span data-i18n="view_garden">GARDEN VIEW</span></div>
           <p data-i18n="room5_desc">Merkezde pirinç bir karyola; etrafında onlarca yılda özenle toplanmış antika mobilyalar ve zamanın ağırlığını taşıyan objeler. Bahçenin tamamen size ait hissettirdiği sessiz bir köşeye sığınmış, derin bir durgunluğa açılan terasla birleşiyor. Burada hiçbir şey dün gelmiş gibi görünmüyor.</p>
           <a href="pages/room-antik.html" class="room-row__link" data-i18n="room_discover">Keşfet →</a>
         </div>
@@ -585,7 +417,7 @@
         </a>
         <div class="room-row__content">
           <a href="pages/room-standart.html"><h3 data-i18n="room6_name">Standart Oda</h3></a>
-          <div class="room-row__specs">★ 35 M²<span class="room-row__spec-sep">·</span><span data-i18n="view_garden">GARDEN VIEW</span></div>
+          <div class="room-row__specs"><img class="room-row__spec-icon room-row__spec-icon--size" src="assets/images/icons/room-size.svg" alt="" width="20" height="20"> 35 M²<span class="room-row__spec-sep">·</span><img class="room-row__spec-icon" src="assets/images/icons/garden-view.svg" alt="" width="20" height="20"><span data-i18n="view_garden">GARDEN VIEW</span></div>
           <p data-i18n="room6_desc">Sade çizgiler, çift kişilik yatak ve bahçe manzaralı özel teras. İhtiyacınız olan her şey var, araya giren hiçbir şey yok. Sadelik ile cömertliğin zıt olmadığını kanıtlayan bir oda.</p>
           <a href="pages/room-standart.html" class="room-row__link" data-i18n="room_discover">Keşfet →</a>
         </div>
@@ -604,10 +436,11 @@
     <!-- Block 1: Our Story — text left, image right -->
     <div class="story-block">
       <div class="story-block__content">
-        <h3 class="story-block__heading" data-i18n="about_heading">Yıllar önce, bir adam Akdeniz'in en el değmemiş kıyılarından birine ulaştı.</h3>
-        <p data-i18n="about_p1">Zümrüt yeşili bir vadiden geçerek bu yere vardı. Yol boyunca karşılaştığı güzellik, sessizce yüklerini bırakmasına izin verdi. Vadinin bir dere aracılığıyla denizle buluştuğu noktada, zaman onunla birlikte durdu.</p>
-        <p data-i18n="about_p2">O andan itibaren bir hayal başladı. Bugün hâlâ devam eden, hâlâ paylaşılan bir hayal.</p>
-        <p data-i18n="about_p3">Olympos Lodge bu hayalden doğdu. 20.000 m² bahçe içinde doğayla uyum halinde yerleştirilmiş on yedi oda. Her biri sade bir zarafetle döşenmiş; aydınlık ve dört mevsim yaşanabilir.</p>
+        <span class="story-block__eyebrow" data-i18n="story_eyebrow_story">Hikayemiz</span>
+        <h3 class="story-block__heading" data-i18n-html="about_heading">Yıllar önce, bir adam <em class="accent-word">zümrüt</em> bir vadiden indi ve kendisini bekleyen denizi buldu.</h3>
+        <p data-i18n="about_p1">Vadi bir dereye daraldı. Dere denize açıldı. Burası ondan hiçbir şey istemedi. Taşıdıklarını yere bıraktı.</p>
+        <p data-i18n="about_p2">O huzurdan Olympos Lodge doğdu. Yirmi bin metrekarelik bahçeye yerleştirilmiş on yedi tek katlı oda.</p>
+        <p data-i18n="about_p3">Onun yürüdüğü yolu yürüyün. Vadi hâlâ daralıyor. Dere hâlâ açılıyor. Deniz hâlâ bekliyor.</p>
       </div>
       <div class="story-block__image">
         <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg" alt="Olympos Lodge garden pathway" loading="lazy" width="1600" height="2277" />
@@ -620,7 +453,8 @@
         <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/MG_7191.jpg" alt="Olympos Lodge natural landscape" loading="lazy" width="1920" height="1280" />
       </div>
       <div class="story-block__content">
-        <h3 class="story-block__heading" data-i18n="nature_heading">Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte yarat.</h3>
+        <span class="story-block__eyebrow" data-i18n="story_eyebrow_nature">Felsefe</span>
+        <h3 class="story-block__heading" data-i18n-html="nature_heading">Doğa zaten mükemmel; ona saygı duy, onu dinle ve onunla birlikte <em class="accent-word">yarat</em>.</h3>
         <p data-i18n="nature_p1">Olympos Lodge, bu yerin kendisinden öğrendi. Her yapı, arazinin izin verdiği yere saygıyla yerleştirildi — ağaçların arasına değil, ağaçlarla birlikte. Kökler yerinde kaldı, taşlar bozulmadı. Burada doğa bir arka plan değil, asıl mimardır.</p>
         <p data-i18n="nature_p2">Gece, ışık kirliliğinden uzak bu kıyıda gökyüzü nadiren görülen bir berraklıkla açılır. Sabah, deniz kokusu ormanın sesiyle iç içe geçer. Çıralı'nın deresi sessizce denize karışır — ve bir an için, dünyanın geri kalanının ne kadar gürültülü olduğunu anlarsınız.</p>
       </div>
@@ -864,7 +698,7 @@
   </div>
 
   <script src="assets/lenis.min.js"></script>
-  <script src="assets/translations.js?v=5"></script>
-  <script src="assets/script.js?v=102"></script>
+  <script src="assets/translations.js?v=12"></script>
+  <script src="assets/script.js?v=103"></script>
 </body>
 </html>

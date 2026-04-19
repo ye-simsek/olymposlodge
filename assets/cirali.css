@@ -20,22 +20,16 @@
 
 #subnav {
   position: sticky;
-  top: var(--header-height);
+  top: calc(var(--header-height) - var(--icon-offset));
   z-index: 30;
   background-color: var(--color-cream);
   background-image: var(--paper-texture);
   border-bottom: 1px solid var(--color-border);
-  overflow: hidden;
+  overflow: visible;
 }
 
 #subnav .row {
-  padding-block: 23px;
-  transition: padding-block var(--subnav-duration) var(--subnav-ease);
-}
-
-/* Sticky: tighten row padding too — compact, label-only bar */
-#subnav.sticky .row {
-  padding-block: 12px;
+  padding-block: 11px;
 }
 
 #subnav ul {
@@ -61,18 +55,11 @@
   text-align: center;
   transition:
     color 300ms var(--subnav-ease),
-    letter-spacing 400ms var(--subnav-ease),
-    padding-top var(--subnav-duration) var(--subnav-ease);
+    letter-spacing 400ms var(--subnav-ease);
 }
 
 #subnav .row:has(a[style]) ul a[style] {
   padding-top: var(--icon-offset);
-}
-
-/* Sticky: collapse the icon's reserved space — label sits with symmetric padding
-   (bottom padding already 6px; match it on top so the bar is compact) */
-#subnav.sticky .row:has(a[style]) ul a[style] {
-  padding-top: 6px;
 }
 
 #subnav .row:has(a[style]) ul a[style]::before {
@@ -86,22 +73,12 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  /* Hidden pre-entrance; revealed by #subnav.is-revealed */
-  opacity: 0;
-  transform: translateX(-50%) translateY(8px);
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
   transition:
     transform var(--subnav-duration) var(--subnav-ease),
     opacity calc(var(--subnav-duration) * 0.7) var(--subnav-ease);
 }
-
-/* Entrance: staggered cascade when subnav first scrolls into view */
-#subnav.is-revealed .row:has(a[style]) ul a[style]::before {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
-#subnav.is-revealed ul li:nth-child(1) a[style]::before { transition-delay: 60ms; }
-#subnav.is-revealed ul li:nth-child(2) a[style]::before { transition-delay: 160ms; }
-#subnav.is-revealed ul li:nth-child(3) a[style]::before { transition-delay: 260ms; }
 
 /* Hairline underline indicator — grows from centre */
 #subnav ul a::after {
@@ -136,7 +113,7 @@
 
 /* Icon-lift hover — desktop only, non-sticky state */
 @media (hover: hover) {
-  #subnav:not(.sticky).is-revealed .row:has(a[style]) ul a[style]:hover::before {
+  #subnav:not(.sticky) .row:has(a[style]) ul a[style]:hover::before {
     transform: translateX(-50%) translateY(-3px);
   }
   #subnav ul a:hover {
@@ -639,7 +616,6 @@
 }
 
 .dest-chapter--center .dest-chapter__title {
-  font-size: clamp(2rem, 3vw, 3.6rem);
   align-self: start;
 }
 
@@ -730,11 +706,17 @@
 
 .dest-chapter__title {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 2.2vw, 2.6rem);
+  font-size: clamp(2rem, 3vw, 3.6rem);
   font-weight: 300;
   line-height: 1.15;
   color: var(--color-text);
   margin: 0;
+}
+
+/* Normalise other section titles on this page to match dest-chapter__title */
+.story-philosophy__title,
+.loc-teaser__title {
+  font-size: clamp(2rem, 3vw, 3.6rem);
 }
 
 .dest-chapter__lead {

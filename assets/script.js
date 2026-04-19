@@ -194,6 +194,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Story-block: stagger children (eyebrow → heading → paragraphs) on first reveal
+  const storyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        storyObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.story-block__content').forEach(el => storyObserver.observe(el));
+
   // --- Voices carousel (mobile) ---
   const voicesGrid = document.querySelector('.voices-grid');
   const voicesDots = document.getElementById('voicesDots');

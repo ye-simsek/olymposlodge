@@ -63,7 +63,8 @@
   }]
   </script>
 <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
-  <link rel="stylesheet" href="../assets/base.css?v=24">
+  <link rel="preload" as="image" href="../assets/images/pavillion.webp" fetchpriority="low">
+    <link rel="stylesheet" href="../assets/base.css?v=34">
   <link rel="stylesheet" href="../assets/offers.css?v=13">
 
   <!-- Preload primary fonts (same-origin, no DNS round-trip) -->
@@ -96,20 +97,68 @@
 
   <!-- Full-screen Navigation Overlay -->
   <nav class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-      <li><a href="../index.html" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
-      <li><a href="rooms.html" data-nav data-i18n="nav_rooms">Odalar</a></li>
-      <li><a href="cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a></li>
-      <li><a href="location.html" data-nav data-i18n="nav_location">Konum</a></li>
-      <li><a href="gallery.html" data-nav data-i18n="nav_gallery">Galeri</a></li>
-      <li><a href="offers.html" data-nav data-i18n="nav_offers">Teklifler</a></li>
-      <li><a href="contact.html" data-nav data-i18n="nav_contact">İletişim</a></li>
-    </ul>
-    <div class="nav-footer">
-      <a href="tel:+905323083486">+90 532 308 34 86</a>
-      <div class="nav-social">
-        <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+    <div class="nav-overlay__left">
+      <img class="nav-overlay__logo"
+           src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png"
+           alt="Olympos Lodge" width="220" height="110">
+      <button class="nav-overlay__close" aria-label="Kapat"
+              onclick="document.getElementById('menuToggle').click()">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li>
+          <div class="nav-item-wrap">
+            <a href="../index.html" data-nav data-i18n="nav_home">Ana Sayfa</a>
+            <span class="nav-sub">kıyıya açılan kapı</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="rooms.html" data-nav data-i18n="nav_rooms">Odalar</a>
+            <span class="nav-sub">on yedi oda, bir kıyı</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a>
+            <span class="nav-sub">ateş, orman, deniz</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="location.html" data-nav data-i18n="nav_location">Konum</a>
+            <span class="nav-sub">Çıralı, Antalya</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="gallery.html" data-nav data-i18n="nav_gallery">Galeri</a>
+            <span class="nav-sub">ışık ve gölge</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="offers.html" data-nav data-i18n="nav_offers">Teklifler</a>
+            <span class="nav-sub">erken gelen kazanır</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="contact.html" data-nav data-i18n="nav_contact">İletişim</a>
+            <span class="nav-sub">sizi bekliyoruz</span>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-footer">
+        <a href="tel:+905323083486">+90 532 308 34 86</a>
+        <div class="nav-social">
+          <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
+    </div>
+    <div class="nav-overlay__photo">
+      <div class="nav-overlay__photo-img"></div>
+      <span class="nav-overlay__caption">Çıralı · Antalya</span>
     </div>
   </nav>
 

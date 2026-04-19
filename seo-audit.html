@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Audit Report — Olympos Lodge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --cream: #F7F5F0;
+      --text: #1c1814;
+      --text-light: #6b6b6b;
+      --text-muted: #999;
+      --gold: #8E7441;
+      --gold-soft: rgba(142,116,65,0.12);
+      --border: #e8e4de;
+      --border-light: #f0ece6;
+      --red: #c0392b;
+      --red-bg: #fdf2f0;
+      --orange: #d4760a;
+      --orange-bg: #fef8f0;
+      --green: #27763d;
+      --green-bg: #f0faf3;
+      --blue: #263d93;
+      --blue-bg: #f0f3fa;
+      --heading: 'Cormorant Garamond', Georgia, serif;
+      --body: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --accent: 'Josefin Sans', sans-serif;
+      --paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.18'/%3E%3C/svg%3E");
+    }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--body);
+      font-weight: 300;
+      color: var(--text);
+      background: var(--cream);
+      background-image: var(--paper);
+      line-height: 1.7;
+    }
+
+    /* ── Hero ── */
+    .audit-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--text);
+      overflow: hidden;
+    }
+    .audit-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(142,116,65,0.08) 0%, transparent 70%),
+        linear-gradient(180deg, rgba(28,24,20,1) 0%, rgba(38,34,28,1) 100%);
+    }
+    .audit-hero * { position: relative; z-index: 1; }
+    .audit-hero__label {
+      font-family: var(--accent);
+      font-size: 0.65rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+    .audit-hero__title {
+      font-family: var(--heading);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .audit-hero__subtitle {
+      font-family: var(--heading);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      max-width: 500px;
+      margin-bottom: 3.5rem;
+    }
+    .audit-hero__meta {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .audit-hero__meta-item {
+      text-align: center;
+    }
+    .audit-hero__meta-label {
+      display: block;
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 0.4rem;
+    }
+    .audit-hero__meta-value {
+      font-family: var(--heading);
+      font-size: 1rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+    }
+
+    /* ── Score Ring ── */
+    .score-ring {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 3rem;
+    }
+    .score-ring svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+    .score-ring__bg {
+      fill: none;
+      stroke: rgba(255,255,255,0.08);
+      stroke-width: 4;
+    }
+    .score-ring__fill {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 628.3;
+      stroke-dashoffset: 628.3;
+      transition: stroke-dashoffset 2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .score-ring__number {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .score-ring__value {
+      font-family: var(--heading);
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+    }
+    .score-ring__label {
+      font-family: var(--accent);
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 0.3rem;
+    }
+
+    /* ── Layout ── */
+    .audit-body {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Section ── */
+    .audit-section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .audit-section:last-child { border-bottom: none; }
+    .audit-section__label {
+      font-family: var(--accent);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .audit-section__title {
+      font-family: var(--heading);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+    .audit-section__score {
+      font-family: var(--heading);
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Category Score Cards ── */
+    .score-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+    .score-card {
+      background: var(--cream);
+      background-image: var(--paper);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .score-card:hover { background: #fff; }
+    .score-card__value {
+      font-family: var(--heading);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .score-card__value.--critical { color: var(--red); }
+    .score-card__value.--warning { color: var(--orange); }
+    .score-card__value.--ok { color: var(--green); }
+    .score-card__bar {
+      width: 100%;
+      height: 3px;
+      background: var(--border);
+      margin: 1rem 0;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .score-card__bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 1.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .score-card__bar-fill.--critical { background: var(--red); }
+    .score-card__bar-fill.--warning { background: var(--orange); }
+    .score-card__bar-fill.--ok { background: var(--green); }
+    .score-card__name {
+      font-family: var(--accent);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .score-card__weight {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+
+    /* ── Issue Lists ── */
+    .issues-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 700px) {
+      .issues-grid { grid-template-columns: 1fr; }
+    }
+    .issues-block__title {
+      font-family: var(--heading);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1.2rem;
+      color: var(--text);
+    }
+    .issue-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-light);
+      align-items: flex-start;
+    }
+    .issue-item:last-child { border-bottom: none; }
+    .issue-badge {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 0.55rem;
+    }
+    .issue-badge.--critical { background: var(--red); box-shadow: 0 0 0 3px var(--red-bg); }
+    .issue-badge.--high { background: var(--orange); box-shadow: 0 0 0 3px var(--orange-bg); }
+    .issue-badge.--medium { background: var(--blue); box-shadow: 0 0 0 3px var(--blue-bg); }
+    .issue-badge.--low { background: var(--green); box-shadow: 0 0 0 3px var(--green-bg); }
+    .issue-text {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text-light);
+    }
+    .issue-text strong {
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* ── Tables ── */
+    .audit-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2.5rem;
+      font-size: 0.85rem;
+    }
+    .audit-table thead th {
+      font-family: var(--accent);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: left;
+      padding: 0 1rem 0.8rem;
+      border-bottom: 2px solid var(--border);
+      font-weight: 400;
+    }
+    .audit-table tbody td {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-light);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .audit-table tbody tr:last-child td { border-bottom: none; }
+    .audit-table tbody td:first-child {
+      font-family: var(--heading);
+      font-size: 0.95rem;
+      color: var(--text);
+      font-weight: 400;
+    }
+
+    /* ── Status Chips ── */
+    .chip {
+      display: inline-block;
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+    }
+    .chip.--critical { background: var(--red-bg); color: var(--red); }
+    .chip.--high { background: var(--orange-bg); color: var(--orange); }
+    .chip.--ok { background: var(--green-bg); color: var(--green); }
+    .chip.--missing { background: var(--red-bg); color: var(--red); }
+    .chip.--partial { background: var(--orange-bg); color: var(--orange); }
+    .chip.--pass { background: var(--green-bg); color: var(--green); }
+    .chip.--thin { background: var(--orange-bg); color: var(--orange); }
+    .chip.--info { background: var(--blue-bg); color: var(--blue); }
+
+    /* ── E-E-A-T Bars ── */
+    .eeat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 600px) { .eeat-grid { grid-template-columns: 1fr; } }
+    .eeat-item {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+    .eeat-item__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.8rem;
+    }
+    .eeat-item__name {
+      font-family: var(--heading);
+      font-size: 1.15rem;
+      font-weight: 400;
+    }
+    .eeat-item__score {
+      font-family: var(--heading);
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+    .eeat-item__bar {
+      width: 100%;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+    }
+    .eeat-item__bar-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+    .eeat-item__note {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    /* ── Platform Scores ── */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 700px) {
+      .platform-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .platform-card {
+      background: #fff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+    .platform-card__name {
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .platform-card__score {
+      font-family: var(--heading);
+      font-size: 2rem;
+      font-weight: 300;
+    }
+    .platform-card__gap {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 0.5rem;
+      line-height: 1.4;
+    }
+
+    /* ── Prose Blocks ── */
+    .audit-prose {
+      max-width: 680px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+    }
+    .audit-prose strong { color: var(--text); font-weight: 400; }
+
+    /* ── Roadmap ── */
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 800px) {
+      .roadmap { grid-template-columns: repeat(2, 1fr); }
+    }
+    .roadmap__week {
+      background: var(--cream);
+      background-image: var(--paper);
+      padding: 2rem 1.5rem;
+    }
+    .roadmap__week-label {
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .roadmap__week-title {
+      font-family: var(--heading);
+      font-size: 1.15rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    .roadmap__week-items {
+      list-style: none;
+      padding: 0;
+    }
+    .roadmap__week-items li {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border-light);
+      line-height: 1.45;
+    }
+    .roadmap__week-items li:last-child { border-bottom: none; }
+
+    /* ── Projection Table ── */
+    .projection {
+      display: grid;
+      grid-template-columns: 2fr repeat(3, 1fr);
+      border: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .projection__cell {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .projection__cell:nth-child(4n+1) {
+      font-family: var(--heading);
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .projection__cell.--header {
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--border);
+      font-weight: 400;
+    }
+    .projection__cell.--highlight {
+      color: var(--green);
+      font-weight: 500;
+    }
+
+    /* ── Footer ── */
+    .audit-footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .audit-footer p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .audit-footer__brand {
+      font-family: var(--heading);
+      font-size: 1rem;
+      color: var(--text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Scroll Animations ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+                  transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .reveal.--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── Sticky TOC ── */
+    .audit-toc {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,245,240,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      overflow-x: auto;
+    }
+    .audit-toc__inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+    }
+    .audit-toc__link {
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 1rem 1rem;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .audit-toc__link:hover,
+    .audit-toc__link.--active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── NAP Table ── */
+    .nap-conflict {
+      background: var(--red-bg);
+    }
+
+    /* ── Action Items ── */
+    .action-list {
+      counter-reset: action;
+    }
+    .action-item {
+      display: grid;
+      grid-template-columns: 48px 1fr auto;
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--border-light);
+      align-items: start;
+    }
+    .action-item:last-child { border-bottom: none; }
+    .action-item__number {
+      font-family: var(--heading);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      text-align: right;
+      padding-top: 0.1rem;
+    }
+    .action-item__content h4 {
+      font-family: var(--heading);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .action-item__content p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+    .action-item__effort {
+      font-family: var(--accent);
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      white-space: nowrap;
+      padding-top: 0.3rem;
+    }
+    @media (max-width: 600px) {
+      .action-item { grid-template-columns: 32px 1fr; }
+      .action-item__effort { grid-column: 2; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════ HERO ════════ -->
+  <section class="audit-hero">
+    <span class="audit-hero__label">SEO Audit Report &mdash; Updated 12 April 2026</span>
+
+    <div class="score-ring" id="scoreRing">
+      <svg viewBox="0 0 220 220">
+        <circle class="score-ring__bg" cx="110" cy="110" r="100" />
+        <circle class="score-ring__fill" cx="110" cy="110" r="100" id="scoreFill" />
+      </svg>
+      <div class="score-ring__number">
+        <span class="score-ring__value" id="scoreValue">0</span>
+        <span class="score-ring__label">of 100</span>
+      </div>
+    </div>
+
+    <h1 class="audit-hero__title">Olympos Lodge</h1>
+    <p class="audit-hero__subtitle">Full-site SEO health assessment</p>
+
+    <div class="audit-hero__meta">
+      <div class="audit-hero__meta-item">
+        <span class="audit-hero__meta-label">Audited URL</span>
+        <span class="audit-hero__meta-value">ye-simsek.github.io/olymposlodge</span>
+      </div>
+      <div class="audit-hero__meta-item">
+        <span class="audit-hero__meta-label">Date</span>
+        <span class="audit-hero__meta-value">12 April 2026</span>
+      </div>
+      <div class="audit-hero__meta-item">
+        <span class="audit-hero__meta-label">Pages Crawled</span>
+        <span class="audit-hero__meta-value">15</span>
+      </div>
+      <div class="audit-hero__meta-item">
+        <span class="audit-hero__meta-label">Business Type</span>
+        <span class="audit-hero__meta-value">Boutique Hotel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ TOC ════════ -->
+  <nav class="audit-toc">
+    <div class="audit-toc__inner">
+      <a href="#overview" class="audit-toc__link --active">Overview</a>
+      <a href="#technical" class="audit-toc__link">Technical</a>
+      <a href="#content" class="audit-toc__link">Content</a>
+      <a href="#onpage" class="audit-toc__link">On-Page</a>
+      <a href="#schema" class="audit-toc__link">Schema</a>
+      <a href="#performance" class="audit-toc__link">Performance</a>
+      <a href="#ai" class="audit-toc__link">AI Readiness</a>
+      <a href="#local" class="audit-toc__link">Local SEO</a>
+      <a href="#actions" class="audit-toc__link">Action Plan</a>
+    </div>
+  </nav>
+
+  <div class="audit-body">
+
+    <!-- ════════ OVERVIEW ════════ -->
+    <section class="audit-section" id="overview">
+      <span class="audit-section__label reveal">Executive Summary</span>
+      <h2 class="audit-section__title reveal">Category Scores</h2>
+
+      <div class="score-cards reveal">
+        <div class="score-card">
+          <div class="score-card__value --warning">68</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --warning" style="width: 68%"></div></div>
+          <div class="score-card__name">Technical SEO</div>
+          <div class="score-card__weight">22% weight &middot; was 38</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --warning">67</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --warning" style="width: 67%"></div></div>
+          <div class="score-card__name">Content Quality</div>
+          <div class="score-card__weight">23% weight</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --warning">58</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --warning" style="width: 58%"></div></div>
+          <div class="score-card__name">On-Page SEO</div>
+          <div class="score-card__weight">20% weight &middot; was 55</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --ok">82</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --ok" style="width: 82%"></div></div>
+          <div class="score-card__name">Schema</div>
+          <div class="score-card__weight">10% weight &middot; was 45</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --warning">60</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --warning" style="width: 60%"></div></div>
+          <div class="score-card__name">Performance</div>
+          <div class="score-card__weight">10% weight</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --warning">68</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --warning" style="width: 68%"></div></div>
+          <div class="score-card__name">AI Readiness</div>
+          <div class="score-card__weight">10% weight &middot; was 54</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --critical">40</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --critical" style="width: 40%"></div></div>
+          <div class="score-card__name">Images</div>
+          <div class="score-card__weight">5% weight</div>
+        </div>
+      </div>
+
+      <div class="issues-grid reveal">
+        <div class="issues-block">
+          <h3 class="issues-block__title">Resolved (since initial audit)</h3>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>robots.txt</strong> &mdash; created with AI crawler permissions</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>sitemap.xml</strong> &mdash; 18 URLs with priorities and lastmod</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>Canonical tags</strong> &mdash; added to all 16 pages, pointing to production</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>Hreflang tags</strong> &mdash; TR/EN/DE + x-default on all pages</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>NAP unified</strong> &mdash; "Cirali Yolu 9" consistent across all pages</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>Schema upgraded</strong> &mdash; Hotel type, aggregateRating (4.4/5, 660 reviews), FAQ, HotelRoom, BreadcrumbList, Offer, TouristAttraction</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --low"></span>
+            <p class="issue-text"><strong>llms.txt</strong> &mdash; AI-readable property description deployed</p>
+          </div>
+        </div>
+        <div class="issues-block">
+          <h3 class="issues-block__title">Remaining Issues</h3>
+          <div class="issue-item">
+            <span class="issue-badge --critical"></span>
+            <p class="issue-text"><strong>Offers page critically thin</strong> &mdash; ~120 words, no pricing, dates, or inclusions</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --high"></span>
+            <p class="issue-text"><strong>Anonymous testimonials</strong> &mdash; "Bir misafir, 2024" is unverifiable</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --high"></span>
+            <p class="issue-text"><strong>TripAdvisor link broken</strong> &mdash; points to root domain, not property listing</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --high"></span>
+            <p class="issue-text"><strong>No commercial keywords in headings</strong> &mdash; "Cirali otel", "boutique hotel" absent from H1/H2</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --medium"></span>
+            <p class="issue-text"><strong>Image alt text</strong> &mdash; generic/incorrect on many images</p>
+          </div>
+          <div class="issue-item">
+            <span class="issue-badge --medium"></span>
+            <p class="issue-text"><strong>Copyright year</strong> &mdash; still reads 2025</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ TECHNICAL SEO ════════ -->
+    <section class="audit-section" id="technical">
+      <span class="audit-section__label reveal">01</span>
+      <h2 class="audit-section__title reveal">Technical SEO</h2>
+      <p class="audit-section__score reveal">68 / 100 <span style="font-size: 0.85rem; color: var(--green);">&uarr; from 38</span></p>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr>
+            <th>Check</th>
+            <th>Status</th>
+            <th>Severity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>robots.txt</td>
+            <td><span class="chip --pass">Done</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>sitemap.xml</td>
+            <td><span class="chip --pass">Done</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Canonical tags</td>
+            <td><span class="chip --pass">All 16 pages</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Hreflang tags</td>
+            <td><span class="chip --pass">TR/EN/DE + x-default</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>NAP consistency</td>
+            <td><span class="chip --pass">Unified</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Meta robots</td>
+            <td><span class="chip --pass">OK</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>HTTPS</td>
+            <td><span class="chip --pass">Enforced</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Page titles</td>
+            <td><span class="chip --pass">Unique</span></td>
+            <td>&mdash;</td>
+          </tr>
+          <tr>
+            <td>Meta descriptions</td>
+            <td><span class="chip --pass">Present</span></td>
+            <td>&mdash;</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════ CONTENT QUALITY ════════ -->
+    <section class="audit-section" id="content">
+      <span class="audit-section__label reveal">02</span>
+      <h2 class="audit-section__title reveal">Content Quality</h2>
+      <p class="audit-section__score reveal">67 / 100</p>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;" class="reveal">E-E-A-T Assessment</h3>
+
+      <div class="eeat-grid reveal">
+        <div class="eeat-item">
+          <div class="eeat-item__header">
+            <span class="eeat-item__name">Experience</span>
+            <span class="eeat-item__score">16 / 20</span>
+          </div>
+          <div class="eeat-item__bar"><div class="eeat-item__bar-fill" style="width: 80%"></div></div>
+          <p class="eeat-item__note">Strong first-hand knowledge &mdash; 1987 founding, specific amenity details. Deduction: anonymous testimonials.</p>
+        </div>
+        <div class="eeat-item">
+          <div class="eeat-item__header">
+            <span class="eeat-item__name">Expertise</span>
+            <span class="eeat-item__score">19 / 25</span>
+          </div>
+          <div class="eeat-item__bar"><div class="eeat-item__bar-fill" style="width: 76%"></div></div>
+          <p class="eeat-item__note">Solid hospitality domain knowledge. No named author or owner identified anywhere visible on the site.</p>
+        </div>
+        <div class="eeat-item">
+          <div class="eeat-item__header">
+            <span class="eeat-item__name">Authoritativeness</span>
+            <span class="eeat-item__score">17 / 25</span>
+          </div>
+          <div class="eeat-item__bar"><div class="eeat-item__bar-fill" style="width: 68%"></div></div>
+          <p class="eeat-item__note">Well-formed JSON-LD. TripAdvisor link broken. No press mentions, awards, or third-party citations.</p>
+        </div>
+        <div class="eeat-item">
+          <div class="eeat-item__header">
+            <span class="eeat-item__name">Trustworthiness</span>
+            <span class="eeat-item__score">15 / 30</span>
+          </div>
+          <div class="eeat-item__bar"><div class="eeat-item__bar-fill" style="width: 50%"></div></div>
+          <p class="eeat-item__note">Phone/email present. KVKK compliance. But: no canonicals, anonymous testimonials, outdated copyright year.</p>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;" class="reveal">Content Depth by Page</h3>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th>Words</th>
+            <th>Target</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>index.html</td><td>~480</td><td>500</td><td><span class="chip --partial">Borderline</span></td></tr>
+          <tr><td>pages/rooms.html</td><td>~310</td><td>800</td><td><span class="chip --thin">Thin</span></td></tr>
+          <tr><td>pages/cirali.html</td><td>~620</td><td>500</td><td><span class="chip --pass">Pass</span></td></tr>
+          <tr><td>pages/offers.html</td><td>~120</td><td>800</td><td><span class="chip --critical">Critical</span></td></tr>
+          <tr><td>pages/location.html</td><td>~280</td><td>500</td><td><span class="chip --thin">Thin</span></td></tr>
+          <tr><td>pages/lodge.html</td><td>~400</td><td>800</td><td><span class="chip --thin">Thin</span></td></tr>
+          <tr><td>pages/gallery.html</td><td>~0</td><td>N/A</td><td><span class="chip --missing">No text</span></td></tr>
+          <tr><td>room-aqua-super-deluxe</td><td>~310</td><td>400</td><td><span class="chip --partial">Borderline</span></td></tr>
+          <tr><td>room-standart</td><td>~180</td><td>300</td><td><span class="chip --thin">Thin</span></td></tr>
+          <tr><td>room-gol-evi</td><td>~230</td><td>300</td><td><span class="chip --thin">Thin</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════ ON-PAGE SEO ════════ -->
+    <section class="audit-section" id="onpage">
+      <span class="audit-section__label reveal">03</span>
+      <h2 class="audit-section__title reveal">On-Page SEO</h2>
+      <p class="audit-section__score reveal">58 / 100 <span style="font-size: 0.85rem; color: var(--green);">&uarr; from 55</span></p>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr>
+            <th>Issue</th>
+            <th>Severity</th>
+            <th>Pages</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No commercial keywords in any H1</td>
+            <td><span class="chip --high">High</span></td>
+            <td>All pages</td>
+          </tr>
+          <tr>
+            <td>Location page H1 is single word "Konum"</td>
+            <td><span class="chip --high">High</span></td>
+            <td>location.html</td>
+          </tr>
+          <tr>
+            <td>H2s predominantly in Turkish when English is default</td>
+            <td><span class="chip --partial">Medium</span></td>
+            <td>Multiple</td>
+          </tr>
+          <tr>
+            <td>No question-format headings for AI extraction</td>
+            <td><span class="chip --partial">Medium</span></td>
+            <td>All pages</td>
+          </tr>
+          <tr>
+            <td>No breadcrumb navigation</td>
+            <td><span class="chip --partial">Medium</span></td>
+            <td>All pages</td>
+          </tr>
+          <tr>
+            <td>No cross-linking between related content</td>
+            <td><span class="chip --partial">Medium</span></td>
+            <td>Room pages</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="audit-prose reveal">
+        <strong>Missing keyword targets:</strong> No page contains "Cirali otel", "Antalya butik otel", "Cirali'da konaklama", "Kemer yakini otel", or "Olympos Lodge fiyat" in any H1 or H2. These are the highest-value commercial search terms for this property.
+      </p>
+    </section>
+
+    <!-- ════════ SCHEMA ════════ -->
+    <section class="audit-section" id="schema">
+      <span class="audit-section__label reveal">04</span>
+      <h2 class="audit-section__title reveal">Schema &amp; Structured Data</h2>
+      <p class="audit-section__score reveal">82 / 100 <span style="font-size: 0.85rem; color: var(--green);">&uarr; from 45</span></p>
+
+      <p class="audit-prose reveal">
+        The homepage now uses <strong>Hotel</strong> type (upgraded from LodgingBusiness) with <strong>aggregateRating</strong> (4.4/5, 660 Google reviews), <strong>foundingDate</strong>, <strong>hasMap</strong>, full-precision geo coordinates, and <strong>FAQPage</strong> schema with 6 common guest questions. All 6 room pages have <strong>HotelRoom</strong> JSON-LD. <strong>BreadcrumbList</strong> is on every subpage. <strong>OfferCatalog</strong> on offers.html and <strong>TouristAttraction</strong> for Chimaera and Olympos ruins on cirali.html.
+      </p>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr>
+            <th>Schema Type</th>
+            <th>Pages</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Hotel + aggregateRating + FAQ</td><td>Homepage</td><td><span class="chip --pass">Done</span></td></tr>
+          <tr><td>HotelRoom</td><td>All 6 room pages</td><td><span class="chip --pass">Done</span></td></tr>
+          <tr><td>BreadcrumbList</td><td>All subpages</td><td><span class="chip --pass">Done</span></td></tr>
+          <tr><td>OfferCatalog</td><td>offers.html</td><td><span class="chip --pass">Done</span></td></tr>
+          <tr><td>TouristAttraction</td><td>cirali.html</td><td><span class="chip --pass">Done</span></td></tr>
+          <tr><td>Review (attributed)</td><td>Homepage</td><td><span class="chip --partial">Remaining</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════ PERFORMANCE ════════ -->
+    <section class="audit-section" id="performance">
+      <span class="audit-section__label reveal">05</span>
+      <h2 class="audit-section__title reveal">Performance &amp; Core Web Vitals</h2>
+      <p class="audit-section__score reveal">60 / 100</p>
+
+      <div class="score-cards reveal" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="score-card">
+          <div class="score-card__value --ok" style="font-size:1.6rem;">Likely Good</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --ok" style="width: 75%"></div></div>
+          <div class="score-card__name">LCP</div>
+          <div class="score-card__weight">Static HTML, explicit image dimensions</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --ok" style="font-size:1.6rem;">Likely Good</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --ok" style="width: 80%"></div></div>
+          <div class="score-card__name">INP</div>
+          <div class="score-card__weight">Minimal JS interaction patterns</div>
+        </div>
+        <div class="score-card">
+          <div class="score-card__value --ok" style="font-size:1.6rem;">Likely Good</div>
+          <div class="score-card__bar"><div class="score-card__bar-fill --ok" style="width: 78%"></div></div>
+          <div class="score-card__name">CLS</div>
+          <div class="score-card__weight">Images have width/height</div>
+        </div>
+      </div>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr><th>Resource</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Image format</td><td>Mixed WebP/JPEG &mdash; room for improvement</td></tr>
+          <tr><td>Font loading</td><td>Google Fonts CDN (render-blocking)</td></tr>
+          <tr><td>CSS delivery</td><td>Split logically &mdash; good</td></tr>
+          <tr><td>Lazy loading</td><td>Not consistently applied</td></tr>
+          <tr><td>Video</td><td>Local .webm/.mp4 with poster &mdash; good</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════ AI READINESS ════════ -->
+    <section class="audit-section" id="ai">
+      <span class="audit-section__label reveal">06</span>
+      <h2 class="audit-section__title reveal">AI Search Readiness</h2>
+      <p class="audit-section__score reveal">68 / 100 <span style="font-size: 0.85rem; color: var(--green);">&uarr; from 54</span></p>
+
+      <p class="audit-prose reveal">
+        <strong>robots.txt</strong> now explicitly permits GPTBot, ClaudeBot, PerplexityBot, and Google-Extended. <strong>llms.txt</strong> provides a curated property description for LLM context windows. <strong>FAQPage</strong> schema covers 6 common guest questions. <strong>aggregateRating</strong> (4.4/5, 660 reviews) gives AI systems a concrete trust signal. Remaining gaps: no YouTube channel (0.737 correlation with AI citation), no press mentions, TripAdvisor not linked.
+      </p>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;" class="reveal">Platform Scores</h3>
+
+      <div class="platform-grid reveal">
+        <div class="platform-card">
+          <div class="platform-card__name">Google AI Overviews</div>
+          <div class="platform-card__score" style="color: var(--orange)">66</div>
+          <p class="platform-card__gap">FAQ + AggregateRating now present</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card__name">ChatGPT</div>
+          <div class="platform-card__score" style="color: var(--orange)">60</div>
+          <p class="platform-card__gap">llms.txt deployed, no YouTube yet</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card__name">Perplexity</div>
+          <div class="platform-card__score" style="color: var(--ok)">72</div>
+          <p class="platform-card__gap">Best positioned &mdash; fact tables + FAQ</p>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card__name">Bing Copilot</div>
+          <div class="platform-card__score" style="color: var(--orange)">62</div>
+          <p class="platform-card__gap">Review schema now present</p>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;" class="reveal">Brand Presence</h3>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr><th>Platform</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Instagram</td><td><span class="chip --pass">@olymposlodge</span></td></tr>
+          <tr><td>Google Business Profile</td><td><span class="chip --pass">Confirmed</span></td></tr>
+          <tr><td>TripAdvisor</td><td><span class="chip --partial">Not linked from site</span></td></tr>
+          <tr><td>YouTube</td><td><span class="chip --missing">No channel</span></td></tr>
+          <tr><td>Booking.com</td><td><span class="chip --partial">Unknown</span></td></tr>
+          <tr><td>Wikipedia</td><td><span class="chip --missing">No article</span></td></tr>
+          <tr><td>Press / Awards</td><td><span class="chip --missing">None referenced</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════ LOCAL SEO ════════ -->
+    <section class="audit-section" id="local">
+      <span class="audit-section__label reveal">07</span>
+      <h2 class="audit-section__title reveal">Local SEO</h2>
+      <p class="audit-section__score reveal">60 / 100 <span style="font-size: 0.85rem; color: var(--green);">&uarr; from 51</span></p>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;" class="reveal">NAP Consistency</h3>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr><th>Source</th><th>Street</th><th>Phone</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>JSON-LD Schema</td>
+            <td>Cirali Yolu 9</td>
+            <td>+90 532 308 34 86</td>
+          </tr>
+          <tr>
+            <td>Footer (all languages)</td>
+            <td>Cirali Yolu 9</td>
+            <td>+90 532 308 34 86</td>
+          </tr>
+          <tr>
+            <td>terms.html (legal)</td>
+            <td>Cirali Yolu 9</td>
+            <td>+90 532 308 34 86</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="audit-prose reveal">
+        Street name has been <strong>unified to "Cirali Yolu 9"</strong> across all pages: JSON-LD schema, footer translations (TR/EN/DE), and legal documents. Phone number conflict in terms.html has been resolved.
+      </p>
+
+      <table class="audit-table reveal">
+        <thead>
+          <tr><th>GBP Signal</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Google Maps embed</td><td><span class="chip --pass">Present</span></td></tr>
+          <tr><td>Click-to-call</td><td><span class="chip --pass">All pages</span></td></tr>
+          <tr><td>NAP consistency</td><td><span class="chip --pass">Unified</span></td></tr>
+          <tr><td>aggregateRating</td><td><span class="chip --pass">4.4/5 &mdash; 660 reviews</span></td></tr>
+          <tr><td>GBP name match</td><td><span class="chip --partial">Partial &mdash; "Olympos Lodge" vs "Olympos Lodge Otel"</span></td></tr>
+          <tr><td>Review widget</td><td><span class="chip --missing">Absent</span></td></tr>
+          <tr><td>Opening hours</td><td><span class="chip --missing">Absent</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ════════ ACTION PLAN ════════ -->
+    <section class="audit-section" id="actions">
+      <span class="audit-section__label reveal">Implementation</span>
+      <h2 class="audit-section__title reveal">Prioritised Action Plan</h2>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.3rem; color: var(--red);" class="reveal">High Priority &mdash; Content &amp; Design Work</h3>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem;" class="reveal">These require content creation or design changes</p>
+
+      <div class="action-list reveal">
+        <div class="action-item">
+          <span class="action-item__number">1</span>
+          <div class="action-item__content">
+            <h4>Expand offers page content</h4>
+            <p>~120 words on the highest-intent commercial page. Add pricing, dates, inclusions. Target 600+ words. Update Offer schema with real data.</p>
+          </div>
+          <span class="action-item__effort">~4 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">2</span>
+          <div class="action-item__content">
+            <h4>Replace anonymous testimonials</h4>
+            <p>"Bir misafir, 2024" is unverifiable. Source from TripAdvisor/Google with name + country, or add Review schema from real platform data.</p>
+          </div>
+          <span class="action-item__effort">~2 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">3</span>
+          <div class="action-item__content">
+            <h4>Fix TripAdvisor footer link + add to sameAs</h4>
+            <p>Footer links to tripadvisor.com root. Replace with actual property listing URL and add it to the JSON-LD sameAs array.</p>
+          </div>
+          <span class="action-item__effort">~10 min</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">4</span>
+          <div class="action-item__content">
+            <h4>Add commercial keywords to H1/H2 headings</h4>
+            <p>No page targets "Cirali otel", "Antalya boutique hotel", or "Olympos Lodge fiyat" in any heading. Location page H1 is just "Konum".</p>
+          </div>
+          <span class="action-item__effort">~3 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">5</span>
+          <div class="action-item__content">
+            <h4>Differentiate rooms.html from homepage</h4>
+            <p>Near-duplicate room listing. Add comparison table, "how to choose" section, keyword-rich cross-links to individual rooms.</p>
+          </div>
+          <span class="action-item__effort">~5 hours</span>
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 0.3rem; margin-top: 3rem; color: var(--orange);" class="reveal">Medium Priority &mdash; Polish</h3>
+      <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.5rem;" class="reveal">Optimization opportunities for ranking and reach</p>
+
+      <div class="action-list reveal">
+        <div class="action-item">
+          <span class="action-item__number">6</span>
+          <div class="action-item__content">
+            <h4>Rewrite image alt text</h4>
+            <p>Generic alt text ("detay", "cevre"), incorrect labels ("masaj" on a garden photo). Include property name and location.</p>
+          </div>
+          <span class="action-item__effort">~3 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">7</span>
+          <div class="action-item__content">
+            <h4>Add content to gallery page</h4>
+            <p>Zero text content. Add intro paragraph, group photos by category, add captions.</p>
+          </div>
+          <span class="action-item__effort">~2 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">8</span>
+          <div class="action-item__content">
+            <h4>Expand thin room pages</h4>
+            <p>Standart (~180 words) and Gol Evi (~230 words) need 100&ndash;200 words of unique editorial content each.</p>
+          </div>
+          <span class="action-item__effort">~4 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">9</span>
+          <div class="action-item__content">
+            <h4>Fix copyright year + add named founder</h4>
+            <p>Footer still says 2025. No named person anywhere visible. Add founder name to story section + Person schema.</p>
+          </div>
+          <span class="action-item__effort">~2 hours</span>
+        </div>
+        <div class="action-item">
+          <span class="action-item__number">10</span>
+          <div class="action-item__content">
+            <h4>Create YouTube property video</h4>
+            <p>Highest-leverage off-site action. 0.737 correlation with AI citation. Drone shots, room walkthroughs, Chimaera at night.</p>
+          </div>
+          <span class="action-item__effort">~1&ndash;2 weeks</span>
+        </div>
+      </div>
+
+      <!-- ── Roadmap ── -->
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-top: 4rem; margin-bottom: 1.5rem;" class="reveal">4-Week Roadmap</h3>
+
+      <div class="roadmap reveal">
+        <div class="roadmap__week" style="background: var(--green-bg);">
+          <div class="roadmap__week-label" style="color: var(--green);">Completed</div>
+          <div class="roadmap__week-title">Technical Foundation</div>
+          <ul class="roadmap__week-items">
+            <li>Canonical tags (16 pages)</li>
+            <li>robots.txt + AI permissions</li>
+            <li>sitemap.xml (18 URLs)</li>
+            <li>Hreflang TR/EN/DE</li>
+            <li>NAP unified (Cirali Yolu 9)</li>
+            <li>Hotel schema + aggregateRating</li>
+            <li>HotelRoom &times; 6</li>
+            <li>FAQ, Breadcrumb, Offer, TouristAttraction schema</li>
+            <li>llms.txt</li>
+            <li>og:type fix on room pages</li>
+          </ul>
+        </div>
+        <div class="roadmap__week">
+          <div class="roadmap__week-label">Next</div>
+          <div class="roadmap__week-title">Content &amp; Copy</div>
+          <ul class="roadmap__week-items">
+            <li>Expand offers page</li>
+            <li>Testimonial attribution</li>
+            <li>Rooms.html differentiation</li>
+            <li>Heading keyword optimization</li>
+            <li>Copyright year fix</li>
+          </ul>
+        </div>
+        <div class="roadmap__week">
+          <div class="roadmap__week-label">Then</div>
+          <div class="roadmap__week-title">Images &amp; Polish</div>
+          <ul class="roadmap__week-items">
+            <li>Image alt text rewrite</li>
+            <li>Gallery text + captions</li>
+            <li>Thin room page expansion</li>
+            <li>Founder attribution</li>
+            <li>TripAdvisor link fix</li>
+          </ul>
+        </div>
+        <div class="roadmap__week">
+          <div class="roadmap__week-label">Ongoing</div>
+          <div class="roadmap__week-title">Off-Site</div>
+          <ul class="roadmap__week-items">
+            <li>YouTube property video</li>
+            <li>Image format optimization</li>
+            <li>Self-host fonts</li>
+            <li>sameAs expansion</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ── Score Projection ── -->
+      <h3 style="font-family: var(--heading); font-size: 1.3rem; font-weight: 400; margin-bottom: 1.5rem;" class="reveal">Score Projection</h3>
+
+      <div class="projection reveal">
+        <div class="projection__cell --header">Category</div>
+        <div class="projection__cell --header">Initial (Apr 11)</div>
+        <div class="projection__cell --header">Current (Apr 12)</div>
+        <div class="projection__cell --header">After Content Work</div>
+
+        <div class="projection__cell">Technical SEO</div>
+        <div class="projection__cell" style="color: var(--red)">38</div>
+        <div class="projection__cell" style="color: var(--orange)">68</div>
+        <div class="projection__cell --highlight">75</div>
+
+        <div class="projection__cell">Content Quality</div>
+        <div class="projection__cell" style="color: var(--orange)">67</div>
+        <div class="projection__cell" style="color: var(--orange)">67</div>
+        <div class="projection__cell --highlight">80</div>
+
+        <div class="projection__cell">On-Page SEO</div>
+        <div class="projection__cell" style="color: var(--orange)">55</div>
+        <div class="projection__cell" style="color: var(--orange)">58</div>
+        <div class="projection__cell --highlight">72</div>
+
+        <div class="projection__cell">Schema</div>
+        <div class="projection__cell" style="color: var(--red)">45</div>
+        <div class="projection__cell --highlight">82</div>
+        <div class="projection__cell --highlight">85</div>
+
+        <div class="projection__cell">Performance</div>
+        <div class="projection__cell" style="color: var(--orange)">60</div>
+        <div class="projection__cell" style="color: var(--orange)">60</div>
+        <div class="projection__cell --highlight">68</div>
+
+        <div class="projection__cell">AI Readiness</div>
+        <div class="projection__cell" style="color: var(--orange)">54</div>
+        <div class="projection__cell" style="color: var(--orange)">68</div>
+        <div class="projection__cell --highlight">75</div>
+
+        <div class="projection__cell">Images</div>
+        <div class="projection__cell" style="color: var(--red)">40</div>
+        <div class="projection__cell" style="color: var(--red)">40</div>
+        <div class="projection__cell --highlight">60</div>
+
+        <div class="projection__cell" style="font-weight: 500;">Weighted Total</div>
+        <div class="projection__cell" style="font-weight: 500; color: var(--red);">52</div>
+        <div class="projection__cell" style="font-weight: 500; color: var(--orange);">65</div>
+        <div class="projection__cell --highlight" style="font-weight: 500;">76</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="audit-footer">
+    <p class="audit-footer__brand">Olympos Lodge &mdash; SEO Audit</p>
+    <p>Initial audit 11 April 2026 &middot; Updated 12 April 2026 &middot; Score improved 52 &rarr; 65 (+13) &middot; 16 pages analysed across 7 categories</p>
+  </footer>
+
+  <!-- ════════ SCRIPTS ════════ -->
+  <script>
+    /* ── Score ring animation ── */
+    const TARGET = 65;
+    const CIRCUMFERENCE = 2 * Math.PI * 100; // 628.3
+    const fill = document.getElementById('scoreFill');
+    const valueEl = document.getElementById('scoreValue');
+
+    function animateScore() {
+      const offset = CIRCUMFERENCE - (TARGET / 100) * CIRCUMFERENCE;
+      fill.style.strokeDashoffset = offset;
+
+      let current = 0;
+      const step = () => {
+        current += 1;
+        if (current > TARGET) current = TARGET;
+        valueEl.textContent = current;
+        if (current < TARGET) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    /* ── Scroll reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ── TOC active state ── */
+    const tocLinks = document.querySelectorAll('.audit-toc__link');
+    const sections = document.querySelectorAll('.audit-section');
+
+    const tocObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          tocLinks.forEach(link => {
+            link.classList.toggle('--active', link.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0, rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => tocObserver.observe(s));
+
+    /* ── Trigger hero animation after load ── */
+    window.addEventListener('load', () => {
+      setTimeout(animateScore, 400);
+    });
+  </script>
+
+</body>
+</html>

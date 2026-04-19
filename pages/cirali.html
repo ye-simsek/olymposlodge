@@ -57,8 +57,9 @@
   }]
   </script>
 <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
-  <link rel="stylesheet" href="../assets/base.css?v=24">
-  <link rel="stylesheet" href="../assets/cirali.css?v=56">
+  <link rel="preload" as="image" href="../assets/images/pavillion.webp" fetchpriority="low">
+    <link rel="stylesheet" href="../assets/base.css?v=34">
+  <link rel="stylesheet" href="../assets/cirali.css?v=62">
   <link rel="stylesheet" href="../assets/activities.css?v=2">
 
   <!-- Preload primary fonts (same-origin, no DNS round-trip) -->
@@ -87,20 +88,68 @@
   </header>
 
   <nav class="nav-overlay" id="navOverlay">
-    <ul class="nav-links">
-      <li><a href="../index.html" data-nav data-i18n="nav_home">Ana Sayfa</a></li>
-      <li><a href="rooms.html" data-nav data-i18n="nav_rooms">Odalar</a></li>
-      <li><a href="cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a></li>
-      <li><a href="location.html" data-nav data-i18n="nav_location">Konum</a></li>
-      <li><a href="gallery.html" data-nav data-i18n="nav_gallery">Galeri</a></li>
-      <li><a href="offers.html" data-nav data-i18n="nav_offers">Teklifler</a></li>
-      <li><a href="contact.html" data-nav data-i18n="nav_contact">İletişim</a></li>
-    </ul>
-    <div class="nav-footer">
-      <a href="tel:+905323083486">+90 532 308 34 86</a>
-      <div class="nav-social">
-        <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+    <div class="nav-overlay__left">
+      <img class="nav-overlay__logo"
+           src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png"
+           alt="Olympos Lodge" width="220" height="110">
+      <button class="nav-overlay__close" aria-label="Kapat"
+              onclick="document.getElementById('menuToggle').click()">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li>
+          <div class="nav-item-wrap">
+            <a href="../index.html" data-nav data-i18n="nav_home">Ana Sayfa</a>
+            <span class="nav-sub">kıyıya açılan kapı</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="rooms.html" data-nav data-i18n="nav_rooms">Odalar</a>
+            <span class="nav-sub">on yedi oda, bir kıyı</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a>
+            <span class="nav-sub">ateş, orman, deniz</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="location.html" data-nav data-i18n="nav_location">Konum</a>
+            <span class="nav-sub">Çıralı, Antalya</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="gallery.html" data-nav data-i18n="nav_gallery">Galeri</a>
+            <span class="nav-sub">ışık ve gölge</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="offers.html" data-nav data-i18n="nav_offers">Teklifler</a>
+            <span class="nav-sub">erken gelen kazanır</span>
+          </div>
+        </li>
+        <li>
+          <div class="nav-item-wrap">
+            <a href="contact.html" data-nav data-i18n="nav_contact">İletişim</a>
+            <span class="nav-sub">sizi bekliyoruz</span>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-footer">
+        <a href="tel:+905323083486">+90 532 308 34 86</a>
+        <div class="nav-social">
+          <a href="https://www.instagram.com/olymposlodge" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
+    </div>
+    <div class="nav-overlay__photo">
+      <div class="nav-overlay__photo-img"></div>
+      <span class="nav-overlay__caption">Çıralı · Antalya</span>
     </div>
   </nav>
 
@@ -110,8 +159,8 @@
     <span class="page-name" data-i18n="nav_cirali_tab">Çıralı</span>
     <div class="row">
       <ul>
-        <li><a href="cirali.html" class="active" style="--icon: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236E5A30%22 stroke-width=%221.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/><path d=%22M2 12h20%22/><path d=%22M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z%22/></svg>')" data-i18n="nav_cirali_tab">Çıralı</a></li>
-        <li><a href="activities.html" style="--icon: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236E5A30%22 stroke-width=%221.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z%22/><polyline points=%2214 2 14 8 20 8%22/><line x1=%228%22 y1=%2213%22 x2=%2216%22 y2=%2213%22/><line x1=%228%22 y1=%2217%22 x2=%2216%22 y2=%2217%22/></svg>')" data-i18n="nav_activities_tab">Aktiviteler</a></li>
+        <li><a href="cirali.html" class="active" style="--icon: url('../assets/images/icons/cirali-column.svg')" data-i18n="nav_cirali_tab">Çıralı</a></li>
+        <li><a href="activities.html" style="--icon: url('../assets/images/icons/activities-signpost.svg')" data-i18n="nav_activities_tab">Aktiviteler</a></li>
         <li><a href="lodge.html" style="--icon: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236E5A30%22 stroke-width=%221.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z%22/><polyline points=%229 22 9 12 15 12 15 22%22/></svg>')" data-i18n="nav_lodge_tab">Konaklamada</a></li>
       </ul>
     </div>

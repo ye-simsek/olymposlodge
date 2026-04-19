@@ -344,6 +344,7 @@
 .lodge-linker__list li {
   padding: 0.25rem 1.1rem;
   position: relative;
+  white-space: nowrap;
 }
 .lodge-linker__list li:first-child { padding-left: 0; }
 .lodge-linker__list li + li::before {

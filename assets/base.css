@@ -1449,12 +1449,16 @@ h4 {
 
 .story-block {
   display: grid;
-  grid-template-columns: 50.5fr 49.5fr;
-  height: calc((100vh - var(--header-height)) * 1.01);
+  grid-template-columns: 1fr 1fr;
+  height: calc((100vh - var(--header-height)) * 0.963);
 }
 
 .story-block--reverse {
-  grid-template-columns: 50.5fr 49.5fr;
+  grid-template-columns: 1fr 1fr;
+}
+
+#about .story-block {
+  height: calc((100vh - var(--header-height)) * 1.012);
 }
 
 .story-block__image {
@@ -1581,7 +1585,11 @@ h4 {
     grid-template-columns: 1fr;
   }
   .story-block__image {
-    height: 55vw;
+    height: 52.43vw;
+    min-height: 286px;
+  }
+  #about .story-block__image {
+    height: 55.08vw;
     min-height: 300px;
   }
   .story-block--reverse .story-block__image {

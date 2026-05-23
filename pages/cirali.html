@@ -58,13 +58,13 @@
   </script>
 <link rel="icon" href="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/cropped-olympos-lodge-logo-yuvarlak-32x32.png" sizes="32x32">
   <link rel="preload" as="image" href="../assets/images/pavillion.webp" fetchpriority="low">
-    <link rel="stylesheet" href="../assets/base.css?v=40">
-  <link rel="stylesheet" href="../assets/cirali.css?v=62">
-  <link rel="stylesheet" href="../assets/activities.css?v=2">
+    <link rel="stylesheet" href="../assets/base.css?v=50">
+  <link rel="stylesheet" href="../assets/cirali.css?v=146">
+  <link rel="stylesheet" href="../assets/activities.css?v=4">
 
   <!-- Preload primary fonts (same-origin, no DNS round-trip) -->
 </head>
-<body class="page--dest">
+<body class="page--dest page--cirali">
 
   <header class="site-header" id="header">
     <button class="menu-toggle" id="menuToggle" aria-label="Menu">
@@ -100,43 +100,43 @@
         <li>
           <div class="nav-item-wrap">
             <a href="../index.html" data-nav data-i18n="nav_home">Ana Sayfa</a>
-            <span class="nav-sub">kıyıya açılan kapı</span>
+            <span class="nav-sub" data-i18n="nav_home_sub">kıyıya açılan kapı</span>
           </div>
         </li>
         <li>
           <div class="nav-item-wrap">
             <a href="rooms.html" data-nav data-i18n="nav_rooms">Odalar</a>
-            <span class="nav-sub">on yedi oda, bir kıyı</span>
+            <span class="nav-sub" data-i18n="nav_rooms_sub">on yedi oda, bir kıyı</span>
           </div>
         </li>
         <li>
           <div class="nav-item-wrap">
             <a href="cirali.html" data-nav data-i18n="nav_experiences">Deneyimler</a>
-            <span class="nav-sub">ateş, orman, deniz</span>
+            <span class="nav-sub" data-i18n="nav_experiences_sub">ateş, orman, deniz</span>
           </div>
         </li>
         <li>
           <div class="nav-item-wrap">
             <a href="location.html" data-nav data-i18n="nav_location">Konum</a>
-            <span class="nav-sub">Çıralı, Antalya</span>
+            <span class="nav-sub" data-i18n="nav_location_sub">Çıralı, Antalya</span>
           </div>
         </li>
         <li>
           <div class="nav-item-wrap">
             <a href="gallery.html" data-nav data-i18n="nav_gallery">Galeri</a>
-            <span class="nav-sub">ışık ve gölge</span>
+            <span class="nav-sub" data-i18n="nav_gallery_sub">ışık ve gölge</span>
           </div>
         </li>
         <li>
           <div class="nav-item-wrap">
             <a href="offers.html" data-nav data-i18n="nav_offers">Teklifler</a>
-            <span class="nav-sub">erken gelen kazanır</span>
+            <span class="nav-sub" data-i18n="nav_offers_sub">erken gelen kazanır</span>
           </div>
         </li>
         <li>
           <div class="nav-item-wrap">
             <a href="contact.html" data-nav data-i18n="nav_contact">İletişim</a>
-            <span class="nav-sub">sizi bekliyoruz</span>
+            <span class="nav-sub" data-i18n="nav_contact_sub">sizi bekliyoruz</span>
           </div>
         </li>
       </ul>
@@ -159,9 +159,9 @@
     <span class="page-name" data-i18n="nav_cirali_tab">Çıralı</span>
     <div class="row">
       <ul>
-        <li><a href="cirali.html" class="active" style="--icon: url('../assets/images/icons/cirali-column.svg')" data-i18n="nav_cirali_tab">Çıralı</a></li>
-        <li><a href="activities.html" style="--icon: url('../assets/images/icons/activities-signpost.svg')" data-i18n="nav_activities_tab">Aktiviteler</a></li>
-        <li><a href="lodge.html" style="--icon: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%236E5A30%22 stroke-width=%221.2%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22><path d=%22M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z%22/><polyline points=%229 22 9 12 15 12 15 22%22/></svg>')" data-i18n="nav_lodge_tab">Konaklamada</a></li>
+        <li><a href="cirali.html" class="active" style="--icon: url('../assets/images/icons/cirali-column.svg?v=2')" data-i18n="nav_cirali_tab">Çıralı</a></li>
+        <li><a href="activities.html" style="--icon: url('../assets/images/icons/activities-signpost.svg?v=2')" data-i18n="nav_activities_tab">Aktiviteler</a></li>
+        <li><a href="lodge.html" style="--icon: url('../assets/images/icons/lodge-key.svg?v=6')" data-i18n="nav_lodge_tab">Konaklamada</a></li>
       </ul>
     </div>
   </nav>
@@ -191,58 +191,89 @@
       <img src="../assets/images/cirali-sahili.webp" alt="Çıralı Plajı" loading="lazy" width="2000" height="1069" />
     </div>
     <div class="dest-chapter__body">
-      <div class="dest-chapter__meta">
-        <span class="dest-chapter__num">01</span>
-        <span class="dest-chapter__cat" data-i18n="c_ch1_cat">Plaj</span>
-      </div>
+      <span class="dest-chapter__eyebrow" data-i18n="c_ch1_eyebrow">Akdeniz</span>
       <h2 class="dest-chapter__title" data-i18n="c_ch1_title">Çıralı Sahili</h2>
-      <p class="dest-chapter__lead" data-i18n="c_ch1_lead">Üç buçuk kilometre boyunca uzanan, ince çakıl ve kumdan oluşan el değmemiş bir Akdeniz kıyısı. Kıyı şeridinin tamamı doğal sit alanı; oteller ve restoranlar beachfront'a inşa edilemez. Her yıl Mayıs'tan Ekim'e kadar Caretta caretta deniz kaplumbağaları bu plajda yumurtalar.</p>
-      <p class="dest-chapter__aside" data-i18n-html="c_ch1_aside">Her yaz caretta carettalar yuvalamak için döner. Plaj onlarındır.<br>Arada bir size de eşlik etmeye razı olurlar.</p>
+      <div class="dest-chapter__thumb">
+        <img src="../assets/images/cirali-sahili-hero.webp?v=2" alt="Çıralı Plajı detay" loading="lazy" width="1551" height="2800" />
+      </div>
+      <p class="dest-chapter__lead" data-i18n="c_ch1_lead">Üç buçuk kilometre boyunca uzanan, ince çakıldan oluşan el değmemiş bir Akdeniz kıyısı. Kıyı şeridinin tamamı doğal sit alanı; oteller ve restoranlar sahil hattına inşa edilemez. Her yıl Mayıs'tan Ekim'e kadar Caretta caretta deniz kaplumbağaları bu plajda yumurtalar.</p>
     </div>
   </section>
 
-  <!-- Chapter 02: Olympos — image right -->
+  <!-- Chapter 02: Olympos — wide image above editorial stack -->
   <section class="dest-chapter dest-chapter--center" id="olympos">
     <div class="dest-chapter__visual">
-      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg" alt="Olympos Antik Kenti" loading="lazy" width="1600" height="2277" />
+      <img
+        src="../assets/images/olympos-antik-kenti-1200.webp?v=8"
+        srcset="../assets/images/olympos-antik-kenti-1200.webp?v=8 1200w,
+                ../assets/images/olympos-antik-kenti-2400.webp?v=8 2400w,
+                ../assets/images/olympos-antik-kenti.webp?v=8 3680w"
+        sizes="(max-width: 1710px) calc(100vw - 80px), 1630px"
+        alt="Olympos Antik Kenti"
+        loading="lazy"
+        width="3680" height="1197" />
     </div>
     <div class="dest-chapter__body">
-      <div class="dest-chapter__meta">
-        <span class="dest-chapter__num">02</span>
-        <span class="dest-chapter__cat" data-i18n="c_ch2_cat">Arkeoloji</span>
+      <div class="dest-chapter__left-col">
+        <div class="dest-chapter__header">
+          <span class="dest-chapter__eyebrow" data-i18n="c_ch2_cat">Arkeoloji</span>
+          <h2 class="dest-chapter__title" data-i18n="c_ch2_title">Olympos Antik Kenti</h2>
+        </div>
+        <dl class="dest-chapter__specs">
+          <div><dt>Yer</dt><dd>Çıralı</dd></div>
+          <div><dt>Kuruluş</dt><dd>MÖ 2. yy</dd></div>
+          <div><dt>Birlik</dt><dd>Likya</dd></div>
+        </dl>
       </div>
-      <h2 class="dest-chapter__title" data-i18n="c_ch2_title">Olympos Antik Kenti</h2>
-      <p class="dest-chapter__lead" data-i18n="c_ch2_lead">Olympos Antik Kenti ziyaret edilmek istemez. Sadece durur. Lodge'un ismini aldığı antik kent, otelin hemen bitişiğindedir; bahçeden çıkıp on dakika yürüdüğünüzde Likya'nın en iyi korunmuş kentlerinden birinin içindesinizdir. Roma döneminden kalma mezarlar, tiyatro kalıntıları ve denize uzanan surlar.</p>
+      <div class="dest-chapter__right-col">
+        <blockquote class="dest-chapter__pullquote">
+          <q data-i18n="c_ch2_pullquote">Olympos bir ziyaret değil, karşılaşmadır.</q>
+        </blockquote>
+        <p class="dest-chapter__lead" data-i18n="c_ch2_lead">Lodge'un ismini aldığı antik kent, otelin hemen bitişiğindedir; bahçeden çıkıp on dakika yürüdüğünüzde Likya'nın en iyi korunmuş kentlerinden birinin içindesinizdir. Roma döneminden kalma mezarlar, tiyatro kalıntıları ve denize uzanan surlar.</p>
+      </div>
     </div>
   </section>
 
   <!-- Chapter 03: Yanartaş — image left -->
-  <section class="dest-chapter dest-chapter--reverse" id="yanarts">
+  <section class="dest-chapter dest-chapter--reverse" id="yanartas">
     <div class="dest-chapter__visual">
       <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg" alt="Yanartaş" loading="lazy" width="2000" height="1333" />
     </div>
     <div class="dest-chapter__body">
-      <div class="dest-chapter__meta">
-        <span class="dest-chapter__num">03</span>
-        <span class="dest-chapter__cat" data-i18n="c_ch3_cat">Doğa</span>
+      <span class="dest-chapter__eyebrow" data-i18n="c_ch3_eyebrow">Yanartaş</span>
+      <h2 class="dest-chapter__title" data-i18n="c_ch3_title">Sönmeyen Alevler</h2>
+      <div class="dest-chapter__thumb">
+        <img src="../assets/images/yanartas-thumb.webp" alt="Yanartaş alev" loading="lazy" width="1600" height="2416" />
       </div>
-      <h2 class="dest-chapter__title" data-i18n="c_ch3_title">Yanartaş: Sönmeyen Alevler</h2>
       <p class="dest-chapter__lead" data-i18n="c_ch3_lead">Yeraltından sızan doğal gazın yüzeyde tutuşmasıyla oluşan, 2.500 yıldır kesintisiz yanan alevler. Mitolojide bu alevler, kahraman Bellerophon'un Pegasus'un sırtından öldürdüğü Chimaera canavarının nefesidir. Gece yürüyüşü önerilir; karanlıkta kayalar arasından çıkan alevler zaman kavramını askıya alır.</p>
     </div>
   </section>
 
-  <!-- Chapter 04: Likya Yolu — image right -->
+  <!-- Chapter 04: Likya Yolu — wide image above editorial stack -->
   <section class="dest-chapter dest-chapter--center" id="likya">
     <div class="dest-chapter__visual">
       <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5434-e1731093615320-1.jpg" alt="Likya Yolu" loading="lazy" width="1700" height="1333" />
     </div>
     <div class="dest-chapter__body">
-      <div class="dest-chapter__meta">
-        <span class="dest-chapter__num">04</span>
-        <span class="dest-chapter__cat" data-i18n="c_ch4_cat">Yürüyüş</span>
+      <div class="dest-chapter__left-col">
+        <div class="dest-chapter__header">
+          <span class="dest-chapter__eyebrow" data-i18n="c_ch4_cat">Yürüyüş</span>
+          <h2 class="dest-chapter__title" data-i18n="c_ch4_title">Likya Yolu</h2>
+        </div>
+        <dl class="dest-chapter__specs">
+          <div><dt>Toplam</dt><dd>540 km</dd></div>
+          <div><dt>Etap</dt><dd>Olympos–Adrasan</dd></div>
+          <div><dt>Rakım</dt><dd>0–2000 m</dd></div>
+          <div><dt>Mevsim</dt><dd>Mart–Mayıs</dd></div>
+        </dl>
       </div>
-      <h2 class="dest-chapter__title" data-i18n="c_ch4_title">Likya Yolu</h2>
-      <p class="dest-chapter__lead" data-i18n="c_ch4_lead">The Sunday Times'ın dünyanın en iyi on yürüyüş rotasından biri seçtiği 540 kilometrelik patika, Çıralı'dan geçer. Antik kentler, Likya mezarları, ıssız koylar ve dağ köyleri birbirini izler. Çıralı bölümü Olympos–Adrasan hattını kapsar.</p>
+      <div class="dest-chapter__right-col">
+        <blockquote class="dest-chapter__pullquote">
+          <q data-i18n="c_ch4_pullquote">Dünyanın en iyi on yürüyüş rotasından biri.</q>
+          <cite data-i18n="c_ch4_attribution">— The Sunday Times</cite>
+        </blockquote>
+        <p class="dest-chapter__lead" data-i18n="c_ch4_lead">540 kilometrelik patika, Çıralı'dan geçer. Antik kentler, Likya mezarları, ıssız koylar ve dağ köyleri birbirini izler. Çıralı bölümü Olympos–Adrasan hattını kapsar.</p>
+      </div>
     </div>
   </section>
 
@@ -327,48 +358,24 @@
     </div>
   </div>
 
-  <!-- Page Linker -->
-  <section class="story-philosophy">
-    <div class="story-philosophy__header">
-      <h2 class="story-philosophy__title" data-i18n="linker_explore_more">Daha Fazlasını Keşfet</h2>
+  <!-- Linker to Activities — mirrors the activities → lodge linker -->
+  <a href="activities.html" class="lodge-linker lodge-linker--cirali">
+    <div class="lodge-linker__image">
+      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Aktiviteler" loading="lazy" width="2000" height="1333" />
     </div>
-
-    <!-- Card 1: Activities — text left, image right -->
-    <div class="story-block">
-      <div class="story-block__content">
-        <h3 class="story-block__heading" data-i18n="nav_activities_tab">Aktiviteler</h3>
-        <p data-i18n="linker_activities_body">Kano, SUP, bisiklet, yürüyüş ve daha fazlası. Çıralı'nın doğasını keşfetmenin sayısız yolu.</p>
-        <a href="activities.html" class="room-row__link" data-i18n="linker_activities_cta">Keşfet →</a>
-      </div>
-      <div class="story-block__image">
-        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Aktiviteler" loading="lazy" width="2000" height="1333" />
-      </div>
+    <div class="lodge-linker__content">
+      <span class="lodge-linker__eyebrow" data-i18n="act_lodge_eyebrow">Devamında</span>
+      <h2 class="lodge-linker__title" data-i18n="nav_activities_tab">Aktiviteler</h2>
+      <p class="lodge-linker__lead" data-i18n="linker_activities_body">Kano, SUP, bisiklet, yürüyüş ve daha fazlası. Çıralı'nın doğasını keşfetmenin sayısız yolu.</p>
+      <ul class="lodge-linker__list">
+        <li data-i18n="c_tekne_title">Tekne Turu</li>
+        <li data-i18n="c_tahtali_title">Tahtalı Teleferik</li>
+        <li data-i18n="lodge_act1_title">Kano & SUP</li>
+        <li data-i18n="lodge_act2_title">Bisiklet</li>
+      </ul>
+      <span class="lodge-linker__cta" data-i18n="linker_activities_cta">Keşfet →</span>
     </div>
-
-    <!-- Card 2: Lodge — image left, text right -->
-    <div class="story-block story-block--reverse">
-      <div class="story-block__image">
-        <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-Large-e1731205515573.jpg" alt="Olympos Lodge havadan görünüm" loading="lazy" width="1366" height="1075" />
-      </div>
-      <div class="story-block__content">
-        <h3 class="story-block__heading" data-i18n="nav_lodge_tab">Konaklamada</h3>
-        <p data-i18n="linker_lodge_body">Olympos Lodge'da bir gün sade bir ritimle başlar. Açık büfe kahvaltı, bahçede huzur, plajda kabana ve akşam ateşi. Hepsi konaklamanıza dahil.</p>
-        <a href="lodge.html" class="room-row__link" data-i18n="linker_lodge_cta">Keşfet →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Location Teaser -->
-  <section class="loc-teaser">
-    <div class="loc-teaser__image">
-      <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg" alt="Çıralı vadisi havadan görünüm" loading="lazy" width="1520" height="1075" />
-    </div>
-    <div class="loc-teaser__content">
-      <h2 class="loc-teaser__title"><span class="loc-teaser__title--dark" data-i18n="loc_teaser_title_l1">Bulunması Zor,</span><br><span class="loc-teaser__title--gold" data-i18n="loc_teaser_title_l2">Bırakılması Daha Zor.</span></h2>
-      <p class="loc-teaser__body" data-i18n="loc_teaser_body">Torosların eteklerinden inen bir vadinin ucunda, sessiz bir kıyıda. Antik kalıntılar, yanmaya devam eden efsanevi alevler ve masmavi bir deniz.</p>
-      <a href="location.html" class="loc-teaser__link" data-i18n="loc_teaser_cta">Keşfet →</a>
-    </div>
-  </section>
+  </a>
 
   <!-- Closing CTA -->
   <div class="dest-cta">
@@ -488,7 +495,7 @@
     </div>
   </div>
   <script src="../assets/lenis.min.js"></script>
-  <script src="../assets/translations.js?v=18"></script>
-  <script src="../assets/script.js?v=109"></script>
+  <script src="../assets/translations.js?v=41"></script>
+  <script src="../assets/script.js?v=110"></script>
 </body>
 </html>

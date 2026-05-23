@@ -474,7 +474,7 @@
   font-family: var(--font-cinzel);
   font-size: 0.863rem;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-warm-gold);
   text-decoration: none;
@@ -483,6 +483,269 @@
 
 .room-row__link:hover {
   letter-spacing: 0.22em;
+}
+
+/* --- Landscape feature row (Badrutt's Palace aesthetic) --- */
+.room-row--landscape {
+  grid-template-columns: 1065px 1fr;
+  height: 605px;
+  /* Match the Super Deluxe feature card — reclaim 50% of the 1440px cap on both sides */
+  margin-left: min(0px, calc((1440px - 100vw) * 0.25 + 7px));
+  margin-right: min(0px, calc((1440px - 100vw) * 0.25 - 3px));
+}
+
+/* Flanking dividers: full-viewport muted line, extra breathing room */
+.room-row--landscape + .room-separator,
+.room-separator:has(+ .room-row--landscape) {
+  padding: 3.36rem 0;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+}
+
+.room-row--landscape + .room-separator::before,
+.room-separator:has(+ .room-row--landscape)::before {
+  background: #b4a894;
+}
+
+.room-row--landscape .room-row__image {
+  height: 600px;
+  align-self: start;
+}
+
+.room-row--landscape .room-row__content {
+  padding: 10px 0 5px 65px;
+  align-items: flex-start;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.room-row--landscape.room-row--reverse {
+  grid-template-columns: 1fr 1065px;
+  margin-left: min(0px, calc((1440px - 100vw) * 0.25 - 3px));
+  margin-right: min(0px, calc((1440px - 100vw) * 0.25 + 7px));
+}
+
+.room-row--landscape.room-row--reverse .room-row__content {
+  padding: 10px 65px 5px 0;
+}
+
+.room-row--landscape .room-row__content > a:first-child {
+  align-self: flex-start;
+}
+
+.room-row--landscape .room-row__content h3 {
+  font-family: var(--font-sc);
+  font-weight: 500;
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.009em;
+  line-height: 1;
+  text-align: left;
+  text-transform: uppercase;
+  color: #8a7040;
+}
+
+.room-row--landscape .room-row__specs {
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-left: -6px;
+  margin-top: 0.63rem;
+  margin-bottom: 0.63rem;
+  font-size: 13px;
+  font-family: var(--font-cinzel);
+  font-weight: 500;
+  transform: translateX(4px);
+}
+
+.room-row--landscape .room-row__spec-icon {
+  width: 24px;
+  height: 24px;
+  transform: translateY(-1px);
+}
+
+.room-row--landscape .room-row__spec-icon--size {
+  width: 28px;
+  height: 28px;
+  transform: translate(2px, -1px);
+}
+
+.room-row--landscape .room-row__spec-sep {
+  font-size: 1.6rem;
+}
+
+.room-row--landscape .room-row__content p {
+  max-width: none;
+  margin-top: auto;
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 19px;
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.room-row--landscape .room-row__link {
+  margin-top: 0;
+  font-size: 13.75px;
+}
+
+/* --- Rooms carousel (homepage only) --- */
+.rooms-carousel {
+  position: relative;
+}
+
+.rooms-list--carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.rooms-list--carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.rooms-list--carousel > .room-row {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.rooms-list--carousel > .room-separator {
+  display: none;
+}
+
+.rooms-carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(247, 245, 240, 0.9);
+  background-image: var(--paper-texture);
+  border: 1px solid rgba(142, 116, 65, 0.25);
+  color: var(--color-warm-gold);
+  font-family: var(--font-cinzel);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), border-color var(--transition), opacity var(--transition);
+}
+
+.rooms-carousel__btn:hover {
+  background: var(--color-cream);
+  border-color: var(--color-warm-gold);
+}
+
+.rooms-carousel__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rooms-carousel__btn--prev {
+  left: 1.5rem;
+}
+
+.rooms-carousel__btn--next {
+  right: 1.5rem;
+}
+
+.rooms-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
+.rooms-carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(142, 116, 65, 0.25);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.rooms-carousel__dot--active {
+  background: var(--color-warm-gold);
+  transform: scale(1.35);
+}
+
+/* --- Feature row (Çıralı Sahili aesthetic) --- */
+.room-row--feature {
+  height: 787px; /* 715 × 1.10 → image gains another 10% height */
+  /* Reclaim 50% of the .rooms-list 1440px cap on both sides so the card bleeds partially toward the viewport edges */
+  margin-left: min(0px, calc((1440px - 100vw) * 0.25));
+  margin-right: min(0px, calc((1440px - 100vw) * 0.25));
+}
+
+/* Equal 50/50 split — symmetric editorial grid */
+.room-row--reverse.room-row--feature {
+  grid-template-columns: 1fr 1fr;
+}
+
+.room-row--reverse.room-row--feature .room-row__content,
+.room-row--feature .room-row__content {
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 1.75rem !important;
+  padding-bottom: 1rem !important;
+  padding-left: 1.6rem !important;   /* reverse: outer-wall side, 2rem − 20% */
+  padding-right: 4.8rem !important;  /* reverse: inner-gap side,   6rem − 20% */
+  gap: 0;
+}
+
+/* Tighten the gradient dividers flanking the feature card to match, and extend their width to match the card's bleed */
+.room-row--feature + .room-separator,
+.room-separator:has(+ .room-row--feature) {
+  padding: 2.24rem 0; /* 2.8rem − 20% */
+  margin-left: min(0px, calc((1440px - 100vw) * 0.25));
+  margin-right: min(0px, calc((1440px - 100vw) * 0.25));
+}
+
+.room-row--feature .room-row__content h3 {
+  max-width: 16ch;
+  font-size: 35px;
+  margin-bottom: 0.6rem;
+}
+
+.room-row--feature .room-row__specs {
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.room-row--feature .room-row__thumb {
+  width: clamp(134px, 14.3vw, 206px);
+  height: clamp(170px, 18.2vw, 260px);
+  margin: auto 0 0;
+  overflow: hidden;
+}
+
+.room-row--feature .room-row__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.room-row--feature .room-row__content p {
+  max-width: 86ch;
+  margin: auto 0 0.75rem 0;
+  text-align: center;
+  font-size: 19px;
 }
 
 /* --- Rooms Page Hero — sticky, rooms scroll over it --- */
@@ -575,12 +838,12 @@
   font-size: 0.961rem;
   font-weight: 400;
   letter-spacing: 0.1em;
-  color: var(--color-warm-gold);
+  color: #998059;
 }
 
 .room-row__spec-sep {
-  color: var(--color-warm-gold);
-  opacity: 0.45;
+  color: #998059;
+  opacity: 0.85;
   font-size: 0.7rem;
 }
 

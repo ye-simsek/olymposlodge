@@ -251,6 +251,9 @@
   position: relative;
   transition: transform 0.4s ease;
 }
+.lodge-linker--cirali {
+  margin-top: 7.5rem;
+}
 .lodge-linker::before {
   content: '';
   position: absolute;

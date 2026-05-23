@@ -85,12 +85,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const key = el.getAttribute('data-i18n-html');
       if (t[key] !== undefined) el.innerHTML = t[key];
     });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.placeholder = t[key];
+    });
     document.querySelector('.lang-current').textContent = lang.toUpperCase();
     document.querySelectorAll('.lang-dropdown a').forEach(a => {
       a.classList.toggle('active', a.getAttribute('data-lang') === lang);
     });
     document.documentElement.lang = lang;
     localStorage.setItem('ol_lang', lang);
+    document.querySelectorAll('[data-only-lang]').forEach(el => {
+      const langs = el.getAttribute('data-only-lang').split(/\s+/);
+      el.hidden = !langs.includes(lang);
+    });
     document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
   }
 
@@ -634,5 +642,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // --- Rooms carousel (homepage) ---
+  const roomsCarousel = document.getElementById('roomsCarousel');
+  if (roomsCarousel) {
+    const cards = Array.from(roomsCarousel.querySelectorAll('.room-row'));
+    const prevBtn = document.querySelector('.rooms-carousel__btn--prev');
+    const nextBtn = document.querySelector('.rooms-carousel__btn--next');
+    const dotsWrap = document.getElementById('roomsCarouselDots');
+
+    cards.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'rooms-carousel__dot' + (i === 0 ? ' rooms-carousel__dot--active' : '');
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        roomsCarousel.scrollTo({ left: cards[i].offsetLeft, behavior: 'smooth' });
+      });
+      dotsWrap.appendChild(dot);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    const currentIndex = () => Math.round(roomsCarousel.scrollLeft / roomsCarousel.clientWidth);
+    const update = () => {
+      const i = currentIndex();
+      dots.forEach((d, idx) => d.classList.toggle('rooms-carousel__dot--active', idx === i));
+      if (prevBtn) prevBtn.disabled = i === 0;
+      if (nextBtn) nextBtn.disabled = i === cards.length - 1;
+    };
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      const i = Math.max(0, currentIndex() - 1);
+      roomsCarousel.scrollTo({ left: cards[i].offsetLeft, behavior: 'smooth' });
+    });
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      const i = Math.min(cards.length - 1, currentIndex() + 1);
+      roomsCarousel.scrollTo({ left: cards[i].offsetLeft, behavior: 'smooth' });
+    });
+
+    let scrollDebounce;
+    roomsCarousel.addEventListener('scroll', () => {
+      clearTimeout(scrollDebounce);
+      scrollDebounce = setTimeout(update, 80);
+    });
+    update();
+  }
 
 });

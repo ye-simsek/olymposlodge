@@ -5,12 +5,10 @@
 ## Pages
 
 - [Homepage](https://www.olymposlodge.com.tr/): Overview, room categories, and booking
-- [Rooms](https://www.olymposlodge.com.tr/rooms/): Six room categories from 35 m² Standard to 105 m² Aqua Super Deluxe
-- [Aqua Super Deluxe](https://www.olymposlodge.com.tr/rooms/aqua-super-deluxe/): 105 m², private jacuzzi, fireplace, glass floor panels, indoor waterfall
+- [Rooms](https://www.olymposlodge.com.tr/rooms/): Four room categories from 35 m² Standard to 105 m² Super Deluxe
 - [Super Deluxe](https://www.olymposlodge.com.tr/rooms/super-deluxe/): 105 m², garden view, refined interiors
 - [Deluxe](https://www.olymposlodge.com.tr/rooms/deluxe/): 70 m², natural light, garden setting
 - [Göl Evi](https://www.olymposlodge.com.tr/rooms/gol-evi/): 60 m², lake house with glass floor over water
-- [Antik Oda](https://www.olymposlodge.com.tr/rooms/antik/): Historic character, garden-facing terrace
 - [Standart Oda](https://www.olymposlodge.com.tr/rooms/standart/): 35 m², essentials done well
 - [Offers](https://www.olymposlodge.com.tr/offers/): Seasonal packages and special rates
 - [Çıralı Guide](https://www.olymposlodge.com.tr/cirali/): Beach, Olympos ruins, Chimaera flames, Lycian Way

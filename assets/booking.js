@@ -243,16 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Standard has single/double pricing; all others are per-room.
   const rooms = [
     {
-      id: 'aqua-super-deluxe',
-      name: 'Aqua Super Deluxe',
-      size: '105 m²',
-      view: 'Garden & Sea',
-      features: ['105 m² — garden & sea view', 'King bed', 'Indoor waterfall & glass floor', 'Private jacuzzi', 'Private terrace with sun loungers'],
-      amenities: ['wifi', 'ac', 'minibar', 'terrace'],
-      image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-aqua-super-deluxe-oda-2.jpg',
-      price: 590
-    },
-    {
       id: 'super-deluxe',
       name: 'Super Deluxe',
       size: '105 m²',
@@ -283,18 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
       amenities: ['wifi', 'ac', 'minibar', 'terrace'],
       image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2025/11/Lake-House-Deluxe-room-9.jpg',
       price: 390
-    },
-    {
-      id: 'antik',
-      name: 'Antik Oda',
-      nameEn: 'Antique Room',
-      nameDe: 'Antikes Zimmer',
-      size: '45 m²',
-      view: 'Garden',
-      features: ['Garden view', 'Brass bed', 'Antique furniture', 'Quiet corner location', 'Private terrace'],
-      amenities: ['wifi', 'ac', 'minibar', 'terrace'],
-      image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-antique-room-3.jpg',
-      price: 370
     },
     {
       id: 'standart',

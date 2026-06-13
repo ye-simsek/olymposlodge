@@ -266,6 +266,17 @@ h4 {
   gap: 7px;
 }
 
+/* 44x44 tap target without changing the visible 32x24 bars */
+.menu-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
 .menu-bar {
   display: block;
   width: 100%;
@@ -449,6 +460,16 @@ h4 {
   justify-content: center;
   gap: 7px;
 }
+/* 44x44 tap target without changing the visible 32x24 bars */
+.nav-overlay__close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
 .nav-overlay__close span {
   display: block;
   width: 100%;
@@ -580,12 +601,31 @@ h4 {
 }
 
 @media (max-width: 900px) {
-  .nav-overlay__photo { display: none; }
+  .nav-overlay { flex-direction: column; }
   .nav-overlay__left {
     width: 100%;
-    padding: 5rem 2rem 3rem 2rem;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    border-right: none;
+    padding: 5rem 2rem 2rem 2rem;
   }
   .nav-overlay__logo { left: 2rem; }
+  /* Keep the Çıralı photo as a slim full-width strip below the links, not display:none */
+  .nav-overlay__photo {
+    display: block;
+    width: 100%;
+    height: 26svh;
+    min-height: 160px;
+    flex: 0 0 auto;
+  }
+  .nav-overlay__caption { bottom: 1.5rem; left: 2rem; }
+  /* Poetic sub-labels are hover-revealed on desktop; force them visible on touch */
+  .nav-sub { opacity: 1; transform: none; }
+  /* 44px tap targets */
+  .lang-current { min-height: 44px; }
+  .lang-dropdown a { min-height: 44px; display: flex; align-items: center; }
+  .btn-reserve { min-height: 44px; display: inline-flex; align-items: center; }
 }
 
 

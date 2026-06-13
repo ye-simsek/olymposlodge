@@ -354,7 +354,10 @@
 }
 
 .child-hero--full {
-  height: 935px;
+  /* was a fixed 935px (overflowed phones); svh is responsive and keeps the
+     near-full-bleed desktop drama. The hero content is absolutely positioned,
+     so a single height (not min/max) is what actually sizes it. */
+  height: 88svh;
 }
 
 .child-hero--full .child-hero__content {
@@ -1599,5 +1602,74 @@
   text-align: left;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(142, 116, 65, 0.25);
+}
+
+/* ===== Mobile redesign overrides (2026-06) ===== */
+@media (max-width: 900px) {
+  /* Tekne editorial card: collapse to single column, image-first */
+  .tekne-card,
+  .tekne-card--reverse {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    margin: 2rem 1.25rem 0;
+  }
+  .tekne-card + .tekne-card { margin-top: 2rem; }
+  .tekne-card__image { order: 1; aspect-ratio: 4 / 3; }
+  .tekne-card__image img { height: auto; }
+  .tekne-card__content,
+  .tekne-card--reverse .tekne-card__content {
+    order: 2;
+    padding: 2rem 1.5rem;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--color-border);
+  }
+  .tekne-card--reverse .tekne-card__image { order: 1; }
+
+  /* background-attachment:fixed is broken on iOS Safari; go static + lighten the blur cost */
+  .dest-feature__visual { background-attachment: scroll; }
+  .dest-feature__visual::before {
+    backdrop-filter: blur(4px) brightness(0.62);
+    -webkit-backdrop-filter: blur(4px) brightness(0.62);
+  }
+}
+
+@media (max-width: 640px) {
+  /* page--dest hero title sits via a tall top calc on desktop; anchor it bottom-left on phones */
+  .page--dest .child-hero__content {
+    top: auto;
+    bottom: 2.5rem;
+  }
+
+  /* P0: #olympos / #likya double-landing chapters were stuck two-column at 375px because
+     this ID-scoped grid lived outside any media query and out-specified the 640 fallback. */
+  .page--cirali #olympos .dest-chapter__body,
+  .page--cirali #likya .dest-chapter__body {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    padding: 2.25rem 1.25rem 0;
+  }
+  .page--cirali #olympos .dest-chapter__left-col,
+  .page--cirali #likya .dest-chapter__left-col {
+    padding-right: 0;
+    border-right: none;
+    gap: 1.5rem;
+  }
+  .page--cirali #olympos .dest-chapter__right-col,
+  .page--cirali #likya .dest-chapter__right-col {
+    padding-left: 0;
+    margin-top: 1.5rem;
+  }
+  /* Eyebrow/title were fixed 18px / 35px; bring onto a phone-comfortable fluid scale */
+  .page--cirali #olympos .dest-chapter__eyebrow,
+  .page--cirali #likya .dest-chapter__eyebrow {
+    font-size: clamp(0.8rem, 0.74rem + 0.3vw, 0.95rem);
+    letter-spacing: 0.22em;
+  }
+  .page--cirali #olympos .dest-chapter__title,
+  .page--cirali #likya .dest-chapter__title {
+    font-size: clamp(1.75rem, 1.4rem + 2.2vw, 2.1875rem);
+    max-width: 20ch;
+  }
 }
 

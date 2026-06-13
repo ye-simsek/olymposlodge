@@ -39,6 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.getElementById('menuToggle');
   const navOverlay = document.getElementById('navOverlay');
   const navLinks = document.querySelectorAll('[data-nav]');
+  const navClose = navOverlay ? navOverlay.querySelector('.nav-overlay__close') : null;
+  let navTrigger = null;
+
+  if (navOverlay) {
+    navOverlay.setAttribute('role', 'dialog');
+    navOverlay.setAttribute('aria-modal', 'true');
+    navOverlay.setAttribute('aria-hidden', 'true');
+  }
+  if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+
+  function navFocusables() {
+    return Array.from(navOverlay.querySelectorAll('a[href], button:not([disabled])'))
+      .filter(el => el.offsetParent !== null);
+  }
 
   menuToggle.addEventListener('click', () => {
     const isOpen = navOverlay.classList.contains('open');
@@ -50,26 +64,56 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function openMenu() {
+    navTrigger = document.activeElement;
     navOverlay.classList.add('open');
+    navOverlay.setAttribute('aria-hidden', 'false');
     menuToggle.classList.add('active');
+    menuToggle.setAttribute('aria-expanded', 'true');
     header.classList.add('menu-open');
     if (lenis) lenis.stop();
     else document.body.style.overflow = 'hidden';
+    if (navClose) navClose.focus();
   }
 
   function closeMenu() {
     navOverlay.classList.remove('open');
+    navOverlay.setAttribute('aria-hidden', 'true');
     menuToggle.classList.remove('active');
+    menuToggle.setAttribute('aria-expanded', 'false');
     header.classList.remove('menu-open');
     if (lenis) lenis.start();
     else document.body.style.overflow = '';
+    if (navTrigger && typeof navTrigger.focus === 'function') navTrigger.focus();
   }
+
+  if (navClose) navClose.addEventListener('click', closeMenu);
+
+  // Escape closes the overlay; Tab is trapped inside it
+  document.addEventListener('keydown', e => {
+    if (!navOverlay.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeMenu(); return; }
+    if (e.key === 'Tab') {
+      const f = navFocusables();
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       closeMenu();
     });
   });
+
+  // --- Hero video: honor prefers-reduced-motion (fall back to the static poster) ---
+  const heroVideo = document.querySelector('.hero video');
+  if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.removeAttribute('loop');
+    heroVideo.pause();
+  }
 
   // --- Language switch ---
   const translations = olTranslations;
@@ -598,6 +642,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+
+    // Touch: horizontal swipe navigates; multi-touch pinch is left to the browser
+    let tsx = 0, tsy = 0, lbMulti = false;
+    lbImg.addEventListener('touchstart', e => {
+      if (e.touches.length > 1) { lbMulti = true; return; }
+      lbMulti = false;
+      tsx = e.touches[0].clientX;
+      tsy = e.touches[0].clientY;
+    }, { passive: true });
+    lbImg.addEventListener('touchend', e => {
+      if (lbMulti) { lbMulti = false; return; }
+      const t = e.changedTouches[0];
+      const dx = t.clientX - tsx, dy = t.clientY - tsy;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) navigate(dx < 0 ? 1 : -1);
+    }, { passive: true });
   }
 
   // --- Room card exit transition ---

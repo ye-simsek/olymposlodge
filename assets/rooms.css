@@ -436,6 +436,49 @@
 }
 
 /* Room page — mobile overrides */
+@media (max-width: 900px) {
+  /* Editorial collapses across the whole tablet band (was 640), image-first for both variants */
+  .room-editorial,
+  .room-editorial--reverse {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .room-editorial__right,
+  .room-editorial--reverse .room-editorial__right {
+    order: 1;
+    position: relative;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+  .room-editorial__left,
+  .room-editorial--reverse .room-editorial__left {
+    order: 2;
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-lg);
+  }
+  .room-editorial__inset {
+    width: 75%;
+    aspect-ratio: 3 / 4;
+  }
+  /* Specs strip wraps to 2x2 from tablet down (was 640) */
+  .room-specs {
+    flex-wrap: wrap;
+  }
+  .room-spec {
+    flex: 0 0 50%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    height: auto;
+  }
+  .room-spec:nth-child(odd) {
+    border-right: 1px solid var(--color-border);
+  }
+  .room-spec:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+}
+
 @media (max-width: 640px) {
   .room-hero__info {
     bottom: var(--space-lg);
@@ -443,51 +486,6 @@
   }
 
   .room-hero__scroll { display: none; }
-
-  .room-specs {
-    flex-wrap: wrap;
-  }
-
-  .room-spec {
-    flex: 0 0 50%;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  .room-spec:nth-child(odd) {
-    border-right: 1px solid var(--color-border);
-  }
-
-  .room-spec:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
-
-  .room-editorial,
-  .room-editorial--reverse {
-    grid-template-columns: 1fr;
-    min-height: unset;
-  }
-
-  .room-editorial--reverse .room-editorial__left,
-  .room-editorial--reverse .room-editorial__right {
-    order: unset;
-  }
-
-  .room-editorial__left {
-    padding: var(--space-lg) var(--space-md);
-    gap: var(--space-lg);
-  }
-
-  .room-editorial__inset {
-    width: 75%;
-    aspect-ratio: 3 / 4;
-  }
-
-  .room-editorial__right {
-    height: 80vw;
-    position: relative;
-  }
 
   .room-text-section {
     padding: var(--space-lg) var(--space-md);

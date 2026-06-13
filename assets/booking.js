@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
       view: 'Garden',
       features: ['105 m² — garden view', 'Queen bed', 'Jacuzzi bathtub', 'Spacious living area', 'Private terrace with sun loungers'],
       amenities: ['wifi', 'ac', 'minibar', 'terrace'],
-      image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-7.jpg',
+      image: '../assets/images/wp/2024-11-olympos-lodge-super-deluxe-double-room-7.jpg',
       price: 490
     },
     {
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
       view: 'Garden',
       features: ['70 m² — garden view', 'Queen bed', 'Fireplace', 'Jacuzzi', 'Large private terrace'],
       amenities: ['wifi', 'ac', 'minibar', 'terrace'],
-      image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-deluxe-double-room-1-890x664.jpg',
+      image: '../assets/images/wp/2024-11-olympos-lodge-deluxe-double-room-1-890x664.jpg',
       price: 390
     },
     {
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
       view: 'Lake',
       features: ['60 m² — lake view', 'Queen bed', 'Fireplace', 'Detached cottage', 'Private terrace with sun loungers'],
       amenities: ['wifi', 'ac', 'minibar', 'terrace'],
-      image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2025/11/Lake-House-Deluxe-room-9.jpg',
+      image: '../assets/images/wp/2025-11-Lake-House-Deluxe-room-9.jpg',
       price: 390
     },
     {
@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
       view: 'Garden',
       features: ['35 m² — garden view', 'Queen bed', 'Clean, modern design', 'Private terrace with sun loungers'],
       amenities: ['wifi', 'ac', 'minibar', 'terrace'],
-      image: 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-double-room-1.jpg',
+      image: '../assets/images/wp/2024-11-olympos-lodge-double-room-1.jpg',
       price: 245,
       priceDouble: 275
     }

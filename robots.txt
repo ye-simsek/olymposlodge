@@ -3,8 +3,8 @@
 
 User-agent: *
 Allow: /
-Disallow: /assets/
 Disallow: /elevenlabs/
+Disallow: /*.md$
 
 # AI Crawlers — explicitly permitted
 User-agent: GPTBot

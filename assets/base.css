@@ -34,12 +34,23 @@
   --font-cinzel: 'Cinzel', serif;
   --font-sc: 'Cormorant SC', serif;
 
+  /* Spacing scale — small steps fixed; larger steps are FLUID (clamp).
+     Each ceiling equals the previous fixed desktop value and is reached by
+     ~900-1070px, so >=~1070px is visually identical to before while narrower
+     viewports scale down continuously (Badrutt's-style proportional rhythm,
+     but rem-based for accessibility). The old 640px step overrides are now
+     redundant and removed. */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 6rem;
-  --space-2xl: 10rem;
+  --space-md: clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  --space-lg: clamp(2.5rem, 1.6rem + 3.6vw, 4rem);
+  --space-xl: clamp(4rem, 2.6rem + 5.6vw, 6rem);
+  --space-2xl: clamp(6rem, 3rem + 11vw, 10rem);
+
+  /* Proportional inline gutters — fluid section side-padding. Ceilings match
+     current desktop paddings; the vw term reaches them by ~1100-1280px. */
+  --gutter: clamp(1.25rem, 6vw, 4.5rem);        /* general sections */
+  --gutter-lg: clamp(1.5rem, 7.5vw, 5.4rem);    /* wide editorial sections */
 
   --header-height: 90px;
   --transition: 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -1144,7 +1155,7 @@ h4 {
 /* ========================================
    RESPONSIVE — TABLET (base only)
    ======================================== */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .footer-main {
     grid-template-columns: 1fr;
   }
@@ -1161,10 +1172,6 @@ h4 {
    RESPONSIVE — MOBILE (base only)
    ======================================== */
 @media (max-width: 640px) {
-  :root {
-    --space-xl: 4rem;
-    --space-2xl: 6rem;
-  }
   .site-header {
     padding: env(safe-area-inset-top, 0px) var(--space-sm) 0;
     height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
@@ -1579,7 +1586,7 @@ h4 {
   opacity: 0.75;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .story-block,
   .story-block--reverse {
     grid-template-columns: 1fr;

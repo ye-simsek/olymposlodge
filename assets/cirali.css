@@ -376,6 +376,28 @@
   overflow: visible;
   clip-path: inset(0);
 }
+
+/* Breadcrumb */
+.dest-breadcrumb {
+  max-width: 1080px;
+  margin: 2.25rem auto 0;
+  padding: 0 2rem;
+  font-family: var(--font-accent);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.dest-breadcrumb a {
+  color: var(--color-warm-gold);
+  text-decoration: none;
+}
+.dest-breadcrumb a:hover { text-decoration: underline; }
+.dest-breadcrumb__sep { margin: 0 0.55rem; opacity: 0.6; }
+.dest-breadcrumb__current { color: var(--color-text-light); }
+@media (max-width: 640px) {
+  .dest-breadcrumb { margin-top: 1.5rem; padding: 0 1.25rem; }
+}
 .page--dest .child-hero__content {
   position: absolute;
   bottom: auto;

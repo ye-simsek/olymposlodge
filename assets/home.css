@@ -14,6 +14,7 @@
 .hero {
   position: relative;
   height: 100vh;
+  height: 100svh; /* exclude mobile/iPad browser chrome; vh is the fallback */
   min-height: 600px;
   display: flex;
   align-items: flex-end;
@@ -109,13 +110,13 @@
    INTRO
    ======================================== */
 .intro {
-  padding: 3.84rem 5.4rem;
+  padding: clamp(2.25rem, 5vw, 3.84rem) var(--gutter-lg);
   background-color: var(--color-warm-white); background-image: var(--paper-texture);
 }
 
 .intro-title {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: clamp(1.3rem, 1rem + 1.6vw, 2rem); /* was 32px */
   font-weight: 500;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -179,7 +180,7 @@
    GLANCE — ink-bleed reveal stats
    ======================================== */
 .glance {
-  padding: 4.5rem 2rem;
+  padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 4vw, 2rem);
   background-color: var(--color-warm-white);
   background-image: var(--paper-texture);
 }
@@ -240,7 +241,6 @@
 }
 
 @media (max-width: 768px) {
-  .glance { padding: 3rem 1.5rem; }
   .glance__inner { gap: 2rem; }
   .glance__number { font-size: clamp(2rem, 8vw, 2.8rem); }
   .glance__rule { height: 2.5rem; }
@@ -264,11 +264,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 6rem;
-  padding: 6rem 8rem 8rem 4rem;
+  gap: clamp(2.5rem, 7vw, 6rem);
+  padding: clamp(4rem, 7vw, 6rem) clamp(2.5rem, 9vw, 8rem) clamp(5rem, 9vw, 8rem) clamp(2rem, 4.5vw, 4rem);
 }
 .conviction__text {
   flex: 3 1 0;
+  min-width: 0; /* allow the column to shrink below content size, no overflow */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -314,12 +315,12 @@
 }
 .conviction__image img {
   display: block;
-  width: 680px;
+  width: min(680px, 48vw);
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .conviction {
     flex-direction: column;
     gap: 3rem;
@@ -332,8 +333,11 @@
     text-align: center;
     max-width: 100%;
   }
+  .conviction__sig {
+    align-items: center;
+  }
   .conviction__image img {
-    width: 200px;
+    width: min(260px, 56vw);
   }
 }
 
@@ -352,6 +356,10 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  /* Establish a query container so the room rows respond to the list's
+     own width, not the viewport — robust at any splitscreen proportion. */
+  container-type: inline-size;
+  container-name: rooms;
 }
 
 .room-separator {
@@ -487,11 +495,18 @@
 
 /* --- Landscape feature row (Badrutt's Palace aesthetic) --- */
 .room-row--landscape {
-  grid-template-columns: 1065px 1fr;
+  /* Fluid ratio: ~74% / 26% split (the original 1065 / 375 proportion), with
+     the minmax(0,…) tracks shrinking so the row never overflows.
+     Margins: at full width (>=~1468px) this is EXACTLY the original bleed
+     (negative margins reclaiming 50% of the 1440 cap toward the edges). As the
+     viewport narrows below 1440 the same expression goes positive — pulling the
+     feature image inward instead of leaving it flush — capped at 4.5rem. */
+  grid-template-columns: minmax(0, 1065fr) minmax(20rem, 375fr);
   height: 605px;
-  /* Match the Super Deluxe feature card — reclaim 50% of the 1440px cap on both sides */
-  margin-left: min(0px, calc((1440px - 100vw) * 0.25 + 7px));
-  margin-right: min(0px, calc((1440px - 100vw) * 0.25 - 3px));
+  /* term 1 = original bleed (negative when wide, 0 at/below ~1468px) — keeps
+     fullscreen identical; term 2 = inset (0 at/above 1440px, grows below, cap 4.5rem). */
+  margin-left: calc(min(0px, (1440px - 100vw) * 0.25 + 7px) + clamp(0px, (1440px - 100vw) * 0.25, 4.5rem));
+  margin-right: calc(min(0px, (1440px - 100vw) * 0.25 - 3px) + clamp(0px, (1440px - 100vw) * 0.25, 4.5rem));
 }
 
 /* Flanking dividers: full-viewport muted line, extra breathing room */
@@ -521,9 +536,9 @@
 }
 
 .room-row--landscape.room-row--reverse {
-  grid-template-columns: 1fr 1065px;
-  margin-left: min(0px, calc((1440px - 100vw) * 0.25 - 3px));
-  margin-right: min(0px, calc((1440px - 100vw) * 0.25 + 7px));
+  grid-template-columns: minmax(20rem, 375fr) minmax(0, 1065fr);
+  margin-left: calc(min(0px, (1440px - 100vw) * 0.25 - 3px) + clamp(0px, (1440px - 100vw) * 0.25, 4.5rem));
+  margin-right: calc(min(0px, (1440px - 100vw) * 0.25 + 7px) + clamp(0px, (1440px - 100vw) * 0.25, 4.5rem));
 }
 
 .room-row--landscape.room-row--reverse .room-row__content {
@@ -537,7 +552,7 @@
 .room-row--landscape .room-row__content h3 {
   font-family: var(--font-sc);
   font-weight: 500;
-  font-size: 36px;
+  font-size: clamp(1.6rem, 1.1rem + 2.2vw, 2.25rem); /* was 36px */
   margin-top: 0;
   margin-bottom: 0.5rem;
   letter-spacing: 0.009em;
@@ -588,6 +603,53 @@
 .room-row--landscape .room-row__link {
   margin-top: 0;
   font-size: 13.75px;
+}
+
+/* --- ROOMS — fluid / container-query layout ---
+   The landscape feature rows respond to .rooms-list's own inline size
+   (container-name: rooms). Above the vertical threshold (~56.25rem = 900px,
+   a real ~60% splitscreen width) the two-column feature row simply scales
+   down. At/below it, the row stacks into a proper vertical layout — image on
+   top (fluid aspect-ratio), copy below — with image and text both aligned to
+   the row's gutter inset so nothing sits flush with the borders. */
+@container rooms (max-width: 56.25rem) {
+  .room-row--landscape,
+  .room-row--landscape.room-row--reverse {
+    grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
+    /* mobile gutter (overrides the desktop bleed/inset cap) */
+    margin-inline: var(--gutter);
+  }
+
+  .room-row--landscape .room-row__image,
+  .room-row--landscape.room-row--reverse .room-row__image {
+    order: 0;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  /* Side padding handled by the row's margin-inline gutter, so the copy
+     lines up with the image edge — no double inset. Bottom padding is reduced
+     by 1.4rem and that space is moved into the title→body gap below, so the
+     body text drops away from the room title while the divider stays put. */
+  .room-row--landscape .room-row__content,
+  .room-row--landscape.room-row--reverse .room-row__content {
+    order: 1;
+    padding: 1.75rem 0 0.4rem;
+  }
+
+  .room-row--landscape .room-row__content h3 {
+    margin-bottom: 2.55rem; /* title→body gap (15% off 3rem) */
+  }
+
+  /* Pull the divider line up close to the room content above it
+     (this is the real "padding to the divider line"). */
+  .room-row--landscape + .room-separator {
+    padding-top: 0.5rem;
+  }
 }
 
 /* --- Rooms carousel (homepage only) --- */
@@ -1198,7 +1260,7 @@
 /* ========================================
    ROOMS — STICKY HEADING (desktop only)
    ======================================== */
-@media (min-width: 1025px) {
+@media (min-width: 901px) {
   /* Remove section top padding — sticky header provides the breathing room */
   .rooms {
     padding-top: 0;
@@ -1274,17 +1336,15 @@
 /* ========================================
    RESPONSIVE — TABLET (home only)
    ======================================== */
-@media (max-width: 1024px) {
-  .intro-body {
-    gap: 0 4rem;
-  }
-
-  .room-row {
+@media (max-width: 900px) {
+  /* Non-landscape rooms only — landscape rows are governed entirely by the
+     @container query so this viewport rule must not override them. */
+  .room-row:not(.room-row--landscape) {
     grid-template-columns: 1fr 1fr;
     min-height: 400px;
   }
 
-  .room-row--reverse {
+  .room-row--reverse:not(.room-row--landscape) {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -1294,6 +1354,27 @@
 
   .room-row--reverse .room-row__content {
     padding: var(--space-xl) var(--space-md);
+  }
+
+  /* NOTE: landscape feature rooms now reflow via a @container query on
+     .rooms-list (see "ROOMS — fluid / container-query layout" below),
+     not a viewport breakpoint — so they never overflow at any width. */
+
+  /* Keep the "ODALAR" heading at full editorial scale through the
+     tablet range (it otherwise shrinks to a tiny label between
+     640px and 1024px). */
+  .rooms .section-header {
+    text-align: center;
+  }
+  .rooms .section-label {
+    display: block;
+    font-family: var(--font-sc);
+    font-weight: 300;
+    font-style: normal;
+    font-size: clamp(3rem, 11vw, 6rem);
+    letter-spacing: 0.07em;
+    text-transform: none;
+    color: var(--color-warm-gold);
   }
 
   .nature {
@@ -1360,6 +1441,19 @@
     background: var(--color-warm-gold);
   }
 
+}
+
+/* At/below the vertical threshold the two intro columns would get cramped —
+   collapse to a single centred column with a comfortable measure instead. */
+@media (max-width: 900px) {
+  .intro-body {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .intro-col {
+    max-width: 60ch;
+    margin-inline: auto;
+  }
 }
 
 /* ========================================

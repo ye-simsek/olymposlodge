@@ -340,10 +340,12 @@
   .conviction__sig {
     align-items: center;
   }
-  /* Was collapsing to a ~210px thumbnail; restore a hung-photograph scale */
+  /* Was collapsing to a ~210px thumbnail; restore a hung-photograph scale.
+     order:-1 puts the photograph above the ethos sentence (image-first). */
   .conviction__image {
     width: min(420px, 78vw);
     margin: 0 auto;
+    order: -1;
   }
   .conviction__image img {
     width: 100%;

@@ -460,15 +460,18 @@
     width: 75%;
     aspect-ratio: 3 / 4;
   }
-  /* Specs strip wraps to 2x2 from tablet down (was 640) */
+  /* Specs strip wraps to 2x2 from tablet down (was 640).
+     Drop the fixed 180px height so both rows get their space and the
+     second row doesn't overflow onto the photo below. */
   .room-specs {
     flex-wrap: wrap;
+    height: auto;
   }
   .room-spec {
     flex: 0 0 50%;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-lg) var(--space-md);
     height: auto;
   }
   .room-spec:nth-child(odd) {

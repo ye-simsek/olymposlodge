@@ -203,7 +203,7 @@
 
 .glance__number {
   font-family: var(--font-heading);
-  font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+  font-size: clamp(2.66rem, 4.275vw, 3.99rem);
   font-weight: 300;
   letter-spacing: 0.04em;
   color: var(--color-text);
@@ -242,7 +242,7 @@
 
 @media (max-width: 768px) {
   .glance__inner { gap: 2rem; }
-  .glance__number { font-size: clamp(2rem, 8vw, 2.8rem); }
+  .glance__number { font-size: clamp(1.9rem, 7.6vw, 2.66rem); }
   .glance__rule { height: 2.5rem; }
 }
 
@@ -302,7 +302,7 @@
 }
 .conviction__byline {
   font-family: var(--font-sc);
-  font-size: 0.85rem;
+  font-size: 0.935rem;
   letter-spacing: 0.18em;
   color: var(--color-warm-gold);
   opacity: 1;

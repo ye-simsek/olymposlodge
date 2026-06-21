@@ -106,6 +106,10 @@ Admin panel: **http://localhost/admin**
 API: **http://localhost/api/v1/**  
 Sitemap: **http://localhost/sitemap.xml**
 
+**Dev login (seeded):**
+- Email: `admin@olymposlodge.com.tr`
+- Password: `olympos2024!`
+
 ---
 
 ### 3. Frontend (Vite)

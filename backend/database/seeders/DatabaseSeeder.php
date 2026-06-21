@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             RoomSeeder::class,
             TranslationSeeder::class,
             SiteMediaSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }

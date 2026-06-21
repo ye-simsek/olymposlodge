@@ -336,6 +336,10 @@ export default {
     offer2_desc: 'Yedi gece ve üzeri konaklamalarda günler farklı bir derinlik kazanır. Ritim oturur, bahçe tanıdık gelir, her köşenin kendi anlamı oluşur. Uzun kalanlar için özel fiyat.',
     offer2_cta: 'Rezervasyon →',
   },
+  chat: {
+    error_unavailable: 'Asistanımız geçici olarak kullanılamıyor. Lütfen bize doğrudan ulaşın: info@olymposlodge.com.tr veya +90 242 825 71 71.',
+    error_network: 'Bağlantı hatası. Lütfen tekrar deneyin.',
+  },
   common: {
     loading: 'Yükleniyor…',
     error: 'Bir hata oluştu.',

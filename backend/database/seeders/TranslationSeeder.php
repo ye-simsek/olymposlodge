@@ -310,6 +310,18 @@ class TranslationSeeder extends Seeder
                 'offer2_desc' => ['Yedi gece ve üzeri konaklamalarda günler farklı bir derinlik kazanır. Ritim oturur, bahçe tanıdık gelir, her köşenin kendi anlamı oluşur. Uzun kalanlar için özel fiyat.', 'Seven nights or more, and the days take on a different depth. A rhythm settles, the garden becomes familiar, every corner finds its meaning. Special rates for longer stays.', 'Sieben Nächte oder mehr, und die Tage gewinnen eine andere Tiefe. Ein Rhythmus entsteht, der Garten wird vertraut, jede Ecke bekommt ihre Bedeutung. Sonderpreise für längere Aufenthalte.'],
                 'offer2_cta'  => ['Rezervasyon →', 'Reserve →', 'Reservieren →'],
             ],
+            'chat' => [
+                'error_unavailable' => [
+                    'Asistanımız geçici olarak kullanılamıyor. Lütfen bize doğrudan ulaşın: info@olymposlodge.com.tr veya +90 242 825 71 71.',
+                    'Our assistant is temporarily unavailable. Please contact us directly at info@olymposlodge.com.tr or +90 242 825 71 71.',
+                    'Unser Assistent ist vorübergehend nicht verfügbar. Bitte kontaktieren Sie uns direkt: info@olymposlodge.com.tr oder +90 242 825 71 71.',
+                ],
+                'error_network' => [
+                    'Bağlantı hatası. Lütfen tekrar deneyin.',
+                    'Connection error. Please try again.',
+                    'Verbindungsfehler. Bitte versuchen Sie es erneut.',
+                ],
+            ],
             'common' => [
                 'loading'   => ['Yükleniyor…', 'Loading…', 'Wird geladen…'],
                 'error'     => ['Bir hata oluştu.', 'An error occurred.', 'Ein Fehler ist aufgetreten.'],

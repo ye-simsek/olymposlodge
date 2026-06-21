@@ -39,7 +39,7 @@ function renderMarkdown(text: string): string {
 }
 
 export default function ChatWidget() {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
   const lang = i18n.language?.slice(0, 2) || 'de'
 
   const [open, setOpen]        = useState(false)
@@ -73,10 +73,14 @@ export default function ChatWidget() {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({ messages: next, conversation_id: conversationId.current, language: lang }),
       })
+      if (!res.ok) {
+        setMessages(m => [...m, { role: 'model', text: t('chat.error_unavailable') }])
+        return
+      }
       const data = await res.json()
-      setMessages(m => [...m, { role: 'model', text: data.text ?? data.error ?? '…' }])
+      setMessages(m => [...m, { role: 'model', text: data.text ?? t('chat.error_unavailable') }])
     } catch {
-      setMessages(m => [...m, { role: 'model', text: ERROR_MSG[lang] ?? ERROR_MSG.en }])
+      setMessages(m => [...m, { role: 'model', text: t('chat.error_network') }])
     } finally {
       setLoading(false)
     }

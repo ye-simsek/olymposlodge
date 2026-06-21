@@ -335,6 +335,10 @@ export default {
     offer2_desc: 'Sieben Nächte oder mehr, und die Tage gewinnen eine andere Tiefe. Ein Rhythmus entsteht, der Garten wird vertraut, jede Ecke bekommt ihre Bedeutung. Sonderpreise für längere Aufenthalte.',
     offer2_cta: 'Reservieren →',
   },
+  chat: {
+    error_unavailable: 'Unser Assistent ist vorübergehend nicht verfügbar. Bitte kontaktieren Sie uns direkt: info@olymposlodge.com.tr oder +90 242 825 71 71.',
+    error_network: 'Verbindungsfehler. Bitte versuchen Sie es erneut.',
+  },
   common: {
     loading: 'Wird geladen…',
     error: 'Ein Fehler ist aufgetreten.',

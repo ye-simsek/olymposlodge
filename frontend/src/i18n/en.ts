@@ -335,6 +335,10 @@ export default {
     offer2_desc: 'Seven nights or more, and the days take on a different depth. A rhythm settles, the garden becomes familiar, every corner finds its meaning. Special rates for longer stays.',
     offer2_cta: 'Reserve →',
   },
+  chat: {
+    error_unavailable: 'Our assistant is temporarily unavailable. Please contact us directly at info@olymposlodge.com.tr or +90 242 825 71 71.',
+    error_network: 'Connection error. Please try again.',
+  },
   common: {
     loading: 'Loading…',
     error: 'An error occurred.',

@@ -1,6 +1,38 @@
-.obsidian/
-assets/Badrutt's Palace Inspiration Documents/
+# macOS
 .DS_Store
-.claude/worktrees/
-.claude/skills/seo/
-menus & extras/
+.AppleDouble
+.LSOverride
+
+# Frontend (Vite / Node)
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# Backend (Laravel / PHP)
+backend/vendor/
+backend/.env
+backend/.env.backup
+backend/.env.production
+backend/storage/logs/*.log
+backend/storage/framework/cache/
+backend/storage/framework/sessions/
+backend/storage/framework/testing/
+backend/storage/framework/views/
+backend/bootstrap/cache/*.php
+backend/public/hot
+backend/public/storage
+
+# Composer
+composer.phar
+
+# Editor
+.idea/
+.vscode/settings.json
+*.code-workspace
+*.swp
+*.swo
+
+# Claude launch config (local only)
+.claude/launch.json

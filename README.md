@@ -1,24 +1,24 @@
 # Olympos Lodge — Website
 
-Offizielle Website des **Olympos Lodge Boutique-Hotels** in Çıralı, Antalya.  
-Dreisprachig (Türkisch · Englisch · Deutsch), mit KI-Chatassistent, Kontaktformular, Newsletter und Filament-Adminbereich.
+Official website of **Olympos Lodge Boutique Hotel** in Çıralı, Antalya.  
+Trilingual (Turkish · English · German), with AI chat assistant, contact form, newsletter, and Filament admin panel.
 
 ---
 
-## Tech-Stack
+## Tech Stack
 
-| Bereich | Technologie |
+| Layer | Technology |
 |---|---|
 | Frontend | React 19, TypeScript 5.5, Vite 5, react-router-dom 7, i18next |
 | Backend | Laravel 13, PHP 8.3 |
 | Admin | Filament 3.3 |
-| Datenbank | MySQL 8.4 (Produktion), SQLite (lokal möglich) |
-| KI-Chat | Google Gemini 2.5 Flash (`/api/v1/chat`) |
-| Dev-Umgebung | Laravel Sail (Docker) |
+| Database | MySQL 8.4 (production), SQLite (local option) |
+| AI Chat | Google Gemini 2.5 Flash (`/api/v1/chat`) |
+| Dev Environment | Laravel Sail (Docker) |
 
 ---
 
-## Projektstruktur
+## Project Structure
 
 ```
 Website/
@@ -29,17 +29,17 @@ Website/
 
 ---
 
-## Lokale Installation
+## Local Setup
 
-### Voraussetzungen
+### Prerequisites
 
-- **Docker Desktop** (für Laravel Sail)
+- **Docker Desktop** (for Laravel Sail)
 - **Node.js** ≥ 20 + npm
-- **PHP** 8.3 + **Composer** (nur wenn ohne Docker)
+- **PHP** 8.3 + **Composer** (only needed without Docker)
 
 ---
 
-### 1. Repository klonen
+### 1. Clone the Repository
 
 ```bash
 git clone <repo-url> olympos-website
@@ -53,17 +53,17 @@ cd olympos-website
 ```bash
 cd backend
 
-# Abhängigkeiten installieren (einmalig ohne Docker möglich)
+# Install dependencies (can be done once without Docker)
 composer install
 
-# .env anlegen
+# Create .env file
 cp .env.example .env
 
-# App-Key generieren
+# Generate app key
 php artisan key:generate
 ```
 
-**.env anpassen** — mindestens diese Werte setzen:
+**Edit `.env`** — at minimum set these values:
 
 ```env
 APP_URL=http://localhost
@@ -83,34 +83,34 @@ MAIL_PASSWORD=...
 MAIL_FROM_ADDRESS="info@olymposlodge.com.tr"
 MAIL_FROM_NAME="Olympos Lodge"
 
-GEMINI_API_KEY=         # Google AI Studio → API-Key
+GEMINI_API_KEY=         # Google AI Studio → API key
 ```
 
-**Sail starten:**
+**Start Sail:**
 
 ```bash
-# Sail-Alias einrichten (einmalig)
+# Set up Sail alias (once)
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 
-# Container starten
+# Start containers
 sail up -d
 
-# Datenbank migrieren + befüllen
+# Run migrations and seeders
 sail artisan migrate --seed
 
-# Filament-Admin-User anlegen
+# Create Filament admin user
 sail artisan make:filament-user
 ```
 
-Admin erreichbar unter: **http://localhost/admin**  
-API erreichbar unter: **http://localhost/api/v1/**  
+Admin panel: **http://localhost/admin**  
+API: **http://localhost/api/v1/**  
 Sitemap: **http://localhost/sitemap.xml**
 
 ---
 
 ### 3. Frontend (Vite)
 
-In einem neuen Terminal:
+In a new terminal:
 
 ```bash
 cd frontend
@@ -118,15 +118,15 @@ npm install
 npm run dev
 ```
 
-Frontend läuft auf: **http://localhost:5173**
+Frontend runs at: **http://localhost:5173**
 
-Der Vite Dev-Server leitet `/api/*`-Anfragen automatisch an `http://localhost:80` weiter (konfiguriert in `vite.config.ts`).
+The Vite dev server automatically proxies `/api/*` requests to `http://localhost:80` (configured in `vite.config.ts`).
 
 ---
 
-### 4. Übersetzungen neu einspielen
+### 4. Re-seed Translations
 
-Nach Änderungen am `TranslationSeeder`:
+After changes to the `TranslationSeeder`:
 
 ```bash
 sail artisan db:seed --class=TranslationSeeder
@@ -134,72 +134,72 @@ sail artisan db:seed --class=TranslationSeeder
 
 ---
 
-## Analytics & Tracking einrichten
+## Analytics & Tracking Setup
 
-Das Projekt ist vorbereitet für **GTM, GA4, Meta Pixel und Google Search Console**. Aktuell sind Platzhalter eingetragen — die IDs müssen in `frontend/index.html` eingesetzt werden.
+The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**. Placeholders are currently in place — IDs need to be filled in `frontend/index.html`.
 
-### Schritt 1 — Google Tag Manager
+### Step 1 — Google Tag Manager
 
-1. [tagmanager.google.com](https://tagmanager.google.com) → Konto & Container erstellen
-2. Container-ID kopieren (Format: `GTM-XXXXXXX`)
-3. In `frontend/index.html` **beide** Vorkommen von `REPLACE_WITH_GTM_ID` ersetzen:
+1. [tagmanager.google.com](https://tagmanager.google.com) → Create account & container
+2. Copy the container ID (format: `GTM-XXXXXXX`)
+3. Replace **both** occurrences of `REPLACE_WITH_GTM_ID` in `frontend/index.html`:
    ```html
-   <!-- Zeile ~24: -->
+   <!-- Line ~24: -->
    j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-   if (i !== 'GTM-XXXXXXX') ...    ← Bedingung entfernen sobald echte ID
+   if (i !== 'GTM-XXXXXXX') ...    ← Remove condition once real ID is set
 
-   <!-- Zeile ~28: -->
+   <!-- Line ~28: -->
    })(window,document,'script','dataLayer','GTM-XXXXXXX');
 
-   <!-- Zeile ~38 (noscript): -->
+   <!-- Line ~38 (noscript): -->
    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
    ```
-4. Ebenfalls die Guard-Bedingung `if (i !== 'REPLACE_WITH_GTM_ID')` aus dem Script entfernen — sie verhindert das Laden des Platzhalters und wird bei echter ID nicht mehr benötigt.
+4. Also remove the guard condition `if (i !== 'REPLACE_WITH_GTM_ID')` from the script — it prevents loading the placeholder and is no longer needed once a real ID is set.
 
-### Schritt 2 — Google Analytics 4 (in GTM konfigurieren)
+### Step 2 — Google Analytics 4 (configure in GTM)
 
-1. [analytics.google.com](https://analytics.google.com) → Property erstellen → Web-Datenstream anlegen
-2. Measurement-ID kopieren (Format: `G-XXXXXXXXXX`)
-3. In **GTM → Tags → Neu:**
-   - Tag-Typ: *Google Analytics: GA4-Konfiguration*
-   - Mess-ID: `G-XXXXXXXXXX`
+1. [analytics.google.com](https://analytics.google.com) → Create property → Set up web data stream
+2. Copy the Measurement ID (format: `G-XXXXXXXXXX`)
+3. In **GTM → Tags → New:**
+   - Tag type: *Google Analytics: GA4 Configuration*
+   - Measurement ID: `G-XXXXXXXXXX`
    - Trigger: *Consent Initialization – All Pages*
-4. Zweiten Tag für SPA-Seitenaufrufe anlegen:
-   - Tag-Typ: *GA4-Ereignis* · Ereignisname: `page_view`
-   - Trigger: *History Change* (neuen Trigger vom Typ „Verlaufsänderung" erstellen)
+4. Create a second tag for SPA page views:
+   - Tag type: *GA4 Event* · Event name: `page_view`
+   - Trigger: *History Change* (create a new trigger of type "History Change")
 
-> **Wichtig:** Den History-Change-Trigger anlegen, da die Seite eine React SPA ist und Seiten ohne Reload wechselt. Das Frontend pusht zusätzlich manuell via `gtag('event', 'page_view', ...)` bei jedem Routenwechsel (in `App.tsx`).
+> **Note:** The History Change trigger is required because the site is a React SPA and navigates between pages without a full reload. The frontend also pushes page views manually via `gtag('event', 'page_view', ...)` on each route change (in `App.tsx`).
 
-### Schritt 3 — Meta Pixel (in GTM konfigurieren)
+### Step 3 — Meta Pixel (configure in GTM)
 
-1. [business.facebook.com](https://business.facebook.com) → Events Manager → Datenquellen verbinden → Web → Facebook Pixel
-2. Pixel-ID kopieren
-3. In **GTM → Tags → Neu:**
-   - Tag-Typ: *Benutzerdefiniertes HTML*
-   - Pixel-Basis-Code einfügen (aus Facebook Events Manager kopieren), Pixel-ID einsetzen
+1. [business.facebook.com](https://business.facebook.com) → Events Manager → Connect data source → Web → Facebook Pixel
+2. Copy the Pixel ID
+3. In **GTM → Tags → New:**
+   - Tag type: *Custom HTML*
+   - Paste the Pixel base code (copied from Facebook Events Manager), insert Pixel ID
    - Trigger: *Consent Initialization – All Pages*
-   - Erweiterte Einstellungen → Einwilligungseinstellungen: `ad_storage` = Erforderlich
+   - Advanced settings → Consent settings: `ad_storage` = Required
 
-### Schritt 4 — Google Search Console
+### Step 4 — Google Search Console
 
-1. [search.google.com/search-console](https://search.google.com/search-console) → Property hinzufügen → URL-Präfix: `https://www.olymposlodge.com.tr`
-2. Verifizierungs-Meta-Tag kopieren (nur den `content`-Wert)
-3. In `frontend/index.html` die auskommentierte Zeile einkommentieren und Wert einsetzen:
+1. [search.google.com/search-console](https://search.google.com/search-console) → Add property → URL prefix: `https://www.olymposlodge.com.tr`
+2. Copy the verification meta tag (the `content` value only)
+3. In `frontend/index.html`, uncomment the relevant line and insert the value:
    ```html
    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_CODE" />
    ```
-4. Nach Go-Live: Sitemap einreichen unter:
+4. After go-live, submit the sitemap at:
    `https://www.olymposlodge.com.tr/sitemap.xml`
 
 ### Cookie Consent & Consent Mode v2
 
-Der Cookie-Banner (`src/components/CookieConsent.tsx`) ist bereits vollständig mit **GTM Consent Mode v2** verknüpft:
+The cookie banner (`src/components/CookieConsent.tsx`) is fully integrated with **GTM Consent Mode v2**:
 
-- Neue Besucher starten mit `denied` für alle Kategorien
-- Returning Visitors: gespeicherte Entscheidung (`localStorage` Key: `ol_cookie_consent`) wird **vor** GTM-Load eingelesen und sofort gesetzt — kein Tracking-Flackern
-- Banner-Entscheidung ruft `gtag('consent', 'update', ...)` auf:
-  - Analytics-Toggle → `analytics_storage`
-  - Marketing-Toggle → `ad_storage`, `ad_user_data`, `ad_personalization`
+- New visitors start with `denied` for all categories
+- Returning visitors: previously saved choices (`localStorage` key: `ol_cookie_consent`) are read **before** GTM loads and applied immediately — no tracking flicker
+- Banner decisions call `gtag('consent', 'update', ...)`:
+  - Analytics toggle → `analytics_storage`
+  - Marketing toggle → `ad_storage`, `ad_user_data`, `ad_personalization`
 
 ---
 
@@ -208,7 +208,7 @@ Der Cookie-Banner (`src/components/CookieConsent.tsx`) ist bereits vollständig 
 ### Backend
 
 ```bash
-# Auf dem Server / in der CI-Pipeline:
+# On the server / in CI pipeline:
 composer install --no-dev --optimize-autoloader
 php artisan config:cache
 php artisan route:cache
@@ -217,7 +217,7 @@ php artisan migrate --force
 php artisan db:seed --class=TranslationSeeder --force
 ```
 
-**`.env` für Produktion:**
+**`.env` for production:**
 
 ```env
 APP_ENV=production
@@ -228,21 +228,21 @@ DB_CONNECTION=mysql
 DB_HOST=...
 DB_DATABASE=olympos
 DB_USERNAME=...
-DB_PASSWORD=...         # Starkes Passwort
+DB_PASSWORD=...         # Strong password
 
 SESSION_DRIVER=database
 CACHE_STORE=database
 
-MAIL_MAILER=smtp        # Echten SMTP-Provider eintragen (z.B. Mailgun, Postmark)
+MAIL_MAILER=smtp        # Use a real SMTP provider (e.g. Mailgun, Postmark)
 MAIL_HOST=...
 MAIL_PORT=587
 MAIL_USERNAME=...
 MAIL_PASSWORD=...
 
-GEMINI_API_KEY=...      # Google AI Studio API-Key
+GEMINI_API_KEY=...      # Google AI Studio API key
 ```
 
-**Webserver (nginx) — wichtig für SPA-Routing:**
+**Web server (nginx) — important for SPA routing:**
 
 ```nginx
 location / {
@@ -258,13 +258,13 @@ location /admin {
 }
 ```
 
-**Storage-Link anlegen:**
+**Create storage symlink:**
 
 ```bash
 php artisan storage:link
 ```
 
-**Dateiberechtigungen:**
+**File permissions:**
 
 ```bash
 chmod -R 775 storage bootstrap/cache
@@ -281,45 +281,45 @@ npm ci
 npm run build
 ```
 
-Den Inhalt von `frontend/dist/` in das Document-Root des Webservers deployen (oder als separaten Static-File-Server bereitstellen).
+Deploy the contents of `frontend/dist/` to the web server's document root (or serve as a separate static file server).
 
 ---
 
-### Vollständige Deployment-Checkliste
+### Full Deployment Checklist
 
-#### Vor dem ersten Go-Live
+#### Before First Go-Live
 
-- [ ] `APP_KEY` in Produktion gesetzt (`php artisan key:generate`)
+- [ ] `APP_KEY` set in production (`php artisan key:generate`)
 - [ ] `APP_DEBUG=false` in `.env`
-- [ ] Datenbank migriert und geseeded
-- [ ] Filament-Admin-User angelegt (`php artisan make:filament-user`)
-- [ ] SMTP-Versand getestet (Kontaktformular, Newsletter)
-- [ ] `GEMINI_API_KEY` gesetzt und Chat-Funktion getestet
-- [ ] SSL-Zertifikat aktiv (Let's Encrypt oder Provider)
-- [ ] nginx/Apache für SPA-Routing konfiguriert
+- [ ] Database migrated and seeded
+- [ ] Filament admin user created (`php artisan make:filament-user`)
+- [ ] SMTP delivery tested (contact form, newsletter)
+- [ ] `GEMINI_API_KEY` set and chat tested
+- [ ] SSL certificate active (Let's Encrypt or provider)
+- [ ] nginx/Apache configured for SPA routing
 
-#### Analytics (sobald IDs vorliegen)
+#### Analytics (once IDs are available)
 
-- [ ] GTM Container-ID in `frontend/index.html` eingetragen (2× + Guard entfernt)
-- [ ] GA4 Measurement-ID in GTM konfiguriert
-- [ ] Meta Pixel-ID in GTM konfiguriert
-- [ ] GTM veröffentlicht (nicht nur gespeichert)
-- [ ] Google Search Console: Property verifiziert
-- [ ] Search Console Meta-Tag in `frontend/index.html` eingetragen (Zeile einkommentiert)
-- [ ] Sitemap in Search Console eingereicht: `https://www.olymposlodge.com.tr/sitemap.xml`
-- [ ] GA4 mit Search Console verknüpft (Search Console → Einstellungen → Verknüpfungen)
+- [ ] GTM container ID added to `frontend/index.html` (2× + guard removed)
+- [ ] GA4 Measurement ID configured in GTM
+- [ ] Meta Pixel ID configured in GTM
+- [ ] GTM published (not just saved)
+- [ ] Google Search Console: property verified
+- [ ] Search Console meta tag added to `frontend/index.html` (line uncommented)
+- [ ] Sitemap submitted in Search Console: `https://www.olymposlodge.com.tr/sitemap.xml`
+- [ ] GA4 linked to Search Console (Search Console → Settings → Links)
 
 #### SEO & Performance
 
-- [ ] `robots.txt` prüfen — Adminbereich ausgeschlossen
-- [ ] Core Web Vitals im GTM Vorschau-Modus geprüft
-- [ ] Lighthouse-Audit durchgeführt
+- [ ] `robots.txt` reviewed — admin panel excluded
+- [ ] Core Web Vitals checked in GTM Preview mode
+- [ ] Lighthouse audit completed
 
 ---
 
-## Wichtige URLs (Produktion)
+## Production URLs
 
-| URL | Beschreibung |
+| URL | Description |
 |---|---|
 | `https://www.olymposlodge.com.tr` | Website |
 | `https://www.olymposlodge.com.tr/admin` | Filament Admin |
@@ -328,18 +328,18 @@ Den Inhalt von `frontend/dist/` in das Document-Root des Webservers deployen (od
 
 ---
 
-## Lokale Shortcuts
+## Local Shortcuts
 
 ```bash
 # Backend
-sail up -d                          # Container starten
-sail artisan migrate:fresh --seed   # DB komplett neu aufsetzen
-sail artisan db:seed --class=TranslationSeeder  # Nur Übersetzungen
-sail artisan make:filament-user     # Admin-User anlegen
-sail down                           # Container stoppen
+sail up -d                          # Start containers
+sail artisan migrate:fresh --seed   # Reset DB completely
+sail artisan db:seed --class=TranslationSeeder  # Re-seed translations only
+sail artisan make:filament-user     # Create admin user
+sail down                           # Stop containers
 
 # Frontend
-npm run dev     # Dev-Server starten
-npm run build   # Produktions-Build
-npm run lint    # Linter
+npm run dev     # Start dev server
+npm run build   # Production build
+npm run lint    # Run linter
 ```

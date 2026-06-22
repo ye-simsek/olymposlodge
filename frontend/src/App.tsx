@@ -7,6 +7,7 @@ import './i18n'
 const Layout          = lazy(() => import('./components/layout/Layout'))
 const ActivitiesPage  = lazy(() => import('./pages/ActivitiesPage'))
 const LodgePage       = lazy(() => import('./pages/LodgePage'))
+const SpaPage         = lazy(() => import('./pages/SpaPage'))
 const BookingPage     = lazy(() => import('./pages/BookingPage'))
 const ContactPage   = lazy(() => import('./pages/ContactPage'))
 const ExperiencesPage = lazy(() => import('./pages/ExperiencesPage'))
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="experiences" element={<ExperiencesPage />} />
             <Route path="activities" element={<ActivitiesPage />} />
             <Route path="lodge" element={<LodgePage />} />
+            <Route path="spa" element={<SpaPage />} />
             <Route path="location" element={<LocationPage />} />
             <Route path="gallery" element={<GalleryPage />} />
             <Route path="offers" element={<OffersPage />} />

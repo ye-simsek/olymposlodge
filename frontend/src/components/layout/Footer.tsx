@@ -49,9 +49,9 @@ export default function Footer() {
             <h4>{t('footer.explore_title')}</h4>
             <ul>
               <li><Link to="/rooms">{t('nav.rooms')}</Link></li>
+              <li><a href="/#nature">{t('footer.nature_link')}</a></li>
               <li><Link to="/experiences">{t('nav.experiences')}</Link></li>
               <li><Link to="/gallery">{t('nav.gallery')}</Link></li>
-              <li><Link to="/contact">{t('nav.contact')}</Link></li>
             </ul>
           </div>
           <div className="footer-col">

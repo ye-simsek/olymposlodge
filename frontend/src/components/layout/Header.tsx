@@ -15,6 +15,8 @@ const NAV_ITEMS = [
   { key: 'nav.contact',     sub: 'nav.contact_sub',     to: '/contact' },
 ]
 
+const MENU_ITEM = { key: 'nav.menu', sub: 'nav.menu_sub' }
+
 export default function Header() {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
@@ -114,7 +116,36 @@ export default function Header() {
             <span></span><span></span>
           </button>
           <ul className="nav-links">
-            {NAV_ITEMS.map(item => (
+            {NAV_ITEMS.slice(0, 6).map(item => (
+              <li key={item.key}>
+                <div className="nav-item-wrap">
+                  <a
+                    href={item.to}
+                    data-nav
+                    className={isActive(item.to) ? 'is-active' : ''}
+                    onClick={e => { e.preventDefault(); handleNavClick(item.to) }}
+                  >
+                    {t(item.key)}
+                  </a>
+                  <span className="nav-sub">{t(item.sub, '')}</span>
+                </div>
+              </li>
+            ))}
+            <li key={MENU_ITEM.key}>
+              <div className="nav-item-wrap">
+                <a
+                  href={`/assets/menu/menu-${(i18n.language?.split('-')[0] || 'tr')}.html`}
+                  data-nav
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {t(MENU_ITEM.key)}
+                </a>
+                <span className="nav-sub">{t(MENU_ITEM.sub, '')}</span>
+              </div>
+            </li>
+            {NAV_ITEMS.slice(6).map(item => (
               <li key={item.key}>
                 <div className="nav-item-wrap">
                   <a

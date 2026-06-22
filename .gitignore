@@ -34,6 +34,8 @@ composer.phar
 *.swp
 *.swo
 
+docs/
+
 # Claude (local only)
 .claude/launch.json
 .claude/skills/superpowers/

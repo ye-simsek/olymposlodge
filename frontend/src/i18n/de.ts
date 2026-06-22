@@ -370,6 +370,7 @@ export default {
     activities_desc: 'Bootstouren, Kajak, Radfahren, Trekking und mehr. Für einen aktiven Urlaub in Çıralı.',
   },
   activities: {
+    hero_alt: 'Aktivitäten',
     tekne_label: 'Meer',
     tekne_title: 'Bootsfahrt',
     tekne_desc: 'Eine ganztägige Blaue Reise zwischen den Buchten von Olympos, Adrasan und den umliegenden Inseln. Schwimmstopps in kristallklarem Wasser, abgelegene Bucht-Ankerplätze, die Stille des offenen Meeres.',

@@ -371,6 +371,7 @@ export default {
     activities_desc: 'Tekne turları, kano, bisiklet, trekking ve daha fazlası. Çıralı\'da aktif bir tatil için.',
   },
   activities: {
+    hero_alt: 'Aktiviteler',
     tekne_label: 'Deniz',
     tekne_title: 'Tekne Turu',
     tekne_desc: 'Olympos koyları, Adrasan ve çevre adacıklar arasında günübirlik mavi tur. Berrak sularda yüzme molaları, ıssız koy sığınakları, açık denizin sessizliği.',

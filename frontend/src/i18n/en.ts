@@ -370,6 +370,7 @@ export default {
     activities_desc: 'Boat trips, kayaking, cycling, trekking and more. For an active holiday in Çıralı.',
   },
   activities: {
+    hero_alt: 'Activities',
     tekne_label: 'Sea',
     tekne_title: 'Boat Trip',
     tekne_desc: 'A day-long blue cruise between the Olympos coves, Adrasan and the surrounding islets. Swimming stops in crystal-clear waters, secluded bay anchorages, the silence of the open sea.',

@@ -25,7 +25,7 @@ export default function ActivitiesPage() {
         <img
           className="child-hero__image"
           src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg"
-          alt="Aktiviteler"
+          alt={a('hero_alt')}
           fetchPriority="high"
           decoding="async"
           width={2000}
@@ -39,7 +39,7 @@ export default function ActivitiesPage() {
         <div className="tekne-card__image">
           <img
             src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg"
-            alt="Tekne Turu"
+            alt={a('tekne_title')}
             loading="lazy"
             width={2000}
             height={1333}
@@ -84,7 +84,7 @@ export default function ActivitiesPage() {
         <div className="tekne-card__image">
           <img
             src="/images/Olympos_beach.jpg"
-            alt="Tahtalı Teleferik"
+            alt={a('tahtali_title')}
             loading="lazy"
             width={3152}
             height={1970}

@@ -4,8 +4,9 @@ import lenis from './lib/lenis'
 import LoadingScreen from './components/LoadingScreen'
 import './i18n'
 
-const Layout        = lazy(() => import('./components/layout/Layout'))
-const BookingPage   = lazy(() => import('./pages/BookingPage'))
+const Layout          = lazy(() => import('./components/layout/Layout'))
+const ActivitiesPage  = lazy(() => import('./pages/ActivitiesPage'))
+const BookingPage     = lazy(() => import('./pages/BookingPage'))
 const ContactPage   = lazy(() => import('./pages/ContactPage'))
 const ExperiencesPage = lazy(() => import('./pages/ExperiencesPage'))
 const GalleryPage   = lazy(() => import('./pages/GalleryPage'))
@@ -48,6 +49,7 @@ export default function App() {
             <Route path="rooms" element={<RoomsPage />} />
             <Route path="rooms/:slug" element={<RoomDetailPage />} />
             <Route path="experiences" element={<ExperiencesPage />} />
+            <Route path="activities" element={<ActivitiesPage />} />
             <Route path="location" element={<LocationPage />} />
             <Route path="gallery" element={<GalleryPage />} />
             <Route path="offers" element={<OffersPage />} />

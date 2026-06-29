@@ -3,12 +3,8 @@
 .AppleDouble
 .LSOverride
 
-# Frontend (Vite / Node)
-frontend/node_modules/
-frontend/dist/
-frontend/.env
-frontend/.env.local
-frontend/.env.*.local
+# Vite optimizer cache (never track)
+.vite/
 
 # Backend (Laravel / PHP)
 backend/vendor/

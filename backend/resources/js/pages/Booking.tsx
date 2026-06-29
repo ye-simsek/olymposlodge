@@ -387,6 +387,30 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
     comingSoon: b('coming_soon'),
   }
 
+  const TITLES: Record<Lang, string[]> = {
+    de: ['Herr', 'Frau', 'Mx.', 'Dr.', 'Prof.'],
+    en: ['Mr', 'Mrs', 'Ms', 'Dr', 'Prof'],
+    tr: ['Bay', 'Bayan', 'Dr.', 'Prof.'],
+  }
+  const COUNTRIES: Record<Lang, { code: string; label: string }[]> = {
+    de: [
+      { code: 'DE', label: 'Deutschland' }, { code: 'AT', label: 'Österreich' }, { code: 'CH', label: 'Schweiz' },
+      { code: 'TR', label: 'Türkei' }, { code: 'GB', label: 'Großbritannien' }, { code: 'NL', label: 'Niederlande' },
+      { code: 'FR', label: 'Frankreich' }, { code: 'US', label: 'USA' }, { code: 'RU', label: 'Russland' }, { code: 'XX', label: 'Sonstiges' },
+    ],
+    en: [
+      { code: 'GB', label: 'United Kingdom' }, { code: 'US', label: 'United States' }, { code: 'DE', label: 'Germany' },
+      { code: 'TR', label: 'Turkey' }, { code: 'NL', label: 'Netherlands' }, { code: 'FR', label: 'France' },
+      { code: 'AT', label: 'Austria' }, { code: 'CH', label: 'Switzerland' }, { code: 'RU', label: 'Russia' }, { code: 'XX', label: 'Other' },
+    ],
+    tr: [
+      { code: 'TR', label: 'Türkiye' }, { code: 'DE', label: 'Almanya' }, { code: 'GB', label: 'Birleşik Krallık' },
+      { code: 'NL', label: 'Hollanda' }, { code: 'FR', label: 'Fransa' }, { code: 'US', label: 'ABD' },
+      { code: 'RU', label: 'Rusya' }, { code: 'XX', label: 'Diğer' },
+    ],
+  }
+  const ARRIVAL_TIMES = ['12:00–14:00', '14:00–16:00', '16:00–18:00', '18:00–20:00', '20:00–22:00', '22:00+']
+
   const ciParts = checkIn ? parseDateParts(checkIn, lang) : null
   const coParts = checkOut ? parseDateParts(checkOut, lang) : null
 
@@ -483,7 +507,176 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
         </>
       )}
 
-      {/* Steps 2–4 added in Task 4 */}
+      {step === 2 && (
+        <>
+          <div className="step2-header">
+            <button type="button" className="step2-back" onClick={() => goToStep(1)}>{L.back}</button>
+            {checkIn && checkOut && (
+              <span className="step2-dates">
+                {formatDate(checkIn, lang)} → {formatDate(checkOut, lang)} · {nights} {L.nights}
+              </span>
+            )}
+          </div>
+          <div className="room-cards">
+            {rooms.map(room => {
+              const isSelected = selectedRoomId === room.id
+              const features = ROOM_FEATURES[room.slug]?.[lang] ?? []
+              const img = ROOM_IMAGES[room.slug]
+              const rPPN = room.price_per_night
+              return (
+                <div
+                  key={room.id}
+                  className={`room-card-new${isSelected ? ' room-card-new--selected' : ''}`}
+                  onClick={() => setSelectedRoomId(room.id)}
+                >
+                  <div className="room-card-new__gallery">
+                    {img && <img src={img} alt={roomName(room)} loading="lazy" />}
+                  </div>
+                  <div className="room-card-new__info">
+                    <div className="room-card-new__name">{roomName(room)}</div>
+                    {features.length > 0 && (
+                      <ul className="room-card-new__features">
+                        {features.map((f, i) => <li key={i}>{f}</li>)}
+                      </ul>
+                    )}
+                    <div className="room-card-new__footer">
+                      <div className="room-card-new__price-block">
+                        {rPPN && (
+                          <>
+                            <span className="room-card-new__price-from">{b('from')}</span>
+                            <span className="room-card-new__price-amount">€ {rPPN} <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>{L.perNight}</span></span>
+                          </>
+                        )}
+                      </div>
+                      <button
+                        type="button"
+                        className="room-card-new__cta"
+                        onClick={e => { e.stopPropagation(); setSelectedRoomId(room.id); goToStep(3) }}
+                      >
+                        {L.select}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </>
+      )}
+
+      {step === 3 && (
+        <>
+          <div className="step3-header">
+            <button type="button" className="step3-back" onClick={() => goToStep(2)}>{L.back}</button>
+            {checkIn && checkOut && (
+              <span className="step2-dates">{formatDate(checkIn, lang)} → {formatDate(checkOut, lang)}</span>
+            )}
+          </div>
+          <form onSubmit={e => e.preventDefault()} noValidate className="step3-layout">
+            <div>
+              <h2 className="guest-form__title">{L.summary}</h2>
+
+              <div className="guest-form__row guest-form__row--three">
+                <div className="guest-form__field">
+                  <label>{L.guestTitle}</label>
+                  <select value={guestTitle} onChange={e => setGuestTitle(e.target.value)}>
+                    <option value="">—</option>
+                    {TITLES[lang].map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                </div>
+                <div className="guest-form__field">
+                  <label className="required">{L.firstName}</label>
+                  <input type="text" value={guestFirstName} onChange={e => setGuestFirstName(e.target.value)} required />
+                </div>
+                <div className="guest-form__field">
+                  <label className="required">{L.lastName}</label>
+                  <input type="text" value={guestLastName} onChange={e => setGuestLastName(e.target.value)} required />
+                </div>
+              </div>
+
+              <div className="guest-form__row">
+                <div className="guest-form__field">
+                  <label className="required">{L.email}</label>
+                  <input type="email" value={guestEmail} onChange={e => setGuestEmail(e.target.value)} required />
+                </div>
+                <div className="guest-form__field">
+                  <label>{L.phone}</label>
+                  <input type="tel" value={guestPhone} onChange={e => setGuestPhone(e.target.value)} placeholder="+49 …" />
+                </div>
+              </div>
+
+              <div className="guest-form__row">
+                <div className="guest-form__field">
+                  <label>{L.country}</label>
+                  <select value={guestCountry} onChange={e => setGuestCountry(e.target.value)}>
+                    <option value="">—</option>
+                    {COUNTRIES[lang].map(c => <option key={c.code} value={c.code}>{c.label}</option>)}
+                  </select>
+                </div>
+                <div className="guest-form__field">
+                  <label>{L.arrival}</label>
+                  <select value={guestArrival} onChange={e => setGuestArrival(e.target.value)}>
+                    <option value="">—</option>
+                    {ARRIVAL_TIMES.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                </div>
+              </div>
+
+              <div className="guest-form__field">
+                <label>{L.notes}</label>
+                <textarea value={guestNotes} onChange={e => setGuestNotes(e.target.value)} rows={3} />
+              </div>
+            </div>
+
+            <aside className="step3-summary">
+              <div className="step3-summary__title">{L.summary}</div>
+              {selectedRoom && (
+                <div className="step3-summary__room">{roomName(selectedRoom)}</div>
+              )}
+              {checkIn && checkOut && (
+                <div className="step3-summary__dates">
+                  <div>
+                    <span className="step3-summary__date-label">{L.checkin}</span>
+                    <span className="step3-summary__date-val">{formatDate(checkIn, lang)}</span>
+                  </div>
+                  <div>
+                    <span className="step3-summary__date-label">{L.checkout}</span>
+                    <span className="step3-summary__date-val">{formatDate(checkOut, lang)}</span>
+                  </div>
+                </div>
+              )}
+              {nights > 0 && (
+                <div className="step3-summary__line">
+                  <span>{nights} {L.nights} {pricePerNight ? `× € ${pricePerNight}` : ''}</span>
+                  {totalPrice && <span>€ {totalPrice.toFixed(0)}</span>}
+                </div>
+              )}
+              {totalPrice && (
+                <div className="step3-summary__total">
+                  <span>{L.total}</span>
+                  <span>€ {totalPrice.toFixed(0)}</span>
+                </div>
+              )}
+              <button type="submit" className="btn-confirm" disabled>
+                {L.comingSoon}
+              </button>
+              <p className="step3-summary__payment-note">{L.paymentNote}</p>
+            </aside>
+          </form>
+        </>
+      )}
+
+      {/* Step 4 unreachable in the visual shell; Sabee will wire confirmation */}
+      {step === 4 && (
+        <div className="step4-wrap">
+          <div className="step4-content">
+            <div className="step4-icon">✓</div>
+            <h1 className="step4-title">{b('confirm_title')}</h1>
+            <p className="step4-subtitle">{b('confirm_text')}</p>
+            <Link href={localePath(lang)} className="step4-home">{b('back_home')}</Link>
+          </div>
+        </div>
+      )}
     </>
   )
 }

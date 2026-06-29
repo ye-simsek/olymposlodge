@@ -53,6 +53,21 @@ class SitemapTest extends TestCase
         return [['tr'], ['en'], ['de']];
     }
 
+    // ── Plan-3 content pages ──────────────────────────────────────────────────
+
+    public function test_sitemap_includes_new_static_pages_locale_prefixed(): void
+    {
+        $xml = $this->get('/sitemap.xml')->getContent();
+
+        foreach (['experiences', 'activities', 'lodge', 'spa', 'location', 'gallery', 'offers', 'contact', 'terms', 'privacy'] as $path) {
+            $this->assertStringContainsString("/en/{$path}</loc>", $xml, "missing /en/{$path}");
+            $this->assertStringContainsString("/de/{$path}", $xml);
+            $this->assertStringContainsString("/tr/{$path}", $xml);
+        }
+        // Booking + 404 sind NICHT enthalten
+        $this->assertStringNotContainsString('/booking', $xml);
+    }
+
     // ── no unprefixed / not-yet-migrated URLs ────────────────────────────────
 
     public function test_does_not_contain_bare_rooms_url(): void
@@ -74,38 +89,6 @@ class SitemapTest extends TestCase
         $this->assertStringNotContainsString(
             '<loc>https://www.olymposlodge.com.tr/</loc>',
             $content
-        );
-    }
-
-    public function test_does_not_contain_experiences(): void
-    {
-        $this->assertStringNotContainsString(
-            '/experiences',
-            $this->sitemap()->getContent()
-        );
-    }
-
-    public function test_does_not_contain_location(): void
-    {
-        $this->assertStringNotContainsString(
-            '/location',
-            $this->sitemap()->getContent()
-        );
-    }
-
-    public function test_does_not_contain_gallery(): void
-    {
-        $this->assertStringNotContainsString(
-            '/gallery',
-            $this->sitemap()->getContent()
-        );
-    }
-
-    public function test_does_not_contain_contact(): void
-    {
-        $this->assertStringNotContainsString(
-            '/contact',
-            $this->sitemap()->getContent()
         );
     }
 

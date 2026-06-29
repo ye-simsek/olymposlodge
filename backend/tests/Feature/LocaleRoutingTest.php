@@ -14,8 +14,10 @@ class LocaleRoutingTest extends TestCase
             ->assertInertia(fn (Assert $page) => $page->where('locale', 'de'));
     }
 
-    public function test_unknown_locale_prefix_is_not_found(): void
+    public function test_unknown_locale_prefix_is_redirected(): void
     {
-        $this->get('/xx/_smoke')->assertNotFound();
+        // Task 4: the 301 redirect matrix catches any prefix-less path (incl. unknown
+        // locale prefixes like /xx/*) and redirects to the canonical locale.
+        $this->get('/xx/_smoke')->assertRedirect('/en/xx/_smoke');
     }
 }

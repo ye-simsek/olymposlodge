@@ -21,6 +21,13 @@ Route::prefix('{locale}')
 
         Route::post('/newsletter', [\App\Http\Controllers\Web\NewsletterController::class, 'store'])
             ->name('newsletter.store');
+
+        Route::get('/terms', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Terms', 'namespaces' => ['meta']])
+            ->name('terms');
+        Route::get('/privacy', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Privacy', 'namespaces' => ['meta']])
+            ->name('privacy');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

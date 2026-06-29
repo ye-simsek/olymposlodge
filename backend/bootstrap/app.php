@@ -25,4 +25,29 @@ return Application::configure(basePath: dirname(__DIR__))
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*'),
         );
+
+        $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, \Illuminate\Http\Request $request) {
+            // Filament-Admin und API behalten ihr eigenes 404/Redirect-Verhalten.
+            if ($request->is('api/*') || $request->is('admin', 'admin/*') || $request->expectsJson()) {
+                return null;
+            }
+
+            $segments = explode('/', trim($request->path(), '/'));
+            $locale = in_array($segments[0] ?? '', \App\Http\Middleware\SetLocale::SUPPORTED, true)
+                ? $segments[0]
+                : \App\Support\Locale::DEFAULT;
+            app()->setLocale($locale);
+
+            // Unmatched 404-Routen durchlaufen die web-Middleware NICHT, daher
+            // fehlen die von HandleInertiaRequests::share() gelieferten Shared-Props
+            // (locale/seo/name/flash), die der Layout-Baum (Header/Footer/SeoHead)
+            // beim SSR liest. Hier explizit in derselben Shape nachreichen.
+            return \Inertia\Inertia::render('NotFound', [
+                'name' => config('app.name'),
+                'locale' => $locale,
+                'seo' => \App\Support\Seo::forRequest($request),
+                'flash' => ['success' => null, 'error' => null],
+                'translations' => \App\Support\PageProps::translations(['meta']),
+            ])->toResponse($request)->setStatusCode(404);
+        });
     })->create();

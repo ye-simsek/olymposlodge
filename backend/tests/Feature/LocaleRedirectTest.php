@@ -43,11 +43,11 @@ class LocaleRedirectTest extends TestCase
 
     public function test_locale_prefixed_unknown_path_is_not_redirected_again(): void
     {
-        // Regression: once a path has a valid locale prefix (e.g. /en/rooms),
+        // Regression: once a path has a valid locale prefix (e.g. /en/unknown),
         // the catch-all redirect must NOT fire a second time, preventing
-        // an infinite redirect loop (e.g. /en/rooms → /en/en/rooms → …).
-        // /en/rooms has no registered route yet, so it must 404, not 301.
-        $this->get('/en/rooms')->assertStatus(404);
+        // an infinite redirect loop (e.g. /en/unknown → /en/en/unknown → …).
+        // /en/unknown has no registered route, so it must 404, not 301/302.
+        $this->get('/en/unknown-path-that-does-not-exist')->assertStatus(404);
     }
 
     public function test_multi_segment_legacy_path_redirects_with_locale_prefix(): void

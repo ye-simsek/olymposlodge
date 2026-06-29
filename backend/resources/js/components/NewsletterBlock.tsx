@@ -4,9 +4,8 @@ import { useTranslation } from '@/hooks/use-translation';
 export default function NewsletterBlock() {
     const { t } = useTranslation();
     const { locale } = usePage().props;
-    const form = useForm<{ email: string; name: string; consent: boolean }>({
+    const form = useForm<{ email: string; consent: boolean }>({
         email: '',
-        name: '',
         consent: false,
     });
 

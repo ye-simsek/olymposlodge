@@ -20,7 +20,7 @@ class NewsletterController extends Controller
         $subscriber = NewsletterSubscriber::firstOrCreate(
             ['email' => $validated['email']],
             [
-                'name' => $validated['name'] ?? null,
+                'name' => ($validated['name'] ?? null) ?: null,
                 'language' => app()->getLocale(),
                 'consent_at' => now(),
                 'ip_address' => $request->ip(),

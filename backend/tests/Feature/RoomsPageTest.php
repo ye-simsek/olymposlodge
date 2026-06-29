@@ -12,6 +12,14 @@ class RoomsPageTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_inactive_rooms_are_excluded(): void
+    {
+        Room::factory()->create(['slug' => 'hidden', 'is_active' => false]);
+
+        $this->get('/en/rooms')
+            ->assertInertia(fn (Assert $page) => $page->where('rooms', []));
+    }
+
     public function test_rooms_index_lists_active_rooms(): void
     {
         Room::factory()->create([

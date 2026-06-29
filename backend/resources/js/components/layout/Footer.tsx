@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
 import { localePath } from '@/lib/routes';
@@ -10,8 +10,10 @@ const LOGO = 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos
 export default function Footer() {
     const { t } = useTranslation();
     const { locale } = usePage().props;
-    const year = new Date().getFullYear();
+    const [year, setYear] = useState<number | null>(null);
     const mainRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => setYear(new Date().getFullYear()), []);
 
     useEffect(() => {
         const el = mainRef.current;
@@ -71,7 +73,7 @@ export default function Footer() {
 
             <div className="footer-bottom">
                 <div className="footer-copyright-block">
-                    <p>© {year}</p>
+                    {year && <p>© {year}</p>}
                     <p>Olympos Lodge</p>
                     <p>Türkiye</p>
                     <p>{t('footer.rights')}</p>

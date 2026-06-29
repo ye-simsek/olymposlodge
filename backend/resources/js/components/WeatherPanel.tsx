@@ -52,12 +52,16 @@ export default function WeatherPanel() {
         }).catch(() => setStatus('error'));
     }, []);
 
+    const [now, setNow] = useState<Date | null>(null);
+    useEffect(() => setNow(new Date()), []);
+
     const days = tRaw<string[]>('weather.days') ?? [];
     const fullDays = tRaw<string[]>('weather.full_days') ?? [];
     const months = tRaw<string[]>('weather.months') ?? [];
 
-    const now = new Date();
-    const daydate = `${fullDays[now.getDay()]} · ${now.getDate()} ${months[now.getMonth()]}`;
+    const daydate = now
+        ? `${fullDays[now.getDay()]} · ${now.getDate()} ${months[now.getMonth()]}`
+        : '';
 
     function getDayLabel(dateStr: string, i: number) {
         return i === 0 ? t('weather.today') : days[new Date(dateStr).getDay()];
@@ -86,8 +90,8 @@ export default function WeatherPanel() {
     return (
         <div className="weather-panel" aria-label="Live weather in Çıralı">
             <div className="weather-panel__date">
-                <div className="weather-panel__year">{now.getFullYear()}</div>
-                <div className="weather-panel__daydate">{daydate}</div>
+                {now && <div className="weather-panel__year">{now.getFullYear()}</div>}
+                {now && <div className="weather-panel__daydate">{daydate}</div>}
             </div>
             <div className="weather-panel__rule" />
             <div className="weather-panel__tabs">

@@ -44,7 +44,7 @@ class LocaleRedirectTest extends TestCase
         // Regression: once a path has a valid locale prefix (e.g. /en/unknown),
         // the catch-all redirect must NOT fire a second time, preventing
         // an infinite redirect loop (e.g. /en/unknown → /en/en/unknown → …).
-        // /en/unknown has no registered route, so it must 404, not 301/302.
+        // /en/unknown has no registered route, so it must 404, not 301.
         $this->get('/en/unknown-path-that-does-not-exist')->assertStatus(404);
     }
 

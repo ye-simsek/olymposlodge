@@ -27,7 +27,7 @@ class RoomController extends Controller
 
         return Inertia::render('RoomDetail', [
             'room' => $data,
-            'translations' => PageProps::translations(['meta', 'room_detail', 'common']),
+            'translations' => PageProps::translations(['meta', 'room_detail']),
         ]);
     }
 }

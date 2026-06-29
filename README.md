@@ -164,19 +164,18 @@ The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**.
 
 1. [tagmanager.google.com](https://tagmanager.google.com) → Create account & container
 2. Copy the container ID (format: `GTM-XXXXXXX`)
-3. Replace **both** occurrences of `REPLACE_WITH_GTM_ID` in `frontend/index.html`:
-   ```html
-   <!-- Line ~24: -->
-   j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-   if (i !== 'GTM-XXXXXXX') ...    ← Remove condition once real ID is set
+3. Add the GTM container snippet to the Inertia root template
+   `backend/resources/views/app.blade.php` (this needs to be wired in — see the note
+   above): the `<head>` loader script with your `GTM-XXXXXXX` ID plus the `<noscript>`
+   `<iframe>` fallback right after `<body>`.
 
-   <!-- Line ~28: -->
+   ```html
+   <!-- in <head>: -->
    })(window,document,'script','dataLayer','GTM-XXXXXXX');
 
-   <!-- Line ~38 (noscript): -->
-   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+   <!-- right after <body> (noscript fallback): -->
+   <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"></iframe>
    ```
-4. Also remove the guard condition `if (i !== 'REPLACE_WITH_GTM_ID')` from the script — it prevents loading the placeholder and is no longer needed once a real ID is set.
 
 ### Step 2 — Google Analytics 4 (configure in GTM)
 
@@ -190,7 +189,7 @@ The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**.
    - Tag type: *GA4 Event* · Event name: `page_view`
    - Trigger: *History Change* (create a new trigger of type "History Change")
 
-> **Note:** The History Change trigger is required because the site is a React SPA and navigates between pages without a full reload. The frontend also pushes page views manually via `gtag('event', 'page_view', ...)` on each route change (in `App.tsx`).
+> **Note:** The History Change trigger is required because Inertia navigates between pages client-side (via `pushState`) without a full reload. The app also pushes page views manually via `gtag('event', 'page_view', ...)` on each Inertia navigation, in `backend/resources/js/app.tsx` (`router.on('navigate', …)`).
 
 ### Step 3 — Meta Pixel (configure in GTM)
 
@@ -206,7 +205,8 @@ The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**.
 
 1. [search.google.com/search-console](https://search.google.com/search-console) → Add property → URL prefix: `https://www.olymposlodge.com.tr`
 2. Copy the verification meta tag (the `content` value only)
-3. In `frontend/index.html`, uncomment the relevant line and insert the value:
+3. In the Inertia root template `backend/resources/views/app.blade.php`, add the
+   verification meta tag inside `<head>`:
    ```html
    <meta name="google-site-verification" content="REPLACE_WITH_GSC_VERIFICATION_CODE" />
    ```
@@ -215,7 +215,7 @@ The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**.
 
 ### Cookie Consent & Consent Mode v2
 
-The cookie banner (`src/components/CookieConsent.tsx`) is fully integrated with **GTM Consent Mode v2**:
+The cookie banner (`backend/resources/js/components/CookieConsent.tsx`) is fully integrated with **GTM Consent Mode v2**:
 
 - New visitors start with `denied` for all categories
 - Returning visitors: previously saved choices (`localStorage` key: `ol_cookie_consent`) are read **before** GTM loads and applied immediately — no tracking flicker
@@ -318,16 +318,17 @@ restarted after each build.
 - [ ] SMTP delivery tested (contact form, newsletter)
 - [ ] `GEMINI_API_KEY` set and chat tested
 - [ ] SSL certificate active (Let's Encrypt or provider)
-- [ ] nginx/Apache configured for SPA routing
+- [ ] nginx/Apache configured for the Laravel monolith (all routes via `index.php`)
+- [ ] SSR Node process running (`bootstrap/ssr/ssr.js`) and restarted after each build
 
 #### Analytics (once IDs are available)
 
-- [ ] GTM container ID added to `frontend/index.html` (2× + guard removed)
+- [ ] GTM container snippet added to `backend/resources/views/app.blade.php`
 - [ ] GA4 Measurement ID configured in GTM
 - [ ] Meta Pixel ID configured in GTM
 - [ ] GTM published (not just saved)
 - [ ] Google Search Console: property verified
-- [ ] Search Console meta tag added to `frontend/index.html` (line uncommented)
+- [ ] Search Console meta tag added to `backend/resources/views/app.blade.php`
 - [ ] Sitemap submitted in Search Console: `https://www.olymposlodge.com.tr/sitemap.xml`
 - [ ] GA4 linked to Search Console (Search Console → Settings → Links)
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
+import { usePageProps } from '@/hooks/use-page-props';
 import { useTranslation } from '@/hooks/use-translation';
 import SeoHead from '@/components/SeoHead';
 import Layout from '@/components/layout/Layout';
@@ -62,7 +63,7 @@ const BED_LABELS: Record<string, Record<string, string>> = {
 
 export default function RoomDetail({ room }: { room: LocalizedRoom }) {
     const { t } = useTranslation();
-    const { locale } = usePage().props as { locale: string };
+    const { locale } = usePageProps();
 
     const [stickyVisible, setStickyVisible] = useState(false);
     const ctaRef = useRef<HTMLDivElement>(null);

@@ -1,4 +1,5 @@
-import { Head, usePage } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
+import { usePageProps } from '@/hooks/use-page-props';
 
 interface SeoHeadProps {
     title: string;
@@ -10,7 +11,7 @@ const DEFAULT_IMAGE =
     'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-scaled.jpg';
 
 export default function SeoHead({ title, description, image = DEFAULT_IMAGE }: SeoHeadProps) {
-    const seo = usePage().props.seo as { canonical: string; alternates: Record<string, string> };
+    const { seo } = usePageProps();
 
     return (
         <Head title={title}>

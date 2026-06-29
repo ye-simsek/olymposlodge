@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, router, usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
+import { usePageProps } from '@/hooks/use-page-props';
 import { localePath } from '@/lib/routes';
 
 type Locale = 'tr' | 'en' | 'de';
@@ -21,7 +22,7 @@ const MENU_ITEM = { key: 'nav.menu', sub: 'nav.menu_sub' };
 
 export default function Header() {
     const { t } = useTranslation();
-    const { locale, seo } = usePage().props as { locale: Locale; seo: { alternates: Record<string, string> } };
+    const { locale, seo } = usePageProps();
 
     // Strip locale prefix for path comparisons (usePage().url is the current path, not in props)
     const rawUrl = (usePage().url ?? '').split('?')[0];

@@ -22,4 +22,4 @@ Route::get('/', fn (Request $request) => redirect('/'.Locale::best($request), 30
 
 Route::get('/{path}', function (string $path, Request $request) {
     return redirect('/'.Locale::best($request).'/'.$path, 301);
-})->where('path', '^(?!admin|api|sitemap\.xml|robots\.txt|up|build|storage|favicon).+$');
+})->where('path', '^(?!(?:tr|en|de)/|admin|api|sitemap\.xml|robots\.txt|up(?:/|$)|build|storage|favicon).+$');

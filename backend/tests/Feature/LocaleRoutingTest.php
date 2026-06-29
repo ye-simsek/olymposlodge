@@ -14,10 +14,11 @@ class LocaleRoutingTest extends TestCase
             ->assertInertia(fn (Assert $page) => $page->where('locale', 'de'));
     }
 
-    public function test_unknown_locale_prefix_is_redirected(): void
+    public function test_unknown_locale_prefix_results_in_404(): void
     {
-        // Task 4: the 301 redirect matrix catches any prefix-less path (incl. unknown
-        // locale prefixes like /xx/*) and redirects to the canonical locale.
-        $this->get('/xx/_smoke')->assertRedirect('/en/xx/_smoke');
+        // /xx/_smoke is caught by the redirect matrix and sent to /en/xx/_smoke.
+        // /en/xx/_smoke is NOT in the locale route group (only tr/en/de are valid),
+        // so it falls through to a 404. The loop fix ensures no further redirect fires.
+        $this->get('/en/xx/_smoke')->assertNotFound();
     }
 }

@@ -9,7 +9,7 @@ Trilingual (Turkish · English · German), with AI chat assistant, contact form,
 
 | Layer | Technology |
 |---|---|
-| Frontend | React 19, TypeScript 5.5, Vite 5, react-router-dom 7, i18next |
+| Frontend | Inertia.js (React 18 + TypeScript) with server-side rendering (SSR), Vite |
 | Backend | Laravel 13, PHP 8.3 |
 | Admin | Filament 3.3 |
 | Database | MySQL 8.4 (production), SQLite (local option) |
@@ -22,10 +22,15 @@ Trilingual (Turkish · English · German), with AI chat assistant, contact form,
 
 ```
 Website/
-├── backend/      # Laravel API + Filament Admin
-├── frontend/     # React SPA (Vite)
+├── backend/      # Laravel + Inertia (React/SSR) monolith + Filament Admin
+│   ├── resources/js/   # Inertia React pages & components
+│   └── resources/css/  # Stylesheets
 └── README.md
 ```
+
+The site is a single Laravel + Inertia.js monolith: pages are server-rendered
+React components (SSR via Node), served and routed entirely by Laravel. There is
+no separate decoupled SPA.
 
 ---
 
@@ -112,19 +117,24 @@ Sitemap: **http://localhost/sitemap.xml**
 
 ---
 
-### 3. Frontend (Vite)
+### 3. Frontend assets (Vite, inside the monolith)
 
-In a new terminal:
+The frontend lives inside `backend/` (Inertia React under `resources/js`). In a new
+terminal:
 
 ```bash
-cd frontend
+cd backend
 npm install
+
+# Dev: Vite dev server with HMR (assets only — pages are served by Laravel on :8002)
 npm run dev
+
+# Production-style build incl. the SSR bundle
+npm run build:ssr
 ```
 
-Frontend runs at: **http://localhost:5173**
-
-The Vite dev server automatically proxies `/api/*` requests to `http://localhost:80` (configured in `vite.config.ts`).
+Open the site at the backend URL (e.g. **http://localhost:8002/en**). After every
+`npm run build:ssr`, restart the SSR Node process so it picks up the new bundle.
 
 ---
 
@@ -140,7 +150,15 @@ sail artisan db:seed --class=TranslationSeeder
 
 ## Analytics & Tracking Setup
 
-The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**. Placeholders are currently in place — IDs need to be filled in `frontend/index.html`.
+> **Note:** This section describes the analytics integration as it was wired into the
+> former decoupled SPA (`frontend/index.html`, `src/components/CookieConsent.tsx`,
+> `App.tsx`). That SPA has been removed. The GTM/GA4/Meta Pixel/GSC tags still need
+> to be re-wired into the Inertia monolith's root template
+> (`backend/resources/views/app.blade.php`) and React components. The conceptual
+> steps below (account/container/ID setup, Consent Mode v2) remain valid; only the
+> file locations have changed.
+
+The project is prepared for **GTM, GA4, Meta Pixel, and Google Search Console**. Placeholders need to be filled in the Inertia root template (`backend/resources/views/app.blade.php`).
 
 ### Step 1 — Google Tag Manager
 
@@ -246,21 +264,18 @@ MAIL_PASSWORD=...
 GEMINI_API_KEY=...      # Google AI Studio API key
 ```
 
-**Web server (nginx) — important for SPA routing:**
+**Web server (nginx):** the monolith is a standard Laravel app — all routes
+(pages, `/api/*`, `/admin`) are handled by `index.php`. No SPA `index.html`
+fallback is needed.
 
 ```nginx
 location / {
-    try_files $uri $uri/ /index.html;
-}
-
-location /api/ {
-    try_files $uri $uri/ /index.php?$query_string;
-}
-
-location /admin {
     try_files $uri $uri/ /index.php?$query_string;
 }
 ```
+
+A Node process must run the SSR bundle (`php artisan inertia:start-ssr` or a
+supervisor entry for `bootstrap/ssr/ssr.js`).
 
 **Create storage symlink:**
 
@@ -277,15 +292,18 @@ chown -R www-data:www-data storage bootstrap/cache
 
 ---
 
-### Frontend
+### Frontend assets (built inside the monolith)
 
 ```bash
-cd frontend
+cd backend
 npm ci
-npm run build
+npm run build:ssr   # builds the client bundle + the SSR bundle
 ```
 
-Deploy the contents of `frontend/dist/` to the web server's document root (or serve as a separate static file server).
+Vite emits the client assets into `backend/public/build/`; the SSR bundle lands in
+`backend/bootstrap/ssr/`. Both are served by Laravel — there is no separate static
+deploy. Ensure the SSR Node process (`bootstrap/ssr/ssr.js`) is running and is
+restarted after each build.
 
 ---
 
@@ -342,8 +360,8 @@ sail artisan db:seed --class=TranslationSeeder  # Re-seed translations only
 sail artisan make:filament-user     # Create admin user
 sail down                           # Stop containers
 
-# Frontend
-npm run dev     # Start dev server
-npm run build   # Production build
-npm run lint    # Run linter
+# Frontend assets (run inside backend/)
+npm run dev        # Vite dev server (HMR)
+npm run build:ssr  # Client + SSR production build
+npm run test:unit  # Vitest component tests
 ```

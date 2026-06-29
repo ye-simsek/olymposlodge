@@ -2,6 +2,12 @@ import '@inertiajs/react';
 
 type TranslationTree = Record<string, Record<string, unknown>>;
 
+declare global {
+    interface Window {
+        gtag?: (...args: unknown[]) => void;
+    }
+}
+
 declare module '@inertiajs/react' {
     interface PageProps {
         name: string;

@@ -27,6 +27,7 @@ class HandleInertiaRequests extends Middleware
             'locale' => fn () => app()->getLocale(),
             'translations' => fn () => (new \App\Support\TranslationRepository())
                 ->forLocale(app()->getLocale(), self::GLOBAL_NAMESPACES),
+            'seo' => fn () => \App\Support\Seo::forRequest($request),
         ];
     }
 }

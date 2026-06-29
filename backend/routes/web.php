@@ -17,6 +17,8 @@ Route::prefix('{locale}')
 
         Route::get('/rooms', [\App\Http\Controllers\Web\RoomsController::class, 'index'])->name('rooms.index');
 
+        Route::get('/rooms/{slug}', [\App\Http\Controllers\Web\RoomController::class, 'show'])->name('rooms.show');
+
         Route::post('/newsletter', [\App\Http\Controllers\Web\NewsletterController::class, 'store'])
             ->name('newsletter.store');
     });

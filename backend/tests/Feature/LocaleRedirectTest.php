@@ -47,4 +47,15 @@ class LocaleRedirectTest extends TestCase
         // /en/rooms has no registered route yet, so it must 404, not 301.
         $this->get('/en/rooms')->assertStatus(404);
     }
+
+    public function test_multi_segment_legacy_path_redirects_with_locale_prefix(): void
+    {
+        $this->get('/rooms/deluxe')->assertStatus(301)->assertRedirect('/en/rooms/deluxe');
+    }
+
+    public function test_bare_locale_prefix_is_not_redirected(): void
+    {
+        // '/en' is a reserved locale prefix → no catch-all redirect; 404 (no home route yet in Plan 1)
+        $this->get('/en')->assertStatus(404);
+    }
 }

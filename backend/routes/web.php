@@ -49,6 +49,9 @@ Route::prefix('{locale}')
         Route::get('/offers', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Offers', 'namespaces' => ['offers', 'meta']])
             ->name('offers');
+        Route::get('/location', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Location', 'namespaces' => ['location', 'meta', 'nav']])
+            ->name('location');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

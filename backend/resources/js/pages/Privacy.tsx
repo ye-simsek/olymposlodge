@@ -1,75 +1,50 @@
 import React from 'react'
 import { useTranslation } from '@/hooks/use-translation'
-import { usePageProps } from '@/hooks/use-page-props'
 import SeoHead from '@/components/SeoHead'
 import Layout from '@/components/layout/Layout'
 
+// Legacy-faithful KVKK notice. The legacy site (legacy-site/privacy.html) renders this
+// legal text statically in Turkish for every language — the disclosure has no localized
+// variant — so it is reproduced verbatim here and shown identically across all locales.
 export default function Privacy() {
   const { t } = useTranslation()
-  const { locale } = usePageProps()
 
   return (
     <div className="legal-page">
       <SeoHead title={t('meta.privacy_title')} description={t('meta.privacy_desc')} />
       <div className="container">
-        {locale === 'de' ? (
-          <>
-            <h1>Datenschutz & KVKK</h1>
-            <p>Diese Seite informiert Sie über die Erhebung und Verarbeitung personenbezogener Daten durch Olympos Lodge Otel im Rahmen des türkischen Gesetzes Nr. 6698 (KVKK) und der EU-Datenschutzgrundverordnung (DSGVO).</p>
-            <h2>Verantwortliche Stelle</h2>
-            <p><strong>Olympos Lodge Otel</strong><br />Çıralı Yolu 9, Ulupınar Mahallesi<br />Kemer / Antalya, Türkei<br />E-Mail: info@olymposlodge.com.tr</p>
-            <h2>Erhobene Daten</h2>
-            <p>Wir verarbeiten personenbezogene Daten, die Sie uns direkt mitteilen (z. B. über das Kontaktformular oder die Newsletter-Anmeldung): Name, E-Mail-Adresse, Telefonnummer sowie alle Inhalte, die Sie uns in Nachrichten senden.</p>
-            <h2>Zweck der Verarbeitung</h2>
-            <p>Die Daten werden ausschließlich zur Beantwortung Ihrer Anfragen, zur Abwicklung von Reservierungen und — bei entsprechender Einwilligung — für den Newsletter-Versand verwendet.</p>
-            <h2>Weitergabe an Dritte</h2>
-            <p>Wir geben Ihre Daten nicht an Dritte weiter, es sei denn, dies ist zur Vertragserfüllung erforderlich oder gesetzlich vorgeschrieben.</p>
-            <h2>Speicherdauer</h2>
-            <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für den jeweiligen Zweck erforderlich ist, maximal jedoch 3 Jahre nach Ihrem letzten Kontakt mit uns.</p>
-            <h2>Ihre Rechte</h2>
-            <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten. Richten Sie entsprechende Anfragen bitte an: info@olymposlodge.com.tr</p>
-            <h2>Cookies</h2>
-            <p>Diese Website verwendet technisch notwendige Cookies sowie — mit Ihrer Einwilligung — analytische Cookies. Ihre Cookie-Einstellungen können Sie jederzeit über das Cookie-Symbol unten links anpassen.</p>
-          </>
-        ) : locale === 'en' ? (
-          <>
-            <h1>Privacy Policy & KVKK Notice</h1>
-            <p>This page informs you about the collection and processing of personal data by Olympos Lodge Otel under Turkish Law No. 6698 (KVKK) and the EU General Data Protection Regulation (GDPR).</p>
-            <h2>Data Controller</h2>
-            <p><strong>Olympos Lodge Otel</strong><br />Çıralı Yolu 9, Ulupınar Mahallesi<br />Kemer / Antalya, Turkey<br />Email: info@olymposlodge.com.tr</p>
-            <h2>Data Collected</h2>
-            <p>We process personal data you provide directly (e.g. via the contact form or newsletter sign-up): name, email address, phone number and any content included in your messages.</p>
-            <h2>Purpose of Processing</h2>
-            <p>Data is used solely to respond to your enquiries, process reservations and — with your consent — to send our newsletter.</p>
-            <h2>Third-Party Disclosure</h2>
-            <p>We do not share your data with third parties unless required for the fulfilment of a contract or by law.</p>
-            <h2>Retention Period</h2>
-            <p>Personal data is retained only as long as necessary for the relevant purpose, and no longer than 3 years from your last contact with us.</p>
-            <h2>Your Rights</h2>
-            <p>You have the right to access, rectify, erase and restrict the processing of your data. Please send requests to: info@olymposlodge.com.tr</p>
-            <h2>Cookies</h2>
-            <p>This website uses technically necessary cookies and — with your consent — analytics cookies. You can adjust your cookie preferences at any time via the cookie icon at the bottom left.</p>
-          </>
-        ) : (
-          <>
-            <h1>Gizlilik ve KVKK Bilgilendirme</h1>
-            <p>Bu sayfa, Olympos Lodge Otel'in 6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında kişisel verilerinizi nasıl işlediğini açıklamaktadır.</p>
-            <h2>Veri Sorumlusu</h2>
-            <p><strong>Olympos Lodge Otel</strong><br />Çıralı Yolu 9, Ulupınar Mahallesi<br />Kemer / Antalya, Türkiye<br />E-posta: info@olymposlodge.com.tr</p>
-            <h2>Toplanan Veriler</h2>
-            <p>İletişim formu veya bülten kaydı aracılığıyla doğrudan bize ilettiğiniz kişisel veriler işlenmektedir: ad-soyad, e-posta adresi, telefon numarası ve mesaj içerikleri.</p>
-            <h2>İşleme Amacı</h2>
-            <p>Veriler yalnızca taleplerinizi yanıtlamak, rezervasyonlarınızı işleme koymak ve — açık rızanız dahilinde — bülten göndermek amacıyla kullanılmaktadır.</p>
-            <h2>Üçüncü Taraflarla Paylaşım</h2>
-            <p>Kişisel verileriniz, sözleşme ifası için zorunlu olmadıkça veya yasal yükümlülük bulunmadıkça üçüncü taraflarla paylaşılmamaktadır.</p>
-            <h2>Saklama Süresi</h2>
-            <p>Kişisel veriler, ilgili amaç için gerekli olan süre boyunca, en fazla son iletişiminizden itibaren 3 yıl saklanmaktadır.</p>
-            <h2>Haklarınız</h2>
-            <p>Verilerinize erişim, düzeltme, silme ve işlemenin kısıtlanmasını talep etme haklarına sahipsiniz. Taleplerinizi şu adrese iletebilirsiniz: info@olymposlodge.com.tr</p>
-            <h2>Çerezler</h2>
-            <p>Bu site teknik açıdan zorunlu çerezler ve — onayınız dahilinde — analitik çerezler kullanmaktadır. Çerez tercihlerinizi sol alttaki çerez simgesi aracılığıyla istediğiniz zaman güncelleyebilirsiniz.</p>
-          </>
-        )}
+        <h1>6698 Sayılı Kişisel Verilerin Korunması Kanunu Gereğince Bilgilendirme</h1>
+
+        <h2>Veri Sorumlusunun ve Varsa Temsilcisinin Kimliği</h2>
+        <p>Bu bilgilendirme, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında, 'Veri Sorumlusu' sıfatıyla, Olympos Lodge'un, iş ortaklarına, hissedarlarına, müşterilerine, iletişimde bulunduğu gerçek ya da tüzel kişilere aydınlatma yükümlülüğünü yerine getirmek üzere yapılmaktadır.</p>
+
+        <h2>Kişisel Verilerin Hangi Amaçla İşleneceği</h2>
+        <p>Kişisel verileriniz, şirketimiz tarafından verilen hizmet, ürün ya da ticari faaliyete bağlı olarak değişkenlik gösterebilmekle; otomatik ya da otomatik olmayan yöntemlerle, ofisler, şubeler, bayiler, çağrı merkezi, internet sitesi, sosyal medya mecraları, mobil uygulamalar ve benzeri vasıtalarla sözlü, yazılı ya da elektronik olarak toplanabilecektir. Şirketimizin ürün ve hizmetlerinden yararlandığınız müddetçe oluşturularak ve güncellenerek kişisel verileriniz işlenebilecektir.</p>
+        <p>Ayrıca, şirket hizmetlerini kullanmak niyetiyle çağrı merkezimizi veya internet sayfamızı kullandığınızda, Şirketimizi veya internet sitemizi ziyaret ettiğinizde, Şirketimizin düzenlediği eğitim, seminer veya organizasyonlara katıldığınızda kişisel verileriniz işlenebilecektir.</p>
+        <p>Toplanan kişisel verileriniz, Şirketimiz tarafından sunulan ürün ve hizmetlerden sizleri faydalandırmak için gerekli çalışmaların iş birimlerimiz tarafından yapılması, Şirketimiz tarafından sunulan ürün ve hizmetlerin sizlerin beğeni, kullanım alışkanlıkları ve ihtiyaçlarına göre özelleştirilerek sizlere önerilmesi, şirketimizin ve şirketimizle iş ilişkisi içerisinde olan kişilerin hukuki ve ticari güvenliğinin temini, Şirketimizin ticari ve iş stratejilerinin belirlenmesi ve uygulanması ve şirketimizin insan kaynakları politikalarının yürütülmesinin temini amaçlarıyla KVK Kanunu'nun 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları dahilinde işlenecektir.</p>
+
+        <h2>İşlenen Kişisel Verilerin Kimlere ve Hangi Amaçla Aktarılabileceği</h2>
+        <p>Toplanan kişisel verileriniz; Şirketimiz tarafından sunulan ürün ve hizmetlerden sizleri faydalandırmak için gerekli çalışmaların iş birimlerimiz tarafından yapılması, şirketimiz tarafından sunulan ürün ve hizmetlerin sizlerin beğeni, kullanım alışkanlıkları ve ihtiyaçlarına göre özelleştirilerek sizlere önerilmesi, şirketimizin ve Şirketimizle iş ilişkisi içerisinde olan kişilerin hukuki ve ticari güvenliğinin temini, Şirketimizin ticari ve iş stratejilerinin belirlenmesi ve uygulanması ile şirketimizin insan kaynakları politikalarının yürütülmesinin temini amaçlarıyla iş ortaklarımıza, tedarikçilerimize, hissedarlarımıza, kanunen yetkili kamu kurumları ve özel kişilere, KVK Kanunu'nun 8. ve 9. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları çerçevesinde aktarılabilecektir.</p>
+
+        <h2>Kişisel Veri Toplamanın Yöntemi ve Hukuki Sebebi</h2>
+        <p>Kişisel verileriniz, her türlü sözlü, yazılı ya da elektronik ortamda, yukarıda yer verilen amaçlar doğrultusunda şirketçe sunduğumuz ürün ve hizmetlerin belirlenen yasal çerçevede sunulabilmesi ve bu kapsamda şirketimizin sözleşme ve yasadan doğan mesuliyetlerini eksiksiz ve doğru bir şekilde yerine getirebilmesi gayesi ile edinilir. Bu hukuki sebeple toplanan kişisel verileriniz KVK Kanunu'nun 5. ve 6. maddelerinde belirtilen kişisel veri işleme şartları ve amaçları kapsamında işlenebilmekte ve aktarılabilmektedir.</p>
+
+        <h2>Veri Sahibinin Hakları</h2>
+        <p>KVKK kapsamında, kişisel verilerinize ilişkin olarak aşağıdaki haklara sahipsiniz:</p>
+        <ul>
+          <li>Kişisel veri işlenip işlenmediğini öğrenme,</li>
+          <li>Kişisel verileri işlenmişse buna ilişkin bilgi talep etme,</li>
+          <li>Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+          <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme,</li>
+          <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme,</li>
+          <li>Kişisel verinizin işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde, verilerin silinmesini veya yok edilmesini isteme,</li>
+          <li>Talebinizce düzeltilen ya da silinen bilgilerinizin, eğer aktarılmış ise kişisel verilerin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+          <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme,</li>
+          <li>Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme.</li>
+        </ul>
+        <p>Yukarıda belirtilen haklarınızı kullanmak için kimliğinizi tespit edici gerekli bilgiler ve kullanmak istediğiniz hakkınıza yönelik açıklamalarınızla birlikte yazılı talebinizi <strong>P.K. 38 Çıralı Kemer Antalya</strong> adresine ıslak imzalı olarak veya kayıtlı elektronik posta adresimize güvenli elektronik imza ile imzalanmış olarak gönderebilirsiniz.</p>
+        <p>Başvurunuzda; talep ettiğiniz hususun açık ve anlaşılır olması, talep ettiğiniz konunun şahsınız ile ilgili olması veya başkası adına hareket ediyor iseniz bu konuda özel olarak yetkili olmanız ve yetkinizi belgelendirilmesi, başvurunun kimlik ve adres bilgilerini içermesi ve başvuruya kimliğinizi tevsik edici belgelerin eklenmesi gerekmektedir.</p>
+        <p>Bu kapsamda yapacağınız başvurular mümkün olan en kısa zaman diliminde ve en çok <strong>30 gün</strong> içerisinde sonuçlandırılacaktır. Söz konusu başvurular şu an için ücretsizdir. Ancak, işlemin ayrıca bir maliyeti gerektirmesi hâlinde, Kişisel Verileri Koruma Kurulu'nca belirlenen tarifedeki ücret alınabilir.</p>
       </div>
     </div>
   )

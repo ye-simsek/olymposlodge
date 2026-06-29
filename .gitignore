@@ -41,3 +41,6 @@ docs/
 .claude/skills/superpowers/
 .superpowers/
 CLAUDE.md
+
+# Claude local settings (lokal)
+.claude/settings.local.json

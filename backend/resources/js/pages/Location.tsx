@@ -135,7 +135,7 @@ export default function Location() {
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
             </svg>
             <span className="loc-distances__text">
-              Chimaera (Yanartaş) <span>— 3,5 km</span>
+              {l('dist_chimaera')}
             </span>
           </div>
           <div className="loc-distances__item loc-reveal">
@@ -143,7 +143,7 @@ export default function Location() {
               <circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 21h8"/>
             </svg>
             <span className="loc-distances__text">
-              Olympos Antik Kenti <span>— yürüyüş mesafesi</span>
+              {l('dist_olympos')}
             </span>
           </div>
           <div className="loc-distances__item loc-reveal">
@@ -151,7 +151,7 @@ export default function Location() {
               <circle cx="12" cy="5" r="3"/><path d="M12 8v13M8 21h8"/>
             </svg>
             <span className="loc-distances__text">
-              Phaselis Antik Kenti <span>— 25 km</span>
+              {l('dist_phaselis')}
             </span>
           </div>
           <div className="loc-distances__item loc-reveal">
@@ -159,7 +159,7 @@ export default function Location() {
               <path d="M17.8 19.2 16 11l3.5-3.5C21 6 21 3 19 2c-1.5-.5-3 0-4.5 1.5L11 7 2.8 5.2c-.5-.1-.9.4-.7.9l5 11.9c.1.4.6.6 1 .4l3.5-1.5 2.5 4.5c.1.3.5.4.8.3l2-.8c.4-.3.5-.8.3-1.2z"/>
             </svg>
             <span className="loc-distances__text">
-              Olympos Teleferik <span>— 35 km</span>
+              {l('dist_cablecar')}
             </span>
           </div>
         </div>

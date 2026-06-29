@@ -12,6 +12,9 @@ Route::prefix('{locale}')
     ->group(function () {
         Route::get('/_smoke', fn () => Inertia::render('Smoke', ['message' => 'inertia-ok']))
             ->name('smoke');
+
+        Route::post('/newsletter', [\App\Http\Controllers\Web\NewsletterController::class, 'store'])
+            ->name('newsletter.store');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

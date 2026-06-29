@@ -26,6 +26,10 @@ class HandleInertiaRequests extends Middleware
             'translations' => fn () => (new \App\Support\TranslationRepository())
                 ->forLocale(app()->getLocale(), \App\Support\PageProps::GLOBAL),
             'seo' => fn () => \App\Support\Seo::forRequest($request),
+            'flash' => fn () => [
+                'success' => $request->session()->get('success'),
+                'error' => $request->session()->get('error'),
+            ],
         ];
     }
 }

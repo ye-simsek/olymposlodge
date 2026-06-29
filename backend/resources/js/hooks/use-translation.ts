@@ -3,18 +3,18 @@ import { usePage } from '@inertiajs/react';
 type Replacements = Record<string, string | number>;
 type Tree = Record<string, Record<string, unknown>>;
 
-function lookup(tree: Tree, key: string): string | undefined {
+function resolve(tree: Tree, key: string): unknown {
     const [ns, ...rest] = key.split('.');
     const leaf = rest.join('.');
-    const value = tree?.[ns]?.[leaf];
-    return typeof value === 'string' ? value : undefined;
+    return tree?.[ns]?.[leaf];
 }
 
 export function useTranslation() {
-    const { translations } = usePage().props;
+    const tree = usePage().props.translations as Tree;
 
     const t = (key: string, replacements?: Replacements, count?: number): string => {
-        let value = lookup(translations as Tree, key) ?? key;
+        const raw = resolve(tree, key);
+        let value = typeof raw === 'string' ? raw : key;
 
         if (typeof count === 'number' && value.includes('|')) {
             const [singular, plural] = value.split('|');
@@ -33,5 +33,14 @@ export function useTranslation() {
         return value;
     };
 
-    return { t } as const;
+    // Returns the raw translation value for keys whose content is structured —
+    // e.g. JSON arrays/objects that TranslationRepository decodes server-side.
+    // `t()` is for strings (interpolation/pluralization); `tRaw()` is for lists
+    // and nested objects. Returns undefined when the key is absent.
+    const tRaw = <T = unknown>(key: string): T | undefined => {
+        const raw = resolve(tree, key);
+        return raw === undefined ? undefined : (raw as T);
+    };
+
+    return { t, tRaw } as const;
 }

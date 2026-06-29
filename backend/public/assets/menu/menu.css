@@ -1,0 +1,471 @@
+/* Olympos Lodge — Dinner Menu (Carte)
+   Shared stylesheet for menu-tr.html, menu-en.html, menu-de.html
+   Inherits the typographic language of /menu.html — same fonts, palette,
+   easing, and ornament motifs — but composed as a long reading card. */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --color-cream: #F7F5F0;
+  --color-text: #1c1814;
+  --color-text-light: #6b6b6b;
+  --color-warm-gold: #8E7441;
+  --color-warm-gold-faded: rgba(142, 116, 65, 0.32);
+  --color-rule: #c9c1ad;
+
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-sc: 'Cormorant SC', serif;
+  --font-numerals: 'Cinzel', 'Cormorant Garamond', serif;
+
+  --ease-bleed: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { background: var(--color-cream); }
+html, body { min-height: 100%; }
+
+body {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  background: var(--color-cream);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  padding:
+    calc(64px + env(safe-area-inset-top))
+    32px
+    calc(96px + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* ── Masthead ───────────────────────────────────────────────── */
+
+.masthead {
+  text-align: center;
+  margin-bottom: 88px;
+}
+
+.lodge-mark {
+  display: block;
+  width: 185px;
+  height: auto;
+  margin: 0 auto 28px;
+  opacity: 0;
+  animation: fade-in 1100ms var(--ease-bleed) 200ms forwards;
+}
+
+.masthead__title {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-style: italic;
+  font-size: 88px;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  animation: ink-bleed 1400ms var(--ease-bleed) 450ms forwards;
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  opacity: 0;
+  animation: fade-in 900ms var(--ease-bleed) 1100ms forwards;
+}
+
+.ornament__rule {
+  width: 44px;
+  height: 1px;
+  background: var(--color-rule);
+}
+
+.ornament__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-warm-gold);
+}
+
+.masthead__place {
+  display: inline-block;
+  margin-top: 22px;
+  font-family: var(--font-sc);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  white-space: nowrap;
+  opacity: 0;
+  animation: fade-in 900ms var(--ease-bleed) 1300ms forwards;
+}
+/* letter-spacing leaves trailing space after the last glyph; collapse it
+   so the dot ornament feels optically centered against the title above */
+.masthead__place > span:last-child { margin-right: -0.42em; }
+
+/* ── Course block ───────────────────────────────────────────── */
+
+.course {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  column-gap: 18px;
+  align-items: baseline;
+  margin-top: 56px;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: row-rise 900ms var(--ease-bleed) forwards;
+}
+
+.course:nth-of-type(1) { animation-delay: 1200ms; }
+.course:nth-of-type(2) { animation-delay: 1400ms; }
+.course:nth-of-type(3) { animation-delay: 1600ms; }
+.course:nth-of-type(4) { animation-delay: 1800ms; }
+
+.course__numeral {
+  font-family: var(--font-numerals);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--color-warm-gold-faded);
+  text-align: right;
+  letter-spacing: 0.02em;
+  align-self: center;
+}
+
+.course__header {
+  grid-column: 2 / 3;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+
+.course__label {
+  font-family: var(--font-sc);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.256em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+
+.course__currency {
+  font-family: var(--font-numerals);
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-gold);
+  font-variant-numeric: tabular-nums;
+}
+
+.course__rule {
+  grid-column: 2 / 3;
+  width: 100%;
+  height: 1px;
+  background: var(--color-rule);
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+
+.course__dishes {
+  grid-column: 2 / 3;
+  list-style: none;
+  display: grid;
+  row-gap: 28px;
+}
+
+/* Sub-section header inside a course (e.g. ET / BALIK / MAKARNALAR
+   within Mains). Acts as a quiet chapter mark between dish groups. */
+.dish-subhead {
+  list-style: none;
+  font-family: var(--font-sc);
+  font-weight: 500;
+  font-size: 13.5px;
+  letter-spacing: 0.208em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  opacity: 0.78;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-rule);
+}
+.dish-subhead:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Italic note between dishes (e.g. the seasonal-fish advisory). */
+.dishes-note {
+  list-style: none;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #595959;
+  max-width: 48ch;
+}
+
+/* ── Dish stanza ────────────────────────────────────────────── */
+
+.dish {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  align-items: baseline;
+}
+
+.dish__name {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: 0.005em;
+  color: var(--color-text);
+}
+
+.dish__price {
+  font-family: var(--font-numerals);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--color-warm-gold);
+  font-variant-numeric: tabular-nums;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+/* Market-price treatment: italic serif instead of Cinzel numerals,
+   used for the daily-catch fish where no fixed price applies. */
+.dish__price--market {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 15.5px;
+  letter-spacing: 0;
+  color: #595959;
+}
+
+.dish__desc {
+  grid-column: 1 / -1;
+  margin-top: 7px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.65;
+  letter-spacing: 0.008em;
+  color: #595959;
+  max-width: 48ch;
+}
+
+/* ── Section break between courses ──────────────────────────── */
+
+.course-break {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 56px 0 0;
+}
+
+.course-break .ornament__rule { width: 28px; }
+
+/* ── End block + footer ─────────────────────────────────────── */
+
+.end-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 88px;
+}
+
+.end-ornament .ornament__rule {
+  width: 96px;
+}
+
+.allergen {
+  margin-top: 32px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.62;
+  color: #595959;
+  max-width: 44ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.place-mark {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-family: var(--font-sc);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+
+.place-mark::before,
+.place-mark::after {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--color-rule);
+}
+
+.place-mark__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.place-mark__inner > span:first-child { margin-right: -0.42em; }
+.place-mark__inner > span:last-child  { margin-right: -0.42em; }
+
+.place-mark__dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-warm-gold);
+  flex-shrink: 0;
+}
+
+/* ── Mobile (≤480px): collapse the chapter-mark gutter ─────────
+   On phone, drop the 44px left numeral column so the dish content
+   uses the full content width. The Roman numeral becomes a small
+   block-level chapter mark sitting just above the section label. */
+
+@media (max-width: 480px) {
+  body { padding-left: 22px; padding-right: 22px; }
+
+  .masthead { margin-bottom: 56px; }
+  .masthead__title { font-size: 64px; }
+
+  /* Course flows as a block, not a 2-column grid */
+  .course { display: block; margin-top: 44px; }
+
+  .course__numeral {
+    display: block;
+    text-align: left;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .course__label { font-size: 15.5px; letter-spacing: 0.224em; }
+  .course__rule { margin-top: 12px; margin-bottom: 22px; }
+
+  .dish__name { font-size: 21px; }
+  .dish__desc {
+    font-size: 16.5px;
+    line-height: 1.65;
+    max-width: none;
+    /* keep description within the name column so it doesn't run
+       under the price digit at the right edge */
+    grid-column: 1 / 2;
+    padding-right: 8px;
+  }
+
+  .dishes-note { font-size: 16.5px; line-height: 1.65; }
+
+  .end-ornament { margin-top: 64px; }
+  .end-ornament .ornament__rule { width: 60px; }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .lodge-mark,
+  .masthead__title,
+  .ornament,
+  .masthead__place,
+  .course {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}
+
+/* ── Print / PDF export ─────────────────────────────────────── */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html, body { background: var(--color-cream); }
+  body {
+    padding: 14mm 14mm 14mm;
+    display: block;
+    color: var(--color-text);
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .card { max-width: none; margin: 0 auto; }
+
+  .lodge-mark, .masthead__title, .ornament, .masthead__place,
+  .course {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+
+  /* Compact masthead so the first course can start on page 1 */
+  .lodge-mark { width: 130px; margin-bottom: 16px; }
+  .masthead { margin-bottom: 28px; }
+  .masthead__title { font-size: 56px; }
+  .ornament { margin-top: 14px; }
+  .masthead__place { margin-top: 14px; }
+
+  /* Tighter rhythm for fewer pages */
+  .course { margin-top: 36px; }
+  .course__numeral { font-size: 44px; }
+  .course__rule { margin-top: 10px; margin-bottom: 18px; }
+  .course__dishes { row-gap: 18px; }
+  .course-break { margin-top: 36px; }
+  .dish__name { font-size: 21px; }
+  .dish__desc { font-size: 13px; margin-top: 4px; }
+  .end-ornament { margin-top: 48px; }
+  .allergen { margin-top: 24px; font-size: 12px; }
+  .place-mark { margin-top: 24px; font-size: 12px; }
+
+  /* Avoid splitting a dish stanza or sub-section across a page */
+  .dish, .dish-subhead, .course__header, .dishes-note {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  /* Course can split across pages naturally if too long */
+}
+
+/* ── Keyframes ──────────────────────────────────────────────── */
+
+@keyframes ink-bleed {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes fade-in { to { opacity: 1; } }
+
+@keyframes row-rise {
+  to { opacity: 1; transform: translateY(0); }
+}

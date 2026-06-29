@@ -201,7 +201,7 @@ export default function RoomDetail({ room }: { room: LocalizedRoom }) {
                 <p className="room-amenities-block__desc">{texts.p3}</p>
                 <ul className="room-amenities__list">
                     {room.amenities.map(a => (
-                        <li key={a}>{t(`room_detail.amenity_${a}`)}</li>
+                        <li key={a}>{d(a)}</li>
                     ))}
                 </ul>
             </div>

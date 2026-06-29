@@ -69,17 +69,20 @@ export default function Experiences() {
           <div className="dest-chapter__body">
             <span className="dest-chapter__eyebrow">{e('ch1_eyebrow')}</span>
             <h2 className="dest-chapter__title">{e('ch1_title')}</h2>
+            <div className="dest-chapter__thumb">
+              <img src="/images/cirali-sahili-hero.webp" alt="Çıralı Plajı detay" loading="lazy" width={1551} height={2800} />
+            </div>
             <p className="dest-chapter__lead">{e('ch1_lead')}</p>
           </div>
         </section>
 
         {/* Chapter 02: Olympos — text left, image right */}
-        <section className="dest-chapter dest-chapter--reverse" id="olympos">
+        <section className="dest-chapter dest-chapter--center" id="olympos">
           <div className="dest-chapter__visual">
             <img
               src="/images/olympos-antik-kenti-1200.webp"
               srcSet="/images/olympos-antik-kenti-1200.webp 1200w, /images/olympos-antik-kenti-2400.webp 2400w, /images/olympos-antik-kenti.webp 3680w"
-              sizes="50vw"
+              sizes="(max-width: 1710px) calc(100vw - 80px), 1630px"
               alt="Olympos Antik Kenti"
               loading="lazy"
               width={3680}
@@ -87,19 +90,28 @@ export default function Experiences() {
             />
           </div>
           <div className="dest-chapter__body">
-            <span className="dest-chapter__eyebrow">{e('ch2_cat')}</span>
-            <h2 className="dest-chapter__title">{e('ch2_title')}</h2>
-            <dl className="dest-chapter__specs">
-              <div><dt>{t('experiences.ch2_s_location_label')}</dt><dd>{t('experiences.ch2_s_location_val')}</dd></div>
-              <div><dt>{t('experiences.ch2_s_founded_label')}</dt><dd>{t('experiences.ch2_s_founded_val')}</dd></div>
-              <div><dt>{t('experiences.ch2_s_union_label')}</dt><dd>{t('experiences.ch2_s_union_val')}</dd></div>
-            </dl>
-            <p className="dest-chapter__lead">{e('ch2_lead')}</p>
+            <div className="dest-chapter__left-col">
+              <div className="dest-chapter__header">
+                <span className="dest-chapter__eyebrow">{e('ch2_cat')}</span>
+                <h2 className="dest-chapter__title">{e('ch2_title')}</h2>
+              </div>
+              <dl className="dest-chapter__specs">
+                <div><dt>{t('experiences.ch2_s_location_label')}</dt><dd>{t('experiences.ch2_s_location_val')}</dd></div>
+                <div><dt>{t('experiences.ch2_s_founded_label')}</dt><dd>{t('experiences.ch2_s_founded_val')}</dd></div>
+                <div><dt>{t('experiences.ch2_s_union_label')}</dt><dd>{t('experiences.ch2_s_union_val')}</dd></div>
+              </dl>
+            </div>
+            <div className="dest-chapter__right-col">
+              <blockquote className="dest-chapter__pullquote">
+                <q>{e('ch2_pullquote')}</q>
+              </blockquote>
+              <p className="dest-chapter__lead">{e('ch2_lead')}</p>
+            </div>
           </div>
         </section>
 
         {/* Chapter 03: Yanartaş — image left, text right */}
-        <section className="dest-chapter" id="yanartas">
+        <section className="dest-chapter dest-chapter--reverse" id="yanartas">
           <div className="dest-chapter__visual">
             <img
               src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg"
@@ -112,12 +124,15 @@ export default function Experiences() {
           <div className="dest-chapter__body">
             <span className="dest-chapter__eyebrow">{e('ch3_eyebrow')}</span>
             <h2 className="dest-chapter__title">{e('ch3_title')}</h2>
+            <div className="dest-chapter__thumb">
+              <img src="/images/yanartas-thumb.webp" alt="Yanartaş alev" loading="lazy" width={1600} height={2416} />
+            </div>
             <p className="dest-chapter__lead">{e('ch3_lead')}</p>
           </div>
         </section>
 
         {/* Chapter 04: Likya Yolu — text left, image right */}
-        <section className="dest-chapter dest-chapter--reverse" id="likya">
+        <section className="dest-chapter dest-chapter--center" id="likya">
           <div className="dest-chapter__visual">
             <img
               src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5434-e1731093615320-1.jpg"
@@ -128,15 +143,25 @@ export default function Experiences() {
             />
           </div>
           <div className="dest-chapter__body">
-            <span className="dest-chapter__eyebrow">{e('ch4_cat')}</span>
-            <h2 className="dest-chapter__title">{e('ch4_title')}</h2>
-            <dl className="dest-chapter__specs">
-              <div><dt>{t('experiences.ch4_s_total_label')}</dt><dd>{t('experiences.ch4_s_total_val')}</dd></div>
-              <div><dt>{t('experiences.ch4_s_stage_label')}</dt><dd>{t('experiences.ch4_s_stage_val')}</dd></div>
-              <div><dt>{t('experiences.ch4_s_elevation_label')}</dt><dd>{t('experiences.ch4_s_elevation_val')}</dd></div>
-              <div><dt>{t('experiences.ch4_s_season_label')}</dt><dd>{t('experiences.ch4_s_season_val')}</dd></div>
-            </dl>
-            <p className="dest-chapter__lead">{e('ch4_lead')}</p>
+            <div className="dest-chapter__left-col">
+              <div className="dest-chapter__header">
+                <span className="dest-chapter__eyebrow">{e('ch4_cat')}</span>
+                <h2 className="dest-chapter__title">{e('ch4_title')}</h2>
+              </div>
+              <dl className="dest-chapter__specs">
+                <div><dt>{t('experiences.ch4_s_total_label')}</dt><dd>{t('experiences.ch4_s_total_val')}</dd></div>
+                <div><dt>{t('experiences.ch4_s_stage_label')}</dt><dd>{t('experiences.ch4_s_stage_val')}</dd></div>
+                <div><dt>{t('experiences.ch4_s_elevation_label')}</dt><dd>{t('experiences.ch4_s_elevation_val')}</dd></div>
+                <div><dt>{t('experiences.ch4_s_season_label')}</dt><dd>{t('experiences.ch4_s_season_val')}</dd></div>
+              </dl>
+            </div>
+            <div className="dest-chapter__right-col">
+              <blockquote className="dest-chapter__pullquote">
+                <q>{e('ch4_pullquote')}</q>
+                <cite>{e('ch4_attribution')}</cite>
+              </blockquote>
+              <p className="dest-chapter__lead">{e('ch4_lead')}</p>
+            </div>
           </div>
         </section>
 
@@ -216,7 +241,7 @@ export default function Experiences() {
       </div>
 
       {/* Linker CTA */}
-      <Link href={localePath(locale, 'booking')} className="lodge-linker lodge-linker--cirali">
+      <Link href={localePath(locale, 'activities')} className="lodge-linker lodge-linker--cirali">
         <div className="lodge-linker__image">
           <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Aktiviteler" loading="lazy" width={2000} height={1333} />
         </div>

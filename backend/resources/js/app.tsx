@@ -13,6 +13,7 @@ import '../css/contact.css';
 import '../css/activities.css';
 import '../css/location.css';
 import '../css/chat.css';
+import '../css/booking.css';
 
 router.on('navigate', (event) => {
     getLenis()?.scrollTo(0, { immediate: true });

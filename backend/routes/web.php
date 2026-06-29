@@ -28,6 +28,10 @@ Route::prefix('{locale}')
         Route::get('/privacy', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Privacy', 'namespaces' => ['meta']])
             ->name('privacy');
+
+        Route::get('/experiences', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Experiences', 'namespaces' => ['experiences', 'meta', 'nav']])
+            ->name('experiences');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

@@ -31,4 +31,16 @@ class StaticPageTest extends TestCase
             ->assertOk()
             ->assertInertia(fn (Assert $page) => $page->component('Privacy'));
     }
+
+    public function test_experiences_renders_with_experiences_namespace(): void
+    {
+        Translation::create(['namespace' => 'experiences', 'key' => 'hero_title', 'en' => 'Experiences', 'sort_order' => 0]);
+
+        $this->get('/en/experiences')
+            ->assertOk()
+            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $page) => $page
+                ->component('Experiences')
+                ->where('translations.experiences.hero_title', 'Experiences')
+            );
+    }
 }

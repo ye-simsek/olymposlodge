@@ -10,6 +10,8 @@ Route::prefix('{locale}')
     ->whereIn('locale', \App\Http\Middleware\SetLocale::SUPPORTED)
     ->middleware('setlocale')
     ->group(function () {
+        Route::get('/', \App\Http\Controllers\Web\HomeController::class)->name('home');
+
         Route::get('/_smoke', fn () => Inertia::render('Smoke', ['message' => 'inertia-ok']))
             ->name('smoke');
 

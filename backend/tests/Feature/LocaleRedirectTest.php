@@ -57,7 +57,7 @@ class LocaleRedirectTest extends TestCase
 
     public function test_bare_locale_prefix_is_not_redirected(): void
     {
-        // '/en' is a reserved locale prefix → no catch-all redirect; 404 (no home route yet in Plan 1)
-        $this->get('/en')->assertStatus(404);
+        // '/en' is a reserved locale prefix → no catch-all redirect; 200 (home route added in Plan 2)
+        $this->get('/en')->assertStatus(200);
     }
 }

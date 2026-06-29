@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
 import { isBrowser } from '@/lib/ssr';
+import { uuidv4 } from '@/lib/uuid';
 
 interface Message {
     role: 'user' | 'model';
@@ -48,7 +49,7 @@ export default function ChatWidget() {
 
     useEffect(() => {
         if (!conversationId.current && isBrowser) {
-            conversationId.current = crypto.randomUUID();
+            conversationId.current = uuidv4();
         }
     }, []);
 

@@ -16,10 +16,13 @@ Route::prefix('{locale}')
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
-// 301-Redirect aller präfixlosen Alt-URLs auf die kanonische Sprache.
+// Temporärer 302-Redirect aller präfixlosen Alt-URLs auf die kanonische Sprache.
+// 302 (nicht 301), solange die Locale-Zielseiten noch fehlen (Plan 1 = Fundament):
+// verhindert, dass Root/Legacy-URLs dauerhaft auf (noch) 404-Ziele kanonisiert werden.
+// In Plan 2, sobald die Pilot-Seiten unter /{locale} existieren, auf 301 umstellen.
 // Ausgenommen: admin, api, sitemap.xml, robots.txt, up, build, storage, favicon.
-Route::get('/', fn (Request $request) => redirect('/'.Locale::best($request), 301));
+Route::get('/', fn (Request $request) => redirect('/'.Locale::best($request), 302));
 
 Route::get('/{path}', function (string $path, Request $request) {
-    return redirect('/'.Locale::best($request).'/'.$path, 301);
+    return redirect('/'.Locale::best($request).'/'.$path, 302);
 })->where('path', '^(?!(?:tr|en|de)(?:/|$)|(?:admin|api|build|storage)(?:/|$)|sitemap\.xml|robots\.txt|up(?:/|$)|favicon).+$');

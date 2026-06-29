@@ -8,19 +8,21 @@ class LocaleRedirectTest extends TestCase
 {
     public function test_root_redirects_to_default_locale(): void
     {
-        $this->get('/')->assertRedirect('/en')->assertStatus(301);
+        // 302 (temporary) in Plan 1: locale target pages don't exist yet, so the
+        // redirect must not be permanently cached. Becomes 301 in Plan 2.
+        $this->get('/')->assertRedirect('/en')->assertStatus(302);
     }
 
     public function test_legacy_path_redirects_with_locale_prefix(): void
     {
-        $this->get('/rooms')->assertRedirect('/en/rooms')->assertStatus(301);
+        $this->get('/rooms')->assertRedirect('/en/rooms')->assertStatus(302);
     }
 
     public function test_accept_language_header_picks_best_locale(): void
     {
         $this->get('/', ['Accept-Language' => 'de-DE,de;q=0.9'])
             ->assertRedirect('/de')
-            ->assertStatus(301);
+            ->assertStatus(302);
     }
 
     public function test_cookie_overrides_accept_language(): void
@@ -28,7 +30,7 @@ class LocaleRedirectTest extends TestCase
         $this->withCookie('ol_lang', 'tr')
             ->get('/', ['Accept-Language' => 'de-DE'])
             ->assertRedirect('/tr')
-            ->assertStatus(301);
+            ->assertStatus(302);
     }
 
     public function test_excluded_paths_are_not_redirected(): void
@@ -50,7 +52,7 @@ class LocaleRedirectTest extends TestCase
 
     public function test_multi_segment_legacy_path_redirects_with_locale_prefix(): void
     {
-        $this->get('/rooms/deluxe')->assertStatus(301)->assertRedirect('/en/rooms/deluxe');
+        $this->get('/rooms/deluxe')->assertStatus(302)->assertRedirect('/en/rooms/deluxe');
     }
 
     public function test_bare_locale_prefix_is_not_redirected(): void

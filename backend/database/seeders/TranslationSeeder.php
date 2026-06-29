@@ -476,6 +476,7 @@ class TranslationSeeder extends Seeder
                 'legend_checkout'  => ['Çıkış', 'Check-out', 'Abreise'],
                 'legend_unavail'   => ['Müsait değil', 'Unavailable', 'Nicht verfügbar'],
                 'error_connection' => ['Bağlantı hatası. Lütfen tekrar deneyin.', 'Connection error. Please try again.', 'Verbindungsfehler. Bitte versuche es erneut.'],
+                'coming_soon'      => ['Rezervasyon yakında kullanıma sunulacak.', 'Online booking will be available soon.', 'Online-Buchung ist in Kürze verfügbar.'],
             ],
             'spa' => [
                 'hero_alt'         => ['Spa', 'Spa', 'Spa'],

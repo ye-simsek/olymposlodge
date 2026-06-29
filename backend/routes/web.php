@@ -39,6 +39,16 @@ Route::prefix('{locale}')
         Route::get('/lodge', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Lodge', 'namespaces' => ['lodge', 'meta', 'nav']])
             ->name('lodge');
+
+        Route::get('/spa', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Spa', 'namespaces' => ['spa', 'meta', 'nav']])
+            ->name('spa');
+        Route::get('/gallery', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Gallery', 'namespaces' => ['meta', 'nav']])
+            ->name('gallery');
+        Route::get('/offers', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Offers', 'namespaces' => ['offers', 'meta']])
+            ->name('offers');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

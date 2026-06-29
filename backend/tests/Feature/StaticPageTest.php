@@ -59,4 +59,26 @@ class StaticPageTest extends TestCase
             ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p
                 ->component('Lodge')->where('translations.lodge.hero_title', 'Lodge'));
     }
+
+    public function test_spa_renders(): void
+    {
+        Translation::create(['namespace' => 'spa', 'key' => 'hero_title', 'en' => 'Spa', 'sort_order' => 0]);
+        $this->get('/en/spa')->assertOk()
+            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p
+                ->component('Spa')->where('translations.spa.hero_title', 'Spa'));
+    }
+
+    public function test_gallery_renders(): void
+    {
+        $this->get('/en/gallery')->assertOk()
+            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p->component('Gallery'));
+    }
+
+    public function test_offers_renders(): void
+    {
+        Translation::create(['namespace' => 'offers', 'key' => 'page_title', 'en' => 'Offers', 'sort_order' => 0]);
+        $this->get('/en/offers')->assertOk()
+            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p
+                ->component('Offers')->where('translations.offers.page_title', 'Offers'));
+    }
 }

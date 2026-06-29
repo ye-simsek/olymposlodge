@@ -9,7 +9,7 @@ Trilingual (Turkish · English · German), with AI chat assistant, contact form,
 
 | Layer | Technology |
 |---|---|
-| Frontend | Inertia.js (React 18 + TypeScript) with server-side rendering (SSR), Vite |
+| Frontend | Inertia.js (React 19 + TypeScript) with server-side rendering (SSR), Vite |
 | Backend | Laravel 13, PHP 8.3 |
 | Admin | Filament 3.3 |
 | Database | MySQL 8.4 (production), SQLite (local option) |

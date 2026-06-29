@@ -52,6 +52,12 @@ Route::prefix('{locale}')
         Route::get('/location', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Location', 'namespaces' => ['location', 'meta', 'nav']])
             ->name('location');
+
+        Route::get('/contact', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Contact', 'namespaces' => ['contact', 'meta']])
+            ->name('contact');
+        Route::post('/contact', [\App\Http\Controllers\Web\ContactController::class, 'store'])
+            ->name('contact.store');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

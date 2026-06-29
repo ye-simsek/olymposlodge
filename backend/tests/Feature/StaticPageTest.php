@@ -43,4 +43,20 @@ class StaticPageTest extends TestCase
                 ->where('translations.experiences.hero_title', 'Experiences')
             );
     }
+
+    public function test_activities_renders(): void
+    {
+        Translation::create(['namespace' => 'activities', 'key' => 'hero_title', 'en' => 'Activities', 'sort_order' => 0]);
+        $this->get('/en/activities')->assertOk()
+            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p
+                ->component('Activities')->where('translations.activities.hero_title', 'Activities'));
+    }
+
+    public function test_lodge_renders(): void
+    {
+        Translation::create(['namespace' => 'lodge', 'key' => 'hero_title', 'en' => 'Lodge', 'sort_order' => 0]);
+        $this->get('/en/lodge')->assertOk()
+            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p
+                ->component('Lodge')->where('translations.lodge.hero_title', 'Lodge'));
+    }
 }

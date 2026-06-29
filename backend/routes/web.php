@@ -32,6 +32,13 @@ Route::prefix('{locale}')
         Route::get('/experiences', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Experiences', 'namespaces' => ['experiences', 'meta', 'nav']])
             ->name('experiences');
+
+        Route::get('/activities', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Activities', 'namespaces' => ['activities', 'meta']])
+            ->name('activities');
+        Route::get('/lodge', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Lodge', 'namespaces' => ['lodge', 'meta', 'nav']])
+            ->name('lodge');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

@@ -16,7 +16,9 @@ interface Room {
   name_de?: string
   name_en?: string
   name_tr?: string
-  price_per_night: number | null
+  // Laravel's decimal:2 cast serialises this as a string (e.g. "250.00"); matches the
+  // string|null contract used by Home/Rooms/RoomDetail. Parse before arithmetic.
+  price_per_night: string | null
   capacity: number
   currency?: string
 }
@@ -372,7 +374,7 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
   const selectedRoom = rooms.find(r => r.id === selectedRoomId)
   const roomName = (r: Room) => (r[`name_${lang}` as keyof Room] as string) ?? r.name
   const pricePerNight = selectedRoom?.price_per_night ?? null
-  const totalPrice = pricePerNight && nights > 0 ? pricePerNight * nights : null
+  const totalPrice = pricePerNight && nights > 0 ? Number(pricePerNight) * nights : null
 
   const b = (k: string) => t(`booking.${k}`)
   const L = {

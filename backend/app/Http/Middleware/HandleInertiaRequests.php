@@ -9,8 +9,6 @@ class HandleInertiaRequests extends Middleware
 {
     protected $rootView = 'app';
 
-    private const GLOBAL_NAMESPACES = ['common', 'nav', 'footer', 'cookie'];
-
     public function version(Request $request): ?string
     {
         return parent::version($request);
@@ -26,7 +24,12 @@ class HandleInertiaRequests extends Middleware
             'name' => config('app.name'),
             'locale' => fn () => app()->getLocale(),
             'translations' => fn () => (new \App\Support\TranslationRepository())
-                ->forLocale(app()->getLocale(), self::GLOBAL_NAMESPACES),
+                ->forLocale(app()->getLocale(), \App\Support\PageProps::GLOBAL),
+            'seo' => fn () => \App\Support\Seo::forRequest($request),
+            'flash' => fn () => [
+                'success' => $request->session()->get('success'),
+                'error' => $request->session()->get('error'),
+            ],
         ];
     }
 }

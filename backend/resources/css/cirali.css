@@ -1,0 +1,1718 @@
+/* ========================================
+   OLYMPOS LODGE — Çıralı & Child Pages
+   Child-page hero, Çıralı destination
+   guide editorial, legacy layout.
+   Loaded on cirali.html, lodge.html,
+   spa.html, location.html.
+   ======================================== */
+
+/* ============================================
+   Subnav — icon bar with sticky collapse
+   Badrutt's-inspired; bold reinterpretation
+   (staggered entrance, underline indicator,
+    bespoke easing, icon-lift hover)
+   ============================================ */
+:root {
+  --icon-offset: 32px;
+  --subnav-ease: cubic-bezier(0.22, 1, 0.36, 1);   /* expo-out */
+  --subnav-duration: 520ms;
+}
+
+#subnav {
+  position: sticky;
+  top: calc(var(--header-height) - var(--icon-offset));
+  z-index: 30;
+  background-color: var(--color-cream);
+  background-image: var(--paper-texture);
+  overflow: visible;
+}
+
+#subnav .row {
+  padding-block: 11px;
+}
+
+#subnav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+#subnav ul a {
+  position: relative;
+  display: block;
+  padding-bottom: 6px;                  /* room for underline indicator */
+  font-family: var(--font-sc);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  font-weight: 400;
+  color: var(--color-warm-gold);
+  text-decoration: none;
+  text-align: center;
+  transition:
+    color 300ms var(--subnav-ease),
+    letter-spacing 400ms var(--subnav-ease);
+}
+
+#subnav .row:has(a[style]) ul a[style] {
+  padding-top: var(--icon-offset);
+}
+
+#subnav .row:has(a[style]) ul a[style]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 30px;
+  width: 30px;
+  background-image: var(--icon);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition:
+    transform var(--subnav-duration) var(--subnav-ease),
+    opacity calc(var(--subnav-duration) * 0.7) var(--subnav-ease);
+}
+
+/* Hairline underline indicator — grows from centre */
+#subnav ul a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 1px;
+  width: 0;
+  background: var(--color-warm-gold);
+  transform: translateX(-50%);
+  transition: width 420ms var(--subnav-ease);
+}
+
+#subnav ul a.active {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+#subnav ul a.active::after { width: 28px; }
+#subnav ul a.active[style]::before {
+  filter: drop-shadow(0 1px 0 rgba(110, 90, 48, 0.18));
+}
+
+/* Sticky collapse — icons slide up and fade, labels stay put.
+   Override the entrance delay so the exit is immediate. */
+#subnav.sticky .row:has(a[style]) ul a[style]::before,
+#subnav.sticky.is-revealed .row:has(a[style]) ul a[style]::before {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+/* Icon-lift hover — desktop only, non-sticky state */
+@media (hover: hover) {
+  #subnav:not(.sticky) .row:has(a[style]) ul a[style]:hover::before {
+    transform: translateX(-50%) translateY(-3px);
+  }
+  #subnav ul a:hover {
+    color: var(--color-warm-gold-deep, #5a4826);
+  }
+}
+
+/* Page-name label — visible in sticky state; rises 4px as it fades in */
+#subnav .page-name {
+  position: absolute;
+  left: 50%;
+  top: calc(50% + 0.5 * var(--icon-offset));
+  transform: translate(-50%, calc(-50% + 4px));
+  font-family: var(--font-sc);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--color-warm-gold);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 380ms var(--subnav-ease),
+    transform 520ms var(--subnav-ease);
+}
+
+#subnav.sticky .page-name {
+  top: 50%;
+}
+#subnav.sticky .page-name.is-visible {
+  transform: translate(-50%, -50%);
+}
+
+/* Reduced-motion — honour OS preference */
+@media (prefers-reduced-motion: reduce) {
+  #subnav ul a,
+  #subnav ul a::after,
+  #subnav .row:has(a[style]) ul a[style]::before,
+  #subnav .page-name {
+    transition: none;
+  }
+  #subnav .row:has(a[style]) ul a[style]::before {
+    opacity: 1;
+    transform: translateX(-50%);
+  }
+  #subnav.sticky .row:has(a[style]) ul a[style]::before {
+    opacity: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  #subnav .row {
+    padding-block: 14px;
+  }
+
+  #subnav ul {
+    gap: 6.25vw;
+    padding-inline: 6.25vw;
+    justify-content: left;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  #subnav ul::-webkit-scrollbar { display: none; }
+
+  #subnav ul a[style]::before {
+    height: 22px;
+    width: 22px;
+  }
+
+  /* On mobile sticky: show page-name, hide links */
+  body.show-page-name #subnav .page-name.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  body.show-page-name #subnav ul {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* ============================================
+   Child Pages (Çıralı, Chimaera, Olympos)
+   ============================================ */
+.child-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 450px;
+  overflow: hidden;
+}
+.child-hero__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.child-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%);
+}
+.child-hero__content {
+  position: absolute;
+  bottom: 4rem;
+  left: 0;
+  right: 0;
+  padding: 0 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.child-hero__label {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 0.8rem;
+}
+.child-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.15;
+}
+
+.child-article {
+  padding: 5rem 0 6rem;
+}
+.child-article__intro {
+  max-width: 740px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+.child-article__intro p {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+.child-article__section {
+  max-width: 740px;
+  margin: 0 auto 3.5rem;
+}
+.child-article__section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+  color: var(--color-text);
+}
+.child-article__section p {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+.child-article__feature-list {
+  padding-left: 0;
+  list-style: none;
+}
+.child-article__feature-list li {
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--color-text-light);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.child-article__feature-list li:last-child {
+  border-bottom: none;
+}
+.child-article__feature-list strong {
+  color: var(--color-text);
+  font-weight: 400;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+}
+.child-article__info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var(--color-cream); background-image: var(--paper-texture);
+  border: 1px solid var(--color-border);
+}
+.child-article__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.child-article__info-label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+.child-article__info-value {
+  font-size: 0.88rem;
+  color: var(--color-text);
+}
+.child-article__closing {
+  max-width: 740px;
+  margin: 3rem auto 2rem;
+  text-align: center;
+}
+.child-article__closing p {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+.child-article__cta {
+  max-width: 740px;
+  margin: 2rem auto 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.child-article__full-image {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+}
+.child-article__full-image img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.child-hero--full {
+  height: 935px;
+}
+
+.child-hero--full .child-hero__content {
+  bottom: 4rem;
+  top: auto;
+  transform: none;
+  text-align: left;
+}
+
+.child-hero--full .child-hero__title {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+}
+.page--dest .child-hero__title {
+  font-family: var(--font-sc);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+.page--dest .child-hero {
+  overflow: visible;
+  clip-path: inset(0);
+}
+.page--dest .child-hero__content {
+  position: absolute;
+  bottom: auto;
+  top: calc(100svh - var(--header-height) - 100px - 14rem);
+  left: 0;
+  transform: none;
+  text-align: left;
+  z-index: 2;
+}
+
+@media (max-width: 640px) {
+  .child-hero__content {
+    bottom: 2.5rem;
+  }
+  .child-article {
+    padding: 3.5rem 0 4rem;
+  }
+  .child-article__info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   DESTINATION GUIDE — Editorial Layout (Çıralı)
+   ============================================ */
+
+/* Centered italic opening statement */
+.dest-intro {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.dest-intro__text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
+/* ---- Chapter blocks ---- */
+/* ---- Destination page intro override ---- */
+.intro--dest .intro-title {
+  max-width: none;
+  font-family: var(--font-sc);
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: 0.07em;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+/* ---- Feature opener ---- */
+.dest-feature {
+  position: relative;
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-feature__visual {
+  height: 45vh;
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.dest-feature__visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px) brightness(0.6);
+  -webkit-backdrop-filter: blur(8px) brightness(0.6);
+  z-index: 0;
+}
+
+.dest-feature__text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+  padding: 4rem 5.4rem 4rem;
+}
+
+.dest-feature__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  color: #fff;
+  text-align: left;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 0 2.5rem;
+  letter-spacing: 0.04em;
+}
+
+.dest-feature__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 5rem;
+  max-width: 1000px;
+  width: 100%;
+  text-align: left;
+}
+
+.dest-feature__desc {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+  line-height: 1.9;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+}
+
+/* ---- Region intro (Casa Cook "THE REGION" style) ---- */
+.dest-region {
+  background-color: var(--color-cream); background-image: var(--paper-texture);
+  border-top: 1px solid var(--color-border);
+  padding: 4rem var(--space-xl);
+  text-align: center;
+}
+
+.dest-region__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+}
+
+.dest-region__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.dest-region__cols p {
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 1024px) {
+  .dest-feature__text {
+    padding: 3.5rem 2rem;
+  }
+  .dest-feature__title {
+    white-space: normal;
+    text-align: center;
+  }
+  .dest-region {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .dest-feature__visual {
+    height: 100vw;
+    min-height: unset;
+  }
+  .dest-feature__text {
+    padding: 2.5rem 1.5rem;
+  }
+  .dest-feature__cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .dest-region {
+    padding: 3rem 1.5rem;
+  }
+  .dest-region__cols {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: left;
+  }
+}
+
+/* ---- Chapter blocks ---- */
+.dest-chapter {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  min-height: 520px;
+  border-top: 1px solid var(--color-warm-gold);
+  padding: 2.5rem 0;
+}
+
+.dest-chapter--reverse {
+  grid-template-columns: 42fr 58fr;
+}
+
+.dest-chapter--reverse .dest-chapter__visual {
+  order: 2;
+}
+
+.dest-chapter--reverse .dest-chapter__body {
+  order: 1;
+}
+
+.dest-chapter--center {
+  display: block;
+  padding-bottom: 0;
+}
+
+.dest-chapter--center .dest-chapter__visual {
+  padding: 0 6rem;
+  height: 62vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.dest-chapter--center .dest-chapter__body {
+  display: grid;
+  grid-template-columns: 38fr 62fr;
+  grid-template-rows: auto auto;
+  column-gap: 4rem;
+  row-gap: 0;
+  padding: 1rem 3rem 2.5rem;
+  align-items: start;
+}
+
+.dest-chapter--center .dest-chapter__meta {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
+
+.dest-chapter--center .dest-chapter__title {
+  align-self: start;
+}
+
+.dest-chapter--center .dest-chapter__lead,
+.dest-chapter--center .dest-chapter__tekne-right {
+  grid-column: 2;
+}
+
+.dest-chapter--center .dest-chapter__tekne-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dest-chapter__visual {
+  padding-left: 2.5rem;
+  overflow: hidden;
+}
+
+.dest-chapter--reverse .dest-chapter__visual {
+  padding-left: 0;
+  padding-right: 2.5rem;
+}
+
+.dest-chapter__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dest-chapter:hover .dest-chapter__visual img {
+  transform: scale(1.03);
+}
+
+.dest-chapter__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3.5rem 4rem;
+  gap: 1.2rem;
+}
+
+.dest-chapter__meta {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.9rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+}
+
+.dest-chapter__num {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 3.6rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-warm-gold-muted);
+  user-select: none;
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dest-chapter__cat {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.4vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  line-height: 1;
+  color: var(--color-title-bronze);
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition-delay: 0.4s;
+}
+
+/* Chapter meta — animate in on scroll */
+.dest-chapter__num.visible { opacity: 1; }
+.dest-chapter__cat.visible { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-chapter__num,
+  .dest-chapter__cat { opacity: 1; transition: none; }
+}
+
+.dest-chapter__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Normalise other section titles on this page to match dest-chapter__title */
+.story-philosophy__title,
+.loc-teaser__title {
+  font-size: clamp(2rem, 3vw, 3.6rem);
+}
+
+.dest-chapter__lead {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+
+.dest-chapter__aside {
+  font-family: var(--font-heading);
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--color-title-bronze);
+  margin-top: 1.75rem;
+  padding: 0.25rem 0 0.25rem 1.5rem;
+  border-left: 2px solid var(--color-warm-gold);
+}
+
+/* ---- Pull quote ---- */
+.dest-pullquote {
+  padding: 3.5rem 2rem;
+  text-align: center;
+  background-color: var(--color-cream); background-image: var(--paper-texture);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dest-pullquote q {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text);
+  quotes: none;
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ---- Lodge included activities strip ---- */
+.lodge-included {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
+  padding: 2.4rem var(--space-xl);
+}
+.lodge-included__inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.lodge-included__label {
+  color: var(--color-warm-gold);
+  white-space: nowrap;
+}
+.lodge-included__list {
+  display: flex;
+  gap: 0 2.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+.lodge-included__list li::before {
+  content: '—';
+  margin-right: 0.5rem;
+  color: var(--color-warm-gold);
+  font-weight: 300;
+}
+.lodge-included__link {
+  margin-left: auto;
+  color: var(--color-warm-gold);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: 0.14em;
+}
+
+/* ---- Tekne Turu editorial card ---- */
+.tekne-card {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  min-height: 70vh;
+  margin: 3rem 3rem 0;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.tekne-card__image {
+  overflow: hidden;
+}
+
+.tekne-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.tekne-card:hover .tekne-card__image img {
+  transform: scale(1.03);
+}
+
+.tekne-card + .tekne-card {
+  margin-top: 3rem;
+}
+
+.tekne-card--reverse {
+  grid-template-columns: 42fr 58fr;
+}
+
+.tekne-card--reverse .tekne-card__content {
+  border-left: none;
+  border-right: 1px solid var(--color-border);
+  order: 1;
+}
+
+.tekne-card--reverse .tekne-card__image {
+  order: 2;
+}
+
+.tekne-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 4.5rem;
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
+  border-left: 1px solid var(--color-border);
+}
+
+.tekne-card__label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-warm-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.tekne-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.2vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+.tekne-card__rule {
+  width: 3rem;
+  height: 1px;
+  background: var(--color-warm-gold);
+  margin-bottom: 2rem;
+}
+
+.tekne-card__desc {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--color-text);
+  margin-bottom: 2.5rem;
+}
+
+.tekne-card__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(0.88rem, 1.05vw, 0.98rem);
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.tekne-card__facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+
+.tekne-card__facts li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.tekne-card__facts li span {
+  font-family: var(--font-sc);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--color-warm-gold);
+  min-width: 7rem;
+}
+
+.tekne-card__facts li strong {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+/* ---- Activities sticky heading ---- */
+.dest-activities-wrap {
+  overflow: visible;
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
+  border-top: 1px solid var(--color-warm-gold);
+}
+
+.dest-activities-wrap__heading {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 1;
+  padding: var(--space-xl) 0;
+  text-align: center;
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
+}
+
+.dest-activities-wrap__heading .section-label {
+  display: block;
+  font-family: var(--font-sc);
+  font-style: normal;
+  font-weight: 300;
+  font-size: clamp(4rem, 6vw, 7rem);
+  letter-spacing: 0.07em;
+  text-transform: none;
+  color: var(--color-warm-gold);
+  margin-bottom: 0;
+}
+
+.dest-activities-wrap__content {
+  position: relative;
+  z-index: 2;
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
+  border-top: 1px solid var(--color-warm-gold);
+}
+
+/* ---- Activities grid ---- */
+.dest-activities {
+  padding: 3.5rem var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-activities__header {
+  margin-bottom: 2rem;
+}
+
+.dest-activities__header .section-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--color-warm-gold);
+}
+
+.dest-activities__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 300;
+  color: var(--color-text);
+}
+
+.dest-activities__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--color-border);
+  border-left: 1px solid var(--color-border);
+  margin: 0 var(--space-xl);
+}
+
+.dest-activity {
+  padding: 2.2rem 2rem;
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dest-activity__tag {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.57rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.9rem;
+}
+
+.dest-activity h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.dest-activity p {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+
+/* ---- 3-image strip ---- */
+.dest-strip {
+  display: flex;
+  border-top: 1px solid var(--color-border);
+}
+
+.dest-strip__item {
+  flex: 1;
+  height: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dest-strip__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.dest-strip__item:hover img {
+  transform: scale(1.05);
+}
+
+.dest-strip__item + .dest-strip__item {
+  border-left: 1px solid var(--color-border);
+}
+
+/* ---- Nearby / Beyond Çıralı — Ring Map ---- */
+.dest-nearby {
+  border-top: 1px solid var(--color-border);
+  padding: 3.5rem var(--space-xl);
+  background-color: var(--color-cream); background-image: var(--paper-texture);
+}
+
+.dest-nearby__header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.dest-nearby__header .section-label {
+  color: var(--color-warm-gold);
+}
+
+/* Ring map container */
+.dest-ringmap {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  overflow: visible;
+}
+
+.dest-ringmap__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Ring animation */
+.dest-ringmap__ring,
+.dest-ringmap__line {
+  opacity: 0;
+  transform-origin: 300px 300px;
+  transition: opacity 0.8s var(--transition-slow, 0.8s cubic-bezier(0.25,0.1,0.25,1));
+}
+.dest-ringmap__ring { transform: scale(0.5); transition: opacity 0.8s cubic-bezier(0.25,0.1,0.25,1), transform 0.9s cubic-bezier(0.25,0.1,0.25,1); }
+.dest-ringmap__center { opacity: 0; transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1); }
+.dest-ringmap__dot { opacity: 0; transition: opacity 0.5s cubic-bezier(0.25,0.1,0.25,1); }
+
+.dest-ringmap.visible .dest-ringmap__center { opacity: 1; }
+.dest-ringmap.visible .dest-ringmap__ring--1 { opacity: 1; transform: scale(1); transition-delay: 0.15s; }
+.dest-ringmap.visible .dest-ringmap__ring--2 { opacity: 1; transform: scale(1); transition-delay: 0.35s; }
+.dest-ringmap.visible .dest-ringmap__ring--3 { opacity: 1; transform: scale(1); transition-delay: 0.55s; }
+.dest-ringmap.visible .dest-ringmap__line { opacity: 1; transition-delay: 0.5s; }
+.dest-ringmap.visible .dest-ringmap__dot { opacity: 1; transition-delay: 0.65s; }
+
+/* Ring time labels */
+.dest-ringmap__ring-label {
+  position: absolute;
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1);
+  pointer-events: none;
+}
+.dest-ringmap.visible .dest-ringmap__ring-label { opacity: 1; transition-delay: 0.7s; }
+
+/* Position ring labels just above the top of each ring */
+.dest-ringmap__ring-label--1 { top: 35%; left: 50%; transform: translate(-50%, -100%) translateY(-4px); }
+.dest-ringmap__ring-label--2 { top: 20%; left: 50%; transform: translate(-50%, -100%) translateY(-4px); }
+.dest-ringmap__ring-label--3 { top: 5%;  left: 50%; transform: translate(-50%, -100%) translateY(-4px); }
+
+/* Center label */
+.dest-ringmap__center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  font-family: var(--font-sc);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1);
+}
+.dest-ringmap.visible .dest-ringmap__center-label { opacity: 1; transition-delay: 0.2s; }
+
+/* Destination labels */
+.dest-ringmap__label {
+  position: absolute;
+  max-width: 160px;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25,0.1,0.25,1);
+}
+.dest-ringmap.visible .dest-ringmap__label { opacity: 1; transition-delay: 0.75s; }
+
+.dest-ringmap__label h3 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-bottom: 0.2rem;
+  line-height: 1.2;
+}
+
+.dest-ringmap__time {
+  display: block;
+  font-family: var(--font-accent);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-bottom: 0.4rem;
+}
+
+
+/* Label positions — percentages relative to ringmap container */
+/* Olympos: dot at 236,364 → 39.3%, 60.7% — label left of dot */
+.dest-ringmap__label--olympos { top: 59%; right: calc(100% - 39.3% + 15px); text-align: right; }
+/* Yanartaş: dot at 236,236 → 39.3%, 39.3% — label left of dot */
+.dest-ringmap__label--yanartas { top: 37%; right: calc(100% - 39.3% + 17px); text-align: right; }
+/* Phaselis: dot at 300,480 → 50%, 80% — label below dot */
+.dest-ringmap__label--phaselis { top: 82%; left: 50%; transform: translateX(-50%); text-align: center; }
+/* Kemer: dot at 449,427 → 74.8%, 71.2% — label right of dot */
+.dest-ringmap__label--kemer { top: 69%; left: 77%; text-align: left; }
+/* Tahtalı: dot at 465,170 → 77.5%, 28.3% — label right of dot */
+.dest-ringmap__label--tahtali { top: 24%; left: 80%; text-align: left; }
+/* Antalya: dot at 570,300 → 95%, 50% — label right of dot */
+.dest-ringmap__label--antalya { top: 47%; left: 97%; text-align: left; white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dest-ringmap__ring,
+  .dest-ringmap__line,
+  .dest-ringmap__center,
+  .dest-ringmap__dot,
+  .dest-ringmap__ring-label,
+  .dest-ringmap__center-label,
+  .dest-ringmap__label {
+    opacity: 1; transform: none; transition: none;
+  }
+  .dest-ringmap__ring { transform: scale(1); }
+}
+
+/* ---- Closing CTA ---- */
+.dest-cta {
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-warm-white); background-image: var(--paper-texture);
+}
+
+.dest-cta__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 1.8vw, 1.65rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--color-text-light);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.dest-cta__actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dest-cta .btn-reserve {
+  background: var(--color-warm-gold);
+  color: #fff;
+  border-color: var(--color-warm-gold);
+}
+.dest-cta .btn-reserve:hover {
+  background: transparent;
+  color: var(--color-warm-gold);
+  border-color: var(--color-warm-gold);
+}
+
+/* ---- Responsive: tablet ---- */
+@media (max-width: 1100px) {
+  .dest-activities__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dest-ringmap__label { max-width: 130px; }
+}
+
+@media (max-width: 1024px) {
+  .dest-chapter {
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+  }
+
+  .dest-chapter__body {
+    padding: 2.5rem 2.5rem;
+  }
+
+  .dest-activities {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .dest-nearby {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .dest-ringmap { max-width: 560px; }
+}
+
+/* ---- Responsive: mobile ---- */
+@media (max-width: 640px) {
+  .dest-intro {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .dest-chapter,
+  .dest-chapter--reverse {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  .dest-chapter__visual {
+    aspect-ratio: 4 / 3;
+    order: 0 !important;
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .dest-chapter--reverse .dest-chapter__visual {
+    padding: 1.5rem 1.5rem 0;
+  }
+
+  .dest-chapter__body {
+    order: 1 !important;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .dest-pullquote {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .dest-activities {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .dest-activities__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dest-strip {
+    flex-direction: column;
+  }
+
+  .dest-strip__item {
+    height: 60vw;
+    flex: none;
+  }
+
+  .dest-strip__item + .dest-strip__item {
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .dest-nearby {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .dest-ringmap { aspect-ratio: auto; max-width: none; }
+  .dest-ringmap__svg { display: none; }
+  .dest-ringmap__ring-label,
+  .dest-ringmap__center-label { display: none; }
+
+  .dest-ringmap__label {
+    position: static;
+    max-width: none;
+    opacity: 1;
+    padding: 1.2rem 0 1.2rem 1.5rem;
+    border-left: 1px solid var(--color-warm-gold);
+  }
+
+  .dest-ringmap__label + .dest-ringmap__label {
+    margin-top: 0;
+  }
+
+  .dest-ringmap__label h3 { font-size: 1.05rem; }
+
+  .dest-cta {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* ============================================
+   Chapters 01 (Plaj) & 03 (Yanartaş) —
+   centered editorial layout (Badrutt's-inspired:
+   eyebrow, title, thumb, body).
+   ============================================ */
+.page--cirali #plaj,
+.page--cirali #yanartas {
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 2.5rem;
+}
+.page--cirali .dest-chapter:hover .dest-chapter__visual img,
+.page--cirali .dest-strip__item:hover img {
+  transform: none;
+}
+.page--cirali #plaj .dest-chapter__visual,
+.page--cirali #yanartas .dest-chapter__visual {
+  min-height: 900px;
+  height: 900px;
+}
+.page--cirali #plaj .dest-chapter__body,
+.page--cirali #yanartas .dest-chapter__body {
+  padding-top: 34px; /* 40px section + 34px + ~12px line-box offset ≈ 86px visual gap */
+  padding-bottom: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+}
+.page--cirali #plaj .dest-chapter__eyebrow,
+.page--cirali #yanartas .dest-chapter__eyebrow,
+.page--cirali #olympos .dest-chapter__eyebrow,
+.page--cirali #likya .dest-chapter__eyebrow {
+  font-family: var(--font-sc);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+.page--cirali #plaj .dest-chapter__title,
+.page--cirali #yanartas .dest-chapter__title,
+.page--cirali #olympos .dest-chapter__title,
+.page--cirali #likya .dest-chapter__title {
+  max-width: 16ch;
+  font-size: 35px;
+}
+.page--cirali #plaj .dest-chapter__thumb,
+.page--cirali #yanartas .dest-chapter__thumb {
+  width: clamp(150px, 16vw, 230px);
+  aspect-ratio: 3 / 4;
+  margin: auto 0 0;
+  overflow: hidden;
+}
+.page--cirali #plaj .dest-chapter__visual img {
+  object-position: center top;
+}
+.page--cirali #plaj .dest-chapter__thumb img {
+  object-position: left top;
+  transform: scale(2);
+  transform-origin: left top;
+}
+.page--cirali #plaj .dest-chapter__thumb img,
+.page--cirali #yanartas .dest-chapter__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.page--cirali #plaj .dest-chapter__lead,
+.page--cirali #yanartas .dest-chapter__lead {
+  margin: auto 0 2rem 0;
+  max-width: 72ch;
+}
+
+/* ============================================
+   Chapters 02 (Olympos) & 04 (Likya Yolu) —
+   Double-landing: full-bleed wide image; below it,
+   a centered header (eyebrow + title) and a two-
+   column "landing" with a serif italic pullquote on
+   the left and a small-caps metadata sheet on the
+   right, separated from the lead by a gold hairline.
+   ============================================ */
+.page--cirali #olympos,
+.page--cirali #likya {
+  padding-bottom: 2.5rem;
+  min-height: 940px;
+}
+.page--cirali #olympos .dest-chapter__visual,
+.page--cirali #likya .dest-chapter__visual {
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1630px;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1630 / 530;
+}
+.page--cirali #olympos .dest-chapter__body,
+.page--cirali #likya .dest-chapter__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  column-gap: 5rem;
+  align-items: start;
+  padding: 80px 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 0;
+  text-align: initial;
+}
+.page--cirali #olympos .dest-chapter__left-col,
+.page--cirali #likya .dest-chapter__left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-right: 2rem;
+  border-right: 1px solid rgba(142, 116, 65, 0.25);
+}
+.page--cirali #olympos .dest-chapter__right-col,
+.page--cirali #likya .dest-chapter__right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-left: 2.5rem;
+}
+.page--cirali #olympos .dest-chapter__header,
+.page--cirali #likya .dest-chapter__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.page--cirali #olympos .dest-chapter__header .dest-chapter__eyebrow,
+.page--cirali #likya .dest-chapter__header .dest-chapter__eyebrow {
+  display: block;
+  margin-bottom: 0.7rem;
+}
+.page--cirali #olympos .dest-chapter__header .dest-chapter__title,
+.page--cirali #likya .dest-chapter__header .dest-chapter__title {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+.page--cirali #olympos .dest-chapter__pullquote,
+.page--cirali #likya .dest-chapter__pullquote {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--color-text);
+  text-align: left;
+}
+.page--cirali #olympos .dest-chapter__pullquote q,
+.page--cirali #likya .dest-chapter__pullquote q {
+  quotes: none;
+  display: block;
+  margin-bottom: 1rem;
+}
+.page--cirali #olympos .dest-chapter__pullquote cite,
+.page--cirali #likya .dest-chapter__pullquote cite {
+  display: block;
+  font-family: var(--font-sc);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+.page--cirali #olympos .dest-chapter__specs,
+.page--cirali #likya .dest-chapter__specs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.page--cirali #olympos .dest-chapter__specs > div,
+.page--cirali #likya .dest-chapter__specs > div {
+  display: grid;
+  grid-template-columns: minmax(0, auto) 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(142, 116, 65, 0.18);
+}
+.page--cirali #olympos .dest-chapter__specs > div:last-child,
+.page--cirali #likya .dest-chapter__specs > div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.page--cirali #olympos .dest-chapter__specs dt,
+.page--cirali #likya .dest-chapter__specs dt {
+  margin: 0;
+  font-family: var(--font-sc);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+.page--cirali #olympos .dest-chapter__specs dd,
+.page--cirali #likya .dest-chapter__specs dd {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: right;
+}
+.page--cirali #olympos .dest-chapter__lead,
+.page--cirali #likya .dest-chapter__lead {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(142, 116, 65, 0.25);
+}
+
+/* ============================================
+   SCROLL-SNAP CHAPTERS
+   4 × 100 vh panels, snap on y-axis.
+   Scroll chains to page after last chapter.
+   ============================================ */
+.dest-chapters-scroll {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;          /* hide scrollbar */
+}
+.dest-chapters-scroll::-webkit-scrollbar { display: none; }
+
+.dest-chapters-scroll > .dest-chapter {
+  height: 100vh;
+  min-height: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  border-top: none;
+  overflow: hidden;
+}
+
+.dest-chapters-scroll > .dest-chapter--reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Visual: fills its column fully */
+.dest-chapters-scroll > .dest-chapter .dest-chapter__visual {
+  position: relative;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__visual {
+  padding: 0;
+  order: 2;
+}
+.dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__body {
+  order: 1;
+}
+.dest-chapters-scroll > .dest-chapter .dest-chapter__visual img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.dest-chapters-scroll > .dest-chapter:hover .dest-chapter__visual img {
+  transform: scale(1.03);
+}
+
+/* Body: vertically centered text column */
+.dest-chapters-scroll > .dest-chapter .dest-chapter__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  padding: var(--space-xl) clamp(2rem, 5vw, 5rem);
+  gap: 1.4rem;
+  background-color: var(--color-cream);
+  background-image: var(--paper-texture);
+}
+
+/* Specs table inside snap chapters */
+.dest-chapters-scroll .dest-chapter__specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dest-chapters-scroll .dest-chapter__specs > div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(142, 116, 65, 0.2);
+  padding-bottom: 0.35rem;
+}
+.dest-chapters-scroll .dest-chapter__specs dt {
+  font-family: var(--font-accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-warm-gold);
+}
+.dest-chapters-scroll .dest-chapter__specs dd {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* Scroll-down hint — last chapter hides it */
+.dest-chapters-scroll > .dest-chapter:not(:last-child) .dest-chapter__body::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 2rem;
+  background: linear-gradient(to bottom, var(--color-warm-gold), transparent);
+  margin-top: auto;
+  align-self: center;
+  opacity: 0.5;
+  animation: chapterScrollHint 2s ease-in-out infinite;
+}
+@keyframes chapterScrollHint {
+  0%, 100% { opacity: 0.2; transform: translateY(0); }
+  50%       { opacity: 0.6; transform: translateY(6px); }
+}
+
+/* Mobile — stack vertically, no snap */
+@media (max-width: 640px) {
+  .dest-chapters-scroll {
+    height: auto;
+    overflow-y: visible;
+    scroll-snap-type: none;
+  }
+  .dest-chapters-scroll > .dest-chapter {
+    height: auto;
+    min-height: 0;
+    scroll-snap-align: none;
+    scroll-snap-stop: unset;
+    grid-template-columns: 1fr;
+    grid-template-rows: 55vw auto;
+    border-top: 1px solid var(--color-warm-gold);
+  }
+  .dest-chapters-scroll > .dest-chapter .dest-chapter__visual {
+    height: 55vw;
+  }
+  .dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__visual,
+  .dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__body {
+    order: unset;
+  }
+  .dest-chapters-scroll > .dest-chapter .dest-chapter__body::after {
+    display: none;
+  }
+}
+

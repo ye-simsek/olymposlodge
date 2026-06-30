@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="9 23 46 31" fill="#A28D6D" aria-hidden="true">
+<defs>
+  <filter id="ink-soft" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="1.2" numOctaves="2" seed="7" result="noise"></feTurbulence>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.6"></feDisplacementMap>
+  </filter>
+</defs>
+<g filter="url(#ink-soft)">
+<path d="M 10.22 30.45 L 15.75 28.25 L 21.22 26.75 L 26.64 25.94 L 32.00 25.80 L 37.36 25.94 L 42.78 26.75 L 48.25 28.25 L 53.78 30.45 L 54.22 29.55 L 48.75 26.94 L 43.22 25.00 L 37.64 23.75 L 32.00 23.20 L 26.36 23.75 L 20.78 25.00 L 15.25 26.94 L 9.78 29.55 Z"></path>
+<path d="M 18.22 36.45 L 21.73 35.08 L 25.19 34.15 L 28.62 33.66 L 32.00 33.60 L 35.38 33.66 L 38.81 34.15 L 42.27 35.08 L 45.78 36.45 L 46.22 35.55 L 42.73 33.86 L 39.19 32.60 L 35.62 31.78 L 32.00 31.40 L 28.38 31.78 L 24.81 32.60 L 21.27 33.86 L 17.78 35.55 Z"></path>
+<path d="M 25.30 42.52 L 27.03 41.77 L 28.72 41.27 L 30.38 41.02 L 32.00 41.00 L 33.62 41.02 L 35.28 41.27 L 36.97 41.77 L 38.70 42.52 L 39.30 41.48 L 37.53 40.48 L 35.72 39.73 L 33.88 39.23 L 32.00 39.00 L 30.12 39.23 L 28.28 39.73 L 26.47 40.48 L 24.70 41.48 Z"></path>
+<ellipse cx="32" cy="50" rx="3.52" ry="3.04"></ellipse>
+</g>
+</svg>

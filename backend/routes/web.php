@@ -58,6 +58,9 @@ Route::prefix('{locale}')
             ->name('contact');
         Route::post('/contact', [\App\Http\Controllers\Web\ContactController::class, 'store'])
             ->name('contact.store');
+
+        Route::get('/booking', \App\Http\Controllers\Web\BookingController::class)
+            ->name('booking');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

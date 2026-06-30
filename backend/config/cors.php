@@ -19,7 +19,10 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [env('FRONTEND_URL', 'http://localhost:5173')],
+    // Single Inertia monolith: the React frontend is served by Laravel on the same
+    // origin, so /api/* requests (e.g. POST /api/v1/chat) are same-origin and need no
+    // CORS allowance. Left empty intentionally (no separate decoupled SPA origin).
+    'allowed_origins' => [],
 
     'allowed_origins_patterns' => [],
 

@@ -104,7 +104,7 @@ export default function RoomDetail({ room }: { room: LocalizedRoom }) {
             <div className="room-specs">
                 <div className="room-spec">
                     <span className="room-spec__icon">
-                        <img src="/images/icons/garden-view.svg" alt="" width="32" height="32" />
+                        <img src={room.view === 'lake' ? '/images/icons/lake-view.svg' : '/images/icons/garden-view.svg'} alt="" width="32" height="32" />
                     </span>
                     <span className="room-spec__value">{viewLabel}</span>
                     <span className="room-spec__label">{d('spec_view')}</span>

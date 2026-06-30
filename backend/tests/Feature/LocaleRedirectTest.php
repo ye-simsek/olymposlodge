@@ -33,8 +33,13 @@ class LocaleRedirectTest extends TestCase
 
     public function test_excluded_paths_are_not_redirected(): void
     {
-        // /api/* darf nicht in die Redirect-Matrix geraten
-        $this->getJson('/api/v1/rooms')->assertOk();
+        // /api/* must not enter the locale-redirect matrix.
+        // A non-existent API path returns 404 (NOT a 301 redirect) — this proves the exclusion
+        // without depending on any concrete endpoint (avoids the external-calling chat endpoint).
+        $this->getJson('/api/v1/this-does-not-exist')
+            ->assertNotFound();
+        $this->get('/api/v1/this-does-not-exist')
+            ->assertStatus(404);
         // sitemap bleibt erreichbar ohne Locale-Redirect
         $this->get('/sitemap.xml')->assertOk();
     }

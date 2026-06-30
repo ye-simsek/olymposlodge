@@ -13,6 +13,7 @@ import '../css/contact.css';
 import '../css/activities.css';
 import '../css/location.css';
 import '../css/chat.css';
+import '../css/booking.css';
 
 router.on('navigate', (event) => {
     getLenis()?.scrollTo(0, { immediate: true });
@@ -28,7 +29,7 @@ createInertiaApp({
     resolve: (name) =>
         resolvePageComponent(
             `./pages/${name}.tsx`,
-            import.meta.glob('./pages/**/*.tsx'),
+            import.meta.glob(['./pages/**/*.tsx', '!./pages/**/*.test.tsx']),
         ),
     setup({ el, App, props }) {
         if (el.hasChildNodes()) {

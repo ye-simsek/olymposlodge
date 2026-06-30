@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import { usePageProps } from '@/hooks/use-page-props';
 import { useTranslation } from '@/hooks/use-translation';
@@ -51,6 +51,56 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
     const storyGarden   = media('story.garden',     STORY_GARDEN_FB);
     const storyNature   = media('story.nature',     STORY_NATURE_FB);
     const convictionImg = media('conviction.image', STORY_GARDEN_FB);
+
+    const voices = tRaw<{ text: string; author: string }[]>('voices.items') ?? [];
+    const voicesGridRef = useRef<HTMLDivElement>(null);
+    const [activeVoice, setActiveVoice] = useState(0);
+
+    // Mobile voices carousel: track the centred card for the dots + desktop drag-scroll.
+    useEffect(() => {
+        const grid = voicesGridRef.current;
+        if (!grid) return;
+        const cards = Array.from(grid.querySelectorAll<HTMLElement>('.voice-card'));
+        if (cards.length === 0) return;
+
+        const distToCenter = (c: HTMLElement) => {
+            const center = grid.scrollLeft + grid.offsetWidth / 2;
+            return Math.abs(c.offsetLeft - grid.offsetLeft + c.offsetWidth / 2 - center);
+        };
+        const onScroll = () => {
+            let closest = 0;
+            cards.forEach((card, i) => { if (distToCenter(card) < distToCenter(cards[closest])) closest = i; });
+            setActiveVoice(closest);
+        };
+        grid.addEventListener('scroll', onScroll, { passive: true });
+
+        let isDown = false, startX = 0, scrollLeft = 0;
+        const onDown = (e: MouseEvent) => { isDown = true; startX = e.pageX - grid.offsetLeft; scrollLeft = grid.scrollLeft; };
+        const stop = () => { isDown = false; };
+        const onMove = (e: MouseEvent) => {
+            if (!isDown) return;
+            e.preventDefault();
+            grid.scrollLeft = scrollLeft - (e.pageX - grid.offsetLeft - startX) * 1.5;
+        };
+        grid.addEventListener('mousedown', onDown);
+        grid.addEventListener('mouseleave', stop);
+        grid.addEventListener('mouseup', stop);
+        grid.addEventListener('mousemove', onMove);
+
+        return () => {
+            grid.removeEventListener('scroll', onScroll);
+            grid.removeEventListener('mousedown', onDown);
+            grid.removeEventListener('mouseleave', stop);
+            grid.removeEventListener('mouseup', stop);
+            grid.removeEventListener('mousemove', onMove);
+        };
+    }, [voices.length]);
+
+    const scrollToVoice = (i: number) => {
+        const grid = voicesGridRef.current;
+        const card = grid?.querySelectorAll<HTMLElement>('.voice-card')[i];
+        if (grid && card) grid.scrollTo({ left: card.offsetLeft - grid.offsetLeft, behavior: 'smooth' });
+    };
 
     return (
         <>
@@ -133,14 +183,21 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                         return (
                             <React.Fragment key={room.slug}>
                                 <div className={`room-row room-row--landscape${i % 2 === 1 ? ' room-row--reverse' : ''}`}>
-                                    <Link href={localePath(locale, `rooms/${room.slug}`)} className="room-row__image">
+                                    <Link href={localePath(locale, `rooms/${room.slug}`)} className="room-row__image breathe">
                                         <img src={room.images?.hero} alt={room.name} loading="lazy" />
                                     </Link>
                                     <div className="room-row__content">
                                         <Link href={localePath(locale, `rooms/${room.slug}`)}><h3>{room.name}</h3></Link>
                                         <p>{room.description}</p>
                                         <div className="room-row__specs">
-                                            {room.size_sqm && <>{room.size_sqm} m²<span className="room-row__spec-sep">·</span></>}
+                                            {room.size_sqm && (
+                                                <>
+                                                    <img className="room-row__spec-icon room-row__spec-icon--size" src="/images/icons/room-size.svg" alt="" width="20" height="20" />
+                                                    {room.size_sqm} M²
+                                                    <span className="room-row__spec-sep">·</span>
+                                                </>
+                                            )}
+                                            <img className="room-row__spec-icon" src={room.view === 'lake' ? '/images/icons/lake-view.svg' : '/images/icons/garden-view.svg'} alt="" width="20" height="20" />
                                             <span>{viewLabel}</span>
                                         </div>
                                         <Link href={localePath(locale, `rooms/${room.slug}`)} className="room-row__link">{t('rooms.view_more')}</Link>
@@ -200,12 +257,21 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                         <span className="section-label">{t('voices.label')}</span>
                         <h2>{t('voices.heading')}</h2>
                     </div>
-                    <div className="voices-grid">
-                        {(tRaw<{ text: string; author: string }[]>('voices.items') ?? []).map((v, i) => (
+                    <div className="voices-grid" ref={voicesGridRef}>
+                        {voices.map((v, i) => (
                             <div key={i} className="voice-card">
                                 <p className="voice-text">{v.text}</p>
                                 <span className="voice-author" dangerouslySetInnerHTML={{ __html: v.author }} />
                             </div>
+                        ))}
+                    </div>
+                    <div className="voices-dots" id="voicesDots">
+                        {voices.map((_, i) => (
+                            <span
+                                key={i}
+                                className={`voices-dot${i === activeVoice ? ' active' : ''}`}
+                                onClick={() => scrollToVoice(i)}
+                            />
                         ))}
                     </div>
                 </div>

@@ -1,37 +1,26 @@
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
-import PageMeta from '../components/PageMeta'
-import '../styles/booking.css'
+import { Link } from '@inertiajs/react'
+import { useTranslation } from '@/hooks/use-translation'
+import { usePageProps } from '@/hooks/use-page-props'
+import { localePath } from '@/lib/routes'
+import SeoHead from '@/components/SeoHead'
+import ClientOnly from '@/components/ClientOnly'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-interface ApiRoom {
+interface Room {
   id: number
   slug: string
-  name_de: string
-  name_en: string
-  name_tr: string
-  price_per_night: number | null
+  key_prefix?: string
+  name: string
+  name_de?: string
+  name_en?: string
+  name_tr?: string
+  // Laravel's decimal:2 cast serialises this as a string (e.g. "250.00"); matches the
+  // string|null contract used by Home/Rooms/RoomDetail. Parse before arithmetic.
+  price_per_night: string | null
   capacity: number
-}
-
-interface RoomAvail {
-  available: boolean
-  price_per_night: number
-  total_price: number
-  nights: number
-}
-
-interface ConfirmationData {
-  confirmation_number: string
-  guest_name: string
-  room_name: string
-  check_in: string
-  check_out: string
-  nights: number
-  total_price: number
-  currency: string
+  currency?: string
 }
 
 type Lang = 'de' | 'en' | 'tr'
@@ -286,10 +275,9 @@ function ProgressBar({ step, labels }: { step: Step; labels: string[] }) {
   )
 }
 
-// ─── Booking Header ───────────────────────────────────────────────────────────
+// ─── Booking Header (SSR-safe, Inertia lang-switch) ────────────────────────────
 
-function BookingHeader({ lang }: { lang: Lang }) {
-  const { i18n } = useTranslation()
+function BookingHeader({ lang, locale }: { lang: Lang; locale: string }) {
   const [langOpen, setLangOpen] = useState(false)
   const langRef = useRef<HTMLDivElement>(null)
 
@@ -303,12 +291,12 @@ function BookingHeader({ lang }: { lang: Lang }) {
 
   return (
     <header className="booking-header">
-      <Link to="/" className="booking-close" aria-label="Close booking">
+      <Link href={localePath(locale)} className="booking-close" aria-label="Close booking">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
       </Link>
-      <Link to="/" className="booking-logo">
+      <Link href={localePath(locale)} className="booking-logo">
         <img src={LOGO} alt="Olympos Lodge" width="1000" height="500" />
       </Link>
       <div className="booking-header-right">
@@ -319,10 +307,9 @@ function BookingHeader({ lang }: { lang: Lang }) {
           <ul className="lang-dropdown">
             {(['tr', 'en', 'de'] as Lang[]).map(l => (
               <li key={l}>
-                <a href="#" className={i18n.language?.startsWith(l) ? 'active' : ''}
-                  onClick={e => { e.preventDefault(); i18n.changeLanguage(l); setLangOpen(false) }}>
+                <Link href={localePath(l, 'booking')} className={locale === l ? 'active' : ''}>
                   {l === 'tr' ? 'Türkçe' : l === 'en' ? 'English' : 'Deutsch'}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -334,141 +321,72 @@ function BookingHeader({ lang }: { lang: Lang }) {
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
-export default function BookingPage() {
-  const { t, i18n } = useTranslation()
-  const lang = (i18n.language?.split('-')[0] || 'de') as Lang
-  const [searchParams] = useSearchParams()
-  const navigate = useNavigate()
+export default function Booking({ rooms, preselectRoom }: { rooms: Room[]; preselectRoom: string | null }) {
+  const { t } = useTranslation()
+  const { locale } = usePageProps()
+  const lang = locale as Lang
+
+  return (
+    <div className="booking-page-wrap">
+      <SeoHead title={t('meta.booking_title')} />
+      <BookingHeader lang={lang} locale={locale} />
+      <ClientOnly>
+        <BookingWizard rooms={rooms} preselectRoom={preselectRoom} lang={lang} />
+      </ClientOnly>
+    </div>
+  )
+}
+
+function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselectRoom: string | null; lang: Lang }) {
+  const { t } = useTranslation()
 
   const [step, setStep] = useState<Step>(1)
   function goToStep(n: Step) { setStep(n); window.scrollTo({ top: 0 }) }
 
-  const [checkIn,  setCheckIn]  = useState<string | null>(null)
+  const [checkIn, setCheckIn] = useState<string | null>(null)
   const [checkOut, setCheckOut] = useState<string | null>(null)
-  const [adults,   setAdults]   = useState(2)
+  const [adults, setAdults] = useState(2)
   const [children, setChildren] = useState(0)
   const [roomCount, setRoomCount] = useState(1)
 
-  // Calendar view state (lifted from Calendar component)
   const now0 = new Date()
-  const [viewYear,  setViewYear]  = useState(now0.getFullYear())
+  const [viewYear, setViewYear] = useState(now0.getFullYear())
   const [viewMonth, setViewMonth] = useState(now0.getMonth())
 
-  // Pre-filter room type for calendar data
-  const [filterRoomId,    setFilterRoomId]    = useState<number | null>(null)
-  const [calBlockedDates, setCalBlockedDates] = useState<Set<string>>(new Set())
-  const [calPricePerNight, setCalPricePerNight] = useState<number | null>(null)
+  // Visual-shell: room-type pre-filter is inert (its only job was the calendar pre-fetch).
+  const [filterRoomId, setFilterRoomId] = useState<number | null>(null)
 
-  const [rooms,      setRooms]      = useState<ApiRoom[]>([])
-  const [roomsAvail, setRoomsAvail] = useState<Record<number, RoomAvail | 'loading' | null>>({})
-  const [selectedRoomId, setSelectedRoomId] = useState<number | null>(null)
+  const [selectedRoomId, setSelectedRoomId] = useState<number | null>(
+    preselectRoom ? (rooms.find(r => r.slug === preselectRoom)?.id ?? null) : null
+  )
 
-  const [guestTitle,       setGuestTitle]       = useState('')
-  const [guestFirstName,   setGuestFirstName]   = useState('')
-  const [guestLastName,    setGuestLastName]     = useState('')
-  const [guestEmail,       setGuestEmail]        = useState('')
-  const [guestPhone,       setGuestPhone]        = useState('')
-  const [guestCountry,     setGuestCountry]      = useState('')
-  const [guestArrival,     setGuestArrival]      = useState('')
-  const [guestNotes,       setGuestNotes]        = useState('')
-  const [submitting,       setSubmitting]        = useState(false)
-  const [error,            setError]             = useState('')
-  const [confirmation,     setConfirmation]      = useState<ConfirmationData | null>(null)
+  // Guest form fields (collected but not submitted in the shell)
+  const [guestTitle, setGuestTitle] = useState('')
+  const [guestFirstName, setGuestFirstName] = useState('')
+  const [guestLastName, setGuestLastName] = useState('')
+  const [guestEmail, setGuestEmail] = useState('')
+  const [guestPhone, setGuestPhone] = useState('')
+  const [guestCountry, setGuestCountry] = useState('')
+  const [guestArrival, setGuestArrival] = useState('')
+  const [guestNotes, setGuestNotes] = useState('')
 
-  useEffect(() => {
-    fetch('/api/v1/rooms')
-      .then(r => r.ok ? r.json() : [])
-      .then((data: ApiRoom[]) => {
-        setRooms(data)
-        const slug = searchParams.get('room')
-        if (slug) {
-          const match = data.find((r: ApiRoom) => r.slug === slug)
-          if (match) setSelectedRoomId(match.id)
-        }
-      })
-      .catch(() => {})
-  }, [])
-
-  // Fetch per-day calendar data when a room type is pre-selected in step 1
-  useEffect(() => {
-    if (!filterRoomId) {
-      setCalBlockedDates(new Set())
-      setCalPricePerNight(null)
-      return
-    }
-    const m2   = viewMonth === 11 ? 0 : viewMonth + 1
-    const y2   = viewMonth === 11 ? viewYear + 1 : viewYear
-    const from = `${viewYear}-${String(viewMonth + 1).padStart(2, '0')}-01`
-    const to   = `${y2}-${String(m2 + 1).padStart(2, '0')}-${daysInMonth(y2, m2)}`
-    fetch(`/api/v1/calendar?room_id=${filterRoomId}&from=${from}&to=${to}`)
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (data) {
-          setCalBlockedDates(new Set<string>(data.blocked))
-          setCalPricePerNight(data.price_per_night > 0 ? data.price_per_night : null)
-        }
-      })
-      .catch(() => {})
-  }, [filterRoomId, viewYear, viewMonth])
-
-  useEffect(() => {
-    if (step !== 2 || !checkIn || !checkOut || rooms.length === 0) return
-    setRoomsAvail({})
-    rooms.forEach(room => {
-      setRoomsAvail(prev => ({ ...prev, [room.id]: 'loading' }))
-      fetch(`/api/v1/availability?room_id=${room.id}&check_in=${checkIn}&check_out=${checkOut}`)
-        .then(r => r.ok ? r.json() : null)
-        .then((data: RoomAvail | null) => setRoomsAvail(prev => ({ ...prev, [room.id]: data })))
-        .catch(() => setRoomsAvail(prev => ({ ...prev, [room.id]: null })))
-    })
-  }, [step, checkIn, checkOut, rooms.length])
-
-  const nights      = checkIn && checkOut ? nightsCount(checkIn, checkOut) : 0
+  const nights = checkIn && checkOut ? nightsCount(checkIn, checkOut) : 0
   const selectedRoom = rooms.find(r => r.id === selectedRoomId)
-  const roomName    = (r: ApiRoom) => (r[`name_${lang}` as keyof ApiRoom] as string) ?? r.name_de
-  const selectedAvail = selectedRoomId ? roomsAvail[selectedRoomId] : null
-  const totalPrice  = selectedAvail && selectedAvail !== 'loading' && selectedAvail.available
-    ? selectedAvail.total_price : null
-  const pricePerNight = selectedAvail && selectedAvail !== 'loading' && selectedAvail.available
-    ? selectedAvail.price_per_night : (selectedRoom?.price_per_night ?? null)
+  const roomName = (r: Room) => (r[`name_${lang}` as keyof Room] as string) ?? r.name
+  const pricePerNight = selectedRoom?.price_per_night ?? null
+  const totalPrice = pricePerNight && nights > 0 ? Number(pricePerNight) * nights : null
 
   const b = (k: string) => t(`booking.${k}`)
   const L = {
-    checkin:      b('checkin'),
-    checkout:     b('checkout'),
-    nights:       b('nights'),
-    adults:       b('adults'),
-    children:     b('children'),
-    perNight:     b('per_night'),
-    total:        b('total'),
-    avail:        b('avail'),
-    unavail:      b('unavail'),
-    checking:     b('checking'),
-    showRooms:    b('show_rooms'),
-    selectCI:     b('select_ci'),
-    selectCO:     b('select_co'),
-    roomSingular: b('room_singular'),
-    roomPlural:   b('room_plural'),
-    allTypes:     b('all_types'),
-    back:         b('back'),
-    select:       b('select'),
-    guestTitle:   b('guest_title'),
-    firstName:    b('first_name'),
-    lastName:     b('last_name'),
-    email:        b('email'),
-    phone:        b('phone'),
-    country:      b('country'),
-    arrival:      b('arrival'),
-    notes:        b('notes'),
-    submit:       b('submit'),
-    summary:      b('summary'),
-    paymentNote:  b('payment_note'),
-    confirmTitle: b('confirm_title'),
-    confirmText:  b('confirm_text'),
-    bookingRef:   b('booking_ref'),
-    guest:        b('guest'),
-    room:         b('room'),
-    backHome:     b('back_home'),
+    checkin: b('checkin'), checkout: b('checkout'), nights: b('nights'),
+    adults: b('adults'), children: b('children'), perNight: b('per_night'),
+    total: b('total'), showRooms: b('show_rooms'), selectCI: b('select_ci'),
+    selectCO: b('select_co'), roomSingular: b('room_singular'), roomPlural: b('room_plural'),
+    allTypes: b('all_types'), back: b('back'), select: b('select'),
+    guestTitle: b('guest_title'), firstName: b('first_name'), lastName: b('last_name'),
+    email: b('email'), phone: b('phone'), country: b('country'), arrival: b('arrival'),
+    notes: b('notes'), summary: b('summary'), paymentNote: b('payment_note'),
+    comingSoon: b('coming_soon'),
   }
 
   const TITLES: Record<Lang, string[]> = {
@@ -495,48 +413,13 @@ export default function BookingPage() {
   }
   const ARRIVAL_TIMES = ['12:00–14:00', '14:00–16:00', '16:00–18:00', '18:00–20:00', '20:00–22:00', '22:00+']
 
-  async function submit(e: React.FormEvent) {
-    e.preventDefault()
-    setError('')
-    setSubmitting(true)
-    try {
-      const res = await fetch('/api/v1/reservations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          room_id:      selectedRoomId,
-          check_in:     checkIn,
-          check_out:    checkOut,
-          adults,
-          children,
-          guest_name:   [guestTitle, guestFirstName, guestLastName].filter(Boolean).join(' '),
-          guest_email:  guestEmail,
-          guest_phone:  guestPhone || undefined,
-          guest_country: guestCountry || undefined,
-          guest_notes:  [guestArrival ? `Arrival: ${guestArrival}` : '', guestNotes].filter(Boolean).join('\n') || undefined,
-        }),
-      })
-      const body = await res.json()
-      if (!res.ok) { setError(body.message ?? 'Error'); return }
-      setConfirmation(body)
-      goToStep(4)
-    } catch {
-      setError(t('booking.error_connection'))
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
-  const ciParts = checkIn  ? parseDateParts(checkIn,  lang) : null
+  const ciParts = checkIn ? parseDateParts(checkIn, lang) : null
   const coParts = checkOut ? parseDateParts(checkOut, lang) : null
 
   return (
-    <div className="booking-page-wrap">
-      <PageMeta lang={lang} title={t('meta.booking_title')} />
-      <BookingHeader lang={lang} />
+    <>
       <ProgressBar step={step} labels={[b('step_calendar'), b('step_room_rate'), b('step_details'), b('step_confirmation')]} />
 
-      {/* ── STEP 1 ── */}
       {step === 1 && (
         <>
           <h1 className="booking-title">{L.selectCI}</h1>
@@ -549,8 +432,8 @@ export default function BookingPage() {
               viewYear={viewYear}
               viewMonth={viewMonth}
               onViewChange={(y, m) => { setViewYear(y); setViewMonth(m) }}
-              blockedDates={calBlockedDates}
-              pricePerNight={calPricePerNight}
+              blockedDates={new Set<string>()}
+              pricePerNight={null}
             />
             <div className="booking-sidebar">
               <div className="sidebar-dates">
@@ -615,7 +498,7 @@ export default function BookingPage() {
               <div style={{ marginTop: '0.75rem', textAlign: 'center' }}>
                 <button
                   type="button"
-                  onClick={() => navigate(-1)}
+                  onClick={() => window.history.back()}
                   style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-body)', fontSize: '0.75rem', color: 'var(--color-text-muted)', textDecoration: 'underline' }}
                 >
                   {L.back}
@@ -626,7 +509,6 @@ export default function BookingPage() {
         </>
       )}
 
-      {/* ── STEP 2 ── */}
       {step === 2 && (
         <>
           <div className="step2-header">
@@ -639,24 +521,15 @@ export default function BookingPage() {
           </div>
           <div className="room-cards">
             {rooms.map(room => {
-              const avail      = roomsAvail[room.id]
               const isSelected = selectedRoomId === room.id
-              const isLoading  = avail === 'loading'
-              const isUnavail  = avail && avail !== 'loading' && !avail.available
-              const rTotal     = avail && avail !== 'loading' && avail.available ? avail.total_price : null
-              const rPPN       = avail && avail !== 'loading' && avail.available ? avail.price_per_night : room.price_per_night
-              const features   = ROOM_FEATURES[room.slug]?.[lang] ?? []
-              const img        = ROOM_IMAGES[room.slug]
-
-              let cls = 'room-card-new'
-              if (isSelected) cls += ' room-card-new--selected'
-              if (isUnavail)  cls += ' room-card-new--unavailable'
-
+              const features = ROOM_FEATURES[room.slug]?.[lang] ?? []
+              const img = ROOM_IMAGES[room.slug]
+              const rPPN = room.price_per_night
               return (
                 <div
                   key={room.id}
-                  className={cls}
-                  onClick={() => { if (!isUnavail) setSelectedRoomId(room.id) }}
+                  className={`room-card-new${isSelected ? ' room-card-new--selected' : ''}`}
+                  onClick={() => setSelectedRoomId(room.id)}
                 >
                   <div className="room-card-new__gallery">
                     {img && <img src={img} alt={roomName(room)} loading="lazy" />}
@@ -668,11 +541,6 @@ export default function BookingPage() {
                         {features.map((f, i) => <li key={i}>{f}</li>)}
                       </ul>
                     )}
-                    <div className="room-card-new__avail">
-                      {(!avail || isLoading) && <span className="room-card-new__avail--load">{isLoading ? L.checking : '—'}</span>}
-                      {avail && avail !== 'loading' && avail.available && <span className="room-card-new__avail--yes">✓ {L.avail}</span>}
-                      {avail && avail !== 'loading' && !avail.available && <span className="room-card-new__avail--no">✕ {L.unavail}</span>}
-                    </div>
                     <div className="room-card-new__footer">
                       <div className="room-card-new__price-block">
                         {rPPN && (
@@ -681,20 +549,14 @@ export default function BookingPage() {
                             <span className="room-card-new__price-amount">€ {rPPN} <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>{L.perNight}</span></span>
                           </>
                         )}
-                        {rTotal && (
-                          <span className="room-card-new__price-total">= € {rTotal.toFixed(0)} {L.total}</span>
-                        )}
                       </div>
-                      {!isUnavail && (
-                        <button
-                          type="button"
-                          className="room-card-new__cta"
-                          onClick={e => { e.stopPropagation(); setSelectedRoomId(room.id); goToStep(3) }}
-                          disabled={isUnavail || isLoading || !avail || avail === 'loading' || !avail.available}
-                        >
-                          {L.select}
-                        </button>
-                      )}
+                      <button
+                        type="button"
+                        className="room-card-new__cta"
+                        onClick={e => { e.stopPropagation(); setSelectedRoomId(room.id); goToStep(3) }}
+                      >
+                        {L.select}
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -704,7 +566,6 @@ export default function BookingPage() {
         </>
       )}
 
-      {/* ── STEP 3 ── */}
       {step === 3 && (
         <>
           <div className="step3-header">
@@ -713,7 +574,7 @@ export default function BookingPage() {
               <span className="step2-dates">{formatDate(checkIn, lang)} → {formatDate(checkOut, lang)}</span>
             )}
           </div>
-          <form onSubmit={submit} noValidate className="step3-layout">
+          <form onSubmit={e => e.preventDefault()} noValidate className="step3-layout">
             <div>
               <h2 className="guest-form__title">{L.summary}</h2>
 
@@ -798,9 +659,8 @@ export default function BookingPage() {
                   <span>€ {totalPrice.toFixed(0)}</span>
                 </div>
               )}
-              {error && <div className="form-error">{error}</div>}
-              <button type="submit" className="btn-confirm" disabled={submitting}>
-                {submitting ? '…' : L.submit}
+              <button type="submit" className="btn-confirm" disabled>
+                {L.comingSoon}
               </button>
               <p className="step3-summary__payment-note">{L.paymentNote}</p>
             </aside>
@@ -808,43 +668,17 @@ export default function BookingPage() {
         </>
       )}
 
-      {/* ── STEP 4 ── */}
-      {step === 4 && confirmation && (
+      {/* Step 4 unreachable in the visual shell; Sabee will wire confirmation */}
+      {step === 4 && (
         <div className="step4-wrap">
           <div className="step4-content">
             <div className="step4-icon">✓</div>
-            <h1 className="step4-title">{L.confirmTitle}</h1>
-            <p className="step4-subtitle">{L.confirmText}</p>
-            <div className="step4-details">
-              <div className="step4-row">
-                <span className="step4-label">{L.bookingRef}</span>
-                <span className="step4-value">{confirmation.confirmation_number}</span>
-              </div>
-              <div className="step4-row">
-                <span className="step4-label">{L.guest}</span>
-                <span className="step4-value">{confirmation.guest_name}</span>
-              </div>
-              <div className="step4-row">
-                <span className="step4-label">{L.room}</span>
-                <span className="step4-value">{confirmation.room_name}</span>
-              </div>
-              <div className="step4-row">
-                <span className="step4-label">{L.checkin}</span>
-                <span className="step4-value">{formatDate(confirmation.check_in, lang)}</span>
-              </div>
-              <div className="step4-row">
-                <span className="step4-label">{L.checkout}</span>
-                <span className="step4-value">{formatDate(confirmation.check_out, lang)}</span>
-              </div>
-              <div className="step4-row step4-row--total">
-                <span className="step4-label">{L.total}</span>
-                <span className="step4-value">€ {Number(confirmation.total_price).toFixed(0)}</span>
-              </div>
-            </div>
-            <Link to="/" className="step4-home">{L.backHome}</Link>
+            <h1 className="step4-title">{b('confirm_title')}</h1>
+            <p className="step4-subtitle">{b('confirm_text')}</p>
+            <Link href={localePath(lang)} className="step4-home">{b('back_home')}</Link>
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 }

@@ -11,10 +11,11 @@ class SitemapController extends Controller
     private const BASE = 'https://www.olymposlodge.com.tr';
 
     /**
-     * Pilot pages only (Plan 2): home + rooms index + individual room slugs.
+     * All content pages (Plans 2 + 3): home, rooms index, individual room slugs,
+     * experiences, activities, lodge, spa, location, gallery, offers, contact,
+     * terms, and privacy.
      *
-     * Experiences / location / gallery / offers / contact are omitted until
-     * those pages are migrated to Inertia (Plan 3).
+     * Deliberately excluded: /booking and the 404 page.
      *
      * Each <url> carries xhtml:link hreflang alternates for all supported
      * locales plus an x-default pointing at the English variant, as required
@@ -24,11 +25,20 @@ class SitemapController extends Controller
     {
         $locales = SetLocale::SUPPORTED;          // ['tr', 'en', 'de']
 
-        // ── collect pilot page paths (without locale prefix) ────────────────
-        // '' = home, 'rooms' = rooms index
+        // ── collect all static page paths (without locale prefix) ───────────
         $staticPaths = [
-            ['path' => '',      'priority' => '1.0', 'changefreq' => 'weekly'],
-            ['path' => 'rooms', 'priority' => '0.9', 'changefreq' => 'weekly'],
+            ['path' => '',            'priority' => '1.0', 'changefreq' => 'weekly'],
+            ['path' => 'rooms',       'priority' => '0.9', 'changefreq' => 'weekly'],
+            ['path' => 'experiences', 'priority' => '0.8', 'changefreq' => 'monthly'],
+            ['path' => 'activities',  'priority' => '0.7', 'changefreq' => 'monthly'],
+            ['path' => 'lodge',       'priority' => '0.7', 'changefreq' => 'monthly'],
+            ['path' => 'spa',         'priority' => '0.7', 'changefreq' => 'monthly'],
+            ['path' => 'location',    'priority' => '0.7', 'changefreq' => 'monthly'],
+            ['path' => 'gallery',     'priority' => '0.6', 'changefreq' => 'monthly'],
+            ['path' => 'offers',      'priority' => '0.8', 'changefreq' => 'weekly'],
+            ['path' => 'contact',     'priority' => '0.6', 'changefreq' => 'monthly'],
+            ['path' => 'terms',       'priority' => '0.3', 'changefreq' => 'yearly'],
+            ['path' => 'privacy',     'priority' => '0.3', 'changefreq' => 'yearly'],
         ];
 
         $roomPaths = Room::where('is_active', true)

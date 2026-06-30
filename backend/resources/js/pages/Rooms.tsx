@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
+import { usePageProps } from '@/hooks/use-page-props';
 import { useTranslation } from '@/hooks/use-translation';
 import SeoHead from '@/components/SeoHead';
 import Layout from '@/components/layout/Layout';
@@ -24,7 +25,7 @@ interface LocalizedRoom {
 
 export default function Rooms({ rooms }: { rooms: LocalizedRoom[] }) {
     const { t } = useTranslation();
-    const { locale } = usePage().props as { locale: string };
+    const { locale } = usePageProps();
 
     return (
         <>

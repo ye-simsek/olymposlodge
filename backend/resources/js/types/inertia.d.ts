@@ -21,3 +21,13 @@ declare module '@inertiajs/react' {
         [key: string]: unknown;
     }
 }
+
+export interface SharedProps {
+    name: string;
+    locale: 'tr' | 'en' | 'de';
+    translations: Record<string, Record<string, unknown>>;
+    seo: { canonical: string; alternates: Record<string, string> };
+    media?: Record<string, string>;
+    flash?: { success?: string | null; error?: string | null };
+    [key: string]: unknown;
+}

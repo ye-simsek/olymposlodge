@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
+import { usePageProps } from '@/hooks/use-page-props';
 import { useTranslation } from '@/hooks/use-translation';
 import { useSiteMedia } from '@/hooks/use-site-media';
 import SeoHead from '@/components/SeoHead';
@@ -41,7 +42,7 @@ interface LocalizedRoom {
 
 export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
     const { t, tRaw } = useTranslation();
-    const { locale } = usePage().props as { locale: string };
+    const { locale } = usePageProps();
     const media = useSiteMedia();
 
     const heroPoster    = media('hero.poster',      HERO_POSTER_FB);

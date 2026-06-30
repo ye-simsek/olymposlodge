@@ -21,6 +21,43 @@ Route::prefix('{locale}')
 
         Route::post('/newsletter', [\App\Http\Controllers\Web\NewsletterController::class, 'store'])
             ->name('newsletter.store');
+
+        Route::get('/terms', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Terms', 'namespaces' => ['meta']])
+            ->name('terms');
+        Route::get('/privacy', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Privacy', 'namespaces' => ['meta']])
+            ->name('privacy');
+
+        Route::get('/experiences', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Experiences', 'namespaces' => ['experiences', 'meta', 'nav']])
+            ->name('experiences');
+
+        Route::get('/activities', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Activities', 'namespaces' => ['activities', 'meta']])
+            ->name('activities');
+        Route::get('/lodge', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Lodge', 'namespaces' => ['lodge', 'meta', 'nav']])
+            ->name('lodge');
+
+        Route::get('/spa', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Spa', 'namespaces' => ['spa', 'meta', 'nav']])
+            ->name('spa');
+        Route::get('/gallery', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Gallery', 'namespaces' => ['meta', 'nav']])
+            ->name('gallery');
+        Route::get('/offers', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Offers', 'namespaces' => ['offers', 'meta']])
+            ->name('offers');
+        Route::get('/location', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Location', 'namespaces' => ['location', 'meta', 'nav']])
+            ->name('location');
+
+        Route::get('/contact', \App\Http\Controllers\Web\StaticPageController::class)
+            ->defaults('page', ['component' => 'Contact', 'namespaces' => ['contact', 'meta']])
+            ->name('contact');
+        Route::post('/contact', [\App\Http\Controllers\Web\ContactController::class, 'store'])
+            ->name('contact.store');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

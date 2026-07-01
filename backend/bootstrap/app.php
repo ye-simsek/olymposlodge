@@ -1,9 +1,16 @@
 <?php
 
+use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\SetLocale;
+use App\Support\Locale;
+use App\Support\PageProps;
+use App\Support\Seo;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -13,12 +20,19 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Damit das IP-basierte Rate-Limiting (throttle:chat) hinter nginx die echte
+        // Client-IP aus X-Forwarded-For nutzt statt der Proxy-IP.
+        // TODO(prod): '*' durch die konkrete nginx/Load-Balancer-IP bzw. -CIDR ersetzen.
+        // '*' ist nur sicher, wenn der App-Server AUSSCHLIESSLICH über den Proxy erreichbar
+        // ist — sonst kann X-Forwarded-For gespooft werden. Siehe specs/006-chat-rate-limit.md §4.4.
+        $middleware->trustProxies(at: '*');
+
         $middleware->alias([
-            'setlocale' => \App\Http\Middleware\SetLocale::class,
+            'setlocale' => SetLocale::class,
         ]);
 
         $middleware->web(append: [
-            \App\Http\Middleware\HandleInertiaRequests::class,
+            HandleInertiaRequests::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
@@ -26,28 +40,28 @@ return Application::configure(basePath: dirname(__DIR__))
             fn (Request $request) => $request->is('api/*'),
         );
 
-        $exceptions->render(function (\Symfony\Component\HttpKernel\Exception\NotFoundHttpException $e, \Illuminate\Http\Request $request) {
+        $exceptions->render(function (NotFoundHttpException $e, Request $request) {
             // Filament-Admin und API behalten ihr eigenes 404/Redirect-Verhalten.
             if ($request->is('api/*') || $request->is('admin', 'admin/*') || $request->expectsJson()) {
                 return null;
             }
 
             $segments = explode('/', trim($request->path(), '/'));
-            $locale = in_array($segments[0] ?? '', \App\Http\Middleware\SetLocale::SUPPORTED, true)
+            $locale = in_array($segments[0] ?? '', SetLocale::SUPPORTED, true)
                 ? $segments[0]
-                : \App\Support\Locale::DEFAULT;
+                : Locale::DEFAULT;
             app()->setLocale($locale);
 
             // Unmatched 404-Routen durchlaufen die web-Middleware NICHT, daher
             // fehlen die von HandleInertiaRequests::share() gelieferten Shared-Props
             // (locale/seo/name/flash), die der Layout-Baum (Header/Footer/SeoHead)
             // beim SSR liest. Hier explizit in derselben Shape nachreichen.
-            return \Inertia\Inertia::render('NotFound', [
+            return Inertia::render('NotFound', [
                 'name' => config('app.name'),
                 'locale' => $locale,
-                'seo' => \App\Support\Seo::forRequest($request),
+                'seo' => Seo::forRequest($request),
                 'flash' => ['success' => null, 'error' => null],
-                'translations' => \App\Support\PageProps::translations(['meta']),
+                'translations' => PageProps::translations(['meta']),
             ])->toResponse($request)->setStatusCode(404);
         });
     })->create();

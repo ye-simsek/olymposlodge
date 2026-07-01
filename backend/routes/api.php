@@ -4,5 +4,5 @@ use App\Http\Controllers\Api\ChatController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
-    Route::post('/chat', [ChatController::class, 'send']);
+    Route::post('/chat', [ChatController::class, 'send'])->middleware('throttle:chat');
 });

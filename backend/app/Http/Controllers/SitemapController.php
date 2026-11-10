@@ -12,7 +12,7 @@ class SitemapController extends Controller
 
     /**
      * All content pages (Plans 2 + 3): home, rooms index, individual room slugs,
-     * experiences, activities, lodge, spa, location, gallery, offers, contact,
+     * experiences, activities, lodge, spa, location, gallery, contact,
      * terms, and privacy.
      *
      * Deliberately excluded: /booking and the 404 page.
@@ -35,7 +35,6 @@ class SitemapController extends Controller
             ['path' => 'spa',         'priority' => '0.7', 'changefreq' => 'monthly'],
             ['path' => 'location',    'priority' => '0.7', 'changefreq' => 'monthly'],
             ['path' => 'gallery',     'priority' => '0.6', 'changefreq' => 'monthly'],
-            ['path' => 'offers',      'priority' => '0.8', 'changefreq' => 'weekly'],
             ['path' => 'contact',     'priority' => '0.6', 'changefreq' => 'monthly'],
             ['path' => 'terms',       'priority' => '0.3', 'changefreq' => 'yearly'],
             ['path' => 'privacy',     'priority' => '0.3', 'changefreq' => 'yearly'],

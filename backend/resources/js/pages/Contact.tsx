@@ -1,3 +1,5 @@
+import JsonLd from '@/components/JsonLd'
+import structuredData from '@/data/structured-data.json'
 import React from 'react'
 import { useForm } from '@inertiajs/react'
 import { useTranslation } from '@/hooks/use-translation'
@@ -41,6 +43,7 @@ export default function Contact() {
   return (
     <>
       <SeoHead title={t('meta.contact_title')} description={t('meta.contact_desc')} />
+      <JsonLd data={structuredData.contact} />
       {/* Sticky Title */}
       <div className="contact-sticky-hero">
         <h1 className="contact-sticky-hero__title">{c('hero_title')}</h1>
@@ -102,8 +105,12 @@ export default function Contact() {
                   <option value="" disabled>{c('salutation_placeholder')}</option>
                   <option value="Mr">{c('salutation_mr')}</option>
                   <option value="Mrs">{c('salutation_mrs')}</option>
+                  {/* Language-specific forms of address, as on the legacy site */}
+                  {locale === 'en' && <option value="Ms">{c('salutation_ms')}</option>}
                   <option value="Dr">{c('salutation_dr')}</option>
                   <option value="Prof">{c('salutation_prof')}</option>
+                  {locale === 'tr' && <option value="Sayin">{c('salutation_sayin')}</option>}
+                  {locale !== 'tr' && <option value="Mx">{c('salutation_mx')}</option>}
                 </select>
               </div>
 
@@ -153,7 +160,7 @@ export default function Contact() {
                     type="tel"
                     id="phone"
                     name="phone"
-                    placeholder=""
+                    placeholder={c('phone_placeholder')}
                     value={form.data.phone}
                     onChange={e => form.setData('phone', e.target.value)}
                   />

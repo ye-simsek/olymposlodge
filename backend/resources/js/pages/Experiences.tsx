@@ -1,3 +1,5 @@
+import JsonLd from '@/components/JsonLd'
+import structuredData from '@/data/structured-data.json'
 import React, { useEffect, useRef } from 'react'
 import { Link } from '@inertiajs/react'
 import { useTranslation } from '@/hooks/use-translation'
@@ -29,6 +31,7 @@ export default function Experiences() {
   return (
     <div className="page--dest page--cirali">
       <SeoHead title={t('meta.experiences_title')} description={t('meta.experiences_desc')} />
+      <JsonLd data={structuredData.experiences} />
 
       <SubNav />
 
@@ -59,9 +62,7 @@ export default function Experiences() {
         </div>
       </section>
 
-      {/* Scroll-snap chapter container */}
-      <div className="dest-chapters-scroll">
-
+      {/* Four chapters, one after another at full height (as on the legacy site). */}
         {/* Chapter 01: Plaj — image left, text right */}
         <section className="dest-chapter" id="plaj">
           <div className="dest-chapter__visual">
@@ -167,8 +168,6 @@ export default function Experiences() {
             </div>
           </div>
         </section>
-
-      </div>
 
       {/* Pull quote */}
       <div className="dest-pullquote">

@@ -136,26 +136,6 @@ export default function Rooms({ rooms }: { rooms: LocalizedRoom[] }) {
                     </div>
                 </div>
             </section>
-
-            {/* Offers */}
-            <div className="offers-dark">
-                <div className="offers-dark__header">
-                    <span className="section-label">{t('nav.offers')}</span>
-                </div>
-                <div className="offers-grid">
-                    <div className="offer-card">
-                        <p className="offer-card__title">{t('rooms_page.offer1_title')}</p>
-                        <p className="offer-card__desc">{t('rooms_page.offer1_desc')}</p>
-                        <Link href={localePath(locale, 'booking')} className="offer-card__cta">{t('nav.reserve')} →</Link>
-                    </div>
-                    <div className="offer-card">
-                        <p className="offer-card__title">{t('rooms_page.offer2_title')}</p>
-                        <p className="offer-card__desc">{t('rooms_page.offer2_desc')}</p>
-                        <Link href={localePath(locale, 'booking')} className="offer-card__cta">{t('nav.reserve')} →</Link>
-                    </div>
-                </div>
-                <div style={{ height: 'var(--space-xl)' }}></div>
-            </div>
         </>
     );
 }

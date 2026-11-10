@@ -1,3 +1,5 @@
+import JsonLd from '@/components/JsonLd'
+import structuredData from '@/data/structured-data.json'
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import { usePageProps } from '@/hooks/use-page-props';
@@ -20,6 +22,8 @@ const GALLERY: { key: string; alt: string; fallback: string }[] = [
 const HERO_POSTER_FB = '/images/olympos-lodge-kus-bakisi-1366.webp';
 const STORY_GARDEN_FB = '/images/cirali-sahili-gunbatimi-1600.webp';
 const STORY_NATURE_FB = '/images/olympos-lodge-tabela-1920.webp';
+// The terracotta peacock in the garden, as on the legacy site.
+const CONVICTION_FB = '/images/terakota-tavus-kusu-2400.webp';
 
 interface LocalizedRoom {
     slug: string;
@@ -48,7 +52,7 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
     const heroMp4       = media('hero.video_mp4',   '/hero.mp4');
     const storyGarden   = media('story.garden',     STORY_GARDEN_FB);
     const storyNature   = media('story.nature',     STORY_NATURE_FB);
-    const convictionImg = media('conviction.image', STORY_GARDEN_FB);
+    const convictionImg = media('conviction.image', CONVICTION_FB);
 
     const voices = tRaw<{ text: string; author: string }[]>('voices.items') ?? [];
     const voicesGridRef = useRef<HTMLDivElement>(null);
@@ -103,11 +107,22 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
     return (
         <>
             <SeoHead title={t('meta.home_title')} description={t('meta.home_desc')} />
+            <JsonLd data={structuredData.home} />
 
             {/* Hero */}
             <section className="hero" id="hero">
                 <div className="hero-image">
-                    <video autoPlay muted loop playsInline preload="metadata" poster={heroPoster}>
+                    <video
+                        autoPlay muted loop playsInline preload="metadata" poster={heroPoster}
+                        ref={(video) => {
+                            // Visitors who ask for reduced motion get the still poster (June legacy behaviour).
+                            if (video && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) {
+                                video.removeAttribute('autoplay');
+                                video.removeAttribute('loop');
+                                video.pause();
+                            }
+                        }}
+                    >
                         <source src={heroWebm} type="video/webm" />
                         <source src={heroMp4} type="video/mp4" />
                         <img src={heroPoster} alt={t('alt.lodge_aerial')} fetchPriority="high" />
@@ -162,7 +177,7 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                     </div>
                 </div>
                 <div className="conviction__image">
-                    <img src={convictionImg} alt={t('alt.beach_dusk')} loading="lazy" width="1600" height="2277" />
+                    <img src={convictionImg} alt={t('alt.peacock_statue')} loading="lazy" width="2400" height="3736" />
                 </div>
             </section>
 

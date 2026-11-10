@@ -1,3 +1,5 @@
+import JsonLd from '@/components/JsonLd'
+import structuredData from '@/data/structured-data.json'
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from '@inertiajs/react';
 import { usePageProps } from '@/hooks/use-page-props';
@@ -50,14 +52,15 @@ interface LocalizedRoom {
 }
 
 const VIEW_LABELS: Record<string, Record<string, string>> = {
-    tr: { garden: 'Bahçe Manzarası', lake: 'Göl Manzarası', garden_sea: 'Bahçe & Deniz' },
-    en: { garden: 'Garden View', lake: 'Lake View', garden_sea: 'Garden & Sea' },
-    de: { garden: 'Gartenblick', lake: 'Seeblick', garden_sea: 'Garten & Meer' },
+    // Wording as on the legacy room pages.
+    tr: { garden: 'Bahçe', lake: 'Gölet', garden_sea: 'Bahçe & Deniz' },
+    en: { garden: 'Garden', lake: 'Pond', garden_sea: 'Garden & Sea' },
+    de: { garden: 'Garten', lake: 'Teich', garden_sea: 'Garten & Meer' },
 };
 
 const BED_LABELS: Record<string, Record<string, string>> = {
     tr: { Queen: 'Çift Kişilik', Double: 'Çift Kişilik', 'Queen Brass': 'Pirinç Karyola' },
-    en: { Queen: 'Queen Bed', Double: 'Double Bed', 'Queen Brass': 'Brass Bed' },
+    en: { Queen: 'Queen Bed', Double: 'Double', 'Queen Brass': 'Brass Bed' },
     de: { Queen: 'Queensize', Double: 'Doppelbett', 'Queen Brass': 'Messingbett' },
 };
 
@@ -88,6 +91,7 @@ export default function RoomDetail({ room }: { room: LocalizedRoom }) {
     return (
         <>
             <SeoHead title={room.name} description={room.description ?? undefined} />
+            <JsonLd data={(structuredData.rooms as Record<string, unknown>)[room.slug]} />
 
             {/* Hero */}
             <section className="room-hero">

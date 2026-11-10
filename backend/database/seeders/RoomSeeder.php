@@ -30,10 +30,7 @@ class RoomSeeder extends Seeder
                 'bed_type'       => 'Queen',
                 'view'           => 'garden_sea',
                 'amenities'      => [
-                    'amenity_ac', 'amenity_terrace', 'amenity_sea',
-                    'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower_in_out',
-                    'amenity_espresso', 'amenity_kettle', 'amenity_minibar',
-                    'amenity_safe', 'amenity_wifi',
+                    'amenity_ac', 'amenity_terrace', 'amenity_sea', 'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower_in_out', 'amenity_espresso', 'amenity_kettle', 'amenity_minibar', 'amenity_safe', 'amenity_wifi',
                 ],
                 'images' => [
                     'hero'      => "/images/oda-aqua-super-deluxe-1920.webp",
@@ -50,7 +47,8 @@ class RoomSeeder extends Seeder
                     ],
                 ],
                 'sort_order' => 1,
-                'is_active'  => true,
+                // Hidden since June 2026 (legacy site) until the new photoshoot. Switch back on in the admin panel.
+                'is_active'  => false,
             ],
             [
                 'slug'           => 'super-deluxe',
@@ -69,12 +67,10 @@ class RoomSeeder extends Seeder
                 'texts_de'       => ['p1' => 'In jeder Hinsicht geräumig, liegt das Super Deluxe direkt gegenüber dem Vorgarten. 105 m², über eine großzügige private Terrasse direkt auf den Garten öffnend — das Meer filtert durch die Bäume.', 'p2' => 'Das Morgenlicht filtert durch die Vorhänge und bringt alle Grüntöne ins Zimmer. Öffnen Sie die Terrassentür und der Garten gehört Ihnen. Verfeinert ohne Zurschaustellung; jedes Detail sagt etwas, aber nichts schreit.', 'p3' => 'Ein Kamin definiert den Wohnbereich — an kühlen Nächten gewinnt das Zimmer eine andere Wärme. Der Whirlpool kommt mit Regendusche. Espressomaschine, Minibar und vollständig handgefertigte Möbel. Sie brauchen nichts draußen, um drinnen zu bleiben.', 'p4' => 'Ein Zimmer, das ebenso sehr zum Drinbleiben wie zum Rausgehen gestaltet ist. Der Garten liegt direkt vor der Tür; der Strand wenige Schritte entfernt. Aber auf der Terrasse sitzen und den Morgen innehalten zu lassen ist vollkommen genug.'],
                 'capacity'       => 2,
                 'size_sqm'       => 105,
-                'bed_type'       => 'Queen',
+                'bed_type'       => 'Double',
                 'view'           => 'garden',
                 'amenities'      => [
-                    'amenity_ac', 'amenity_terrace', 'amenity_garden',
-                    'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower',
-                    'amenity_espresso', 'amenity_furniture', 'amenity_minibar', 'amenity_wifi',
+                    'amenity_ac', 'amenity_terrace', 'amenity_garden', 'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower', 'amenity_espresso', 'amenity_minibar', 'amenity_wifi',
                 ],
                 'images' => [
                     'hero'      => "/images/oda-super-deluxe-1920.webp",
@@ -110,12 +106,10 @@ class RoomSeeder extends Seeder
                 'texts_de'       => ['p1' => 'So geräumig wie ein Zuhause, so intim wie ein Rückzugsort. Das Deluxe verbindet Whirlpool und Kamin mit einer großzügigen Terrasse mit Gartenblick. 70 m² — alles an seinem Platz, nichts im Übermaß.', 'p2' => 'Mediterranes Licht übernimmt einen Großteil des Raums; die Möbel unterhalten sich damit. Die Terrasse eignet sich gleichermaßen für den Morgenkaffee, ein Buch nachmittags und ein Abendglas Wein.', 'p3' => 'Der Kamin verleiht kühlen Nächten ihren Charakter. Die Whirlpool-Wanne geht weit über ein gewöhnliches Bad hinaus. Espressomaschine und Minibar lassen den Tag in eigenem Tempo beginnen. Das Deluxe beweist, dass Luxus und Schlichtheit keine Gegensätze sind.', 'p4' => 'Derselbe Garten, etwas tiefer. Die Deluxe-Terrasse blickt sowohl nach innen als auch nach außen. Minuten zum Strand, der Klang des Waldes sofort. Einmal drinnen, wird das Draußen zur Nebensache.'],
                 'capacity'       => 2,
                 'size_sqm'       => 70,
-                'bed_type'       => 'Queen',
+                'bed_type'       => 'Double',
                 'view'           => 'garden',
                 'amenities'      => [
-                    'amenity_ac', 'amenity_terrace', 'amenity_garden',
-                    'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower',
-                    'amenity_espresso', 'amenity_minibar', 'amenity_wifi',
+                    'amenity_ac', 'amenity_terrace', 'amenity_garden', 'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower', 'amenity_espresso', 'amenity_furniture', 'amenity_minibar', 'amenity_wifi',
                 ],
                 'images' => [
                     'hero'      => "/images/oda-deluxe-1920.webp",
@@ -151,12 +145,10 @@ class RoomSeeder extends Seeder
                 'texts_de'       => ['p1' => 'Ein freistehendes Zimmer, das sich vom Rest der Anlage absetzt; jenseits der Terrasse liegt ein Teich. Seine Oberfläche verdoppelt das Gartenlicht — und an klaren Nächten den Mond. Das Seehaus bietet eine andere Art von Beziehung zu Privatsphäre und Natur.', 'p2' => 'Der Kamin im Inneren vervollständigt eine Welt, die für diejenigen vollständig in sich selbst ist, die ihr Gefühl für Privatsphäre in die Architektur eingebettet haben. Morgens wandern die Reflexionen von der Teichwasseroberfläche an die Zimmerdecke. Abends lässt das Licht langsam nach und nur das Flackern des Feuers bleibt.', 'p3' => 'Der Komfort des Seehauses liegt in seiner Schlichtheit. Regendusche, Espressomaschine, Minibar — alles Notwendige. Nichts mehr. Die Beziehung zur Natur geht hier über die Architektur hinaus; der Teich bietet täglich eine andere Komposition.', 'p4' => 'Öffnen Sie die Terrassentür am Morgen. Der Teich wird still da sein. Der Klang des Gartens, der Duft des Waldes, die Reflexion des Wassers. Den Tag im Seehaus zu beginnen fühlt sich anders an als anderswo.'],
                 'capacity'       => 2,
                 'size_sqm'       => 60,
-                'bed_type'       => 'Queen',
+                'bed_type'       => 'Double',
                 'view'           => 'lake',
                 'amenities'      => [
-                    'amenity_ac', 'amenity_terrace', 'amenity_lake',
-                    'amenity_fireplace', 'amenity_rain_shower',
-                    'amenity_espresso', 'amenity_minibar', 'amenity_wifi',
+                    'amenity_ac', 'amenity_terrace', 'amenity_pond', 'amenity_fireplace', 'amenity_jacuzzi', 'amenity_rain_shower', 'amenity_espresso', 'amenity_furniture', 'amenity_minibar', 'amenity_wifi',
                 ],
                 'images' => [
                     'hero'      => "/images/oda-gol-evi-1621.webp",
@@ -195,8 +187,7 @@ class RoomSeeder extends Seeder
                 'bed_type'       => 'Queen Brass',
                 'view'           => 'garden',
                 'amenities'      => [
-                    'amenity_ac', 'amenity_terrace', 'amenity_garden',
-                    'amenity_rain_shower', 'amenity_minibar', 'amenity_wifi',
+                    'amenity_ac', 'amenity_terrace', 'amenity_garden', 'amenity_antique', 'amenity_craft', 'amenity_minibar', 'amenity_wifi',
                 ],
                 'images' => [
                     'hero'      => "/images/oda-antik-1920.webp",
@@ -213,7 +204,8 @@ class RoomSeeder extends Seeder
                     ],
                 ],
                 'sort_order' => 5,
-                'is_active'  => true,
+                // Hidden since June 2026 (legacy site) until the new photoshoot. Switch back on in the admin panel.
+                'is_active'  => false,
             ],
             [
                 'slug'           => 'standart',
@@ -235,8 +227,7 @@ class RoomSeeder extends Seeder
                 'bed_type'       => 'Double',
                 'view'           => 'garden',
                 'amenities'      => [
-                    'amenity_ac', 'amenity_terrace', 'amenity_garden',
-                    'amenity_rain_shower', 'amenity_minibar', 'amenity_wifi',
+                    'amenity_ac', 'amenity_terrace', 'amenity_garden', 'amenity_furniture', 'amenity_natural', 'amenity_minibar', 'amenity_wifi', 'amenity_shower',
                 ],
                 'images' => [
                     'hero'      => "/images/oda-standart-1920.webp",

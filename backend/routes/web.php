@@ -53,9 +53,9 @@ Route::prefix('{locale}')
         Route::get('/gallery', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Gallery', 'namespaces' => ['meta', 'nav']])
             ->name('gallery');
-        Route::get('/offers', \App\Http\Controllers\Web\StaticPageController::class)
-            ->defaults('page', ['component' => 'Offers', 'namespaces' => ['offers', 'meta']])
-            ->name('offers');
+        // The Offers page is switched off, as on the legacy site since June 2026. The page
+        // component (resources/js/pages/Offers.tsx) and its translations are kept; to bring it
+        // back, restore the route here, the nav item in Header.tsx and the sitemap entry.
         Route::get('/location', \App\Http\Controllers\Web\StaticPageController::class)
             ->defaults('page', ['component' => 'Location', 'namespaces' => ['location', 'meta', 'nav']])
             ->name('location');

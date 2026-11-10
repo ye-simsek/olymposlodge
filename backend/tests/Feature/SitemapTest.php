@@ -59,7 +59,7 @@ class SitemapTest extends TestCase
     {
         $xml = $this->get('/sitemap.xml')->getContent();
 
-        foreach (['experiences', 'activities', 'lodge', 'spa', 'location', 'gallery', 'offers', 'contact', 'terms', 'privacy'] as $path) {
+        foreach (['experiences', 'activities', 'lodge', 'spa', 'location', 'gallery', 'contact', 'terms', 'privacy'] as $path) {
             $this->assertStringContainsString("/en/{$path}</loc>", $xml, "missing /en/{$path}");
             $this->assertStringContainsString("/de/{$path}", $xml);
             $this->assertStringContainsString("/tr/{$path}", $xml);

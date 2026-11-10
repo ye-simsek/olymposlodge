@@ -16,7 +16,6 @@ const NAV_ITEMS = [
     { key: 'nav.experiences', sub: 'nav.experiences_sub', to: '/experiences' },
     { key: 'nav.location',    sub: 'nav.location_sub',    to: '/location' },
     { key: 'nav.gallery',     sub: 'nav.gallery_sub',     to: '/gallery' },
-    { key: 'nav.offers',      sub: 'nav.offers_sub',      to: '/offers' },
     { key: 'nav.contact',     sub: 'nav.contact_sub',     to: '/contact' },
 ];
 
@@ -33,7 +32,7 @@ export default function Header() {
     const isActive = (to: string) =>
         to === '/' ? pathname === '/' : pathname.startsWith(to);
 
-    const SOLID_PATHS = ['/experiences', '/location', '/gallery', '/offers', '/contact', '/terms', '/privacy', '/activities', '/lodge'];
+    const SOLID_PATHS = ['/experiences', '/location', '/gallery', '/contact', '/terms', '/privacy', '/activities', '/lodge'];
     const isSolid = SOLID_PATHS.some(p => pathname.startsWith(p));
 
     const [menuOpen, setMenuOpen] = useState(false);
@@ -68,6 +67,35 @@ export default function Header() {
         return () => document.removeEventListener('mousedown', handler);
     }, []);
 
+    // Menu accessibility (from the June legacy redesign): focus moves into the menu and
+    // back to the button, Escape closes it, and Tab stays inside while it is open.
+    const toggleRef = useRef<HTMLButtonElement>(null);
+    const overlayRef = useRef<HTMLElement>(null);
+    const closeRef = useRef<HTMLButtonElement>(null);
+    const wasOpen = useRef(false);
+
+    useEffect(() => {
+        if (menuOpen) closeRef.current?.focus();
+        else if (wasOpen.current) toggleRef.current?.focus();
+        wasOpen.current = menuOpen;
+        if (!menuOpen) return;
+
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') { setMenuOpen(false); return; }
+            if (e.key !== 'Tab' || !overlayRef.current) return;
+            const focusable = Array.from(
+                overlayRef.current.querySelectorAll<HTMLElement>('a[href], button:not([disabled])'),
+            );
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+            else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        };
+        document.addEventListener('keydown', onKey);
+        return () => document.removeEventListener('keydown', onKey);
+    }, [menuOpen]);
+
     function switchLocale(target: Locale) {
         rememberLanguage(target);
         router.visit(alternatePath(seo.alternates[target], window.location.search));
@@ -86,6 +114,9 @@ export default function Header() {
                     className={`menu-toggle${menuOpen ? ' active' : ''}`}
                     id="menuToggle"
                     aria-label={t('alt.open_menu')}
+                    aria-expanded={menuOpen}
+                    aria-controls="navOverlay"
+                    ref={toggleRef}
                     onClick={() => setMenuOpen(o => !o)}
                 >
                     <span className="menu-bar"></span>
@@ -120,18 +151,26 @@ export default function Header() {
                 </div>
             </header>
 
-            <nav className={`nav-overlay${menuOpen ? ' open' : ''}`} id="navOverlay">
+            <nav
+                className={`nav-overlay${menuOpen ? ' open' : ''}`}
+                id="navOverlay"
+                role="dialog"
+                aria-modal="true"
+                aria-hidden={!menuOpen}
+                ref={overlayRef}
+            >
                 <div className="nav-overlay__left">
                     <img className="nav-overlay__logo" src={LOGO} alt="Olympos Lodge" width="220" height="110" />
                     <button
                         className="nav-overlay__close"
                         aria-label={t('alt.close_menu')}
+                        ref={closeRef}
                         onClick={() => setMenuOpen(false)}
                     >
                         <span></span><span></span>
                     </button>
                     <ul className="nav-links">
-                        {NAV_ITEMS.slice(0, 6).map(item => (
+                        {NAV_ITEMS.slice(0, 5).map(item => (
                             <li key={item.key}>
                                 <div className="nav-item-wrap">
                                     <a
@@ -160,7 +199,7 @@ export default function Header() {
                                 <span className="nav-sub">{t(MENU_ITEM.sub)}</span>
                             </div>
                         </li>
-                        {NAV_ITEMS.slice(6).map(item => (
+                        {NAV_ITEMS.slice(5).map(item => (
                             <li key={item.key}>
                                 <div className="nav-item-wrap">
                                     <a

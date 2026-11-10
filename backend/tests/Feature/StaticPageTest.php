@@ -74,14 +74,6 @@ class StaticPageTest extends TestCase
             ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p->component('Gallery'));
     }
 
-    public function test_offers_renders(): void
-    {
-        Translation::create(['namespace' => 'offers', 'key' => 'page_title', 'en' => 'Offers', 'sort_order' => 0]);
-        $this->get('/en/offers')->assertOk()
-            ->assertInertia(fn (\Inertia\Testing\AssertableInertia $p) => $p
-                ->component('Offers')->where('translations.offers.page_title', 'Offers'));
-    }
-
     public function test_location_renders(): void
     {
         Translation::create(['namespace' => 'location', 'key' => 'hero_title', 'en' => 'Location', 'sort_order' => 0]);

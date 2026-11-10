@@ -26,7 +26,7 @@ class SiteMediaSeeder extends Seeder
             // Story & Philosophy (Homepage)
             ['key' => 'story.garden',    'label' => 'Story — Garten (links)',    'group' => 'story', 'url' => "/images/cirali-sahili-gunbatimi-1600.webp", 'sort_order' => 1],
             ['key' => 'story.nature',    'label' => 'Story — Natur (rechts)',    'group' => 'story', 'url' => "/images/olympos-lodge-tabela-1920.webp",    'sort_order' => 2],
-            ['key' => 'conviction.image','label' => 'Conviction — Bild',         'group' => 'story', 'url' => "/images/cirali-sahili-gunbatimi-1600.webp", 'sort_order' => 3],
+            ['key' => 'conviction.image','label' => 'Conviction — Bild',         'group' => 'story', 'url' => '/images/terakota-tavus-kusu-2400.webp', 'sort_order' => 3],
 
             // Rooms Page
             ['key' => 'rooms_page.hero', 'label' => 'Zimmer-Seite — Hero',      'group' => 'pages', 'url' => '/images/odalar-hero-2400.webp', 'sort_order' => 1],

@@ -14,7 +14,11 @@ function loadPrefs(): Prefs | null {
 }
 
 function savePrefs(prefs: Prefs) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    // Storage can be blocked (private mode, strict settings). The choice then only
+    // lasts for this visit, but the bar must still close.
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(prefs));
+    } catch { /* ignore */ }
 }
 
 function applyConsent(prefs: Prefs) {
@@ -33,7 +37,6 @@ export default function CookieConsent() {
     const { t } = useTranslation();
 
     const [visible, setVisible] = useState(false);
-    const [hasSavedPrefs, setHasSavedPrefs] = useState(false);
     const [prefs, setPrefs] = useState<Prefs>({ analytics: false, marketing: false });
 
     useEffect(() => {
@@ -41,22 +44,18 @@ export default function CookieConsent() {
         const saved = loadPrefs(); // reads localStorage only AFTER mount
         if (saved) {
             setPrefs(saved);
-            setHasSavedPrefs(true);
             applyConsent(saved); // calls window.gtag only if available
-        } else {
-            setVisible(true);
         }
+        // No auto-open: the bar only appears when the visitor clicks the cookie button.
+        // Nothing is tracked until they opt in (consent defaults to denied).
     }, []);
 
     function commit(newPrefs: Prefs) {
         savePrefs(newPrefs);
         setPrefs(newPrefs);
-        setHasSavedPrefs(true);
         setVisible(false);
         applyConsent(newPrefs);
     }
-
-    if (!visible && !hasSavedPrefs) return null;
 
     return (
         <>
@@ -67,6 +66,17 @@ export default function CookieConsent() {
                     role="dialog"
                     aria-label={t('cookie.title')}
                 >
+                    {/* Close (X): dismiss without choosing */}
+                    <button
+                        className="cookie-bar__close"
+                        aria-label={t('cookie.close')}
+                        onClick={() => setVisible(false)}
+                    >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+                        </svg>
+                    </button>
+
                     {/* Text */}
                     <div className="cookie-bar__text">
                         <span className="cookie-bar__title">{t('cookie.title')}</span>
@@ -129,8 +139,8 @@ export default function CookieConsent() {
                 </div>
             )}
 
-            {/* ── FAB — reopen after decision ── */}
-            {!visible && hasSavedPrefs && (
+            {/* ── FAB: open / reopen the cookie bar ── */}
+            {!visible && (
                 <button
                     className="cookie-fab"
                     aria-label={t('cookie.title')}

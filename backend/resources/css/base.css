@@ -1001,8 +1001,29 @@ h4 {
 }
 .cookie-bar--visible { transform: translateY(0); }
 
+/* Close (X) — top-left corner */
+.cookie-bar__close {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.65rem;
+  z-index: 2;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+}
+.cookie-bar__close:hover { color: var(--color-warm-gold); background: rgba(255,255,255,0.08); }
+
 .cookie-bar__text {
-  padding: 1.1rem 2rem;
+  padding: 1.1rem 2rem 1.1rem 2.75rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -1011,16 +1032,16 @@ h4 {
 .cookie-bar__title {
   display: block;
   font-family: var(--font-sc);
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   letter-spacing: 0.12em;
   color: var(--color-warm-gold);
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
 }
 .cookie-bar__body {
   font-family: var(--font-body);
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.45;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.5;
 }
 
 /* Toggles */
@@ -1040,10 +1061,10 @@ h4 {
 }
 .cookie-bar__option-label {
   font-family: var(--font-cinzel);
-  font-size: 0.58rem;
+  font-size: 0.7rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   white-space: nowrap;
 }
 .cookie-toggle {
@@ -1094,9 +1115,9 @@ h4 {
 /* Buttons */
 .cookie-btn {
   font-family: var(--font-sc);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   letter-spacing: 0.1em;
-  padding: 0.45rem 1.1rem;
+  padding: 0.55rem 1.1rem;
   border-radius: 0;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -1154,7 +1175,7 @@ h4 {
 /* Mobile: fully stacked */
 @media (max-width: 640px) {
   .cookie-bar { grid-template-columns: 1fr; }
-  .cookie-bar__text    { padding: 1.1rem 1.5rem 0; }
+  .cookie-bar__text    { padding: 1.1rem 1.5rem 0 2.75rem; }
   .cookie-bar__toggles { grid-column: 1; border: none; border-top: 1px solid rgba(255,255,255,0.08); padding: 0.9rem 1.5rem; gap: 1.25rem; }
   .cookie-bar__actions { grid-column: 1; border-top: 1px solid rgba(255,255,255,0.08); padding: 0.9rem 1.5rem 1.25rem; }
   .cookie-btn { padding: 0.6rem 1rem; }

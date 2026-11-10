@@ -2,6 +2,7 @@ import { createInertiaApp, router, type ResolvedComponent } from '@inertiajs/rea
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { getLenis } from '@/lib/lenis';
+import { pageTitle } from '@/lib/title';
 import '../css/app.css';
 import '../css/fonts.css';
 import '../css/base.css';
@@ -16,7 +17,6 @@ import '../css/location.css';
 import '../css/chat.css';
 import '../css/booking.css';
 
-const SITE_NAME = 'Olympos Lodge';
 let firstNavigation = true;
 
 router.on('navigate', (event) => {
@@ -38,7 +38,7 @@ router.on('navigate', (event) => {
 
 createInertiaApp({
     // "Rooms & Suites | Olympos Lodge": a page title alone ("Gallery", "Deluxe") says nothing in a tab or a search result.
-    title: (title) => (title ? `${title} | ${SITE_NAME}` : SITE_NAME),
+    title: pageTitle,
     resolve: (name) =>
         resolvePageComponent(
             `./pages/${name}.tsx`,

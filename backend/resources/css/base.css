@@ -1915,8 +1915,3 @@ body:has(.room-sticky-cta--visible) .chat-fab,
 body:has(.room-sticky-cta--visible) .cookie-fab {
   bottom: 5.25rem;
 }
-/* Phones: the open chat panel fills the bottom of the screen and has its own
-   close button; the floating button would cover Send. */
-@media (max-width: 640px) {
-  .chat-fab--open { display: none; }
-}

@@ -222,3 +222,10 @@
     height: 2.75rem;
   }
 }
+
+/* Phones: the open chat panel fills the bottom of the screen and has its own close
+   button; the floating button would sit on top of Send. (Must come after the base
+   .chat-fab rule above, which sets display.) */
+@media (max-width: 640px) {
+  .chat-fab.chat-fab--open { display: none; }
+}

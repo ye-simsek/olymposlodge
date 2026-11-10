@@ -37,6 +37,35 @@ class TranslationSeeder extends Seeder
     private function translations(): array
     {
         return [
+            'alt' => [
+                'cirali_valley_aerial' => ['Çıralı vadisi havadan görünüm', 'Aerial view of the Çıralı valley', 'Luftaufnahme des Çıralı-Tals'],
+                'lodge_aerial' => ['Olympos Lodge kuş bakışı', 'Olympos Lodge from above', 'Olympos Lodge aus der Vogelperspektive'],
+                'room_aqua' => ['Aqua Super Deluxe oda', 'Aqua Super Deluxe room', 'Aqua Super Deluxe Zimmer'],
+                'room_super_deluxe' => ['Super Deluxe oda', 'Super Deluxe room', 'Super Deluxe Zimmer'],
+                'room_deluxe' => ['Deluxe oda', 'Deluxe room', 'Deluxe Zimmer'],
+                'room_standard' => ['Standart oda', 'Standard room', 'Standardzimmer'],
+                'room_lake_house' => ['Göl Evi', 'Lake House', 'Seehaus'],
+                'room_antique' => ['Antik oda', 'Antique room', 'Antikzimmer'],
+                'garden_seating' => ['Bahçede oturma alanı', 'Seating area in the garden', 'Sitzecke im Garten'],
+                'garden_path' => ['Bahçe patikası', 'Garden path', 'Gartenweg'],
+                'garden_pond' => ['Bahçedeki gölet', 'Pond in the garden', 'Teich im Garten'],
+                'garden_lawn' => ['Çimlerde dinlenen misafirler', 'Guests relaxing on the lawn', 'Gäste entspannen auf dem Rasen'],
+                'lodge_sign' => ['Bahçedeki Olympos Lodge tabelası', 'Olympos Lodge sign in the garden', 'Schild der Olympos Lodge im Garten'],
+                'cirali_bay' => ['Çıralı koyu ve sahili', 'Çıralı bay and beach', 'Bucht und Strand von Çıralı'],
+                'beach_dusk' => ['Gün batımında Çıralı sahili', 'Çıralı beach at dusk', 'Strand von Çıralı in der Abenddämmerung'],
+                'cirali_beach' => ['Çıralı Plajı', 'Çıralı Beach', 'Strand von Çıralı'],
+                'cirali_beach_detail' => ['Çıralı Plajı detay', 'Detail of Çıralı Beach', 'Detail vom Strand von Çıralı'],
+                'olympos_ruins' => ['Olympos Antik Kenti', 'Ancient city of Olympos', 'Antike Stadt Olympos'],
+                'yanartas_flame' => ['Yanartaş alevi', 'Flame at Yanartaş', 'Flamme am Yanartaş'],
+                'lycian_way' => ['Likya Yolu', 'Lycian Way', 'Lykischer Weg'],
+                'surroundings' => ['Çevre', 'Surroundings', 'Umgebung'],
+                'activities' => ['Aktiviteler', 'Activities', 'Aktivitäten'],
+                'gallery_hero' => ['Olympos Lodge galeri', 'Olympos Lodge gallery', 'Olympos Lodge Galerie'],
+                'rooms_hero' => ['Olympos Lodge odaları', 'Rooms at Olympos Lodge', 'Zimmer der Olympos Lodge'],
+                'cirali_experiences' => ['Çıralı deneyimleri', 'Experiences in Çıralı', 'Erlebnisse in Çıralı'],
+                'close_menu' => ['Menüyü kapat', 'Close menu', 'Menü schließen'],
+                'open_menu' => ['Menüyü aç', 'Open menu', 'Menü öffnen'],
+            ],
             'nav' => [
                 'home'         => ['Ana Sayfa', 'Home', 'Start'],
                 'home_sub'     => ['kıyıya açılan kapı', 'the door to the shore', 'das Tor zur Küste'],
@@ -398,6 +427,10 @@ class TranslationSeeder extends Seeder
                 'offer2_cta'  => ['Rezervasyon →', 'Reserve →', 'Reservieren →'],
             ],
             'chat' => [
+                'title' => ['Olympos Asistan', 'Olympos Assistant', 'Olympos Assistent'],
+                'close' => ['Sohbeti kapat', 'Close chat', 'Chat schließen'],
+                'typing' => ['Yazıyor…', 'Typing…', 'Schreibt…'],
+                'send' => ['Gönder', 'Send', 'Senden'],
                 'error_unavailable' => [
                     'Asistanımız geçici olarak kullanılamıyor. Lütfen bize doğrudan ulaşın: info@olymposlodge.com.tr veya +90 242 825 71 71.',
                     'Our assistant is temporarily unavailable. Please contact us directly at info@olymposlodge.com.tr or +90 242 825 71 71.',

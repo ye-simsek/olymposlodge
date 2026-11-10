@@ -34,7 +34,7 @@ export default function Rooms({ rooms }: { rooms: LocalizedRoom[] }) {
             {/* Page Hero */}
             <section className="rooms-page-hero">
                 <div className="rooms-page-hero__image">
-                    <img src="/images/rooms-hero.webp" alt="Olympos Lodge Odaları"
+                    <img src="/images/rooms-hero.webp" alt={t('alt.rooms_hero')}
                         fetchPriority="high" decoding="async" width="4413" height="2991" />
                 </div>
                 <div className="rooms-page-hero__overlay">

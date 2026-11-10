@@ -1,4 +1,4 @@
-import '@inertiajs/react';
+import '@inertiajs/core';
 
 type TranslationTree = Record<string, Record<string, unknown>>;
 
@@ -8,17 +8,12 @@ declare global {
     }
 }
 
-declare module '@inertiajs/react' {
-    interface PageProps {
-        name: string;
-        locale: 'tr' | 'en' | 'de';
-        translations: TranslationTree;
-        seo: {
-            canonical: string;
-            alternates: Record<string, string>;
-        };
-        media?: Record<string, string>;
-        [key: string]: unknown;
+// Inertia 3 reads the shape of shared props from InertiaConfig in @inertiajs/core.
+// (Augmenting PageProps in @inertiajs/react, as before, had no effect: usePage().props
+// stayed untyped and tsc reported 13 errors that nothing ran.)
+declare module '@inertiajs/core' {
+    export interface InertiaConfig {
+        sharedPageProps: SharedProps;
     }
 }
 

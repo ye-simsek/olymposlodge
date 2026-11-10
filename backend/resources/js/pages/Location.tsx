@@ -55,7 +55,7 @@ export default function Location() {
           className="loc-hero__image"
           src="/images/cirali-vadisi-havadan-1520.webp"
           srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
-          alt="Çıralı vadisi havadan görünüm"
+          alt={t('alt.cirali_valley_aerial')}
           fetchPriority="high"
           decoding="async"
           width={1520}
@@ -187,7 +187,7 @@ export default function Location() {
           <img
             src="/images/cirali-vadisi-havadan-1520.webp"
           srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
-            alt="Çıralı deneyimleri"
+            alt={t('alt.cirali_valley_aerial')}
             loading="lazy"
             width={1520}
             height={1075}

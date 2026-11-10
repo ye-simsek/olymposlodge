@@ -1,4 +1,4 @@
-import { createInertiaApp, router } from '@inertiajs/react';
+import { createInertiaApp, router, type ResolvedComponent } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { getLenis } from '@/lib/lenis';
@@ -16,8 +16,18 @@ import '../css/location.css';
 import '../css/chat.css';
 import '../css/booking.css';
 
+const SITE_NAME = 'Olympos Lodge';
+let firstNavigation = true;
+
 router.on('navigate', (event) => {
     getLenis()?.scrollTo(0, { immediate: true });
+
+    // Inertia also fires `navigate` for the initial page load, which the tag
+    // manager already counts on its own. Only report in-app navigations.
+    if (firstNavigation) {
+        firstNavigation = false;
+        return;
+    }
     if (typeof window.gtag === 'function') {
         window.gtag('event', 'page_view', {
             page_path: event.detail.page.url,
@@ -27,11 +37,13 @@ router.on('navigate', (event) => {
 });
 
 createInertiaApp({
+    // "Rooms & Suites | Olympos Lodge": a page title alone ("Gallery", "Deluxe") says nothing in a tab or a search result.
+    title: (title) => (title ? `${title} | ${SITE_NAME}` : SITE_NAME),
     resolve: (name) =>
         resolvePageComponent(
             `./pages/${name}.tsx`,
-            import.meta.glob(['./pages/**/*.tsx', '!./pages/**/*.test.tsx']),
-        ),
+            import.meta.glob<{ default: ResolvedComponent }>(['./pages/**/*.tsx', '!./pages/**/*.test.tsx']),
+        ).then((module) => module.default),
     setup({ el, App, props }) {
         if (el.hasChildNodes()) {
             hydrateRoot(el, <App {...props} />);

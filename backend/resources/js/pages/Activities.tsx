@@ -98,7 +98,7 @@ export default function Activities() {
           <img
             src="/images/oda-super-deluxe-2-1920.webp"
           srcSet="/images/oda-super-deluxe-2-1200.webp 1200w, /images/oda-super-deluxe-2-1920.webp 1920w"
-            alt="Olympos Lodge"
+            alt={t('alt.room_super_deluxe')}
             loading="lazy"
             width={1920}
             height={1280}

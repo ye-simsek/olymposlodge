@@ -11,7 +11,7 @@ class PageProps
      *
      * @var array<int, string>
      */
-    public const GLOBAL = ['common', 'nav', 'footer', 'cookie', 'newsletter', 'weather', 'chat'];
+    public const GLOBAL = ['common', 'nav', 'footer', 'cookie', 'newsletter', 'weather', 'chat', 'alt'];
 
     /**
      * Liefert eine lazy Closure mit global ∪ page Übersetzungen für die aktive Locale.

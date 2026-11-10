@@ -88,7 +88,7 @@ export default function ExploreMoreSection() {
                                 <img
                                     src="/images/cirali-sahili-gunbatimi-1600.webp"
           srcSet="/images/cirali-sahili-gunbatimi-1200.webp 1200w, /images/cirali-sahili-gunbatimi-1600.webp 1600w"
-                                    alt="Çıralı"
+                                    alt={t('alt.beach_dusk')}
                                     loading="lazy"
                                     width={1600}
                                     height={2277}
@@ -108,7 +108,7 @@ export default function ExploreMoreSection() {
                                 <img
                                     src="/images/bahce-hamak-2000.webp"
           srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w"
-                                    alt="Olympos Lodge"
+                                    alt={t('alt.garden_lawn')}
                                     loading="lazy"
                                     width={2000}
                                     height={1333}
@@ -130,7 +130,7 @@ export default function ExploreMoreSection() {
                                 <img
                                     src="/images/cirali-vadisi-havadan-1520.webp"
           srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
-                                    alt="Çıralı vadisi havadan görünüm"
+                                    alt={t('alt.cirali_valley_aerial')}
                                     loading="lazy"
                                     width={1520}
                                     height={1075}

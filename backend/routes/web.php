@@ -12,7 +12,12 @@ Route::prefix('{locale}')
     ->group(function () {
         Route::get('/', \App\Http\Controllers\Web\HomeController::class)->name('home');
 
-        Route::get('/_smoke', fn () => Inertia::render('Smoke', ['message' => 'inertia-ok']))
+        // Rendering self-check for development and the test suite; not a public page.
+        Route::get('/_smoke', function () {
+            abort_unless(app()->environment('local', 'testing'), 404);
+
+            return Inertia::render('Smoke', ['message' => 'inertia-ok']);
+        })
             ->name('smoke');
 
         Route::get('/rooms', [\App\Http\Controllers\Web\RoomsController::class, 'index'])->name('rooms.index');

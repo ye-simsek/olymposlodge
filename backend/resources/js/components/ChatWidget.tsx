@@ -22,9 +22,9 @@ const PLACEHOLDER: Record<string, string> = {
 function renderMarkdown(text: string): string {
     return text
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/^\s*[-•*]\s+(.+)$/gm, '<li>$1</li>')
         .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.+?)\*/g, '<em>$1</em>')
-        .replace(/^[-•]\s+(.+)$/gm, '<li>$1</li>')
         .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
         .replace(/\n{2,}/g, '</p><p>')
         .replace(/\n/g, '<br>')
@@ -35,7 +35,7 @@ function renderMarkdown(text: string): string {
 export default function ChatWidget() {
     const { t } = useTranslation();
     const { locale } = usePage().props;
-    const lang = locale?.slice(0, 2) || 'de';
+    const lang = locale || 'en';
 
     const [open, setOpen]         = useState(false);
     const [messages, setMessages] = useState<Message[]>([]);
@@ -94,7 +94,7 @@ export default function ChatWidget() {
             <div
                 className={`chat-panel${open ? ' chat-panel--open' : ''}`}
                 role="dialog"
-                aria-label="Olympos Assistant"
+                aria-label={t('chat.title')}
                 aria-hidden={!open}
             >
                 <div className="chat-panel__header">
@@ -102,7 +102,7 @@ export default function ChatWidget() {
                         <span className="chat-panel__dot" />
                         Olympos Assistant
                     </div>
-                    <button className="chat-panel__close" onClick={() => setOpen(false)} aria-label="Schließen">
+                    <button className="chat-panel__close" onClick={() => setOpen(false)} aria-label={t('chat.close')}>
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
                             <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                         </svg>
@@ -111,7 +111,7 @@ export default function ChatWidget() {
 
                 <div className="chat-panel__messages">
                     <div className="chat-msg chat-msg--model">
-                        <p>{WELCOME[lang] ?? WELCOME.de}</p>
+                        <p>{WELCOME[lang] ?? WELCOME.en}</p>
                     </div>
                     {messages.map((m, i) => (
                         <div key={i} className={`chat-msg chat-msg--${m.role}`}>
@@ -122,7 +122,7 @@ export default function ChatWidget() {
                         </div>
                     ))}
                     {loading && (
-                        <div className="chat-msg chat-msg--model chat-msg--typing" aria-label="Schreibt…">
+                        <div className="chat-msg chat-msg--model chat-msg--typing" aria-label={t('chat.typing')}>
                             <span /><span /><span />
                         </div>
                     )}
@@ -136,12 +136,12 @@ export default function ChatWidget() {
                         value={input}
                         onChange={e => setInput(e.target.value)}
                         onKeyDown={e => e.key === 'Enter' && send()}
-                        placeholder={PLACEHOLDER[lang] ?? PLACEHOLDER.de}
+                        placeholder={PLACEHOLDER[lang] ?? PLACEHOLDER.en}
                         disabled={loading}
                         autoComplete="off"
                         maxLength={MAX_MESSAGE_CHARS}
                     />
-                    <button onClick={send} disabled={loading || !input.trim()} aria-label="Senden">
+                    <button onClick={send} disabled={loading || !input.trim()} aria-label={t('chat.send')}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                             <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

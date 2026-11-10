@@ -35,6 +35,11 @@ return [
         ],
     ],
 
+    // Google Tag Manager container (GTM-XXXXXXX). Empty = no tracking code is emitted at all.
+    'gtm' => [
+        'id' => env('GTM_ID'),
+    ],
+
     'gemini' => [
         'key' => env('GEMINI_API_KEY'),
         'rate_limit' => (int) env('GEMINI_RATE_LIMIT', 20), // Requests/Minute/IP für /api/v1/chat

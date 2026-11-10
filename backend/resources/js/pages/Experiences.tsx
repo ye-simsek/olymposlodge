@@ -64,13 +64,13 @@ export default function Experiences() {
         {/* Chapter 01: Plaj — image left, text right */}
         <section className="dest-chapter" id="plaj">
           <div className="dest-chapter__visual">
-            <img src="/images/cirali-sahili.webp" alt="Çıralı Plajı" loading="lazy" width={2000} height={1069} />
+            <img src="/images/cirali-sahili.webp" alt={t('alt.cirali_beach')} loading="lazy" width={2000} height={1069} />
           </div>
           <div className="dest-chapter__body">
             <span className="dest-chapter__eyebrow">{e('ch1_eyebrow')}</span>
             <h2 className="dest-chapter__title">{e('ch1_title')}</h2>
             <div className="dest-chapter__thumb">
-              <img src="/images/cirali-sahili-hero.webp" alt="Çıralı Plajı detay" loading="lazy" width={1551} height={2800} />
+              <img src="/images/cirali-sahili-hero.webp" alt={t('alt.cirali_beach_detail')} loading="lazy" width={1551} height={2800} />
             </div>
             <p className="dest-chapter__lead">{e('ch1_lead')}</p>
           </div>
@@ -83,7 +83,7 @@ export default function Experiences() {
               src="/images/olympos-antik-kenti-1200.webp"
               srcSet="/images/olympos-antik-kenti-1200.webp 1200w, /images/olympos-antik-kenti-2400.webp 2400w, /images/olympos-antik-kenti.webp 3680w"
               sizes="(max-width: 1710px) calc(100vw - 80px), 1630px"
-              alt="Olympos Antik Kenti"
+              alt={t('alt.olympos_ruins')}
               loading="lazy"
               width={3680}
               height={1197}
@@ -116,7 +116,7 @@ export default function Experiences() {
             <img
               src="/images/bahce-patika-2000.webp"
           srcSet="/images/bahce-patika-1200.webp 1200w, /images/bahce-patika-2000.webp 2000w"
-              alt="Yanartaş"
+              alt={t('alt.garden_path')}
               loading="lazy"
               width={2000}
               height={1333}
@@ -126,7 +126,7 @@ export default function Experiences() {
             <span className="dest-chapter__eyebrow">{e('ch3_eyebrow')}</span>
             <h2 className="dest-chapter__title">{e('ch3_title')}</h2>
             <div className="dest-chapter__thumb">
-              <img src="/images/yanartas-thumb.webp" alt="Yanartaş alev" loading="lazy" width={1600} height={2416} />
+              <img src="/images/yanartas-thumb.webp" alt={t('alt.yanartas_flame')} loading="lazy" width={1600} height={2416} />
             </div>
             <p className="dest-chapter__lead">{e('ch3_lead')}</p>
           </div>
@@ -138,7 +138,7 @@ export default function Experiences() {
             <img
               src="/images/bahce-golet-1700.webp"
           srcSet="/images/bahce-golet-1200.webp 1200w, /images/bahce-golet-1700.webp 1700w"
-              alt="Likya Yolu"
+              alt={t('alt.garden_pond')}
               loading="lazy"
               width={1700}
               height={1333}
@@ -178,15 +178,15 @@ export default function Experiences() {
       <div className="dest-strip">
         <div className="dest-strip__item">
           <img src="/images/oda-aqua-super-deluxe-1920.webp"
-          srcSet="/images/oda-aqua-super-deluxe-1200.webp 1200w, /images/oda-aqua-super-deluxe-1920.webp 1920w" alt="Olympos Lodge" loading="lazy" width={1920} height={1280} />
+          srcSet="/images/oda-aqua-super-deluxe-1200.webp 1200w, /images/oda-aqua-super-deluxe-1920.webp 1920w" alt={t('alt.room_aqua')} loading="lazy" width={1920} height={1280} />
         </div>
         <div className="dest-strip__item">
           <img src="/images/bahce-oturma-2000.webp"
-          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w" alt="Çıralı Plajı" loading="lazy" width={2000} height={1333} />
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w" alt={t('alt.garden_seating')} loading="lazy" width={2000} height={1333} />
         </div>
         <div className="dest-strip__item">
           <img src="/images/bahce-hamak-2000.webp"
-          srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w" alt="Çevre" loading="lazy" width={2000} height={1333} />
+          srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w" alt={t('alt.garden_lawn')} loading="lazy" width={2000} height={1333} />
         </div>
       </div>
 
@@ -249,7 +249,7 @@ export default function Experiences() {
       <Link href={localePath(locale, 'activities')} className="lodge-linker lodge-linker--cirali">
         <div className="lodge-linker__image">
           <img src="/images/bahce-oturma-2000.webp"
-          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w" alt="Aktiviteler" loading="lazy" width={2000} height={1333} />
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w" alt={t('alt.garden_seating')} loading="lazy" width={2000} height={1333} />
         </div>
         <div className="lodge-linker__content">
           <span className="lodge-linker__eyebrow">{e('linker_eyebrow')}</span>

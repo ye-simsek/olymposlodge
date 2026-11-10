@@ -78,7 +78,7 @@ export default function Header() {
                 <button
                     className={`menu-toggle${menuOpen ? ' active' : ''}`}
                     id="menuToggle"
-                    aria-label="Menu"
+                    aria-label={t('alt.open_menu')}
                     onClick={() => setMenuOpen(o => !o)}
                 >
                     <span className="menu-bar"></span>
@@ -118,7 +118,7 @@ export default function Header() {
                     <img className="nav-overlay__logo" src={LOGO} alt="Olympos Lodge" width="220" height="110" />
                     <button
                         className="nav-overlay__close"
-                        aria-label="Kapat"
+                        aria-label={t('alt.close_menu')}
                         onClick={() => setMenuOpen(false)}
                     >
                         <span></span><span></span>

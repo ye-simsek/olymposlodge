@@ -9,12 +9,12 @@ import Layout from '@/components/layout/Layout';
 import { localePath } from '@/lib/routes';
 
 const GALLERY: { key: string; alt: string; fallback: string }[] = [
-    { key: 'gallery.1', alt: 'Super Deluxe Room',  fallback: '/images/oda-super-deluxe-2-1920.webp' },
-    { key: 'gallery.2', alt: 'Lodge garden',        fallback: '/images/bahce-oturma-2000.webp' },
-    { key: 'gallery.3', alt: 'Nature view',         fallback: '/images/bahce-patika-2000.webp' },
-    { key: 'gallery.4', alt: 'Lodge atmosphere',    fallback: '/images/bahce-hamak-2000.webp' },
-    { key: 'gallery.5', alt: 'Olympos ruins',       fallback: '/images/cirali-koyu-1155.webp' },
-    { key: 'gallery.6', alt: 'Lodge detail',        fallback: '/images/bahce-golet-1700.webp' },
+    { key: 'gallery.1', alt: 'alt.room_super_deluxe',  fallback: '/images/oda-super-deluxe-2-1920.webp' },
+    { key: 'gallery.2', alt: 'alt.garden_seating',        fallback: '/images/bahce-oturma-2000.webp' },
+    { key: 'gallery.3', alt: 'alt.garden_path',         fallback: '/images/bahce-patika-2000.webp' },
+    { key: 'gallery.4', alt: 'alt.garden_lawn',    fallback: '/images/bahce-hamak-2000.webp' },
+    { key: 'gallery.5', alt: 'alt.cirali_bay',       fallback: '/images/cirali-koyu-1155.webp' },
+    { key: 'gallery.6', alt: 'alt.garden_pond',        fallback: '/images/bahce-golet-1700.webp' },
 ];
 
 const HERO_POSTER_FB = '/images/olympos-lodge-kus-bakisi-1366.webp';
@@ -110,7 +110,7 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                     <video autoPlay muted loop playsInline preload="metadata" poster={heroPoster}>
                         <source src={heroWebm} type="video/webm" />
                         <source src={heroMp4} type="video/mp4" />
-                        <img src={heroPoster} alt="Olympos Lodge havadan görünüm" fetchPriority="high" />
+                        <img src={heroPoster} alt={t('alt.lodge_aerial')} fetchPriority="high" />
                     </video>
                 </div>
             </section>
@@ -162,7 +162,7 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                     </div>
                 </div>
                 <div className="conviction__image">
-                    <img src={convictionImg} alt="Olympos Lodge garden" loading="lazy" width="1600" height="2277" />
+                    <img src={convictionImg} alt={t('alt.beach_dusk')} loading="lazy" width="1600" height="2277" />
                 </div>
             </section>
 
@@ -225,13 +225,13 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                         <p>{t('story.p3')}</p>
                     </div>
                     <div className="story-block__image">
-                        <img src={storyGarden} alt="Olympos Lodge garden pathway" loading="lazy" width="1600" height="2277" />
+                        <img src={storyGarden} alt={t('alt.beach_dusk')} loading="lazy" width="1600" height="2277" />
                     </div>
                 </div>
 
                 <div className="story-block story-block--reverse">
                     <div className="story-block__image">
-                        <img src={storyNature} alt="Olympos Lodge natural landscape" loading="lazy" width="1920" height="1280" />
+                        <img src={storyNature} alt={t('alt.lodge_sign')} loading="lazy" width="1920" height="1280" />
                     </div>
                     <div className="story-block__content">
                         <span className="story-block__eyebrow">{t('story.eyebrow_nature')}</span>
@@ -286,7 +286,7 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                 <div className="gallery-scroll">
                     {GALLERY.map((img, i) => (
                         <div key={i} className="gallery-item">
-                            <img src={media(img.key, img.fallback)} alt={img.alt} loading="lazy" />
+                            <img src={media(img.key, img.fallback)} alt={t(img.alt)} loading="lazy" />
                         </div>
                     ))}
                 </div>

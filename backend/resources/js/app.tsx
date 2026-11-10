@@ -3,6 +3,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { getLenis } from '@/lib/lenis';
 import '../css/app.css';
+import '../css/fonts.css';
 import '../css/base.css';
 import '../css/home.css';
 import '../css/rooms.css';

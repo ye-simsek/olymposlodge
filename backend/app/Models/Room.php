@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Room extends Model
 {
@@ -27,4 +28,19 @@ class Room extends Model
         'is_active'      => 'boolean',
         'price_per_night' => 'decimal:2',
     ];
+
+    /**
+     * The reservations table cascades on room deletion, so deleting a room would
+     * silently erase its booking history. Rooms with reservations are kept;
+     * switch them off with is_active instead.
+     */
+    protected static function booted(): void
+    {
+        static::deleting(fn (Room $room) => ! $room->reservations()->exists());
+    }
+
+    public function reservations(): HasMany
+    {
+        return $this->hasMany(Reservation::class);
+    }
 }

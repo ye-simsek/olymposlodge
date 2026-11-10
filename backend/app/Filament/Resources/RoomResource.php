@@ -177,6 +177,7 @@ class RoomResource extends Resource
             ->reorderable('sort_order')
             ->actions([Tables\Actions\EditAction::make()])
             ->bulkActions([Tables\Actions\BulkActionGroup::make([
+                // Rooms that have reservations are skipped (see Room::booted()).
                 Tables\Actions\DeleteBulkAction::make(),
             ])]);
     }

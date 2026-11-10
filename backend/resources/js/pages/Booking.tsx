@@ -1,10 +1,12 @@
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { Link } from '@inertiajs/react'
+import { Link, router } from '@inertiajs/react'
 import { useTranslation } from '@/hooks/use-translation'
 import { usePageProps } from '@/hooks/use-page-props'
 import { localePath } from '@/lib/routes'
 import SeoHead from '@/components/SeoHead'
 import ClientOnly from '@/components/ClientOnly'
+import Honeypot from '@/components/Honeypot'
+import { toLocalDateString } from '@/lib/dates'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -28,15 +30,15 @@ type Step = 1 | 2 | 3 | 4
 
 // ─── Static room data ─────────────────────────────────────────────────────────
 
-const LOGO = 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png'
+const LOGO = '/images/olympos-lodge-logo.png'
 
 const ROOM_IMAGES: Record<string, string> = {
-  'aqua-super-deluxe': 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-aqua-super-deluxe-oda-2.jpg',
-  'super-deluxe':      'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-7.jpg',
-  'deluxe':            'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-deluxe-double-room-1-890x664.jpg',
-  'gol-evi':           'https://www.olymposlodge.com.tr/wp-content/uploads/2025/11/Lake-House-Deluxe-room-9.jpg',
-  'antik':             'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-antique-room-3.jpg',
-  'standart':          'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-double-room-1.jpg',
+  'aqua-super-deluxe': '/images/oda-aqua-super-deluxe-1920.webp',
+  'super-deluxe':      '/images/oda-super-deluxe-1920.webp',
+  'deluxe':            '/images/oda-deluxe-1920.webp',
+  'gol-evi':           '/images/oda-gol-evi-1621.webp',
+  'antik':             '/images/oda-antik-1920.webp',
+  'standart':          '/images/oda-standart-1920.webp',
 }
 
 const ROOM_FEATURES: Record<string, Record<Lang, string[]>> = {
@@ -85,10 +87,11 @@ const DAY_LABELS: Record<Lang, string[]> = {
   tr: ['Pt','Sa','Ça','Pe','Cu','Ct','Pz'],
 }
 
-function toStr(d: Date) { return d.toISOString().split('T')[0] }
+const toStr = toLocalDateString
 function todayStr() { return toStr(new Date()) }
 function nightsCount(a: string, b: string) {
-  return Math.max(0, (new Date(b).getTime() - new Date(a).getTime()) / 86400000)
+  // Both parsed as UTC midnight, so daylight-saving changes cannot produce fractions.
+  return Math.max(0, Math.round((new Date(b).getTime() - new Date(a).getTime()) / 86400000))
 }
 function daysInMonth(y: number, m: number) { return new Date(y, m + 1, 0).getDate() }
 function weekdayOf(y: number, m: number) { return (new Date(y, m, 1).getDay() + 6) % 7 }
@@ -353,14 +356,18 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
   const [viewYear, setViewYear] = useState(now0.getFullYear())
   const [viewMonth, setViewMonth] = useState(now0.getMonth())
 
-  // Visual-shell: room-type pre-filter is inert (its only job was the calendar pre-fetch).
-  const [filterRoomId, setFilterRoomId] = useState<number | null>(null)
+  const preselectedId = preselectRoom ? (rooms.find(r => r.slug === preselectRoom)?.id ?? null) : null
 
-  const [selectedRoomId, setSelectedRoomId] = useState<number | null>(
-    preselectRoom ? (rooms.find(r => r.slug === preselectRoom)?.id ?? null) : null
-  )
+  // Room-type filter in step 1: narrows the list shown in step 2.
+  const [filterRoomId, setFilterRoomId] = useState<number | null>(preselectedId)
+  const [selectedRoomId, setSelectedRoomId] = useState<number | null>(preselectedId)
+  const visibleRooms = filterRoomId ? rooms.filter(r => r.id === filterRoomId) : rooms
 
-  // Guest form fields (collected but not submitted in the shell)
+  const [submitting, setSubmitting] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
+  const [website, setWebsite] = useState('') // honeypot
+
+  // Guest form fields
   const [guestTitle, setGuestTitle] = useState('')
   const [guestFirstName, setGuestFirstName] = useState('')
   const [guestLastName, setGuestLastName] = useState('')
@@ -370,13 +377,36 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
   const [guestArrival, setGuestArrival] = useState('')
   const [guestNotes, setGuestNotes] = useState('')
 
+  const b = (k: string) => t(`booking.${k}`)
   const nights = checkIn && checkOut ? nightsCount(checkIn, checkOut) : 0
   const selectedRoom = rooms.find(r => r.id === selectedRoomId)
   const roomName = (r: Room) => (r[`name_${lang}` as keyof Room] as string) ?? r.name
-  const pricePerNight = selectedRoom?.price_per_night ?? null
-  const totalPrice = pricePerNight && nights > 0 ? Number(pricePerNight) * nights : null
+  const nightsLabel = (n: number) => `${n} ${n === 1 ? b('night') : b('nights')}`
+  const canSubmit = !!(selectedRoomId && checkIn && checkOut
+    && guestFirstName.trim() && guestLastName.trim() && guestEmail.trim()) && !submitting
 
-  const b = (k: string) => t(`booking.${k}`)
+  // Sends a reservation *request*. Availability and rates are answered by the lodge
+  // by email, so no price is shown or sent from here.
+  function submitRequest(e: React.FormEvent) {
+    e.preventDefault()
+    if (!canSubmit) return
+    setSubmitting(true)
+    setErrors({})
+    router.post(localePath(lang, 'booking'), {
+      room_id: selectedRoomId, check_in: checkIn, check_out: checkOut,
+      rooms: roomCount, adults, children,
+      title: guestTitle, first_name: guestFirstName, last_name: guestLastName,
+      email: guestEmail, phone: guestPhone, country: guestCountry,
+      arrival_time: guestArrival, notes: guestNotes, website,
+    }, {
+      preserveScroll: true,
+      preserveState: true,
+      onSuccess: () => goToStep(4),
+      onError: (errs: Record<string, string>) => setErrors(errs),
+      onFinish: () => setSubmitting(false),
+    })
+  }
+
   const L = {
     checkin: b('checkin'), checkout: b('checkout'), nights: b('nights'),
     adults: b('adults'), children: b('children'), perNight: b('per_night'),
@@ -386,7 +416,7 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
     guestTitle: b('guest_title'), firstName: b('first_name'), lastName: b('last_name'),
     email: b('email'), phone: b('phone'), country: b('country'), arrival: b('arrival'),
     notes: b('notes'), summary: b('summary'), paymentNote: b('payment_note'),
-    comingSoon: b('coming_soon'),
+    submit: b('submit'),
   }
 
   const TITLES: Record<Lang, string[]> = {
@@ -449,7 +479,7 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
                 </div>
               </div>
               {nights > 0 && (
-                <div className="sidebar-nights">{nights} {L.nights}</div>
+                <div className="sidebar-nights">{nightsLabel(nights)}</div>
               )}
               <div className="sidebar-fields">
                 <div className="sidebar-select">
@@ -515,16 +545,15 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
             <button type="button" className="step2-back" onClick={() => goToStep(1)}>{L.back}</button>
             {checkIn && checkOut && (
               <span className="step2-dates">
-                {formatDate(checkIn, lang)} → {formatDate(checkOut, lang)} · {nights} {L.nights}
+                {formatDate(checkIn, lang)} → {formatDate(checkOut, lang)} · {nightsLabel(nights)}
               </span>
             )}
           </div>
           <div className="room-cards">
-            {rooms.map(room => {
+            {visibleRooms.map(room => {
               const isSelected = selectedRoomId === room.id
               const features = ROOM_FEATURES[room.slug]?.[lang] ?? []
               const img = ROOM_IMAGES[room.slug]
-              const rPPN = room.price_per_night
               return (
                 <div
                   key={room.id}
@@ -543,12 +572,7 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
                     )}
                     <div className="room-card-new__footer">
                       <div className="room-card-new__price-block">
-                        {rPPN && (
-                          <>
-                            <span className="room-card-new__price-from">{b('from')}</span>
-                            <span className="room-card-new__price-amount">€ {rPPN} <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>{L.perNight}</span></span>
-                          </>
-                        )}
+                        <span className="room-card-new__price-from">{b('rate_on_request')}</span>
                       </div>
                       <button
                         type="button"
@@ -574,7 +598,8 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
               <span className="step2-dates">{formatDate(checkIn, lang)} → {formatDate(checkOut, lang)}</span>
             )}
           </div>
-          <form onSubmit={e => e.preventDefault()} noValidate className="step3-layout">
+          <form onSubmit={submitRequest} noValidate className="step3-layout">
+            <Honeypot value={website} onChange={setWebsite} />
             <div>
               <h2 className="guest-form__title">{L.summary}</h2>
 
@@ -588,22 +613,26 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
                 </div>
                 <div className="guest-form__field">
                   <label className="required">{L.firstName}</label>
-                  <input type="text" value={guestFirstName} onChange={e => setGuestFirstName(e.target.value)} required />
+                  <input type="text" name="first_name" autoComplete="given-name" value={guestFirstName} onChange={e => setGuestFirstName(e.target.value)} required />
+                  {errors.first_name && <span className="guest-form__error">{errors.first_name}</span>}
                 </div>
                 <div className="guest-form__field">
                   <label className="required">{L.lastName}</label>
-                  <input type="text" value={guestLastName} onChange={e => setGuestLastName(e.target.value)} required />
+                  <input type="text" name="last_name" autoComplete="family-name" value={guestLastName} onChange={e => setGuestLastName(e.target.value)} required />
+                  {errors.last_name && <span className="guest-form__error">{errors.last_name}</span>}
                 </div>
               </div>
 
               <div className="guest-form__row">
                 <div className="guest-form__field">
                   <label className="required">{L.email}</label>
-                  <input type="email" value={guestEmail} onChange={e => setGuestEmail(e.target.value)} required />
+                  <input type="email" name="email" autoComplete="email" value={guestEmail} onChange={e => setGuestEmail(e.target.value)} required />
+                  {errors.email && <span className="guest-form__error">{errors.email}</span>}
                 </div>
                 <div className="guest-form__field">
                   <label>{L.phone}</label>
-                  <input type="tel" value={guestPhone} onChange={e => setGuestPhone(e.target.value)} placeholder="+49 …" />
+                  <input type="tel" name="phone" autoComplete="tel" value={guestPhone} onChange={e => setGuestPhone(e.target.value)} placeholder="+90 …" />
+                  {errors.phone && <span className="guest-form__error">{errors.phone}</span>}
                 </div>
               </div>
 
@@ -649,18 +678,17 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
               )}
               {nights > 0 && (
                 <div className="step3-summary__line">
-                  <span>{nights} {L.nights} {pricePerNight ? `× € ${pricePerNight}` : ''}</span>
-                  {totalPrice && <span>€ {totalPrice.toFixed(0)}</span>}
+                  <span>{nightsLabel(nights)}</span>
+                  <span>{roomCount} {roomCount === 1 ? L.roomSingular : L.roomPlural} · {adults} {L.adults}{children > 0 ? ` · ${children} ${L.children}` : ''}</span>
                 </div>
               )}
-              {totalPrice && (
-                <div className="step3-summary__total">
-                  <span>{L.total}</span>
-                  <span>€ {totalPrice.toFixed(0)}</span>
-                </div>
-              )}
-              <button type="submit" className="btn-confirm" disabled>
-                {L.comingSoon}
+              {Object.entries(errors)
+                .filter(([field]) => !['first_name', 'last_name', 'email', 'phone'].includes(field))
+                .map(([field, message]) => (
+                  <p key={field} className="guest-form__error" role="alert">{message}</p>
+                ))}
+              <button type="submit" className="btn-confirm" disabled={!canSubmit}>
+                {submitting ? '…' : L.submit}
               </button>
               <p className="step3-summary__payment-note">{L.paymentNote}</p>
             </aside>
@@ -668,7 +696,7 @@ function BookingWizard({ rooms, preselectRoom, lang }: { rooms: Room[]; preselec
         </>
       )}
 
-      {/* Step 4 unreachable in the visual shell; Sabee will wire confirmation */}
+      {/* Step 4: request received. The lodge confirms availability and rate by email. */}
       {step === 4 && (
         <div className="step4-wrap">
           <div className="step4-content">

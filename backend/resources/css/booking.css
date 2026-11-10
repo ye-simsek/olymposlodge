@@ -915,3 +915,12 @@
   .step3-layout { padding: 1.5rem 1rem 3rem; }
   .step4-wrap { padding: 1rem; }
 }
+
+/* Field-level and form-level messages on the request form */
+.guest-form__error {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: #c0392b;
+}

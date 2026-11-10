@@ -64,6 +64,9 @@ Route::prefix('{locale}')
 
         Route::get('/booking', \App\Http\Controllers\Web\BookingController::class)
             ->name('booking');
+        Route::post('/booking', [\App\Http\Controllers\Web\BookingController::class, 'store'])
+            ->middleware('throttle:5,1')
+            ->name('booking.store');
     });
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);

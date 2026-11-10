@@ -12,9 +12,7 @@ class CreateReservation extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $year = now()->year;
-        $seq  = Reservation::whereYear('created_at', $year)->count() + 1;
-        $data['confirmation_number'] = 'OL-' . $year . '-' . str_pad($seq, 4, '0', STR_PAD_LEFT);
+        $data['confirmation_number'] = Reservation::nextConfirmationNumber();
         $data['channel'] ??= 'phone';
         $data['status']  ??= 'confirmed';
         return $data;

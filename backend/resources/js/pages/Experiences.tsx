@@ -36,12 +36,13 @@ export default function Experiences() {
       <section className="child-hero child-hero--full">
         <img
           className="child-hero__image"
-          src="/images/cirali-hero.jpg"
+          src="/images/cirali-vadisi-2400.webp"
+          srcSet="/images/cirali-vadisi-1200.webp 1200w, /images/cirali-vadisi-2400.webp 2400w"
           alt="Çıralı"
           fetchPriority="high"
           decoding="async"
           width={2400}
-          height={1581}
+          height={1580}
         />
         <div className="child-hero__overlay" />
       </section>

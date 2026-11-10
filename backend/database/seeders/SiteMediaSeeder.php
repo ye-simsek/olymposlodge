@@ -29,7 +29,7 @@ class SiteMediaSeeder extends Seeder
             ['key' => 'conviction.image','label' => 'Conviction — Bild',         'group' => 'story', 'url' => "/images/cirali-sahili-gunbatimi-1600.webp", 'sort_order' => 3],
 
             // Rooms Page
-            ['key' => 'rooms_page.hero', 'label' => 'Zimmer-Seite — Hero',      'group' => 'pages', 'url' => '/images/rooms-hero.webp', 'sort_order' => 1],
+            ['key' => 'rooms_page.hero', 'label' => 'Zimmer-Seite — Hero',      'group' => 'pages', 'url' => '/images/odalar-hero-2400.webp', 'sort_order' => 1],
         ];
 
         foreach ($items as $item) {

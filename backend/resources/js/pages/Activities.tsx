@@ -83,11 +83,12 @@ export default function Activities() {
         </div>
         <div className="tekne-card__image">
           <img
-            src="/images/Olympos_beach.jpg"
+            src="/images/olympos-plaji-2400.webp"
+            srcSet="/images/olympos-plaji-1200.webp 1200w, /images/olympos-plaji-2400.webp 2400w"
             alt={a('tahtali_title')}
             loading="lazy"
-            width={3152}
-            height={1970}
+            width={2400}
+            height={1500}
           />
         </div>
       </section>

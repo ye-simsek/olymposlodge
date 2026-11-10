@@ -241,8 +241,12 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 php artisan migrate --force
-php artisan db:seed --class=TranslationSeeder --force
+php artisan db:seed --class=TranslationSeeder --force   # adds new keys; text edited in the admin panel is kept
 ```
+
+Run the full `php artisan db:seed` only once, for the first go-live. After that the
+rooms, media and chat prompt are managed in the admin panel, and a full re-seed would
+reset them to the defaults in the seeders.
 
 **`.env` for production:**
 
@@ -271,7 +275,8 @@ GEMINI_RATE_LIMIT=20    # chat requests per minute per IP
 
 ADMIN_EMAIL=...         # first admin (created once by the seeder, never reset)
 ADMIN_PASSWORD=...      # strong and unique; or leave unset and use make:filament-user
-CONTACT_NOTIFY_TO=info@olymposlodge.com.tr   # receives contact form messages
+CONTACT_NOTIFY_TO=info@olymposlodge.com.tr   # receives contact form messages and reservation requests
+GTM_ID=GTM-XXXXXXX      # Google Tag Manager; leave empty for no tracking code at all
 ```
 
 **Web server (nginx):** the monolith is a standard Laravel app — all routes
@@ -325,7 +330,7 @@ restarted after each build.
 - [ ] `APP_DEBUG=false` in `.env`
 - [ ] Database migrated and seeded
 - [ ] Filament admin user created (`php artisan make:filament-user`)
-- [ ] SMTP delivery tested (contact form, newsletter)
+- [ ] SMTP delivery tested (contact form and reservation request, with `CONTACT_NOTIFY_TO` set)
 - [ ] `GEMINI_API_KEY` set and chat tested
 - [ ] SSL certificate active (Let's Encrypt or provider)
 - [ ] nginx/Apache configured for the Laravel monolith (all routes via `index.php`)
@@ -333,7 +338,7 @@ restarted after each build.
 
 #### Analytics (once IDs are available)
 
-- [ ] GTM container snippet added to `backend/resources/views/app.blade.php`
+- [ ] `GTM_ID` set in `.env` (the consent default and the loader are already in `app.blade.php`)
 - [ ] GA4 Measurement ID configured in GTM
 - [ ] Meta Pixel ID configured in GTM
 - [ ] GTM published (not just saved)
@@ -344,7 +349,7 @@ restarted after each build.
 
 #### SEO & Performance
 
-- [ ] `robots.txt` reviewed — admin panel excluded
+- [x] `robots.txt` names the sitemap and excludes the admin panel
 - [ ] Core Web Vitals checked in GTM Preview mode
 - [ ] Lighthouse audit completed
 
@@ -376,3 +381,31 @@ npm run dev        # Vite dev server (HMR)
 npm run build:ssr  # Client + SSR production build
 npm run test:unit  # Vitest component tests
 ```
+
+---
+
+## Checks
+
+```bash
+cd backend
+npm run typecheck                  # TypeScript, no emit
+npm run test:unit                  # Vitest (use Node 22; Node 25 needs NODE_OPTIONS=--no-experimental-webstorage)
+npm run build:ssr                  # the PHP tests need the Vite manifest this writes
+php artisan test                   # runs on in-memory SQLite
+```
+
+The same four steps run in GitHub Actions on every push to `main` and on pull requests
+(`.github/workflows/ci.yml`).
+
+## Booking
+
+The booking wizard sends a reservation **request**. It is stored under Reservations in the
+admin panel with status `pending` and emailed to `CONTACT_NOTIFY_TO`; the lodge answers the
+guest with availability and the rate. No price is shown on the site, and nothing is checked
+against the booking system.
+
+## Images
+
+Photos live in `backend/public/images` as WebP, named `<slug>-<width>.webp` with a 1200px
+variant next to the full-size one. Nothing is loaded from the old WordPress site;
+`tests/Feature/LocalAssetsTest.php` fails if a `wp-content` URL or a missing image is referenced.

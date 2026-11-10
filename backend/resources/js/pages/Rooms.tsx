@@ -34,8 +34,10 @@ export default function Rooms({ rooms }: { rooms: LocalizedRoom[] }) {
             {/* Page Hero */}
             <section className="rooms-page-hero">
                 <div className="rooms-page-hero__image">
-                    <img src="/images/rooms-hero.webp" alt={t('alt.rooms_hero')}
-                        fetchPriority="high" decoding="async" width="4413" height="2991" />
+                    <img src="/images/odalar-hero-2400.webp"
+                        srcSet="/images/odalar-hero-1200.webp 1200w, /images/odalar-hero-2400.webp 2400w"
+                        alt={t('alt.rooms_hero')}
+                        fetchPriority="high" decoding="async" width="2400" height="1626" />
                 </div>
                 <div className="rooms-page-hero__overlay">
                     <h1 className="rooms-page-hero__title">{t('rooms.label')}</h1>

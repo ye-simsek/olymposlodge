@@ -6,7 +6,7 @@ import { localePath } from '@/lib/routes';
 
 type Locale = 'tr' | 'en' | 'de';
 
-const LOGO = 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png';
+const LOGO = '/images/olympos-lodge-logo.png';
 
 const NAV_ITEMS = [
     { key: 'nav.home',        sub: 'nav.home_sub',        to: '/' },

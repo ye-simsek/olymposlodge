@@ -22,7 +22,8 @@ export default function Activities() {
       <section className="child-hero child-hero--full">
         <img
           className="child-hero__image"
-          src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg"
+          src="/images/bahce-oturma-2000.webp"
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w"
           alt={a('hero_alt')}
           fetchPriority="high"
           decoding="async"
@@ -36,7 +37,8 @@ export default function Activities() {
       <section className="tekne-card" id="tekne">
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg"
+            src="/images/bahce-oturma-2000.webp"
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w"
             alt={a('tekne_title')}
             loading="lazy"
             width={2000}
@@ -94,7 +96,8 @@ export default function Activities() {
       <Link href={localePath(locale, 'lodge')} className="lodge-linker">
         <div className="lodge-linker__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-6.jpg"
+            src="/images/oda-super-deluxe-2-1920.webp"
+          srcSet="/images/oda-super-deluxe-2-1200.webp 1200w, /images/oda-super-deluxe-2-1920.webp 1920w"
             alt="Olympos Lodge"
             loading="lazy"
             width={1920}

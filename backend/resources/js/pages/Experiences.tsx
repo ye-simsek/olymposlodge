@@ -114,7 +114,8 @@ export default function Experiences() {
         <section className="dest-chapter dest-chapter--reverse" id="yanartas">
           <div className="dest-chapter__visual">
             <img
-              src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg"
+              src="/images/bahce-patika-2000.webp"
+          srcSet="/images/bahce-patika-1200.webp 1200w, /images/bahce-patika-2000.webp 2000w"
               alt="Yanartaş"
               loading="lazy"
               width={2000}
@@ -135,7 +136,8 @@ export default function Experiences() {
         <section className="dest-chapter dest-chapter--center" id="likya">
           <div className="dest-chapter__visual">
             <img
-              src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5434-e1731093615320-1.jpg"
+              src="/images/bahce-golet-1700.webp"
+          srcSet="/images/bahce-golet-1200.webp 1200w, /images/bahce-golet-1700.webp 1700w"
               alt="Likya Yolu"
               loading="lazy"
               width={1700}
@@ -175,13 +177,16 @@ export default function Experiences() {
       {/* Image strip */}
       <div className="dest-strip">
         <div className="dest-strip__item">
-          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-aqua-super-deluxe-oda-2.jpg" alt="Olympos Lodge" loading="lazy" width={1920} height={1280} />
+          <img src="/images/oda-aqua-super-deluxe-1920.webp"
+          srcSet="/images/oda-aqua-super-deluxe-1200.webp 1200w, /images/oda-aqua-super-deluxe-1920.webp 1920w" alt="Olympos Lodge" loading="lazy" width={1920} height={1280} />
         </div>
         <div className="dest-strip__item">
-          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Çıralı Plajı" loading="lazy" width={2000} height={1333} />
+          <img src="/images/bahce-oturma-2000.webp"
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w" alt="Çıralı Plajı" loading="lazy" width={2000} height={1333} />
         </div>
         <div className="dest-strip__item">
-          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5400.jpg" alt="Çevre" loading="lazy" width={2000} height={1333} />
+          <img src="/images/bahce-hamak-2000.webp"
+          srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w" alt="Çevre" loading="lazy" width={2000} height={1333} />
         </div>
       </div>
 
@@ -243,7 +248,8 @@ export default function Experiences() {
       {/* Linker CTA */}
       <Link href={localePath(locale, 'activities')} className="lodge-linker lodge-linker--cirali">
         <div className="lodge-linker__image">
-          <img src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg" alt="Aktiviteler" loading="lazy" width={2000} height={1333} />
+          <img src="/images/bahce-oturma-2000.webp"
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w" alt="Aktiviteler" loading="lazy" width={2000} height={1333} />
         </div>
         <div className="lodge-linker__content">
           <span className="lodge-linker__eyebrow">{e('linker_eyebrow')}</span>

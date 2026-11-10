@@ -5,7 +5,7 @@ import { localePath } from '@/lib/routes';
 import NewsletterBlock from '@/components/NewsletterBlock';
 import WeatherPanel from '@/components/WeatherPanel';
 
-const LOGO = 'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-logo-e1730775765361.png';
+const LOGO = '/images/olympos-lodge-logo.png';
 
 export default function Footer() {
     const { t } = useTranslation();

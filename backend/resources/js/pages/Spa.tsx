@@ -19,7 +19,8 @@ export default function Spa() {
       <section className="child-hero child-hero--full">
         <img
           className="child-hero__image"
-          src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-6.jpg"
+          src="/images/oda-super-deluxe-2-1920.webp"
+          srcSet="/images/oda-super-deluxe-2-1200.webp 1200w, /images/oda-super-deluxe-2-1920.webp 1920w"
           alt={s('hero_alt')}
           fetchPriority="high"
           decoding="async"
@@ -49,7 +50,8 @@ export default function Spa() {
       <section className="tekne-card" id="jakuzi">
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-aqua-super-deluxe-oda-2.jpg"
+            src="/images/oda-aqua-super-deluxe-1920.webp"
+          srcSet="/images/oda-aqua-super-deluxe-1200.webp 1200w, /images/oda-aqua-super-deluxe-1920.webp 1920w"
             alt={s('jac_title')}
             loading="lazy"
             width={1920}
@@ -116,7 +118,8 @@ export default function Spa() {
         </div>
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5400.jpg"
+            src="/images/bahce-hamak-2000.webp"
+          srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w"
             alt={s('massage_title')}
             loading="lazy"
             width={2000}

@@ -7,11 +7,21 @@ interface SeoHeadProps {
     image?: string;
 }
 
-const DEFAULT_IMAGE =
-    'https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0071-scaled.jpg';
+// A 1200x630 JPEG: social previews do not reliably read WebP.
+const DEFAULT_IMAGE = '/images/og-default.jpg';
+
+/** Share images must be absolute URLs; resolve site-relative paths against this page. */
+function absolute(path: string, base: string): string {
+    try {
+        return new URL(path, base).href;
+    } catch {
+        return path;
+    }
+}
 
 export default function SeoHead({ title, description, image = DEFAULT_IMAGE }: SeoHeadProps) {
     const { seo } = usePageProps();
+    const imageUrl = absolute(image, seo.canonical);
 
     return (
         <Head title={title}>
@@ -29,6 +39,7 @@ export default function SeoHead({ title, description, image = DEFAULT_IMAGE }: S
                 />
             ))}
             <meta property="og:type" content="website" {...{ 'head-key': 'og:type' }} />
+            <meta property="og:url" content={seo.canonical} {...{ 'head-key': 'og:url' }} />
             <meta property="og:title" content={title} {...{ 'head-key': 'og:title' }} />
             {description && (
                 <meta
@@ -37,7 +48,7 @@ export default function SeoHead({ title, description, image = DEFAULT_IMAGE }: S
                     {...{ 'head-key': 'og:description' }}
                 />
             )}
-            <meta property="og:image" content={image} {...{ 'head-key': 'og:image' }} />
+            <meta property="og:image" content={imageUrl} {...{ 'head-key': 'og:image' }} />
             <meta name="twitter:card" content="summary_large_image" {...{ 'head-key': 'tw:card' }} />
         </Head>
     );

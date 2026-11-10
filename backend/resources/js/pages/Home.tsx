@@ -8,20 +8,18 @@ import ExploreMoreSection from '@/components/ExploreMoreSection';
 import Layout from '@/components/layout/Layout';
 import { localePath } from '@/lib/routes';
 
-const WP = 'https://www.olymposlodge.com.tr/wp-content/uploads';
-
 const GALLERY: { key: string; alt: string; fallback: string }[] = [
-    { key: 'gallery.1', alt: 'Super Deluxe Room',  fallback: `${WP}/2024/11/olympos-lodge-super-deluxe-double-room-6.jpg` },
-    { key: 'gallery.2', alt: 'Lodge garden',        fallback: `${WP}/2025/04/IMG_5376-1.jpg` },
-    { key: 'gallery.3', alt: 'Nature view',         fallback: `${WP}/2024/11/IMG_5150.jpg` },
-    { key: 'gallery.4', alt: 'Lodge atmosphere',    fallback: `${WP}/2024/11/IMG_5400.jpg` },
-    { key: 'gallery.5', alt: 'Olympos ruins',       fallback: `${WP}/2024/11/olympos-e1731029804798.jpg` },
-    { key: 'gallery.6', alt: 'Lodge detail',        fallback: `${WP}/2025/04/IMG_5434-e1731093615320-1.jpg` },
+    { key: 'gallery.1', alt: 'Super Deluxe Room',  fallback: '/images/oda-super-deluxe-2-1920.webp' },
+    { key: 'gallery.2', alt: 'Lodge garden',        fallback: '/images/bahce-oturma-2000.webp' },
+    { key: 'gallery.3', alt: 'Nature view',         fallback: '/images/bahce-patika-2000.webp' },
+    { key: 'gallery.4', alt: 'Lodge atmosphere',    fallback: '/images/bahce-hamak-2000.webp' },
+    { key: 'gallery.5', alt: 'Olympos ruins',       fallback: '/images/cirali-koyu-1155.webp' },
+    { key: 'gallery.6', alt: 'Lodge detail',        fallback: '/images/bahce-golet-1700.webp' },
 ];
 
-const HERO_POSTER_FB = `${WP}/2024/11/DJI_0071-Large-e1731205515573.jpg`;
-const STORY_GARDEN_FB = `${WP}/2024/11/IMG_5510-1.jpg`;
-const STORY_NATURE_FB = `${WP}/2024/11/MG_7191.jpg`;
+const HERO_POSTER_FB = '/images/olympos-lodge-kus-bakisi-1366.webp';
+const STORY_GARDEN_FB = '/images/cirali-sahili-gunbatimi-1600.webp';
+const STORY_NATURE_FB = '/images/olympos-lodge-tabela-1920.webp';
 
 interface LocalizedRoom {
     slug: string;

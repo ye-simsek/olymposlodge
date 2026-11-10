@@ -38,4 +38,20 @@ describe('SeoHead', () => {
         const enLink = document.querySelector('link[hreflang="en"]');
         expect(enLink?.getAttribute('href')).toBe('https://x.test/en/rooms');
     });
+
+    it('serves the default share image from this site as an absolute URL', () => {
+        render(<SeoHead title="Zimmer" />);
+
+        expect(document.querySelector('meta[property="og:image"]')?.getAttribute('content'))
+            .toBe('https://x.test/images/og-default.jpg');
+        expect(document.querySelector('meta[property="og:url"]')?.getAttribute('content'))
+            .toBe('https://x.test/de/rooms');
+    });
+
+    it('makes a site-relative image absolute', () => {
+        render(<SeoHead title="Zimmer" image="/images/oda-deluxe-1200.webp" />);
+
+        expect(document.querySelector('meta[property="og:image"]')?.getAttribute('content'))
+            .toBe('https://x.test/images/oda-deluxe-1200.webp');
+    });
 });

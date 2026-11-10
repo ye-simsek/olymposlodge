@@ -86,7 +86,8 @@ export default function ExploreMoreSection() {
                             </div>
                             <div className="story-block__image">
                                 <img
-                                    src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg"
+                                    src="/images/cirali-sahili-gunbatimi-1600.webp"
+          srcSet="/images/cirali-sahili-gunbatimi-1200.webp 1200w, /images/cirali-sahili-gunbatimi-1600.webp 1600w"
                                     alt="Çıralı"
                                     loading="lazy"
                                     width={1600}
@@ -105,7 +106,8 @@ export default function ExploreMoreSection() {
                             </div>
                             <div className="story-block__image">
                                 <img
-                                    src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5400.jpg"
+                                    src="/images/bahce-hamak-2000.webp"
+          srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w"
                                     alt="Olympos Lodge"
                                     loading="lazy"
                                     width={2000}
@@ -126,7 +128,8 @@ export default function ExploreMoreSection() {
                             </div>
                             <div className="story-block__image">
                                 <img
-                                    src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg"
+                                    src="/images/cirali-vadisi-havadan-1520.webp"
+          srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
                                     alt="Çıralı vadisi havadan görünüm"
                                     loading="lazy"
                                     width={1520}

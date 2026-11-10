@@ -22,7 +22,8 @@ export default function Lodge() {
       <section className="child-hero child-hero--full">
         <img
           className="child-hero__image"
-          src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-aqua-super-deluxe-oda-2.jpg"
+          src="/images/oda-aqua-super-deluxe-1920.webp"
+          srcSet="/images/oda-aqua-super-deluxe-1200.webp 1200w, /images/oda-aqua-super-deluxe-1920.webp 1920w"
           alt={l('hero_alt')}
           fetchPriority="high"
           decoding="async"
@@ -51,7 +52,8 @@ export default function Lodge() {
         </div>
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/olympos-lodge-super-deluxe-double-room-6.jpg"
+            src="/images/oda-super-deluxe-2-1920.webp"
+          srcSet="/images/oda-super-deluxe-2-1200.webp 1200w, /images/oda-super-deluxe-2-1920.webp 1920w"
             alt={l('spa_title')}
             loading="lazy"
             width={1920}
@@ -64,7 +66,8 @@ export default function Lodge() {
       <section className="tekne-card" id="kahvalti">
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5400.jpg"
+            src="/images/bahce-hamak-2000.webp"
+          srcSet="/images/bahce-hamak-1200.webp 1200w, /images/bahce-hamak-2000.webp 2000w"
             alt={l('breakfast_title')}
             loading="lazy"
             width={2000}
@@ -89,7 +92,8 @@ export default function Lodge() {
         </div>
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2025/04/IMG_5376-1.jpg"
+            src="/images/bahce-oturma-2000.webp"
+          srcSet="/images/bahce-oturma-1200.webp 1200w, /images/bahce-oturma-2000.webp 2000w"
             alt={l('beach_title')}
             loading="lazy"
             width={2000}
@@ -102,7 +106,8 @@ export default function Lodge() {
       <section className="tekne-card" id="spor">
         <div className="tekne-card__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg"
+            src="/images/bahce-patika-2000.webp"
+          srcSet="/images/bahce-patika-1200.webp 1200w, /images/bahce-patika-2000.webp 2000w"
             alt={l('sports_title')}
             loading="lazy"
             width={2000}
@@ -132,7 +137,8 @@ export default function Lodge() {
           </div>
           <div className="story-block__image">
             <img
-              src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5510-1.jpg"
+              src="/images/cirali-sahili-gunbatimi-1600.webp"
+          srcSet="/images/cirali-sahili-gunbatimi-1200.webp 1200w, /images/cirali-sahili-gunbatimi-1600.webp 1600w"
               alt={t('nav.experiences')}
               loading="lazy"
               width={1600}
@@ -145,7 +151,8 @@ export default function Lodge() {
         <div className="story-block story-block--reverse">
           <div className="story-block__image">
             <img
-              src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/IMG_5150.jpg"
+              src="/images/bahce-patika-2000.webp"
+          srcSet="/images/bahce-patika-1200.webp 1200w, /images/bahce-patika-2000.webp 2000w"
               alt={t('nav.activities')}
               loading="lazy"
               width={2000}
@@ -171,7 +178,8 @@ export default function Lodge() {
           </div>
           <div className="story-block__image">
             <img
-              src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg"
+              src="/images/cirali-vadisi-havadan-1520.webp"
+          srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
               alt={l('linker_loc_img_alt')}
               loading="lazy"
               width={1520}

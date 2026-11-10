@@ -53,7 +53,8 @@ export default function Location() {
       <section className="loc-hero">
         <img
           className="loc-hero__image"
-          src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg"
+          src="/images/cirali-vadisi-havadan-1520.webp"
+          srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
           alt="Çıralı vadisi havadan görünüm"
           fetchPriority="high"
           decoding="async"
@@ -184,7 +185,8 @@ export default function Location() {
       <section className="loc-exp-teaser loc-reveal">
         <div className="loc-exp-teaser__image">
           <img
-            src="https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg"
+            src="/images/cirali-vadisi-havadan-1520.webp"
+          srcSet="/images/cirali-vadisi-havadan-1200.webp 1200w, /images/cirali-vadisi-havadan-1520.webp 1520w"
             alt="Çıralı deneyimleri"
             loading="lazy"
             width={1520}

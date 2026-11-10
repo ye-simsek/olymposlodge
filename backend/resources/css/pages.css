@@ -224,7 +224,7 @@
 .not-found-page__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://www.olymposlodge.com.tr/wp-content/uploads/2024/11/DJI_0118-Large-e1731100925618.jpg');
+  background-image: url('/images/cirali-vadisi-havadan-1520.webp');
   background-size: cover;
   background-position: center;
   filter: brightness(0.35);

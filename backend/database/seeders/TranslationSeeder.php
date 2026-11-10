@@ -448,6 +448,10 @@ class TranslationSeeder extends Seeder
                 'not_found' => ['Sayfa bulunamadı.', 'Page not found.', 'Seite nicht gefunden.'],
                 'go_home'   => ['Ana Sayfaya Dön', 'Back to Home', 'Zur Startseite'],
                 'guests'    => ['Kişi', 'guests', 'Pers.'],
+                'map_notice' => ['Harita Google Maps üzerinden yüklenir; Google bu sırada çerez kullanabilir.', 'The map is loaded from Google Maps, which may set cookies.', 'Die Karte wird von Google Maps geladen; Google kann dabei Cookies setzen.'],
+                'map_load'  => ['Haritayı göster', 'Show map', 'Karte anzeigen'],
+                'map_open'  => ['Google Haritalar\'da aç', 'Open in Google Maps', 'In Google Maps öffnen'],
+                'map_title' => ['Olympos Lodge konumu', 'Olympos Lodge location', 'Lage der Olympos Lodge'],
             ],
             'meta' => [
                 'home_title'         => ['Çıralı, Antalya\'da Butik Otel', 'Boutique Hotel in Çıralı, Antalya', 'Boutique-Hotel in Çıralı, Antalya'],

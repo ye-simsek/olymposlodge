@@ -542,7 +542,8 @@
   min-height: 80px;
 }
 .guest-form__field select { appearance: none; -webkit-appearance: none; cursor: pointer; }
-.form-error {
+/* Scoped: unscoped, this rule restyled the contact form's .form-error as well. */
+.booking-page-wrap .form-error {
   font-family: var(--font-body);
   font-size: 0.8125rem;
   color: #c0392b;

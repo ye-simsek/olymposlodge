@@ -24,7 +24,12 @@ export default function ExploreMoreSection() {
         let lastFraction = 0;
         let snapped = false;
 
+        const stacked = window.matchMedia('(max-width: 640px)');
+
         const onLenisScroll = ({ velocity }: { velocity: number }) => {
+            // On phones the panels are stacked in normal flow (base.css), so there is
+            // nothing to snap to; snapping there dragged the page to a random offset.
+            if (stacked.matches) return;
             const hh          = headerEl?.offsetHeight ?? 70;
             const wRect       = wrapper.getBoundingClientRect();
             const panelH      = window.innerHeight - hh;

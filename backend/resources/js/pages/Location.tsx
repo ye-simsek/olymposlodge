@@ -5,6 +5,7 @@ import { usePageProps } from '@/hooks/use-page-props'
 import { localePath } from '@/lib/routes'
 import SeoHead from '@/components/SeoHead'
 import Layout from '@/components/layout/Layout'
+import MapEmbed, { DIRECTIONS_URL } from '@/components/MapEmbed'
 
 export default function Location() {
   const { t } = useTranslation()
@@ -32,18 +33,6 @@ export default function Location() {
     })
     return () => observer.disconnect()
   }, [])
-
-  // SSR-safe: navigator.userAgent and window.open are only accessed inside the onClick handler
-  const handleDirectionsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      e.preventDefault()
-      window.open(
-        'https://www.google.com/maps/dir/?api=1&destination=36.40182864027301,30.47590463023936',
-        '_blank',
-        'noopener'
-      )
-    }
-  }
 
   return (
     <div className="page--dest">
@@ -108,23 +97,20 @@ export default function Location() {
             </p>
           </div>
 
+          {/* A normal maps link: phones hand it to their maps app, desktops open it in a tab.
+              The previous geo: link did nothing on iPhones. */}
           <a
-            href="geo:36.40182864027301,30.47590463023936?q=Olympos+Lodge+Otel"
+            href={DIRECTIONS_URL}
             className="loc-directions-btn loc-reveal"
-            onClick={handleDirectionsClick}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {l('directions_btn')}
           </a>
         </div>
         {/* Google Maps iframe — static markup, no browser API */}
         <div className="loc-getting-here__map loc-reveal" ref={revealRef}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4469.900768249908!2d30.47331777670837!3d36.40184379005226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c3b7c8f483ada7%3A0xead3c68b0c46fb38!2sOlympos%20Lodge%20Otel!5e1!3m2!1sen!2str!4v1775126998589!5m2!1sen!2str"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Olympos Lodge Konum"
-          />
+          <MapEmbed />
         </div>
       </section>
 

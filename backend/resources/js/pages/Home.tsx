@@ -229,7 +229,7 @@ export default function Home({ rooms }: { rooms: LocalizedRoom[] }) {
                     </div>
                 </div>
 
-                <div className="story-block story-block--reverse">
+                <div className="story-block story-block--reverse" id="nature">
                     <div className="story-block__image">
                         <img src={storyNature} alt={t('alt.lodge_sign')} loading="lazy" width="1920" height="1280" />
                     </div>

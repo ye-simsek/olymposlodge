@@ -1,12 +1,14 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import NewsletterBlock from './NewsletterBlock';
 
 const post = vi.fn();
 
+const formState = { data: { email: '', name: '', consent: false, website: '' } };
+
 vi.mock('@inertiajs/react', () => ({
     useForm: () => ({
-        data: { email: '', name: '', consent: false, website: '' },
+        data: formState.data,
         setData: vi.fn(),
         post,
         processing: false,
@@ -27,6 +29,19 @@ describe('NewsletterBlock', () => {
         render(<NewsletterBlock />);
         expect(screen.getByPlaceholderText('newsletter.email')).toBeDefined();
         expect(screen.getByText('newsletter.subscribe')).toBeDefined();
+    });
+
+    it('keeps the confirmation on screen after a successful sign-up', () => {
+        // Inertia clears `recentlySuccessful` after two seconds; the thank-you must not vanish with it.
+        post.mockImplementation((_url: string, options: { onSuccess?: () => void }) => options.onSuccess?.());
+        formState.data = { email: 'ada@example.com', name: '', consent: true, website: '' };
+        const { container, getByText } = render(<NewsletterBlock />);
+
+        fireEvent.submit(container.querySelector('form')!);
+
+        expect(getByText('newsletter.success')).toBeDefined();
+        expect(container.querySelector('form')).toBeNull();
+        formState.data = { email: '', name: '', consent: false, website: '' };
     });
 
     it('includes a honeypot field that people cannot see or tab into', () => {

@@ -24,8 +24,16 @@ const WMO_DE: Record<number, string> = {
 };
 const WMO: Record<string, Record<number, string>> = { tr: WMO_TR, en: WMO_EN, de: WMO_DE };
 
+// Codes without their own label, mapped to the closest one we have. Without this a
+// hailstorm (96) or freezing rain (66) was reported as "Clear sky".
+const ALIASES: Record<number, number> = {
+    56: 51, 57: 55, 66: 61, 67: 65, 77: 73, 85: 71, 86: 75, 96: 95,
+};
+
 export function wmoDesc(code: number, lang: string): string {
-    return (WMO[lang] ?? WMO.en)[code] ?? 'Clear sky';
+    const table = WMO[lang] ?? WMO.en;
+
+    return table[code] ?? table[ALIASES[code]] ?? '';
 }
 
 export function degCompass(deg: number): string {

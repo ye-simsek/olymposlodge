@@ -6,6 +6,7 @@ import { localePath } from '@/lib/routes'
 import SeoHead from '@/components/SeoHead'
 import Layout from '@/components/layout/Layout'
 import Honeypot from '@/components/Honeypot'
+import MapEmbed from '@/components/MapEmbed'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -24,11 +25,16 @@ export default function Contact() {
     website: '',
   })
 
+  // Inertia's `recentlySuccessful` resets itself after two seconds, which made the
+  // confirmation flash and vanish. This stays until the guest starts a new message.
+  const [sent, setSent] = React.useState(false)
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setSent(false)
     form.post(localePath(locale, 'contact'), {
       preserveScroll: true,
-      onSuccess: () => form.reset(),
+      onSuccess: () => { form.reset(); setSent(true) },
     })
   }
 
@@ -77,8 +83,8 @@ export default function Contact() {
           <div className="contact-form-wrap">
             <p className="contact-form__intro">{c('form_intro')}</p>
 
-            {form.recentlySuccessful && (
-              <div className="form-success" style={{ display: 'block' }}>
+            {sent && (
+              <div className="form-success" style={{ display: 'block' }} role="status">
                 {c('success')}
               </div>
             )}
@@ -193,13 +199,7 @@ export default function Contact() {
 
         {/* Map */}
         <div className="contact-map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4469.900768249908!2d30.47331777670837!3d36.40184379005226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c3b7c8f483ada7%3A0xead3c68b0c46fb38!2sOlympos%20Lodge%20Otel!5e1!3m2!1sen!2str!4v1775126998589!5m2!1sen!2str"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Olympos Lodge Konum"
-          />
+          <MapEmbed />
         </div>
       </section>
     </>

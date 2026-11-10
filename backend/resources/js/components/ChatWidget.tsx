@@ -109,7 +109,8 @@ export default function ChatWidget() {
                     </button>
                 </div>
 
-                <div className="chat-panel__messages">
+                {/* data-lenis-prevent: let the wheel scroll this list instead of the page behind it */}
+                <div className="chat-panel__messages" data-lenis-prevent>
                     <div className="chat-msg chat-msg--model">
                         <p>{WELCOME[lang] ?? WELCOME.en}</p>
                     </div>

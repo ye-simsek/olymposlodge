@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useForm, usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
 import Honeypot from '@/components/Honeypot';
@@ -11,12 +12,15 @@ export default function NewsletterBlock() {
         website: '',
     });
 
+    // Stays true after a sign-up; Inertia's `recentlySuccessful` flips back after two seconds.
+    const [subscribed, setSubscribed] = useState(false);
+
     function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
         if (!form.data.email || !form.data.consent) return;
         form.post(`/${locale}/newsletter`, {
             preserveScroll: true,
-            onSuccess: () => form.reset(),
+            onSuccess: () => { form.reset(); setSubscribed(true); },
         });
     }
 
@@ -24,7 +28,7 @@ export default function NewsletterBlock() {
         <div className="footer-newsletter">
             <h4 className="footer-newsletter__title">{t('newsletter.title')}</h4>
             <p className="footer-newsletter__sub">{t('newsletter.subtitle')}</p>
-            {form.recentlySuccessful ? (
+            {subscribed ? (
                 <p className="footer-newsletter__success">{t('newsletter.success')}</p>
             ) : (
                 <form className="footer-newsletter__form" onSubmit={handleSubmit} noValidate>

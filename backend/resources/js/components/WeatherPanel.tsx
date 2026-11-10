@@ -81,7 +81,7 @@ export default function WeatherPanel() {
         : '';
 
     function getDayLabel(dateStr: string, i: number) {
-        return i === 0 ? t('weather.today') : days[new Date(dateStr).getDay()];
+        return i === 0 ? t('weather.today') : days[new Date(`${dateStr}T00:00:00`).getDay()];
     }
 
     const current = weather

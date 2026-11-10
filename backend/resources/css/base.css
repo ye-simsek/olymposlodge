@@ -1867,3 +1867,56 @@ h4 {
   from { opacity: 0; transform: translateY(10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ── Click-to-load map (MapEmbed) ── */
+.map-consent {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  background: var(--color-cream);
+  background-image: var(--paper-texture);
+  border: 1px solid var(--color-border);
+}
+.map-consent__notice {
+  max-width: 34ch;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+.map-consent__load {
+  font-family: var(--font-sc);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  padding: 0.7rem 1.6rem;
+  background: var(--color-text);
+  color: #fff;
+  border: 1px solid var(--color-text);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.map-consent__load:hover { background: var(--color-warm-gold); border-color: var(--color-warm-gold); }
+.map-consent__link {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+}
+
+/* ── Floating buttons must not sit on other controls ── */
+/* Room pages: lift the chat and cookie buttons above the sticky reserve bar. */
+body:has(.room-sticky-cta--visible) .chat-fab,
+body:has(.room-sticky-cta--visible) .cookie-fab {
+  bottom: 5.25rem;
+}
+/* Phones: the open chat panel fills the bottom of the screen and has its own
+   close button; the floating button would cover Send. */
+@media (max-width: 640px) {
+  .chat-fab--open { display: none; }
+}

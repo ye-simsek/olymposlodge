@@ -4,6 +4,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { usePageProps } from '@/hooks/use-page-props';
 import { localePath } from '@/lib/routes';
 import { alternatePath, rememberLanguage } from '@/lib/locale';
+import { currentLenis } from '@/lib/lenis';
 
 type Locale = 'tr' | 'en' | 'de';
 
@@ -48,7 +49,13 @@ export default function Header() {
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? 'hidden' : '';
-        return () => { document.body.style.overflow = ''; };
+        // The page scrolls through Lenis, which ignores body overflow: pause it while the menu is open.
+        if (menuOpen) currentLenis()?.stop();
+        else currentLenis()?.start();
+        return () => {
+            document.body.style.overflow = '';
+            currentLenis()?.start();
+        };
     }, [menuOpen]);
 
     useEffect(() => {

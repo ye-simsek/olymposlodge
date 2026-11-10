@@ -3,10 +3,13 @@
 namespace Tests\Feature;
 
 use Inertia\Testing\AssertableInertia as Assert;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class LocaleRoutingTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_locale_prefix_sets_app_locale(): void
     {
         $this->get('/de/_smoke')

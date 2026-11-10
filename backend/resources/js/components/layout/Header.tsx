@@ -3,6 +3,7 @@ import { Link, router, usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
 import { usePageProps } from '@/hooks/use-page-props';
 import { localePath } from '@/lib/routes';
+import { alternatePath, rememberLanguage } from '@/lib/locale';
 
 type Locale = 'tr' | 'en' | 'de';
 
@@ -61,7 +62,8 @@ export default function Header() {
     }, []);
 
     function switchLocale(target: Locale) {
-        router.visit(seo.alternates[target]);
+        rememberLanguage(target);
+        router.visit(alternatePath(seo.alternates[target], window.location.search));
         setLangOpen(false);
     }
 

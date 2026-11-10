@@ -27,6 +27,10 @@ return Application::configure(basePath: dirname(__DIR__))
         // ist — sonst kann X-Forwarded-For gespooft werden. Siehe specs/006-chat-rate-limit.md §4.4.
         $middleware->trustProxies(at: '*');
 
+        // The language cookie is set by JavaScript in the language switcher, so it is
+        // plain text. Without this exception Laravel discards it as "not decryptable".
+        $middleware->encryptCookies(except: [Locale::COOKIE]);
+
         $middleware->alias([
             'setlocale' => SetLocale::class,
         ]);

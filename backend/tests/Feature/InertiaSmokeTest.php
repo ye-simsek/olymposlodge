@@ -3,10 +3,13 @@
 namespace Tests\Feature;
 
 use Inertia\Testing\AssertableInertia as Assert;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 class InertiaSmokeTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function test_smoke_route_renders_inertia_component_with_props(): void
     {
         $this->get('/en/_smoke')

@@ -21,7 +21,10 @@ class Seo
         }
         $rest = implode('/', $segments); // ggf. ''
 
-        $build = static fn (string $locale): string => url('/'.trim($locale.'/'.$rest, '/'));
+        // Built from the configured site URL, never from the request: a spoofed Host
+        // header or a proxy that forwards plain http must not end up in SEO tags.
+        $base = rtrim((string) config('app.url'), '/');
+        $build = static fn (string $locale): string => $base.'/'.trim($locale.'/'.$rest, '/');
 
         $alternates = [];
         foreach (SetLocale::SUPPORTED as $locale) {

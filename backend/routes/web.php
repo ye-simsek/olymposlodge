@@ -73,8 +73,21 @@ Route::get('/sitemap.xml', [SitemapController::class, 'index']);
 
 // 301-Redirect aller präfixlosen Alt-URLs auf die kanonische Sprache (Pilot-Ziele existieren).
 // Ausgenommen: admin, api, sitemap.xml, robots.txt, up, build, storage, favicon.
-Route::get('/', fn (Request $request) => redirect('/'.Locale::best($request), 301));
+//
+// 302, not 301: the target depends on the visitor (language cookie, Accept-Language).
+// A permanent redirect is cached by browsers and proxies and would pin everyone
+// behind them to the first visitor's language. The query string is carried over
+// so campaign links (utm_*) and ?room= keep working.
+$toLocale = function (Request $request, string $path = '') {
+    $target = '/'.trim(Locale::best($request).'/'.(Locale::LEGACY_PATHS[$path] ?? $path), '/');
+    $query = (string) $request->server('QUERY_STRING'); // raw, in the order it was sent
 
-Route::get('/{path}', function (string $path, Request $request) {
-    return redirect('/'.Locale::best($request).'/'.$path, 301);
-})->where('path', '^(?!(?:tr|en|de)(?:/|$)|(?:admin|api|build|storage)(?:/|$)|sitemap\.xml|robots\.txt|up(?:/|$)|favicon).+$');
+    // HandleInertiaRequests adds the Vary header for these (it would overwrite one set here).
+    $request->attributes->set('locale_negotiated', true);
+
+    return redirect($target.($query !== '' ? '?'.$query : ''), 302);
+};
+
+Route::get('/', fn (Request $request) => $toLocale($request));
+
+Route::get('/{path}', fn (string $path, Request $request) => $toLocale($request, $path))->where('path', '^(?!(?:tr|en|de)(?:/|$)|(?:admin|api|build|storage)(?:/|$)|sitemap\.xml|robots\.txt|up(?:/|$)|favicon).+$');

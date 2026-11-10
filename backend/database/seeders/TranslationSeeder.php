@@ -11,12 +11,24 @@ class TranslationSeeder extends Seeder
     {
         $data = $this->translations();
 
+        // Safe to re-run on every deploy: new keys are added and untouched defaults
+        // refreshed, but text edited in the admin panel (customized_at) is kept.
+        $customized = Translation::whereNotNull('customized_at')
+            ->get(['namespace', 'key'])
+            ->mapWithKeys(fn (Translation $t) => [$t->namespace.'.'.$t->key => true]);
+
         foreach ($data as $ns => $keys) {
             $order = 0;
             foreach ($keys as $key => [$tr, $en, $de]) {
+                $sortOrder = $order++;
+
+                if ($customized->has($ns.'.'.$key)) {
+                    continue;
+                }
+
                 Translation::updateOrCreate(
                     ['namespace' => $ns, 'key' => $key],
-                    ['tr' => $tr, 'en' => $en, 'de' => $de, 'sort_order' => $order++]
+                    ['tr' => $tr, 'en' => $en, 'de' => $de, 'sort_order' => $sortOrder]
                 );
             }
         }

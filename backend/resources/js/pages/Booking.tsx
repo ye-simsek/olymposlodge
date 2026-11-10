@@ -7,6 +7,7 @@ import SeoHead from '@/components/SeoHead'
 import ClientOnly from '@/components/ClientOnly'
 import Honeypot from '@/components/Honeypot'
 import { toLocalDateString } from '@/lib/dates'
+import { rememberLanguage } from '@/lib/locale'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -310,7 +311,7 @@ function BookingHeader({ lang, locale }: { lang: Lang; locale: string }) {
           <ul className="lang-dropdown">
             {(['tr', 'en', 'de'] as Lang[]).map(l => (
               <li key={l}>
-                <Link href={localePath(l, 'booking')} className={locale === l ? 'active' : ''}>
+                <Link href={localePath(l, 'booking')} className={locale === l ? 'active' : ''} onClick={() => rememberLanguage(l)}>
                   {l === 'tr' ? 'Türkçe' : l === 'en' ? 'English' : 'Deutsch'}
                 </Link>
               </li>

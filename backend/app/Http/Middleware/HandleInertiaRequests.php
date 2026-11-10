@@ -2,12 +2,25 @@
 
 namespace App\Http\Middleware;
 
+use Closure;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 
 class HandleInertiaRequests extends Middleware
 {
     protected $rootView = 'app';
+
+    public function handle(Request $request, Closure $next)
+    {
+        $response = parent::handle($request, $next);
+
+        // Language-negotiated redirects (see routes/web.php) differ per visitor.
+        if ($request->attributes->get('locale_negotiated')) {
+            $response->headers->set('Vary', 'X-Inertia, Accept-Language, Cookie');
+        }
+
+        return $response;
+    }
 
     public function version(Request $request): ?string
     {

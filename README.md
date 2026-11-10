@@ -89,6 +89,10 @@ MAIL_FROM_ADDRESS="info@olymposlodge.com.tr"
 MAIL_FROM_NAME="Olympos Lodge"
 
 GEMINI_API_KEY=         # Google AI Studio → API key
+
+ADMIN_EMAIL=admin@olymposlodge.com.tr
+ADMIN_PASSWORD=         # first admin's password (leave empty locally for a generated one)
+CONTACT_NOTIFY_TO=      # inbox that receives contact form messages (empty = store only)
 ```
 
 **Start Sail:**
@@ -111,9 +115,10 @@ Admin panel: **http://localhost/admin**
 API: **http://localhost/api/v1/**  
 Sitemap: **http://localhost/sitemap.xml**
 
-**Dev login (seeded):**
-- Email: `admin@olymposlodge.com.tr`
-- Password: `olympos2024!`
+**Admin login:** the seeder creates the first admin from `ADMIN_EMAIL` /
+`ADMIN_PASSWORD` in `.env`. Locally, if `ADMIN_PASSWORD` is empty, a random
+password is generated and printed once in the seeder output. An existing admin
+is never modified, so re-seeding does not reset a password.
 
 ---
 
@@ -262,6 +267,11 @@ MAIL_USERNAME=...
 MAIL_PASSWORD=...
 
 GEMINI_API_KEY=...      # Google AI Studio API key
+GEMINI_RATE_LIMIT=20    # chat requests per minute per IP
+
+ADMIN_EMAIL=...         # first admin (created once by the seeder, never reset)
+ADMIN_PASSWORD=...      # strong and unique; or leave unset and use make:filament-user
+CONTACT_NOTIFY_TO=info@olymposlodge.com.tr   # receives contact form messages
 ```
 
 **Web server (nginx):** the monolith is a standard Laravel app — all routes

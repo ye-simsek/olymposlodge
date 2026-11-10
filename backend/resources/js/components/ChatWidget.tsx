@@ -3,11 +3,9 @@ import { usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
 import { isBrowser } from '@/lib/ssr';
 import { uuidv4 } from '@/lib/uuid';
+import { buildChatHistory, MAX_MESSAGE_CHARS, type ChatMessage } from '@/lib/chat-history';
 
-interface Message {
-    role: 'user' | 'model';
-    text: string;
-}
+type Message = ChatMessage;
 
 const WELCOME: Record<string, string> = {
     de: 'Willkommen beim Olympos Lodge! Wie kann ich Ihnen helfen?',
@@ -74,16 +72,18 @@ export default function ChatWidget() {
             const res = await fetch('/api/v1/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify({ messages: next, conversation_id: conversationId.current, language: lang }),
+                body: JSON.stringify({ messages: buildChatHistory(next), conversation_id: conversationId.current, language: lang }),
             });
             if (!res.ok) {
-                setMessages(m => [...m, { role: 'model', text: t('chat.error_unavailable') }]);
+                setMessages(m => [...m, { role: 'model', text: t('chat.error_unavailable'), error: true }]);
                 return;
             }
             const data = await res.json();
-            setMessages(m => [...m, { role: 'model', text: data.text ?? t('chat.error_unavailable') }]);
+            setMessages(m => [...m, typeof data.text === 'string'
+                ? { role: 'model', text: data.text }
+                : { role: 'model', text: t('chat.error_unavailable'), error: true }]);
         } catch {
-            setMessages(m => [...m, { role: 'model', text: t('chat.error_network') }]);
+            setMessages(m => [...m, { role: 'model', text: t('chat.error_network'), error: true }]);
         } finally {
             setLoading(false);
         }
@@ -139,6 +139,7 @@ export default function ChatWidget() {
                         placeholder={PLACEHOLDER[lang] ?? PLACEHOLDER.de}
                         disabled={loading}
                         autoComplete="off"
+                        maxLength={MAX_MESSAGE_CHARS}
                     />
                     <button onClick={send} disabled={loading || !input.trim()} aria-label="Senden">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">

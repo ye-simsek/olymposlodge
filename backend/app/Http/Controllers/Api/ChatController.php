@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\ChatLog;
 use App\Models\Setting;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class ChatController extends Controller
 {
@@ -45,20 +47,30 @@ PROMPT;
             ->values()
             ->all();
 
-        $response = Http::timeout(30)->post(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={$apiKey}",
-            [
-                'system_instruction' => ['parts' => [['text' => $this->getSystemPrompt()]]],
-                'contents'           => $contents,
-                'generationConfig'   => [
-                    'maxOutputTokens' => 1024,
-                    'temperature'     => 0.4,
-                ],
-            ]
-        );
+        // The key goes in a header, never in the URL: Guzzle puts the full URL into
+        // its exception messages, which would write the key into the log on a timeout.
+        try {
+            $response = Http::timeout(30)
+                ->withHeaders(['x-goog-api-key' => $apiKey])
+                ->post(
+                    'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
+                    [
+                        'system_instruction' => ['parts' => [['text' => $this->getSystemPrompt()]]],
+                        'contents'           => $contents,
+                        'generationConfig'   => [
+                            'maxOutputTokens' => 1024,
+                            'temperature'     => 0.4,
+                        ],
+                    ]
+                );
+        } catch (ConnectionException $e) {
+            Log::warning('Gemini API unreachable', ['message' => $e->getMessage()]);
+
+            return response()->json(['error' => 'AI service temporarily unavailable.', 'unavailable' => true], 502);
+        }
 
         if (! $response->successful()) {
-            \Illuminate\Support\Facades\Log::error('Gemini API error', [
+            Log::error('Gemini API error', [
                 'status' => $response->status(),
                 'body'   => $response->body(),
             ]);

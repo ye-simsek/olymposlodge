@@ -5,6 +5,7 @@ import { usePageProps } from '@/hooks/use-page-props'
 import { localePath } from '@/lib/routes'
 import SeoHead from '@/components/SeoHead'
 import Layout from '@/components/layout/Layout'
+import Honeypot from '@/components/Honeypot'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -20,6 +21,7 @@ export default function Contact() {
     phone: '',
     subject: '',
     message: '',
+    website: '',
   })
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -82,6 +84,7 @@ export default function Contact() {
             )}
 
             <form onSubmit={handleSubmit} noValidate>
+              <Honeypot value={form.data.website} onChange={v => form.setData('website', v)} />
               <div className="form-group">
                 <label htmlFor="salutation">{c('salutation')}</label>
                 <select

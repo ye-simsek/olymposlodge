@@ -11,6 +11,11 @@ class NewsletterController extends Controller
 {
     public function store(Request $request): RedirectResponse
     {
+        // Honeypot: see ContactController. Bots get a normal-looking success.
+        if ($request->filled('website')) {
+            return back()->with('success', __('newsletter.success'));
+        }
+
         $validated = $request->validate([
             'email' => 'required|email|max:255',
             'name' => 'nullable|string|max:255',

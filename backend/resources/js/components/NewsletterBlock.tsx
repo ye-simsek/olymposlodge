@@ -1,12 +1,14 @@
 import { useForm, usePage } from '@inertiajs/react';
 import { useTranslation } from '@/hooks/use-translation';
+import Honeypot from '@/components/Honeypot';
 
 export default function NewsletterBlock() {
     const { t } = useTranslation();
     const { locale } = usePage().props;
-    const form = useForm<{ email: string; consent: boolean }>({
+    const form = useForm<{ email: string; consent: boolean; website: string }>({
         email: '',
         consent: false,
+        website: '',
     });
 
     function handleSubmit(e: React.FormEvent) {
@@ -26,6 +28,7 @@ export default function NewsletterBlock() {
                 <p className="footer-newsletter__success">{t('newsletter.success')}</p>
             ) : (
                 <form className="footer-newsletter__form" onSubmit={handleSubmit} noValidate>
+                    <Honeypot value={form.data.website} onChange={(v) => form.setData('website', v)} />
                     <div className="footer-newsletter__row">
                         <input
                             type="email"

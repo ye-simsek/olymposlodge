@@ -19,7 +19,9 @@ Route::prefix('{locale}')
 
         Route::get('/rooms/{slug}', [\App\Http\Controllers\Web\RoomController::class, 'show'])->name('rooms.show');
 
+        // Public write endpoints: 5 submissions per minute per IP.
         Route::post('/newsletter', [\App\Http\Controllers\Web\NewsletterController::class, 'store'])
+            ->middleware('throttle:5,1')
             ->name('newsletter.store');
 
         Route::get('/terms', \App\Http\Controllers\Web\StaticPageController::class)
@@ -57,6 +59,7 @@ Route::prefix('{locale}')
             ->defaults('page', ['component' => 'Contact', 'namespaces' => ['contact', 'meta']])
             ->name('contact');
         Route::post('/contact', [\App\Http\Controllers\Web\ContactController::class, 'store'])
+            ->middleware('throttle:5,1')
             ->name('contact.store');
 
         Route::get('/booking', \App\Http\Controllers\Web\BookingController::class)

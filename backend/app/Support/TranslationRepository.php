@@ -61,6 +61,20 @@ class TranslationRepository
         $value = strip_tags($value, self::ALLOWED_TAGS);
 
         // Strip attributes from the tags that remain: <em onclick="..."> becomes <em>.
-        return preg_replace('#<(/?)(br|em|strong|i|b)\b[^>]*?>#i', '<$1$2>', $value) ?? $value;
+        // A plain class name is kept on emphasis tags, because the story headings
+        // mark their accent word with <em class="accent-word">.
+        return preg_replace_callback(
+            '#<(/?)(br|em|strong|i|b)\b([^>]*)>#i',
+            static function (array $m): string {
+                $class = '';
+                if ($m[1] === '' && strtolower($m[2]) !== 'br'
+                    && preg_match('/\bclass\s*=\s*"([a-z0-9 _-]+)"/i', $m[3], $c)) {
+                    $class = ' class="'.$c[1].'"';
+                }
+
+                return '<'.$m[1].$m[2].$class.'>';
+            },
+            $value,
+        ) ?? $value;
     }
 }

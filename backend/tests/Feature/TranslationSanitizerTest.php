@@ -17,7 +17,10 @@ class TranslationSanitizerTest extends TestCase
 
     private function value(string $stored): mixed
     {
-        Translation::create(['namespace' => 'footer', 'key' => 'address', 'tr' => $stored, 'en' => $stored, 'de' => $stored]);
+        Translation::updateOrCreate(
+            ['namespace' => 'footer', 'key' => 'address'],
+            ['tr' => $stored, 'en' => $stored, 'de' => $stored],
+        );
 
         return (new TranslationRepository())->forLocale('en', ['footer'])['footer']['address'];
     }
@@ -40,6 +43,15 @@ class TranslationSanitizerTest extends TestCase
     public function test_attributes_on_allowed_tags_are_removed(): void
     {
         $this->assertSame('<em>x</em><br>', $this->value('<em onmouseover="alert(1)" style="x">x</em><br class="y" />'));
+    }
+
+    public function test_a_plain_class_on_emphasis_is_kept_for_the_accent_word(): void
+    {
+        $this->assertSame(
+            'An <em class="accent-word">emerald</em> valley',
+            $this->value('An <em class="accent-word" onclick="alert(1)">emerald</em> valley'),
+        );
+        $this->assertSame('<em>x</em>', $this->value('<em class="a&quot;b" id="q">x</em>'));
     }
 
     public function test_plain_text_and_structured_values_are_untouched(): void

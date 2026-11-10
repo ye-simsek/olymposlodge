@@ -15,7 +15,7 @@ class LocalAssetsTest extends TestCase
     {
         return Finder::create()->files()
             ->in([resource_path('js'), resource_path('css'), database_path('seeders')])
-            ->name(['*.tsx', '*.ts', '*.css', '*.php'])
+            ->name(['*.tsx', '*.ts', '*.css', '*.php', '*.json'])
             ->notName('*.test.*');
     }
 

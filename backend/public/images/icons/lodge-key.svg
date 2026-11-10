@@ -6,7 +6,7 @@
     <feGaussianBlur stdDeviation="0.25"></feGaussianBlur>
   </filter>
 </defs>
-<g filter="url(#ink-soft)" stroke="#8E7441" stroke-width="0.55" stroke-linejoin="round" stroke-linecap="round">
+<g stroke="#8E7441" stroke-width="0.55" stroke-linejoin="round" stroke-linecap="round">
   <path d="M 29.91 6.5 L 29.92 7.5 L 29.92 8.5 L 29.95 9.5 L 29.93 10.5 L 29.89 11.5 L 30.47 11.5 L 30.44 10.5 L 30.46 9.5 L 30.46 8.5 L 30.48 7.5 L 30.51 6.5 Z"></path>
   <path d="M 31.69 6 L 31.71 7.1 L 31.74 8.2 L 31.69 9.3 L 31.73 10.4 L 31.72 11.5 L 32.28 11.5 L 32.28 10.4 L 32.29 9.3 L 32.26 8.2 L 32.28 7.1 L 32.28 6 Z"></path>
   <path d="M 33.53 6.5 L 33.54 7.5 L 33.56 8.5 L 33.54 9.5 L 33.54 10.5 L 33.56 11.5 L 34.09 11.5 L 34.07 10.5 L 34.08 9.5 L 34.07 8.5 L 34.06 7.5 L 34.09 6.5 Z"></path>

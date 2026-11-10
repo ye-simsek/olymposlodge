@@ -49,12 +49,18 @@
   /* ── Spacing ── */
   --space-xs:        0.5rem;
   --space-sm:        1rem;
-  --space-md:        2rem;
-  --space-lg:        4rem;
-  --space-xl:        6rem;
-  --space-2xl:       10rem;
+  /* Larger steps are fluid (from the June 2026 legacy mobile redesign): each ceiling is the
+     previous fixed desktop value, reached by ~900-1070px; narrower viewports scale down. */
+  --space-md:        clamp(1.5rem, 1.1rem + 1.6vw, 2rem);
+  --space-lg:        clamp(2.5rem, 1.6rem + 3.6vw, 4rem);
+  --space-xl:        clamp(4rem, 2.6rem + 5.6vw, 6rem);
+  --space-2xl:       clamp(6rem, 3rem + 11vw, 10rem);
   --space-card-gutter: 65px;
   --page-cap:        1440px;
+
+  /* Proportional inline gutters: fluid section side-padding */
+  --gutter:          clamp(1.25rem, 6vw, 4.5rem);
+  --gutter-lg:       clamp(1.5rem, 7.5vw, 5.4rem);
 
   /* ── Radii ── */
   --radius-none:     0;
@@ -307,6 +313,17 @@ h4 {
   gap: 7px;
 }
 
+/* 44x44 tap target without changing the visible 32x24 bars */
+.menu-toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
+
 .menu-bar {
   display: block;
   width: 100%;
@@ -489,6 +506,16 @@ h4 {
   justify-content: center;
   gap: 7px;
 }
+/* 44x44 tap target without changing the visible 32x24 bars */
+.nav-overlay__close::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+}
 .nav-overlay__close span {
   display: block;
   width: 100%;
@@ -627,13 +654,32 @@ h4 {
   pointer-events: none;
 }
 
-@media (max-width: 1024px) {
-  .nav-overlay__photo { display: none; }
+@media (max-width: 900px) {
+  .nav-overlay { flex-direction: column; }
   .nav-overlay__left {
     width: 100%;
-    padding: 5rem 2rem 3rem 2rem;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    border-right: none;
+    padding: 5rem 2rem 2rem 2rem;
   }
   .nav-overlay__logo { left: 2rem; }
+  /* Keep the Çıralı photo as a slim full-width strip below the links, not display:none */
+  .nav-overlay__photo {
+    display: block;
+    width: 100%;
+    height: 26svh;
+    min-height: 160px;
+    flex: 0 0 auto;
+  }
+  .nav-overlay__caption { bottom: 1.5rem; left: 2rem; }
+  /* Poetic sub-labels are hover-revealed on desktop; force them visible on touch */
+  .nav-sub { opacity: 1; transform: none; }
+  /* 44px tap targets */
+  .lang-current { min-height: 44px; }
+  .lang-dropdown a { min-height: 44px; display: flex; align-items: center; }
+  .btn-reserve { min-height: 44px; display: inline-flex; align-items: center; }
 }
 
 
@@ -1188,7 +1234,7 @@ h4 {
 /* ========================================
    RESPONSIVE — TABLET (base only)
    ======================================== */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .footer-main {
     grid-template-columns: 1fr;
   }
@@ -1205,10 +1251,6 @@ h4 {
    RESPONSIVE — MOBILE (base only)
    ======================================== */
 @media (max-width: 640px) {
-  :root {
-    --space-xl: 4rem;
-    --space-2xl: 6rem;
-  }
   .site-header {
     padding: env(safe-area-inset-top, 0px) var(--space-sm) 0;
     height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
@@ -1701,7 +1743,7 @@ h4 {
   opacity: 0.75;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .story-block,
   .story-block--reverse {
     grid-template-columns: 1fr;

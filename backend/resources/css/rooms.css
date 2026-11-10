@@ -98,7 +98,7 @@
 /* Horizontal specs strip */
 .room-specs {
   display: flex;
-  min-height: 180px;
+  height: 180px;
   border-bottom: 1px solid var(--color-border);
   background-color: var(--color-cream); background-image: var(--paper-texture);
   animation: roomFadeUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0.3s both;
@@ -148,7 +148,7 @@
 
 .room-spec__value {
   font-family: var(--font-heading);
-  font-size: clamp(1rem, 1.6vw, 1.375rem);
+  font-size: 22px;
   font-weight: 500;
   color: var(--color-warm-gold);
   display: block;
@@ -156,7 +156,7 @@
 
 .room-spec__label {
   font-family: var(--font-cinzel);
-  font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -380,43 +380,6 @@
   border-color: var(--color-text);
 }
 
-/* Sticky booking bar */
-.room-sticky-cta {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  background: var(--color-cream);
-  background-image: var(--paper-texture);
-  border-top: 1px solid var(--color-border);
-  transform: translateY(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 -4px 24px rgba(0,0,0,0.06);
-}
-.room-sticky-cta--visible {
-  transform: translateY(0);
-}
-.room-sticky-cta__name {
-  font-family: var(--font-heading);
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-  letter-spacing: 0.06em;
-  color: var(--color-text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.room-sticky-cta__btn {
-  flex-shrink: 0;
-  font-size: 0.7rem;
-  padding: 0.75rem 2rem;
-}
-
 /* Prev / Next room navigation */
 .room-nav {
   display: grid;
@@ -473,6 +436,52 @@
 }
 
 /* Room page — mobile overrides */
+@media (max-width: 900px) {
+  /* Editorial collapses across the whole tablet band (was 640), image-first for both variants */
+  .room-editorial,
+  .room-editorial--reverse {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .room-editorial__right,
+  .room-editorial--reverse .room-editorial__right {
+    order: 1;
+    position: relative;
+    height: auto;
+    aspect-ratio: 4 / 5;
+  }
+  .room-editorial__left,
+  .room-editorial--reverse .room-editorial__left {
+    order: 2;
+    padding: var(--space-lg) var(--space-md);
+    gap: var(--space-lg);
+  }
+  .room-editorial__inset {
+    width: 75%;
+    aspect-ratio: 3 / 4;
+  }
+  /* Specs strip wraps to 2x2 from tablet down (was 640).
+     Drop the fixed 180px height so both rows get their space and the
+     second row doesn't overflow onto the photo below. */
+  .room-specs {
+    flex-wrap: wrap;
+    height: auto;
+  }
+  .room-spec {
+    flex: 0 0 50%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-lg) var(--space-md);
+    height: auto;
+  }
+  .room-spec:nth-child(odd) {
+    border-right: 1px solid var(--color-border);
+  }
+  .room-spec:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+}
+
 @media (max-width: 640px) {
   .room-hero__info {
     bottom: var(--space-lg);
@@ -480,51 +489,6 @@
   }
 
   .room-hero__scroll { display: none; }
-
-  .room-specs {
-    flex-wrap: wrap;
-  }
-
-  .room-spec {
-    flex: 0 0 50%;
-    border-right: none;
-    border-bottom: 1px solid var(--color-border);
-    padding: var(--space-sm) var(--space-md);
-  }
-
-  .room-spec:nth-child(odd) {
-    border-right: 1px solid var(--color-border);
-  }
-
-  .room-spec:nth-last-child(-n+2) {
-    border-bottom: none;
-  }
-
-  .room-editorial,
-  .room-editorial--reverse {
-    grid-template-columns: 1fr;
-    min-height: unset;
-  }
-
-  .room-editorial--reverse .room-editorial__left,
-  .room-editorial--reverse .room-editorial__right {
-    order: unset;
-  }
-
-  .room-editorial__left {
-    padding: var(--space-lg) var(--space-md);
-    gap: var(--space-lg);
-  }
-
-  .room-editorial__inset {
-    width: 75%;
-    aspect-ratio: 3 / 4;
-  }
-
-  .room-editorial__right {
-    height: 80vw;
-    position: relative;
-  }
 
   .room-text-section {
     padding: var(--space-lg) var(--space-md);
@@ -558,3 +522,44 @@
 }
 
 
+/* ========================================
+   Additions for the rebuilt site (not in the legacy stylesheet)
+   ======================================== */
+.room-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--color-cream);
+  background-image: var(--paper-texture);
+  border-top: 1px solid var(--color-border);
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.06);
+}
+
+.room-sticky-cta--visible {
+  transform: translateY(0);
+}
+
+.room-sticky-cta__name {
+  font-family: var(--font-heading);
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+  letter-spacing: 0.06em;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-sticky-cta__btn {
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  padding: 0.75rem 2rem;
+}

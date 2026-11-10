@@ -163,7 +163,7 @@
 }
 
 /* Mobile */
-@media (max-width: 1024px) {
+@media (max-width: 1023.98px) {
   #subnav .row {
     padding-block: 14px;
   }
@@ -343,13 +343,21 @@
 }
 .child-article__full-image img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 480px;
   object-fit: cover;
   display: block;
 }
+@media (max-width: 640px) {
+  .child-article__full-image img {
+    height: 260px;
+  }
+}
 
 .child-hero--full {
-  height: 935px;
+  /* was a fixed 935px (overflowed phones); svh is responsive and keeps the
+     near-full-bleed desktop drama. The hero content is absolutely positioned,
+     so a single height (not min/max) is what actually sizes it. */
+  height: 88svh;
 }
 
 .child-hero--full .child-hero__content {
@@ -370,6 +378,28 @@
 .page--dest .child-hero {
   overflow: visible;
   clip-path: inset(0);
+}
+
+/* Breadcrumb */
+.dest-breadcrumb {
+  max-width: 1080px;
+  margin: 2.25rem auto 0;
+  padding: 0 2rem;
+  font-family: var(--font-accent);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.dest-breadcrumb a {
+  color: var(--color-warm-gold);
+  text-decoration: none;
+}
+.dest-breadcrumb a:hover { text-decoration: underline; }
+.dest-breadcrumb__sep { margin: 0 0.55rem; opacity: 0.6; }
+.dest-breadcrumb__current { color: var(--color-text-light); }
+@media (max-width: 640px) {
+  .dest-breadcrumb { margin-top: 1.5rem; padding: 0 1.25rem; }
 }
 .page--dest .child-hero__content {
   position: absolute;
@@ -669,7 +699,7 @@
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--color-warm-gold-muted);
+  color: #a89878;
   user-select: none;
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -683,7 +713,7 @@
   letter-spacing: 0.01em;
   text-transform: none;
   line-height: 1;
-  color: var(--color-title-bronze);
+  color: #6E5A30;
   opacity: 0;
   transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
   transition-delay: 0.4s;
@@ -727,7 +757,7 @@
   font-style: italic;
   font-weight: 300;
   line-height: 1.65;
-  color: var(--color-title-bronze);
+  color: #6E5A30;
   margin-top: 1.75rem;
   padding: 0.25rem 0 0.25rem 1.5rem;
   border-left: 2px solid var(--color-warm-gold);
@@ -1574,145 +1604,71 @@
   border-top: 1px solid rgba(142, 116, 65, 0.25);
 }
 
-/* ============================================
-   SCROLL-SNAP CHAPTERS
-   4 × 100 vh panels, snap on y-axis.
-   Scroll chains to page after last chapter.
-   ============================================ */
-.dest-chapters-scroll {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scrollbar-width: none;          /* hide scrollbar */
-}
-.dest-chapters-scroll::-webkit-scrollbar { display: none; }
-
-.dest-chapters-scroll > .dest-chapter {
-  height: 100vh;
-  min-height: 0;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 0;
-  border-top: none;
-  overflow: hidden;
-}
-
-.dest-chapters-scroll > .dest-chapter--reverse {
-  grid-template-columns: 1fr 1fr;
-}
-
-/* Visual: fills its column fully */
-.dest-chapters-scroll > .dest-chapter .dest-chapter__visual {
-  position: relative;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-}
-.dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__visual {
-  padding: 0;
-  order: 2;
-}
-.dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__body {
-  order: 1;
-}
-.dest-chapters-scroll > .dest-chapter .dest-chapter__visual img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.dest-chapters-scroll > .dest-chapter:hover .dest-chapter__visual img {
-  transform: scale(1.03);
-}
-
-/* Body: vertically centered text column */
-.dest-chapters-scroll > .dest-chapter .dest-chapter__body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  overflow: hidden;
-  padding: var(--space-xl) clamp(2rem, 5vw, 5rem);
-  gap: 1.4rem;
-  background-color: var(--color-cream);
-  background-image: var(--paper-texture);
-}
-
-/* Specs table inside snap chapters */
-.dest-chapters-scroll .dest-chapter__specs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.4rem 1.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.dest-chapters-scroll .dest-chapter__specs > div {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(142, 116, 65, 0.2);
-  padding-bottom: 0.35rem;
-}
-.dest-chapters-scroll .dest-chapter__specs dt {
-  font-family: var(--font-accent);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-warm-gold);
-}
-.dest-chapters-scroll .dest-chapter__specs dd {
-  font-family: var(--font-heading);
-  font-size: 0.88rem;
-  color: var(--color-text);
-  margin: 0;
-}
-
-/* Scroll-down hint — last chapter hides it */
-.dest-chapters-scroll > .dest-chapter:not(:last-child) .dest-chapter__body::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 2rem;
-  background: linear-gradient(to bottom, var(--color-warm-gold), transparent);
-  margin-top: auto;
-  align-self: center;
-  opacity: 0.5;
-  animation: chapterScrollHint 2s ease-in-out infinite;
-}
-@keyframes chapterScrollHint {
-  0%, 100% { opacity: 0.2; transform: translateY(0); }
-  50%       { opacity: 0.6; transform: translateY(6px); }
-}
-
-/* Mobile — stack vertically, no snap */
-@media (max-width: 640px) {
-  .dest-chapters-scroll {
-    height: auto;
-    overflow-y: visible;
-    scroll-snap-type: none;
-  }
-  .dest-chapters-scroll > .dest-chapter {
-    height: auto;
-    min-height: 0;
-    scroll-snap-align: none;
-    scroll-snap-stop: unset;
+/* ===== Mobile redesign overrides (2026-06) ===== */
+@media (max-width: 900px) {
+  /* Tekne editorial card: collapse to single column, image-first */
+  .tekne-card,
+  .tekne-card--reverse {
     grid-template-columns: 1fr;
-    grid-template-rows: 55vw auto;
-    border-top: 1px solid var(--color-warm-gold);
+    min-height: 0;
+    margin: 2rem 1.25rem 0;
   }
-  .dest-chapters-scroll > .dest-chapter .dest-chapter__visual {
-    height: 55vw;
+  .tekne-card + .tekne-card { margin-top: 2rem; }
+  .tekne-card__image { order: 1; aspect-ratio: 4 / 3; }
+  .tekne-card__image img { height: auto; }
+  .tekne-card__content,
+  .tekne-card--reverse .tekne-card__content {
+    order: 2;
+    padding: 2rem 1.5rem;
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--color-border);
   }
-  .dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__visual,
-  .dest-chapters-scroll > .dest-chapter--reverse .dest-chapter__body {
-    order: unset;
-  }
-  .dest-chapters-scroll > .dest-chapter .dest-chapter__body::after {
-    display: none;
+  .tekne-card--reverse .tekne-card__image { order: 1; }
+
+  /* background-attachment:fixed is broken on iOS Safari; go static + lighten the blur cost */
+  .dest-feature__visual { background-attachment: scroll; }
+  .dest-feature__visual::before {
+    backdrop-filter: blur(4px) brightness(0.62);
+    -webkit-backdrop-filter: blur(4px) brightness(0.62);
   }
 }
 
+@media (max-width: 640px) {
+  /* page--dest hero title sits via a tall top calc on desktop; anchor it bottom-left on phones */
+  .page--dest .child-hero__content {
+    top: auto;
+    bottom: 2.5rem;
+  }
+
+  /* P0: #olympos / #likya double-landing chapters were stuck two-column at 375px because
+     this ID-scoped grid lived outside any media query and out-specified the 640 fallback. */
+  .page--cirali #olympos .dest-chapter__body,
+  .page--cirali #likya .dest-chapter__body {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    padding: 2.25rem 1.25rem 0;
+  }
+  .page--cirali #olympos .dest-chapter__left-col,
+  .page--cirali #likya .dest-chapter__left-col {
+    padding-right: 0;
+    border-right: none;
+    gap: 1.5rem;
+  }
+  .page--cirali #olympos .dest-chapter__right-col,
+  .page--cirali #likya .dest-chapter__right-col {
+    padding-left: 0;
+    margin-top: 1.5rem;
+  }
+  /* Eyebrow/title were fixed 18px / 35px; bring onto a phone-comfortable fluid scale */
+  .page--cirali #olympos .dest-chapter__eyebrow,
+  .page--cirali #likya .dest-chapter__eyebrow {
+    font-size: clamp(0.8rem, 0.74rem + 0.3vw, 0.95rem);
+    letter-spacing: 0.22em;
+  }
+  .page--cirali #olympos .dest-chapter__title,
+  .page--cirali #likya .dest-chapter__title {
+    font-size: clamp(1.75rem, 1.4rem + 2.2vw, 2.1875rem);
+    max-width: 20ch;
+  }
+}

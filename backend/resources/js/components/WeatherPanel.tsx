@@ -29,6 +29,16 @@ interface MarineData {
     daily: { sea_surface_temperature_max: number[] };
 }
 
+function isWeatherData(value: unknown): value is WeatherData {
+    const w = value as Partial<WeatherData> | null;
+    return (
+        typeof w?.current?.temperature_2m === 'number' &&
+        Array.isArray(w?.daily?.time) &&
+        Array.isArray(w?.daily?.temperature_2m_max) &&
+        Array.isArray(w?.daily?.weathercode)
+    );
+}
+
 export default function WeatherPanel() {
     const { t, tRaw } = useTranslation();
     const { locale } = usePage().props;
@@ -42,14 +52,21 @@ export default function WeatherPanel() {
     useEffect(() => {
         if (fetched.current) return;
         fetched.current = true;
-        Promise.all([
-            fetch(WEATHER_API).then((r) => r.json()),
-            fetch(MARINE_API).then((r) => r.json()).catch(() => null),
-        ]).then(([w, m]) => {
-            setWeather(w);
-            setMarine(m);
-            setStatus('ok');
-        }).catch(() => setStatus('error'));
+        // Open-Meteo answers rate limits and bad requests with a JSON error body
+        // ({ error: true, reason }). Rendering that as weather data throws, and with
+        // this panel in every page's footer the whole site would go blank. Only data
+        // that has the fields we read may reach state.
+        const getJson = (url: string) =>
+            fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))));
+
+        Promise.all([getJson(WEATHER_API), getJson(MARINE_API).catch(() => null)])
+            .then(([w, m]) => {
+                if (!isWeatherData(w)) throw new Error('Unexpected weather response');
+                setWeather(w);
+                setMarine(m);
+                setStatus('ok');
+            })
+            .catch(() => setStatus('error'));
     }, []);
 
     const [now, setNow] = useState<Date | null>(null);

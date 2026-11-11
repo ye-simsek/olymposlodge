@@ -91,7 +91,7 @@ Smoking indoors is not permitted; smoking is allowed on the terrace.
    Detached building at the far end of the garden, maximum privacy. Indoor waterfall wall, glass floor panels revealing water beneath your feet, fireplace, jacuzzi, indoor AND outdoor rain showers, espresso machine. The most exclusive room — feels like a private residence.
 
 2. SUPER DELUXE — 105 m² — View: garden
-   Spacious, opens generously onto the front garden. Fireplace, jacuzzi, rain shower, espresso machine. Refined without being showy. 2 rooms available.
+   Spacious, opens generously onto the front garden. Fireplace, jacuzzi, indoor AND outdoor rain showers, espresso machine. Refined without being showy. 2 rooms available.
 
 3. DELUXE DOUBLE — 70 m² — View: garden
    Fireplace, jacuzzi, rain shower, espresso machine. Generous garden-facing terrace. 2 rooms available.
@@ -108,7 +108,8 @@ Smoking indoors is not permitted; smoking is allowed on the terrace.
 
 ROOM COMPARISON QUICK GUIDE:
 - Largest: Aqua Super Deluxe & Super Deluxe (105 m²)
-- Most exclusive / private: Aqua Super Deluxe (detached, waterfall wall, outdoor shower)
+- Most exclusive / private: Aqua Super Deluxe (detached, waterfall wall, glass floor panels)
+- Outdoor rain shower: Aqua Super Deluxe and Super Deluxe
 - Best private retreat: Lake House (detached, pond view, jacuzzi)
 - Jacuzzi rooms: Aqua Super Deluxe, Super Deluxe, Deluxe Double, Lake House
 - Fireplace rooms: same four as above

@@ -40,4 +40,42 @@ class LegacyConsistencyTest extends TestCase
         $this->get('/en/offers')->assertNotFound();
         $this->assertStringNotContainsString('/offers', $this->get('/sitemap.xml')->getContent());
     }
+
+    public function test_super_deluxe_lists_the_indoor_and_outdoor_rain_shower(): void
+    {
+        $this->seed();
+
+        $superDeluxe = Room::where('slug', 'super-deluxe')->firstOrFail();
+        $this->assertContains('amenity_rain_shower_in_out', $superDeluxe->amenities);
+        $this->assertNotContains('amenity_rain_shower', $superDeluxe->amenities);
+        // The other visible rooms have an indoor rain shower only.
+        $this->assertContains('amenity_rain_shower', Room::where('slug', 'deluxe')->firstOrFail()->amenities);
+    }
+
+    public function test_room_pages_use_the_legacy_descriptions(): void
+    {
+        $this->seed();
+        $texts = fn (string $slug, string $lang) => Room::where('slug', $slug)->firstOrFail()->{"texts_{$lang}"};
+
+        $this->assertStringStartsWith('70 metrekare ile hem konut kadar ferah', $texts('deluxe', 'tr')['p1']);
+        $this->assertStringStartsWith('At 70 square metres, the Deluxe is as generous', $texts('deluxe', 'en')['p1']);
+        $this->assertStringStartsWith('Mit 70 Quadratmetern ist das Deluxe', $texts('deluxe', 'de')['p1']);
+
+        // Facts the rewritten copy got wrong: the Lake House has a jacuzzi,
+        // the Standard Room has no espresso machine.
+        $this->assertStringContainsString('jacuzzi', $texts('gol-evi', 'en')['p3']);
+        foreach (['tr', 'en', 'de'] as $lang) {
+            $this->assertStringNotContainsStringIgnoringCase('espresso', implode(' ', $texts('standart', $lang)));
+            $this->assertCount(4, $texts('standart', $lang));
+        }
+    }
+
+    public function test_location_intro_uses_the_legacy_wording(): void
+    {
+        $this->seed(\Database\Seeders\TranslationSeeder::class);
+
+        $intro = \App\Models\Translation::where('namespace', 'location')->where('key', 'intro_body')->firstOrFail();
+        $this->assertStringStartsWith('Torosların denizle buluştuğu korunaklı bir vadinin ucunda', $intro->tr);
+        $this->assertStringContainsString('das Tal nimmt Sie auf', $intro->de);
+    }
 }

@@ -49,9 +49,9 @@ const ROOM_FEATURES: Record<string, Record<Lang, string[]>> = {
     tr: ['105 m² · bağımsız yapı', 'Jakuzi & şömine', 'Şelale duvarı & cam zemin paneller', 'İç ve dış yağmur duşu', 'Espresso makinesi · Minibar', 'Özel veranda'],
   },
   'super-deluxe': {
-    de: ['105 m² · Gartenblick', 'Whirlpool & Kamin', 'Regendusche', 'Espressomaschine · Minibar', 'Private Terrasse zum Garten', 'Handgefertigte Möbel'],
-    en: ['105 m² · garden view', 'Jacuzzi & fireplace', 'Rain shower', 'Espresso machine · Minibar', 'Private terrace to garden', 'Handcrafted furniture'],
-    tr: ['105 m² · bahçe manzarası', 'Jakuzi & şömine', 'Yağmur duşu', 'Espresso makinesi · Minibar', 'Bahçeye açılan özel teras', 'El yapımı mobilyalar'],
+    de: ['105 m² · Gartenblick', 'Whirlpool & Kamin', 'Innen- & Außen-Regendusche', 'Espressomaschine · Minibar', 'Private Terrasse zum Garten', 'Handgefertigte Möbel'],
+    en: ['105 m² · garden view', 'Jacuzzi & fireplace', 'Indoor & outdoor rain showers', 'Espresso machine · Minibar', 'Private terrace to garden', 'Handcrafted furniture'],
+    tr: ['105 m² · bahçe manzarası', 'Jakuzi & şömine', 'İç ve dış yağmur duşu', 'Espresso makinesi · Minibar', 'Bahçeye açılan özel teras', 'El yapımı mobilyalar'],
   },
   'deluxe': {
     de: ['70 m² · Gartenblick', 'Whirlpool & Kamin', 'Regendusche', 'Espressomaschine · Minibar', 'Großzügige Gartenterrasse'],

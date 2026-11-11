@@ -305,7 +305,7 @@
         "@context": "https://schema.org",
         "@type": "HotelRoom",
         "name": "Göl Evi",
-        "description": "60 m², göl kenarında eşsiz konum. Cam zemin panelleri üzerinden su manzarası, özel teras, queen yatak, klima, minibar, Wi-Fi, kasa.",
+        "description": "60 m², göl kenarında eşsiz konum. Gölet manzaralı özel teras, queen yatak, klima, minibar, Wi-Fi, kasa.",
         "occupancy": {
           "@type": "QuantitativeValue",
           "value": 2
@@ -324,11 +324,6 @@
           {
             "@type": "LocationFeatureSpecification",
             "name": "Lake view",
-            "value": true
-          },
-          {
-            "@type": "LocationFeatureSpecification",
-            "name": "Glass floor panels",
             "value": true
           },
           {

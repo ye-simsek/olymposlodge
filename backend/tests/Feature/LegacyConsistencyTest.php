@@ -78,4 +78,14 @@ class LegacyConsistencyTest extends TestCase
         $this->assertStringStartsWith('Torosların denizle buluştuğu korunaklı bir vadinin ucunda', $intro->tr);
         $this->assertStringContainsString('das Tal nimmt Sie auf', $intro->de);
     }
+
+    public function test_only_aqua_super_deluxe_is_described_with_glass_floor_panels(): void
+    {
+        // The legacy Göl Evi page carried this over from Aqua by mistake (owner confirmed).
+        $data = json_decode(file_get_contents(resource_path('js/data/structured-data.json')), true);
+
+        $golEvi = json_encode($data['rooms']['gol-evi'], JSON_UNESCAPED_UNICODE);
+        $this->assertStringNotContainsStringIgnoringCase('glass floor', $golEvi);
+        $this->assertStringNotContainsStringIgnoringCase('cam zemin', $golEvi);
+    }
 }

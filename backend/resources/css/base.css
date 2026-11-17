@@ -1532,7 +1532,10 @@ h4 {
 .story-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: calc((100vh - var(--header-height)) * 0.963);
+  /* A minimum, not a fixed height: at full screen the block is exactly this
+     tall, and in a shorter or narrower window it grows with its text instead
+     of spilling over the section below. */
+  min-height: calc((100vh - var(--header-height)) * 0.963);
 }
 
 .story-block--linker-tall {
@@ -1585,8 +1588,19 @@ h4 {
   flex: 0 0 100%;
   width: 100%;
   height: 100%;
+  min-height: 0;
+  /* The card is exactly as tall as the pinned panel; the row may not grow past it. */
+  grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
   background-color: var(--color-cream);
+}
+
+/* Inside a card the copy is centred, so the tall block padding is only needed
+   as a floor. A small floor lets the copy fit in short windows; at full screen
+   the copy sits in the same place as before. */
+.explore-more-scroll .story-block__content,
+.explore-more-scroll .story-block--reverse .story-block__content {
+  padding-block: 1.5rem;
 }
 
 /* Mobile: revert to stacked normal flow */
@@ -1614,6 +1628,11 @@ h4 {
     flex: none;
     width: 100%;
     height: auto;
+    grid-template-rows: none;
+  }
+  .explore-more-scroll .story-block__content,
+  .explore-more-scroll .story-block--reverse .story-block__content {
+    padding-block: 3.5rem;
   }
 }
 
@@ -1622,15 +1641,20 @@ h4 {
 }
 
 #about .story-block {
-  height: calc((100vh - var(--header-height)) * 1.012);
+  min-height: calc((100vh - var(--header-height)) * 1.012);
 }
 
 .story-block__image {
+  position: relative;
   overflow: hidden;
   height: 100%;
 }
 
+/* The photo fills its cell and never sets the cell's height (a tall portrait
+   photo would otherwise stretch the whole block). */
 .story-block__image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1748,6 +1772,11 @@ h4 {
   .story-block--reverse {
     grid-template-columns: 1fr;
   }
+  /* Stacked: photo and copy set the height, no window-based minimum. */
+  .story-block,
+  #about .story-block {
+    min-height: 0;
+  }
   .story-block__image {
     height: 52.43vw;
     min-height: 286px;
@@ -1763,6 +1792,25 @@ h4 {
   .story-block--reverse .story-block__content {
     padding: 3.5rem 2rem;
   }
+}
+
+/* Explore More cards between phone and tablet width: keep copy and photo side
+   by side. Stacked, the photo would be pushed out of the pinned panel. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .explore-more-scroll > .story-block--linker-tall {
+    grid-template-columns: 1fr 1fr;
+  }
+  .explore-more-scroll .story-block__image {
+    height: 100%;
+    min-height: 0;
+  }
+  .explore-more-scroll .story-block__content,
+  .explore-more-scroll .story-block--reverse .story-block__content {
+    padding: 1rem 1.5rem;
+  }
+  /* Narrow column: tighter gaps so the copy fits a short window. */
+  .explore-more-scroll .story-block__eyebrow { margin-bottom: 1rem; }
+  .explore-more-scroll .story-block__heading { margin-bottom: 1.25rem; }
 }
 
 /* ========================================
